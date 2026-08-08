@@ -46,18 +46,13 @@ a{color:var(--deep);text-underline-offset:3px}
   animation:drift 28s linear infinite;
   mask-image:radial-gradient(ellipse at 60% 30%,#000 15%,transparent 68%);
 }
-.hero::after{
-  content:"";position:absolute;inset:auto 0 0 0;height:42%;
-  background:linear-gradient(to top, rgba(6,30,24,.55), transparent);
-  pointer-events:none;
-}
 @keyframes drift{to{transform:translate3d(-52px,-52px,0)}}
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero-inner{position:relative;z-index:1;padding:6.5rem 0 3.8rem}
+.hero-inner{position:relative;z-index:1;padding:6.5rem 0 4rem}
 .brand{font-size:clamp(2.8rem,8.5vw,5.2rem);font-weight:750;margin-bottom:.55rem;animation:up .8s both;max-width:12ch}
 .hero h1{font-size:clamp(1.15rem,2.6vw,1.55rem);font-weight:600;max-width:22ch;margin-bottom:.75rem;animation:up .8s .1s both;color:rgba(244,251,247,.92)}
 .hero-lead{max-width:36ch;color:rgba(244,251,247,.78);margin-bottom:1.4rem;animation:up .8s .2s both;font-size:.98rem}
-.cta{display:flex;flex-wrap:wrap;gap:.7rem;animation:up .8s .3s both;margin-bottom:2.4rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;animation:up .8s .3s both}
 .btn{
   display:inline-flex;align-items:center;padding:.8rem 1.15rem;border-radius:999px;
   font-weight:700;font-size:.92rem;text-decoration:none;transition:transform .2s;
@@ -68,25 +63,36 @@ a{color:var(--deep);text-underline-offset:3px}
 .btn-solid{background:var(--teal);color:#fff}
 .btn-line{border:1px solid var(--line);color:var(--deep);background:var(--card)}
 
-/* process line inside hero — not floating cards */
+/* 01–04 process bar under hero */
+.steps-bar{
+  background:var(--card);
+  border-bottom:1px solid var(--line);
+}
 .steps{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
-  border-top:1px solid rgba(244,251,247,.18);
-  padding-top:1.25rem;animation:up .8s .4s both;
+  display:flex;align-items:stretch;justify-content:space-between;
+  gap:0;padding:0;
 }
-@media(max-width:720px){.steps{grid-template-columns:1fr 1fr;gap:1rem .5rem}}
 .steps a{
-  text-decoration:none;color:rgba(244,251,247,.88);
-  padding-right:1rem;position:relative;
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+  text-decoration:none;color:inherit;
+  padding:1.15rem 1rem;min-width:0;
+  border-right:1px solid var(--line);
+  transition:background .2s;
 }
-.steps a:not(:last-child)::after{
-  content:"";position:absolute;right:.35rem;top:.55rem;
-  width:1.2rem;height:1px;background:rgba(244,251,247,.28);
+.steps a:last-child{border-right:0}
+.steps a:hover{background:#f3faf7}
+.steps .n{
+  font-family:Fraunces,serif;font-weight:750;color:var(--teal);
+  font-size:1.15rem;line-height:1;margin-bottom:.4rem;
 }
-@media(max-width:720px){.steps a:not(:last-child)::after{display:none}}
-.steps .n{font-family:Fraunces,serif;font-weight:750;color:#9be2c8;font-size:1.05rem;line-height:1;margin-bottom:.35rem}
-.steps b{display:block;font-size:.95rem;margin-bottom:.15rem;color:#fff}
-.steps span{color:rgba(244,251,247,.62);font-size:.8rem;line-height:1.35}
+.steps b{display:block;font-size:.95rem;margin-bottom:.2rem;color:var(--ink);font-weight:700}
+.steps span{display:block;color:var(--muted);font-size:.8rem;line-height:1.35}
+@media(max-width:720px){
+  .steps{flex-wrap:wrap}
+  .steps a{flex:1 1 45%;border-bottom:1px solid var(--line)}
+  .steps a:nth-child(2n){border-right:0}
+  .steps a:nth-child(n+3){border-bottom:0}
+}
 
 section{padding:3.3rem 0}
 .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.55rem}
@@ -202,14 +208,17 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
         <a class="btn btn-light" href="#topics">从可选题目开始</a>
         <a class="btn btn-ghost" href="#standard">一区标准四条</a>
       </div>
-      <nav class="steps" aria-label="说服路径">
-        <a href="#topics"><div class="n">01</div><b>选题</b><span>能接什么题</span></a>
-        <a href="#plan"><div class="n">02</div><b>方案</b><span>数据与验证轮廓</span></a>
-        <a href="#standard"><div class="n">03</div><b>一区标准</b><span>四条可核对</span></a>
-        <a href="#examples"><div class="n">04</div><b>范文</b><span>同类已被录用</span></a>
-      </nav>
     </div>
   </header>
+
+  <div class="steps-bar">
+    <nav class="wrap steps" aria-label="说服路径">
+      <a href="#topics"><span class="n">01</span><b>选题</b><span>能接什么题</span></a>
+      <a href="#plan"><span class="n">02</span><b>方案</b><span>数据与验证轮廓</span></a>
+      <a href="#standard"><span class="n">03</span><b>一区标准</b><span>四条可核对</span></a>
+      <a href="#examples"><span class="n">04</span><b>范文</b><span>同类已被录用</span></a>
+    </nav>
+  </div>
 
   <main>
     <section id="topics">
