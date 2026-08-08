@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>一区写法图解 · 给非医学背景也能看懂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --ink: #12212b;
+  --muted: #4d5f6b;
+  --paper: #eef3f1;
+  --panel: #f7faf8;
+  --line: rgba(18, 33, 43, 0.12);
+  --accent: #0f8a6b;
+  --accent-deep: #0a5c49;
+  --warm: #d9772c;
+  --hero-a: #0d3b32;
+  --hero-b: #1a6b55;
+  --max: 1100px;
+  --radius: 18px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Sora", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+  font-size: 17px;
+}
+h1, h2, h3, .brand {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+a { color: var(--accent-deep); text-underline-offset: 3px; }
+.wrap { width: min(var(--max), calc(100% - 2.5rem)); margin: 0 auto; }
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  align-items: end;
+  color: #f4fbf7;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 700px at 80% 10%, rgba(200,230,216,.35), transparent 55%),
+    radial-gradient(900px 600px at 10% 80%, rgba(15,138,107,.45), transparent 50%),
+    linear-gradient(135deg, var(--hero-a), var(--hero-b) 55%, #245f4d);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 70% 40%, #000 20%, transparent 75%);
+  animation: gridDrift 28s linear infinite;
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 55vmax;
+  height: 55vmax;
+  right: -12vmax;
+  top: -8vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.16), transparent 60%);
+  animation: orbFloat 10s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes gridDrift {
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(-48px, -48px, 0); }
+}
+@keyframes orbFloat {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(-2%, 3%, 0) scale(1.05); }
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 4.5rem 0 4rem;
+}
+.brand {
+  font-size: clamp(2.8rem, 8vw, 5.4rem);
+  font-weight: 700;
+  margin-bottom: .6rem;
+  opacity: 0;
+  animation: rise .9s .1s ease forwards;
+}
+.hero h1 {
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  font-weight: 500;
+  max-width: 18ch;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: rise .9s .25s ease forwards;
+}
+.hero-lead {
+  max-width: 36ch;
+  color: rgba(244,251,247,.88);
+  font-size: 1.05rem;
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  animation: rise .9s .4s ease forwards;
+}
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem 1rem;
+  opacity: 0;
+  animation: rise .9s .55s ease forwards;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .85rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+  transition: transform .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: #f4fbf7; color: var(--hero-a); }
+.btn-ghost {
+  border-color: rgba(244,251,247,.35);
+  color: #f4fbf7;
+  background: rgba(255,255,255,.06);
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section { padding: 4.5rem 0; }
+section + section { border-top: 1px solid var(--line); }
+.kicker {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .7rem;
+}
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin-bottom: 1rem;
+  max-width: 16ch;
+}
+.lead {
+  color: var(--muted);
+  max-width: 52ch;
+  margin-bottom: 2rem;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+.analogy {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 1.5rem;
+}
+@media (max-width: 820px) { .analogy { grid-template-columns: 1fr; } }
+.plain-box {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.6rem;
+}
+.plain-box h3 { font-size: 1.35rem; margin-bottom: .7rem; }
+.plain-box p + p { margin-top: .7rem; }
+.plain-box strong { color: var(--accent-deep); }
+.steps { counter-reset: step; display: grid; gap: .85rem; }
+.step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .9rem;
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  width: 2rem; height: 2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: .9rem;
+}
+.step b { display: block; margin-bottom: .2rem; }
+.step span { color: var(--muted); font-size: .95rem; }
+
+.two-maps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+@media (max-width: 820px) { .two-maps { grid-template-columns: 1fr; } }
+.map {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.map::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  background: var(--accent);
+}
+.map.map-b::before { background: var(--warm); }
+.map h3 { font-size: 1.4rem; margin-bottom: .4rem; }
+.map .sub { color: var(--muted); font-size: .92rem; margin-bottom: 1rem; }
+.type-list { list-style: none; display: grid; gap: .55rem; }
+.type-list li {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: .65rem;
+  padding: .45rem 0;
+  border-bottom: 1px dashed var(--line);
+}
+.type-list li:last-child { border-bottom: 0; }
+.type-list .n {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: var(--accent);
+}
+.map-b .type-list .n { color: var(--warm); }
+.type-list small { display: block; color: var(--muted); font-size: .86rem; }
+
+.path {
+  background: linear-gradient(160deg, #12352d, #1d5c49 60%, #2a7a60);
+  color: #f3fbf7;
+  border-radius: calc(var(--radius) + 4px);
+  padding: 2rem 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.path::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -40% 40%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(255,255,255,.12), transparent 65%);
+  pointer-events: none;
+}
+.path h2 { color: #f4fbf7; max-width: 18ch; }
+.path .lead { color: rgba(243,251,247,.82); }
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 820px) { .path-grid { grid-template-columns: 1fr; } }
+.path-item {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  padding: 1.1rem 1.15rem;
+}
+.path-item h3 { font-size: 1.15rem; margin-bottom: .45rem; }
+.path-item p { color: rgba(243,251,247,.84); font-size: .95rem; }
+
+.cases { display: grid; gap: .9rem; }
+.case {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.case:hover {
+  border-color: rgba(15, 138, 107, .45);
+  transform: translateX(4px);
+}
+@media (max-width: 640px) { .case { grid-template-columns: 1fr; } }
+.case .yr {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.case .jr { color: var(--muted); font-size: .9rem; margin-bottom: .25rem; }
+.case h3 { font-size: 1.15rem; margin-bottom: .35rem; }
+.case p { color: var(--muted); font-size: .95rem; }
+
+.faq { display: grid; gap: .8rem; margin-top: 1.5rem; }
+.faq details {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  float: right;
+  color: var(--accent);
+  font-weight: 700;
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin-top: .7rem; color: var(--muted); }
+
+.cta-end {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem 1.7rem;
+}
+.cta-end h2 { max-width: none; }
+.btn-dark { background: var(--accent); color: #fff; }
+.btn-line { border-color: var(--line); color: var(--ink); background: transparent; }
+.note {
+  margin-top: 1rem;
+  font-size: .88rem;
+  color: var(--muted);
+}
+footer {
+  padding: 2rem 0 3rem;
+  color: var(--muted);
+  font-size: .88rem;
+  border-top: 1px solid var(--line);
+}
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div class="brand">一区写法</div>
+      <h1>不用医学术语，也能看懂怎么发一区</h1>
+      <p class="hero-lead">给非医学背景客户的说明书：一区论文常见写法是什么、用什么公开数据、大概怎么做。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#maps">看两种写法地图</a>
+        <a class="btn btn-ghost" href="#path">最适合入门的一条路</a>
+        <a class="btn btn-ghost" href="confidence.html">看我们的底气</a>
+        <a class="btn btn-ghost" href="routes.html">五种写法+数据集</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="what">
+      <div class="wrap reveal">
+        <div class="kicker">先建立直觉</div>
+        <h2>一区写法，不是“更难的作文”</h2>
+        <p class="lead">它是一套被顶刊反复录用的讲故事方式：你回答什么问题、用什么证据、怎么证明模型不是“背题”。</p>
+        <div class="analogy">
+          <div class="plain-box">
+            <h3>用一句话理解</h3>
+            <p>把病人的检查信息喂给电脑，让它估计“风险高不高”；再用<strong>从没见过的另一批数据</strong>考试，证明它真的会。</p>
+            <p>客户侧只记三句：<strong>问题要清楚、对照要公平、外测要锁死</strong>。</p>
+          </div>
+          <div class="steps">
+            <div class="step"><div><b>定问题</b><span>比如：谁更容易死亡 / 骨质疏松 / 癌变？</span></div></div>
+            <div class="step"><div><b>找公开数据</b><span>用可申请的公开库，不一定要医院私有病历。</span></div></div>
+            <div class="step"><div><b>训练模型</b><span>电脑从历史病例里学规律。</span></div></div>
+            <div class="step"><div><b>换库考试</b><span>参数冻结后再测，防止“刷分”。</span></div></div>
+            <div class="step"><div><b>按写法写论文</b><span>结果、对照、失败案例都要老实写。</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="maps">
+      <div class="wrap reveal">
+        <div class="kicker">两套地图，别混</div>
+        <h2>写法其实分两层</h2>
+        <p class="lead">一层管“论文卖什么”；一层管“数据从哪来”。做项目时各选一个，拼成完整方案。</p>
+        <div class="two-maps">
+          <article class="map">
+            <h3>A. 卖什么故事</h3>
+            <p class="sub">数字医学刊常用的 6 种</p>
+            <ul class="type-list">
+              <li><span class="n">01</span><div>检测工具<small>找病灶、画框、分割</small></div></li>
+              <li><span class="n">02</span><div>风险预测<small>给风险分，估计会不会出事</small></div></li>
+              <li><span class="n">03</span><div>多模态融合<small>影像 + 化验 + 文本一起用</small></div></li>
+              <li><span class="n">04</span><div>大模型 / LLM<small>通用模型再迁移到医疗</small></div></li>
+              <li><span class="n">05</span><div>临床部署<small>真上线、看流程指标</small></div></li>
+              <li><span class="n">06</span><div>综述伦理<small>梳理领域，不训新模型</small></div></li>
+            </ul>
+          </article>
+          <article class="map map-b">
+            <h3>B. 数据从哪来</h3>
+            <p class="sub">不靠医院私有病历时的 5 种</p>
+            <ul class="type-list">
+              <li><span class="n">01</span><div>双公开库外推<small>库 A 训练，库 B 考试</small></div></li>
+              <li><span class="n">02</span><div>同库切分<small>同一库按时间或中心切开</small></div></li>
+              <li><span class="n">03</span><div>多队列轮考<small>很多小队列，每次留一个考</small></div></li>
+              <li><span class="n">04</span><div>方法与基准<small>比策略、定标准</small></div></li>
+              <li><span class="n">05</span><div>公开影像<small>用公开影像集做检测分割</small></div></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="path">
+      <div class="wrap reveal">
+        <div class="path">
+          <div class="kicker" style="color:#9be2c8">入门推荐组合</div>
+          <h2>风险预测 × 公开数据</h2>
+          <p class="lead">没有医院合作时，最常见可落地的一区路径：用公开 ICU / 调查数据做风险分层，再跨库验证。</p>
+          <div class="path-grid">
+            <div class="path-item">
+              <h3>用什么数据</h3>
+              <p>MIMIC、eICU 等公开重症病历库；或 NHANES 国家健康调查。要申请，但不是医院私有。</p>
+            </div>
+            <div class="path-item">
+              <h3>怎么做</h3>
+              <p>在一个库学会并锁死参数，换另一个库只考一次；同时和一个简单临床分数比高低。</p>
+            </div>
+            <div class="path-item">
+              <h3>投哪里更合适</h3>
+              <p>数字医学方向更合适。机制向肠道刊（如 Gut Microbes）不适合纯公开预测。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="wrap reveal">
+        <div class="kicker">近两年真刊案例</div>
+        <h2>不是概念，已经有一区录用</h2>
+        <p class="lead">下面三篇都是 2025–2026、主要用公开数据的风险预测 / 跨库验证写法。</p>
+        <div class="cases">
+          <article class="case">
+            <div class="yr">2025</div>
+            <div>
+              <div class="jr">npj Digital Medicine · RealMIP</div>
+              <h3>ICU 死亡风险实时预测</h3>
+              <p>在 eICU 上训练，再到 MIMIC 等库外测。经典“双公开库外推”。</p>
+            </div>
+          </article>
+          <article class="case">
+            <div class="yr">2026</div>
+            <div>
+              <div class="jr">npj Digital Medicine</div>
+              <h3>脓毒症模型遇到数据分布偏移</h3>
+              <p>用多个公开 ICU 库，比较换地方后怎么部署更稳。</p>
+            </div>
+          </article>
+          <article class="case">
+            <div class="yr">2026</div>
+            <div>
+              <div class="jr">Critical Care</div>
+              <h3>四库联合预测死亡与住院时长</h3>
+              <p>四个公开 ICU 库互相验证，证明多库合并往往比单库更稳。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap reveal">
+        <div class="kicker">客户常问</div>
+        <h2>先把顾虑说清楚</h2>
+        <div class="faq">
+          <details>
+            <summary>没有医院私有数据，也能做一区吗？</summary>
+            <p>可以。公开病历库、调查数据、公开影像集都可以构成完整研究。近两年已有一区论文按这条路发表。能不能中，还取决于对照是否够硬、结果是否够厚。</p>
+          </details>
+          <details>
+            <summary>我不是医生，能参与吗？</summary>
+            <p>可以。你负责数据、模型、实验设计与写作结构；医学定义与临床对照可查文献或轻度咨询。关键是把验证设计做扎实。</p>
+          </details>
+          <details>
+            <summary>和发 Gut Microbes 是一回事吗？</summary>
+            <p>不是。Gut Microbes 更吃机制实验。公开数据风险预测，更适合数字医学 / 重症 / 生物信息类一区刊。</p>
+          </details>
+          <details>
+            <summary>“锁死外测”是什么意思？</summary>
+            <p>模型在开发库上定稿后，参数不再改，再拿另一批数据只考一次。就像期末换卷子，不许边考边改答案。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="next">
+      <div class="wrap reveal">
+        <div class="cta-end">
+          <div class="kicker">下一步</div>
+          <h2>选一条路，再谈题目</h2>
+          <p class="lead" style="margin-bottom:1.2rem">建议先定组合：<strong>风险预测 + 双公开库外推</strong>，或 <strong>公开影像检测</strong>。题目可以后定，写法框架先对齐。</p>
+          <div class="cta-row" style="opacity:1;animation:none">
+            <a class="btn btn-dark" href="#path">回到入门路径</a>
+            <a class="btn btn-line" href="#maps">再看写法地图</a>
+          </div>
+          <p class="note">本页用语刻意避开医学术语堆砌，便于非医学背景客户快速建立共同语言。详细范文见项目内「一区_非私有数据写法」「一区期刊写法分布」。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">一区写法图解 · 面向非医学背景的介绍页 · 仅作方法说明，不构成投稿承诺</div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in"); });
+    }, { threshold: 0.16 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

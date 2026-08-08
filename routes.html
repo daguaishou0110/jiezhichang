@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>五种公开数据写法 · 依据与数据集清单</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --ink: #101820;
+  --muted: #5a6770;
+  --paper: #f2f5f3;
+  --panel: #fff;
+  --line: rgba(16,24,32,.12);
+  --teal: #0c7a5f;
+  --teal-deep: #074d3d;
+  --warm: #c45c16;
+  --max: 1080px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Sora", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 16.5px;
+  line-height: 1.65;
+}
+h1,h2,h3,.brand {
+  font-family: "Fraunces", serif;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+a { color: var(--teal-deep); text-underline-offset: 3px; }
+.wrap { width: min(var(--max), calc(100% - 2.2rem)); margin: 0 auto; }
+
+.top {
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: blur(10px);
+  background: rgba(242,245,243,.88);
+  border-bottom: 1px solid var(--line);
+}
+.top-inner {
+  display: flex; flex-wrap: wrap; gap: .6rem 1rem;
+  align-items: center; justify-content: space-between;
+  padding: .75rem 0;
+  font-size: .88rem;
+}
+.top nav { display: flex; flex-wrap: wrap; gap: .55rem .9rem; }
+.top a { text-decoration: none; color: var(--muted); font-weight: 600; }
+.top a:hover { color: var(--teal); }
+
+.hero {
+  padding: 3.2rem 0 2.2rem;
+  background:
+    radial-gradient(800px 340px at 90% 0%, rgba(12,122,95,.14), transparent 60%),
+    linear-gradient(180deg, #e7efeb, var(--paper));
+}
+.brand {
+  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  font-weight: 750;
+  color: var(--teal-deep);
+  margin-bottom: .5rem;
+}
+.hero h1 {
+  font-size: clamp(1.25rem, 2.8vw, 1.7rem);
+  font-weight: 600;
+  max-width: 22ch;
+  margin-bottom: .8rem;
+}
+.hero p { color: var(--muted); max-width: 48ch; margin-bottom: 1.2rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip {
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 700;
+  padding: .45rem .75rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  transition: .2s ease;
+}
+.chip:hover { border-color: var(--teal); color: var(--teal-deep); transform: translateY(-1px); }
+
+section { padding: 2.6rem 0; }
+.route {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.5rem 1.35rem 1.4rem;
+  margin-bottom: 1.1rem;
+  scroll-margin-top: 4.2rem;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: .65s ease;
+}
+.route.in { opacity: 1; transform: none; }
+.route-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .9rem 1rem;
+  margin-bottom: 1rem;
+}
+.num {
+  width: 3rem; height: 3rem;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  font-family: "Fraunces", serif;
+  font-weight: 750;
+  font-size: 1.25rem;
+  color: #fff;
+  background: var(--teal);
+}
+.route:nth-child(5n+2) .num { background: #0b6e8a; }
+.route:nth-child(5n+3) .num { background: var(--warm); }
+.route:nth-child(5n+4) .num { background: #3d5a40; }
+.route:nth-child(5n+5) .num { background: #5c4d7a; }
+.route h2 { font-size: 1.45rem; margin-bottom: .25rem; }
+.one-line { color: var(--muted); font-size: .95rem; }
+
+.grid3 {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 1.15fr;
+  gap: .85rem;
+}
+@media (max-width: 900px) { .grid3 { grid-template-columns: 1fr; } }
+.box {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.05rem;
+  background: #f8faf9;
+}
+.box h3 {
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: .55rem;
+}
+.box p, .box li { color: var(--muted); font-size: .92rem; }
+.box ul { list-style: none; display: grid; gap: .45rem; }
+.box li { padding-left: .9rem; position: relative; }
+.box li::before {
+  content: "";
+  width: .35rem; height: .35rem;
+  border-radius: 50%;
+  background: var(--teal);
+  position: absolute; left: 0; top: .55rem;
+}
+
+.ds {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .86rem;
+  margin-top: .35rem;
+}
+.ds th, .ds td {
+  text-align: left;
+  padding: .45rem .35rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.ds th { color: var(--muted); font-weight: 600; font-size: .75rem; letter-spacing: .04em; }
+.ds td:first-child { font-weight: 700; color: var(--ink); white-space: nowrap; }
+.tag {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: .15rem .45rem;
+  border-radius: 999px;
+  background: rgba(12,122,95,.1);
+  color: var(--teal-deep);
+}
+.tag.warn { background: rgba(196,92,22,.12); color: #8a3d0c; }
+
+.howto {
+  margin-top: 2rem;
+  background: linear-gradient(145deg, #0a3d30, #127058);
+  color: #f3fbf7;
+  border-radius: 20px;
+  padding: 1.6rem 1.4rem;
+}
+.howto h2 { color: #fff; max-width: none; font-size: 1.6rem; margin-bottom: .6rem; }
+.howto p { color: rgba(243,251,247,.85); margin-bottom: 1rem; max-width: 52ch; }
+.howto ol { padding-left: 1.15rem; display: grid; gap: .45rem; color: rgba(243,251,247,.92); }
+.howto a { color: #b8f0d8; }
+
+.note {
+  margin-top: 1rem;
+  font-size: .85rem;
+  color: var(--muted);
+}
+footer {
+  padding: 1.5rem 0 2.5rem;
+  color: var(--muted);
+  font-size: .84rem;
+  border-top: 1px solid var(--line);
+}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="wrap top-inner">
+      <strong>五种公开数据写法</strong>
+      <nav>
+        <a href="confidence.html">底气页</a>
+        <a href="index.html">写法说明</a>
+        <a href="type-01.html">01</a><a href="type-02.html">02</a><a href="type-03.html">03</a><a href="type-04.html">04</a><a href="type-05.html">05</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">五种写法</div>
+      <h1>不使用医院私有数据时，可以怎么发一区</h1>
+      <p>每一种写法都配上：大白话解释、近两年（或经典）依据论文、以及去哪里找数据集。<b>点击上方编号或下方标题，进入该类单独展开页</b>；每类还有<strong>完整检索列表</strong>（如 01 类 148 篇全部列出）。</p>
+      <div class="chips">
+        <a class="chip" href="type-01.html">01 双公开库外推</a>
+        <a class="chip" href="type-02.html">02 同库切分</a>
+        <a class="chip" href="type-03.html">03 多队列轮考</a>
+        <a class="chip" href="type-04.html">04 方法与基准</a>
+        <a class="chip" href="type-05.html">05 公开影像</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <!-- 01 -->
+      <article class="route" id="r01">
+        <div class="route-head">
+          <div class="num">01</div>
+          <div>
+            <h2><a href="type-01.html" style="color:inherit;text-decoration:none;border-bottom:2px solid rgba(12,122,95,.35)">双公开库外推</a> <a href="type-01.html" style="font-family:Sora,sans-serif;font-size:.78rem;font-weight:700;color:var(--teal);margin-left:.4rem">单独展开 →</a></h2>
+            <p class="one-line">在公开库 A 训练并锁死，再拿公开库 B 只考一次。最像“换医院也能用”。</p>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="box">
+            <h3>怎么理解</h3>
+            <p>两个互不重叠的公开病历库。A 用来刷题，B 用来期末考，考试期间不许再改模型。</p>
+            <p style="margin-top:.55rem">适合：ICU 死亡、脓毒症、住院时长等风险预测。</p>
+          </div>
+          <div class="box">
+            <h3>依据（可对外讲）</h3>
+            <ul>
+              <li><b>2025</b> npj DigMed · RealMIP<br>eICU → MIMIC / SICdb<br><small>10.1038/s41746-025-02114-y</small></li>
+              <li><b>2026</b> Critical Care · 四库外推<br>eICU / MIMIC / Amsterdam / HiRID<br><small>10.1186/s13054-026-06034-5</small></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>数据集怎么找</h3>
+            <table class="ds">
+              <tr><th>数据集</th><th>是什么</th><th>获取</th></tr>
+              <tr><td>MIMIC-IV</td><td>美国单中心 ICU</td><td><span class="tag warn">PhysioNet 申请</span></td></tr>
+              <tr><td>eICU-CRD</td><td>美国多中心 ICU</td><td><span class="tag warn">PhysioNet 申请</span></td></tr>
+              <tr><td>HiRID</td><td>瑞士高分辨率 ICU</td><td><span class="tag warn">PhysioNet 申请</span></td></tr>
+              <tr><td>AmsterdamUMCdb</td><td>荷兰 ICU</td><td><span class="tag warn">官网申请</span></td></tr>
+              <tr><td>SICdb</td><td>奥地利 ICU</td><td><span class="tag warn">申请制</span></td></tr>
+            </table>
+            <p style="margin-top:.6rem"><b>入口：</b> physionet.org → 完成 CITI/培训 → 签 DUA → 下载。</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 -->
+      <article class="route" id="r02">
+        <div class="route-head">
+          <div class="num">02</div>
+          <div>
+            <h2><a href="type-02.html" style="color:inherit;text-decoration:none;border-bottom:2px solid rgba(12,122,95,.35)">同库时间 / 中心切分</a> <a href="type-02.html" style="font-family:Sora,sans-serif;font-size:.78rem;font-weight:700;color:var(--teal);margin-left:.4rem">单独展开 →</a></h2>
+            <p class="one-line">只有一个公开资源时：按年份切开，或按医院中心留出 hold-out。</p>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="box">
+            <h3>怎么理解</h3>
+            <p>同一套数据里，用“早年训、晚年考”或“部分中心训、剩下中心考”。比随机拆分硬，但弱于真正换库。</p>
+            <p style="margin-top:.55rem">适合：NHANES 人群预测；eICU 多中心内验。</p>
+          </div>
+          <div class="box">
+            <h3>依据（可对外讲）</h3>
+            <ul>
+              <li><b>2025</b> npj DigMed · RealMIP 内验<br>eICU：188 中心训 / 20 中心 hold-out<br><small>同文 10.1038/s41746-025-02114-y</small></li>
+              <li><b>写法参考</b> NHANES 时间外推<br>早周期训 → 晚周期考<br><span class="tag warn">注意：单独做时刊档通常低于双库</span></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>数据集怎么找</h3>
+            <table class="ds">
+              <tr><th>数据集</th><th>切法</th><th>获取</th></tr>
+              <tr><td>NHANES</td><td>按调查周期切</td><td><span class="tag">CDC 直接下载</span></td></tr>
+              <tr><td>eICU-CRD</td><td>按 hospital_id 切</td><td><span class="tag warn">PhysioNet</span></td></tr>
+              <tr><td>MIMIC-IV</td><td>按入院年份切</td><td><span class="tag warn">PhysioNet</span></td></tr>
+            </table>
+            <p style="margin-top:.6rem"><b>入口：</b> wwwn.cdc.gov/nchs/nhanes/ （NHANES 最省事）</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="route" id="r03">
+        <div class="route-head">
+          <div class="num">03</div>
+          <div>
+            <h2><a href="type-03.html" style="color:inherit;text-decoration:none;border-bottom:2px solid rgba(12,122,95,.35)">多公开队列轮考（LODO）</a> <a href="type-03.html" style="font-family:Sora,sans-serif;font-size:.78rem;font-weight:700;color:var(--teal);margin-left:.4rem">单独展开 →</a></h2>
+            <p class="one-line">有很多个小队列时：每次留下一个队列考试，其余用来训练。</p>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="box">
+            <h3>怎么理解</h3>
+            <p>不是两个大库，而是 8～18 个公开小研究拼起来。轮流“留一个考”，看跨地区是否稳。</p>
+            <p style="margin-top:.55rem">适合：肠道菌 / 宏基因组疾病预测（如结直肠癌）。</p>
+          </div>
+          <div class="box">
+            <h3>依据（可对外讲）</h3>
+            <ul>
+              <li><b>2019</b> Nature Medicine · Wirbel<br>纯公开粪便宏基因组 LODO（经典标杆）<br><small>10.1038/s41591-019-0406-6</small></li>
+              <li><b>2025</b> Nature Medicine · Piccinno<br>LODO 叙事，但含新测序 = <span class="tag warn">混合包</span><br><small>10.1038/s41591-025-03693-9</small></li>
+              <li><b>2026</b> npj Biofilms · Meta-iTL<br>多公开队列 + 新队列迁移<br><small>10.1038/s41522-026-01001-y</small></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>数据集怎么找</h3>
+            <table class="ds">
+              <tr><th>来源</th><th>是什么</th><th>获取</th></tr>
+              <tr><td>ENA / SRA</td><td>宏基因组原始数据</td><td><span class="tag">公开下载</span></td></tr>
+              <tr><td>curatedMetagenomicData</td><td>已整理的人群宏基因组</td><td><span class="tag">R/Bioconductor</span></td></tr>
+              <tr><td>论文附录 accession</td><td>按范文 DOI 找回</td><td><span class="tag">随论文</span></td></tr>
+              <tr><td>GEO</td><td>表达谱等组学</td><td><span class="tag">公开下载</span></td></tr>
+            </table>
+            <p style="margin-top:.6rem"><b>做法：</b>先锁定一篇 LODO 范文 → 按其 Data availability 拉齐队列列表。</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 -->
+      <article class="route" id="r04">
+        <div class="route-head">
+          <div class="num">04</div>
+          <div>
+            <h2><a href="type-04.html" style="color:inherit;text-decoration:none;border-bottom:2px solid rgba(12,122,95,.35)">公开方法与基准</a> <a href="type-04.html" style="font-family:Sora,sans-serif;font-size:.78rem;font-weight:700;color:var(--teal);margin-left:.4rem">单独展开 →</a></h2>
+            <p class="one-line">贡献不在“新病人”，而在：部署策略、基准协议、谁在什么数据量下更好。</p>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="box">
+            <h3>怎么理解</h3>
+            <p>大家都能下到同一批公开库。你比较的是：直接外推、微调、重训、域适应……哪种更稳。</p>
+            <p style="margin-top:.55rem">适合：计算机背景、方法导向、想发数字医学方法文。</p>
+          </div>
+          <div class="box">
+            <h3>依据（可对外讲）</h3>
+            <ul>
+              <li><b>2026</b> npj DigMed · 脓毒症分布偏移<br>HiRID / MIMIC / eICU<br>系统比较 fine-tune / retrain / DA / fusion<br><small>10.1038/s41746-026-02364-4</small></li>
+              <li>PhysioNet Challenge 历年赛题也可当基准写法参考</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>数据集怎么找</h3>
+            <table class="ds">
+              <tr><th>数据集</th><th>用途</th><th>获取</th></tr>
+              <tr><td>MIMIC + eICU + HiRID</td><td>跨库策略实验</td><td><span class="tag warn">PhysioNet</span></td></tr>
+              <tr><td>PhysioNet Challenge</td><td>标准任务与榜</td><td><span class="tag">physionet.org</span></td></tr>
+              <tr><td>BlendedICU 等和谐版本</td><td>少踩字段坑</td><td>随论文/开源仓</td></tr>
+            </table>
+            <p style="margin-top:.6rem"><b>关键：</b>先统一结局定义与特征字典，再比方法。</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05 -->
+      <article class="route" id="r05">
+        <div class="route-head">
+          <div class="num">05</div>
+          <div>
+            <h2><a href="type-05.html" style="color:inherit;text-decoration:none;border-bottom:2px solid rgba(12,122,95,.35)">公开影像检测 / 分割</a> <a href="type-05.html" style="font-family:Sora,sans-serif;font-size:.78rem;font-weight:700;color:var(--teal);margin-left:.4rem">单独展开 →</a></h2>
+            <p class="one-line">用公开影像集训练检测或分割模型（YOLO 等），报告 mAP / 漏检 / 外测泛化。</p>
+          </div>
+        </div>
+        <div class="grid3">
+          <div class="box">
+            <h3>怎么理解</h3>
+            <p>不预测“风险分”，而是在图上找病灶。数据来自公开影像库，不一定要医院私有片子。</p>
+            <p style="margin-top:.55rem">适合：已有 YOLO / CV 基础的计算机同学。</p>
+          </div>
+          <div class="box">
+            <h3>依据（可对外讲）</h3>
+            <ul>
+              <li><b>2025</b> npj DigMed · StyleGAN + YOLOv5 息肉<br>多公开内镜数据集聚合<br><small>10.1038/s41746-025-02293-8</small></li>
+              <li><b>2025</b> npj DigMed · CR-YOLO 肺结节<br>LIDC / NLST / TCIA 公开影像<br><small>10.1038/s41746-025-02106-y</small></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>数据集怎么找</h3>
+            <table class="ds">
+              <tr><th>数据集</th><th>任务</th><th>获取</th></tr>
+              <tr><td>LIDC-IDRI</td><td>肺结节 CT</td><td><span class="tag">TCIA</span></td></tr>
+              <tr><td>NLST</td><td>肺癌筛查 CT</td><td><span class="tag warn">申请/公开子集</span></td></tr>
+              <tr><td>TCIA 各集合</td><td>多癌种影像</td><td><span class="tag">cancerimagingarchive.net</span></td></tr>
+              <tr><td>Kvasir / CVC / ETIS</td><td>息肉内镜</td><td><span class="tag">公开下载</span></td></tr>
+              <tr><td>HyperKvasir / SUN</td><td>内镜增强</td><td><span class="tag">公开下载</span></td></tr>
+            </table>
+            <p style="margin-top:.6rem"><b>入口：</b> cancerimagingarchive.net ；息肉集可按范文 Data availability 列表一键对齐。</p>
+          </div>
+        </div>
+      </article>
+
+      <div class="howto" id="howto">
+        <h2>不会找数据？按这 4 步</h2>
+        <p>不用先成为医学专家。先选定写法编号，再按入口申请/下载。</p>
+        <ol>
+          <li><b>先选写法</b>：没医院 → 优先 01 或 05；会组学 → 03；只会一个库 → 02；偏方法 → 04。</li>
+          <li><b>打开总入口</b>：ICU 去 <a href="https://physionet.org" target="_blank" rel="noopener">PhysioNet</a>；调查去 CDC NHANES；影像去 <a href="https://www.cancerimagingarchive.net" target="_blank" rel="noopener">TCIA</a>；宏基因组去 ENA/SRA。</li>
+          <li><b>对齐一篇依据论文</b>：按其 Data availability 复制队列与切分，不自己瞎拼。</li>
+          <li><b>写进方案</b>：写清“开发库 / 锁死 / 外测库”，这就是客户能听懂的底气。</li>
+        </ol>
+      </div>
+
+      <p class="note">说明：PhysioNet / 部分欧洲 ICU / NLST 等需要培训与协议，属于“公开可申请”，不是医院私有病历。2025–26 顶刊 LODO 范文常含少量新测序，对外务必标清 PUBLIC / HYBRID。</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">五种公开数据写法 · 与底气页、写法说明配套 · 仅作方法导航</div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in"); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".route").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

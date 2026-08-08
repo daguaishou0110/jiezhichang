@@ -1,0 +1,27 @@
+{
+  "01": {
+    "n": 148,
+    "title": "双公开库外推",
+    "dropped_preprints": 92
+  },
+  "02": {
+    "n": 23,
+    "title": "同库切分",
+    "dropped_preprints": 15
+  },
+  "03": {
+    "n": 347,
+    "title": "多队列LODO",
+    "dropped_preprints": 137
+  },
+  "04": {
+    "n": 31,
+    "title": "方法与基准",
+    "dropped_preprints": 6
+  },
+  "05": {
+    "n": 13,
+    "title": "公开影像",
+    "dropped_preprints": 0
+  }
+}

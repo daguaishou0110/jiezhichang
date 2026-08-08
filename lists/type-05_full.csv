@@ -1,0 +1,14 @@
+﻿no,year,journal,title,doi,pmid,pmcid,isOpenAccess,doi_url
+1,2026,NPJ digital medicine,Towards generalizable seizure monitoring: EpiVLM for cross-environment detection and classification.,10.1038/s41746-026-02810-3,42185513,,N,https://doi.org/10.1038/s41746-026-02810-3
+2,2026,NPJ digital medicine,StructSAM: structure-aware prompt adaptation for robust lung cancer lesion segmentation in CT.,10.1038/s41746-025-02306-6,41634130,,N,https://doi.org/10.1038/s41746-025-02306-6
+3,2026,NPJ digital medicine,FetalCLIP: a visual-language foundation model for fetal ultrasound image analysis.,10.1038/s41746-026-02907-9,42321373,,N,https://doi.org/10.1038/s41746-026-02907-9
+4,2026,NPJ digital medicine,Federated orthogonal learning for detection of liver lesions from multi-phase contrast-enhanced CT images.,10.1038/s41746-026-02767-3,42260279,,N,https://doi.org/10.1038/s41746-026-02767-3
+5,2026,NPJ digital medicine,Deployable real-time spinal endoscopic instance segmentation with lightweight multi-scale attention mechanism.,10.1038/s41746-026-02680-9,42270950,,N,https://doi.org/10.1038/s41746-026-02680-9
+6,2026,NPJ digital medicine,CFG-MambaNet: Contextual and Frequency-Guided Mamba Network for medical image segmentation.,10.1038/s41746-026-02393-z,41620524,PMC12963372,Y,https://doi.org/10.1038/s41746-026-02393-z
+7,2026,NPJ digital medicine,AUBADE-syn: a novel deep learning ensemble method for glaucoma detection using synthetic fundus images on imbalanced datasets.,10.1038/s41746-026-02752-w,42135460,,N,https://doi.org/10.1038/s41746-026-02752-w
+8,2026,NPJ digital medicine,A large-scale vision foundation model for musculoskeletal radiographs.,10.1038/s41746-026-02826-9,42230902,,N,https://doi.org/10.1038/s41746-026-02826-9
+9,2025,NPJ digital medicine,ShapeField-lung: continuous shape embedding for early lung cancer detection via pulmonary nodule segmentation.,10.1038/s41746-025-02041-y,41310368,PMC12673127,Y,https://doi.org/10.1038/s41746-025-02041-y
+10,2025,NPJ digital medicine,GLANCE: continuous global-local exchange with consensus fusion for robust nodule segmentation.,10.1038/s41746-025-02251-4,41469800,PMC12827329,Y,https://doi.org/10.1038/s41746-025-02251-4
+11,2025,NPJ digital medicine,Fair ultrasound diagnosis via adversarial protected attribute aware perturbations on latent embeddings.,10.1038/s41746-025-01641-y,40382499,PMC12085594,Y,https://doi.org/10.1038/s41746-025-01641-y
+12,2025,NPJ digital medicine,Enhanced staging of renal cell carcinoma using tumor morphology features: model development and multi-source validation.,10.1038/s41746-025-01723-x,40413285,PMC12103548,Y,https://doi.org/10.1038/s41746-025-01723-x
+13,2025,NPJ digital medicine,CoreFormer high fidelity pulmonary nodule segmentation with structural core priors and geodesic implicit fields.,10.1038/s41746-025-02221-w,41388190,PMC12804875,Y,https://doi.org/10.1038/s41746-025-02221-w

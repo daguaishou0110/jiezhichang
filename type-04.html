@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>04 公开方法与基准 · 单独展开</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#f2f5f3;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--warm:#c45c16;--max:920px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Sora",sans-serif;color:var(--ink);background:var(--paper);font-size:16.5px;line-height:1.65}
+h1,h2,h3,.brand{font-family:"Fraunces",serif;letter-spacing:-.02em;line-height:1.15}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
+.top{position:sticky;top:0;z-index:10;backdrop-filter:blur(10px);background:rgba(242,245,243,.9);border-bottom:1px solid var(--line)}
+.top-inner{display:flex;flex-wrap:wrap;gap:.6rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.86rem}
+.top a{text-decoration:none;color:var(--muted);font-weight:600}
+.top a:hover{color:var(--teal)}
+.hero{padding:2.6rem 0 1.6rem;background:linear-gradient(180deg,#e7efeb,var(--paper))}
+.badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.brand{font-size:clamp(2rem,6vw,3.2rem);font-weight:750;color:var(--deep);margin-bottom:.45rem}
+.hero h1{font-size:clamp(1.15rem,2.6vw,1.45rem);font-weight:600;max-width:28ch;margin-bottom:.7rem}
+.hero p{color:var(--muted);max-width:48ch}
+section{padding:1.6rem 0}
+h2{font-size:1.35rem;margin-bottom:.7rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.15rem;margin-bottom:.9rem}
+.card p+p{margin-top:.55rem}
+.card strong{color:var(--deep)}
+ol.steps,ul.clean{padding-left:1.15rem;display:grid;gap:.45rem;color:var(--muted)}
+ol.steps li,ul.clean li{padding-left:.15rem}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:.55rem .4rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;letter-spacing:.04em;color:var(--muted)}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:.12rem .45rem;border-radius:999px;background:rgba(12,122,95,.1);color:var(--deep)}
+.tag.warn{background:rgba(196,92,22,.12);color:#8a3d0c}
+.tag.ok{background:rgba(12,122,95,.14)}
+.ev{display:grid;gap:.65rem}
+.ev a.item{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;padding:.85rem .95rem;background:#f8faf9;transition:.2s}
+.ev a.item:hover{border-color:rgba(12,122,95,.45);transform:translateX(3px)}
+.ev .meta{color:var(--muted);font-size:.84rem;margin-bottom:.2rem}
+.note{font-size:.84rem;color:var(--muted);margin-top:.6rem}
+.pager{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0 2rem}
+.btn{display:inline-flex;padding:.7rem 1rem;border-radius:999px;text-decoration:none;font-weight:700;font-size:.9rem;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.primary{background:var(--teal);color:#fff;border-color:transparent}
+footer{padding:1.2rem 0 2rem;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+  <div class="top"><div class="wrap top-inner">
+    <strong>04 · 公开方法与基准</strong>
+    <div>
+      <a href="routes.html">五种总览</a>
+      <a href="confidence.html">底气页</a>
+      <a href="index.html">写法说明</a>
+    </div>
+  </div></div>
+
+  <header class="hero"><div class="wrap">
+    <div class="badge">写法 04 / 5</div>
+    <div class="brand">公开方法与基准</div>
+    <h1>第四类写法：贡献在策略/协议，不在新病人</h1>
+    <p>方法与基准 = 大家用同一批公开库，你系统比较：直接外推、微调、重训、域适应、融合……谁在什么数据量下更稳。</p>
+  </div></header>
+
+  <main class="wrap">
+    <section>
+      <div class="card">
+        <h2>这一类指的是什么</h2>
+        <p>方法与基准 = 大家用同一批公开库，你系统比较：直接外推、微调、重训、域适应、融合……谁在什么数据量下更稳。</p>
+        <p><strong>为什么值得做：</strong>特别适合计算机背景：创新点是实验设计与结论，不必等医院私有数据。</p>
+        <p><strong>常用数据：</strong>与 01 相同的公开 ICU 库；也可对接 PhysioNet Challenge 标准任务。</p>
+      </div>
+
+      <div class="card">
+        <h2>这类型要怎么弄</h2>
+        <ol class="steps">
+          <li>选定 2–3 个已对齐的公开 ICU 库，统一结局与特征字典。</li><li>预先规定策略清单与数据量档位（无/小/中/大目标数据）。</li><li>同一评价协议下比较，给出可操作建议（何时不该 fine-tune）。</li><li>写作强调“部署协议”，避免伪装成新生物标志物发现。</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>2025–2026 期刊收录量（粗估）</h2>
+        <p style="color:var(--muted);margin-bottom:.7rem">EuropePMC 粗检索（distribution shift / domain adaptation / transfer learning + MIMIC/eICU，2025–2026）。</p>
+        <table>
+          <tr><th>期刊 / 口径</th><th>篇数</th><th>说明</th></tr>
+          <tr><td><b>检索口径合计（粗）</b></td><td><b>37</b></td><td>2025–2026 EuropePMC</td></tr>
+<tr><td>npj Digital Medicine</td><td>1</td><td>同口径子检索</td></tr>
+<tr><td>Critical Care</td><td>1</td><td>同口径子检索</td></tr>
+<tr><td>Nature Medicine</td><td>0</td><td>同口径子检索</td></tr>
+        </table>
+        <p class="note">已去掉预印本后共 31 篇正式期刊记录：见下方「完整列表」或 lists/type-04_full.html。</p>
+        <h3 style="margin-top:1rem;font-size:1.05rem">更适合投的刊</h3>
+        <ul class="clean" style="margin-top:.5rem">
+          <li><b>npj Digital Medicine</b> — 方法/基准文可发</li><li><b>Critical Care</b> — 临床部署策略向也可</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>完整列表（31 篇全部列出）</h2>
+        <p style="color:var(--muted);margin-bottom:.7rem">下面不是抽样：按同一检索口径，去掉预印本后，把 <b>31</b> 篇正式期刊记录全部列出。可打开网页版或下载 CSV。</p>
+        <p>
+          <a class="btn primary" href="lists/type-04_full.html">打开完整列表（31）</a>
+          <a class="btn" href="lists/type-04_full.csv">下载 CSV</a>
+        </p>
+        <p class="note">提醒客户：这是检索命中清单；是否每一篇都“严格等于该写法”，仍需点开标题核对。我们库内精选范文见上一节。</p>
+      </div>
+
+      <div class="card">
+        <h2>这类写法的范文（本地可点开）</h2>
+        <div class="ev">
+          <a class="item" href="https://doi.org/10.1038/s41746-026-02364-4" target="_blank" rel="noopener" >
+  <div class="meta">2026 · npj Digital Medicine · <span class="tag ok">本地有 PDF</span></div>
+  <strong>脓毒症模型分布偏移与部署策略</strong>
+  <div class="meta">HiRID / MIMIC / eICU；比较多种部署策略<br>DOI: 10.1038/s41746-026-02364-4</div>
+</a>
+        </div>
+        <p class="note">PDF 存放在项目「一区_非私有数据写法」对应目录；若浏览器打不开相对路径，可从该文件夹直接打开。</p>
+      </div>
+
+      <div class="pager">
+        <a class="btn" href="routes.html">全部五种</a>
+        <a class="btn" href="type-03.html">← 上一类</a>
+        <a class="btn primary" href="type-05.html">下一类 →</a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">单类展开页 · 数量为检索粗估 · 范文以本地库为准</div></footer>
+</body>
+</html>

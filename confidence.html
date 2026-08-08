@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>底气 · 没有医院私有数据，也能冲一区</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --ink: #101820;
+  --muted: #5a6770;
+  --paper: #f3f6f4;
+  --line: rgba(16,24,32,.12);
+  --teal: #0c7a5f;
+  --teal-deep: #074d3d;
+  --sand: #e8e1d8;
+  --signal: #e85d04;
+  --max: 1120px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Sora", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 17px;
+  line-height: 1.65;
+}
+h1,h2,h3,.display {
+  font-family: "Fraunces", serif;
+  letter-spacing: -.02em;
+  line-height: 1.12;
+}
+.wrap { width: min(var(--max), calc(100% - 2.4rem)); margin: 0 auto; }
+a { color: inherit; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  align-items: end;
+  position: relative;
+  overflow: hidden;
+  color: #f6faf8;
+  background:
+    linear-gradient(120deg, rgba(7,77,61,.2), transparent 40%),
+    linear-gradient(160deg, #06281f 0%, #0c4a38 42%, #146048 78%, #1f7a58 100%);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,.16) 1px, transparent 0);
+  background-size: 26px 26px;
+  opacity: .35;
+  animation: drift 22s linear infinite;
+  mask-image: linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
+}
+.hero-orb {
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
+  right: -25vmax;
+  top: -20vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, rgba(232,93,4,.28), transparent 55%);
+  animation: pulse 9s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes drift { to { transform: translate3d(-26px, -26px, 0); } }
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: .9; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+@keyframes up {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-inner { position: relative; z-index: 1; padding: 5rem 0 4.2rem; }
+.brand {
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 750;
+  margin-bottom: .5rem;
+  animation: up .85s .05s both;
+}
+.hero h1 {
+  font-size: clamp(1.4rem, 3.4vw, 2.15rem);
+  font-weight: 600;
+  max-width: 16ch;
+  margin-bottom: 1rem;
+  animation: up .85s .2s both;
+}
+.hero p {
+  max-width: 38ch;
+  color: rgba(246,250,248,.88);
+  margin-bottom: 1.8rem;
+  animation: up .85s .35s both;
+}
+.hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; animation: up .85s .5s both; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: .85rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 650;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-light { background: #f6faf8; color: var(--teal-deep); }
+.btn-ghost {
+  border: 1px solid rgba(246,250,248,.35);
+  color: #f6faf8;
+  background: rgba(255,255,255,.06);
+}
+
+section { padding: 4.4rem 0; }
+section + section { border-top: 1px solid var(--line); }
+.kicker {
+  font-size: .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: .65rem;
+}
+h2 {
+  font-size: clamp(1.85rem, 3.6vw, 2.7rem);
+  margin-bottom: .9rem;
+  max-width: 14ch;
+}
+.lead { color: var(--muted); max-width: 50ch; margin-bottom: 1.8rem; }
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: .7s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* PROOF STRIP */
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: -.5rem;
+}
+@media (max-width: 800px) { .proof-strip { grid-template-columns: 1fr; } }
+.proof {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.25rem 1.3rem;
+  transition: transform .25s ease, border-color .25s ease;
+}
+.proof:hover {
+  transform: translateY(-3px);
+  border-color: rgba(12,122,95,.4);
+}
+.proof .n {
+  font-family: "Fraunces", serif;
+  font-size: 2.4rem;
+  font-weight: 750;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: .4rem;
+}
+.proof b { display: block; margin-bottom: .3rem; }
+.proof span { color: var(--muted); font-size: .92rem; }
+
+/* SPLIT */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+}
+@media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+.panel {
+  border-radius: 18px;
+  padding: 1.5rem 1.45rem;
+  border: 1px solid var(--line);
+}
+.panel h3 { font-size: 1.35rem; margin-bottom: .8rem; }
+.panel.bad {
+  background: #fff;
+}
+.panel.good {
+  background: linear-gradient(160deg, #0a3d30, #127058);
+  color: #f4fbf7;
+  border: none;
+}
+.panel.good h3 { color: #fff; }
+.panel ul { list-style: none; display: grid; gap: .65rem; }
+.panel li {
+  padding-left: 1.3rem;
+  position: relative;
+  color: var(--muted);
+}
+.panel.good li { color: rgba(244,251,247,.9); }
+.panel.bad li::before {
+  content: "×";
+  position: absolute;
+  left: 0;
+  color: #b42318;
+  font-weight: 700;
+}
+.panel.good li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #9be7c8;
+  font-weight: 700;
+}
+
+/* EVIDENCE */
+.ev-list { display: grid; gap: .85rem; }
+.ev {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.1rem 1.2rem;
+}
+@media (max-width: 720px) {
+  .ev { grid-template-columns: 1fr; }
+  .ev .tag { justify-self: start; }
+}
+.ev .yr {
+  font-family: "Fraunces", serif;
+  font-size: 1.55rem;
+  font-weight: 750;
+  color: var(--teal);
+}
+.ev .jr { color: var(--muted); font-size: .88rem; margin-bottom: .2rem; }
+.ev h3 { font-size: 1.12rem; margin-bottom: .25rem; }
+.ev p { color: var(--muted); font-size: .93rem; }
+.tag {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: .45rem .7rem;
+  border-radius: 999px;
+  background: rgba(12,122,95,.1);
+  color: var(--teal-deep);
+  white-space: nowrap;
+}
+
+/* ENGINE */
+.engine {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.6rem 1.5rem;
+}
+.engine-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .8rem;
+  margin-top: 1.2rem;
+}
+@media (max-width: 900px) { .engine-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .engine-grid { grid-template-columns: 1fr; } }
+.engine-item {
+  padding: 1rem;
+  border-radius: 14px;
+  background: #f7faf8;
+  border: 1px solid var(--line);
+}
+.engine-item b {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+  margin-bottom: .35rem;
+}
+.engine-item span { color: var(--muted); font-size: .9rem; }
+
+/* PROMISE */
+.promise {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  padding: 2.1rem 1.7rem;
+  color: #fff7f0;
+  background:
+    radial-gradient(700px 300px at 90% 0%, rgba(232,93,4,.35), transparent 55%),
+    linear-gradient(135deg, #1a120c, #3a2112 55%, #5a2d12);
+}
+.promise h2 { color: #fff7f0; max-width: 12ch; }
+.promise .lead { color: rgba(255,247,240,.82); }
+.checks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem 1.2rem;
+  margin-top: .5rem;
+}
+@media (max-width: 700px) { .checks { grid-template-columns: 1fr; } }
+.checks li {
+  list-style: none;
+  padding: .85rem 1rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  font-size: .95rem;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 1.5rem;
+}
+.note {
+  margin-top: 1rem;
+  font-size: .86rem;
+  color: rgba(255,247,240,.7);
+}
+footer {
+  padding: 2rem 0 3rem;
+  color: var(--muted);
+  font-size: .86rem;
+}
+.nav-mini {
+  position: absolute;
+  top: 1.2rem;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+.nav-mini .wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: .88rem;
+}
+.nav-mini a {
+  color: rgba(246,250,248,.85);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.nav-mini a:hover { border-color: rgba(246,250,248,.5); }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-orb"></div>
+    <div class="nav-mini">
+      <div class="wrap">
+        <a href="two-paths.html">两种一区</a>
+        <a href="index.html">写法门户</a>
+        <a href="routes.html">五种写法+数据集</a>
+        <a href="#evidence">真刊证据</a>
+      </div>
+    </div>
+    <div class="wrap hero-inner">
+      <div class="brand display">底气</div>
+      <h1>没有医院私有数据，照样能冲一区</h1>
+      <p>我们是计算机背景。缺的不是医学头衔，而是“锁死跨库验证”的完整包。这条路近两年已有一区真刊录用——底气来自证据，不是口号。</p>
+      <div class="hero-cta">
+        <a class="btn btn-light" href="#evidence">看真刊证据</a>
+        <a class="btn btn-ghost" href="#deliver">看我们交付什么</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap reveal">
+        <div class="kicker">先给结论</div>
+        <h2>卡点不致命</h2>
+        <p class="lead">客户最怕的是：没医院合作 = 发不了一区。事实不是这样。</p>
+        <div class="proof-strip">
+          <article class="proof">
+            <div class="n">3+</div>
+            <b>近两年一区真刊路径</b>
+            <span>公开 ICU / 多库外推，已被 npj DigMed、Critical Care 录用</span>
+          </article>
+          <article class="proof">
+            <div class="n">0</div>
+            <b>医院私有病历硬门槛</b>
+            <span>MIMIC、eICU、NHANES 等公开库即可构成完整研究</span>
+          </article>
+          <article class="proof">
+            <div class="n">CS</div>
+            <b>正好是我们的强项</b>
+            <span>清洗、建模、锁死外测、消融、复现——审稿人盯的就是这些</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap reveal">
+        <div class="kicker">把焦虑拆开</div>
+        <h2>我们卡什么，不卡什么</h2>
+        <div class="split" style="margin-top:1.2rem">
+          <div class="panel bad">
+            <h3>我们不赌这个</h3>
+            <ul>
+              <li>等医院批数据、谈伦理、等合作签字</li>
+              <li>去做纯机制实验（动物、培养皿因果）</li>
+              <li>把“用了深度学习”当成创新本身</li>
+              <li>单库随机拆分就宣称可泛化</li>
+            </ul>
+          </div>
+          <div class="panel good">
+            <h3>我们咬死这个</h3>
+            <ul>
+              <li>公开库可申请、可复现、可对外讲清楚</li>
+              <li>库 A 开发 → 参数锁死 → 库 B 只考一次</li>
+              <li>必须打过硬临床基线 / 简单分数</li>
+              <li>弱外测也写进论文，不藏拙</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="wrap reveal">
+        <div class="kicker">证据墙 · 2025–2026</div>
+        <h2>别人已经用公开数据发过</h2>
+        <p class="lead">不是“理论上可行”，是顶刊级数字医学 / 重症刊已经录用。我们走的是同一条验证逻辑。</p>
+        <div class="ev-list">
+          <article class="ev">
+            <div class="yr">2025</div>
+            <div>
+              <div class="jr">npj Digital Medicine · RealMIP</div>
+              <h3>ICU 死亡风险：eICU 训练 → MIMIC 外测</h3>
+              <p>双公开库锁死外推。没有“本院私有队列”也能上数字医学一区。</p>
+            </div>
+            <div class="tag">公开库</div>
+          </article>
+          <article class="ev">
+            <div class="yr">2026</div>
+            <div>
+              <div class="jr">npj Digital Medicine</div>
+              <h3>脓毒症预测 × 多 ICU 库分布偏移</h3>
+              <p>HiRID / MIMIC / eICU。贡献在跨库策略，不在私有数据。</p>
+            </div>
+            <div class="tag">方法硬</div>
+          </article>
+          <article class="ev">
+            <div class="yr">2026</div>
+            <div>
+              <div class="jr">Critical Care</div>
+              <h3>四库联合：死亡与住院时长外推</h3>
+              <p>四个公开 ICU 库互相验证。计算机方法 + 公开数据，一区可发。</p>
+            </div>
+            <div class="tag">可复现</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap reveal">
+        <div class="kicker">为什么是我们</div>
+        <h2>计算机背景是优势</h2>
+        <p class="lead">一区审的不是白大褂，是你有没有把“泛化”做扎实。这正是工程训练过的人更稳的地方。</p>
+        <div class="engine">
+          <div class="engine-grid">
+            <div class="engine-item">
+              <b>数据工程</b>
+              <span>公开库申请、对齐字段、缺失与时间窗处理</span>
+            </div>
+            <div class="engine-item">
+              <b>验证设计</b>
+              <span>双库外推 / 时间切分 / 消融，防止刷分</span>
+            </div>
+            <div class="engine-item">
+              <b>硬对照</b>
+              <span>打临床分数与强基线，不自说自话</span>
+            </div>
+            <div class="engine-item">
+              <b>写作落地</b>
+              <span>按一区写法叙事：问题 → 证据 → 外测 → 局限</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deliver">
+      <div class="wrap reveal">
+        <div class="promise">
+          <div class="kicker" style="color:#ffb080">我们承诺的底气</div>
+          <h2>给你可核对的包，不是口号</h2>
+          <p class="lead">我们不保证“必中某一本刊”。我们保证：按已被录用的公开数据路径，把一区竞争力的实验包做满。</p>
+          <ul class="checks">
+            <li>选定公开数据路线（双库外推优先）</li>
+            <li>锁死外测协议，写进方法与结果</li>
+            <li>硬基线对照 + 校准 / 效用图</li>
+            <li>弱外测诚实分析，不藏失败</li>
+            <li>对准数字医学一区写法，不误投机制刊</li>
+            <li>全程可复现：代码、切分、指标对得上</li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn-light" href="index.html">先看写法怎么讲</a>
+            <a class="btn btn-ghost" href="#evidence">再看一遍证据</a>
+          </div>
+          <p class="note">信心来自路径已被验证 + 交付物可核对。投稿结果受选题、对照强度与当期审稿影响，我们把可控部分做到位。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">底气页 · 面向客户的能力证明 · 与「一区写法」介绍页配套使用</div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) e.target.classList.add("in"); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>结直肠菌群方案 · 公开数据跨队列风险分层</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#101820;--muted:#5a6770;--paper:#f2f5f3;--card:#fff;
+  --line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--warm:#c45c16;--max:1040px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16.5px;line-height:1.65}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(242,245,243,.92);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.6rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.86rem}
+.nav a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav a:hover{color:var(--teal)}
+.nav .logo{font-family:Fraunces,serif;font-weight:750;color:var(--deep);font-size:1.05rem}
+
+.hero{
+  min-height:88vh;min-height:88dvh;display:grid;align-items:end;position:relative;overflow:hidden;color:#f5fbf8;
+  background:
+    radial-gradient(700px 320px at 88% 12%, rgba(196,92,22,.25), transparent 55%),
+    linear-gradient(155deg,#123028 0%, #0c4a38 50%, #147a58 100%);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.14) 1px, transparent 0);
+  background-size:26px 26px;opacity:.3;animation:drift 22s linear infinite;
+}
+@keyframes drift{to{transform:translate3d(-26px,-26px,0)}}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-inner{position:relative;z-index:1;padding:4.5rem 0 3.2rem}
+.brand{font-size:clamp(2.3rem,7vw,4.2rem);font-weight:750;margin-bottom:.45rem;animation:up .85s both}
+.hero h1{font-size:clamp(1.2rem,2.8vw,1.7rem);max-width:20ch;margin-bottom:.85rem;animation:up .85s .12s both}
+.hero p{max-width:42ch;color:rgba(245,251,248,.88);margin-bottom:1.4rem;animation:up .85s .24s both}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;animation:up .85s .36s both}
+.btn{display:inline-flex;padding:.8rem 1.15rem;border-radius:999px;font-weight:700;text-decoration:none;font-size:.92rem;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-light{background:#f5fbf8;color:var(--deep)}
+.btn-ghost{border:1px solid rgba(245,251,248,.35);color:#f5fbf8;background:rgba(255,255,255,.06)}
+
+section{padding:3.2rem 0}
+.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.5rem}
+h2{font-size:clamp(1.65rem,3vw,2.25rem);margin-bottom:.7rem;max-width:16ch}
+.lead{color:var(--muted);max-width:50ch;margin-bottom:1.3rem}
+.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}
+.reveal.in{opacity:1;transform:none}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.35rem 1.25rem;margin-bottom:1rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+@media(max-width:800px){.grid2{grid-template-columns:1fr}}
+.box{background:#f8faf9;border:1px solid var(--line);border-radius:14px;padding:1rem 1.05rem}
+.box h3,.card>h3{font-size:1.15rem;margin-bottom:.55rem}
+.box h4{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.45rem;font-family:Sora,sans-serif}
+.box p,.box li,.card p,.card li{color:var(--muted);font-size:.93rem}
+.box ul,.card ul,.box ol{padding-left:1.1rem;display:grid;gap:.3rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;background:rgba(12,122,95,.1);color:var(--deep);margin-bottom:.55rem}
+
+table{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:.35rem}
+th,td{text-align:left;padding:.45rem .35rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+.pill{display:inline-block;font-size:.7rem;font-weight:700;padding:.12rem .4rem;border-radius:999px;background:rgba(12,122,95,.1);color:var(--deep)}
+
+.metric{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+@media(max-width:700px){.metric{grid-template-columns:1fr}}
+.metric article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.05rem}
+.metric .n{font-family:Fraunces,serif;font-size:1.9rem;font-weight:750;color:var(--teal);line-height:1;margin-bottom:.3rem}
+.metric b{display:block;margin-bottom:.2rem}
+.metric span{color:var(--muted);font-size:.88rem}
+
+.warn{background:#fff7ed;border:1px solid #fdba74;border-radius:14px;padding:1rem 1.1rem;color:#7c2d12;font-size:.92rem;margin-top:.8rem}
+.ok{background:#ecfdf5;border:1px solid #6ee7b7;border-radius:14px;padding:1rem 1.1rem;color:#065f46;font-size:.92rem}
+
+.band{background:linear-gradient(145deg,#0a3d30,#127058);color:#f3fbf7;border-radius:20px;padding:1.7rem 1.4rem}
+.band h2{color:#fff}
+.band p{color:rgba(243,251,247,.86);max-width:48ch;margin:.65rem 0 1rem}
+.band .btn-ghost{border-color:rgba(243,251,247,.35);color:#f3fbf7}
+
+footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1px solid var(--line)}
+.note{font-size:.84rem;color:var(--muted);margin-top:.7rem}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#top">结直肠菌群方案</a>
+      <div style="display:flex;flex-wrap:wrap;gap:.65rem 1rem">
+        <a href="#what">研究什么</a>
+        <a href="#data">用什么数据</a>
+        <a href="#why">为何能一区</a>
+        <a href="#gate">验收门槛</a>
+        <a href="two-paths.html">两种一区</a>
+        <a href="index.html">写法门户</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div class="brand">结直肠菌群</div>
+      <h1>公开粪便宏基因组上的跨队列风险分层</h1>
+      <p>不做本院测序、不做小鼠机制。用多国公开队列证明：粪便微生物信号能否稳定区分结直肠癌与对照，并在 leave-one-cohort-out 下仍然成立。</p>
+      <div class="cta">
+        <a class="btn btn-light" href="#what">方案怎么做</a>
+        <a class="btn btn-ghost" href="#data">公开数据清单</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="what">
+      <div class="wrap reveal">
+        <div class="kicker">一句话定位</div>
+        <h2>路径 B：预测与外推，不是机制故事</h2>
+        <p class="lead">这篇要回答的不是“某个菌为什么致癌”，而是“公开可得的粪便菌群特征，跨国家队列还能不能做风险分层”。</p>
+
+        <div class="grid2">
+          <div class="box">
+            <h4>研究问题</h4>
+            <ul>
+              <li>CRC vs 对照：物种丰度能否形成可迁移风险分？</li>
+              <li>LOCO：每次留下一个队列考试，跨地区是否仍稳？</li>
+              <li>紧凑 panel（≤30 物种）能否保住大部分 AUC？</li>
+              <li>混杂因素（年龄/性别/BMI）单独够不够？微生物是否有增量？</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>写法归类</h4>
+            <p><span class="tag">写法 03 · 多公开队列 LODO</span></p>
+            <ul>
+              <li>主叙事：跨队列运输 + 校准 + 弱队列解剖</li>
+              <li>生物学只作一致性支撑（如 Fusobacterium 等），不是新机制发现</li>
+              <li>与内镜 YOLO 项目严格分开，不做伪造配对融合</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="metric" style="margin-top:1rem">
+          <article>
+            <div class="n">0</div>
+            <b>本院私有测序</b>
+            <span>完全公开数据；可不重跑 FASTQ</span>
+          </article>
+          <article>
+            <div class="n">LOCO</div>
+            <b>验证协议</b>
+            <span>留一队列外测，不是单库随机拆分</span>
+          </article>
+          <article>
+            <div class="n">≈0.80</div>
+            <b>当前可展示水位</b>
+            <span>Wirbel Zenodo CRC 队列 RF 平均 LOCO AUC（内部快照）</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="data">
+      <div class="wrap reveal">
+        <div class="kicker">公开数据</div>
+        <h2>用什么数据，从哪里来</h2>
+        <p class="lead">优先用已整理好的物种丰度表，降低工程门槛；需要加队列时再扩 ENA/SRA / CMD。</p>
+
+        <div class="card">
+          <h3>主数据（已跑通，推荐）</h3>
+          <table>
+            <tr><th>来源</th><th>内容</th><th>获取</th></tr>
+            <tr><td><b>Wirbel Zenodo 2019</b></td><td>多队列物种丰度 + CRC/对照元数据（n≈824 CRC-only 可用）</td><td>Zenodo DOI 10.5281/zenodo.3517209</td></tr>
+            <tr><td>对齐论文</td><td>Wirbel et al. Nature Medicine 2019</td><td>10.1038/s41591-019-0406-6</td></tr>
+          </table>
+          <p class="note">不必先下原始 FASTQ，即可做计算向一区包装。</p>
+        </div>
+
+        <div class="card">
+          <h3>建议纳入的公开队列（仍零湿实验）</h3>
+          <table>
+            <tr><th>队列</th><th>登录号</th><th>地区</th><th>作用</th></tr>
+            <tr><td>ZellerG_2014</td><td>PRJEB6070</td><td>法国</td><td>发现 + 腺瘤标签</td></tr>
+            <tr><td>FengQ_2015</td><td>PRJEB7774</td><td>奥地利</td><td>发现 / 外部</td></tr>
+            <tr><td>YuJ_2015</td><td>PRJEB10878</td><td>中国香港</td><td>亚洲外测（跨人群故事）</td></tr>
+            <tr><td>VogtmannE_2016</td><td>PRJEB12449</td><td>美国</td><td>外部</td></tr>
+            <tr><td>ThomasAM_2019</td><td>PRJNA447983</td><td>意大利</td><td>可后加</td></tr>
+            <tr><td>YachidaS_2019</td><td>PRJDB4176</td><td>日本</td><td>强烈建议：大队列/阶段信息</td></tr>
+          </table>
+          <p class="note">获取路径：① Zenodo 表 → ② curatedMetagenomicData → ③ ENA/SRA 重 profiling（非必须）。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap reveal">
+        <div class="kicker">为何这样能冲一区</div>
+        <h2>审稿人认什么</h2>
+        <div class="grid2">
+          <div class="box">
+            <h4>我们交的是这些</h4>
+            <ul>
+              <li>多队列 LOCO，不是单中心刷分</li>
+              <li>硬基线：混杂因素模型 vs 微生物模型</li>
+              <li>嵌套挑选的紧凑 marker panel</li>
+              <li>校准 + 弱队列失败分析</li>
+              <li>与文献一致的差异菌（生物学一致性）</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>对标期刊（现实档）</h4>
+            <ul>
+              <li><b>主攻：</b> Microbiome / Gut Microbes / npj Biofilms 等一区计算-微生物交叉档</li>
+              <li><b>备选：</b> 生信 / CSBJ 类 Q1（方法+多队列强调）</li>
+              <li><b>冲刺：</b> Nat Med / Gut 需更强临床或前瞻，纯公开更难</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ok" style="margin-top:1rem">
+          <b>和传统医学客户对齐：</b>我们不是证明“新致病菌机制”，而是证明“公开粪便菌群风险分在换国家队列后是否还成立”。这是数字医学 / 微生物组计算一区正在收的写法。
+        </div>
+        <div class="warn">
+          <b>差异化提醒：</b>Wirbel 2019 已做过全球 CRC 微生物签名。我们的增量必须落在更严的嵌套 panel、校准、混杂对照、弱队列解剖——不能把人家的主结论当自己的 novelty。
+        </div>
+      </div>
+    </section>
+
+    <section id="gate">
+      <div class="wrap reveal">
+        <div class="kicker">怎么算做成了</div>
+        <h2>验收门槛（写进方案）</h2>
+        <div class="card">
+          <table>
+            <tr><th>门槛</th><th>标准</th></tr>
+            <tr><td>队列内 CV</td><td>≥2 个发现队列平均 AUC ≥ 0.75（冲刺档可抬到 ≥0.80、≥3 队列）</td></tr>
+            <tr><td>LOCO 外测</td><td>≥2 个留出队列 AUC ≥ 0.70（冲刺档 ≥4 队列 ≥0.75）</td></tr>
+            <tr><td>Panel</td><td>≤30 物种相对全特征平均掉点可控（目标 ≤0.03–0.05）</td></tr>
+            <tr><td>混杂对照</td><td>仅年龄/性别/BMI 的模型明显弱于微生物模型</td></tr>
+            <tr><td>生物学</td><td>差异菌与文献重叠，或明确讨论队列特异失败</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>明确不做</h3>
+          <ul>
+            <li>不与内镜 YOLO / 息肉检测伪造患者配对融合</li>
+            <li>不宣称临床治疗或因果致病新机制</li>
+            <li>不以“新深度学习壳子”替代硬外测协议</li>
+          </ul>
+        </div>
+
+        <div class="band">
+          <div class="kicker" style="color:#9be2c8">下一步</div>
+          <h2>先对齐赛道，再看实验表</h2>
+          <p>若客户接受“公开宏基因组 + LOCO 风险分层 = 一区路径”，本方案可直接进入实验矩阵与写作。若客户坚持本院测序机制文，则应走另一条路径，不拿本方案硬充。</p>
+          <div class="cta">
+            <a class="btn btn-light" href="two-paths.html">返回《两种医学一区》</a>
+            <a class="btn btn-ghost" href="type-03.html">看 LODO 写法详解</a>
+            <a class="btn btn-ghost" href="lists/type-03_full.html">相关期刊列表</a>
+          </div>
+        </div>
+        <p class="note">技术执行目录：客户项目内 crc-microbiome（README / Q1_PLAN / PUBLIC_DATA_AND_Q1_BENCHMARKS）。本页用于对外说明。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">结直肠菌群方案页 · 公开数据 · LOCO 风险分层 · 目标一区计算-微生物交叉赛道</div>
+  </footer>
+  <script>
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
