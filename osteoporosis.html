@@ -79,6 +79,19 @@ th{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
 .warn{background:#fff7ed;border:1px solid #fdba74;border-radius:14px;padding:1rem 1.1rem;color:#7c2d12;font-size:.92rem;margin-top:.8rem}
 .ok{background:#ecfdf5;border:1px solid #6ee7b7;border-radius:14px;padding:1rem 1.1rem;color:#065f46;font-size:.92rem}
 
+.ex{display:grid;gap:.7rem;margin-top:.3rem}
+.ex a,.ex .item{
+  display:grid;grid-template-columns:4.2rem 1fr;gap:.85rem;align-items:start;
+  text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:1rem 1.05rem;transition:border-color .2s;
+}
+.ex a:hover{border-color:rgba(11,110,138,.45)}
+.ex .yr{font-family:Fraunces,serif;font-weight:750;color:var(--sky);font-size:1.15rem}
+.ex .jr{font-size:.7rem;font-weight:700;letter-spacing:.05em;color:var(--warm);margin-bottom:.2rem}
+.ex b{display:block;margin-bottom:.25rem}
+.ex span{color:var(--muted);font-size:.88rem}
+.ex .map{display:inline-block;margin-top:.4rem;font-size:.76rem;font-weight:700;color:var(--sky);background:rgba(11,110,138,.1);padding:.15rem .45rem;border-radius:999px}
+
 .band{background:linear-gradient(145deg,#0a3d40,#127068);color:#f3fbf7;border-radius:20px;padding:1.7rem 1.4rem}
 .band h2{color:#fff}
 .band p{color:rgba(243,251,247,.86);max-width:48ch;margin:.65rem 0 1rem}
@@ -95,6 +108,7 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
       <div style="display:flex;flex-wrap:wrap;gap:.65rem 1rem">
         <a href="#what">研究什么</a>
         <a href="#data">用什么数据</a>
+        <a href="#examples">范文</a>
         <a href="#why">为何能一区</a>
         <a href="#gate">验收门槛</a>
         <a href="crc-microbiome.html">结直肠菌群</a>
@@ -223,6 +237,49 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
         <div class="warn">
           <b>表述纪律：</b>时间切分 ≠ 多医院地理外测。对外讲“未来周期运输”，不要包装成换医院泛化。当前定位 L3；再上需要更强外推设计。
         </div>
+      </div>
+    </section>
+
+    <section id="examples">
+      <div class="wrap reveal">
+        <div class="kicker">范文 · 怎么对齐讲</div>
+        <h2>有范文，但要分清用途</h2>
+        <p class="lead">骨质疏松题很少有「顶刊纯时间切分」同题范文。对外应讲：写法参考（NHANES 早→晚）+ 协议范文（锁死 hold-out）+ 硬对照传统（OST）。不要假装有一堆同题 npj。</p>
+
+        <div class="ex">
+          <a href="https://doi.org/10.1016/j.ijcrp.2026.200595" target="_blank" rel="noopener">
+            <div class="yr">2026</div>
+            <div>
+              <div class="jr">INT J CARDIOL CARDIOVASC RISK PREV</div>
+              <b>NHANES 时间外推（写法参考）</b>
+              <span>早周期训练 → 晚周期外测。最贴近本方案的数据切法；刊档不是顶尖一区，只证明「这种验证叙事被人用过、审稿人看得懂」。</span>
+              <span class="map">用途：切分协议对齐 · 非冲刺顶刊证明</span>
+            </div>
+          </a>
+          <a href="https://doi.org/10.1038/s41746-025-02114-y" target="_blank" rel="noopener">
+            <div class="yr">2025</div>
+            <div>
+              <div class="jr">npj DIGITAL MEDICINE</div>
+              <b>RealMIP · 同资源锁死 hold-out（协议范文）</b>
+              <span>文内 eICU 中心 hold-out：开发中心训完再考留出中心。疾病不是骨质疏松，但对齐的是「锁死外测」标准——数字医学一区认这种验证逻辑。</span>
+              <span class="map">用途：一区标准背书 · 非同病种对照</span>
+            </div>
+          </a>
+          <div class="item">
+            <div class="yr">对照</div>
+            <div>
+              <div class="jr">HARD BASELINE · OST</div>
+              <b>简易临床分数必须打过</b>
+              <span>本方案硬对照是 OST（Osteoporosis Self-Assessment Tool）及年龄/性别基线。要证明的是「比临床简易工具多多少」，不是只比随机猜。</span>
+              <span class="map">用途：验收门槛里的硬对照（非同题范文）</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ok" style="margin-top:1rem">
+          <b>对客户一句话：</b>我们不是说「已经有十篇骨质疏松 NHANES 顶刊」；我们说「时间外推写法有公开先例，锁死外测被数字医学一区承认，本方案按 L3 档把 OST 硬对照做满」。
+        </div>
+        <p class="note">更多写法 02 列表见 <a href="type-02.html">type-02 详解</a>（含完整检索表）。本地 PDF 在「一区_非私有数据写法」。</p>
       </div>
     </section>
 
