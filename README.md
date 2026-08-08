@@ -1,36 +1,34 @@
-# jiezhichang · 客户说服站（公开数据一区路径）
+# jiezhichang · 客户说服站
 
 线上：https://jiezhichang.onrender.com  
 仓库：https://github.com/daguaishou0110/jiezhichang
 
-## 客户阅读顺序（会上）
+## 说服顺序（首页已按此排）
 
-1. `index.html` — 说服首页（两种路径 + 两个方案 + 真刊依据）
-2. `crc-microbiome.html` / `osteoporosis.html` — 可买方案专页
-3. `confidence.html` — 被追问时打开的底气/证据页
-4. `portal.html` — 五种写法百科（附录，二次会议）
+1. **选题** — 能接什么题（CRC / 骨质疏松）
+2. **方案** — 问题、数据切分、明确不做
+3. **一区标准** — 锁死外测 · 硬对照 · 校准 · 弱外测诚实
+4. **范文** — 同类 DOI，对齐哪条标准
 
-## 本地预览
+## 会上五分钟
 
-用浏览器打开 `index.html`，或：
+认担心 → 给选择题（机制 vs 风险分层）→ 只落一题 → 摊四条标准 → 点 1～2 个 DOI → 停
 
-```bash
-npx serve .
-```
-
-## 页面地图
+## 页面
 
 | 文件 | 角色 |
 |------|------|
-| index.html | **入口**：说服漏斗 |
-| two-paths.html | 两种一区展开版 |
-| crc-microbiome.html | 结直肠菌群方案 |
-| osteoporosis.html | 骨质疏松方案 |
-| confidence.html | 底气与真刊证据 |
-| portal.html | 写法百科（附录） |
-| type-01…05.html | 单类详解 |
-| lists/ | 完整期刊列表 |
+| index.html | **入口**：选题→方案→标准→范文 |
+| crc-microbiome.html | 结直肠方案专页 |
+| osteoporosis.html | 骨质疏松方案专页 |
+| confidence.html | 底气/证据（追问用） |
+| two-paths.html | 两种一区认知（备用） |
+| portal.html | 五种写法百科（附录） |
+
+## 本地预览
+
+打开 `index.html`，或 `npx serve .`
 
 ## Render
 
-Static Site，Publish directory = `.`（或用根目录 `render.yaml`）。
+Static Site，Publish directory = `.`

@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>没医院也能冲一区 · 公开数据数字医学路径</title>
+<title>选题 · 方案 · 一区标准 · 范文｜公开数据路径</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --ink:#101820;--muted:#5a6770;--paper:#f1f5f3;--card:#fff;
+  --ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;
   --line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;
-  --warm:#c45c16;--mech:#5c4d7a;--sky:#0b6e8a;--max:1080px;
+  --warm:#c45c16;--sky:#0b6e8a;--max:1080px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -22,7 +22,7 @@ a{color:var(--deep);text-underline-offset:3px}
 
 .nav{
   position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
-  background:rgba(241,245,243,.92);border-bottom:1px solid var(--line);
+  background:rgba(238,243,240,.92);border-bottom:1px solid var(--line);
 }
 .nav-inner{display:flex;flex-wrap:wrap;gap:.55rem 1rem;align-items:center;justify-content:space-between;padding:.7rem 0;font-size:.84rem}
 .nav-brand{font-family:Fraunces,serif;font-weight:750;font-size:1.05rem;color:var(--deep);text-decoration:none}
@@ -34,23 +34,25 @@ a{color:var(--deep);text-underline-offset:3px}
   position:relative;overflow:hidden;color:#f4fbf7;
   min-height:92vh;min-height:92dvh;display:grid;align-items:end;
   background:
-    radial-gradient(900px 420px at 85% 12%, rgba(196,92,22,.26), transparent 55%),
-    linear-gradient(148deg,#1a1230 0%,#0c3d32 48%,#0f6a52 100%);
+    radial-gradient(1000px 480px at 88% 8%, rgba(196,92,22,.28), transparent 52%),
+    linear-gradient(152deg,#102820 0%,#0a4034 46%,#0e6b52 100%);
 }
 .hero::before{
   content:"";position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
-  background-size:44px 44px;opacity:.32;
-  animation:drift 26s linear infinite;
-  mask-image:radial-gradient(ellipse at 60% 40%,#000 18%,transparent 72%);
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:48px 48px;opacity:.4;
+  animation:drift 28s linear infinite;
+  mask-image:radial-gradient(ellipse at 55% 35%,#000 20%,transparent 70%);
 }
-@keyframes drift{to{transform:translate3d(-44px,-44px,0)}}
-@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-.hero-inner{position:relative;z-index:1;padding:4.8rem 0 3.4rem}
-.brand{font-size:clamp(2.6rem,8vw,4.8rem);font-weight:750;margin-bottom:.45rem;animation:up .8s both}
-.hero h1{font-size:clamp(1.25rem,3vw,1.85rem);font-weight:600;max-width:16ch;margin-bottom:.85rem;animation:up .8s .12s both}
-.hero-lead{max-width:40ch;color:rgba(244,251,247,.88);margin-bottom:1.5rem;animation:up .8s .24s both}
-.cta{display:flex;flex-wrap:wrap;gap:.7rem;animation:up .8s .36s both}
+@keyframes drift{to{transform:translate3d(-48px,-48px,0)}}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-inner{position:relative;z-index:1;padding:5rem 0 3.5rem}
+.brand{font-size:clamp(2.7rem,8vw,5rem);font-weight:750;margin-bottom:.5rem;animation:up .8s both}
+.hero h1{font-size:clamp(1.2rem,2.9vw,1.75rem);font-weight:600;max-width:18ch;margin-bottom:.85rem;animation:up .8s .1s both}
+.hero-lead{max-width:38ch;color:rgba(244,251,247,.88);margin-bottom:1.55rem;animation:up .8s .2s both}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;animation:up .8s .3s both}
 .btn{
   display:inline-flex;align-items:center;padding:.8rem 1.15rem;border-radius:999px;
   font-weight:700;font-size:.92rem;text-decoration:none;transition:transform .2s;
@@ -59,83 +61,98 @@ a{color:var(--deep);text-underline-offset:3px}
 .btn-light{background:#f4fbf7;color:var(--deep)}
 .btn-ghost{border:1px solid rgba(244,251,247,.35);color:#f4fbf7;background:rgba(255,255,255,.06)}
 .btn-solid{background:var(--teal);color:#fff}
-.btn-outline{border:1px solid var(--line);color:var(--deep);background:var(--card)}
+.btn-line{border:1px solid var(--line);color:var(--deep);background:var(--card)}
 
-section{padding:3.2rem 0}
+/* steps rail */
+.steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;
+  margin:-1.6rem auto 0;position:relative;z-index:2;
+  width:min(var(--max),calc(100% - 2.2rem));
+}
+@media(max-width:800px){.steps{grid-template-columns:1fr 1fr}}
+.steps a{
+  text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:.85rem .9rem;transition:transform .2s,border-color .2s;
+}
+.steps a:hover{transform:translateY(-2px);border-color:rgba(12,122,95,.4)}
+.steps .n{font-family:Fraunces,serif;font-weight:750;color:var(--teal);font-size:1.25rem;line-height:1}
+.steps b{display:block;margin:.25rem 0 .1rem;font-size:.95rem}
+.steps span{color:var(--muted);font-size:.8rem}
+
+section{padding:3.3rem 0}
 .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.55rem}
-h2{font-size:clamp(1.7rem,3.2vw,2.35rem);margin-bottom:.7rem;max-width:16ch}
-.lead{color:var(--muted);max-width:50ch;margin-bottom:1.35rem}
-.reveal{opacity:0;transform:translateY(20px);transition:.65s ease}
+h2{font-size:clamp(1.7rem,3.2vw,2.35rem);margin-bottom:.65rem;max-width:16ch}
+.lead{color:var(--muted);max-width:48ch;margin-bottom:1.35rem}
+.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}
 .reveal.in{opacity:1;transform:none}
 
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:820px){.compare{grid-template-columns:1fr}}
-.col{
-  border-radius:20px;padding:1.4rem 1.3rem;border:1px solid var(--line);background:var(--card);
+.fear{
+  background:linear-gradient(135deg,#fff,#f7faf8);
+  border:1px solid var(--line);border-radius:18px;padding:1.25rem 1.2rem;margin-bottom:1.4rem;
 }
-.col.mech{border-top:5px solid var(--mech)}
-.col.pred{border-top:5px solid var(--teal);background:linear-gradient(180deg,#fff,#f3faf7)}
-.col .pill{
-  display:inline-block;font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;
-  margin-bottom:.55rem;
-}
-.col.mech .pill{background:rgba(92,77,122,.12);color:var(--mech)}
-.col.pred .pill{background:rgba(12,122,95,.12);color:var(--deep)}
-.col h3{font-size:1.3rem;margin-bottom:.35rem}
-.col .sub{color:var(--muted);font-size:.92rem;margin-bottom:.9rem}
-.col ul{list-style:none;display:grid;gap:.5rem}
-.col li{padding-left:1.1rem;position:relative;color:var(--muted);font-size:.93rem}
-.col.mech li::before{content:"·";position:absolute;left:0;color:var(--mech);font-weight:700}
-.col.pred li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700;font-size:.85rem}
+.fear p{color:var(--muted);max-width:56ch}
+.fear strong{color:var(--ink)}
 
-.shift{
-  background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.5rem 1.35rem;margin-top:1.2rem;
-}
-.shift h3{font-size:1.35rem;margin-bottom:.55rem;max-width:28ch}
-.shift p{color:var(--muted);max-width:58ch}
-.shift p+p{margin-top:.55rem}
-.eq{
-  display:grid;grid-template-columns:1fr auto 1fr;gap:.8rem;align-items:center;
-  margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--line);
-}
-@media(max-width:700px){.eq{grid-template-columns:1fr}.vs{display:none}}
-.eq b{display:block;margin-bottom:.2rem}
-.vs{font-family:Fraunces,serif;font-weight:750;color:var(--warm);font-size:1.1rem}
-
-.cases{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-@media(max-width:820px){.cases{grid-template-columns:1fr}}
-.case{
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:820px){.topics{grid-template-columns:1fr}}
+.topic{
   display:flex;flex-direction:column;text-decoration:none;color:inherit;
   background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.4rem 1.25rem;
   transition:transform .2s,border-color .2s;
 }
-.case:hover{transform:translateY(-3px);border-color:rgba(12,122,95,.4)}
-.case .tag{
-  display:inline-block;align-self:flex-start;font-size:.72rem;font-weight:700;
-  padding:.2rem .55rem;border-radius:999px;background:rgba(12,122,95,.1);color:var(--deep);margin-bottom:.65rem;
+.topic:hover{transform:translateY(-3px);border-color:rgba(12,122,95,.45)}
+.topic .tag{
+  align-self:flex-start;font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;
+  background:rgba(12,122,95,.1);color:var(--deep);margin-bottom:.65rem;
 }
-.case h3{font-size:1.35rem;margin-bottom:.45rem}
-.case p{color:var(--muted);font-size:.93rem;flex:1;margin-bottom:1rem}
-.case .go{font-weight:700;color:var(--teal);font-size:.92rem}
+.topic.sky .tag{background:rgba(11,110,138,.12);color:var(--sky)}
+.topic h3{font-size:1.4rem;margin-bottom:.4rem}
+.topic .ask{color:var(--ink);font-weight:600;font-size:.95rem;margin-bottom:.55rem;max-width:28ch}
+.topic p{color:var(--muted);font-size:.92rem;flex:1;margin-bottom:1rem}
+.topic .meta{display:grid;gap:.35rem;margin-bottom:1rem;font-size:.84rem;color:var(--muted)}
+.topic .meta b{color:var(--ink);font-weight:600}
+.topic .go{font-weight:700;color:var(--teal)}
 
-.proof3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.1rem}
-@media(max-width:700px){.proof3{grid-template-columns:1fr}}
-.proof3 article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.05rem}
-.proof3 .n{font-family:Fraunces,serif;font-size:1.7rem;font-weight:750;color:var(--teal);line-height:1;margin-bottom:.3rem}
-.proof3 b{display:block;margin-bottom:.2rem}
-.proof3 span{color:var(--muted);font-size:.88rem}
+.std{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;
+}
+@media(max-width:900px){.std{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.std{grid-template-columns:1fr}}
+.std article{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.1rem 1rem;
+  border-top:4px solid var(--teal);
+}
+.std .n{font-family:Fraunces,serif;font-size:1.6rem;font-weight:750;color:var(--teal);line-height:1;margin-bottom:.35rem}
+.std b{display:block;margin-bottom:.3rem}
+.std span{color:var(--muted);font-size:.88rem}
 
-.ev{display:grid;gap:.7rem}
-.ev a{
-  display:grid;grid-template-columns:4.2rem 1fr auto;gap:.85rem;align-items:start;
+.tone{
+  margin-top:1.15rem;display:grid;grid-template-columns:1fr 1fr;gap:.85rem;
+}
+@media(max-width:720px){.tone{grid-template-columns:1fr}}
+.tone div{border-radius:14px;padding:1rem 1.05rem;font-size:.92rem}
+.tone .yes{background:#ecfdf5;border:1px solid #6ee7b7;color:#065f46}
+.tone .no{background:#fff7ed;border:1px solid #fdba74;color:#7c2d12}
+
+.ex{display:grid;gap:.7rem}
+.ex a{
+  display:grid;grid-template-columns:4.5rem 1fr;gap:.9rem;align-items:start;
   text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);
   border-radius:14px;padding:1rem 1.05rem;transition:border-color .2s;
 }
-.ev a:hover{border-color:rgba(12,122,95,.4)}
-.ev .yr{font-family:Fraunces,serif;font-weight:750;color:var(--teal);font-size:1.15rem}
-.ev b{display:block;margin-bottom:.2rem}
-.ev span{color:var(--muted);font-size:.88rem}
-.ev .jr{font-size:.72rem;font-weight:700;color:var(--warm);letter-spacing:.04em}
+.ex a:hover{border-color:rgba(12,122,95,.45)}
+.ex .yr{font-family:Fraunces,serif;font-weight:750;color:var(--teal);font-size:1.2rem}
+.ex .jr{font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--warm);margin-bottom:.2rem}
+.ex b{display:block;margin-bottom:.25rem}
+.ex span{color:var(--muted);font-size:.88rem}
+.ex .map{display:inline-block;margin-top:.45rem;font-size:.78rem;font-weight:700;color:var(--deep);background:rgba(12,122,95,.1);padding:.15rem .45rem;border-radius:999px}
+
+.script{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.4rem 1.3rem;
+}
+.script ol{padding-left:1.2rem;display:grid;gap:.65rem;color:var(--muted);max-width:56ch}
+.script li::marker{font-weight:700;color:var(--teal)}
+.script b{color:var(--ink)}
 
 .band{
   background:linear-gradient(145deg,#0a3d30,#127058);color:#f3fbf7;border-radius:20px;padding:1.7rem 1.4rem;
@@ -144,191 +161,240 @@ h2{font-size:clamp(1.7rem,3.2vw,2.35rem);margin-bottom:.7rem;max-width:16ch}
 .band p{color:rgba(243,251,247,.86);max-width:48ch;margin:.65rem 0 1.1rem}
 .band .btn-ghost{border-color:rgba(243,251,247,.35);color:#f3fbf7}
 .appendix{
-  margin-top:1rem;padding:1rem 1.1rem;border:1px dashed var(--line);border-radius:14px;background:#f8faf9;
+  margin-top:1rem;padding:1rem 1.1rem;border:1px dashed var(--line);border-radius:14px;background:#f7faf8;
 }
-.appendix p{color:var(--muted);font-size:.9rem;margin-bottom:.55rem}
-.appendix a{font-weight:700}
+.appendix p{color:var(--muted);font-size:.9rem;margin-bottom:.5rem}
+.appendix a{font-weight:700;margin-right:1rem}
 
-footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1px solid var(--line)}
-.note{font-size:.84rem;color:var(--muted);margin-top:.8rem}
+footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1px solid var(--line);margin-top:1rem}
+.note{font-size:.84rem;color:var(--muted);margin-top:.85rem}
 </style>
 </head>
 <body>
   <nav class="nav">
     <div class="wrap nav-inner">
-      <a class="nav-brand" href="#top">一区路径说明</a>
+      <a class="nav-brand" href="#top">公开数据一区路径</a>
       <div class="nav-links">
-        <a href="#paths">两种一区</a>
-        <a href="#cases">可做方案</a>
-        <a href="#proof">真刊依据</a>
+        <a href="#topics">① 选题</a>
+        <a href="#plan">② 方案</a>
+        <a href="#standard">③ 一区标准</a>
+        <a href="#examples">④ 范文</a>
         <a href="confidence.html">底气页</a>
-        <a href="portal.html">写法附录</a>
       </div>
     </div>
   </nav>
 
   <header class="hero" id="top">
     <div class="wrap hero-inner">
-      <div class="brand">换赛道，不是降级</div>
-      <h1>没有医院私有数据，也能走一区路径</h1>
-      <p class="hero-lead">我们做的不是小鼠机制文，而是公开数据上的风险预测与锁死外测——近两年已被数字医学一区录用的那条路。</p>
+      <div class="brand">先选题，再谈一区</div>
+      <h1>没有医院私有数据，也能把题做成可核对的一区路径</h1>
+      <p class="hero-lead">我们不卖口号。按正常合作顺序：选题 → 大概方案 → 这类写法为何算一区 → 范文对齐。</p>
       <div class="cta">
-        <a class="btn btn-light" href="#cases">看我们能做什么</a>
-        <a class="btn btn-ghost" href="#proof">为什么这能发一区</a>
+        <a class="btn btn-light" href="#topics">从可选题目开始</a>
+        <a class="btn btn-ghost" href="#standard">先看一区标准四条</a>
       </div>
     </div>
   </header>
 
-  <main>
-    <section id="paths">
-      <div class="wrap reveal">
-        <div class="kicker">先对齐认知 · 10 秒</div>
-        <h2>医学一区，不止一种写法</h2>
-        <p class="lead">搞混赛道，就会觉得「没医院 = 发不了」。两条路都能冲一区，审稿人看的东西完全不同。</p>
+  <nav class="steps" aria-label="说服路径">
+    <a href="#topics"><div class="n">01</div><b>选题</div><span>能接什么题</span></a>
+    <a href="#plan"><div class="n">02</div><b>方案</b><span>数据怎么切、做什么</span></a>
+    <a href="#standard"><div class="n">03</div><b>一区标准</b><span>四条可核对</span></a>
+    <a href="#examples"><div class="n">04</div><b>范文</b><span>同类已被录用</span></a>
+  </nav>
 
-        <div class="compare">
-          <article class="col mech">
-            <div class="pill">路径 A · 传统机制</div>
-            <h3>因子 → 作用</h3>
-            <p class="sub">某个菌 / 分子 / 干预，为什么、怎么致病或保护？</p>
-            <ul>
-              <li>依赖：动物、细胞、本院样本、机制实验</li>
-              <li>叙事：新机制、因果、治疗靶点</li>
-              <li>没有医院/湿实验时：很难硬刚</li>
-            </ul>
-          </article>
-          <article class="col pred">
-            <div class="pill">路径 B · 我们的路</div>
-            <h3>信号 → 风险能否稳定预测</h3>
-            <p class="sub">公开可得信息，风险能不能算准？换一批人还成不成？</p>
-            <ul>
-              <li>依赖：公开库（宏基因组、NHANES、ICU 等）</li>
-              <li>叙事：锁死外测、硬对照、校准、可复现</li>
-              <li>计算机背景正好对口</li>
-            </ul>
-          </article>
+  <main>
+    <section id="topics">
+      <div class="wrap reveal">
+        <div class="kicker">第一步 · 选题</div>
+        <h2>先选赛道，再谈细节</h2>
+        <p class="lead">客户真正要决定的是：做机制文，还是做公开数据上的风险分层。下面两题都是后者，已设计好、可直接讲。</p>
+
+        <div class="fear">
+          <p><strong>您可能担心：</strong>没医院、不做小鼠，是不是发不了一区？——这个担心很常见。正确问题其实是：锁死外测、硬对照、校准、弱外测诚实段，这包做满了吗？</p>
         </div>
 
-        <div class="shift">
-          <h3>我们不是回避医学，而是选已被一区承认的数字医学赛道</h3>
-          <p>客户脑子里的论文往往是：发现某个因子有作用。我们交付的是：证明一套公开可得的风险分层，在换数据后仍然成立。</p>
-          <p>关键不在有没有本院病历，而在验证包是否做满。</p>
-          <div class="eq">
-            <div><b>容易担心的</b><span style="color:var(--muted)">没医院、不做小鼠，是不是发不了一区？</span></div>
-            <div class="vs">VS</div>
-            <div><b>正确问题</b><span style="color:var(--muted)">锁死外测 + 硬对照 + 诚实弱外测，做满了吗？</span></div>
+        <div class="topics">
+          <a class="topic" href="crc-microbiome.html">
+            <span class="tag">题目 A · 写法 03 LODO</span>
+            <h3>结直肠菌群风险分层</h3>
+            <p class="ask">粪便微生物信号，换国家队列还能不能预测 CRC？</p>
+            <p>公开宏基因组多队列；leave-one-cohort-out；不依赖本院测序。证明的是跨队列风险分层，不是新致病机制。</p>
+            <div class="meta">
+              <div><b>数据</b> Wirbel Zenodo / 公开 CRC 队列</div>
+              <div><b>对标气质</b> Microbiome / 计算-微生物交叉一区</div>
+            </div>
+            <span class="go">看完整方案 →</span>
+          </a>
+          <a class="topic sky" href="osteoporosis.html">
+            <span class="tag">题目 B · 写法 02 时间外推</span>
+            <h3>骨质疏松风险预测</h3>
+            <p class="ask">国家公开调查，未来周期还能不能预测骨质疏松？</p>
+            <p>NHANES 2005–2010 开发，2013–14 / 2017–18 锁死外测；打过简易分数 OST。无医院 DXA 私有库。</p>
+            <div class="meta">
+              <div><b>数据</b> CDC NHANES 公开下载</div>
+              <div><b>对标气质</b> 数字健康 / 专科 Q1（L3 包）</div>
+            </div>
+            <span class="go">看完整方案 →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="plan">
+      <div class="wrap reveal">
+        <div class="kicker">第二步 · 大概方案</div>
+        <h2>每题都有可讲清的执行轮廓</h2>
+        <p class="lead">会上不必展开实验矩阵。先让对方听到四件事：研究问题、公开数据、验证怎么锁、明确不声称什么。</p>
+
+        <div class="topics">
+          <div class="topic" style="cursor:default">
+            <span class="tag">题目 A 轮廓</span>
+            <h3>结直肠 · 怎么做</h3>
+            <div class="meta" style="margin-top:.4rem">
+              <div><b>问题</b> CRC vs 对照；LOCO 是否仍稳；≤30 物种 panel 掉点</div>
+              <div><b>验证</b> 多队列留一外测 + 混杂对照 + 校准</div>
+              <div><b>不做</b> 新机制叙事；与内镜 YOLO 伪造配对</div>
+            </div>
+            <a class="go" href="crc-microbiome.html">打开专页看验收门槛 →</a>
+          </div>
+          <div class="topic sky" style="cursor:default">
+            <span class="tag">题目 B 轮廓</span>
+            <h3>骨质疏松 · 怎么做</h3>
+            <div class="meta" style="margin-top:.4rem">
+              <div><b>问题</b> 问卷±化验预测股骨颈骨质疏松；相对 OST 增量</div>
+              <div><b>验证</b> 未来周期锁死外测 + OST 硬对照 + 校准</div>
+              <div><b>不做</b> 骨代谢新通路；把时间切分说成换医院</div>
+            </div>
+            <a class="go" href="osteoporosis.html">打开专页看验收门槛 →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="cases">
+    <section id="standard">
       <div class="wrap reveal">
-        <div class="kicker">落到可买方案</div>
-        <h2>两套已设计好的目标一区题目</h2>
-        <p class="lead">不是抽象概念。下面两条都按路径 B 设计，可直接对外讲、对内做。</p>
+        <div class="kicker">第三步 · 这类写法为何算一区</div>
+        <h2>不是口号，是四条可核对标准</h2>
+        <p class="lead">数字医学一区审的不是「有没有本院病历」，而是下面这包有没有做满。我们把它们写进方案，供您核对。</p>
 
-        <div class="cases">
-          <a class="case" href="crc-microbiome.html">
-            <span class="tag">写法 03 · 多队列 LODO</span>
-            <h3>结直肠菌群风险分层</h3>
-            <p>用多国公开粪便宏基因组，做 CRC vs 对照风险分层；leave-one-cohort-out 证明跨地区是否仍成立。不依赖本院测序。</p>
-            <span class="go">打开方案专页 →</span>
-          </a>
-          <a class="case" href="osteoporosis.html">
-            <span class="tag">写法 02 · 时间外推 · L3</span>
-            <h3>骨质疏松风险预测</h3>
-            <p>用 NHANES 公开调查：2005–2010 开发，2013–14 / 2017–18 锁死外测；打过简易临床分数 OST。无医院 DXA 私有库。</p>
-            <span class="go">打开方案专页 →</span>
-          </a>
+        <div class="std">
+          <article>
+            <div class="n">1</div>
+            <b>锁死外测</b>
+            <span>开发集做完全部决策后冻结；外测库/周期只评估一次，禁止回头刷分。</span>
+          </article>
+          <article>
+            <div class="n">2</div>
+            <b>硬对照</b>
+            <span>必须打过临床简易分数或混杂基线（如 OST、年龄性别模型），不自说自话。</span>
+          </article>
+          <article>
+            <div class="n">3</div>
+            <b>校准可用</b>
+            <span>不只报 AUC；外测校准与必要的重校准讨论写进结果。</span>
+          </article>
+          <article>
+            <div class="n">4</div>
+            <b>弱外测诚实</b>
+            <span>掉点的队列/周期必须解释，不藏拙——这反而是一区可信度。</span>
+          </article>
+        </div>
+
+        <div class="tone">
+          <div class="yes">
+            <b>我们这样承诺：</b>按已被录用的公开数据路径，把上述验证包做满；主攻 / 备选 / 冲刺分档写进方案。
+          </div>
+          <div class="no">
+            <b>我们不这样承诺：</b>保证必中某一本一区刊。档位取决于验证强度与当期审稿，可控部分我们做到位。
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="proof">
+    <section id="examples">
       <div class="wrap reveal">
-        <div class="kicker">为什么信得过</div>
-        <h2>近两年已有同类路径被录用</h2>
-        <p class="lead">我们不打包票「必中某一本刊」。我们说的是：走已被一区承认的验证逻辑；档位看验证包做到哪一级。</p>
+        <div class="kicker">第四步 · 范文背书</div>
+        <h2>同类逻辑，已被真刊录用</h2>
+        <p class="lead">范文不是用来吓客户的论文墙，而是证明：您选的这类写法，审稿人见过、收过。</p>
 
-        <div class="ev">
+        <div class="ex">
+          <a href="https://doi.org/10.1038/s41591-019-0406-6" target="_blank" rel="noopener">
+            <div class="yr">2019</div>
+            <div>
+              <div class="jr">NATURE MEDICINE</div>
+              <b>Wirbel · CRC 粪便宏基因组跨队列</b>
+              <span>对齐题目 A：公开多队列外测叙事。我们的增量在更严 panel、混杂对照、校准与弱队列解剖——不把原文主结论当自己的 novelty。</span>
+              <span class="map">对应：结直肠菌群 · 写法 03</span>
+            </div>
+          </a>
           <a href="https://doi.org/10.1038/s41746-025-02114-y" target="_blank" rel="noopener">
             <div class="yr">2025</div>
             <div>
               <div class="jr">npj DIGITAL MEDICINE</div>
-              <b>RealMIP：eICU 训练 → MIMIC 外测</b>
-              <span>双公开 ICU 库锁死外推。没有本院私有队列也能上数字医学一区。</span>
+              <b>RealMIP · eICU 训练 → MIMIC 外测</b>
+              <span>对齐「锁死外测」标准：双公开库、开发冻结、外测只考一次。证明没本院私有队列也能上数字医学一区。</span>
+              <span class="map">对应：一区标准 1–4 · 写法 01</span>
             </div>
-            <div class="jr">DOI</div>
           </a>
           <a href="https://doi.org/10.1186/s13054-026-06034-5" target="_blank" rel="noopener">
             <div class="yr">2026</div>
             <div>
               <div class="jr">CRITICAL CARE</div>
-              <b>四库联合：死亡与住院时长外推</b>
-              <span>多个公开 ICU 库互相验证。计算机方法 + 公开数据，一区可发。</span>
+              <b>四库联合 · 死亡与住院时长外推</b>
+              <span>对齐「公开数据 + 跨库验证」气质：计算机方法、可复现切分、多库互相考。</span>
+              <span class="map">对应：公开数据一区路径证明</span>
             </div>
-            <div class="jr">DOI</div>
           </a>
-          <a href="https://doi.org/10.1038/s41591-019-0406-6" target="_blank" rel="noopener">
-            <div class="yr">2019</div>
-            <div>
-              <div class="jr">NATURE MEDICINE</div>
-              <b>Wirbel：CRC 粪便宏基因组跨队列</b>
-              <span>我们结直肠方案对齐的经典公开 LODO 叙事（增量在更严 panel / 校准 / 弱队列解剖）。</span>
-            </div>
-            <div class="jr">DOI</div>
-          </a>
-        </div>
-
-        <div class="proof3">
-          <article>
-            <div class="n">0</div>
-            <b>医院私有不是硬门槛</b>
-            <span>MIMIC / eICU / NHANES / 公开宏基因组即可构成完整包</span>
-          </article>
-          <article>
-            <div class="n">CS</div>
-            <b>计算机背景是优势</b>
-            <span>清洗、锁死外测、消融、复现——正是审稿盯的地方</span>
-          </article>
-          <article>
-            <div class="n">档</div>
-            <b>一区是路径，不是口号</b>
-            <span>主攻 / 备选 / 冲刺分档写进方案，验收门槛可核对</span>
-          </article>
         </div>
 
         <p style="margin-top:1.1rem">
-          <a class="btn btn-solid" href="confidence.html" style="margin-right:.5rem">打开完整底气页</a>
-          <a class="btn btn-outline" href="two-paths.html">展开读《两种医学一区》</a>
+          <a class="btn btn-solid" href="confidence.html">打开完整底气页</a>
         </p>
+        <p class="note">骨质疏松题更多见中强数字健康/专科刊的时间外推写法；顶刊范文集中在双库 ICU 与宏基因组 LODO。我们按 L3 档诚实定位，不把时间切分包装成换医院。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap reveal">
+        <div class="kicker">会上怎么讲 · 建议脚本</div>
+        <h2>五分钟对齐，不翻百科</h2>
+        <div class="script">
+          <ol>
+            <li><b>认担心：</b>「您担心没医院发不了一区——很常见。」</li>
+            <li><b>给选择题：</b>「您要机制文，还是公开数据风险分层？我们做后者。」</li>
+            <li><b>落一题：</b>只展开 CRC 或骨质疏松其中一个完整方案。</li>
+            <li><b>摊标准：</b>指着上面四条，说明写进验收门槛。</li>
+            <li><b>点范文：</b>打开 1～2 个 DOI，说「对齐哪一条」，然后停。让对方问。</li>
+          </ol>
+        </div>
       </div>
     </section>
 
     <section>
       <div class="wrap reveal">
         <div class="band">
-          <div class="kicker" style="color:#9be2c8">会上怎么用</div>
-          <h2>五分钟对齐，再谈细节</h2>
-          <p>本页讲清赛道与两个可买方案。被追问「有没有人发过」→ 底气页；被追问「还有别的题型吗」→ 写法附录。</p>
+          <div class="kicker" style="color:#9be2c8">下一步</div>
+          <h2>选定题目，进入专页核对</h2>
+          <p>专页里有数据清单、对标期刊分档、验收门槛和明确不做项——适合当作方案附件发给客户。</p>
           <div class="cta" style="animation:none">
-            <a class="btn btn-light" href="#cases">回到两个方案</a>
-            <a class="btn btn-ghost" href="confidence.html">真刊证据</a>
-            <a class="btn btn-ghost" href="portal.html">五种写法附录</a>
+            <a class="btn btn-light" href="crc-microbiome.html">结直肠菌群方案</a>
+            <a class="btn btn-ghost" href="osteoporosis.html">骨质疏松方案</a>
+            <a class="btn btn-ghost" href="two-paths.html">两种一区（认知备用）</a>
           </div>
         </div>
         <div class="appendix">
-          <p><b>附录说明：</b>五种公开数据写法、数据集表、完整期刊列表放在写法百科，供二次会议或技术对接使用——不是客户第一屏要消化的内容。</p>
-          <a href="portal.html">进入写法百科（附录）→</a>
+          <p><b>附录（被追问再开）：</b>不必放进第一轮讲解。</p>
+          <a href="portal.html">五种写法百科</a>
+          <a href="two-paths.html">机制 vs 预测路径</a>
+          <a href="confidence.html">底气与证据墙</a>
         </div>
-        <p class="note">表述口径：走已被一区承认的路径；档位看验证包强度。不保证必中某一本刊。</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">客户说服首页 · 路径 B：公开数据风险预测 · 源码仓库 jiezhichang</div>
+    <div class="wrap">说服顺序：选题 → 方案 → 一区标准 → 范文 · 不保证必中某刊 · 保证验证包可核对</div>
   </footer>
 
   <script>
