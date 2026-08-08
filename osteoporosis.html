@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>结直肠菌群方案 · 公开数据跨队列风险分层</title>
+<title>骨质疏松方案 · NHANES 时间外推风险预测</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{
   --ink:#101820;--muted:#5a6770;--paper:#f2f5f3;--card:#fff;
-  --line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--warm:#c45c16;--max:1040px;
+  --line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--warm:#c45c16;--sky:#0b6e8a;--max:1040px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -28,12 +28,12 @@ a{color:var(--deep);text-underline-offset:3px}
 .hero{
   min-height:88vh;min-height:88dvh;display:grid;align-items:end;position:relative;overflow:hidden;color:#f5fbf8;
   background:
-    radial-gradient(700px 320px at 88% 12%, rgba(196,92,22,.25), transparent 55%),
-    linear-gradient(155deg,#123028 0%, #0c4a38 50%, #147a58 100%);
+    radial-gradient(700px 320px at 88% 12%, rgba(11,110,138,.35), transparent 55%),
+    linear-gradient(155deg,#0f2430 0%, #0c4a48 50%, #0f6a5a 100%);
 }
 .hero::before{
   content:"";position:absolute;inset:0;
-  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.14) 1px, transparent 0);
+  background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.14) 1px, transparent 0);
   background-size:26px 26px;opacity:.3;animation:drift 22s linear infinite;
 }
 @keyframes drift{to{transform:translate3d(-26px,-26px,0)}}
@@ -63,24 +63,23 @@ h2{font-size:clamp(1.65rem,3vw,2.25rem);margin-bottom:.7rem;max-width:16ch}
 .box h4{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.45rem;font-family:Sora,sans-serif}
 .box p,.box li,.card p,.card li{color:var(--muted);font-size:.93rem}
 .box ul,.card ul,.box ol{padding-left:1.1rem;display:grid;gap:.3rem}
-.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;background:rgba(12,122,95,.1);color:var(--deep);margin-bottom:.55rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;background:rgba(11,110,138,.12);color:var(--sky);margin-bottom:.55rem}
 
 table{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:.35rem}
 th,td{text-align:left;padding:.45rem .35rem;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
-.pill{display:inline-block;font-size:.7rem;font-weight:700;padding:.12rem .4rem;border-radius:999px;background:rgba(12,122,95,.1);color:var(--deep)}
 
 .metric{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
 @media(max-width:700px){.metric{grid-template-columns:1fr}}
 .metric article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.05rem}
-.metric .n{font-family:Fraunces,serif;font-size:1.9rem;font-weight:750;color:var(--teal);line-height:1;margin-bottom:.3rem}
+.metric .n{font-family:Fraunces,serif;font-size:1.9rem;font-weight:750;color:var(--sky);line-height:1;margin-bottom:.3rem}
 .metric b{display:block;margin-bottom:.2rem}
 .metric span{color:var(--muted);font-size:.88rem}
 
 .warn{background:#fff7ed;border:1px solid #fdba74;border-radius:14px;padding:1rem 1.1rem;color:#7c2d12;font-size:.92rem;margin-top:.8rem}
 .ok{background:#ecfdf5;border:1px solid #6ee7b7;border-radius:14px;padding:1rem 1.1rem;color:#065f46;font-size:.92rem}
 
-.band{background:linear-gradient(145deg,#0a3d30,#127058);color:#f3fbf7;border-radius:20px;padding:1.7rem 1.4rem}
+.band{background:linear-gradient(145deg,#0a3d40,#127068);color:#f3fbf7;border-radius:20px;padding:1.7rem 1.4rem}
 .band h2{color:#fff}
 .band p{color:rgba(243,251,247,.86);max-width:48ch;margin:.65rem 0 1rem}
 .band .btn-ghost{border-color:rgba(243,251,247,.35);color:#f3fbf7}
@@ -92,13 +91,13 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
 <body>
   <nav class="nav">
     <div class="wrap nav-inner">
-      <a class="logo" href="index.html">结直肠菌群方案</a>
+      <a class="logo" href="index.html">骨质疏松方案</a>
       <div style="display:flex;flex-wrap:wrap;gap:.65rem 1rem">
         <a href="#what">研究什么</a>
         <a href="#data">用什么数据</a>
         <a href="#why">为何能一区</a>
         <a href="#gate">验收门槛</a>
-        <a href="osteoporosis.html">骨质疏松</a>
+        <a href="crc-microbiome.html">结直肠菌群</a>
         <a href="index.html">首页</a>
       </div>
     </div>
@@ -106,12 +105,12 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
 
   <header class="hero" id="top">
     <div class="wrap hero-inner">
-      <div class="brand">结直肠菌群</div>
-      <h1>公开粪便宏基因组上的跨队列风险分层</h1>
-      <p>不做本院测序、不做小鼠机制。用多国公开队列证明：粪便微生物信号能否稳定区分结直肠癌与对照，并在 leave-one-cohort-out 下仍然成立。</p>
+      <div class="brand">骨质疏松</div>
+      <h1>NHANES 公开调查上的时间外推风险预测</h1>
+      <p>无医院 DXA 私有库。用国家健康调查数据证明：问卷±化验能否在未来周期仍预测股骨颈骨质疏松，并打过简易临床分数 OST。</p>
       <div class="cta">
         <a class="btn btn-light" href="#what">方案怎么做</a>
-        <a class="btn btn-ghost" href="#data">公开数据清单</a>
+        <a class="btn btn-ghost" href="#data">公开数据切分</a>
       </div>
     </div>
   </header>
@@ -120,26 +119,26 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
     <section id="what">
       <div class="wrap reveal">
         <div class="kicker">一句话定位</div>
-        <h2>路径 B：预测与外推，不是机制故事</h2>
-        <p class="lead">这篇要回答的不是“某个菌为什么致癌”，而是“公开可得的粪便菌群特征，跨国家队列还能不能做风险分层”。</p>
+        <h2>路径 B：预测与外推，不是骨代谢机制</h2>
+        <p class="lead">这篇要回答的不是“某个分子如何导致骨丢失”，而是“用公开健康调查，骨质疏松风险能否被稳定预测并超过临床简易分数”。</p>
 
         <div class="grid2">
           <div class="box">
             <h4>研究问题</h4>
             <ul>
-              <li>CRC vs 对照：物种丰度能否形成可迁移风险分？</li>
-              <li>LOCO：每次留下一个队列考试，跨地区是否仍稳？</li>
-              <li>紧凑 panel（≤30 物种）能否保住大部分 AUC？</li>
-              <li>混杂因素（年龄/性别/BMI）单独够不够？微生物是否有增量？</li>
+              <li>问卷±化验能否预测股骨颈骨质疏松（T-score≤−2.5）？</li>
+              <li>在未来调查周期锁死外测下，性能是否仍成立？</li>
+              <li>相对简易临床分数 OST，增量有多大？</li>
+              <li>化验特征是否真有增量？弱外测周期如何解释？</li>
             </ul>
           </div>
           <div class="box">
             <h4>写法归类</h4>
-            <p><span class="tag">写法 03 · 多公开队列 LODO</span></p>
+            <p><span class="tag">写法 02 · 同库时间切分 · L3 包</span></p>
             <ul>
-              <li>主叙事：跨队列运输 + 校准 + 弱队列解剖</li>
-              <li>生物学只作一致性支撑（如 Fusobacterium 等），不是新机制发现</li>
-              <li>与内镜 YOLO 项目严格分开，不做伪造配对融合</li>
+              <li>主叙事：时间外推 + 硬对照（OST）+ 校准</li>
+              <li>诚实报告较弱外测周期，符合一区可信度</li>
+              <li>不把时间切分说成多医院地理外测</li>
             </ul>
           </div>
         </div>
@@ -147,18 +146,18 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
         <div class="metric" style="margin-top:1rem">
           <article>
             <div class="n">0</div>
-            <b>本院私有测序</b>
-            <span>完全公开数据；可不重跑 FASTQ</span>
+            <b>医院 DXA 私有库</b>
+            <span>CDC NHANES 公开下载即可</span>
           </article>
           <article>
-            <div class="n">LOCO</div>
-            <b>验证协议</b>
-            <span>留一队列外测，不是单库随机拆分</span>
+            <div class="n">锁死</div>
+            <b>外测协议</b>
+            <span>开发集做完决策后，外测只报一次</span>
           </article>
           <article>
-            <div class="n">≈0.80</div>
-            <b>当前可展示水位</b>
-            <span>Wirbel Zenodo CRC 队列 RF 平均 LOCO AUC（内部快照）</span>
+            <div class="n">≈0.044</div>
+            <b>可展示增量</b>
+            <span>2017–18 外测 XGB vs OST ΔAUC（内部快照）</span>
           </article>
         </div>
       </div>
@@ -167,31 +166,28 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
     <section id="data">
       <div class="wrap reveal">
         <div class="kicker">公开数据</div>
-        <h2>用什么数据，从哪里来</h2>
-        <p class="lead">优先用已整理好的物种丰度表，降低工程门槛；需要加队列时再扩 ENA/SRA / CMD。</p>
+        <h2>用什么数据，怎么切开</h2>
+        <p class="lead">单一公开资源时，用调查周期做时间运输——这是写法 02 的标准做法。</p>
 
         <div class="card">
-          <h3>主数据（已跑通，推荐）</h3>
+          <h3>切分协议（写进方法）</h3>
           <table>
-            <tr><th>来源</th><th>内容</th><th>获取</th></tr>
-            <tr><td><b>Wirbel Zenodo 2019</b></td><td>多队列物种丰度 + CRC/对照元数据（n≈824 CRC-only 可用）</td><td>Zenodo DOI 10.5281/zenodo.3517209</td></tr>
-            <tr><td>对齐论文</td><td>Wirbel et al. Nature Medicine 2019</td><td>10.1038/s41591-019-0406-6</td></tr>
+            <tr><th>角色</th><th>周期</th><th>用途</th></tr>
+            <tr><td><b>开发集</b></td><td>NHANES 2005–2010</td><td>特征、调参、模型选择；完成后冻结</td></tr>
+            <tr><td><b>锁死外测 1</b></td><td>2013–2014</td><td>只评估一次，不回头调参</td></tr>
+            <tr><td><b>锁死外测 2</b></td><td>2017–2018</td><td>第二外测；报告强弱差异</td></tr>
           </table>
-          <p class="note">不必先下原始 FASTQ，即可做计算向一区包装。</p>
+          <p class="note">结局：股骨颈骨质疏松（T-score ≤ −2.5）。获取：CDC NHANES 官网直接下载。</p>
         </div>
 
         <div class="card">
-          <h3>建议纳入的公开队列（仍零湿实验）</h3>
+          <h3>特征与硬对照</h3>
           <table>
-            <tr><th>队列</th><th>登录号</th><th>地区</th><th>作用</th></tr>
-            <tr><td>ZellerG_2014</td><td>PRJEB6070</td><td>法国</td><td>发现 + 腺瘤标签</td></tr>
-            <tr><td>FengQ_2015</td><td>PRJEB7774</td><td>奥地利</td><td>发现 / 外部</td></tr>
-            <tr><td>YuJ_2015</td><td>PRJEB10878</td><td>中国香港</td><td>亚洲外测（跨人群故事）</td></tr>
-            <tr><td>VogtmannE_2016</td><td>PRJEB12449</td><td>美国</td><td>外部</td></tr>
-            <tr><td>ThomasAM_2019</td><td>PRJNA447983</td><td>意大利</td><td>可后加</td></tr>
-            <tr><td>YachidaS_2019</td><td>PRJDB4176</td><td>日本</td><td>强烈建议：大队列/阶段信息</td></tr>
+            <tr><th>块</th><th>内容</th><th>作用</th></tr>
+            <tr><td>问卷 / 人口学</td><td>年龄、性别、种族、体重相关等</td><td>主模型输入</td></tr>
+            <tr><td>化验（可选增量）</td><td>可公开获得的实验室标志物子集</td><td>检验“化验是否真有增量”</td></tr>
+            <tr><td><b>OST</b></td><td>Osteoporosis Self-Assessment Tool 等简易分数</td><td>必须打过的硬临床基线</td></tr>
           </table>
-          <p class="note">获取路径：① Zenodo 表 → ② curatedMetagenomicData → ③ ENA/SRA 重 profiling（非必须）。</p>
         </div>
       </div>
     </section>
@@ -204,27 +200,27 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
           <div class="box">
             <h4>我们交的是这些</h4>
             <ul>
-              <li>多队列 LOCO，不是单中心刷分</li>
-              <li>硬基线：混杂因素模型 vs 微生物模型</li>
-              <li>嵌套挑选的紧凑 marker panel</li>
-              <li>校准 + 弱队列失败分析</li>
-              <li>与文献一致的差异菌（生物学一致性）</li>
+              <li>时间锁死外测，不是同周期随机拆分刷分</li>
+              <li>硬基线：OST（及年龄/性别等简单模型）</li>
+              <li>校准曲线 / 效用相关图</li>
+              <li>弱外测周期的诚实分析</li>
+              <li>Data availability：CDC 下载入口写清</li>
             </ul>
           </div>
           <div class="box">
             <h4>对标期刊（现实档）</h4>
             <ul>
-              <li><b>主攻：</b> Microbiome / Gut Microbes / npj Biofilms 等一区计算-微生物交叉档</li>
-              <li><b>备选：</b> 生信 / CSBJ 类 Q1（方法+多队列强调）</li>
-              <li><b>冲刺：</b> Nat Med / Gut 需更强临床或前瞻，纯公开更难</li>
+              <li><b>主攻：</b> 强数字健康 / 骨代谢或老年专科 Q1（L3 包）</li>
+              <li><b>备选：</b> 公卫预测、医学信息学 Q1</li>
+              <li><b>冲刺 L4：</b> 需更强外推（第二公开源或前瞻）才谈顶刊数字医学</li>
             </ul>
           </div>
         </div>
         <div class="ok" style="margin-top:1rem">
-          <b>和传统医学客户对齐：</b>我们不是证明“新致病菌机制”，而是证明“公开粪便菌群风险分在换国家队列后是否还成立”。这是数字医学 / 微生物组计算一区正在收的写法。
+          <b>和传统医学客户对齐：</b>我们不是证明新骨代谢通路，而是证明“国家公开健康调查上的风险分层在未来周期是否仍成立，并打过临床简易分数”。
         </div>
         <div class="warn">
-          <b>差异化提醒：</b>Wirbel 2019 已做过全球 CRC 微生物签名。我们的增量必须落在更严的嵌套 panel、校准、混杂对照、弱队列解剖——不能把人家的主结论当自己的 novelty。
+          <b>表述纪律：</b>时间切分 ≠ 多医院地理外测。对外讲“未来周期运输”，不要包装成换医院泛化。当前定位 L3；再上需要更强外推设计。
         </div>
       </div>
     </section>
@@ -236,40 +232,40 @@ footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1p
         <div class="card">
           <table>
             <tr><th>门槛</th><th>标准</th></tr>
-            <tr><td>队列内 CV</td><td>≥2 个发现队列平均 AUC ≥ 0.75（冲刺档可抬到 ≥0.80、≥3 队列）</td></tr>
-            <tr><td>LOCO 外测</td><td>≥2 个留出队列 AUC ≥ 0.70（冲刺档 ≥4 队列 ≥0.75）</td></tr>
-            <tr><td>Panel</td><td>≤30 物种相对全特征平均掉点可控（目标 ≤0.03–0.05）</td></tr>
-            <tr><td>混杂对照</td><td>仅年龄/性别/BMI 的模型明显弱于微生物模型</td></tr>
-            <tr><td>生物学</td><td>差异菌与文献重叠，或明确讨论队列特异失败</td></tr>
+            <tr><td>开发集</td><td>内验 AUC 达标且完成模型冻结（具体阈值写进实验表）</td></tr>
+            <tr><td>锁死外测</td><td>至少一个未来周期相对 OST 有可报告增量；两周期都报</td></tr>
+            <tr><td>硬对照</td><td>主模型 vs OST（及简单人口学基线）完整对比表</td></tr>
+            <tr><td>校准</td><td>外测校准曲线；必要时讨论重校准</td></tr>
+            <tr><td>诚实段</td><td>较弱外测周期必须解释，不藏拙</td></tr>
           </table>
         </div>
 
         <div class="card">
           <h3>明确不做</h3>
           <ul>
-            <li>不与内镜 YOLO / 息肉检测伪造患者配对融合</li>
-            <li>不宣称临床治疗或因果致病新机制</li>
-            <li>不以“新深度学习壳子”替代硬外测协议</li>
+            <li>不声称发现新骨代谢通路或治疗靶点</li>
+            <li>不把时间切分说成多中心地理外测</li>
+            <li>不以“换了个机器学习模型”替代硬对照与锁死外测</li>
           </ul>
         </div>
 
         <div class="band">
           <div class="kicker" style="color:#9be2c8">下一步</div>
           <h2>先对齐赛道，再看实验表</h2>
-          <p>若客户接受“公开宏基因组 + LOCO 风险分层 = 一区路径”，本方案可直接进入实验矩阵与写作。若客户坚持本院测序机制文，则应走另一条路径，不拿本方案硬充。</p>
+          <p>若客户接受“NHANES 时间外推 + OST 硬对照 = 数字医学/专科一区路径”，本方案可进入特征表与写作。若客户坚持本院 DXA 机制文，则走另一条路，不拿本方案硬充。</p>
           <div class="cta">
             <a class="btn btn-light" href="index.html">返回说服首页</a>
-            <a class="btn btn-ghost" href="osteoporosis.html">另一条：骨质疏松</a>
-            <a class="btn btn-ghost" href="type-03.html">LODO 写法详解</a>
+            <a class="btn btn-ghost" href="crc-microbiome.html">看另一条：结直肠菌群</a>
+            <a class="btn btn-ghost" href="type-02.html">看写法 02 详解</a>
           </div>
         </div>
-        <p class="note">技术执行目录：客户项目内 crc-microbiome（README / Q1_PLAN / PUBLIC_DATA_AND_Q1_BENCHMARKS）。本页用于对外说明。</p>
+        <p class="note">技术执行对应 NHANES osteoporosis 项目文档。本页用于对外说明。</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">结直肠菌群方案页 · 公开数据 · LOCO 风险分层 · 目标一区计算-微生物交叉赛道</div>
+    <div class="wrap">骨质疏松方案页 · NHANES 时间外推 · OST 硬对照 · L3 数字健康/专科一区定位</div>
   </footer>
   <script>
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});

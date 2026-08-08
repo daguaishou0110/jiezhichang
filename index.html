@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>一区公开数据写法门户 · 写法 / 依据 / 数据集 / 可做方向</title>
+<title>没医院也能冲一区 · 公开数据数字医学路径</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --ink:#101820; --muted:#5a6770; --paper:#f1f5f3; --card:#fff;
-  --line:rgba(16,24,32,.12); --teal:#0c7a5f; --deep:#074d3d;
-  --warm:#c45c16; --sky:#0b6e8a; --max:1120px;
+  --ink:#101820;--muted:#5a6770;--paper:#f1f5f3;--card:#fff;
+  --line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;
+  --warm:#c45c16;--mech:#5c4d7a;--sky:#0b6e8a;--max:1080px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -20,44 +20,36 @@ h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.1
 a{color:var(--deep);text-underline-offset:3px}
 .wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
 
-/* NAV */
 .nav{
-  position:sticky;top:0;z-index:50;
-  backdrop-filter:blur(12px);
-  background:rgba(241,245,243,.92);
-  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+  background:rgba(241,245,243,.92);border-bottom:1px solid var(--line);
 }
-.nav-inner{
-  display:flex;flex-wrap:wrap;gap:.55rem 1rem;
-  align-items:center;justify-content:space-between;
-  padding:.7rem 0;font-size:.84rem;
-}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.55rem 1rem;align-items:center;justify-content:space-between;padding:.7rem 0;font-size:.84rem}
 .nav-brand{font-family:Fraunces,serif;font-weight:750;font-size:1.05rem;color:var(--deep);text-decoration:none}
 .nav-links{display:flex;flex-wrap:wrap;gap:.45rem .85rem}
 .nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
 .nav-links a:hover{color:var(--teal)}
 
-/* HERO */
 .hero{
   position:relative;overflow:hidden;color:#f4fbf7;
-  min-height:88vh;min-height:88dvh;display:grid;align-items:end;
+  min-height:92vh;min-height:92dvh;display:grid;align-items:end;
   background:
-    radial-gradient(900px 420px at 85% 15%, rgba(232,93,4,.22), transparent 55%),
-    linear-gradient(145deg,#06281f 0%,#0c4a38 45%,#146048 100%);
+    radial-gradient(900px 420px at 85% 12%, rgba(196,92,22,.26), transparent 55%),
+    linear-gradient(148deg,#1a1230 0%,#0c3d32 48%,#0f6a52 100%);
 }
 .hero::before{
   content:"";position:absolute;inset:0;
-  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.14) 1px, transparent 0);
-  background-size:28px 28px;opacity:.3;
-  animation:drift 24s linear infinite;
-  mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent);
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:44px 44px;opacity:.32;
+  animation:drift 26s linear infinite;
+  mask-image:radial-gradient(ellipse at 60% 40%,#000 18%,transparent 72%);
 }
-@keyframes drift{to{transform:translate3d(-28px,-28px,0)}}
+@keyframes drift{to{transform:translate3d(-44px,-44px,0)}}
 @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-.hero-inner{position:relative;z-index:1;padding:4.5rem 0 3.2rem}
+.hero-inner{position:relative;z-index:1;padding:4.8rem 0 3.4rem}
 .brand{font-size:clamp(2.6rem,8vw,4.8rem);font-weight:750;margin-bottom:.45rem;animation:up .8s both}
-.hero h1{font-size:clamp(1.2rem,2.8vw,1.75rem);font-weight:600;max-width:20ch;margin-bottom:.85rem;animation:up .8s .12s both}
-.hero-lead{max-width:42ch;color:rgba(244,251,247,.88);margin-bottom:1.5rem;animation:up .8s .24s both}
+.hero h1{font-size:clamp(1.25rem,3vw,1.85rem);font-weight:600;max-width:16ch;margin-bottom:.85rem;animation:up .8s .12s both}
+.hero-lead{max-width:40ch;color:rgba(244,251,247,.88);margin-bottom:1.5rem;animation:up .8s .24s both}
 .cta{display:flex;flex-wrap:wrap;gap:.7rem;animation:up .8s .36s both}
 .btn{
   display:inline-flex;align-items:center;padding:.8rem 1.15rem;border-radius:999px;
@@ -66,616 +58,281 @@ a{color:var(--deep);text-underline-offset:3px}
 .btn:hover{transform:translateY(-2px)}
 .btn-light{background:#f4fbf7;color:var(--deep)}
 .btn-ghost{border:1px solid rgba(244,251,247,.35);color:#f4fbf7;background:rgba(255,255,255,.06)}
+.btn-solid{background:var(--teal);color:#fff}
+.btn-outline{border:1px solid var(--line);color:var(--deep);background:var(--card)}
 
-/* LAYOUT */
 section{padding:3.2rem 0}
 .kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.55rem}
-h2.sec{font-size:clamp(1.7rem,3.2vw,2.35rem);margin-bottom:.7rem;max-width:16ch}
-.lead{color:var(--muted);max-width:52ch;margin-bottom:1.4rem}
-.reveal{opacity:0;transform:translateY(22px);transition:.65s ease}
+h2{font-size:clamp(1.7rem,3.2vw,2.35rem);margin-bottom:.7rem;max-width:16ch}
+.lead{color:var(--muted);max-width:50ch;margin-bottom:1.35rem}
+.reveal{opacity:0;transform:translateY(20px);transition:.65s ease}
 .reveal.in{opacity:1;transform:none}
 
-.map5{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem;
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:820px){.compare{grid-template-columns:1fr}}
+.col{
+  border-radius:20px;padding:1.4rem 1.3rem;border:1px solid var(--line);background:var(--card);
 }
-@media(max-width:960px){.map5{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.map5{grid-template-columns:1fr}}
-.map5 a{
-  display:block;text-decoration:none;color:inherit;
-  background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:1rem .95rem;transition:.2s;
+.col.mech{border-top:5px solid var(--mech)}
+.col.pred{border-top:5px solid var(--teal);background:linear-gradient(180deg,#fff,#f3faf7)}
+.col .pill{
+  display:inline-block;font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;
+  margin-bottom:.55rem;
 }
-.map5 a:hover{border-color:rgba(12,122,95,.45);transform:translateY(-3px)}
-.map5 .n{font-family:Fraunces,serif;font-size:1.5rem;font-weight:750;color:var(--teal)}
-.map5 b{display:block;margin:.25rem 0 .2rem}
-.map5 span{color:var(--muted);font-size:.84rem}
+.col.mech .pill{background:rgba(92,77,122,.12);color:var(--mech)}
+.col.pred .pill{background:rgba(12,122,95,.12);color:var(--deep)}
+.col h3{font-size:1.3rem;margin-bottom:.35rem}
+.col .sub{color:var(--muted);font-size:.92rem;margin-bottom:.9rem}
+.col ul{list-style:none;display:grid;gap:.5rem}
+.col li{padding-left:1.1rem;position:relative;color:var(--muted);font-size:.93rem}
+.col.mech li::before{content:"·";position:absolute;left:0;color:var(--mech);font-weight:700}
+.col.pred li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700;font-size:.85rem}
 
-/* TYPE BLOCK */
-.type{
-  background:var(--card);border:1px solid var(--line);border-radius:22px;
-  padding:1.5rem 1.35rem 1.35rem;margin-bottom:1.15rem;
-  scroll-margin-top:4.2rem;
+.shift{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.5rem 1.35rem;margin-top:1.2rem;
 }
-.type-head{display:grid;grid-template-columns:auto 1fr;gap:.85rem 1rem;margin-bottom:1.1rem}
-.num{
-  width:3.1rem;height:3.1rem;border-radius:12px;display:grid;place-items:center;
-  color:#fff;font-family:Fraunces,serif;font-weight:750;font-size:1.2rem;background:var(--teal);
+.shift h3{font-size:1.35rem;margin-bottom:.55rem;max-width:28ch}
+.shift p{color:var(--muted);max-width:58ch}
+.shift p+p{margin-top:.55rem}
+.eq{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:.8rem;align-items:center;
+  margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--line);
 }
-#t02 .num{background:var(--sky)}
-#t03 .num{background:var(--warm)}
-#t04 .num{background:#3d5a40}
-#t05 .num{background:#5c4d7a}
-.type h3{font-size:1.45rem;margin-bottom:.25rem}
-.one{color:var(--muted);font-size:.95rem}
-.grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:.85rem;
-}
-@media(max-width:820px){.grid{grid-template-columns:1fr}}
-.box{
-  border:1px solid var(--line);border-radius:14px;padding:1rem 1.05rem;background:#f8faf9;
-}
-.box.full{grid-column:1/-1}
-.box h4{
-  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--teal);margin-bottom:.55rem;font-family:Sora,sans-serif;font-weight:700;
-}
-.box p,.box li{color:var(--muted);font-size:.92rem}
-.box ul,.box ol{padding-left:1.1rem;display:grid;gap:.35rem}
-.box li+li{margin-top:0}
-table.ds{width:100%;border-collapse:collapse;font-size:.84rem;margin-top:.2rem}
-.ds th,.ds td{text-align:left;padding:.4rem .3rem;border-bottom:1px solid var(--line);vertical-align:top}
-.ds th{color:var(--muted);font-size:.72rem}
-.tag{
-  display:inline-block;font-size:.7rem;font-weight:700;padding:.12rem .42rem;
-  border-radius:999px;background:rgba(12,122,95,.1);color:var(--deep);
-}
-.tag.warn{background:rgba(196,92,22,.12);color:#8a3d0c}
-.dirs{display:grid;gap:.45rem;margin-top:.2rem}
-.dir{
-  display:grid;grid-template-columns:auto 1fr;gap:.65rem;align-items:start;
-  padding:.7rem .75rem;border-radius:12px;background:#fff;border:1px solid var(--line);
-}
-.dir{
-  display:grid;grid-template-columns:auto 1fr;gap:.65rem;align-items:start;
-  padding:.85rem .9rem;border-radius:12px;background:#fff;border:1px solid var(--line);
-}
-.dir i{
-  font-style:normal;font-family:Fraunces,serif;font-weight:750;color:var(--teal);font-size:1.05rem;margin-top:.1rem;
-}
-.dir b{display:block;margin-bottom:.35rem;color:var(--ink)}
-.dir .row{margin:.2rem 0;font-size:.88rem;color:var(--muted)}
-.dir .lab{
-  display:inline-block;min-width:3.2rem;font-size:.72rem;font-weight:700;
-  letter-spacing:.04em;color:var(--teal);margin-right:.35rem;
-}
-.links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.85rem}
-.mini{
-  display:inline-flex;padding:.5rem .8rem;border-radius:999px;font-size:.82rem;font-weight:700;
-  text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink);
-}
-.mini.primary{background:var(--teal);color:#fff;border-color:transparent}
+@media(max-width:700px){.eq{grid-template-columns:1fr}.vs{display:none}}
+.eq b{display:block;margin-bottom:.2rem}
+.vs{font-family:Fraunces,serif;font-weight:750;color:var(--warm);font-size:1.1rem}
 
-.proof{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:820px){.cases{grid-template-columns:1fr}}
+.case{
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.4rem 1.25rem;
+  transition:transform .2s,border-color .2s;
 }
-@media(max-width:800px){.proof{grid-template-columns:1fr}}
-.proof article{
-  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem 1.2rem;
+.case:hover{transform:translateY(-3px);border-color:rgba(12,122,95,.4)}
+.case .tag{
+  display:inline-block;align-self:flex-start;font-size:.72rem;font-weight:700;
+  padding:.2rem .55rem;border-radius:999px;background:rgba(12,122,95,.1);color:var(--deep);margin-bottom:.65rem;
 }
-.proof .big{font-family:Fraunces,serif;font-size:2.1rem;font-weight:750;color:var(--teal);line-height:1;margin-bottom:.35rem}
-.proof b{display:block;margin-bottom:.25rem}
-.proof span{color:var(--muted);font-size:.9rem}
+.case h3{font-size:1.35rem;margin-bottom:.45rem}
+.case p{color:var(--muted);font-size:.93rem;flex:1;margin-bottom:1rem}
+.case .go{font-weight:700;color:var(--teal);font-size:.92rem}
 
-.flow{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;
-}
-@media(max-width:800px){.flow{grid-template-columns:1fr 1fr}}
-.flow div{
-  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem;
-}
-.flow b{display:block;font-family:Fraunces,serif;margin-bottom:.3rem}
-.flow span{color:var(--muted);font-size:.9rem}
+.proof3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.1rem}
+@media(max-width:700px){.proof3{grid-template-columns:1fr}}
+.proof3 article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.05rem}
+.proof3 .n{font-family:Fraunces,serif;font-size:1.7rem;font-weight:750;color:var(--teal);line-height:1;margin-bottom:.3rem}
+.proof3 b{display:block;margin-bottom:.2rem}
+.proof3 span{color:var(--muted);font-size:.88rem}
 
-.cta-band{
-  background:linear-gradient(145deg,#0a3d30,#127058);
-  color:#f3fbf7;border-radius:22px;padding:1.8rem 1.5rem;
+.ev{display:grid;gap:.7rem}
+.ev a{
+  display:grid;grid-template-columns:4.2rem 1fr auto;gap:.85rem;align-items:start;
+  text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:1rem 1.05rem;transition:border-color .2s;
 }
-.cta-band h2{color:#fff;max-width:14ch;font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:.6rem}
-.cta-band p{color:rgba(243,251,247,.85);max-width:48ch;margin-bottom:1rem}
-.cta-band .btn-ghost{border-color:rgba(243,251,247,.35);color:#f3fbf7}
+.ev a:hover{border-color:rgba(12,122,95,.4)}
+.ev .yr{font-family:Fraunces,serif;font-weight:750;color:var(--teal);font-size:1.15rem}
+.ev b{display:block;margin-bottom:.2rem}
+.ev span{color:var(--muted);font-size:.88rem}
+.ev .jr{font-size:.72rem;font-weight:700;color:var(--warm);letter-spacing:.04em}
 
-footer{padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.84rem;border-top:1px solid var(--line)}
-.note{font-size:.84rem;color:var(--muted);margin-top:.7rem}
+.band{
+  background:linear-gradient(145deg,#0a3d30,#127058);color:#f3fbf7;border-radius:20px;padding:1.7rem 1.4rem;
+}
+.band h2{color:#fff;max-width:18ch}
+.band p{color:rgba(243,251,247,.86);max-width:48ch;margin:.65rem 0 1.1rem}
+.band .btn-ghost{border-color:rgba(243,251,247,.35);color:#f3fbf7}
+.appendix{
+  margin-top:1rem;padding:1rem 1.1rem;border:1px dashed var(--line);border-radius:14px;background:#f8faf9;
+}
+.appendix p{color:var(--muted);font-size:.9rem;margin-bottom:.55rem}
+.appendix a{font-weight:700}
+
+footer{padding:1.4rem 0 2.4rem;color:var(--muted);font-size:.84rem;border-top:1px solid var(--line)}
+.note{font-size:.84rem;color:var(--muted);margin-top:.8rem}
 </style>
 </head>
 <body>
   <nav class="nav">
     <div class="wrap nav-inner">
-      <a class="nav-brand" href="#top">一区写法门户</a>
+      <a class="nav-brand" href="#top">一区路径说明</a>
       <div class="nav-links">
-        <a href="#overview">总览</a>
-        <a href="#t01">01</a><a href="#t02">02</a><a href="#t03">03</a><a href="#t04">04</a><a href="#t05">05</a>
-        <a href="#start">怎么开始</a>
-        <a href="two-paths.html">两种一区</a>
-        <a href="crc-microbiome.html">结直肠菌群</a>
+        <a href="#paths">两种一区</a>
+        <a href="#cases">可做方案</a>
+        <a href="#proof">真刊依据</a>
         <a href="confidence.html">底气页</a>
-        <a href="lists/type-01_full.html">完整列表</a>
+        <a href="portal.html">写法附录</a>
       </div>
     </div>
   </nav>
 
   <header class="hero" id="top">
     <div class="wrap hero-inner">
-      <div class="brand">一区写法门户</div>
-      <h1>没有医院私有数据，也能把路走清楚</h1>
-      <p class="hero-lead">给计算机背景客户的一站式说明书：五种公开数据写法、论文依据、可选数据集、以及每类能延伸做什么题目。</p>
+      <div class="brand">换赛道，不是降级</div>
+      <h1>没有医院私有数据，也能走一区路径</h1>
+      <p class="hero-lead">我们做的不是小鼠机制文，而是公开数据上的风险预测与锁死外测——近两年已被数字医学一区录用的那条路。</p>
       <div class="cta">
-        <a class="btn btn-light" href="#overview">看五种写法</a>
-        <a class="btn btn-ghost" href="two-paths.html">为什么这样能发一区</a>
-        <a class="btn btn-ghost" href="#t01">从双库外推开始</a>
+        <a class="btn btn-light" href="#cases">看我们能做什么</a>
+        <a class="btn btn-ghost" href="#proof">为什么这能发一区</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="overview">
+    <section id="paths">
       <div class="wrap reveal">
-        <div class="kicker">先建立地图</div>
-        <h2 class="sec">五种写法，一张图</h2>
-        <p class="lead">前提只有一个：不依赖医院私有病历。用公开可申请/可下载数据，按被一区录用过的验证逻辑做研究。</p>
-        <div class="map5">
-          <a href="#t01"><div class="n">01</div><b>双公开库外推</b><span>库A训 → 库B考 · 148篇</span></a>
-          <a href="#t02"><div class="n">02</div><b>同库切分</b><span>时间/中心锁死 · 23篇</span></a>
-          <a href="#t03"><div class="n">03</div><b>多队列 LODO</b><span>留一队列考 · 347篇</span></a>
-          <a href="#t04"><div class="n">04</div><b>方法与基准</b><span>比策略不比新病人 · 31篇</span></a>
-          <a href="#t05"><div class="n">05</div><b>公开影像</b><span>检测/分割 · 13篇</span></a>
+        <div class="kicker">先对齐认知 · 10 秒</div>
+        <h2>医学一区，不止一种写法</h2>
+        <p class="lead">搞混赛道，就会觉得「没医院 = 发不了」。两条路都能冲一区，审稿人看的东西完全不同。</p>
+
+        <div class="compare">
+          <article class="col mech">
+            <div class="pill">路径 A · 传统机制</div>
+            <h3>因子 → 作用</h3>
+            <p class="sub">某个菌 / 分子 / 干预，为什么、怎么致病或保护？</p>
+            <ul>
+              <li>依赖：动物、细胞、本院样本、机制实验</li>
+              <li>叙事：新机制、因果、治疗靶点</li>
+              <li>没有医院/湿实验时：很难硬刚</li>
+            </ul>
+          </article>
+          <article class="col pred">
+            <div class="pill">路径 B · 我们的路</div>
+            <h3>信号 → 风险能否稳定预测</h3>
+            <p class="sub">公开可得信息，风险能不能算准？换一批人还成不成？</p>
+            <ul>
+              <li>依赖：公开库（宏基因组、NHANES、ICU 等）</li>
+              <li>叙事：锁死外测、硬对照、校准、可复现</li>
+              <li>计算机背景正好对口</li>
+            </ul>
+          </article>
         </div>
-        
-        <div id="two-paths-banner" class="cta-band" style="margin-top:1.4rem">
-          <div class="kicker" style="color:#9be2c8">客户最容易误解的一点</div>
-          <h2 style="color:#fff;max-width:18ch">医学一区 ≠ 只能做机制</h2>
-          <p>传统路径研究“因子有什么作用”；我们走的是公开数据上的风险预测与跨队列验证。结直肠菌群、骨质疏松两套方案都按后一条路设计。</p>
-          <div class="cta">
-            <a class="btn btn-light" href="two-paths.html">打开《两种医学一区》</a>
+
+        <div class="shift">
+          <h3>我们不是回避医学，而是选已被一区承认的数字医学赛道</h3>
+          <p>客户脑子里的论文往往是：发现某个因子有作用。我们交付的是：证明一套公开可得的风险分层，在换数据后仍然成立。</p>
+          <p>关键不在有没有本院病历，而在验证包是否做满。</p>
+          <div class="eq">
+            <div><b>容易担心的</b><span style="color:var(--muted)">没医院、不做小鼠，是不是发不了一区？</span></div>
+            <div class="vs">VS</div>
+            <div><b>正确问题</b><span style="color:var(--muted)">锁死外测 + 硬对照 + 诚实弱外测，做满了吗？</span></div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <p class="note">篇数为 2025–2026 EuropePMC 检索命中并去掉预印本后的正式期刊数（检索口径估算，非人工精标全集）。精选范文另标。</p>
+    <section id="cases">
+      <div class="wrap reveal">
+        <div class="kicker">落到可买方案</div>
+        <h2>两套已设计好的目标一区题目</h2>
+        <p class="lead">不是抽象概念。下面两条都按路径 B 设计，可直接对外讲、对内做。</p>
 
-        <div class="proof" style="margin-top:1.4rem">
+        <div class="cases">
+          <a class="case" href="crc-microbiome.html">
+            <span class="tag">写法 03 · 多队列 LODO</span>
+            <h3>结直肠菌群风险分层</h3>
+            <p>用多国公开粪便宏基因组，做 CRC vs 对照风险分层；leave-one-cohort-out 证明跨地区是否仍成立。不依赖本院测序。</p>
+            <span class="go">打开方案专页 →</span>
+          </a>
+          <a class="case" href="osteoporosis.html">
+            <span class="tag">写法 02 · 时间外推 · L3</span>
+            <h3>骨质疏松风险预测</h3>
+            <p>用 NHANES 公开调查：2005–2010 开发，2013–14 / 2017–18 锁死外测；打过简易临床分数 OST。无医院 DXA 私有库。</p>
+            <span class="go">打开方案专页 →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="wrap reveal">
+        <div class="kicker">为什么信得过</div>
+        <h2>近两年已有同类路径被录用</h2>
+        <p class="lead">我们不打包票「必中某一本刊」。我们说的是：走已被一区承认的验证逻辑；档位看验证包做到哪一级。</p>
+
+        <div class="ev">
+          <a href="https://doi.org/10.1038/s41746-025-02114-y" target="_blank" rel="noopener">
+            <div class="yr">2025</div>
+            <div>
+              <div class="jr">npj DIGITAL MEDICINE</div>
+              <b>RealMIP：eICU 训练 → MIMIC 外测</b>
+              <span>双公开 ICU 库锁死外推。没有本院私有队列也能上数字医学一区。</span>
+            </div>
+            <div class="jr">DOI</div>
+          </a>
+          <a href="https://doi.org/10.1186/s13054-026-06034-5" target="_blank" rel="noopener">
+            <div class="yr">2026</div>
+            <div>
+              <div class="jr">CRITICAL CARE</div>
+              <b>四库联合：死亡与住院时长外推</b>
+              <span>多个公开 ICU 库互相验证。计算机方法 + 公开数据，一区可发。</span>
+            </div>
+            <div class="jr">DOI</div>
+          </a>
+          <a href="https://doi.org/10.1038/s41591-019-0406-6" target="_blank" rel="noopener">
+            <div class="yr">2019</div>
+            <div>
+              <div class="jr">NATURE MEDICINE</div>
+              <b>Wirbel：CRC 粪便宏基因组跨队列</b>
+              <span>我们结直肠方案对齐的经典公开 LODO 叙事（增量在更严 panel / 校准 / 弱队列解剖）。</span>
+            </div>
+            <div class="jr">DOI</div>
+          </a>
+        </div>
+
+        <div class="proof3">
           <article>
-            <div class="big">CS</div>
+            <div class="n">0</div>
+            <b>医院私有不是硬门槛</b>
+            <span>MIMIC / eICU / NHANES / 公开宏基因组即可构成完整包</span>
+          </article>
+          <article>
+            <div class="n">CS</div>
             <b>计算机背景是优势</b>
             <span>清洗、锁死外测、消融、复现——正是审稿盯的地方</span>
           </article>
           <article>
-            <div class="big">0</div>
-            <b>医院私有不是硬门槛</b>
-            <span>MIMIC / eICU / NHANES / TCIA 等公开库可构成完整包</span>
-          </article>
-          <article>
-            <div class="big">25–26</div>
-            <b>近两年已有一区路径</b>
-            <span>npj DigMed、Critical Care 等已有公开数据录用案例</span>
+            <div class="n">档</div>
+            <b>一区是路径，不是口号</b>
+            <span>主攻 / 备选 / 冲刺分档写进方案，验收门槛可核对</span>
           </article>
         </div>
+
+        <p style="margin-top:1.1rem">
+          <a class="btn btn-solid" href="confidence.html" style="margin-right:.5rem">打开完整底气页</a>
+          <a class="btn btn-outline" href="two-paths.html">展开读《两种医学一区》</a>
+        </p>
       </div>
     </section>
 
-    <!-- ===== 01 ===== -->
     <section>
-      <div class="wrap">
-        <article class="type reveal" id="t01">
-          <div class="type-head">
-            <div class="num">01</div>
-            <div>
-              <h3>双公开库外推</h3>
-              <p class="one">在公开库 A 训练并锁死，再拿公开库 B 只考一次。最像“换医院也能用”。</p>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="box">
-              <h4>写法是什么 / 怎么弄</h4>
-              <ol>
-                <li>选一对公开 ICU 库（常见 eICU + MIMIC）</li>
-                <li>在 A 完成特征、调参、内验后<strong>冻结</strong></li>
-                <li>B 上只评估一次；可加第三库</li>
-                <li>必须对比硬临床基线；报告校准</li>
-                <li>Data availability 写清申请入口</li>
-              </ol>
-            </div>
-            <div class="box">
-              <h4>论文依据（精选）</h4>
-              <ul>
-                <li><b>2025</b> npj DigMed · RealMIP<br>eICU→MIMIC/SICdb<br><small>10.1038/s41746-025-02114-y</small></li>
-                <li><b>2026</b> Critical Care · 四库外推<br>eICU/MIMIC/Amsterdam/HiRID<br><small>10.1186/s13054-026-06034-5</small></li>
-              </ul>
-              <p style="margin-top:.55rem">检索列表（去预印本）：<b>148</b> 篇正式期刊</p>
-            </div>
-            <div class="box">
-              <h4>可选数据集</h4>
-              <table class="ds">
-                <tr><th>数据集</th><th>内容</th><th>获取</th></tr>
-                <tr><td>MIMIC-IV</td><td>美国单中心 ICU</td><td><span class="tag warn">PhysioNet 申请</span></td></tr>
-                <tr><td>eICU-CRD</td><td>美国多中心 ICU</td><td><span class="tag warn">PhysioNet 申请</span></td></tr>
-                <tr><td>HiRID</td><td>瑞士高分辨率 ICU</td><td><span class="tag warn">PhysioNet</span></td></tr>
-                <tr><td>AmsterdamUMCdb</td><td>荷兰 ICU</td><td><span class="tag warn">官网申请</span></td></tr>
-                <tr><td>SICdb</td><td>奥地利 ICU</td><td><span class="tag warn">申请制</span></td></tr>
-              </table>
-            </div>
-            <div class="box">
-              <h4>可做方向（公开数据 → 研究问题）</h4>
-              <div class="dirs">
-                <div class="dir"><i>A</i><div>
-                  <b>ICU 24h 死亡风险跨库外推</b>
-                  <div class="row"><span class="lab">数据</span>开发：eICU-CRD；外测：MIMIC-IV（可选再加 SICdb/HiRID）</div>
-                  <div class="row"><span class="lab">研究</span>入院早期生命体征+化验能否稳定预测院内/短期死亡；必须对比 APACHE/SOFA 等硬基线，并报告校准</div>
-                </div></div>
-                <div class="dir"><i>B</i><div>
-                  <b>脓毒症早预警的双库运输</b>
-                  <div class="row"><span class="lab">数据</span>eICU 训练 → MIMIC-IV 锁死外测（标签统一用 Sepsis-3）</div>
-                  <div class="row"><span class="lab">研究</span>提前 4–6 小时预警是否跨库仍有效；比较树模型与时序模型，分析跨库掉点原因</div>
-                </div></div>
-                <div class="dir"><i>C</i><div>
-                  <b>剩余住院时长 / 再入 ICU</b>
-                  <div class="row"><span class="lab">数据</span>eICU + MIMIC-IV + AmsterdamUMCdb + HiRID（四库，可先做两库）</div>
-                  <div class="row"><span class="lab">研究</span>哪个结局更容易跨库泛化；pooling 是否优于单库训练（对齐 Critical Care 2026 逻辑）</div>
-                </div></div>
-                <div class="dir"><i>D</i><div>
-                  <b>跨库校准漂移与重校准</b>
-                  <div class="row"><span class="lab">数据</span>MIMIC-IV 开发 → eICU 外测（或对调）</div>
-                  <div class="row"><span class="lab">研究</span>AUC 尚可但概率不准时，截距重校准/等温能否恢复临床可用性</div>
-                </div></div>
-              </div>
-            </div>
-                <div class="dir"><i>B</i><div><b>脓毒症早预警跨库</b><br>统一 Sepsis-3 标签，比较树模型与时序模型</div></div>
-                <div class="dir"><i>C</i><div><b>住院时长 / 再入 ICU</b><br>四库场景下看哪个结局更稳</div></div>
-                <div class="dir"><i>D</i><div><b>校准漂移专题</b><br>跨库 AUC 还行但校准崩，做重校准方案</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="links">
-            <a class="mini primary" href="lists/type-01_full.html">完整期刊列表 148</a>
-            <a class="mini" href="type-01.html">单页详解</a>
-            <a class="mini" href="https://doi.org/10.1038/s41746-025-02114-y" target="_blank" rel="noopener">范文 PDF · RealMIP</a>
-          </div>
-        </article>
-
-        <!-- 02 -->
-        <article class="type reveal" id="t02">
-          <div class="type-head">
-            <div class="num">02</div>
-            <div>
-              <h3>同库时间 / 中心切分</h3>
-              <p class="one">只有一个公开资源时：按年份或医院中心切开，锁死外测。</p>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="box">
-              <h4>写法是什么 / 怎么弄</h4>
-              <ol>
-                <li>定切分规则：周期 / 入院年 / hospital_id</li>
-                <li>开发集做完全部决策后冻结</li>
-                <li>外测集只用于最终报告</li>
-                <li>写清：这是时间/中心运输，不是多库地理外测</li>
-                <li>有条件升级到 01 双库</li>
-              </ol>
-            </div>
-            <div class="box">
-              <h4>论文依据（精选）</h4>
-              <ul>
-                <li><b>2025</b> npj DigMed · RealMIP 内验<br>eICU 188 中心训 / 20 中心 hold-out</li>
-                <li>NHANES 时间外推多见于中强公卫/数字健康刊（顶刊纯时间切分较少）</li>
-              </ul>
-              <p style="margin-top:.55rem">检索列表（去预印本）：<b>23</b> 篇</p>
-            </div>
-            <div class="box">
-              <h4>可选数据集</h4>
-              <table class="ds">
-                <tr><th>数据集</th><th>切法</th><th>获取</th></tr>
-                <tr><td>NHANES</td><td>调查周期</td><td><span class="tag">CDC 直接下载</span></td></tr>
-                <tr><td>eICU-CRD</td><td>hospital_id</td><td><span class="tag warn">PhysioNet</span></td></tr>
-                <tr><td>MIMIC-IV</td><td>入院年份</td><td><span class="tag warn">PhysioNet</span></td></tr>
-              </table>
-            </div>
-            <div class="box">
-              <h4>可做方向（公开数据 → 研究问题）</h4>
-              <div class="dirs">
-                <div class="dir"><i>A</i><div>
-                  <b>股骨颈骨质疏松风险的时间外推</b>
-                  <div class="row"><span class="lab">数据</span>NHANES 2005–2010 开发；2013–2014 / 2017–2018 锁死外测</div>
-                  <div class="row"><span class="lab">研究</span>问卷±化验能否稳定预测 DXA 定义骨质疏松；对比 OST 等简易临床分数</div>
-                </div></div>
-                <div class="dir"><i>B</i><div>
-                  <b>人群全因死亡筛查模型</b>
-                  <div class="row"><span class="lab">数据</span>NHANES 早周期训 → 晚周期考（可加实验室标志物子集）</div>
-                  <div class="row"><span class="lab">研究</span>多标志物相对年龄/性别基线的增量价值（NRI/IDI/校准）</div>
-                </div></div>
-                <div class="dir"><i>C</i><div>
-                  <b>eICU 中心 hold-out 泛化审计</b>
-                  <div class="row"><span class="lab">数据</span>仅 eICU-CRD：按 hospital_id 划分训练中心 vs 留出中心</div>
-                  <div class="row"><span class="lab">研究</span>哪些中心特征导致掉点（规模、监测密度、病例组合）</div>
-                </div></div>
-                <div class="dir"><i>D</i><div>
-                  <b>MIMIC 按入院年份的时间运输</b>
-                  <div class="row"><span class="lab">数据</span>MIMIC-IV 早年入院开发 → 晚年入院外测</div>
-                  <div class="row"><span class="lab">研究</span>诊疗实践漂移下死亡/脓毒症模型是否仍稳；为升级双库做跳板</div>
-                </div></div>
-              </div>
-            </div>
-                <div class="dir"><i>B</i><div><b>全因死亡筛查模型</b><br>问卷+化验，报告校准与净重分类</div></div>
-                <div class="dir"><i>C</i><div><b>eICU 中心泛化审计</b><br>专门研究哪类中心会掉点</div></div>
-                <div class="dir"><i>D</i><div><b>02→01 升级包</b><br>同库切分做完后申请第二库冲一区</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="links">
-            <a class="mini primary" href="lists/type-02_full.html">完整期刊列表 23</a>
-            <a class="mini" href="type-02.html">单页详解</a>
-          </div>
-        </article>
-
-        <!-- 03 -->
-        <article class="type reveal" id="t03">
-          <div class="type-head">
-            <div class="num">03</div>
-            <div>
-              <h3>多公开队列轮考（LODO）</h3>
-              <p class="one">多个公开小队列拼起来，每次留下一个队列考试。组学/微生物最常用。</p>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="box">
-              <h4>写法是什么 / 怎么弄</h4>
-              <ol>
-                <li>按范文列出可公开 accession 队列</li>
-                <li>统一预处理与特征</li>
-                <li>LODO：每次留一队列</li>
-                <li>主表按队列报 AUC，标最弱 hold-out</li>
-                <li>若加自测序，标明 HYBRID，勿称纯公开</li>
-              </ol>
-            </div>
-            <div class="box">
-              <h4>论文依据（精选）</h4>
-              <ul>
-                <li><b>2019</b> Nat Med · Wirbel（纯公开经典）</li>
-                <li><b>2025</b> Nat Med · Piccinno（HYBRID）</li>
-                <li><b>2026</b> npj Biofilms · Meta-iTL（HYBRID）</li>
-              </ul>
-              <p style="margin-top:.55rem">检索列表（去预印本）：<b>347</b> 篇（口径较宽，需核对）</p>
-            </div>
-            <div class="box">
-              <h4>可选数据集</h4>
-              <table class="ds">
-                <tr><th>来源</th><th>内容</th><th>获取</th></tr>
-                <tr><td>ENA / SRA</td><td>宏基因组原始数据</td><td><span class="tag">公开下载</span></td></tr>
-                <tr><td>curatedMetagenomicData</td><td>已整理人群宏基因组</td><td><span class="tag">R/Bioconductor</span></td></tr>
-                <tr><td>范文 accession 表</td><td>对齐队列最省事</td><td><span class="tag">随论文</span></td></tr>
-                <tr><td>GEO</td><td>表达谱等</td><td><span class="tag">公开下载</span></td></tr>
-              </table>
-            </div>
-            <div class="box">
-              <h4>可做方向（公开数据 → 研究问题）</h4>
-              <div class="dirs">
-                <div class="dir"><i>A</i><div>
-                  <b>结直肠癌粪便宏基因组 LODO</b>
-                  <div class="row"><span class="lab">数据</span>Wirbel/公开 CRC 队列（ENA/SRA accession；或 curatedMetagenomicData 子集）</div>
-                  <div class="row"><span class="lab">研究</span>纯公开多队列留一外测下，物种/通路特征的跨地区稳定性与最弱队列机制</div>
-                </div></div>
-                <div class="dir"><i>B</i><div>
-                  <b>腺瘤（ADA）阶段早筛跨队列</b>
-                  <div class="row"><span class="lab">数据</span>含 adenoma 标签的公开宏基因组队列（按 Piccinno/公开表对齐）</div>
-                  <div class="row"><span class="lab">研究</span>CRC 可分时，ADA 是否跨队列失效；需要什么特征或协议才能稳住</div>
-                </div></div>
-                <div class="dir"><i>C</i><div>
-                  <b>分类特征 vs 功能特征谁更稳</b>
-                  <div class="row"><span class="lab">数据</span>同一批公开宏基因组；分别抽物种丰度与 HUMAnN 功能谱</div>
-                  <div class="row"><span class="lab">研究</span>同一 LODO 协议下，哪类特征跨队列方差更小、最弱 hold-out 更高</div>
-                </div></div>
-                <div class="dir"><i>D</i><div>
-                  <b>公开源域 → 少样本目标域迁移</b>
-                  <div class="row"><span class="lab">数据</span>14+ 公开队列作源；目标仅用公开子集模拟“少样本”（勿混私有测序则保持 PUBLIC）</div>
-                  <div class="row"><span class="lab">研究</span>instance-based / 微调策略能否提升目标队列 AUC（对齐 Meta-iTL 问题，数据保持公开）</div>
-                </div></div>
-              </div>
-            </div>
-                <div class="dir"><i>B</i><div><b>腺瘤阶段早筛跨队列</b><br>聚焦 ADA，报告最弱地区</div></div>
-                <div class="dir"><i>C</i><div><b>物种 vs 功能特征对比</b><br>同一 LODO 协议下比哪类特征更稳</div></div>
-                <div class="dir"><i>D</i><div><b>迁移学习少样本目标队列</b><br>公开源 + 极少目标样本（注意 HYBRID 表述）</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="links">
-            <a class="mini primary" href="lists/type-03_full.html">完整期刊列表 347</a>
-            <a class="mini" href="type-03.html">单页详解</a>
-          </div>
-        </article>
-
-        <!-- 04 -->
-        <article class="type reveal" id="t04">
-          <div class="type-head">
-            <div class="num">04</div>
-            <div>
-              <h3>公开方法与基准</h3>
-              <p class="one">贡献在部署策略/评价协议，不在“发现新病人队列”。</p>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="box">
-              <h4>写法是什么 / 怎么弄</h4>
-              <ol>
-                <li>选定 2–3 个已对齐公开 ICU 库</li>
-                <li>预先规定策略清单与数据量档位</li>
-                <li>同一协议下系统比较</li>
-                <li>给出可操作建议（何时不该 fine-tune）</li>
-                <li>叙事写成“部署协议/基准”，别伪装生物发现</li>
-              </ol>
-            </div>
-            <div class="box">
-              <h4>论文依据（精选）</h4>
-              <ul>
-                <li><b>2026</b> npj DigMed · 脓毒症分布偏移<br>HiRID/MIMIC/eICU<br>比较 fine-tune/retrain/DA/fusion<br><small>10.1038/s41746-026-02364-4</small></li>
-              </ul>
-              <p style="margin-top:.55rem">检索列表（去预印本）：<b>31</b> 篇</p>
-            </div>
-            <div class="box">
-              <h4>可选数据集</h4>
-              <table class="ds">
-                <tr><th>数据集</th><th>用途</th><th>获取</th></tr>
-                <tr><td>MIMIC+eICU+HiRID</td><td>跨库策略实验</td><td><span class="tag warn">PhysioNet</span></td></tr>
-                <tr><td>PhysioNet Challenge</td><td>标准任务与榜</td><td><span class="tag">physionet.org</span></td></tr>
-                <tr><td>和谐化 ICU 衍生集</td><td>少踩字段坑</td><td>随论文/开源仓</td></tr>
-              </table>
-            </div>
-            <div class="box">
-              <h4>可做方向（公开数据 → 研究问题）</h4>
-              <div class="dirs">
-                <div class="dir"><i>A</i><div>
-                  <b>脓毒症模型跨库部署策略排行</b>
-                  <div class="row"><span class="lab">数据</span>HiRID + MIMIC-IV + eICU（特征/标签和谐化）</div>
-                  <div class="row"><span class="lab">研究</span>直接外推、微调、重训、域适应、融合：谁在何种目标数据量下最好</div>
-                </div></div>
-                <div class="dir"><i>B</i><div>
-                  <b>目标样本规模曲线</b>
-                  <div class="row"><span class="lab">数据</span>同上三库；目标域按 0 / ≤8k / 8–32k / ≥32k 分层</div>
-                  <div class="row"><span class="lab">研究</span>给出可操作建议：何时不该 fine-tune、何时该 retrain/fusion</div>
-                </div></div>
-                <div class="dir"><i>C</i><div>
-                  <b>观测过程 shortcut 危害</b>
-                  <div class="row"><span class="lab">数据</span>MIMIC-IV 开发 → eICU 外测</div>
-                  <div class="row"><span class="lab">研究</span>加入“检验次数/采样频率”等观测特征后，内验升、外验崩的程度与机制</div>
-                </div></div>
-                <div class="dir"><i>D</i><div>
-                  <b>可复现公开基准包</b>
-                  <div class="row"><span class="lab">数据</span>PhysioNet Challenge 任务 或 和谐化 ICU 衍生集</div>
-                  <div class="row"><span class="lab">研究</span>发布统一切分、指标与基线排行，贡献在协议与工程复现而非新队列</div>
-                </div></div>
-              </div>
-            </div>
-                <div class="dir"><i>B</i><div><b>目标数据量曲线</b><br>0/1k/8k/32k 目标样本时谁最好</div></div>
-                <div class="dir"><i>C</i><div><b>观测过程特征危害</b><br>证明“检验次数”等 shortcut 伤害外推</div></div>
-                <div class="dir"><i>D</i><div><b>开源基准包</b><br>代码+切分+指标，做成可复现 benchmark</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="links">
-            <a class="mini primary" href="lists/type-04_full.html">完整期刊列表 31</a>
-            <a class="mini" href="type-04.html">单页详解</a>
-          </div>
-        </article>
-
-        <!-- 05 -->
-        <article class="type reveal" id="t05">
-          <div class="type-head">
-            <div class="num">05</div>
-            <div>
-              <h3>公开影像检测 / 分割</h3>
-              <p class="one">用公开影像集做检测或分割（YOLO 等），主指标 mAP / 漏检 / 跨集泛化。</p>
-            </div>
-          </div>
-          <div class="grid">
-            <div class="box">
-              <h4>写法是什么 / 怎么弄</h4>
-              <ol>
-                <li>选定任务与公开影像列表</li>
-                <li>统一标注与划分；可合成增强</li>
-                <li>与强基线对比；报告外测泛化</li>
-                <li>给失败病例与局限</li>
-                <li>Data availability 列出每个公开集</li>
-              </ol>
-            </div>
-            <div class="box">
-              <h4>论文依据（精选）</h4>
-              <ul>
-                <li><b>2025</b> npj DigMed · StyleGAN+YOLOv5 息肉<br><small>10.1038/s41746-025-02293-8</small></li>
-                <li><b>2025</b> npj DigMed · CR-YOLO 肺结节<br>LIDC/NLST/TCIA<br><small>10.1038/s41746-025-02106-y</small></li>
-              </ul>
-              <p style="margin-top:.55rem">检索列表（去预印本）：<b>13</b> 篇（当前口径偏 npj DigMed）</p>
-            </div>
-            <div class="box">
-              <h4>可选数据集</h4>
-              <table class="ds">
-                <tr><th>数据集</th><th>任务</th><th>获取</th></tr>
-                <tr><td>LIDC-IDRI</td><td>肺结节 CT</td><td><span class="tag">TCIA</span></td></tr>
-                <tr><td>NLST</td><td>肺癌筛查 CT</td><td><span class="tag warn">申请/公开子集</span></td></tr>
-                <tr><td>TCIA 各集合</td><td>多癌种影像</td><td><span class="tag">cancerimagingarchive.net</span></td></tr>
-                <tr><td>Kvasir/CVC/ETIS</td><td>息肉内镜</td><td><span class="tag">公开下载</span></td></tr>
-                <tr><td>HyperKvasir/SUN</td><td>内镜增强</td><td><span class="tag">公开下载</span></td></tr>
-              </table>
-            </div>
-            <div class="box">
-              <h4>可做方向（公开数据 → 研究问题）</h4>
-              <div class="dirs">
-                <div class="dir"><i>A</i><div>
-                  <b>息肉检测跨数据集泛化</b>
-                  <div class="row"><span class="lab">数据</span>训练：Kvasir-SEG + CVC-ClinicDB + HyperKvasir 等；外测：ETIS / SUN / PICCOLO 等留出集</div>
-                  <div class="row"><span class="lab">研究</span>生成式增强（如 StyleGAN）能否缩小跨中心 mAP/漏检差距，尤其扁平病灶</div>
-                </div></div>
-                <div class="dir"><i>B</i><div>
-                  <b>肺结节 YOLO 结构创新与消融</b>
-                  <div class="row"><span class="lab">数据</span>LIDC-IDRI + NLST 公开子集 + TCIA 相关集合</div>
-                  <div class="row"><span class="lab">研究</span>双模块创新相对 YOLOv8 基线的 mAP 增益；四变体消融定位贡献</div>
-                </div></div>
-                <div class="dir"><i>C</i><div>
-                  <b>小病灶漏检专项</b>
-                  <div class="row"><span class="lab">数据</span>同上肺/息肉公开集，按病灶直径分层</div>
-                  <div class="row"><span class="lab">研究</span>&lt;5mm / 小息肉召回率；针对性损失或多尺度模块是否有效</div>
-                </div></div>
-                <div class="dir"><i>D</i><div>
-                  <b>多公开集预训练 → 目标公开集适配</b>
-                  <div class="row"><span class="lab">数据</span>源：多内镜/多 CT 公开集混合；目标：单一留出公开集</div>
-                  <div class="row"><span class="lab">研究</span>在不引入医院私有片子的前提下，域适配能否提升目标集检测</div>
-                </div></div>
-              </div>
-            </div>
-                <div class="dir"><i>B</i><div><b>肺结节 YOLO 结构创新</b><br>公开 CT 集，双模块消融</div></div>
-                <div class="dir"><i>C</i><div><b>小病灶漏检专项</b><br>按尺寸分层报告 recall</div></div>
-                <div class="dir"><i>D</i><div><b>公开预训练→目标域适配</b><br>仍保持“训练公开、外测公开”</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="links">
-            <a class="mini primary" href="lists/type-05_full.html">完整期刊列表 13</a>
-            <a class="mini" href="type-05.html">单页详解</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="start">
       <div class="wrap reveal">
-        <div class="kicker">落地顺序</div>
-        <h2 class="sec">不会选？按这条走</h2>
-        <div class="flow">
-          <div><b>1. 定写法</b><span>没医院 → 优先 01 或 05；会组学 → 03；只有一个库 → 02；偏方法 → 04</span></div>
-          <div><b>2. 对齐范文</b><span>先打开精选 PDF，按其 Data availability 复制切分</span></div>
-          <div><b>3. 申请数据</b><span>ICU 去 PhysioNet；调查去 NHANES；影像去 TCIA</span></div>
-          <div><b>4. 做满验证包</b><span>锁死外测 + 硬对照 + 校准 + 弱外测诚实段</span></div>
-        </div>
-
-        <div class="cta-band" style="margin-top:1.5rem">
-          <div class="kicker" style="color:#9be2c8">推荐起步组合</div>
-          <h2>风险预测 × 双公开库外推</h2>
-          <p>计算机背景、无医院合作时，最容易对外讲清楚、也有近两年一区真刊路径的组合。题目可以后定，框架先对齐。</p>
-          <div class="cta">
-            <a class="btn btn-light" href="#t01">看 01 详解</a>
-            <a class="btn btn-ghost" href="confidence.html">看底气页</a>
-            <a class="btn btn-ghost" href="lists/type-01_full.html">看 148 篇列表</a>
+        <div class="band">
+          <div class="kicker" style="color:#9be2c8">会上怎么用</div>
+          <h2>五分钟对齐，再谈细节</h2>
+          <p>本页讲清赛道与两个可买方案。被追问「有没有人发过」→ 底气页；被追问「还有别的题型吗」→ 写法附录。</p>
+          <div class="cta" style="animation:none">
+            <a class="btn btn-light" href="#cases">回到两个方案</a>
+            <a class="btn btn-ghost" href="confidence.html">真刊证据</a>
+            <a class="btn btn-ghost" href="portal.html">五种写法附录</a>
           </div>
         </div>
-        <p class="note">配套文件：confidence.html（底气）· type-01…05.html（单类）· lists/*_full.html（完整期刊列表）· 范文 PDF 在「一区_非私有数据写法」。</p>
+        <div class="appendix">
+          <p><b>附录说明：</b>五种公开数据写法、数据集表、完整期刊列表放在写法百科，供二次会议或技术对接使用——不是客户第一屏要消化的内容。</p>
+          <a href="portal.html">进入写法百科（附录）→</a>
+        </div>
+        <p class="note">表述口径：走已被一区承认的路径；档位看验证包强度。不保证必中某一本刊。</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">一区公开数据写法门户 · 面向非医学/计算机背景客户 · 检索量为口径估算，精选范文以本地库为准</div>
+    <div class="wrap">客户说服首页 · 路径 B：公开数据风险预测 · 源码仓库 jiezhichang</div>
   </footer>
 
   <script>
-    const io = new IntersectionObserver((es)=>{
-      es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-    },{threshold:0.12});
+    const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.14});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   </script>
 </body>
