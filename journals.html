@@ -65,6 +65,14 @@ details.j>summary:hover{background:#f6faf8}
 .fit.high{background:#ecfdf5;color:#065f46}
 .fit.mid{background:#eff6ff;color:#1e40af}
 .fit.low{background:#fff7ed;color:#9a3412}
+.meta-row{display:flex;flex-wrap:wrap;gap:.35rem;margin:.35rem 0 .15rem}
+.chip{
+  font-size:.68rem;font-weight:700;padding:.15rem .45rem;border-radius:999px;
+  background:#f1f5f4;color:var(--muted);border:1px solid var(--line);
+}
+.chip.cas{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
+.chip.track{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.chip.sampled{background:#fff7ed;color:#9a3412;border-color:#fdba74}
 
 .body{padding:0 1.1rem 1.15rem;border-top:1px solid var(--line)}
 .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:.85rem;padding-top:1rem}
@@ -104,7 +112,7 @@ footer{padding:1.3rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
       <div class="brand">一区 → 四区</div>
       <h1>各刊写法分布，以及收什么方向</h1>
       <p class="lead">层级：先选分区 → 再点开期刊 → 看写法占比与收文方向，对照我们能不能投。</p>
-      <div class="warn"><b>口径：</b>一区 8 刊为 EuropePMC 2024–2026 抽样（每刊≤200）+ 关键词自动分类，看粗分布。二–四区暂为定性地图，数字待补。微生物刊与 npj DigMed 分类体系不同，勿直接横比。</div>
+      <div class="warn"><b>口径：</b>分区按中科院 <b>2025年3月升级版大类</b>（投前请复核）。写法占比条仅一区已 EuropePMC 抽样刊有数字；其余只列收文方向，不编假百分比。微生物刊与数字医学刊分类体系不同，勿直接横比。</div>
     </div>
   </header>
 
@@ -114,7 +122,7 @@ footer{padding:1.3rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
   </main>
 
   <footer>
-    <div class="wrap">数据源：仓库「一区期刊写法分布」· 页面 data/journals-survey.json · 用于选刊对齐，不作录用承诺</div>
+    <div class="wrap">中科院 2025 大类分区交叉核对 · EuropePMC 抽样见「一区期刊写法分布」· data/journals-survey.json · 不作录用承诺</div>
   </footer>
 
   <script src="data/journals-survey.js"></script>
@@ -131,18 +139,25 @@ footer{padding:1.3rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
   }
 
   function journalCard(j){
-    const hasDist = Array.isArray(j.dist);
+    const hasDist = Array.isArray(j.dist) && j.dist.length;
     const accepts = (j.accepts||[]).map(x=>`<li>${x}</li>`).join('');
     const avoid = (j.avoid||[]).map(x=>`<li>${x}</li>`).join('');
     const types = (j.our_types&&j.our_types.length)
       ? `对齐写法 ${j.our_types.join(' / ')}`
       : '一般不对齐我们主方案';
-    const pub = j.publisher ? ` · ${j.publisher}` : '';
+    const pub = j.publisher && j.publisher !== '—' ? ` · ${j.publisher}` : '';
     const n = j.n ? ` · 抽样 n=${j.n}` : '';
+    const cas = j.cas
+      ? `<span class="chip cas">大类${j.cas.major}${j.cas.zone}区${j.cas.top?' · Top':''}</span>`
+      : '';
+    const track = j.track ? `<span class="chip track">${j.track}</span>` : '';
+    const sampled = j.sampled ? `<span class="chip sampled">已抽样占比</span>` : '';
+    const minor = j.cas && j.cas.minor ? `<p class="note">小类参考：${j.cas.minor}</p>` : '';
     return `<details class="j">
       <summary>
         <div class="sum-l">
           <b>${j.name}</b>
+          <div class="meta-row">${cas}${track}${sampled}</div>
           <span>${types}${pub}${n}</span>
         </div>
         <span class="fit ${j.fit||'mid'}">${j.fit_label||''}</span>
@@ -150,8 +165,9 @@ footer{padding:1.3rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
       <div class="body">
         <div class="grid">
           <div class="box">
-            <h4>${hasDist?'写法分布（粗）':'说明'}</h4>
-            ${hasDist?bars(j.dist):`<p>${j.note||''}</p>`}
+            <h4>${hasDist?'写法分布（粗）':'选刊说明'}</h4>
+            ${hasDist?bars(j.dist):`<p>${j.note||'尚无写法占比抽样；先看收文方向。'}</p>`}
+            ${minor}
           </div>
           <div class="box">
             <h4>收的方向</h4>
@@ -181,10 +197,11 @@ footer{padding:1.3rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
       const panel = document.createElement('section');
       panel.className = 'zone-panel' + (i===0?' on':'');
       panel.id = z.id;
-      const ready = z.status==='ready';
+      const sampledReady = z.status==='ready';
+      const count = (z.journals||[]).length;
       panel.innerHTML = `
-        <p class="zone-blurb">${z.blurb||''}</p>
-        ${ready?'':`<div class="todo-box"><b>待补抽样：</b>二–四区尚未跑 EuropePMC 分类。当前只给选刊定性方向，避免伪造占比。</div>`}
+        <p class="zone-blurb">${z.blurb||''} <b>本区 ${count} 本。</b></p>
+        ${sampledReady?'':`<div class="todo-box"><b>名单已补：</b>本区有具体刊名与收文方向；写法占比条仍待 EuropePMC 抽样，故不显示假百分比。</div>`}
         ${(z.journals||[]).map(journalCard).join('')}
       `;
       panels.appendChild(panel);
