@@ -19,11 +19,12 @@
 | 文件 | 角色 |
 |------|------|
 | index.html | **入口**：选题→方案→标准→范文 |
+| types.html | **五种写法层级展开**（点开一类） |
 | crc-microbiome.html | 结直肠方案专页 |
 | osteoporosis.html | 骨质疏松方案专页 |
+| type-05.html#exemplars | 影像 npj 精选 11 篇 |
 | confidence.html | 底气/证据（追问用） |
-| two-paths.html | 两种一区认知（备用） |
-| portal.html | 五种写法百科（附录） |
+| portal.html | 写法百科大表（附录） |
 
 ## 本地预览
 

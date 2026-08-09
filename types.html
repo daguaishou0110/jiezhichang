@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>五种写法 · 层级展开</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;
+  --line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;
+  --warm:#c45c16;--sky:#0b6e8a;--max:880px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16.5px;line-height:1.65}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+
+.nav{
+  position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);
+  background:rgba(238,243,240,.94);border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.55rem 1rem;justify-content:space-between;align-items:center;padding:.75rem 0;font-size:.84rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.45rem .85rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a:hover{color:var(--teal)}
+
+.hero{padding:2.8rem 0 1.6rem}
+.kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.45rem}
+.brand{font-size:clamp(2.2rem,6vw,3.4rem);font-weight:750;color:var(--deep);margin-bottom:.5rem}
+.hero h1{font-size:clamp(1.1rem,2.4vw,1.4rem);font-weight:600;max-width:22ch;margin-bottom:.65rem}
+.lead{color:var(--muted);max-width:46ch;margin-bottom:1rem}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.pill{
+  font-size:.72rem;font-weight:700;padding:.22rem .55rem;border-radius:999px;
+  background:rgba(12,122,95,.12);color:var(--deep);
+}
+.pill.soft{background:rgba(16,24,32,.06);color:var(--muted)}
+.pill.warm{background:rgba(196,92,22,.12);color:#8a3d0c}
+
+/* tree */
+.tree{padding:0 0 3rem}
+.level-label{
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+  color:var(--muted);margin:1.2rem 0 .65rem;
+}
+
+details.type{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  margin-bottom:.7rem;overflow:hidden;
+}
+details.type[open]{border-color:rgba(12,122,95,.35)}
+details.type>summary{
+  list-style:none;cursor:pointer;display:grid;
+  grid-template-columns:3.2rem 1fr auto;gap:.85rem;align-items:center;
+  padding:1.05rem 1.15rem;user-select:none;
+}
+details.type>summary::-webkit-details-marker{display:none}
+details.type>summary:hover{background:#f6faf8}
+.num{
+  width:3.2rem;height:3.2rem;border-radius:12px;display:grid;place-items:center;
+  color:#fff;font-family:Fraunces,serif;font-weight:750;font-size:1.15rem;background:var(--teal);
+}
+#t02 .num{background:var(--sky)}
+#t03 .num{background:var(--warm)}
+#t04 .num{background:#3d5a40}
+#t05 .num{background:#2f4858}
+.sum-main b{display:block;font-size:1.1rem;margin-bottom:.15rem}
+.sum-main span{color:var(--muted);font-size:.88rem}
+.chev{
+  width:1.6rem;height:1.6rem;border-radius:999px;border:1px solid var(--line);
+  display:grid;place-items:center;color:var(--muted);font-size:.75rem;transition:transform .2s;
+}
+details[open] .chev{transform:rotate(90deg);background:rgba(12,122,95,.1);color:var(--teal);border-color:transparent}
+
+.panel{padding:0 1.15rem 1.2rem 1.15rem;border-top:1px solid var(--line)}
+.panel-inner{padding-top:1rem;display:grid;gap:.85rem}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.65rem}
+@media(max-width:720px){
+  details.type>summary{grid-template-columns:2.6rem 1fr auto}
+  .row3{grid-template-columns:1fr}
+}
+.box{
+  background:#f7faf8;border:1px solid var(--line);border-radius:12px;padding:.85rem .9rem;
+}
+.box h4{
+  font-family:Sora,sans-serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:.4rem;
+}
+.box p,.box li{color:var(--muted);font-size:.9rem}
+.box ul{padding-left:1.05rem;display:grid;gap:.25rem}
+.can{
+  display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;
+  padding:.18rem .5rem;border-radius:999px;margin-bottom:.45rem;
+}
+.can.yes{background:#ecfdf5;color:#065f46}
+.can.pkg{background:#eff6ff;color:#1e40af}
+.can.maybe{background:#fff7ed;color:#9a3412}
+.links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.15rem}
+.btn{
+  display:inline-flex;padding:.55rem .9rem;border-radius:999px;font-weight:700;font-size:.84rem;
+  text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink);
+}
+.btn.primary{background:var(--teal);color:#fff;border-color:transparent}
+.btn.ghost{background:transparent}
+
+.hint{
+  margin-top:1.4rem;padding:1.1rem 1.15rem;border-radius:14px;border:1px dashed var(--line);
+  background:#f7faf8;color:var(--muted);font-size:.9rem;
+}
+.hint b{color:var(--ink)}
+footer{padding:1.2rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-brand" href="index.html">← 说服首页</a>
+      <div class="nav-links">
+        <a href="#map">五种写法</a>
+        <a href="crc-microbiome.html">结直肠</a>
+        <a href="osteoporosis.html">骨质疏松</a>
+        <a href="type-05.html#exemplars">影像范文</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="kicker">层级展开 · 写法地图</div>
+      <div class="brand">五种写法</div>
+      <h1>点开一类，再往下看能不能做、范文在哪</h1>
+      <p class="lead">不要一次吞百科。先看「我们能不能做」→ 再展开该类细节 → 需要时再进专页。</p>
+      <div class="legend">
+        <span class="pill">可做 · 已有方案</span>
+        <span class="pill soft">可做 · 接单设计</span>
+        <span class="pill warm">可做 · CS/YOLO 对口</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="tree" id="map">
+    <div class="wrap">
+      <div class="level-label">第一层 · 点开写法</div>
+
+      <!-- 01 -->
+      <details class="type" id="t01">
+        <summary>
+          <div class="num">01</div>
+          <div class="sum-main">
+            <b>双公开库外推</b>
+            <span>库 A 训完锁死 → 库 B 只考一次</span>
+          </div>
+          <div class="chev">›</div>
+        </summary>
+        <div class="panel"><div class="panel-inner">
+          <div class="row3">
+            <div class="box">
+              <h4>我们能不能做</h4>
+              <div class="can yes">可做 · 接单设计</div>
+              <p>ICU 公开库（eICU→MIMIC）。需 PhysioNet 申请与特征对齐，工程量大于影像，但路径最像「换医院」。</p>
+            </div>
+            <div class="box">
+              <h4>一区认什么</h4>
+              <ul>
+                <li>锁死外测</li>
+                <li>硬临床基线</li>
+                <li>校准 + 弱外测诚实</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>范文入口</h4>
+              <ul>
+                <li>RealMIP · npj DigMed</li>
+                <li>Critical Care 四库</li>
+              </ul>
+            </div>
+          </div>
+          <div class="links">
+            <a class="btn primary" href="type-01.html">展开 01 详解</a>
+            <a class="btn" href="lists/type-01_full.html">期刊列表</a>
+          </div>
+        </div></div>
+      </details>
+
+      <!-- 02 -->
+      <details class="type" id="t02">
+        <summary>
+          <div class="num">02</div>
+          <div class="sum-main">
+            <b>同库时间 / 中心切分</b>
+            <span>只有一个公开资源时，按年或中心锁死外测</span>
+          </div>
+          <div class="chev">›</div>
+        </summary>
+        <div class="panel"><div class="panel-inner">
+          <div class="row3">
+            <div class="box">
+              <h4>我们能不能做</h4>
+              <div class="can pkg">可做 · 已有方案</div>
+              <p><b>骨质疏松</b>：NHANES 时间外推 + OST 硬对照（L3 包）。已设计好，可直接对客户讲。</p>
+            </div>
+            <div class="box">
+              <h4>一区认什么</h4>
+              <ul>
+                <li>未来周期 / 留出中心</li>
+                <li>硬对照（如 OST）</li>
+                <li>勿包装成换医院</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>范文入口</h4>
+              <ul>
+                <li>NHANES 时间外推写法参考</li>
+                <li>RealMIP 中心 hold-out（协议）</li>
+              </ul>
+            </div>
+          </div>
+          <div class="links">
+            <a class="btn primary" href="osteoporosis.html">骨质疏松方案</a>
+            <a class="btn" href="type-02.html">展开 02 详解</a>
+          </div>
+        </div></div>
+      </details>
+
+      <!-- 03 -->
+      <details class="type" id="t03">
+        <summary>
+          <div class="num">03</div>
+          <div class="sum-main">
+            <b>多公开队列 LODO</b>
+            <span>多队列拼起来，每次留一队考试</span>
+          </div>
+          <div class="chev">›</div>
+        </summary>
+        <div class="panel"><div class="panel-inner">
+          <div class="row3">
+            <div class="box">
+              <h4>我们能不能做</h4>
+              <div class="can pkg">可做 · 已有方案</div>
+              <p><b>结直肠菌群</b>：公开宏基因组 LOCO 风险分层。已设计好；不做机制文叙事。</p>
+            </div>
+            <div class="box">
+              <h4>一区认什么</h4>
+              <ul>
+                <li>按队列报 AUC</li>
+                <li>混杂对照 + panel</li>
+                <li>弱队列诚实解剖</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>范文入口</h4>
+              <ul>
+                <li>Wirbel Nat Med 2019</li>
+                <li>对齐 LODO 叙事</li>
+              </ul>
+            </div>
+          </div>
+          <div class="links">
+            <a class="btn primary" href="crc-microbiome.html">结直肠菌群方案</a>
+            <a class="btn" href="type-03.html">展开 03 详解</a>
+          </div>
+        </div></div>
+      </details>
+
+      <!-- 04 -->
+      <details class="type" id="t04">
+        <summary>
+          <div class="num">04</div>
+          <div class="sum-main">
+            <b>方法与基准</b>
+            <span>比部署策略 / 评价协议，不比新病人队列</span>
+          </div>
+          <div class="chev">›</div>
+        </summary>
+        <div class="panel"><div class="panel-inner">
+          <div class="row3">
+            <div class="box">
+              <h4>我们能不能做</h4>
+              <div class="can yes">可做 · 接单设计</div>
+              <p>适合已有多库 ICU 对齐能力时。贡献在 fine-tune / retrain / 域适应谁更好，叙事别伪装生物发现。</p>
+            </div>
+            <div class="box">
+              <h4>一区认什么</h4>
+              <ul>
+                <li>预注册策略清单</li>
+                <li>同一协议系统比较</li>
+                <li>可操作部署建议</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>范文入口</h4>
+              <ul>
+                <li>脓毒症分布偏移 · npj DigMed 2026</li>
+              </ul>
+            </div>
+          </div>
+          <div class="links">
+            <a class="btn primary" href="type-04.html">展开 04 详解</a>
+            <a class="btn" href="lists/type-04_full.html">期刊列表</a>
+          </div>
+        </div></div>
+      </details>
+
+      <!-- 05 -->
+      <details class="type" id="t05" open>
+        <summary>
+          <div class="num">05</div>
+          <div class="sum-main">
+            <b>公开影像检测 / 分割</b>
+            <span>多公开影像集 · mAP / Dice / 跨集泛化（YOLO 等）</span>
+          </div>
+          <div class="chev">›</div>
+        </summary>
+        <div class="panel"><div class="panel-inner">
+          <div class="row3">
+            <div class="box">
+              <h4>我们能不能做</h4>
+              <div class="can maybe">可做 · CS / YOLO 对口</div>
+              <p><b>就是你问的这一类。</b>多公开检测/分割不是新写法，是 05。你们计算机 + YOLO 背景最贴；关键做成跨集锁死外测，不是混集刷分。</p>
+            </div>
+            <div class="box">
+              <h4>一区认什么</h4>
+              <ul>
+                <li>≥2 公开集 + 留出外测</li>
+                <li>强基线 + 消融</li>
+                <li>小病灶漏检 / 失败例</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>范文入口</h4>
+              <ul>
+                <li>StyleGAN-YOLO / CR-YOLO</li>
+                <li>StructSAM / CFG-MambaNet</li>
+                <li>npj 精选共 11 篇</li>
+              </ul>
+            </div>
+          </div>
+          <div class="links">
+            <a class="btn primary" href="type-05.html#exemplars">看 npj 精选 11 篇</a>
+            <a class="btn" href="type-05.html">展开 05 详解</a>
+            <a class="btn ghost" href="lists/type-05_full.html">粗检索列表</a>
+          </div>
+        </div></div>
+      </details>
+
+      <div class="hint">
+        <b>怎么用这一页：</b>客户问「你们能做哪些」→ 打开本页 → 只展开相关 1～2 类。  
+        已有现成方案优先讲 <b>02 骨质疏松</b>、<b>03 结直肠菌群</b>；影像单优先讲 <b>05</b>。  
+        更深百科（数据集大表）仍在 <a href="portal.html">portal 附录</a>，不必第一轮打开。
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">层级：五种写法 → 能不能做 / 标准 / 范文 → 专页详解 · 05 默认展开便于对照</div>
+  </footer>
+
+  <script>
+    // Deep-link: types.html#t05 opens that panel
+    const id = location.hash.replace('#','');
+    if (id) {
+      document.querySelectorAll('details.type').forEach(d => d.open = d.id === id);
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  </script>
+</body>
+</html>
