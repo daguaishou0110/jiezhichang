@@ -98,31 +98,84 @@ footer{padding:1.2rem 0 2rem;color:var(--muted);font-size:.82rem;border-top:1px 
         </ul>
       </div>
 
+      <div class="card" id="exemplars">
+        <h2>精选范文 · npj 多公开集检测 / 分割（11 篇）</h2>
+        <p style="color:var(--muted);margin-bottom:.85rem">口径：期刊为 <b>npj Digital Medicine</b>；主任务为框检测或掩膜分割；使用 <b>≥2 个公开影像数据集</b>。不是新写法，就是写法 05 的加强包（跨集外推）。检索命中≠精选，见下方完整列表。</p>
+
+        <h3 style="font-size:1.05rem;margin:.35rem 0 .55rem">A · 目标检测（YOLO / 框）</h3>
+        <div class="ev">
+          <a class="item" href="https://doi.org/10.1038/s41746-025-02293-8" target="_blank" rel="noopener">
+            <div class="meta">2025 · npj DigMed · <span class="tag ok">检测</span> <span class="tag">本地 PDF</span></div>
+            <strong>StyleGAN + YOLOv5 息肉跨集泛化</strong>
+            <div class="meta">Kvasir-SEG / CVC / ETIS / HyperKvasir / PICCOLO / SUN 等 · DOI: 10.1038/s41746-025-02293-8</div>
+          </a>
+          <a class="item" href="https://doi.org/10.1038/s41746-025-02106-y" target="_blank" rel="noopener">
+            <div class="meta">2025 · npj DigMed · <span class="tag ok">检测</span> <span class="tag">本地 PDF</span></div>
+            <strong>CR-YOLO 肺结节</strong>
+            <div class="meta">LIDC-IDRI + NLST + TCIA 子集 · DOI: 10.1038/s41746-025-02106-y</div>
+          </a>
+          <a class="item" href="https://doi.org/10.1038/s41746-026-02602-9" target="_blank" rel="noopener">
+            <div class="meta">2026 · npj DigMed · <span class="tag ok">检测+</span></div>
+            <strong>VITALIS 肺结节图文多任务</strong>
+            <div class="meta">LIDC + LUNG-PET-CT-Dx + ACRIN + NLST（含检测头）· DOI: 10.1038/s41746-026-02602-9</div>
+          </a>
+          <a class="item" href="https://doi.org/10.1038/s41746-025-02251-4" target="_blank" rel="noopener">
+            <div class="meta">2025 · npj DigMed · <span class="tag ok">检测+分割</span></div>
+            <strong>GLANCE 结节分割与检测</strong>
+            <div class="meta">LIDC + LNDb + LUNA16 + Tianchi · DOI: 10.1038/s41746-025-02251-4</div>
+          </a>
+        </div>
+
+        <h3 style="font-size:1.05rem;margin:1.1rem 0 .55rem">B · 分割（掩膜 / 跨集）</h3>
+        <div class="ev">
+          <a class="item" href="https://doi.org/10.1038/s41746-025-02306-6" target="_blank" rel="noopener">
+            <div class="meta">2026 · npj DigMed · <span class="tag ok">分割</span></div>
+            <strong>StructSAM 肺病灶 · 跨器官外推</strong>
+            <div class="meta">LIDC-IDRI + KiTS19 + MSD Pancreas · DOI: 10.1038/s41746-025-02306-6</div>
+          </a>
+          <a class="item" href="https://doi.org/10.1038/s41746-026-02393-z" target="_blank" rel="noopener">
+            <div class="meta">2026 · npj DigMed · <span class="tag ok">分割</span></div>
+            <strong>CFG-MambaNet 多模态分割</strong>
+            <div class="meta">ACDC + Kvasir-SEG + ISIC + SEED · DOI: 10.1038/s41746-026-02393-z</div>
+          </a>
+          <a class="item" href="https://doi.org/10.1038/s41746-026-02361-7" target="_blank" rel="noopener">
+            <div class="meta">2026 · npj DigMed · <span class="tag ok">分割</span></div>
+            <strong>HMC-transducer 肝肿瘤分割</strong>
+            <div class="meta">LiTS17 + MSD-Liver + KiTS21 · DOI: 10.1038/s41746-026-02361-7</div>
+          </a>
+          <a class="item" href="https://doi.org/10.1038/s41746-025-02041-y" target="_blank" rel="noopener">
+            <div class="meta">2025 · npj DigMed · <span class="tag ok">分割</span></div>
+            <strong>ShapeField-lung 结节分割</strong>
+            <div class="meta">LIDC-IDRI + LUNA16 + Tianchi · DOI: 10.1038/s41746-025-02041-y</div>
+          </a>
+          <a class="item" href="https://doi.org/10.1038/s41746-025-02221-w" target="_blank" rel="noopener">
+            <div class="meta">2025 · npj DigMed · <span class="tag ok">分割</span></div>
+            <strong>CoreFormer 结节分割</strong>
+            <div class="meta">LIDC + LNDb + Tianchi-Lung + NSCLC-Radiomics · DOI: 10.1038/s41746-025-02221-w</div>
+          </a>
+          <a class="item" href="https://doi.org/10.1038/s41746-025-01964-w" target="_blank" rel="noopener">
+            <div class="meta">2025 · npj DigMed · <span class="tag ok">分割 · 基础模型</span></div>
+            <strong>SAT 大词表文本提示分割</strong>
+            <div class="meta">SAT-DS：72 个公开 3D 分割集 · DOI: 10.1038/s41746-025-01964-w</div>
+          </a>
+          <a class="item" href="https://doi.org/10.1038/s41746-025-01881-y" target="_blank" rel="noopener">
+            <div class="meta">2025 · npj DigMed · <span class="tag ok">分割 · 多域</span></div>
+            <strong>Embed-MedSAM 多下游分割</strong>
+            <div class="meta">ISIC / DRIVE / REFUGE / CVC / BUSI 等十余公开基准 · DOI: 10.1038/s41746-025-01881-y</div>
+          </a>
+        </div>
+
+        <p class="note" style="margin-top:.9rem"><b>不放进精选的常见坑：</b>EndoSeg-RT / 联邦肝病灶等 → 主训医院或私有多中心（HYBRID）；AUBADE-syn → 多公开但是分类不是框/掩膜；青光眼/癫痫监测等勿充数。</p>
+        <p class="note">客户话术：写法仍是 05；多公开集 = 跨集锁死外测做硬。检测更稳范文先讲 StyleGAN-YOLO / CR-YOLO；2026 分割讲 StructSAM / CFG-MambaNet。</p>
+      </div>
+
       <div class="card">
-        <h2>完整列表（13 篇全部列出）</h2>
-        <p style="color:var(--muted);margin-bottom:.7rem">下面不是抽样：按同一检索口径，去掉预印本后，把 <b>13</b> 篇正式期刊记录全部列出。可打开网页版或下载 CSV。</p>
+        <h2>完整检索列表（13 篇，口径粗）</h2>
+        <p style="color:var(--muted);margin-bottom:.7rem">EuropePMC 粗检索命中；<b>不等于</b>上面 11 篇精选。需点开核对是否真是多公开检测/分割。</p>
         <p>
           <a class="btn primary" href="lists/type-05_full.html">打开完整列表（13）</a>
           <a class="btn" href="lists/type-05_full.csv">下载 CSV</a>
         </p>
-        <p class="note">提醒客户：这是检索命中清单；是否每一篇都“严格等于该写法”，仍需点开标题核对。我们库内精选范文见上一节。</p>
-      </div>
-
-      <div class="card">
-        <h2>这类写法的范文（本地可点开）</h2>
-        <div class="ev">
-          <a class="item" href="https://doi.org/10.1038/s41746-025-02293-8" target="_blank" rel="noopener" >
-  <div class="meta">2025 · npj Digital Medicine · <span class="tag ok">本地有 PDF</span></div>
-  <strong>StyleGAN + YOLOv5 息肉泛化</strong>
-  <div class="meta">多公开内镜集；文中声明无私人病历<br>DOI: 10.1038/s41746-025-02293-8</div>
-</a>
-<a class="item" href="https://doi.org/10.1038/s41746-025-02106-y" target="_blank" rel="noopener" >
-  <div class="meta">2025 · npj Digital Medicine · <span class="tag ok">本地有 PDF</span></div>
-  <strong>CR-YOLO 肺结节</strong>
-  <div class="meta">LIDC / NLST / TCIA 公开影像<br>DOI: 10.1038/s41746-025-02106-y</div>
-</a>
-        </div>
-        <p class="note">PDF 存放在项目「一区_非私有数据写法」对应目录；若浏览器打不开相对路径，可从该文件夹直接打开。</p>
       </div>
 
       <div class="pager">
