@@ -94,6 +94,17 @@ details[open] .chev{transform:rotate(90deg);background:rgba(12,122,95,.1);color:
 }
 .box p,.box li{color:var(--muted);font-size:.9rem}
 .box ul{padding-left:1.05rem;display:grid;gap:.25rem}
+.ex-list{display:grid;gap:.45rem;margin-top:.15rem}
+.ex-list a{
+  display:block;text-decoration:none;color:inherit;
+  border:1px solid var(--line);border-radius:10px;padding:.65rem .75rem;background:#fff;
+  transition:border-color .2s;
+}
+.ex-list a:hover{border-color:rgba(12,122,95,.45)}
+.ex-list .yr{font-size:.72rem;font-weight:700;color:var(--warm);letter-spacing:.04em;margin-bottom:.15rem}
+.ex-list b{display:block;font-size:.9rem;margin-bottom:.15rem;color:var(--ink)}
+.ex-list span{font-size:.8rem;color:var(--muted)}
+.tag-h{display:inline-block;font-size:.68rem;font-weight:700;padding:.1rem .4rem;border-radius:999px;background:rgba(196,92,22,.12);color:#8a3d0c;margin-left:.25rem}
 .can{
   display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;
   padding:.18rem .5rem;border-radius:999px;margin-bottom:.45rem;
@@ -174,11 +185,19 @@ footer{padding:1.2rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
               </ul>
             </div>
             <div class="box">
-              <h4>范文入口</h4>
-              <ul>
-                <li>RealMIP · npj DigMed</li>
-                <li>Critical Care 四库</li>
-              </ul>
+              <h4>一区范文（点开 DOI）</h4>
+              <div class="ex-list">
+                <a href="https://doi.org/10.1038/s41746-025-02114-y" target="_blank" rel="noopener">
+                  <div class="yr">2025 · npj DIGITAL MEDICINE</div>
+                  <b>RealMIP · eICU→MIMIC/SICdb</b>
+                  <span>双公开库锁死外推</span>
+                </a>
+                <a href="https://doi.org/10.1186/s13054-026-06034-5" target="_blank" rel="noopener">
+                  <div class="yr">2026 · CRITICAL CARE</div>
+                  <b>四库外推 / pooling</b>
+                  <span>eICU · MIMIC · Amsterdam · HiRID</span>
+                </a>
+              </div>
             </div>
           </div>
           <div class="links">
@@ -214,11 +233,19 @@ footer{padding:1.2rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
               </ul>
             </div>
             <div class="box">
-              <h4>范文入口</h4>
-              <ul>
-                <li>NHANES 时间外推写法参考</li>
-                <li>RealMIP 中心 hold-out（协议）</li>
-              </ul>
+              <h4>一区范文（点开 DOI）</h4>
+              <div class="ex-list">
+                <a href="https://doi.org/10.1038/s41746-025-02114-y" target="_blank" rel="noopener">
+                  <div class="yr">2025 · npj DIGITAL MEDICINE</div>
+                  <b>RealMIP · eICU 中心 hold-out</b>
+                  <span>188 中心训 / 20 中心留出（同库切分协议）</span>
+                </a>
+                <a href="https://doi.org/10.1016/j.ijcrp.2026.200595" target="_blank" rel="noopener">
+                  <div class="yr">2026 · 写法参考（非顶刊一区）</div>
+                  <b>NHANES 时间外推</b>
+                  <span>早周期→晚周期；对齐骨质疏松切法</span>
+                </a>
+              </div>
             </div>
           </div>
           <div class="links">
@@ -254,11 +281,24 @@ footer{padding:1.2rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
               </ul>
             </div>
             <div class="box">
-              <h4>范文入口</h4>
-              <ul>
-                <li>Wirbel Nat Med 2019</li>
-                <li>对齐 LODO 叙事</li>
-              </ul>
+              <h4>一区范文（点开 DOI）</h4>
+              <div class="ex-list">
+                <a href="https://doi.org/10.1038/s41591-019-0406-6" target="_blank" rel="noopener">
+                  <div class="yr">2019 · NATURE MEDICINE</div>
+                  <b>Wirbel · CRC 宏基因组跨队列</b>
+                  <span>纯公开 LODO 经典</span>
+                </a>
+                <a href="https://doi.org/10.1038/s41591-025-03693-9" target="_blank" rel="noopener">
+                  <div class="yr">2025 · NATURE MEDICINE <span class="tag-h">HYBRID</span></div>
+                  <b>Piccinno · 多队列 LODO</b>
+                  <span>12 公开 + 新测序；叙事标杆</span>
+                </a>
+                <a href="https://doi.org/10.1038/s41522-026-01001-y" target="_blank" rel="noopener">
+                  <div class="yr">2026 · npj BIOFILMS <span class="tag-h">HYBRID</span></div>
+                  <b>Meta-iTL · 跨队列迁移</b>
+                  <span>多公开队列 + 目标队列</span>
+                </a>
+              </div>
             </div>
           </div>
           <div class="links">
@@ -294,10 +334,19 @@ footer{padding:1.2rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
               </ul>
             </div>
             <div class="box">
-              <h4>范文入口</h4>
-              <ul>
-                <li>脓毒症分布偏移 · npj DigMed 2026</li>
-              </ul>
+              <h4>一区范文（点开 DOI）</h4>
+              <div class="ex-list">
+                <a href="https://doi.org/10.1038/s41746-026-02364-4" target="_blank" rel="noopener">
+                  <div class="yr">2026 · npj DIGITAL MEDICINE</div>
+                  <b>脓毒症分布偏移 · 部署策略</b>
+                  <span>HiRID / MIMIC / eICU · fine-tune vs retrain vs DA</span>
+                </a>
+                <a href="https://doi.org/10.1186/s13054-026-06034-5" target="_blank" rel="noopener">
+                  <div class="yr">2026 · CRITICAL CARE</div>
+                  <b>四库联合评价协议</b>
+                  <span>可借鉴「多库同一协议比较」形状</span>
+                </a>
+              </div>
             </div>
           </div>
           <div class="links">
@@ -333,12 +382,29 @@ footer{padding:1.2rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
               </ul>
             </div>
             <div class="box">
-              <h4>范文入口</h4>
-              <ul>
-                <li>StyleGAN-YOLO / CR-YOLO</li>
-                <li>StructSAM / CFG-MambaNet</li>
-                <li>npj 精选共 11 篇</li>
-              </ul>
+              <h4>一区范文（点开 DOI）</h4>
+              <div class="ex-list">
+                <a href="https://doi.org/10.1038/s41746-025-02293-8" target="_blank" rel="noopener">
+                  <div class="yr">2025 · npj · 检测</div>
+                  <b>StyleGAN + YOLOv5 息肉</b>
+                  <span>多公开内镜集</span>
+                </a>
+                <a href="https://doi.org/10.1038/s41746-025-02106-y" target="_blank" rel="noopener">
+                  <div class="yr">2025 · npj · 检测</div>
+                  <b>CR-YOLO 肺结节</b>
+                  <span>LIDC / NLST / TCIA</span>
+                </a>
+                <a href="https://doi.org/10.1038/s41746-025-02306-6" target="_blank" rel="noopener">
+                  <div class="yr">2026 · npj · 分割</div>
+                  <b>StructSAM 跨器官</b>
+                  <span>LIDC + KiTS + MSD</span>
+                </a>
+                <a href="https://doi.org/10.1038/s41746-026-02393-z" target="_blank" rel="noopener">
+                  <div class="yr">2026 · npj · 分割</div>
+                  <b>CFG-MambaNet</b>
+                  <span>四公开模态分割</span>
+                </a>
+              </div>
             </div>
           </div>
           <div class="links">
@@ -349,10 +415,11 @@ footer{padding:1.2rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
         </div></div>
       </details>
 
-      <div class="hint">
-        <b>怎么用这一页：</b>客户问「你们能做哪些」→ 打开本页 → 只展开相关 1～2 类。  
-        已有现成方案优先讲 <b>02 骨质疏松</b>、<b>03 结直肠菌群</b>；影像单优先讲 <b>05</b>。  
-        更深百科（数据集大表）仍在 <a href="portal.html">portal 附录</a>，不必第一轮打开。
+        <div class="hint">
+        <b>怎么用这一页：</b>客户问「你们能做哪些」→ 打开本页 → 只展开相关 1～2 类 → 点 DOI。  
+        已有方案优先 <b>02 / 03</b>；影像 <b>05</b>（精选 11 篇）。  
+        02 的「纯时间切分」顶刊少，对外用 RealMIP 中心 hold-out 作一区协议 + NHANES 作切法参考。  
+        百科大表见 <a href="portal.html">portal</a>。
       </div>
     </div>
   </main>
