@@ -5,7 +5,7 @@ window.JOURNAL_SURVEY = {
     "partition_standard": "新锐期刊分区表 2026（2026-03-24 发布，大类优先）",
     "partition_source": "XR-Scholar / 社区 XR2026 大类表交叉核对",
     "source": "EuropePMC 抽样（一区部分刊）+ 2026 新锐大类分区",
-    "caveat": "本站分区一律按 2026 新锐大类，不再使用中科院 2025 升级版。Frontiers 系列已单独收录，但许多单位认定偏严——接单前先问清。投前请用 xr-scholar.com 复核。写法占比仅一区已抽样刊有数字。",
+    "caveat": "本站分区按 2026 新锐大类。Frontiers 只展示相对容易录用、周期较短且贴公开数据路径的子集；许多单位认定偏严——接单前先问清。写法占比仅一区已抽样刊有数字。",
     "updated": "2026-08",
     "scope": "围绕公开数据路径：数字医学预测、菌群跨队列、公开影像检测/分割、骨质疏松风险分层"
   },
@@ -665,7 +665,7 @@ window.JOURNAL_SURVEY = {
       "id": "z2",
       "name": "二区",
       "status": "roster",
-      "blurb": "2026 新锐大类二区。含数字医学/生信/影像常落点，以及 Frontiers 系列对口刊。写法占比尚未抽样。Frontiers 需先确认单位认定。",
+      "blurb": "2026 新锐大类二区。Frontiers 仅保留相对好投、周期短、贴路径的刊；接单前仍须确认单位是否认 Frontiers。",
       "journals": [
         {
           "id": "jmir_med_inform",
@@ -1022,26 +1022,26 @@ window.JOURNAL_SURVEY = {
             "major": "医学",
             "zone": 2,
             "top": false,
-            "minor": "数字健康"
+            "minor": "数字健康；OA 快审气质"
           },
           "track": "数字医学",
           "fit": "high",
-          "fit_label": "Frontiers · 数字健康二区",
+          "fit_label": "好投快 · 数字健康",
           "sampled": false,
           "accepts": [
-            "数字健康应用与评价",
             "公开数据风险预测",
-            "部分工具/部署报告"
+            "数字健康工具/评价",
+            "时间外推类 NHANES"
           ],
           "avoid": [
-            "单位不认 Frontiers 时勿主推",
-            "无外测刷分"
+            "单位不认 Frontiers",
+            "无外测裸刷分"
           ],
           "our_types": [
             "02",
             "01"
           ],
-          "note": "对我们公开数据路径最贴的 Frontiers 刊之一。"
+          "note": "Frontiers 线里对我们路径最贴、周转通常快于传统专科刊。"
         },
         {
           "id": "frontiers_micro",
@@ -1052,186 +1052,24 @@ window.JOURNAL_SURVEY = {
             "major": "生物学",
             "zone": 2,
             "top": true,
-            "minor": "微生物学"
+            "minor": "微生物学；发文量大"
           },
           "track": "菌群",
-          "fit": "mid",
-          "fit_label": "Frontiers · 微生物二区 Top",
+          "fit": "high",
+          "fit_label": "好投快 · 菌群",
           "sampled": false,
           "accepts": [
-            "微生物学",
-            "菌群生态/关联",
-            "部分计算微生物（需生物学故事）"
+            "菌群关联/计算",
+            "多队列方法（需一点生物学故事）"
           ],
           "avoid": [
-            "纯黑盒 ML 无微生物问题",
-            "单位不认 Frontiers"
+            "单位不认 Frontiers",
+            "完全无微生物叙事"
           ],
           "our_types": [
             "03"
           ],
-          "note": "结直肠菌群备选；验证包够硬才考虑。"
-        },
-        {
-          "id": "frontiers_caim",
-          "name": "Frontiers in Cellular and Infection Microbiology",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 2,
-            "top": false,
-            "minor": "感染/细胞微生物"
-          },
-          "track": "菌群",
-          "fit": "mid",
-          "fit_label": "Frontiers · 感染微生物二区",
-          "sampled": false,
-          "accepts": [
-            "感染微生物",
-            "宿主-微生物互作",
-            "部分菌群疾病关联"
-          ],
-          "avoid": [
-            "纯公开刷分无感染/宿主叙事"
-          ],
-          "our_types": [
-            "03"
-          ],
-          "note": "比 DigHealth 更偏生物学/感染。"
-        },
-        {
-          "id": "frontiers_bbe",
-          "name": "Frontiers in Bioengineering and Biotechnology",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "生物学",
-            "zone": 2,
-            "top": false,
-            "minor": "生物工程与生物技术"
-          },
-          "track": "公开影像/方法",
-          "fit": "mid",
-          "fit_label": "Frontiers · 生工二区",
-          "sampled": false,
-          "accepts": [
-            "生物工程方法",
-            "部分医学影像/计算生物工程应用"
-          ],
-          "avoid": [
-            "与 bioengineering 脱节的纯临床预测"
-          ],
-          "our_types": [
-            "05",
-            "04"
-          ],
-          "note": "影像/方法文可作 Frontiers 线备选。"
-        },
-        {
-          "id": "frontiers_endo",
-          "name": "Frontiers in Endocrinology",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 2,
-            "top": false,
-            "minor": "内分泌学"
-          },
-          "track": "骨质疏松",
-          "fit": "mid",
-          "fit_label": "Frontiers · 内分泌二区",
-          "sampled": false,
-          "accepts": [
-            "内分泌与代谢",
-            "骨代谢/骨质疏松相关风险研究"
-          ],
-          "avoid": [
-            "无内分泌对话的纯 NHANES 刷分"
-          ],
-          "our_types": [
-            "02"
-          ],
-          "note": "骨质疏松方案若强化内分泌叙事可考虑。"
-        },
-        {
-          "id": "frontiers_aging_neuro",
-          "name": "Frontiers in Aging Neuroscience",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 2,
-            "top": false,
-            "minor": "衰老神经科学"
-          },
-          "track": "骨质疏松/数字医学",
-          "fit": "low",
-          "fit_label": "Frontiers · 衰老神经二区",
-          "sampled": false,
-          "accepts": [
-            "衰老与神经",
-            "部分老年健康计算（需贴神经/衰老）"
-          ],
-          "avoid": [
-            "骨质疏松主叙事硬塞神经刊"
-          ],
-          "our_types": [
-            "02"
-          ],
-          "note": "仅当题目明确贴衰老/神经时再用。"
-        },
-        {
-          "id": "frontiers_immuno",
-          "name": "Frontiers in Immunology",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 2,
-            "top": true,
-            "minor": "免疫学"
-          },
-          "track": "菌群",
-          "fit": "low",
-          "fit_label": "Frontiers · 免疫二区 Top",
-          "sampled": false,
-          "accepts": [
-            "免疫学",
-            "黏膜免疫/菌群-免疫交叉"
-          ],
-          "avoid": [
-            "无免疫问题的纯预测文"
-          ],
-          "our_types": [
-            "03"
-          ],
-          "note": "发文量大；需免疫故事，不作纯计算主投。"
-        },
-        {
-          "id": "frontiers_pharma",
-          "name": "Frontiers in Pharmacology",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 2,
-            "top": true,
-            "minor": "药理学"
-          },
-          "track": "综合出口",
-          "fit": "low",
-          "fit_label": "Frontiers · 药理二区 Top",
-          "sampled": false,
-          "accepts": [
-            "药理学与药物相关计算/标志物"
-          ],
-          "avoid": [
-            "与药理无关的公开数据刷分"
-          ],
-          "our_types": [],
-          "note": "一般不对齐我们主方案，仅列全 Frontiers 地图。"
+          "note": "发文量大、流程相对快；结直肠公开方案的 Frontiers 主备选。"
         },
         {
           "id": "frontiers_nutrition",
@@ -1242,15 +1080,15 @@ window.JOURNAL_SURVEY = {
             "major": "农林科学",
             "zone": 2,
             "top": true,
-            "minor": "营养学"
+            "minor": "营养学；发文量大"
           },
           "track": "骨质疏松",
-          "fit": "mid",
-          "fit_label": "Frontiers · 营养二区 Top",
+          "fit": "high",
+          "fit_label": "好投快 · 营养-骨健康",
           "sampled": false,
           "accepts": [
             "营养与代谢",
-            "膳食-骨健康/公卫预测"
+            "NHANES 膳食-骨健康预测"
           ],
           "avoid": [
             "无营养问题的纯算法"
@@ -1258,7 +1096,63 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "NHANES 营养-骨健康叙事可对齐；大类是农林科学。"
+          "note": "骨质疏松营养叙事好对齐；大类农林科学，对外说清。"
+        },
+        {
+          "id": "frontiers_endo",
+          "name": "Frontiers in Endocrinology",
+          "publisher": "Frontiers",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 2,
+            "top": false,
+            "minor": "内分泌；周转偏快"
+          },
+          "track": "骨质疏松",
+          "fit": "high",
+          "fit_label": "好投快 · 内分泌骨",
+          "sampled": false,
+          "accepts": [
+            "内分泌代谢",
+            "骨质疏松风险分层（贴骨/激素叙事）"
+          ],
+          "avoid": [
+            "完全无内分泌对话"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "比专科骨科学刊更容易走通完整公开数据包。"
+        },
+        {
+          "id": "frontiers_bbe",
+          "name": "Frontiers in Bioengineering and Biotechnology",
+          "publisher": "Frontiers",
+          "xr": {
+            "edition": "2026-03",
+            "major": "生物学",
+            "zone": 2,
+            "top": false,
+            "minor": "生物工程；方法文友好"
+          },
+          "track": "公开影像",
+          "fit": "high",
+          "fit_label": "好投快 · 影像/方法",
+          "sampled": false,
+          "accepts": [
+            "医学影像方法",
+            "检测分割工程",
+            "生物工程计算"
+          ],
+          "avoid": [
+            "与 bioengineering 完全无关"
+          ],
+          "our_types": [
+            "05",
+            "04"
+          ],
+          "note": "YOLO/分割类 Frontiers 线常投；周期通常短于 MedIA/TMI。"
         }
       ]
     },
@@ -1266,7 +1160,7 @@ window.JOURNAL_SURVEY = {
       "id": "z3",
       "name": "三区",
       "status": "roster",
-      "blurb": "2026 新锐大类三区。含 Mega 刊与 Frontiers 综合/公卫/AI 等出口；对外勿包装成一区。",
+      "blurb": "2026 新锐大类三区。含公卫/医学综合/肿瘤等 Frontiers 快出口；对外勿包装成一区。",
       "journals": [
         {
           "id": "bone",
@@ -1543,34 +1437,6 @@ window.JOURNAL_SURVEY = {
           "note": "相对旧口径四区，2026 新锐医学大类为三区；仍不主推。"
         },
         {
-          "id": "frontiers_medicine",
-          "name": "Frontiers in Medicine",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 3,
-            "top": false,
-            "minor": "医学综合"
-          },
-          "track": "数字医学",
-          "fit": "mid",
-          "fit_label": "Frontiers · 医学综合三区",
-          "sampled": false,
-          "accepts": [
-            "临床医学综合研究",
-            "部分预测/数字健康应用"
-          ],
-          "avoid": [
-            "包装成一区数字医学"
-          ],
-          "our_types": [
-            "02",
-            "01"
-          ],
-          "note": "范围宽、发文大；档位诚实说明。"
-        },
-        {
           "id": "frontiers_public_health",
           "name": "Frontiers in Public Health",
           "publisher": "Frontiers",
@@ -1579,106 +1445,52 @@ window.JOURNAL_SURVEY = {
             "major": "医学",
             "zone": 3,
             "top": false,
-            "minor": "公共卫生；Mega"
+            "minor": "公卫 Mega；快、量大"
           },
           "track": "骨质疏松",
-          "fit": "mid",
-          "fit_label": "Frontiers · 公卫三区",
+          "fit": "high",
+          "fit_label": "最好投快 · 公卫",
           "sampled": false,
           "accepts": [
-            "公共卫生预测",
-            "人群调查数据风险分层"
+            "人群调查预测",
+            "NHANES 风险分层",
+            "公卫数字健康"
           ],
           "avoid": [
-            "当作专科骨科学顶刊"
+            "包装成医学一区"
           ],
           "our_types": [
             "02"
           ],
-          "note": "骨质疏松 NHANES 弱包常见出口之一。"
+          "note": "Frontiers 里最常用来「尽快落稿」的出口之一；档位要诚实。"
         },
         {
-          "id": "frontiers_ai",
-          "name": "Frontiers in Artificial Intelligence",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "计算机科学",
-            "zone": 3,
-            "top": false,
-            "minor": "人工智能"
-          },
-          "track": "公开影像",
-          "fit": "mid",
-          "fit_label": "Frontiers · AI 三区",
-          "sampled": false,
-          "accepts": [
-            "AI 方法与应用",
-            "医学影像/预测应用报告"
-          ],
-          "avoid": [
-            "医学档位包装（大类是计算机）"
-          ],
-          "our_types": [
-            "05",
-            "01"
-          ],
-          "note": "大类计算机科学三区，不是医学三区。"
-        },
-        {
-          "id": "frontiers_bioinfo",
-          "name": "Frontiers in Bioinformatics",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "生物学",
-            "zone": 3,
-            "top": false,
-            "minor": "生物信息学"
-          },
-          "track": "菌群/方法",
-          "fit": "mid",
-          "fit_label": "Frontiers · 生信三区",
-          "sampled": false,
-          "accepts": [
-            "生物信息方法与工具",
-            "多队列流程"
-          ],
-          "avoid": [
-            "空洞 novelty"
-          ],
-          "our_types": [
-            "03",
-            "04"
-          ],
-          "note": "方法强调时可作 Frontiers 线保底。"
-        },
-        {
-          "id": "frontiers_medtech",
-          "name": "Frontiers in Medical Technology",
+          "id": "frontiers_medicine",
+          "name": "Frontiers in Medicine",
           "publisher": "Frontiers",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
             "zone": 3,
             "top": false,
-            "minor": "医疗技术"
+            "minor": "医学综合；范围宽、量大"
           },
-          "track": "公开影像",
-          "fit": "mid",
-          "fit_label": "Frontiers · 医疗技术三区",
+          "track": "数字医学",
+          "fit": "high",
+          "fit_label": "好投快 · 医学综合",
           "sampled": false,
           "accepts": [
-            "医疗技术与设备相关 AI",
-            "检测/辅助诊断工程"
+            "临床/数字健康综合研究",
+            "完整公开数据预测包"
           ],
           "avoid": [
-            "无技术贡献的纯临床描述"
+            "对外说成顶刊"
           ],
           "our_types": [
-            "05"
+            "02",
+            "01"
           ],
-          "note": "写法 05 的 Frontiers 备选。"
+          "note": "题目稍杂也能装；适合要速度的保底。"
         },
         {
           "id": "frontiers_oncology",
@@ -1689,15 +1501,15 @@ window.JOURNAL_SURVEY = {
             "major": "医学",
             "zone": 3,
             "top": false,
-            "minor": "肿瘤学；发文量大"
+            "minor": "肿瘤；发文极大"
           },
           "track": "公开影像",
-          "fit": "mid",
-          "fit_label": "Frontiers · 肿瘤三区",
+          "fit": "high",
+          "fit_label": "好投快 · 肿瘤影像",
           "sampled": false,
           "accepts": [
             "肿瘤影像检测/分割",
-            "肿瘤风险相关计算（需肿瘤叙事）"
+            "CRC 相关公开计算（贴肿瘤）"
           ],
           "avoid": [
             "非肿瘤题目硬投"
@@ -1706,35 +1518,90 @@ window.JOURNAL_SURVEY = {
             "05",
             "03"
           ],
-          "note": "CRC/肿瘤影像可对齐；单位认定需先问清。"
+          "note": "影像/CRC 线 Frontiers 高频出口；周期通常短。"
         },
         {
-          "id": "frontiers_genetics",
-          "name": "Frontiers in Genetics",
+          "id": "frontiers_ai",
+          "name": "Frontiers in Artificial Intelligence",
+          "publisher": "Frontiers",
+          "xr": {
+            "edition": "2026-03",
+            "major": "计算机科学",
+            "zone": 3,
+            "top": false,
+            "minor": "AI；工程向快刊"
+          },
+          "track": "公开影像",
+          "fit": "high",
+          "fit_label": "好投快 · AI（计算机大类）",
+          "sampled": false,
+          "accepts": [
+            "医学 AI 方法应用",
+            "检测/预测工程报告"
+          ],
+          "avoid": [
+            "对外说成医学分区"
+          ],
+          "our_types": [
+            "05",
+            "01"
+          ],
+          "note": "大类是计算机科学三区；要医学分区别拿它充数。"
+        },
+        {
+          "id": "frontiers_medtech",
+          "name": "Frontiers in Medical Technology",
+          "publisher": "Frontiers",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false,
+            "minor": "医疗技术；工具文友好"
+          },
+          "track": "公开影像",
+          "fit": "high",
+          "fit_label": "好投快 · 医疗技术",
+          "sampled": false,
+          "accepts": [
+            "检测/辅助诊断系统",
+            "医疗技术 AI"
+          ],
+          "avoid": [
+            "无技术贡献的纯统计短文"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "写法 05 要速度时的 Frontiers 备选。"
+        },
+        {
+          "id": "frontiers_bioinfo",
+          "name": "Frontiers in Bioinformatics",
           "publisher": "Frontiers",
           "xr": {
             "edition": "2026-03",
             "major": "生物学",
             "zone": 3,
             "top": false,
-            "minor": "遗传学"
+            "minor": "生信方法；工具友好"
           },
           "track": "菌群/方法",
-          "fit": "low",
-          "fit_label": "Frontiers · 遗传三区",
+          "fit": "high",
+          "fit_label": "好投快 · 生信方法",
           "sampled": false,
           "accepts": [
-            "遗传/多组学方法",
-            "部分微生物组遗传交叉"
+            "多队列流程/工具",
+            "菌群计算管道"
           ],
           "avoid": [
-            "无遗传问题的纯检测文"
+            "空洞 novelty"
           ],
           "our_types": [
             "03",
             "04"
           ],
-          "note": "非主推，仅地图完整性。"
+          "note": "方法包完整即可冲速度。"
         },
         {
           "id": "frontiers_aging",
@@ -1745,131 +1612,23 @@ window.JOURNAL_SURVEY = {
             "major": "医学",
             "zone": 3,
             "top": false,
-            "minor": "衰老医学"
+            "minor": "衰老；老年向预测友好"
           },
           "track": "骨质疏松",
-          "fit": "mid",
-          "fit_label": "Frontiers · 衰老三区",
+          "fit": "high",
+          "fit_label": "好投快 · 衰老",
           "sampled": false,
           "accepts": [
-            "衰老与老年健康",
-            "骨健康/跌倒风险等老年向预测"
+            "老年骨健康/风险预测",
+            "衰老相关公开队列分析"
           ],
           "avoid": [
-            "年轻队列题目硬套衰老刊"
+            "题目完全不贴衰老"
           ],
           "our_types": [
             "02"
           ],
-          "note": "骨质疏松老年叙事可对齐。"
-        },
-        {
-          "id": "frontiers_bigdata",
-          "name": "Frontiers in Big Data",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "计算机科学",
-            "zone": 3,
-            "top": false,
-            "minor": "大数据"
-          },
-          "track": "数字医学",
-          "fit": "low",
-          "fit_label": "Frontiers · 大数据三区",
-          "sampled": false,
-          "accepts": [
-            "大数据方法与健康数据应用"
-          ],
-          "avoid": [
-            "医学分区包装（大类计算机）"
-          ],
-          "our_types": [
-            "01",
-            "02"
-          ],
-          "note": "大类计算机科学，不是医学。"
-        },
-        {
-          "id": "frontiers_cs",
-          "name": "Frontiers in Computer Science",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "计算机科学",
-            "zone": 3,
-            "top": false,
-            "minor": "计算机科学"
-          },
-          "track": "公开影像",
-          "fit": "low",
-          "fit_label": "Frontiers · 计算机三区",
-          "sampled": false,
-          "accepts": [
-            "计算机方法与应用",
-            "部分医学 AI 工程报告"
-          ],
-          "avoid": [
-            "医学档位承诺"
-          ],
-          "our_types": [
-            "05"
-          ],
-          "note": "CS 向出口；客户若要医学分区慎用。"
-        },
-        {
-          "id": "frontiers_physio",
-          "name": "Frontiers in Physiology",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 3,
-            "top": false,
-            "minor": "生理学"
-          },
-          "track": "骨质疏松",
-          "fit": "low",
-          "fit_label": "Frontiers · 生理三区",
-          "sampled": false,
-          "accepts": [
-            "生理学机制与部分计算生理"
-          ],
-          "avoid": [
-            "无生理问题的纯 ML"
-          ],
-          "our_types": [
-            "02"
-          ],
-          "note": "非主推。"
-        },
-        {
-          "id": "frontiers_sysbio",
-          "name": "Frontiers in Systems Biology",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "生物学",
-            "zone": 3,
-            "top": false,
-            "minor": "系统生物学"
-          },
-          "track": "菌群/方法",
-          "fit": "low",
-          "fit_label": "Frontiers · 系统生物三区",
-          "sampled": false,
-          "accepts": [
-            "系统生物学方法",
-            "多组学整合"
-          ],
-          "avoid": [
-            "无系统生物学故事的刷分"
-          ],
-          "our_types": [
-            "03",
-            "04"
-          ],
-          "note": "方法向备选。"
+          "note": "骨质疏松老年叙事 + 要速度时可用。"
         }
       ]
     },
@@ -1877,7 +1636,7 @@ window.JOURNAL_SURVEY = {
       "id": "z4",
       "name": "四区",
       "status": "roster",
-      "blurb": "2026 新锐大类四区。含 Frontiers 放射/核医学等备胎。Heliyon 等可能 Under Review。",
+      "blurb": "2026 新锐大类四区。Frontiers 窄域慢/难刊不列；仅保留使用原则。",
       "journals": [
         {
           "id": "jxrst",
@@ -2010,105 +1769,30 @@ window.JOURNAL_SURVEY = {
           "note": "需要时按客户单位目录个案匹配。"
         },
         {
-          "id": "frontiers_radiology",
-          "name": "Frontiers in Radiology",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 4,
-            "top": false,
-            "minor": "放射学"
-          },
-          "track": "公开影像",
-          "fit": "low",
-          "fit_label": "Frontiers · 放射四区",
-          "sampled": false,
-          "accepts": [
-            "放射影像 AI 应用报告"
-          ],
-          "avoid": [
-            "对外冲区叙事"
-          ],
-          "our_types": [
-            "05"
-          ],
-          "note": "影像备胎；优先二/三区 Frontiers 或非 Frontiers 专科刊。"
-        },
-        {
-          "id": "frontiers_nucmed",
-          "name": "Frontiers in Nuclear Medicine",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 4,
-            "top": false,
-            "minor": "核医学"
-          },
-          "track": "公开影像",
-          "fit": "low",
-          "fit_label": "Frontiers · 核医学四区",
-          "sampled": false,
-          "accepts": [
-            "核医学成像相关方法"
-          ],
-          "avoid": [
-            "非核医学题目硬投"
-          ],
-          "our_types": [
-            "05"
-          ],
-          "note": "窄域备胎。"
-        },
-        {
-          "id": "frontiers_comp_neuro",
-          "name": "Frontiers in Computational Neuroscience",
-          "publisher": "Frontiers",
-          "xr": {
-            "edition": "2026-03",
-            "major": "医学",
-            "zone": 4,
-            "top": false,
-            "minor": "计算神经科学"
-          },
-          "track": "公开影像",
-          "fit": "low",
-          "fit_label": "Frontiers · 计算神经四区",
-          "sampled": false,
-          "accepts": [
-            "计算神经科学方法"
-          ],
-          "avoid": [
-            "通用医学检测文硬投"
-          ],
-          "our_types": [],
-          "note": "与我们主路径弱对齐，仅列地图。"
-        },
-        {
           "id": "frontiers_policy",
-          "name": "Frontiers 系列使用原则",
+          "name": "Frontiers 快刊使用原则",
           "publisher": "Frontiers",
           "xr": {
             "edition": "2026-03",
             "major": "视学科",
-            "zone": 4,
+            "zone": null,
             "top": false,
-            "minor": "许多单位对 Frontiers 认定偏严"
+            "minor": "只列好投快周转；单位认定另算"
           },
           "track": "综合出口",
           "fit": "low",
           "fit_label": "先问单位认不认",
           "sampled": false,
           "accepts": [
-            "单位明确认可 Frontiers 时的完整公开数据工作"
+            "单位认可 Frontiers 时的完整公开数据工作"
           ],
           "avoid": [
-            "未确认单位政策就承诺 Frontiers 档位",
-            "用 Frontiers 冒充非 OA 专科顶刊"
+            "未确认单位政策就承诺",
+            "用 Frontiers 冒充传统专科顶刊",
+            "四区窄刊（放射/核医学等）——已不列"
           ],
           "our_types": [],
-          "note": "Frontiers 分区按 2026 新锐大类列出，但客户单位可能另有黑名单/不计核心。接单前必须先对齐认定。"
+          "note": "本站 Frontiers 只保留发文量大、周转相对快、贴我们四条路径的刊；免疫/药理/神经等难对齐或偏慢的已拿掉。"
         }
       ]
     }
