@@ -5,7 +5,7 @@ window.JOURNAL_SURVEY = {
     "partition_standard": "新锐期刊分区表 2026（2026-03-24 发布，大类优先）",
     "partition_source": "XR-Scholar / 社区 XR2026 大类表交叉核对",
     "source": "EuropePMC 抽样（一区部分刊）+ 2026 新锐大类分区",
-    "caveat": "本站分区按 2026 新锐大类。Frontiers 只展示相对容易录用、周期较短且贴公开数据路径的子集；许多单位认定偏严——接单前先问清。写法占比仅一区已抽样刊有数字。",
+    "caveat": "本站分区按 2026 新锐大类。Frontiers Media 只列相对好投、周期短的二/三区子集；一区仅补充 BME Frontiers（AAAS，非 Frontiers Media）。许多单位对 Frontiers Media 认定偏严——接单前先问清。写法占比仅一区已抽样刊有数字。",
     "updated": "2026-08",
     "scope": "围绕公开数据路径：数字医学预测、菌群跨队列、公开影像检测/分割、骨质疏松风险分层"
   },
@@ -14,7 +14,7 @@ window.JOURNAL_SURVEY = {
       "id": "z1",
       "name": "一区",
       "status": "ready",
-      "blurb": "2026 新锐大类一区。含已 EuropePMC 抽样刊 + 路径相关一区补充刊。",
+      "blurb": "2026 新锐大类一区。Frontiers Media 的 Frontiers in * 无医学路径一区；名称含 Frontiers 的一区快选项见 BME Frontiers（AAAS）。",
       "journals": [
         {
           "id": "npj_digmed",
@@ -80,6 +80,60 @@ window.JOURNAL_SURVEY = {
             }
           ],
           "n": 200
+        },
+        {
+          "id": "bme_frontiers",
+          "name": "BME Frontiers",
+          "publisher": "AAAS Science Partner / 中科院苏州医工所",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 1,
+            "top": true,
+            "minor": "工程：生物医学 T1；约 16 周量级；OA"
+          },
+          "track": "公开影像",
+          "fit": "high",
+          "fit_label": "一区里相对快 · 生医工程",
+          "sampled": false,
+          "accepts": [
+            "生物医学工程方法",
+            "医学影像/传感/生物信息交叉",
+            "检测分割与诊断工程（需工程贡献）"
+          ],
+          "avoid": [
+            "与 BME 无关的纯公卫统计",
+            "把它当成 Frontiers Media 的 Frontiers in *"
+          ],
+          "our_types": [
+            "05",
+            "04"
+          ],
+          "note": "2026 新锐医学一区 Top。名称带 Frontiers，但是 AAAS 合作刊，不是 Frontiers Media。相对 Nat/MedIA 更可冲、周转常见约数月；仍是一区，不是「水刊」。"
+        },
+        {
+          "id": "frontiers_z1_note",
+          "name": "Frontiers Media（Frontiers in *）一区说明",
+          "publisher": "Frontiers Media",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学/生物学",
+            "zone": null,
+            "top": false,
+            "minor": "路径相关刊最高多为二区"
+          },
+          "track": "综合出口",
+          "fit": "low",
+          "fit_label": "无对口一区",
+          "sampled": false,
+          "accepts": [
+            "见二区/三区已列的好投快 Frontiers in *"
+          ],
+          "avoid": [
+            "对外宣称 Frontiers in Digital Health / Microbiology 是一区"
+          ],
+          "our_types": [],
+          "note": "按 2026 新锐大类：Frontiers in Digital Health、Microbiology、Medicine、Public Health 等均不是一区。唯一医学大类一区且名称含 Frontiers 的是上面的 BME Frontiers（非 Frontiers Media）。生态类 FRONTIERS IN ECOLOGY AND THE ENVIRONMENT 为一区但不对齐我们路径，故不列。"
         },
         {
           "id": "ieee_jbhi",
@@ -1792,7 +1846,7 @@ window.JOURNAL_SURVEY = {
             "四区窄刊（放射/核医学等）——已不列"
           ],
           "our_types": [],
-          "note": "本站 Frontiers 只保留发文量大、周转相对快、贴我们四条路径的刊；免疫/药理/神经等难对齐或偏慢的已拿掉。"
+          "note": "Frontiers Media 的 Frontiers in *：医学路径无一区，好投快的在二/三区。一区见 BME Frontiers（AAAS，别混淆）。免疫/药理/神经/放射等已不列。"
         }
       ]
     }
