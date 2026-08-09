@@ -20,6 +20,8 @@
 |------|------|
 | index.html | **入口**：选题→方案→标准→范文 |
 | types.html | **五种写法层级展开**（点开一类） |
+| journals.html | **一至四区期刊调研**：各刊写法占比 + 收文方向 |
+| data/journals-survey.json | 调研数据源（一区已抽样；二–四区定性待补） |
 | crc-microbiome.html | 结直肠方案专页 |
 | osteoporosis.html | 骨质疏松方案专页 |
 | type-05.html#exemplars | 影像 npj 精选 11 篇 |
