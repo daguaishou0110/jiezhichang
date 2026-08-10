@@ -20,8 +20,9 @@
 |------|------|
 | index.html | **入口**：选题→方案→标准→范文 |
 | types.html | **五种写法层级展开**（点开一类） |
-| journals.html | **好投快刊短名单**（相对易中 + 周期短） |
-| data/journals-survey.json | 快刊数据：最快保底 / 稍好还能快 / Frontiers三·四区 / 按路径主投保底 |
+| journals.html | **医工交叉期刊库**（检索筛选 + 写作范式详情 + 收藏对比 + 小工具） |
+| data/journals-library.json | 期刊库 + 工程/临床写作 pack（2026 新锐大类标注） |
+| data/journals-survey.json | 好投快刊原始短名单（仍保留，供生成库） |
 | crc-microbiome.html | 结直肠方案专页 |
 | osteoporosis.html | 骨质疏松方案专页 |
 | type-05.html#exemplars | 影像 npj 精选 11 篇 |

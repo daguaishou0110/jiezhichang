@@ -1,0 +1,3330 @@
+{
+  "meta": {
+    "title": "医工交叉期刊与写作范式库",
+    "version": "v1",
+    "updated": "2026-08",
+    "partition_standard": "新锐期刊分区表 2026 大类（标注用；非中科院官方）",
+    "caveat": "「好投快」不等于水、也不保证录用。已单列 Frontiers 三·四区快刊；Frontiers / MDPI 许多单位认定偏严——接单前先问清。一区传统顶刊不在此名单。",
+    "counts": {
+      "journals": 45,
+      "z1": 4,
+      "z2": 7,
+      "z3": 29,
+      "z4": 5
+    }
+  },
+  "announcements": [
+    "分区口径：页面标注为 2026 新锐大类；单位若仍用中科院 2025，投前请复核。",
+    "Frontiers / MDPI / Mega 刊：许多高校认定偏严，接单或投稿前先问研究生院/人事。",
+    "热门交叉方向可优先筛：医学影像 AI、风险预测/数字健康、微生物组/生信、医学信号处理。"
+  ],
+  "packs": {
+    "eng_imaging": {
+      "label": "工程优先 · 医学影像 AI",
+      "style": "engineering",
+      "outline": "问题与任务定义→方法/算法原理→数据集与协议→对比与消融→误差分析→局限与工程可复现",
+      "abstract": {
+        "engineering": "Background/Task: … Method: 提出…模块/损失/训练协议… Data: 使用公开数据集 A/B… Results: 相对基线在指标 X/Y 提升… Conclusion: 方法在跨集条件下更稳健，代码与划分协议可复现。",
+        "clinical": "临床问题: … 方法简述（少公式）… 验证队列与金标准… 诊断/分割性能与临床可用性… 结论强调潜在辅助价值与局限。"
+      },
+      "intro": [
+        "段1 临床/应用痛点（影像读片负担、漏检、跨中心差异）",
+        "段2 现有工程方法局限（单库过拟合、弱外测、无硬对照）",
+        "段3 本文工程贡献（模块/协议/外测设计）与目标",
+        "段4（可选）论文组织"
+      ],
+      "methods_eng": "网络结构与关键模块→损失与优化→训练细节与增广→数据划分与外测协议（锁死一次）→评价指标与统计检验→复现设置（种子/硬件）",
+      "methods_med": "若需医学写法：影像采集与标注规范→金标准定义→纳入排除（公开数据可用代理描述）→伦理/数据使用声明；算法细节压缩为「实现细节」附录或短节。",
+      "results": "主结果表（vs 强基线）→跨集/外测→消融→复杂度或效率→定性可视化；先报数字再解释，不先讲故事。",
+      "discussion": "相对 SOTA 的增益来自哪里→失败病例与分布偏移→与临床流程的距离→不夸大临床替代。",
+      "pitfalls": [
+        "大段临床背景淹没方法贡献",
+        "无外测/无消融的刷榜叙事",
+        "把公开数据写成「本院前瞻队列」"
+      ]
+    },
+    "clin_public": {
+      "label": "临床/公卫优先 · 风险预测",
+      "style": "clinical",
+      "outline": "人群健康问题→现有筛查/预测不足→本研究数据与模型（工具化）→外部或时间外推验证→校准与亚组→公共卫生意义与局限",
+      "abstract": {
+        "clinical": "Objective: … Methods: 基于公开调查/队列数据，构建…模型，并做时间/外队列验证与校准… Results: AUC/灵敏度/校准… Conclusion: 可用于…风险分层，但需前瞻验证。",
+        "engineering": "Task: 表格型风险预测… Features/Model: … Validation protocol: temporal/site hold-out… Metrics: discrimination + calibration… Ablation: 特征与模型族对比。"
+      },
+      "intro": [
+        "段1 疾病负担与筛查缺口",
+        "段2 现有评分/模型在可及性或外推上的不足",
+        "段3 本研究用公开数据回答的具体临床/公卫问题",
+        "段4 主要发现预告（可选）"
+      ],
+      "methods_eng": "特征工程与缺失处理→模型族与调参→验证协议→校准（Platt/isotonic）→决策曲线（可选）",
+      "methods_med": "研究设计类型→数据来源与周期→纳入排除→结局定义→协变量→伦理与数据可用性声明",
+      "results": "基线特征表→主模型性能→外推/时间验证→校准图→亚组→敏感性分析",
+      "discussion": "与传统评分对比→可解释性（系数/SHAP 适度）→落地场景→选择偏倚与残余混杂",
+      "pitfalls": [
+        "过度堆砌深度网络却无校准/外推",
+        "把相关性写成因果",
+        "忽略缺失与采样权重（NHANES）"
+      ]
+    },
+    "balanced_digmed": {
+      "label": "均衡型 · 数字医学",
+      "style": "balanced",
+      "outline": "临床任务→数据与验证协议（多库/外测）→方法（足够新但不炫技）→硬对照与校准→部署/偏移讨论→局限",
+      "abstract": {
+        "engineering": "We address … using public datasets … propose … evaluate under locked external test … report discrimination, calibration, and subgroup …",
+        "clinical": "背景任务… 多源公开数据验证… 模型作为决策支持工具… 性能与校准… 临床解释与限制。"
+      },
+      "intro": [
+        "段1 临床决策痛点",
+        "段2 既往 AI 在外推/部署上的失败模式",
+        "段3 本文验证包（锁死外测、硬对照、校准）+ 方法贡献"
+      ],
+      "methods_eng": "模型与训练→多数据源处理→外测协议与一次锁定→基线与公平比较→不确定性/校准",
+      "methods_med": "人群与结局→数据治理与偏差→临床可用指标（不只 AUC）",
+      "results": "开发集→外测→校准→亚组/偏移→（可选）模拟部署策略",
+      "discussion": "为何外测掉点→对临床工作流意味着什么→监管与可复现",
+      "pitfalls": [
+        "只有平均 AUC",
+        "藏弱外测",
+        "方法 novelty 壳子无验证强度"
+      ]
+    },
+    "microbiome_comp": {
+      "label": "计算-微生物交叉",
+      "style": "balanced",
+      "outline": "疾病-菌群问题→批次/中心挑战→多队列/LODO 协议→模型与混杂控制→生物学一致性讨论→局限",
+      "abstract": {
+        "engineering": "Cross-cohort prediction … LODO/LOCO … confounder control … biomarkers stability …",
+        "clinical": "菌群标志与风险… 多队列验证… 临床可解释的标志物集合… 局限（因果不足）。"
+      },
+      "intro": [
+        "段1 疾病与微生物组关联的临床动机",
+        "段2 单队列过拟合与批次效应",
+        "段3 本文跨队列协议与计算贡献"
+      ],
+      "methods_eng": "预处理与去批次→特征（物种/功能）→模型→LODO→混杂与置换检验",
+      "methods_med": "队列来源与诊断标准→采样与测序概述→伦理与数据准入",
+      "results": "队列内→LODO→混杂敏感性→标志物重叠/一致性",
+      "discussion": "生物学合理性→不可泛化的队列→不做过度临床承诺",
+      "pitfalls": [
+        "无跨队列",
+        "无视测序/批次",
+        "纯黑盒无生物学故事（投微生物刊时）"
+      ]
+    }
+  },
+  "paradigms": {
+    "engineering": {
+      "title": "工科视角医工论文写法",
+      "blurb": "适合工程大类、仪器/算法/影像方法刊：贡献在方法与验证协议，临床是动机不是全文主角。",
+      "spine": [
+        "任务与动机",
+        "方法",
+        "数据与协议",
+        "对比+消融",
+        "分析与局限"
+      ],
+      "scenes": [
+        "医学影像AI",
+        "医学信号处理",
+        "风险预测工程化"
+      ]
+    },
+    "clinical": {
+      "title": "临床医学/公卫视角写法",
+      "blurb": "适合临床综合、公卫、专科医学刊：贡献在问题定义、队列/调查验证与医学意义，算法是工具。",
+      "spine": [
+        "临床痛点",
+        "研究设计",
+        "人群与结局",
+        "性能+校准",
+        "医学意义与局限"
+      ],
+      "scenes": [
+        "风险预测/数字健康",
+        "骨质疏松/慢病",
+        "肿瘤辅助诊断（临床叙事）"
+      ]
+    },
+    "phrases": {
+      "pain": [
+        "Existing approaches often degrade under distribution shift across sites/scanners/cohorts, limiting clinical transportability.",
+        "However, most models are developed and tested within a single dataset, leaving generalizability unresolved."
+      ],
+      "novelty": [
+        "We freeze the preprocessing and splitting protocol before external evaluation to avoid test-set peeking.",
+        "Beyond average AUC, we report calibration and subgroup performance on the locked external set."
+      ],
+      "results": [
+        "On the external cohort, the proposed model improved X by … versus the strongest baseline …",
+        "Calibration plots showed …; decision-curve analysis suggested net benefit in the threshold range …"
+      ],
+      "discussion": [
+        "Performance drops on cohort C highlight residual batch/population effects that warrant domain adaptation or site-specific recalibration.",
+        "These findings support use as a decision-support signal rather than a standalone diagnostic replacement."
+      ]
+    }
+  },
+  "journals": [
+    {
+      "id": "ref_jbhi",
+      "name": "IEEE Journal of Biomedical and Health Informatics",
+      "name_zh": "IEEE 生物医学与健康信息学期刊",
+      "abbr": "IEEE JBHI",
+      "publisher": "IEEE",
+      "issn": "2168-2194",
+      "zone": 1,
+      "major": "医学",
+      "top": true,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康",
+        "医学信号处理"
+      ],
+      "pack": "balanced_digmed",
+      "oa": false,
+      "ease": "中低",
+      "cycle": "常见数月级",
+      "track": "数字医学",
+      "accepts": [
+        "健康信息学",
+        "可解释风险模型",
+        "多源公开外测"
+      ],
+      "avoid": [
+        "无信息学贡献"
+      ],
+      "our_types": [
+        "01",
+        "02",
+        "04"
+      ],
+      "note": "信息学一区参考（2026新锐）。",
+      "buckets": [
+        "writing_ref"
+      ],
+      "alternatives": [
+        "ref_npj"
+      ],
+      "tier": "writing_ref"
+    },
+    {
+      "id": "ref_tmi",
+      "name": "IEEE Transactions on Medical Imaging",
+      "name_zh": "IEEE 医学成像汇刊",
+      "abbr": "IEEE TMI",
+      "publisher": "IEEE",
+      "issn": "0278-0062",
+      "zone": 1,
+      "major": "医学",
+      "top": true,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "eng_imaging",
+      "oa": false,
+      "ease": "低",
+      "cycle": "常见数月级",
+      "track": "公开影像",
+      "accepts": [
+        "医学成像算法",
+        "检测分割重建",
+        "多公开集外测"
+      ],
+      "avoid": [
+        "单库 YOLO 壳子"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "工程影像顶刊写法参考。",
+      "buckets": [
+        "writing_ref"
+      ],
+      "alternatives": [
+        "ref_media"
+      ],
+      "tier": "writing_ref"
+    },
+    {
+      "id": "ref_media",
+      "name": "Medical Image Analysis",
+      "name_zh": "医学影像分析",
+      "abbr": "MedIA",
+      "publisher": "Elsevier",
+      "issn": "1361-8415",
+      "zone": 1,
+      "major": "医学",
+      "top": true,
+      "edition": "2026-03",
+      "type": "bme_or_bio",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "eng_imaging",
+      "oa": false,
+      "ease": "低",
+      "cycle": "常见数月级（顶刊，非快刊）",
+      "track": "公开影像",
+      "accepts": [
+        "医学图像分析新方法",
+        "多公开集严格外测",
+        "可复现与方法深度"
+      ],
+      "avoid": [
+        "单库刷分",
+        "无跨集无对照"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "写法参考顶刊，不属于好投快。",
+      "buckets": [
+        "writing_ref"
+      ],
+      "alternatives": [
+        "ref_tmi"
+      ],
+      "tier": "writing_ref"
+    },
+    {
+      "id": "ref_npj",
+      "name": "npj Digital Medicine",
+      "name_zh": "npj 数字医学",
+      "abbr": "npj DigMed",
+      "publisher": "Nature Portfolio",
+      "issn": "2398-6352",
+      "zone": 1,
+      "major": "医学",
+      "top": true,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康",
+        "医学影像AI"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "低",
+      "cycle": "常见数月级",
+      "track": "数字医学",
+      "accepts": [
+        "公开数据风险预测",
+        "公开影像CAD",
+        "部署与外推"
+      ],
+      "avoid": [
+        "无外测刷分"
+      ],
+      "our_types": [
+        "01",
+        "02",
+        "04",
+        "05"
+      ],
+      "note": "数字医学一区写法参考，非快刊。",
+      "buckets": [
+        "writing_ref"
+      ],
+      "alternatives": [
+        "ref_jbhi"
+      ],
+      "tier": "writing_ref"
+    },
+    {
+      "id": "bmc_midm",
+      "name": "BMC Medical Informatics and Decision Making",
+      "name_zh": "BMC 医学信息学与决策制定",
+      "abbr": "BMIaDM",
+      "publisher": "BioMed Central (BMC)",
+      "issn": "",
+      "zone": 2,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "中",
+      "cycle": "常见约 2–5 个月（有时偏慢）",
+      "track": "数字医学",
+      "accepts": [
+        "医学信息学",
+        "决策支持",
+        "风险模型评价"
+      ],
+      "avoid": [
+        "指望「两周就中」"
+      ],
+      "our_types": [
+        "02",
+        "01"
+      ],
+      "note": "国人友好；周期不如 Frontiers/MDPI，但认定常更稳。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "frontiers_bbe",
+      "name": "Frontiers in Bioengineering and Biotechnology",
+      "name_zh": "生物工程与生物技术前沿",
+      "abbr": "FiBaB",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 2,
+      "major": "生物学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "eng_imaging",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "医学影像方法",
+        "检测分割工程"
+      ],
+      "avoid": [
+        "与 bioengineering 无关"
+      ],
+      "our_types": [
+        "05",
+        "04"
+      ],
+      "note": "YOLO/分割类 Frontiers 线常投。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "frontiers_dh",
+      "name": "Frontiers in Digital Health",
+      "name_zh": "数字健康前沿",
+      "abbr": "FiDH",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 2,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "数字医学",
+      "accepts": [
+        "公开数据风险预测",
+        "数字健康工具/评价",
+        "NHANES 时间外推"
+      ],
+      "avoid": [
+        "单位不认 Frontiers"
+      ],
+      "our_types": [
+        "02",
+        "01"
+      ],
+      "note": "骨质疏松/公开预测 Frontiers 线首选。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_nutrition"
+      ]
+    },
+    {
+      "id": "frontiers_endo",
+      "name": "Frontiers in Endocrinology",
+      "name_zh": "内分泌学前沿",
+      "abbr": "FiE",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 2,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "clinical",
+      "style": "clinical",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "clin_public",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "骨质疏松",
+      "accepts": [
+        "骨质疏松风险（贴内分泌/骨代谢）"
+      ],
+      "avoid": [
+        "完全无内分泌对话"
+      ],
+      "our_types": [
+        "02"
+      ],
+      "note": "比专科骨科学刊更好走通公开数据包。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "frontiers_micro",
+      "name": "Frontiers in Microbiology",
+      "name_zh": "微生物学前沿",
+      "abbr": "FiM",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 2,
+      "major": "生物学",
+      "top": true,
+      "edition": "2026-03",
+      "type": "bme_or_bio",
+      "style": "balanced",
+      "domains": [
+        "微生物组/生信"
+      ],
+      "pack": "microbiome_comp",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月；发文量大",
+      "track": "菌群",
+      "accepts": [
+        "菌群关联/计算",
+        "多队列方法（需一点生物学故事）"
+      ],
+      "avoid": [
+        "完全无微生物叙事"
+      ],
+      "our_types": [
+        "03"
+      ],
+      "note": "结直肠公开方案的 Frontiers 主备选。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "peerj",
+        "frontiers_bioinfo",
+        "fz3_bioinfo"
+      ]
+    },
+    {
+      "id": "frontiers_nutrition",
+      "name": "Frontiers in Nutrition",
+      "name_zh": "营养学前沿",
+      "abbr": "FiN",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 2,
+      "major": "农林科学",
+      "top": true,
+      "edition": "2026-03",
+      "type": "clinical",
+      "style": "clinical",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "clin_public",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "骨质疏松",
+      "accepts": [
+        "膳食-骨健康",
+        "NHANES 营养预测"
+      ],
+      "avoid": [
+        "无营养问题的纯算法"
+      ],
+      "our_types": [
+        "02"
+      ],
+      "note": "大类农林科学，对外说清。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "jmir_med_inform",
+      "name": "JMIR Medical Informatics",
+      "name_zh": "医学互联网研究·医学信息学",
+      "abbr": "JMI",
+      "publisher": "JMIR Publications Inc.",
+      "issn": "",
+      "zone": 2,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "中",
+      "cycle": "常见约 2–4 个月（比 Frontiers 略慢）",
+      "track": "数字医学",
+      "accepts": [
+        "临床信息学",
+        "公开调查/EHR 预测",
+        "可部署工具"
+      ],
+      "avoid": [
+        "与 JMIR 主刊混淆对外承诺一区"
+      ],
+      "our_types": [
+        "02",
+        "01"
+      ],
+      "note": "比 Frontiers 稍难一点，但单位认可度往往更好问。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "diagnostics",
+      "name": "Diagnostics",
+      "name_zh": "诊断（MDPI）",
+      "abbr": "D",
+      "publisher": "MDPI",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "eng_imaging",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约数周–2 个月（特刊更快）",
+      "track": "公开影像",
+      "accepts": [
+        "诊断方法",
+        "医学影像 AI",
+        "检测应用"
+      ],
+      "avoid": [
+        "单位不认 MDPI",
+        "无对照刷分"
+      ],
+      "our_types": [
+        "05",
+        "02"
+      ],
+      "note": "Mega 气质；速度优先时常用。",
+      "buckets": [
+        "fastest"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "sensors",
+        "ieee_access"
+      ]
+    },
+    {
+      "id": "frontiers_aging",
+      "name": "Frontiers in Aging",
+      "name_zh": "衰老前沿",
+      "abbr": "FiA",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "clinical",
+      "style": "clinical",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "clin_public",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "骨质疏松",
+      "accepts": [
+        "老年骨健康/风险预测"
+      ],
+      "avoid": [
+        "题目不贴衰老"
+      ],
+      "our_types": [
+        "02"
+      ],
+      "note": "骨质疏松老年叙事 + 要速度。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "fz3_aging",
+      "name": "Frontiers in Aging",
+      "name_zh": "衰老前沿",
+      "abbr": "FiA",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "clinical",
+      "style": "clinical",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "clin_public",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "骨质疏松",
+      "accepts": [
+        "老年骨健康/风险预测"
+      ],
+      "avoid": [
+        "题目不贴衰老"
+      ],
+      "our_types": [
+        "02"
+      ],
+      "note": "骨质疏松老年叙事。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "frontiers_ai",
+      "name": "Frontiers in Artificial Intelligence",
+      "name_zh": "人工智能前沿",
+      "abbr": "FiAI",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "计算机科学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "eng_imaging",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "医学 AI 应用",
+        "检测/预测工程报告"
+      ],
+      "avoid": [
+        "说成医学分区"
+      ],
+      "our_types": [
+        "05",
+        "01"
+      ],
+      "note": "大类计算机三区。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "fz3_ai",
+      "name": "Frontiers in Artificial Intelligence",
+      "name_zh": "人工智能前沿",
+      "abbr": "FiAI",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "计算机科学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "eng_imaging",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "医学 AI 应用",
+        "检测/预测工程"
+      ],
+      "avoid": [
+        "说成医学分区"
+      ],
+      "our_types": [
+        "05",
+        "01"
+      ],
+      "note": "大类计算机科学三区。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "fz3_bigdata",
+      "name": "Frontiers in Big Data",
+      "name_zh": "大数据前沿",
+      "abbr": "FiBD",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "计算机科学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "数字医学",
+      "accepts": [
+        "健康大数据方法与应用"
+      ],
+      "avoid": [
+        "医学分区包装"
+      ],
+      "our_types": [
+        "01",
+        "02"
+      ],
+      "note": "大类计算机，不是医学。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "frontiers_bioinfo",
+      "name": "Frontiers in Bioinformatics",
+      "name_zh": "生物信息学前沿",
+      "abbr": "FiB",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "生物学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "bme_or_bio",
+      "style": "balanced",
+      "domains": [
+        "微生物组/生信"
+      ],
+      "pack": "microbiome_comp",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "菌群/方法",
+      "accepts": [
+        "多队列流程/工具",
+        "菌群计算管道"
+      ],
+      "avoid": [
+        "空洞 novelty"
+      ],
+      "our_types": [
+        "03",
+        "04"
+      ],
+      "note": "方法包完整即可冲速度。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "peerj",
+        "frontiers_micro",
+        "fz3_bioinfo"
+      ]
+    },
+    {
+      "id": "fz3_bioinfo",
+      "name": "Frontiers in Bioinformatics",
+      "name_zh": "生物信息学前沿",
+      "abbr": "FiB",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "生物学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "bme_or_bio",
+      "style": "balanced",
+      "domains": [
+        "微生物组/生信"
+      ],
+      "pack": "microbiome_comp",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "菌群/方法",
+      "accepts": [
+        "多队列流程/工具",
+        "菌群计算管道"
+      ],
+      "avoid": [
+        "空洞 novelty"
+      ],
+      "our_types": [
+        "03",
+        "04"
+      ],
+      "note": "菌群方法三区快刊。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "peerj",
+        "frontiers_micro",
+        "frontiers_bioinfo"
+      ]
+    },
+    {
+      "id": "fz3_cardio",
+      "name": "Frontiers in Cardiovascular Medicine",
+      "name_zh": "心血管医学前沿",
+      "abbr": "FiCM",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "数字医学",
+      "accepts": [
+        "心血管风险预测（公开数据）",
+        "相关影像/信号"
+      ],
+      "avoid": [
+        "题目与心血管无关"
+      ],
+      "our_types": [
+        "01",
+        "02"
+      ],
+      "note": "仅心血管题使用。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "fz3_cs",
+      "name": "Frontiers in Computer Science",
+      "name_zh": "计算机科学前沿",
+      "abbr": "FiCS",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "计算机科学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "eng_imaging",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "计算机方法应用",
+        "医学 AI 工程报告"
+      ],
+      "avoid": [
+        "医学档位承诺"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "CS 向出口。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "fz3_genetics",
+      "name": "Frontiers in Genetics",
+      "name_zh": "遗传学前沿",
+      "abbr": "FiG",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "生物学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "bme_or_bio",
+      "style": "balanced",
+      "domains": [
+        "微生物组/生信"
+      ],
+      "pack": "microbiome_comp",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月；发文大",
+      "track": "菌群/方法",
+      "accepts": [
+        "遗传/多组学方法",
+        "微生物组遗传交叉"
+      ],
+      "avoid": [
+        "无遗传问题的纯检测文"
+      ],
+      "our_types": [
+        "03",
+        "04"
+      ],
+      "note": "发文量大、周转快。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "peerj",
+        "frontiers_micro",
+        "frontiers_bioinfo"
+      ]
+    },
+    {
+      "id": "fz3_health_services",
+      "name": "Frontiers in Health Services",
+      "name_zh": "卫生服务前沿",
+      "abbr": "FiHS",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "数字医学",
+      "accepts": [
+        "卫生服务/流程相关数字健康",
+        "可部署工具评价"
+      ],
+      "avoid": [
+        "纯算法无服务场景"
+      ],
+      "our_types": [
+        "02",
+        "04"
+      ],
+      "note": "偏服务与落地，不是纯刷榜。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "frontiers_medtech",
+      "name": "Frontiers in Medical Technology",
+      "name_zh": "医疗技术前沿",
+      "abbr": "FiMT",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "检测/辅助诊断系统",
+        "医疗技术 AI"
+      ],
+      "avoid": [
+        "无技术贡献的纯统计"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "写法 05 要速度时可用。",
+      "buckets": [
+        "balanced"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "fz3_medtech",
+      "name": "Frontiers in Medical Technology",
+      "name_zh": "医疗技术前沿",
+      "abbr": "FiMT",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "检测/辅助诊断系统",
+        "医疗技术 AI"
+      ],
+      "avoid": [
+        "无技术贡献的纯统计"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "写法 05 三区快选项。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "frontiers_medicine",
+      "name": "Frontiers in Medicine",
+      "name_zh": "医学前沿",
+      "abbr": "FiM",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月量级",
+      "track": "数字医学",
+      "accepts": [
+        "医学综合应用",
+        "完整公开数据预测包"
+      ],
+      "avoid": [
+        "对外说成顶刊"
+      ],
+      "our_types": [
+        "02",
+        "01"
+      ],
+      "note": "题目稍杂也能装；适合尽快落稿。",
+      "buckets": [
+        "fastest"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_dh",
+        "frontiers_nutrition"
+      ]
+    },
+    {
+      "id": "fz3_medicine",
+      "name": "Frontiers in Medicine",
+      "name_zh": "医学前沿",
+      "abbr": "FiM",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "数字医学",
+      "accepts": [
+        "医学综合应用",
+        "公开数据预测包"
+      ],
+      "avoid": [
+        "对外说成顶刊"
+      ],
+      "our_types": [
+        "02",
+        "01"
+      ],
+      "note": "范围宽，适合尽快落稿。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "fz3_neuroinfo",
+      "name": "Frontiers in Neuroinformatics",
+      "name_zh": "神经信息学前沿",
+      "abbr": "FiN",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "神经影像/信息学方法",
+        "脑影像公开数据"
+      ],
+      "avoid": [
+        "非神经题目硬投"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "仅神经影像题。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "frontiers_oncology",
+      "name": "Frontiers in Oncology",
+      "name_zh": "肿瘤学前沿",
+      "abbr": "FiO",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月量级；发文极大",
+      "track": "公开影像",
+      "accepts": [
+        "肿瘤影像检测/分割",
+        "CRC 相关公开计算（贴肿瘤）"
+      ],
+      "avoid": [
+        "非肿瘤题目硬投"
+      ],
+      "our_types": [
+        "05",
+        "03"
+      ],
+      "note": "影像/CRC 线高频快出口。",
+      "buckets": [
+        "fastest"
+      ],
+      "alternatives": [
+        "diagnostics",
+        "sensors",
+        "ieee_access"
+      ]
+    },
+    {
+      "id": "fz3_oncology",
+      "name": "Frontiers in Oncology",
+      "name_zh": "肿瘤学前沿",
+      "abbr": "FiO",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月；发文极大",
+      "track": "公开影像",
+      "accepts": [
+        "肿瘤检测/分割",
+        "CRC 公开计算（贴肿瘤）"
+      ],
+      "avoid": [
+        "非肿瘤硬投"
+      ],
+      "our_types": [
+        "05",
+        "03"
+      ],
+      "note": "影像/CRC 高频三区出口。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "fz3_physio",
+      "name": "Frontiers in Physiology",
+      "name_zh": "生理学前沿",
+      "abbr": "FiP",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "骨质疏松",
+      "accepts": [
+        "生理/骨代谢相关分析",
+        "部分计算生理"
+      ],
+      "avoid": [
+        "无生理问题的纯 ML"
+      ],
+      "our_types": [
+        "02"
+      ],
+      "note": "有生理叙事时可用。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "frontiers_public_health",
+      "name": "Frontiers in Public Health",
+      "name_zh": "公共卫生前沿",
+      "abbr": "FiPH",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "clinical",
+      "style": "clinical",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "clin_public",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月量级（OA 流水线）",
+      "track": "骨质疏松",
+      "accepts": [
+        "NHANES 等调查数据预测",
+        "人群风险分层",
+        "公卫数字健康"
+      ],
+      "avoid": [
+        "包装成医学一区",
+        "单位不认 Frontiers"
+      ],
+      "our_types": [
+        "02"
+      ],
+      "note": "要速度时的第一保底；先确认单位认不认 Frontiers。",
+      "buckets": [
+        "fastest"
+      ],
+      "alternatives": [
+        "frontiers_medicine",
+        "frontiers_dh",
+        "frontiers_nutrition"
+      ]
+    },
+    {
+      "id": "fz3_public_health",
+      "name": "Frontiers in Public Health",
+      "name_zh": "公共卫生前沿",
+      "abbr": "FiPH",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "clinical",
+      "style": "clinical",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "clin_public",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "骨质疏松",
+      "accepts": [
+        "NHANES 预测",
+        "人群风险分层",
+        "公卫数字健康"
+      ],
+      "avoid": [
+        "包装成一区",
+        "单位不认 Frontiers"
+      ],
+      "our_types": [
+        "02"
+      ],
+      "note": "三区里最常用的速度保底。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "fz3_signal",
+      "name": "Frontiers in Signal Processing",
+      "name_zh": "信号处理前沿",
+      "abbr": "FiSP",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "工程技术",
+      "top": false,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI",
+        "医学信号处理"
+      ],
+      "pack": "eng_imaging",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "医学信号/图像处理",
+        "检测相关信号处理"
+      ],
+      "avoid": [
+        "与信号无关的纯临床预测"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "大类工程技术三区（以 XR 表为准，投前复核）。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "fz3_sysbio",
+      "name": "Frontiers in Systems Biology",
+      "name_zh": "系统生物学前沿",
+      "abbr": "FiSB",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 3,
+      "major": "生物学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "bme_or_bio",
+      "style": "balanced",
+      "domains": [
+        "微生物组/生信"
+      ],
+      "pack": "microbiome_comp",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "菌群/方法",
+      "accepts": [
+        "系统生物学方法",
+        "多组学整合"
+      ],
+      "avoid": [
+        "无系统生物学故事"
+      ],
+      "our_types": [
+        "03",
+        "04"
+      ],
+      "note": "方法向三区备选。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "peerj",
+        "frontiers_micro",
+        "frontiers_bioinfo"
+      ]
+    },
+    {
+      "id": "ieee_access",
+      "name": "IEEE Access",
+      "name_zh": "IEEE Access（开放获取）",
+      "abbr": "IA",
+      "publisher": "IEEE",
+      "issn": "",
+      "zone": 3,
+      "major": "计算机科学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "eng_imaging",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–2 个月量级",
+      "track": "公开影像",
+      "accepts": [
+        "检测/分割系统报告",
+        "应用 AI"
+      ],
+      "avoid": [
+        "对外说成医学分区"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "大类计算机；客户要医学分区时慎用。",
+      "buckets": [
+        "fastest"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "plos_one",
+      "name": "PLOS ONE",
+      "name_zh": "公共科学图书馆·综合",
+      "abbr": "PO",
+      "publisher": "Public Library of Science (PLOS)",
+      "issn": "",
+      "zone": 3,
+      "major": "综合性期刊",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医工交叉综合"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 2–4 个月",
+      "track": "综合出口",
+      "accepts": [
+        "技术正确、可复现的完整研究"
+      ],
+      "avoid": [
+        "冲区叙事"
+      ],
+      "our_types": [
+        "02",
+        "05"
+      ],
+      "note": "审扎实与透明，不审「故事有多顶」。",
+      "buckets": [
+        "fastest"
+      ],
+      "alternatives": [
+        "sci_reports"
+      ]
+    },
+    {
+      "id": "peerj",
+      "name": "PeerJ",
+      "name_zh": "PeerJ",
+      "abbr": "P",
+      "publisher": "PeerJ, Inc.",
+      "issn": "",
+      "zone": 3,
+      "major": "生物学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "bme_or_bio",
+      "style": "balanced",
+      "domains": [
+        "微生物组/生信"
+      ],
+      "pack": "microbiome_comp",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "菌群",
+      "accepts": [
+        "生命科学完整研究",
+        "部分计算生物"
+      ],
+      "avoid": [
+        "主方案冲区"
+      ],
+      "our_types": [
+        "03",
+        "02"
+      ],
+      "note": "菌群/生信弱包保底。",
+      "buckets": [
+        "fastest"
+      ],
+      "alternatives": [
+        "frontiers_micro",
+        "frontiers_bioinfo",
+        "fz3_bioinfo"
+      ]
+    },
+    {
+      "id": "sci_reports",
+      "name": "Scientific Reports",
+      "name_zh": "科学报告",
+      "abbr": "SR",
+      "publisher": "Nature Portfolio",
+      "issn": "",
+      "zone": 3,
+      "major": "综合性期刊",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医工交叉综合"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 2–4 个月（看外审）",
+      "track": "综合出口",
+      "accepts": [
+        "方法完整、结果扎实的跨学科工作"
+      ],
+      "avoid": [
+        "对外说成 Nature 一区子刊"
+      ],
+      "our_types": [
+        "02",
+        "05",
+        "03"
+      ],
+      "note": "比 Frontiers/MDPI 略稳一点，但仍是综合三区。",
+      "buckets": [
+        "fastest"
+      ],
+      "alternatives": [
+        "plos_one"
+      ]
+    },
+    {
+      "id": "sensors",
+      "name": "Sensors",
+      "name_zh": "传感器（MDPI）",
+      "abbr": "S",
+      "publisher": "MDPI",
+      "issn": "",
+      "zone": 3,
+      "major": "综合性期刊",
+      "top": false,
+      "edition": "2026-03",
+      "type": "engineering",
+      "style": "engineering",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "eng_imaging",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约数周–2 个月",
+      "track": "公开影像",
+      "accepts": [
+        "传感/成像 + AI 分析（需贴传感叙事）"
+      ],
+      "avoid": [
+        "纯临床预测与 Sensors 无关"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "本仓库 MDPI 影像稿常见快出口。",
+      "buckets": [
+        "fastest"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "ieee_access"
+      ]
+    },
+    {
+      "id": "fz4_diabetes",
+      "name": "Frontiers in Clinical Diabetes and Healthcare",
+      "name_zh": "临床糖尿病与健康护理前沿",
+      "abbr": "FiCDaH",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 4,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "数字医学",
+      "accepts": [
+        "糖尿病/代谢相关预测与健康管理"
+      ],
+      "avoid": [
+        "与糖尿病无关"
+      ],
+      "our_types": [
+        "02"
+      ],
+      "note": "代谢/慢病公开数据四区出口。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "fz4_comp_neuro",
+      "name": "Frontiers in Computational Neuroscience",
+      "name_zh": "计算神经科学前沿",
+      "abbr": "FiCN",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 4,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "中高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "计算神经科学方法"
+      ],
+      "avoid": [
+        "通用医学检测文硬投"
+      ],
+      "our_types": [],
+      "note": "与主路径弱对齐，仅备选。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "fz4_emergency",
+      "name": "Frontiers in Emergency Medicine",
+      "name_zh": "急诊医学前沿",
+      "abbr": "FiEM",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 4,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "风险预测/数字健康"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "数字医学",
+      "accepts": [
+        "急诊相关风险/分诊模型（公开数据）"
+      ],
+      "avoid": [
+        "无急诊场景"
+      ],
+      "our_types": [
+        "01",
+        "02"
+      ],
+      "note": "ICU/急诊题且接受四区时考虑。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_public_health",
+        "frontiers_medicine",
+        "frontiers_dh"
+      ]
+    },
+    {
+      "id": "fz4_nucmed",
+      "name": "Frontiers in Nuclear Medicine",
+      "name_zh": "核医学前沿",
+      "abbr": "FiNM",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 4,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "核医学成像相关方法"
+      ],
+      "avoid": [
+        "非核医学题目"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "窄域四区备胎。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    },
+    {
+      "id": "fz4_radiology",
+      "name": "Frontiers in Radiology",
+      "name_zh": "放射学前沿",
+      "abbr": "FiR",
+      "publisher": "Frontiers Media SA",
+      "issn": "",
+      "zone": 4,
+      "major": "医学",
+      "top": false,
+      "edition": "2026-03",
+      "type": "medical_general",
+      "style": "balanced",
+      "domains": [
+        "医学影像AI"
+      ],
+      "pack": "balanced_digmed",
+      "oa": true,
+      "ease": "高",
+      "cycle": "常见约 1–3 个月",
+      "track": "公开影像",
+      "accepts": [
+        "放射影像 AI 应用报告"
+      ],
+      "avoid": [
+        "对外冲区叙事"
+      ],
+      "our_types": [
+        "05"
+      ],
+      "note": "影像要速度且接受四区时可用。",
+      "buckets": [
+        "frontiers_z34"
+      ],
+      "alternatives": [
+        "frontiers_oncology",
+        "diagnostics",
+        "sensors"
+      ]
+    }
+  ],
+  "groups_legacy": [
+    {
+      "id": "fastest",
+      "name": "最快保底",
+      "blurb": "发文量大、周转通常最短。档位多为三区/综合刊，对外别包装成一区。",
+      "journals": [
+        {
+          "id": "frontiers_public_health",
+          "name": "Frontiers in Public Health",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "骨质疏松",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月量级（OA 流水线）",
+          "fit_label": "最快保底 · 公卫",
+          "accepts": [
+            "NHANES 等调查数据预测",
+            "人群风险分层",
+            "公卫数字健康"
+          ],
+          "avoid": [
+            "包装成医学一区",
+            "单位不认 Frontiers"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "要速度时的第一保底；先确认单位认不认 Frontiers。",
+          "name_zh": "公共卫生前沿"
+        },
+        {
+          "id": "frontiers_medicine",
+          "name": "Frontiers in Medicine",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月量级",
+          "fit_label": "最快保底 · 医学综合",
+          "accepts": [
+            "医学综合应用",
+            "完整公开数据预测包"
+          ],
+          "avoid": [
+            "对外说成顶刊"
+          ],
+          "our_types": [
+            "02",
+            "01"
+          ],
+          "note": "题目稍杂也能装；适合尽快落稿。",
+          "name_zh": "医学前沿"
+        },
+        {
+          "id": "frontiers_oncology",
+          "name": "Frontiers in Oncology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月量级；发文极大",
+          "fit_label": "最快保底 · 肿瘤影像",
+          "accepts": [
+            "肿瘤影像检测/分割",
+            "CRC 相关公开计算（贴肿瘤）"
+          ],
+          "avoid": [
+            "非肿瘤题目硬投"
+          ],
+          "our_types": [
+            "05",
+            "03"
+          ],
+          "note": "影像/CRC 线高频快出口。",
+          "name_zh": "肿瘤学前沿"
+        },
+        {
+          "id": "diagnostics",
+          "name": "Diagnostics",
+          "publisher": "MDPI",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约数周–2 个月（特刊更快）",
+          "fit_label": "最快保底 · MDPI 诊断",
+          "accepts": [
+            "诊断方法",
+            "医学影像 AI",
+            "检测应用"
+          ],
+          "avoid": [
+            "单位不认 MDPI",
+            "无对照刷分"
+          ],
+          "our_types": [
+            "05",
+            "02"
+          ],
+          "note": "Mega 气质；速度优先时常用。",
+          "name_zh": "诊断（MDPI）"
+        },
+        {
+          "id": "sensors",
+          "name": "Sensors",
+          "publisher": "MDPI",
+          "xr": {
+            "edition": "2026-03",
+            "major": "综合性期刊",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约数周–2 个月",
+          "fit_label": "最快保底 · Sensors",
+          "accepts": [
+            "传感/成像 + AI 分析（需贴传感叙事）"
+          ],
+          "avoid": [
+            "纯临床预测与 Sensors 无关"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "本仓库 MDPI 影像稿常见快出口。",
+          "name_zh": "传感器（MDPI）"
+        },
+        {
+          "id": "sci_reports",
+          "name": "Scientific Reports",
+          "publisher": "Nature Portfolio",
+          "xr": {
+            "edition": "2026-03",
+            "major": "综合性期刊",
+            "zone": 3,
+            "top": false
+          },
+          "track": "综合出口",
+          "ease": "中高",
+          "cycle": "常见约 2–4 个月（看外审）",
+          "fit_label": "保底 · Nature 综合三区",
+          "accepts": [
+            "方法完整、结果扎实的跨学科工作"
+          ],
+          "avoid": [
+            "对外说成 Nature 一区子刊"
+          ],
+          "our_types": [
+            "02",
+            "05",
+            "03"
+          ],
+          "note": "比 Frontiers/MDPI 略稳一点，但仍是综合三区。",
+          "name_zh": "科学报告"
+        },
+        {
+          "id": "plos_one",
+          "name": "PLOS ONE",
+          "publisher": "Public Library of Science (PLOS)",
+          "xr": {
+            "edition": "2026-03",
+            "major": "综合性期刊",
+            "zone": 3,
+            "top": false
+          },
+          "track": "综合出口",
+          "ease": "中高",
+          "cycle": "常见约 2–4 个月",
+          "fit_label": "保底 · PLOS 综合",
+          "accepts": [
+            "技术正确、可复现的完整研究"
+          ],
+          "avoid": [
+            "冲区叙事"
+          ],
+          "our_types": [
+            "02",
+            "05"
+          ],
+          "note": "审扎实与透明，不审「故事有多顶」。",
+          "name_zh": "公共科学图书馆·综合"
+        },
+        {
+          "id": "ieee_access",
+          "name": "IEEE Access",
+          "publisher": "IEEE",
+          "xr": {
+            "edition": "2026-03",
+            "major": "计算机科学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–2 个月量级",
+          "fit_label": "最快保底 · 工程宽刊",
+          "accepts": [
+            "检测/分割系统报告",
+            "应用 AI"
+          ],
+          "avoid": [
+            "对外说成医学分区"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "大类计算机；客户要医学分区时慎用。",
+          "name_zh": "IEEE Access（开放获取）"
+        },
+        {
+          "id": "peerj",
+          "name": "PeerJ",
+          "publisher": "PeerJ, Inc.",
+          "xr": {
+            "edition": "2026-03",
+            "major": "生物学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "菌群",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "保底 · 生物综合",
+          "accepts": [
+            "生命科学完整研究",
+            "部分计算生物"
+          ],
+          "avoid": [
+            "主方案冲区"
+          ],
+          "our_types": [
+            "03",
+            "02"
+          ],
+          "note": "菌群/生信弱包保底。",
+          "name_zh": "PeerJ"
+        }
+      ]
+    },
+    {
+      "id": "balanced",
+      "name": "稍好一点还能较快",
+      "blurb": "仍偏「相对好投 + 周期不拖」。多为二区或信息学刊；比上面保底难一档，但仍远快于顶刊。",
+      "journals": [
+        {
+          "id": "frontiers_dh",
+          "name": "Frontiers in Digital Health",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 2,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "路径最贴 · 数字健康二区",
+          "accepts": [
+            "公开数据风险预测",
+            "数字健康工具/评价",
+            "NHANES 时间外推"
+          ],
+          "avoid": [
+            "单位不认 Frontiers"
+          ],
+          "our_types": [
+            "02",
+            "01"
+          ],
+          "note": "骨质疏松/公开预测 Frontiers 线首选。",
+          "name_zh": "数字健康前沿"
+        },
+        {
+          "id": "frontiers_micro",
+          "name": "Frontiers in Microbiology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "生物学",
+            "zone": 2,
+            "top": true
+          },
+          "track": "菌群",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月；发文量大",
+          "fit_label": "菌群 · 二区快",
+          "accepts": [
+            "菌群关联/计算",
+            "多队列方法（需一点生物学故事）"
+          ],
+          "avoid": [
+            "完全无微生物叙事"
+          ],
+          "our_types": [
+            "03"
+          ],
+          "note": "结直肠公开方案的 Frontiers 主备选。",
+          "name_zh": "微生物学前沿"
+        },
+        {
+          "id": "frontiers_bbe",
+          "name": "Frontiers in Bioengineering and Biotechnology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "生物学",
+            "zone": 2,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "影像方法 · 二区快",
+          "accepts": [
+            "医学影像方法",
+            "检测分割工程"
+          ],
+          "avoid": [
+            "与 bioengineering 无关"
+          ],
+          "our_types": [
+            "05",
+            "04"
+          ],
+          "note": "YOLO/分割类 Frontiers 线常投。",
+          "name_zh": "生物工程与生物技术前沿"
+        },
+        {
+          "id": "frontiers_nutrition",
+          "name": "Frontiers in Nutrition",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "农林科学",
+            "zone": 2,
+            "top": true
+          },
+          "track": "骨质疏松",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "营养-骨 · 二区快",
+          "accepts": [
+            "膳食-骨健康",
+            "NHANES 营养预测"
+          ],
+          "avoid": [
+            "无营养问题的纯算法"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "大类农林科学，对外说清。",
+          "name_zh": "营养学前沿"
+        },
+        {
+          "id": "frontiers_endo",
+          "name": "Frontiers in Endocrinology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 2,
+            "top": false
+          },
+          "track": "骨质疏松",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "内分泌骨 · 二区快",
+          "accepts": [
+            "骨质疏松风险（贴内分泌/骨代谢）"
+          ],
+          "avoid": [
+            "完全无内分泌对话"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "比专科骨科学刊更好走通公开数据包。",
+          "name_zh": "内分泌学前沿"
+        },
+        {
+          "id": "frontiers_ai",
+          "name": "Frontiers in Artificial Intelligence",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "计算机科学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "AI 快刊 · 计算机大类",
+          "accepts": [
+            "医学 AI 应用",
+            "检测/预测工程报告"
+          ],
+          "avoid": [
+            "说成医学分区"
+          ],
+          "our_types": [
+            "05",
+            "01"
+          ],
+          "note": "大类计算机三区。",
+          "name_zh": "人工智能前沿"
+        },
+        {
+          "id": "frontiers_medtech",
+          "name": "Frontiers in Medical Technology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "医疗技术快刊",
+          "accepts": [
+            "检测/辅助诊断系统",
+            "医疗技术 AI"
+          ],
+          "avoid": [
+            "无技术贡献的纯统计"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "写法 05 要速度时可用。",
+          "name_zh": "医疗技术前沿"
+        },
+        {
+          "id": "frontiers_bioinfo",
+          "name": "Frontiers in Bioinformatics",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "生物学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "菌群/方法",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "生信方法快刊",
+          "accepts": [
+            "多队列流程/工具",
+            "菌群计算管道"
+          ],
+          "avoid": [
+            "空洞 novelty"
+          ],
+          "our_types": [
+            "03",
+            "04"
+          ],
+          "note": "方法包完整即可冲速度。",
+          "name_zh": "生物信息学前沿"
+        },
+        {
+          "id": "frontiers_aging",
+          "name": "Frontiers in Aging",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "骨质疏松",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "衰老快刊",
+          "accepts": [
+            "老年骨健康/风险预测"
+          ],
+          "avoid": [
+            "题目不贴衰老"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "骨质疏松老年叙事 + 要速度。",
+          "name_zh": "衰老前沿"
+        },
+        {
+          "id": "jmir_med_inform",
+          "name": "JMIR Medical Informatics",
+          "publisher": "JMIR Publications Inc.",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 2,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "中",
+          "cycle": "常见约 2–4 个月（比 Frontiers 略慢）",
+          "fit_label": "信息学二区 · 稍稳",
+          "accepts": [
+            "临床信息学",
+            "公开调查/EHR 预测",
+            "可部署工具"
+          ],
+          "avoid": [
+            "与 JMIR 主刊混淆对外承诺一区"
+          ],
+          "our_types": [
+            "02",
+            "01"
+          ],
+          "note": "比 Frontiers 稍难一点，但单位认可度往往更好问。",
+          "name_zh": "医学互联网研究·医学信息学"
+        },
+        {
+          "id": "bmc_midm",
+          "name": "BMC Medical Informatics and Decision Making",
+          "publisher": "BioMed Central (BMC)",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 2,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "中",
+          "cycle": "常见约 2–5 个月（有时偏慢）",
+          "fit_label": "BMC 信息学 · 稳妥",
+          "accepts": [
+            "医学信息学",
+            "决策支持",
+            "风险模型评价"
+          ],
+          "avoid": [
+            "指望「两周就中」"
+          ],
+          "our_types": [
+            "02",
+            "01"
+          ],
+          "note": "国人友好；周期不如 Frontiers/MDPI，但认定常更稳。",
+          "name_zh": "BMC 医学信息学与决策制定"
+        }
+      ]
+    },
+    {
+      "id": "frontiers_z34",
+      "name": "Frontiers 三·四区",
+      "blurb": "Frontiers Media 三区/四区快刊补全（2026 新锐大类）。周期通常短；单位认定必须先问。神经窄刊未收。",
+      "journals": [
+        {
+          "id": "fz3_public_health",
+          "name": "Frontiers in Public Health",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "骨质疏松",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 公卫最快",
+          "accepts": [
+            "NHANES 预测",
+            "人群风险分层",
+            "公卫数字健康"
+          ],
+          "avoid": [
+            "包装成一区",
+            "单位不认 Frontiers"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "三区里最常用的速度保底。",
+          "name_zh": "公共卫生前沿"
+        },
+        {
+          "id": "fz3_medicine",
+          "name": "Frontiers in Medicine",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 医学综合",
+          "accepts": [
+            "医学综合应用",
+            "公开数据预测包"
+          ],
+          "avoid": [
+            "对外说成顶刊"
+          ],
+          "our_types": [
+            "02",
+            "01"
+          ],
+          "note": "范围宽，适合尽快落稿。",
+          "name_zh": "医学前沿"
+        },
+        {
+          "id": "fz3_oncology",
+          "name": "Frontiers in Oncology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月；发文极大",
+          "fit_label": "三区 · 肿瘤影像",
+          "accepts": [
+            "肿瘤检测/分割",
+            "CRC 公开计算（贴肿瘤）"
+          ],
+          "avoid": [
+            "非肿瘤硬投"
+          ],
+          "our_types": [
+            "05",
+            "03"
+          ],
+          "note": "影像/CRC 高频三区出口。",
+          "name_zh": "肿瘤学前沿"
+        },
+        {
+          "id": "fz3_aging",
+          "name": "Frontiers in Aging",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "骨质疏松",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 衰老",
+          "accepts": [
+            "老年骨健康/风险预测"
+          ],
+          "avoid": [
+            "题目不贴衰老"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "骨质疏松老年叙事。",
+          "name_zh": "衰老前沿"
+        },
+        {
+          "id": "fz3_medtech",
+          "name": "Frontiers in Medical Technology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 医疗技术",
+          "accepts": [
+            "检测/辅助诊断系统",
+            "医疗技术 AI"
+          ],
+          "avoid": [
+            "无技术贡献的纯统计"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "写法 05 三区快选项。",
+          "name_zh": "医疗技术前沿"
+        },
+        {
+          "id": "fz3_health_services",
+          "name": "Frontiers in Health Services",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 卫生服务",
+          "accepts": [
+            "卫生服务/流程相关数字健康",
+            "可部署工具评价"
+          ],
+          "avoid": [
+            "纯算法无服务场景"
+          ],
+          "our_types": [
+            "02",
+            "04"
+          ],
+          "note": "偏服务与落地，不是纯刷榜。",
+          "name_zh": "卫生服务前沿"
+        },
+        {
+          "id": "fz3_physio",
+          "name": "Frontiers in Physiology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "骨质疏松",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 生理",
+          "accepts": [
+            "生理/骨代谢相关分析",
+            "部分计算生理"
+          ],
+          "avoid": [
+            "无生理问题的纯 ML"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "有生理叙事时可用。",
+          "name_zh": "生理学前沿"
+        },
+        {
+          "id": "fz3_cardio",
+          "name": "Frontiers in Cardiovascular Medicine",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 心血管",
+          "accepts": [
+            "心血管风险预测（公开数据）",
+            "相关影像/信号"
+          ],
+          "avoid": [
+            "题目与心血管无关"
+          ],
+          "our_types": [
+            "01",
+            "02"
+          ],
+          "note": "仅心血管题使用。",
+          "name_zh": "心血管医学前沿"
+        },
+        {
+          "id": "fz3_bioinfo",
+          "name": "Frontiers in Bioinformatics",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "生物学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "菌群/方法",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 生信",
+          "accepts": [
+            "多队列流程/工具",
+            "菌群计算管道"
+          ],
+          "avoid": [
+            "空洞 novelty"
+          ],
+          "our_types": [
+            "03",
+            "04"
+          ],
+          "note": "菌群方法三区快刊。",
+          "name_zh": "生物信息学前沿"
+        },
+        {
+          "id": "fz3_genetics",
+          "name": "Frontiers in Genetics",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "生物学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "菌群/方法",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月；发文大",
+          "fit_label": "三区 · 遗传",
+          "accepts": [
+            "遗传/多组学方法",
+            "微生物组遗传交叉"
+          ],
+          "avoid": [
+            "无遗传问题的纯检测文"
+          ],
+          "our_types": [
+            "03",
+            "04"
+          ],
+          "note": "发文量大、周转快。",
+          "name_zh": "遗传学前沿"
+        },
+        {
+          "id": "fz3_sysbio",
+          "name": "Frontiers in Systems Biology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "生物学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "菌群/方法",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 系统生物",
+          "accepts": [
+            "系统生物学方法",
+            "多组学整合"
+          ],
+          "avoid": [
+            "无系统生物学故事"
+          ],
+          "our_types": [
+            "03",
+            "04"
+          ],
+          "note": "方法向三区备选。",
+          "name_zh": "系统生物学前沿"
+        },
+        {
+          "id": "fz3_ai",
+          "name": "Frontiers in Artificial Intelligence",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "计算机科学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · AI（计算机）",
+          "accepts": [
+            "医学 AI 应用",
+            "检测/预测工程"
+          ],
+          "avoid": [
+            "说成医学分区"
+          ],
+          "our_types": [
+            "05",
+            "01"
+          ],
+          "note": "大类计算机科学三区。",
+          "name_zh": "人工智能前沿"
+        },
+        {
+          "id": "fz3_bigdata",
+          "name": "Frontiers in Big Data",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "计算机科学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 大数据（计算机）",
+          "accepts": [
+            "健康大数据方法与应用"
+          ],
+          "avoid": [
+            "医学分区包装"
+          ],
+          "our_types": [
+            "01",
+            "02"
+          ],
+          "note": "大类计算机，不是医学。",
+          "name_zh": "大数据前沿"
+        },
+        {
+          "id": "fz3_cs",
+          "name": "Frontiers in Computer Science",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "计算机科学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 计算机",
+          "accepts": [
+            "计算机方法应用",
+            "医学 AI 工程报告"
+          ],
+          "avoid": [
+            "医学档位承诺"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "CS 向出口。",
+          "name_zh": "计算机科学前沿"
+        },
+        {
+          "id": "fz3_signal",
+          "name": "Frontiers in Signal Processing",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "工程技术",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 信号处理",
+          "accepts": [
+            "医学信号/图像处理",
+            "检测相关信号处理"
+          ],
+          "avoid": [
+            "与信号无关的纯临床预测"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "大类工程技术三区（以 XR 表为准，投前复核）。",
+          "name_zh": "信号处理前沿"
+        },
+        {
+          "id": "fz3_neuroinfo",
+          "name": "Frontiers in Neuroinformatics",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 3,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "三区 · 神经信息",
+          "accepts": [
+            "神经影像/信息学方法",
+            "脑影像公开数据"
+          ],
+          "avoid": [
+            "非神经题目硬投"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "仅神经影像题。",
+          "name_zh": "神经信息学前沿"
+        },
+        {
+          "id": "fz4_radiology",
+          "name": "Frontiers in Radiology",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 4,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "四区 · 放射快备胎",
+          "accepts": [
+            "放射影像 AI 应用报告"
+          ],
+          "avoid": [
+            "对外冲区叙事"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "影像要速度且接受四区时可用。",
+          "name_zh": "放射学前沿"
+        },
+        {
+          "id": "fz4_nucmed",
+          "name": "Frontiers in Nuclear Medicine",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 4,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "四区 · 核医学",
+          "accepts": [
+            "核医学成像相关方法"
+          ],
+          "avoid": [
+            "非核医学题目"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "窄域四区备胎。",
+          "name_zh": "核医学前沿"
+        },
+        {
+          "id": "fz4_comp_neuro",
+          "name": "Frontiers in Computational Neuroscience",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 4,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "中高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "四区 · 计算神经",
+          "accepts": [
+            "计算神经科学方法"
+          ],
+          "avoid": [
+            "通用医学检测文硬投"
+          ],
+          "our_types": [],
+          "note": "与主路径弱对齐，仅备选。",
+          "name_zh": "计算神经科学前沿"
+        },
+        {
+          "id": "fz4_diabetes",
+          "name": "Frontiers in Clinical Diabetes and Healthcare",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 4,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "四区 · 糖尿病健康",
+          "accepts": [
+            "糖尿病/代谢相关预测与健康管理"
+          ],
+          "avoid": [
+            "与糖尿病无关"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "代谢/慢病公开数据四区出口。",
+          "name_zh": "临床糖尿病与健康护理前沿"
+        },
+        {
+          "id": "fz4_emergency",
+          "name": "Frontiers in Emergency Medicine",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "医学",
+            "zone": 4,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "高",
+          "cycle": "常见约 1–3 个月",
+          "fit_label": "四区 · 急诊",
+          "accepts": [
+            "急诊相关风险/分诊模型（公开数据）"
+          ],
+          "avoid": [
+            "无急诊场景"
+          ],
+          "our_types": [
+            "01",
+            "02"
+          ],
+          "note": "ICU/急诊题且接受四区时考虑。",
+          "name_zh": "急诊医学前沿"
+        },
+        {
+          "id": "fz4_policy",
+          "name": "Frontiers Media 三区与四区使用原则",
+          "publisher": "Frontiers Media SA",
+          "xr": {
+            "edition": "2026-03",
+            "major": "视学科",
+            "zone": null,
+            "top": false
+          },
+          "track": "综合出口",
+          "ease": "—",
+          "cycle": "快，但档位低",
+          "fit_label": "先问单位认不认",
+          "accepts": [
+            "单位认可 Frontiers 时的完整公开数据工作"
+          ],
+          "avoid": [
+            "未确认单位政策就承诺",
+            "用三/四区 Frontiers 冒充一区",
+            "神经窄刊堆砌（已不列）"
+          ],
+          "our_types": [],
+          "note": "二区 Frontiers（Digital Health / Microbiology 等）见「稍好一点还能较快」。本页补全三·四区快出口。",
+          "name_zh": "Frontiers 系列选刊说明（非期刊本体）"
+        }
+      ]
+    },
+    {
+      "id": "path_pick",
+      "name": "按路径怎么选",
+      "blurb": "开会时只推 1 主投 + 1 保底，别一次甩十几本。",
+      "journals": [
+        {
+          "id": "pick_osteo",
+          "name": "路径组合：骨质疏松 / NHANES",
+          "publisher": "—",
+          "xr": {
+            "edition": "2026-03",
+            "major": "选刊组合",
+            "zone": null,
+            "top": false
+          },
+          "track": "骨质疏松",
+          "ease": "—",
+          "cycle": "要速度：公卫/营养线",
+          "fit_label": "主投→保底",
+          "accepts": [
+            "主投：Frontiers in Digital Health，或 Frontiers in Nutrition / Frontiers in Endocrinology",
+            "保底：Frontiers in Public Health，或 Frontiers in Aging"
+          ],
+          "avoid": [
+            "一上来承诺 npj DigMed / Bone 顶刊周期"
+          ],
+          "our_types": [
+            "02"
+          ],
+          "note": "单位若排斥 Frontiers，改 JMIR Med Inform / BMC MIDM。",
+          "name_zh": "选刊组合（非单一期刊）"
+        },
+        {
+          "id": "pick_crc",
+          "name": "路径组合：结直肠菌群跨队列",
+          "publisher": "—",
+          "xr": {
+            "edition": "2026-03",
+            "major": "选刊组合",
+            "zone": null,
+            "top": false
+          },
+          "track": "菌群",
+          "ease": "—",
+          "cycle": "要速度：Frontiers 微生物/生信",
+          "fit_label": "主投→保底",
+          "accepts": [
+            "主投：Frontiers in Microbiology",
+            "保底：Frontiers in Bioinformatics，或 PeerJ"
+          ],
+          "avoid": [
+            "把 Gut / Microbiome 一区说成「好投快」"
+          ],
+          "our_types": [
+            "03"
+          ],
+          "note": "真要冲 Microbiome/npj Biofilms，别放进「好投快」叙事。",
+          "name_zh": "选刊组合（非单一期刊）"
+        },
+        {
+          "id": "pick_img",
+          "name": "路径组合：公开影像检测 / 分割",
+          "publisher": "—",
+          "xr": {
+            "edition": "2026-03",
+            "major": "选刊组合",
+            "zone": null,
+            "top": false
+          },
+          "track": "公开影像",
+          "ease": "—",
+          "cycle": "要速度：Frontiers/MDPI",
+          "fit_label": "主投→保底",
+          "accepts": [
+            "主投：Frontiers in Bioengineering and Biotechnology，或 Frontiers in Oncology（肿瘤题）",
+            "保底：Diagnostics，Sensors，或 Frontiers in Medical Technology"
+          ],
+          "avoid": [
+            "MedIA / IEEE TMI 当快刊推销"
+          ],
+          "our_types": [
+            "05"
+          ],
+          "note": "客户要医学分区：优先 Oncology / Diagnostics / MedTech，慎用 IEEE Access。",
+          "name_zh": "选刊组合（非单一期刊）"
+        },
+        {
+          "id": "pick_digmed",
+          "name": "路径组合：数字医学多库预测",
+          "publisher": "—",
+          "xr": {
+            "edition": "2026-03",
+            "major": "选刊组合",
+            "zone": null,
+            "top": false
+          },
+          "track": "数字医学",
+          "ease": "—",
+          "cycle": "要速度：Frontiers；要认定：JMIR/BMC",
+          "fit_label": "主投→保底",
+          "accepts": [
+            "主投：Frontiers in Digital Health，或 Frontiers in Medicine",
+            "保底：Frontiers in Public Health；认定优先则 JMIR Medical Informatics"
+          ],
+          "avoid": [
+            "把 npj DigMed 说成周期短好中"
+          ],
+          "our_types": [
+            "01",
+            "02",
+            "04"
+          ],
+          "note": "一区数字医学可以冲，但不属于本页「好投快」清单。",
+          "name_zh": "选刊组合（非单一期刊）"
+        }
+      ]
+    }
+  ]
+}
