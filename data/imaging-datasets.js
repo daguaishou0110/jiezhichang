@@ -232,6 +232,27 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "CAD-SEL 黏膜下病变",
+              "url": "https://doi.org/10.1038/s41597-026-07331-y",
+              "note": "双模态结肠镜 SEL；4912 图 / 641 例",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "CAD-SEL Figshare",
+              "url": "https://doi.org/10.6084/m9.figshare.29945483.v2",
+              "note": "数据下载",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "PolypGen Scientific Data",
+              "url": "https://doi.org/10.1038/s41597-023-01981-y",
+              "note": "多中心息肉论文",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -304,6 +325,34 @@ window.IMAGING_DATASETS = {
               "name": "Cholec80",
               "url": "http://camma.u-strasbg.fr/datasets",
               "note": "80视频 · CAMMA · 手术阶段识别",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "EGID 胃炎内镜多标签",
+              "url": "https://doi.org/10.1038/s41597-026-07666-6",
+              "note": "5883 张 / 229 例；Hp/萎缩等多标签",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "EGID Figshare part1",
+              "url": "https://doi.org/10.6084/m9.figshare.30997345.v4",
+              "note": "数据下载 part1",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "EGID Figshare part2",
+              "url": "https://doi.org/10.6084/m9.figshare.30996127.v4",
+              "note": "数据下载 part2",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "Endoscapes2023",
+              "url": "https://physionet.org/content/endoscapes-2023/",
+              "note": "腹腔镜胆囊切除；器械/解剖分割；需 DUA",
               "license": "",
               "kind": "detection"
             }
@@ -474,6 +523,20 @@ window.IMAGING_DATASETS = {
               "name": "Rectal-cancer MRI radiomics (公开子集)",
               "url": "https://www.cancerimagingarchive.net/",
               "note": "百例级 · TCIA 检索 · 检索 rectal",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "MIQR-CC ERCP 透视",
+              "url": "https://doi.org/10.6084/m9.figshare.31079236.v1",
+              "note": "ERCP 透视 1.9 万图 / 1602 例；5519 标注",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "ERCP curated Scientific Data",
+              "url": "https://doi.org/10.1038/s41597-026-07679-1",
+              "note": "胆管胰管 ERCP 数据集文",
               "license": "",
               "kind": "classification"
             }
@@ -926,6 +989,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "SegTHOR",
+              "url": "https://segthor.grand-challenge.org/",
+              "note": "胸腔器官分割",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1360,6 +1430,13 @@ window.IMAGING_DATASETS = {
               "name": "Project Homepage",
               "url": "https://figshare.com/articles/dataset/BM-BronchoLC/24243670",
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "EXACT09",
+              "url": "https://exact09.grand-challenge.org/",
+              "note": "气道提取经典",
               "license": "",
               "kind": "seg→box"
             }
@@ -1846,6 +1923,27 @@ window.IMAGING_DATASETS = {
               "name": "Grand Challenge",
               "url": "https://tn-scui2020.grand-challenge.org/Home/",
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "SegThy",
+              "url": "https://www.cs.cit.tum.de/camp/publications/segthy-dataset/",
+              "note": "甲状腺+颈血管 3D US/MRI",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "SegThy US zip",
+              "url": "https://www.campar.in.tum.de/public_datasets/2022_plosone_eilers/US_data.zip",
+              "note": "US 直下",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "SegThy MRI zip",
+              "url": "https://www.campar.in.tum.de/public_datasets/2022_plosone_eilers/MRI_data.zip",
+              "note": "MRI 直下",
               "license": "",
               "kind": "seg→box"
             }
@@ -2375,6 +2473,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "Dermofit",
+              "url": "https://licensing.edinburgh-innovations.ed.ac.uk/product/dermofit-image-library",
+              "note": "皮肤镜库；需许可",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -2715,6 +2820,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "UCSF-PDGM",
+              "url": "https://www.cancerimagingarchive.net/collection/ucsf-pdgm/",
+              "note": "弥漫胶质瘤 MRI",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -2920,6 +3032,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "VerSe 2019/2020",
+              "url": "https://github.com/anjany/verse",
+              "note": "脊柱椎体标注",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -2952,6 +3071,13 @@ window.IMAGING_DATASETS = {
               "note": "骨骼 X 线异常分类；可辅筛",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "HFValid 股骨 CT",
+              "url": "https://amsacta.unibo.it/id/eprint/7277/",
+              "note": "101 例股骨 CT+标志点",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -2961,7 +3087,7 @@ window.IMAGING_DATASETS = {
           "name_zh": "二级：膝关节 · X 线 / MRI",
           "modality": "X 线 / MRI",
           "task": "检测 / 分割转框",
-          "status": "partial",
+          "status": "ready",
           "local": "膝关节 · 农业yolo/膝关节",
           "datasets": [
             {
@@ -3012,6 +3138,13 @@ window.IMAGING_DATASETS = {
               "note": "多试验 · ImmPort · 需注册",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "SKI10",
+              "url": "https://ski10.grand-challenge.org/",
+              "note": "膝软骨/骨分割",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": "原生骨折框少于腕/全身集"
@@ -3036,6 +3169,13 @@ window.IMAGING_DATASETS = {
               "url": "https://doi.org/10.5281/zenodo.18173664",
               "note": "约 46GB",
               "license": "CC BY-NC 4.0",
+              "kind": "mixed"
+            },
+            {
+              "name": "LUMOS ACM MM",
+              "url": "https://doi.org/10.1145/3746027.3758282",
+              "note": "腰椎骨质疏松数据集文",
+              "license": "",
               "kind": "mixed"
             }
           ],
@@ -3076,6 +3216,13 @@ window.IMAGING_DATASETS = {
               "note": "肾/肿瘤分割；结石需另筛",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "Kidney Stone Detection YOLO",
+              "url": "https://www.kaggle.com/datasets/mohammedhagagg/kidney-stone-images",
+              "note": "结石检测补充",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -3085,7 +3232,7 @@ window.IMAGING_DATASETS = {
           "name_zh": "二级：肾肿瘤 · CT 分割转框",
           "modality": "CT",
           "task": "分割转框",
-          "status": "partial",
+          "status": "ready",
           "local": "肾 · 农业yolo/肾",
           "datasets": [
             {
@@ -3136,6 +3283,20 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "TRUSTED 肾 US+CT",
+              "url": "https://doi.org/10.1038/s41597-025-04467-1",
+              "note": "48 例成对 3DUS+CT；需签署 DUA",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "TRUSTED Figshare",
+              "url": "https://doi.org/10.6084/m9.figshare.27981050",
+              "note": "数据下载入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -3184,7 +3345,7 @@ window.IMAGING_DATASETS = {
           "name_zh": "二级：前列腺 · MRI",
           "modality": "MRI",
           "task": "分割为主",
-          "status": "partial",
+          "status": "ready",
           "local": "前列腺 · 农业yolo/前列腺",
           "datasets": [
             {
@@ -3235,6 +3396,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "MR-US Prostate Reg Zenodo",
+              "url": "https://doi.org/10.5281/zenodo.7870105",
+              "note": "MR-US 配准挑战数据",
+              "license": "",
+              "kind": "mixed"
             }
           ],
           "todo": ""
@@ -3274,6 +3442,13 @@ window.IMAGING_DATASETS = {
               "note": "百级 · Kaggle检索 · 质量参差",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "ROBUST-MIS",
+              "url": "https://www.synapse.org/#!Synapse:syn18779624",
+              "note": "腹腔镜器械鲁棒分割",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -3301,7 +3476,7 @@ window.IMAGING_DATASETS = {
           "name_zh": "二级：宫颈 · 阴道镜 / 细胞学",
           "modality": "阴道镜 / 细胞学",
           "task": "分类为主（公开原生框较少）",
-          "status": "partial",
+          "status": "ready",
           "local": "宫颈 · 农业yolo/宫颈",
           "datasets": [
             {
@@ -3373,6 +3548,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "Cervix93",
+              "url": "https://github.com/CancerDataScience/Cervix93",
+              "note": "宫颈细胞学补充",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": "多数为分类；带框公开集需逐条核"
@@ -3721,6 +3903,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "CryoNuSeg",
+              "url": "https://zenodo.org/records/4551984",
+              "note": "冰冻切片核分割",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -3751,6 +3940,13 @@ window.IMAGING_DATASETS = {
               "name": "Project Homepage",
               "url": "https://patchcamelyon.grand-challenge.org/",
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "PAIP 2019",
+              "url": "https://paip2019.grand-challenge.org/",
+              "note": "肝病理分割",
               "license": "",
               "kind": "seg→box"
             }
@@ -4165,6 +4361,27 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "CAD-SEL 黏膜下病变",
+          "url": "https://doi.org/10.1038/s41597-026-07331-y",
+          "note": "双模态结肠镜 SEL；4912 图 / 641 例",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "CAD-SEL Figshare",
+          "url": "https://doi.org/10.6084/m9.figshare.29945483.v2",
+          "note": "数据下载",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "PolypGen Scientific Data",
+          "url": "https://doi.org/10.1038/s41597-023-01981-y",
+          "note": "多中心息肉论文",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -4239,6 +4456,34 @@ window.IMAGING_DATASETS = {
           "name": "Cholec80",
           "url": "http://camma.u-strasbg.fr/datasets",
           "note": "80视频 · CAMMA · 手术阶段识别",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "EGID 胃炎内镜多标签",
+          "url": "https://doi.org/10.1038/s41597-026-07666-6",
+          "note": "5883 张 / 229 例；Hp/萎缩等多标签",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "EGID Figshare part1",
+          "url": "https://doi.org/10.6084/m9.figshare.30997345.v4",
+          "note": "数据下载 part1",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "EGID Figshare part2",
+          "url": "https://doi.org/10.6084/m9.figshare.30996127.v4",
+          "note": "数据下载 part2",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "Endoscapes2023",
+          "url": "https://physionet.org/content/endoscapes-2023/",
+          "note": "腹腔镜胆囊切除；器械/解剖分割；需 DUA",
           "license": "",
           "kind": "detection"
         }
@@ -4417,6 +4662,20 @@ window.IMAGING_DATASETS = {
           "name": "Rectal-cancer MRI radiomics (公开子集)",
           "url": "https://www.cancerimagingarchive.net/",
           "note": "百例级 · TCIA 检索 · 检索 rectal",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "MIQR-CC ERCP 透视",
+          "url": "https://doi.org/10.6084/m9.figshare.31079236.v1",
+          "note": "ERCP 透视 1.9 万图 / 1602 例；5519 标注",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "ERCP curated Scientific Data",
+          "url": "https://doi.org/10.1038/s41597-026-07679-1",
+          "note": "胆管胰管 ERCP 数据集文",
           "license": "",
           "kind": "classification"
         }
@@ -4870,6 +5129,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "SegTHOR",
+          "url": "https://segthor.grand-challenge.org/",
+          "note": "胸腔器官分割",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5305,6 +5571,13 @@ window.IMAGING_DATASETS = {
           "name": "Project Homepage",
           "url": "https://figshare.com/articles/dataset/BM-BronchoLC/24243670",
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "EXACT09",
+          "url": "https://exact09.grand-challenge.org/",
+          "note": "气道提取经典",
           "license": "",
           "kind": "seg→box"
         }
@@ -5782,6 +6055,27 @@ window.IMAGING_DATASETS = {
           "name": "Grand Challenge",
           "url": "https://tn-scui2020.grand-challenge.org/Home/",
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "SegThy",
+          "url": "https://www.cs.cit.tum.de/camp/publications/segthy-dataset/",
+          "note": "甲状腺+颈血管 3D US/MRI",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "SegThy US zip",
+          "url": "https://www.campar.in.tum.de/public_datasets/2022_plosone_eilers/US_data.zip",
+          "note": "US 直下",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "SegThy MRI zip",
+          "url": "https://www.campar.in.tum.de/public_datasets/2022_plosone_eilers/MRI_data.zip",
+          "note": "MRI 直下",
           "license": "",
           "kind": "seg→box"
         }
@@ -6305,6 +6599,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "Dermofit",
+          "url": "https://licensing.edinburgh-innovations.ed.ac.uk/product/dermofit-image-library",
+          "note": "皮肤镜库；需许可",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -6640,6 +6941,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "UCSF-PDGM",
+          "url": "https://www.cancerimagingarchive.net/collection/ucsf-pdgm/",
+          "note": "弥漫胶质瘤 MRI",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -6846,6 +7154,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "VerSe 2019/2020",
+          "url": "https://github.com/anjany/verse",
+          "note": "脊柱椎体标注",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -6880,6 +7195,13 @@ window.IMAGING_DATASETS = {
           "note": "骨骼 X 线异常分类；可辅筛",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "HFValid 股骨 CT",
+          "url": "https://amsacta.unibo.it/id/eprint/7277/",
+          "note": "101 例股骨 CT+标志点",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -6891,7 +7213,7 @@ window.IMAGING_DATASETS = {
       "name_zh": "二级：膝关节 · X 线 / MRI",
       "modality": "X 线 / MRI",
       "task": "检测 / 分割转框",
-      "status": "partial",
+      "status": "ready",
       "local": "膝关节 · 农业yolo/膝关节",
       "datasets": [
         {
@@ -6942,6 +7264,13 @@ window.IMAGING_DATASETS = {
           "note": "多试验 · ImmPort · 需注册",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "SKI10",
+          "url": "https://ski10.grand-challenge.org/",
+          "note": "膝软骨/骨分割",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "原生骨折框少于腕/全身集",
@@ -6968,6 +7297,13 @@ window.IMAGING_DATASETS = {
           "url": "https://doi.org/10.5281/zenodo.18173664",
           "note": "约 46GB",
           "license": "CC BY-NC 4.0",
+          "kind": "mixed"
+        },
+        {
+          "name": "LUMOS ACM MM",
+          "url": "https://doi.org/10.1145/3746027.3758282",
+          "note": "腰椎骨质疏松数据集文",
+          "license": "",
           "kind": "mixed"
         }
       ],
@@ -7003,6 +7339,13 @@ window.IMAGING_DATASETS = {
           "note": "肾/肿瘤分割；结石需另筛",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "Kidney Stone Detection YOLO",
+          "url": "https://www.kaggle.com/datasets/mohammedhagagg/kidney-stone-images",
+          "note": "结石检测补充",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -7014,7 +7357,7 @@ window.IMAGING_DATASETS = {
       "name_zh": "二级：肾肿瘤 · CT 分割转框",
       "modality": "CT",
       "task": "分割转框",
-      "status": "partial",
+      "status": "ready",
       "local": "肾 · 农业yolo/肾",
       "datasets": [
         {
@@ -7063,6 +7406,20 @@ window.IMAGING_DATASETS = {
           "name": "TCIA",
           "url": "https://www.cancerimagingarchive.net/collection/adrenal-acc-ki67-seg/",
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "TRUSTED 肾 US+CT",
+          "url": "https://doi.org/10.1038/s41597-025-04467-1",
+          "note": "48 例成对 3DUS+CT；需签署 DUA",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "TRUSTED Figshare",
+          "url": "https://doi.org/10.6084/m9.figshare.27981050",
+          "note": "数据下载入口",
           "license": "",
           "kind": "seg→box"
         }
@@ -7117,7 +7474,7 @@ window.IMAGING_DATASETS = {
       "name_zh": "二级：前列腺 · MRI",
       "modality": "MRI",
       "task": "分割为主",
-      "status": "partial",
+      "status": "ready",
       "local": "前列腺 · 农业yolo/前列腺",
       "datasets": [
         {
@@ -7168,6 +7525,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "MR-US Prostate Reg Zenodo",
+          "url": "https://doi.org/10.5281/zenodo.7870105",
+          "note": "MR-US 配准挑战数据",
+          "license": "",
+          "kind": "mixed"
         }
       ],
       "todo": "",
@@ -7202,6 +7566,13 @@ window.IMAGING_DATASETS = {
           "note": "百级 · Kaggle检索 · 质量参差",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "ROBUST-MIS",
+          "url": "https://www.synapse.org/#!Synapse:syn18779624",
+          "note": "腹腔镜器械鲁棒分割",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -7233,7 +7604,7 @@ window.IMAGING_DATASETS = {
       "name_zh": "二级：宫颈 · 阴道镜 / 细胞学",
       "modality": "阴道镜 / 细胞学",
       "task": "分类为主（公开原生框较少）",
-      "status": "partial",
+      "status": "ready",
       "local": "宫颈 · 农业yolo/宫颈",
       "datasets": [
         {
@@ -7305,6 +7676,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "Cervix93",
+          "url": "https://github.com/CancerDataScience/Cervix93",
+          "note": "宫颈细胞学补充",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "多数为分类；带框公开集需逐条核",
@@ -7645,6 +8023,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "CryoNuSeg",
+          "url": "https://zenodo.org/records/4551984",
+          "note": "冰冻切片核分割",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -7677,6 +8062,13 @@ window.IMAGING_DATASETS = {
           "name": "Project Homepage",
           "url": "https://patchcamelyon.grand-challenge.org/",
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "PAIP 2019",
+          "url": "https://paip2019.grand-challenge.org/",
+          "note": "肝病理分割",
           "license": "",
           "kind": "seg→box"
         }
