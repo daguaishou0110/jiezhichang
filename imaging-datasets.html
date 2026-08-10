@@ -83,7 +83,7 @@ td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.35re
   <div class="kicker">Public medical imaging datasets · editable</div>
   <div class="brand">医学影像数据集目录</div>
   <p class="lead">可手动新增类目，再在类目里新增数据集链接。浏览器自动草稿；可下载 / 保存本地 / 经本地小服务写回仓库文件。</p>
-  <div class="warn" id="hint">线上 Render 无法直接改你电脑文件。本机同步：运行 <code>python tools/serve_imaging_datasets.py</code> 后点「同步到本地文件」；或「下载 JS」覆盖 <code>data/imaging-datasets.js</code>。</div>
+  <div class="warn" id="hint">已按部位/病症预填公开检测（或可转框）数据集。可继续手动增补。本机写盘：<code>python tools/serve_imaging_datasets.py</code> 后点「同步到本地文件」；或「下载 JS」覆盖 <code>data/imaging-datasets.js</code>。</div>
   <div class="okbar" id="toast"></div>
   <div class="chips" id="stats"></div>
   <div class="toolbar">
