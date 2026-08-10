@@ -1,0 +1,80 @@
+{
+  "year": 2026,
+  "retrieved": "2026-08-10",
+  "source": "OpenAlex（主）；Frontiers in Medical Technology 因接口限流改用 Europe PMC 专题检索补全",
+  "definition": "n_2026：该刊 2026 年标题/摘要命中「医学影像 + 计算方法」相关词的论文数（检索估算，非人工精标；不能区分公开/私有数据）。Sensors / IEEE Access / Diagnostics 为综合刊，口径会偏大，只作量级参考。",
+  "query": "segmentation OR detection OR \"deep learning\" OR \"medical image\" OR BraTS OR LiTS OR KiTS OR ultrasound OR radiomics OR CNN OR Transformer",
+  "counts": {
+    "media": {
+      "name": "Medical Image Analysis",
+      "n_2026": 220,
+      "source": "OpenAlex"
+    },
+    "tmi": {
+      "name": "IEEE Transactions on Medical Imaging",
+      "n_2026": 154,
+      "source": "OpenAlex"
+    },
+    "jbhi": {
+      "name": "IEEE Journal of Biomedical and Health Informatics",
+      "n_2026": 321,
+      "source": "OpenAlex"
+    },
+    "cmig": {
+      "name": "Computerized Medical Imaging and Graphics",
+      "n_2026": 85,
+      "source": "OpenAlex"
+    },
+    "cmpb": {
+      "name": "Computer Methods and Programs in Biomedicine",
+      "n_2026": 146,
+      "source": "OpenAlex"
+    },
+    "bspc": {
+      "name": "Biomedical Signal Processing and Control",
+      "n_2026": 1171,
+      "source": "OpenAlex",
+      "note": "含信号/图像大类，量级偏大"
+    },
+    "frontiers_bbe": {
+      "name": "Frontiers in Bioengineering and Biotechnology",
+      "n_2026": 513,
+      "source": "OpenAlex",
+      "note": "生物工程全刊检索，影像子集小于此数"
+    },
+    "diagnostics": {
+      "name": "Diagnostics",
+      "n_2026": 1651,
+      "source": "OpenAlex",
+      "note": "综合医学刊，口径偏大"
+    },
+    "sensors": {
+      "name": "Sensors",
+      "n_2026": 3547,
+      "source": "OpenAlex",
+      "note": "综合传感器刊，口径偏大；医学影像只是其中一块"
+    },
+    "bmc_mi": {
+      "name": "BMC Medical Imaging",
+      "n_2026": 331,
+      "source": "OpenAlex"
+    },
+    "ieee_access": {
+      "name": "IEEE Access",
+      "n_2026": 2784,
+      "source": "OpenAlex",
+      "note": "综合工程刊，口径偏大"
+    },
+    "frontiers_medtech": {
+      "name": "Frontiers in Medical Technology",
+      "n_2026": 10,
+      "source": "EuropePMC",
+      "note": "OpenAlex 限流；Europe PMC 专题命中约 10；全刊 2026≈68"
+    },
+    "frontiers_radiology": {
+      "name": "Frontiers in Radiology",
+      "n_2026": 83,
+      "source": "OpenAlex"
+    }
+  }
+}

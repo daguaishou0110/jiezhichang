@@ -3,621 +3,166 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>医工交叉期刊库 · 写作范式与检索</title>
+<title>期刊调研 · 公开医学影像 × 计算机方法</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-:root{
-  --ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;
-  --line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;
-  --eng:#1d4ed8;--eng-bg:#eff6ff;--clin:#0f766e;--clin-bg:#ecfdf5;
-  --warm:#c45c16;--max:1100px;
-}
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--max:960px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:15.5px;line-height:1.6}
 h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.15}
 a{color:var(--deep);text-underline-offset:3px}
-button,select,input,textarea{font:inherit}
 .wrap{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
-
 .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.84rem}
 .nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
-.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.45rem .75rem}
 .nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
-.nav-links a:hover,.nav-links a.on{color:var(--teal)}
-
+.nav-links a.on,.nav-links a:hover{color:var(--teal)}
 .hero{padding:2rem 0 1rem}
 .kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.35rem}
-.brand{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
-.hero h1{font-size:clamp(1rem,2.2vw,1.25rem);max-width:28ch;margin-bottom:.5rem}
-.lead{color:var(--muted);max-width:52ch;font-size:.92rem}
-.warn{margin-top:.85rem;padding:.75rem .9rem;border-radius:12px;background:#fff7ed;border:1px solid #fdba74;color:#7c2d12;font-size:.84rem}
-
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;margin:1.1rem 0 1rem}
-@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem}
-.stat b{display:block;font-family:Fraunces,serif;font-size:1.45rem;color:var(--deep)}
-.stat span{font-size:.75rem;color:var(--muted);font-weight:600}
-
-.mod-tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1rem;position:sticky;top:48px;z-index:40;padding:.45rem 0;background:rgba(238,243,240,.92);backdrop-filter:blur(8px)}
-.mod-tab{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.4rem .85rem;font-weight:700;font-size:.82rem;cursor:pointer;color:var(--muted)}
-.mod-tab.on{background:var(--deep);color:#fff;border-color:transparent}
-
-.panel{display:none}
-.panel.on{display:block}
-
-.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;margin-bottom:.85rem}
-@media(max-width:900px){.filters{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.filters{grid-template-columns:1fr}}
-.filters label{display:grid;gap:.25rem;font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.filters select,.filters input,.tool-box input,.tool-box textarea{
-  border:1px solid var(--line);border-radius:10px;padding:.5rem .65rem;background:#fff;color:var(--ink);
-}
-.chip-row{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0 .8rem}
-.chip-btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.25rem .6rem;font-size:.75rem;font-weight:700;cursor:pointer;color:var(--muted)}
-.chip-btn.on.eng{background:var(--eng-bg);color:var(--eng);border-color:#bfdbfe}
-.chip-btn.on.clin{background:var(--clin-bg);color:var(--clin);border-color:#99f6e4}
-.chip-btn.on.bal{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe}
-.chip-btn.on{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
-
-.list{display:grid;gap:.55rem}
-.card{
-  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.85rem 1rem;
-  display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:start;cursor:pointer;
-}
-.card:hover{border-color:rgba(12,122,95,.35)}
-.card h3{font-size:1.02rem;margin-bottom:.15rem;overflow-wrap:anywhere}
-.card .zh{font-size:.86rem;font-weight:600;color:var(--deep);margin-bottom:.3rem}
-.meta{display:flex;flex-wrap:wrap;gap:.3rem}
+.brand{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:48ch}
+.hard{margin-top:.85rem;padding:.8rem .95rem;border-radius:12px;background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;font-size:.88rem;font-weight:600}
+.warn{margin-top:.55rem;padding:.75rem .9rem;border-radius:12px;background:#fff7ed;border:1px solid #fdba74;color:#7c2d12;font-size:.84rem}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:1rem 0}
+.box h2{font-size:1.05rem;margin-bottom:.45rem}
+.box ul{padding-left:1.1rem;color:var(--muted);font-size:.88rem}
+.box li{margin:.25rem 0}
+.ds{display:flex;flex-wrap:wrap;gap:.35rem;margin:.35rem 0 1rem}
+.ds span{font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:.4rem}
+th,td{text-align:left;padding:.45rem .4rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+td.num{font-family:Fraunces,serif;font-weight:750;font-size:1.15rem;color:var(--deep);white-space:nowrap}
+.note{font-size:.75rem;color:var(--muted)}
+.zone{margin:1.35rem 0}
+.zone h2{font-size:1.15rem;color:var(--deep);margin-bottom:.25rem}
+.blurb{color:var(--muted);font-size:.88rem;margin-bottom:.7rem}
+.j{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem;margin-bottom:.6rem}
+.j-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;align-items:flex-start}
+.j h3{font-size:1.02rem}
+.zh{font-size:.86rem;font-weight:600;color:var(--deep);margin:.15rem 0 .4rem}
+.count{background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;padding:.45rem .7rem;text-align:right;min-width:7.5rem}
+.count b{display:block;font-family:Fraunces,serif;font-size:1.5rem;color:var(--deep);line-height:1.1}
+.count span{font-size:.68rem;font-weight:700;color:#065f46}
+.meta{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.45rem}
 .tag{font-size:.68rem;font-weight:700;padding:.12rem .45rem;border-radius:999px;border:1px solid var(--line);background:#f8faf9;color:var(--muted)}
-.tag.eng{background:var(--eng-bg);color:var(--eng);border-color:#bfdbfe}
-.tag.clin{background:var(--clin-bg);color:var(--clin);border-color:#99f6e4}
-.tag.bal{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe}
-.card .sub{color:var(--muted);font-size:.8rem;margin-top:.35rem}
-.card-actions{display:flex;flex-direction:column;gap:.35rem;align-items:stretch}
-.card-actions button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.35rem .65rem;font-size:.75rem;font-weight:700;cursor:pointer;color:var(--deep)}
-.card-actions button:hover{background:#f0fdf4}
-
-/* detail drawer */
-.drawer-bg{position:fixed;inset:0;background:rgba(16,24,32,.35);z-index:80;display:none}
-.drawer-bg.on{display:block}
-.drawer{
-  position:fixed;top:0;right:0;height:100%;width:min(560px,100%);background:var(--card);z-index:90;
-  transform:translateX(100%);transition:transform .2s;overflow:auto;border-left:1px solid var(--line);
-  padding:1.1rem 1.15rem 2.5rem;
-}
-.drawer.on{transform:none}
-.drawer header{display:flex;justify-content:space-between;gap:.6rem;align-items:flex-start;margin-bottom:.7rem}
-.drawer header h2{font-size:1.25rem;overflow-wrap:anywhere}
-.xbtn{border:0;background:#f1f5f4;border-radius:999px;width:2rem;height:2rem;cursor:pointer;font-weight:700}
-.sec{margin-top:.9rem;padding-top:.75rem;border-top:1px solid var(--line)}
-.sec h4{font-family:Sora,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem}
-.sec p,.sec li{color:var(--muted);font-size:.88rem}
-.sec ul{padding-left:1.05rem;display:grid;gap:.25rem}
-.tpl{
-  margin-top:.45rem;padding:.7rem .8rem;border-radius:10px;border:1px solid var(--line);background:#f7faf8;font-size:.84rem;color:var(--ink);white-space:pre-wrap;
-}
-.tpl.eng{background:var(--eng-bg);border-color:#bfdbfe}
-.tpl.clin{background:var(--clin-bg);border-color:#99f6e4}
-.copy-row{display:flex;gap:.4rem;flex-wrap:wrap;margin:.4rem 0}
-.copy-row button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.3rem .7rem;font-size:.75rem;font-weight:700;cursor:pointer}
-
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
-@media(max-width:720px){.grid2{grid-template-columns:1fr}}
-.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem}
-.box h3{font-size:1.05rem;margin-bottom:.35rem}
-.box.eng{border-color:#bfdbfe}
-.box.clin{border-color:#99f6e4}
-.phrase{margin:.35rem 0;padding:.55rem .65rem;background:#f8faf9;border-radius:8px;font-size:.84rem;cursor:pointer;border:1px dashed var(--line)}
-.phrase:hover{border-style:solid;border-color:var(--teal)}
-
-.compare-table{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--card);border-radius:12px;overflow:hidden}
-.compare-table th,.compare-table td{border:1px solid var(--line);padding:.5rem .55rem;vertical-align:top;text-align:left}
-.compare-table th{background:#f0fdf4;color:var(--deep)}
-
-.tool-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem;margin-bottom:.7rem}
-.tool-box h3{margin-bottom:.45rem}
-.tool-box .row{display:flex;flex-wrap:wrap;gap:.45rem;margin:.45rem 0}
-.tool-box button{border:0;background:var(--deep);color:#fff;border-radius:999px;padding:.45rem .9rem;font-weight:700;cursor:pointer}
-.tool-out{margin-top:.5rem;padding:.7rem;border-radius:10px;background:#f7faf8;border:1px solid var(--line);white-space:pre-wrap;font-size:.86rem;min-height:3rem}
-
-.announce{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem;margin:.7rem 0 0;font-size:.86rem;color:var(--muted)}
-.announce li{margin-left:1rem}
-.empty{color:var(--muted);padding:1rem;text-align:center}
-footer{padding:1.4rem 0 2.2rem;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line);margin-top:1.4rem}
-.toast{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);background:var(--deep);color:#fff;padding:.5rem .9rem;border-radius:999px;font-size:.8rem;font-weight:700;z-index:100;display:none}
-.toast.on{display:block}
+.tag.ok{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
+.tag.z1{background:#fef2f2;color:#991b1b;border-color:#fecaca}
+.tag.z2{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
+.tag.z3{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe}
+.tag.z4{background:#fff7ed;color:#c2410c;border-color:#fdba74}
+.fit{font-size:.88rem;margin-bottom:.35rem}
+.ex{margin-top:.5rem;border-top:1px dashed var(--line);padding-top:.5rem}
+.ex h4{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.ex a{display:block;font-size:.84rem;font-weight:600;margin:.35rem 0 .1rem;text-decoration:none}
+.ex a:hover{text-decoration:underline}
+.ex .dn{font-size:.78rem;color:var(--muted)}
+.foot{padding:1.4rem 0 2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line);margin-top:1rem}
 </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <a class="nav-brand" href="index.html">← 说服首页</a>
-      <div class="nav-links">
-        <a href="#overview" class="on" data-nav="overview">总览</a>
-        <a href="#library" data-nav="library">期刊库检索</a>
-        <a href="#paradigms" data-nav="paradigms">写作范式</a>
-        <a href="#compare" data-nav="compare">收藏对比</a>
-        <a href="#tools" data-nav="tools">投稿小工具</a>
-      </div>
-    </div>
-  </nav>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="types.html">写作类型</a>
+    <a class="on" href="journals.html">期刊调研</a>
+    <a href="portal.html">Portal</a>
+  </div>
+</div></nav>
 
-  <header class="hero">
-    <div class="wrap">
-      <div class="kicker">期刊调研 · 医工交叉工具</div>
-      <div class="brand">写法差异，一次查清</div>
-      <h1>分区筛选 + 工程/临床双路线写作范式</h1>
-      <p class="lead">解决两件事：这本刊偏工程还是偏临床；打开就能复制摘要/引言/方法句式，并收藏对比备投。</p>
-      <div class="warn" id="metaCaveat"></div>
-    </div>
-  </header>
+<header class="hero wrap">
+  <div class="kicker">Journal survey · public medical imaging × CS</div>
+  <div class="brand">解知常</div>
+  <p class="lead">期刊调研：哪些刊收「医工交叉 · 医学影像 · 仅公开数据 · 计算方法方法」；每刊附 2025–2026 范文，并标出 <b>2026 年此类发文量（估算）</b>。</p>
+  <div class="hard" id="hard"></div>
+  <div class="warn" id="part"></div>
+</header>
 
-  <main class="wrap">
-    <div class="mod-tabs" id="modTabs">
-      <button class="mod-tab on" type="button" data-panel="overview">总览</button>
-      <button class="mod-tab" type="button" data-panel="library">期刊库检索</button>
-      <button class="mod-tab" type="button" data-panel="paradigms">写作范式合集</button>
-      <button class="mod-tab" type="button" data-panel="compare">收藏 / 对比</button>
-      <button class="mod-tab" type="button" data-panel="tools">投稿小工具</button>
-    </div>
+<main class="wrap">
+  <section class="box">
+    <h2>2026 年「医学影像 + 计算方法」发文量总表</h2>
+    <p class="note" id="countDef"></p>
+    <table>
+      <thead><tr><th>分区</th><th>期刊</th><th>2026 此类≈</th><th>备注</th></tr></thead>
+      <tbody id="countTable"></tbody>
+    </table>
+  </section>
 
-    <!-- 1 overview -->
-    <section class="panel on" id="panel-overview">
-      <div class="stats" id="stats"></div>
-      <div class="grid2">
-        <div class="box" style="cursor:pointer" onclick="showPanel('library');setFilter('zone','2')">
-          <h3>① 按分区筛选</h3>
-          <p style="color:var(--muted);font-size:.9rem">一至四区（2026 新锐大类标注）快速缩小范围。</p>
-        </div>
-        <div class="box" style="cursor:pointer" onclick="showPanel('library');setStyle('engineering')">
-          <h3>② 按写作风格</h3>
-          <p style="color:var(--muted);font-size:.9rem">工程优先 / 临床优先 / 均衡型。</p>
-        </div>
-        <div class="box" style="cursor:pointer" onclick="showPanel('paradigms')">
-          <h3>③ 写作范式合集</h3>
-          <p style="color:var(--muted);font-size:.9rem">工科视角 vs 临床视角全套骨架与可复制句式。</p>
-        </div>
-        <div class="box" style="cursor:pointer" onclick="showPanel('tools')">
-          <h3>④ 摘要双风改写</h3>
-          <p style="color:var(--muted);font-size:.9rem">同一摘要套工程风 / 临床风模板对照。</p>
-        </div>
-      </div>
-      <div class="announce"><b>公告</b><ul id="announceList"></ul></div>
-    </section>
+  <section class="box" id="exclude"></section>
+  <h2 style="font-size:1.05rem">可用公开集</h2>
+  <div class="ds" id="ds"></div>
+  <section class="box" id="route"></section>
+  <div id="zones"></div>
+</main>
 
-    <!-- 2 library -->
-    <section class="panel" id="panel-library">
-      <div class="filters">
-        <label>关键词<input id="q" type="search" placeholder="刊名 / 中文名 / 领域" /></label>
-        <label>分区
-          <select id="fZone">
-            <option value="">全部</option>
-            <option value="1">一区</option>
-            <option value="2">二区</option>
-            <option value="3">三区</option>
-            <option value="4">四区</option>
-          </select>
-        </label>
-        <label>期刊类型
-          <select id="fType">
-            <option value="">全部</option>
-            <option value="engineering">工程大类 / 算法传感影像</option>
-            <option value="bme_or_bio">生物医学工程 / 生信</option>
-            <option value="medical_general">医学综合（可收工程）</option>
-            <option value="clinical">临床 / 公卫专科</option>
-          </select>
-        </label>
-        <label>研究方向
-          <select id="fDomain">
-            <option value="">全部</option>
-            <option value="医学影像AI">医学影像 AI</option>
-            <option value="风险预测/数字健康">风险预测 / 数字健康</option>
-            <option value="微生物组/生信">微生物组 / 生信</option>
-            <option value="医学信号处理">医学信号处理</option>
-            <option value="医工交叉综合">医工交叉综合</option>
-          </select>
-        </label>
-      </div>
-      <div class="chip-row" id="styleChips">
-        <button type="button" class="chip-btn" data-style="">全部风格</button>
-        <button type="button" class="chip-btn eng" data-style="engineering">工程优先</button>
-        <button type="button" class="chip-btn clin" data-style="clinical">临床优先</button>
-        <button type="button" class="chip-btn bal" data-style="balanced">均衡型</button>
-        <button type="button" class="chip-btn" data-oa="1">仅 OA</button>
-        <button type="button" class="chip-btn" data-ease="高">好投优先</button>
-      </div>
-      <p class="lead" id="listCount" style="margin-bottom:.6rem"></p>
-      <div class="list" id="journalList"></div>
-    </section>
+<footer class="foot"><div class="wrap">数据：<code>data/journals-imaging-public.json</code> · 计数：<code>data/journals-imaging-counts-2026.json</code></div></footer>
 
-    <!-- 3 paradigms -->
-    <section class="panel" id="panel-paradigms">
-      <div class="grid2" id="paradigmBoxes"></div>
-      <div class="box" style="margin-top:.7rem">
-        <h3>可复制句式库（点击复制）</h3>
-        <div id="phrases"></div>
-      </div>
-    </section>
+<script src="data/journals-imaging-public.js"></script>
+<script>
+(function(){
+  const D=window.JOURNAL_IMAGING_PUBLIC; if(!D) return;
+  document.getElementById('hard').textContent='硬约束：'+D.meta.hard_constraint;
+  document.getElementById('part').textContent=D.meta.partition_standard+'。范文给 DOI 即可。';
+  const C=D.counts_2026||{};
+  document.getElementById('countDef').textContent=(C.definition||'')+' 来源：'+(C.source||'')+' · 检索日 '+(C.retrieved||'')+'。';
 
-    <!-- 4 compare -->
-    <section class="panel" id="panel-compare">
-      <p class="lead" style="margin-bottom:.7rem">收藏存在浏览器本地。勾选 2–4 本可横向对比。</p>
-      <div class="list" id="favList"></div>
-      <div style="margin-top:.8rem" id="compareBox"></div>
-    </section>
+  document.getElementById('exclude').innerHTML='<h2>明确排除</h2><ul>'+(D.exclude||[]).map(x=>'<li><b>'+x.name+'</b> — '+x.why+'</li>').join('')+'</ul>';
+  document.getElementById('ds').innerHTML=(D.public_datasets||[]).map(d=>'<span>'+d.name+' · '+d.task+'</span>').join('');
+  document.getElementById('route').innerHTML='<h2>怎么选</h2><ul>'+(D.route||[]).map(r=>'<li>若 <b>'+r.if+'</b> → '+r.then+'</li>').join('')+'</ul>';
 
-    <!-- 5 tools -->
-    <section class="panel" id="panel-tools">
-      <div class="tool-box">
-        <h3>分区速查（本地库）</h3>
-        <div class="row">
-          <input id="lookupQ" type="search" placeholder="输入期刊英文名关键词" style="flex:1;min-width:200px" />
-          <button type="button" id="btnLookup">查询</button>
-        </div>
-        <div class="tool-out" id="lookupOut">输入刊名片段后查询。</div>
-      </div>
-      <div class="tool-box">
-        <h3>摘要双风改写对照（模板套用）</h3>
-        <textarea id="absIn" rows="5" placeholder="粘贴你的摘要草稿…" style="width:100%"></textarea>
-        <div class="row">
-          <button type="button" id="btnAbs">生成工程风 / 临床风</button>
-        </div>
-        <div class="grid2">
-          <div class="tpl eng" id="absEng">工程风输出</div>
-          <div class="tpl clin" id="absClin">临床风输出</div>
-        </div>
-      </div>
-      <div class="tool-box">
-        <h3>素材录入说明（轻量后台）</h3>
-        <p style="color:var(--muted);font-size:.9rem">当前为静态 JSON 托管（<code>data/journals-library.json</code>）。新增期刊或写作模板：编辑 JSON → 重新生成 <code>journals-library.js</code> → 推送到仓库即可，无需服务器。字段建议：name / zone / style / pack / accepts / avoid，以及 packs 下的摘要与引言模板版本。</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">首页未改动 · 本页为期刊调研增强版 · 分区为 2026 新锐大类标注 · 写作模板供改写起点，须按数据改写</div>
-  </footer>
-  <div class="toast" id="toast">已复制</div>
-  <div class="drawer-bg" id="drawerBg"></div>
-  <aside class="drawer" id="drawer" aria-live="polite"></aside>
-
-  <script src="data/journals-library.js"></script>
-  <script>
-  const LIB = window.JOURNAL_LIBRARY;
-  const FAV_KEY = 'jiezhichang_journal_favs_v1';
-  const CMP_KEY = 'jiezhichang_journal_cmp_v1';
-  let styleFilter = '';
-  let oaOnly = false;
-  let easeHigh = false;
-
-  function toast(msg){
-    const t=document.getElementById('toast');
-    t.textContent=msg; t.classList.add('on');
-    setTimeout(()=>t.classList.remove('on'),1400);
-  }
-  function copyText(text){
-    navigator.clipboard.writeText(text).then(()=>toast('已复制')).catch(()=>{
-      const a=document.createElement('textarea'); a.value=text; document.body.appendChild(a); a.select(); document.execCommand('copy'); a.remove(); toast('已复制');
+  const zc={1:'z1',2:'z2',3:'z3',4:'z4'};
+  const rows=[];
+  (D.zones||[]).forEach(z=>{
+    (z.journals||[]).forEach(j=>{
+      rows.push({zone:z.zone, name:j.name, n:j.n_2026, note:j.n_2026_note||''});
     });
-  }
-  function loadList(key){ try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return[]} }
-  function saveList(key, arr){ localStorage.setItem(key, JSON.stringify(arr)); }
-  function toggleId(key, id){
-    let arr=loadList(key);
-    if(arr.includes(id)) arr=arr.filter(x=>x!==id); else arr.push(id);
-    saveList(key, arr); return arr;
-  }
-  function jById(id){ return LIB.journals.find(j=>j.id===id); }
-  function styleTag(s){
-    if(s==='engineering') return '<span class="tag eng">工程优先</span>';
-    if(s==='clinical') return '<span class="tag clin">临床优先</span>';
-    return '<span class="tag bal">均衡型</span>';
-  }
-  function styleClass(s){ return s==='engineering'?'eng':(s==='clinical'?'clin':'bal'); }
+  });
+  rows.sort((a,b)=>(b.n||0)-(a.n||0));
+  document.getElementById('countTable').innerHTML=rows.map(r=>`
+    <tr>
+      <td>${r.zone}区</td>
+      <td>${r.name}</td>
+      <td class="num">${r.n==null?'—':r.n}</td>
+      <td class="note">${r.note||''}</td>
+    </tr>`).join('');
 
-  function showPanel(id){
-    document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on', p.id==='panel-'+id));
-    document.querySelectorAll('.mod-tab').forEach(b=>b.classList.toggle('on', b.dataset.panel===id));
-    document.querySelectorAll('.nav-links a[data-nav]').forEach(a=>a.classList.toggle('on', a.dataset.nav===id));
-    if(id==='library') renderList();
-    if(id==='compare') renderFavs();
-    if(id==='paradigms') renderParadigms();
-    location.hash = id;
-  }
-  function setFilter(which, val){
-    if(which==='zone') document.getElementById('fZone').value=val;
-    renderList();
-  }
-  function setStyle(s){ styleFilter=s; syncStyleChips(); renderList(); }
-
-  function syncStyleChips(){
-    document.querySelectorAll('#styleChips .chip-btn').forEach(b=>{
-      const s=b.dataset.style;
-      if(s!==undefined && s!==''){
-        b.classList.toggle('on', styleFilter===s);
-      } else if(b.dataset.oa){
-        b.classList.toggle('on', oaOnly);
-      } else if(b.dataset.ease){
-        b.classList.toggle('on', easeHigh);
-      } else if(s===''){
-        b.classList.toggle('on', !styleFilter && !oaOnly && !easeHigh);
-      }
-    });
-  }
-
-  function filtered(){
-    const q=(document.getElementById('q').value||'').trim().toLowerCase();
-    const zone=document.getElementById('fZone').value;
-    const type=document.getElementById('fType').value;
-    const domain=document.getElementById('fDomain').value;
-    return LIB.journals.filter(j=>{
-      if(zone && String(j.zone)!==zone) return false;
-      if(type && j.type!==type) return false;
-      if(domain && !(j.domains||[]).includes(domain)) return false;
-      if(styleFilter && j.style!==styleFilter) return false;
-      if(oaOnly && !j.oa) return false;
-      if(easeHigh && j.ease!=='高' && j.ease!=='中高') return false;
-      if(q){
-        const blob=(j.name+' '+(j.name_zh||'')+' '+(j.domains||[]).join(' ')+' '+(j.track||'')).toLowerCase();
-        if(!blob.includes(q)) return false;
-      }
-      return true;
-    });
-  }
-
-  function renderStats(){
-    const c=LIB.meta.counts;
-    document.getElementById('stats').innerHTML=`
-      <div class="stat"><b>${c.journals}</b><span>收录期刊</span></div>
-      <div class="stat"><b>${c.z1}/${c.z2}</b><span>一区 / 二区</span></div>
-      <div class="stat"><b>${c.z3}/${c.z4}</b><span>三区 / 四区</span></div>
-      <div class="stat"><b>${LIB.journals.filter(j=>j.style==='engineering').length}</b><span>工程优先标签</span></div>`;
-    document.getElementById('metaCaveat').innerHTML=`<b>口径：</b>${LIB.meta.caveat||''} 分区标准：${LIB.meta.partition_standard||''}`;
-    document.getElementById('announceList').innerHTML=(LIB.announcements||[]).map(a=>`<li>${a}</li>`).join('');
-  }
-
-  function renderList(){
-    const arr=filtered();
-    document.getElementById('listCount').textContent=`共 ${arr.length} 本（点击卡片看写法范式；可收藏/加入对比）`;
-    const favs=loadList(FAV_KEY), cmps=loadList(CMP_KEY);
-    document.getElementById('journalList').innerHTML=arr.map(j=>`
-      <article class="card" data-id="${j.id}">
-        <div>
-          <h3>${j.name}</h3>
-          ${j.name_zh?`<div class="zh">${j.name_zh}</div>`:''}
-          <div class="meta">
-            <span class="tag">${j.zone?`新锐${j.major||''}${j.zone}区`:'分区待核'}${j.top?' · Top':''}</span>
-            ${styleTag(j.style)}
-            ${(j.domains||[]).slice(0,2).map(d=>`<span class="tag">${d}</span>`).join('')}
-            ${j.oa?'<span class="tag">OA</span>':''}
-            ${j.tier==='writing_ref'?'<span class="tag">写法参考·非快刊</span>':''}
+  document.getElementById('zones').innerHTML=(D.zones||[]).map(z=>`
+    <section class="zone">
+      <h2>${z.label}</h2>
+      <p class="blurb">${z.blurb||''}</p>
+      ${(z.journals||[]).map(j=>`
+        <article class="j">
+          <div class="j-top">
+            <div>
+              <h3>${j.name}</h3>
+              <div class="zh">${j.name_zh||''} · ${j.publisher||''}</div>
+              <div class="meta">
+                <span class="tag ${zc[z.zone]}">${z.zone}区</span>
+                <span class="tag ok">公开数据可投</span>
+                <span class="tag">难度 ${j.ease||''}</span>
+              </div>
+            </div>
+            <div class="count">
+              <b>${j.n_2026==null?'—':j.n_2026}</b>
+              <span>2026 此类≈</span>
+            </div>
           </div>
-          <div class="sub">${j.cycle||''}${j.ease?` · 好投 ${j.ease}`:''}</div>
-        </div>
-        <div class="card-actions" onclick="event.stopPropagation()">
-          <button type="button" data-open="${j.id}">写法详情</button>
-          <button type="button" data-fav="${j.id}">${favs.includes(j.id)?'已收藏':'收藏'}</button>
-          <button type="button" data-cmp="${j.id}">${cmps.includes(j.id)?'已对比':'加入对比'}</button>
-        </div>
-      </article>`).join('') || '<div class="empty">无匹配期刊，请放宽筛选</div>';
-  }
-
-  function openDetail(id){
-    const j=jById(id); if(!j) return;
-    const pack=LIB.packs[j.pack]||{};
-    const alts=(j.alternatives||[]).map(jById).filter(Boolean);
-    document.getElementById('drawer').innerHTML=`
-      <header>
-        <div>
-          <h2>${j.name}</h2>
-          <div class="zh" style="font-weight:600;margin:.2rem 0">${j.name_zh||''}</div>
-          <div class="meta">${styleTag(j.style)} <span class="tag">${j.zone?`新锐${j.major||''}${j.zone}区`:''}</span> ${j.oa?'<span class="tag">OA</span>':''}</div>
-        </div>
-        <button class="xbtn" type="button" id="closeDrawer">×</button>
-      </header>
-      <div class="sec">
-        <h4>固定信息</h4>
-        <p><b>出版：</b>${j.publisher||'—'} · <b>周期：</b>${j.cycle||'—'} · <b>路径：</b>${j.track||'—'}</p>
-        <p style="margin-top:.35rem">${j.note||''}</p>
-        <p style="margin-top:.45rem"><b>收的方向</b></p>
-        <ul>${(j.accepts||[]).map(x=>`<li>${x}</li>`).join('')||'<li>—</li>'}</ul>
-        <p style="margin-top:.45rem"><b>慎投 / 避雷</b></p>
-        <ul>${(j.avoid||[]).concat(pack.pitfalls||[]).map(x=>`<li>${x}</li>`).join('')}</ul>
-      </div>
-      <div class="sec">
-        <h4>全文行文逻辑总纲 · ${pack.label||''}</h4>
-        <p>${pack.outline||'—'}</p>
-      </div>
-      <div class="sec">
-        <h4>摘要模板（双版本）</h4>
-        <div class="copy-row">
-          <button type="button" data-copy="abs-e">复制工程版</button>
-          <button type="button" data-copy="abs-c">复制临床版</button>
-        </div>
-        <div class="tpl eng" id="abs-e">${(pack.abstract&&pack.abstract.engineering)||'—'}</div>
-        <div class="tpl clin" id="abs-c" style="margin-top:.4rem">${(pack.abstract&&pack.abstract.clinical)||'—'}</div>
-      </div>
-      <div class="sec">
-        <h4>引言叙事套路</h4>
-        <ul>${(pack.intro||[]).map(x=>`<li>${x}</li>`).join('')}</ul>
-      </div>
-      <div class="sec">
-        <h4>方法双写法</h4>
-        <p><b class="tag eng">工程</b></p>
-        <div class="tpl eng">${pack.methods_eng||'—'}</div>
-        <p style="margin-top:.45rem"><b class="tag clin">医学</b></p>
-        <div class="tpl clin">${pack.methods_med||'—'}</div>
-      </div>
-      <div class="sec">
-        <h4>结果 / 讨论要点</h4>
-        <p><b>结果：</b>${pack.results||'—'}</p>
-        <p style="margin-top:.35rem"><b>讨论：</b>${pack.discussion||'—'}</p>
-      </div>
-      <div class="sec">
-        <h4>同类可替代</h4>
-        <ul>${alts.map(a=>`<li><a href="#" data-open="${a.id}">${a.name}</a> · 新锐${a.zone}区 · ${a.style==='engineering'?'工程':a.style==='clinical'?'临床':'均衡'}</li>`).join('')||'<li>—</li>'}</ul>
-      </div>`;
-    document.getElementById('drawerBg').classList.add('on');
-    document.getElementById('drawer').classList.add('on');
-    document.getElementById('closeDrawer').onclick=closeDrawer;
-    document.getElementById('drawer').querySelectorAll('[data-copy]').forEach(b=>{
-      b.onclick=()=>copyText(document.getElementById(b.dataset.copy).innerText);
-    });
-    document.getElementById('drawer').querySelectorAll('[data-open]').forEach(a=>{
-      a.onclick=(e)=>{e.preventDefault(); openDetail(a.dataset.open)};
-    });
-  }
-  function closeDrawer(){
-    document.getElementById('drawerBg').classList.remove('on');
-    document.getElementById('drawer').classList.remove('on');
-  }
-
-  function renderParadigms(){
-    const p=LIB.paradigms;
-    document.getElementById('paradigmBoxes').innerHTML=`
-      <div class="box eng">
-        <h3>${p.engineering.title}</h3>
-        <p style="color:var(--muted);font-size:.9rem">${p.engineering.blurb}</p>
-        <p style="margin-top:.5rem"><b>骨架：</b>${p.engineering.spine.join(' → ')}</p>
-        <p style="margin-top:.35rem"><b>场景：</b>${p.engineering.scenes.join(' · ')}</p>
-      </div>
-      <div class="box clin">
-        <h3>${p.clinical.title}</h3>
-        <p style="color:var(--muted);font-size:.9rem">${p.clinical.blurb}</p>
-        <p style="margin-top:.5rem"><b>骨架：</b>${p.clinical.spine.join(' → ')}</p>
-        <p style="margin-top:.35rem"><b>场景：</b>${p.clinical.scenes.join(' · ')}</p>
-      </div>`;
-    const ph=p.phrases||{};
-    const blocks=[
-      ['痛点描述', ph.pain],
-      ['创新点包装', ph.novelty],
-      ['结果描述', ph.results],
-      ['讨论对比', ph.discussion],
-    ];
-    document.getElementById('phrases').innerHTML=blocks.map(([t,arr])=>`
-      <h4 style="margin:.7rem 0 .3rem;font-size:.8rem;color:var(--teal)">${t}</h4>
-      ${(arr||[]).map(s=>`<div class="phrase" data-phrase>${s}</div>`).join('')}
-    `).join('');
-    document.querySelectorAll('[data-phrase]').forEach(el=>{
-      el.onclick=()=>copyText(el.innerText);
-    });
-  }
-
-  function renderFavs(){
-    const favs=loadList(FAV_KEY);
-    const cmps=loadList(CMP_KEY);
-    const list=favs.map(jById).filter(Boolean);
-    document.getElementById('favList').innerHTML=list.length? list.map(j=>`
-      <article class="card" data-id="${j.id}">
-        <div>
-          <h3>${j.name}</h3>
-          <div class="meta">${styleTag(j.style)} <span class="tag">新锐${j.zone}区</span></div>
-        </div>
-        <div class="card-actions" onclick="event.stopPropagation()">
-          <button type="button" data-open="${j.id}">详情</button>
-          <button type="button" data-fav="${j.id}">取消收藏</button>
-          <button type="button" data-cmp="${j.id}">${cmps.includes(j.id)?'移出对比':'加入对比'}</button>
-        </div>
-      </article>`).join('') : '<div class="empty">还没有收藏。去「期刊库检索」点收藏。</div>';
-
-    const rows=cmps.map(jById).filter(Boolean).slice(0,4);
-    if(rows.length<2){
-      document.getElementById('compareBox').innerHTML='<div class="empty">对比至少选择 2 本（最多 4 本）。</div>';
-      return;
-    }
-    const head='<tr><th>维度</th>'+rows.map(j=>`<th>${j.name}</th>`).join('')+'</tr>';
-    const cell=(fn)=>'<tr>'+[`<td><b>${fn.label}</b></td>`,...rows.map(j=>`<td>${fn.v(j)}</td>`)].join('')+'</tr>';
-    const dims=[
-      {label:'分区', v:j=>`新锐${j.major||''}${j.zone}区${j.top?' Top':''}`},
-      {label:'写作侧重', v:j=>j.style==='engineering'?'工程优先':j.style==='clinical'?'临床优先':'均衡'},
-      {label:'审稿周期', v:j=>j.cycle||'—'},
-      {label:'好投', v:j=>j.ease||'—'},
-      {label:'OA', v:j=>j.oa?'是':'否/混合'},
-      {label:'领域', v:j=>(j.domains||[]).join('、')},
-      {label:'避雷', v:j=>(j.avoid||[]).slice(0,2).join('；')},
-    ];
-    document.getElementById('compareBox').innerHTML=`<table class="compare-table"><thead>${head}</thead><tbody>${dims.map(cell).join('')}</tbody></table>`;
-  }
-
-  // events
-  document.getElementById('modTabs').onclick=(e)=>{
-    const b=e.target.closest('.mod-tab'); if(!b) return; showPanel(b.dataset.panel);
-  };
-  document.querySelectorAll('.nav-links a[data-nav]').forEach(a=>{
-    a.addEventListener('click',(e)=>{e.preventDefault(); showPanel(a.dataset.nav)});
-  });
-  ['q','fZone','fType','fDomain'].forEach(id=>{
-    document.getElementById(id).addEventListener('input', renderList);
-    document.getElementById(id).addEventListener('change', renderList);
-  });
-  document.getElementById('styleChips').onclick=(e)=>{
-    const b=e.target.closest('.chip-btn'); if(!b) return;
-    if(b.dataset.style!==undefined){
-      styleFilter = (styleFilter===b.dataset.style ? '' : b.dataset.style);
-      if(b.dataset.style===''){ styleFilter=''; oaOnly=false; easeHigh=false; }
-    }
-    if(b.dataset.oa){ oaOnly=!oaOnly; }
-    if(b.dataset.ease){ easeHigh=!easeHigh; }
-    syncStyleChips(); renderList();
-  };
-  document.getElementById('journalList').addEventListener('click',(e)=>{
-    const open=e.target.closest('[data-open]');
-    const fav=e.target.closest('[data-fav]');
-    const cmp=e.target.closest('[data-cmp]');
-    const card=e.target.closest('.card');
-    if(fav){ toggleId(FAV_KEY, fav.dataset.fav); renderList(); return; }
-    if(cmp){
-      let arr=loadList(CMP_KEY);
-      if(!arr.includes(cmp.dataset.cmp) && arr.length>=4){ toast('对比最多 4 本'); return; }
-      toggleId(CMP_KEY, cmp.dataset.cmp); renderList(); return;
-    }
-    if(open){ openDetail(open.dataset.open); return; }
-    if(card) openDetail(card.dataset.id);
-  });
-  document.getElementById('favList').addEventListener('click',(e)=>{
-    const open=e.target.closest('[data-open]');
-    const fav=e.target.closest('[data-fav]');
-    const cmp=e.target.closest('[data-cmp]');
-    if(fav){ toggleId(FAV_KEY, fav.dataset.fav); renderFavs(); return; }
-    if(cmp){ toggleId(CMP_KEY, cmp.dataset.cmp); renderFavs(); return; }
-    if(open) openDetail(open.dataset.open);
-  });
-  document.getElementById('drawerBg').onclick=closeDrawer;
-  document.getElementById('btnLookup').onclick=()=>{
-    const q=(document.getElementById('lookupQ').value||'').trim().toLowerCase();
-    const hits=LIB.journals.filter(j=>j.name.toLowerCase().includes(q)||(j.name_zh||'').includes(q)).slice(0,8);
-    document.getElementById('lookupOut').textContent = hits.length
-      ? hits.map(j=>`${j.name} ｜ 新锐${j.major||''}${j.zone}区 ｜ ${j.style} ｜ ${j.cycle||''}`).join('\n')
-      : '本地库未命中。可到期刊库放宽检索，或核对英文全称。';
-  };
-  document.getElementById('btnAbs').onclick=()=>{
-    const raw=(document.getElementById('absIn').value||'').trim() || '【在此填入你的任务、数据、方法、主要指标】';
-    document.getElementById('absEng').textContent =
-`[Engineering-oriented]
-Task/Setting: ${raw.slice(0,180)}…
-Method: We propose … with … training protocol …
-Validation: locked external / cross-dataset evaluation …
-Results: improves [metric] vs strongest baseline …; calibration/subgroup …
-Conclusion: contributes a reproducible protocol rather than in-sample score chasing.`;
-    document.getElementById('absClin').textContent =
-`[Clinical/public-health-oriented]
-Objective: 针对…临床/公卫问题，评估基于公开数据的风险/辅助模型可用性。
-Methods: 使用…数据；定义结局与纳入排除；构建…模型；进行外推/时间验证与校准。
-Results: 区分度…；校准…；亚组…。
-Conclusion: 可作为…分层的辅助信号，尚需前瞻验证；不能替代临床判断。`;
-  };
-
-  // boot
-  if(!LIB){ document.body.insertAdjacentHTML('afterbegin','<p style="padding:2rem">缺少 journals-library.js</p>'); }
-  else{
-    renderStats();
-    syncStyleChips();
-    const hash=(location.hash||'#overview').replace('#','');
-    showPanel(['overview','library','paradigms','compare','tools'].includes(hash)?hash:'overview');
-  }
-  </script>
+          <p class="fit">${j.fit||''}</p>
+          ${j.n_2026_note?`<p class="note">${j.n_2026_note}</p>`:''}
+          <div class="meta">${(j.datasets||[]).map(id=>{const d=(D.public_datasets||[]).find(x=>x.id===id);return d?'<span class="tag">'+d.name+'</span>':'';}).join('')}</div>
+          <div class="ex"><h4>范文（2025–2026 · DOI）</h4>
+            ${(j.exemplars||[]).map(e=>`
+              <a href="https://doi.org/${e.doi}" target="_blank" rel="noopener">${e.year} · ${e.title}</a>
+              <div class="dn">${e.data_note||''} · ${e.doi}</div>
+            `).join('')}
+          </div>
+        </article>`).join('')}
+    </section>`).join('');
+})();
+</script>
 </body>
 </html>
