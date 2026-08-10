@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "仅公开数据 · 医工交叉 · 医学影像投稿地图",
-    "version": "v3.1",
+    "version": "v3.2",
     "updated": "2026-08",
     "hard_constraint": "无私立/医院私有队列。只用 BraTS、LiTS、KiTS、BUSI、LIDC、MSD、ISIC 等公开集（或同等可公开声明的挑战赛数据）。",
     "who_for": "医工交叉；医学影像 + 计算机方法（检测/分割/分类/重建等）；公开数据可复现",
@@ -11,16 +11,16 @@
   },
   "exclude": [
     {
-      "name": "偏临床肿瘤大刊（如 Frontiers in Oncology 主叙事）",
-      "why": "更吃临床队列/病理金标准私有数据；公开榜方法文不是主客群"
+      "name": "强临床落地刊（部分 npj Digital Medicine 路线）",
+      "why": "常要求真实诊疗流程、私有多中心外测；当前无私立数据不匹配"
     },
     {
-      "name": "强临床落地刊（如部分 npj Digital Medicine 路线）",
-      "why": "常要求真实诊疗流程、私有多中心外测；你当前数据条件不匹配"
+      "name": "范文本身是单中心私有随访队列的稿",
+      "why": "即使刊名能投公开数据，那种文也不仿"
     },
     {
-      "name": "范文里用「单中心私有 CT/MRI 随访」的稿",
-      "why": "即使刊本身收公开数据，那种范文也不适合你仿（例如部分放疗纵向私有队列文）"
+      "name": "Frontiers in Oncology 的纯临床叙事稿",
+      "why": "Oncology 三区可以投公开肿瘤影像方法文，但不要仿病理队列/无算法贡献的临床文"
     }
   ],
   "public_datasets": [
@@ -67,7 +67,7 @@
     },
     {
       "if": "要快且单位认 Frontiers",
-      "then": "FiBaB → Frontiers in Medical Technology → Frontiers in Radiology"
+      "then": "FiBaB（二区）→ Oncology / AI / Medicine（三区）→ MedTech → Radiology（四区）"
     },
     {
       "if": "医学诊断包装 + 快",
@@ -304,9 +304,130 @@
     },
     {
       "zone": 3,
-      "label": "三区 · 公开数据友好、偏快",
-      "blurb": "周期短。确认单位是否认 MDPI/Frontiers/Access。",
+      "label": "三区 · 公开数据友好、偏快（含 Frontiers）",
+      "blurb": "周期短。Frontiers 三区（Oncology / AI / Medicine / MedTech / Neuroinformatics）确实在发公开影像计算文——单位须认 Frontiers。",
       "journals": [
+        {
+          "id": "frontiers_oncology",
+          "name": "Frontiers in Oncology",
+          "name_zh": "肿瘤学前沿",
+          "publisher": "Frontiers",
+          "public_ok": true,
+          "ease": "易",
+          "fit": "三区；有 Cancer Imaging 栏目。肿瘤影像公开数据（BraTS/超声等）方法文常见出口",
+          "datasets": [
+            "brats",
+            "lits",
+            "kits",
+            "lidc",
+            "busi"
+          ],
+          "exemplars": [
+            {
+              "title": "Comparative analysis of machine learning techniques on the BraTS dataset for brain tumor classification",
+              "year": 2025,
+              "doi": "10.3389/fonc.2025.1596718",
+              "data_note": "BraTS 公开集脑肿瘤分类"
+            },
+            {
+              "title": "Deep learning in renal ultrasound: applications, challenges, and future outlook",
+              "year": 2025,
+              "doi": "10.3389/fonc.2025.1730628",
+              "data_note": "肾超声深度学习（应用/挑战综述）"
+            }
+          ],
+          "n_2026": 272,
+          "n_2026_note": "Europe PMC 专题估算（影像/深度学习相关）；发文量大"
+        },
+        {
+          "id": "frontiers_ai",
+          "name": "Frontiers in Artificial Intelligence",
+          "name_zh": "人工智能前沿",
+          "publisher": "Frontiers",
+          "public_ok": true,
+          "ease": "易",
+          "fit": "三区；医学影像 AI / 脑肿瘤 MRI / 息肉检测等计算方法文",
+          "datasets": [
+            "brats",
+            "busi",
+            "isic",
+            "lidc"
+          ],
+          "exemplars": [
+            {
+              "title": "A federated multimodal deep learning framework for brain tumor classification using MRI",
+              "year": 2026,
+              "doi": "10.3389/frai.2026.1754000",
+              "data_note": "脑肿瘤 MRI 分类（联邦学习）"
+            },
+            {
+              "title": "Deep learning driven colorectal polyp analysis: a review of detection, classification and related tasks",
+              "year": 2026,
+              "doi": "10.3389/frai.2026.1786679",
+              "data_note": "结直肠息肉检测分类综述"
+            }
+          ],
+          "n_2026": 145,
+          "n_2026_note": "Europe PMC 专题估算"
+        },
+        {
+          "id": "frontiers_medicine",
+          "name": "Frontiers in Medicine",
+          "name_zh": "医学前沿",
+          "publisher": "Frontiers",
+          "public_ok": true,
+          "ease": "易",
+          "fit": "三区综合医学；肺结节/脑肿瘤等公开影像深度学习文能进，但更杂",
+          "datasets": [
+            "lidc",
+            "brats",
+            "busi"
+          ],
+          "exemplars": [
+            {
+              "title": "LNMSNet: a multi-task deep learning network for pulmonary nodules segmentation and malignancy classification",
+              "year": 2026,
+              "doi": "10.3389/fmed.2026.1773338",
+              "data_note": "肺结节分割+良恶性（公开 CT 路线）"
+            },
+            {
+              "title": "A scalable and reliable deep learning framework for enhanced brain tumor detection and diagnosis",
+              "year": 2026,
+              "doi": "10.3389/fmed.2026.1738796",
+              "data_note": "脑肿瘤检测诊断"
+            }
+          ],
+          "n_2026": 239,
+          "n_2026_note": "Europe PMC 专题估算；综合刊口径偏大"
+        },
+        {
+          "id": "frontiers_neuroinfo",
+          "name": "Frontiers in Neuroinformatics",
+          "name_zh": "神经信息学前沿",
+          "publisher": "Frontiers",
+          "public_ok": true,
+          "ease": "中偏易",
+          "fit": "三区；偏神经/脑影像计算，脑肿瘤 MRI 公开任务可投",
+          "datasets": [
+            "brats"
+          ],
+          "exemplars": [
+            {
+              "title": "A deep learning based NeuroFusionNet approach for automated brain tumor diagnosis from MRI",
+              "year": 2026,
+              "doi": "10.3389/fninf.2026.1795354",
+              "data_note": "脑肿瘤 MRI 诊断"
+            },
+            {
+              "title": "Radiomics-driven neuro-fuzzy framework for rule generation to enhance explainability in MRI",
+              "year": 2025,
+              "doi": "10.3389/fninf.2025.1550432",
+              "data_note": "MRI 影像组学可解释"
+            }
+          ],
+          "n_2026": 4,
+          "n_2026_note": "Europe PMC 专题估算；体量小、更贴神经影像"
+        },
         {
           "id": "diagnostics",
           "name": "Diagnostics",
@@ -484,7 +605,7 @@
   "counts_2026": {
     "year": 2026,
     "retrieved": "2026-08-10",
-    "source": "OpenAlex（主）；Frontiers in Medical Technology 因接口限流改用 Europe PMC 专题检索补全",
+    "source": "OpenAlex（主）+ Europe PMC（Frontiers 三区补全）",
     "definition": "n_2026：该刊 2026 年标题/摘要命中「医学影像 + 计算方法」相关词的论文数（检索估算，非人工精标；不能区分公开/私有数据）。Sensors / IEEE Access / Diagnostics 为综合刊，口径会偏大，只作量级参考。",
     "query": "segmentation OR detection OR \"deep learning\" OR \"medical image\" OR BraTS OR LiTS OR KiTS OR ultrasound OR radiomics OR CNN OR Transformer",
     "counts": {
@@ -558,6 +679,30 @@
         "name": "Frontiers in Radiology",
         "n_2026": 83,
         "source": "OpenAlex"
+      },
+      "frontiers_oncology": {
+        "name": "Frontiers in Oncology",
+        "n_2026": 272,
+        "source": "EuropePMC",
+        "note": "Europe PMC 专题估算（影像/深度学习相关）；发文量大"
+      },
+      "frontiers_ai": {
+        "name": "Frontiers in Artificial Intelligence",
+        "n_2026": 145,
+        "source": "EuropePMC",
+        "note": "Europe PMC 专题估算"
+      },
+      "frontiers_medicine": {
+        "name": "Frontiers in Medicine",
+        "n_2026": 239,
+        "source": "EuropePMC",
+        "note": "Europe PMC 专题估算；综合刊口径偏大"
+      },
+      "frontiers_neuroinfo": {
+        "name": "Frontiers in Neuroinformatics",
+        "n_2026": 4,
+        "source": "EuropePMC",
+        "note": "Europe PMC 专题估算；体量小、更贴神经影像"
       }
     }
   }

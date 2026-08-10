@@ -1,7 +1,7 @@
 {
   "year": 2026,
   "retrieved": "2026-08-10",
-  "source": "OpenAlex（主）；Frontiers in Medical Technology 因接口限流改用 Europe PMC 专题检索补全",
+  "source": "OpenAlex（主）+ Europe PMC（Frontiers 三区补全）",
   "definition": "n_2026：该刊 2026 年标题/摘要命中「医学影像 + 计算方法」相关词的论文数（检索估算，非人工精标；不能区分公开/私有数据）。Sensors / IEEE Access / Diagnostics 为综合刊，口径会偏大，只作量级参考。",
   "query": "segmentation OR detection OR \"deep learning\" OR \"medical image\" OR BraTS OR LiTS OR KiTS OR ultrasound OR radiomics OR CNN OR Transformer",
   "counts": {
@@ -75,6 +75,30 @@
       "name": "Frontiers in Radiology",
       "n_2026": 83,
       "source": "OpenAlex"
+    },
+    "frontiers_oncology": {
+      "name": "Frontiers in Oncology",
+      "n_2026": 272,
+      "source": "EuropePMC",
+      "note": "Europe PMC 专题估算（影像/深度学习相关）；发文量大"
+    },
+    "frontiers_ai": {
+      "name": "Frontiers in Artificial Intelligence",
+      "n_2026": 145,
+      "source": "EuropePMC",
+      "note": "Europe PMC 专题估算"
+    },
+    "frontiers_medicine": {
+      "name": "Frontiers in Medicine",
+      "n_2026": 239,
+      "source": "EuropePMC",
+      "note": "Europe PMC 专题估算；综合刊口径偏大"
+    },
+    "frontiers_neuroinfo": {
+      "name": "Frontiers in Neuroinformatics",
+      "n_2026": 4,
+      "source": "EuropePMC",
+      "note": "Europe PMC 专题估算；体量小、更贴神经影像"
     }
   }
 }
