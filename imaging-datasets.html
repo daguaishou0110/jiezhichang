@@ -185,6 +185,7 @@ a{color:var(--deep);text-underline-offset:3px}
   const esc=t=>String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const escA=t=>esc(t).replace(/"/g,'&quot;');
   const cleanTitle=s=>(s||'').replace(/^二级[：:]\s*/,'');
+  function blobOf(parts){return escA(parts.filter(Boolean).join(' '));}
 
   const nSub=deps.reduce((n,d)=>n+(d.children||[]).length,0);
   const nDs=deps.reduce((n,d)=>n+(d.children||[]).reduce((m,c)=>m+(c.datasets||[]).length,0),0);
@@ -197,9 +198,12 @@ a{color:var(--deep);text-underline-offset:3px}
   list.innerHTML=deps.map(d=>{
     const kids=d.children||[];
     const n=kids.reduce((x,c)=>x+(c.datasets||[]).length,0);
+    const deptBlob=blobOf([
+      d.name_zh,d.blurb,
+      ...kids.flatMap(c=>[c.name_zh,c.modality,c.task,...(c.datasets||[]).map(x=>x.name||'')])
+    ]);
     return `
-    <details class="dept" id="dept-${escA(d.id)}" open
-      data-blob="${escA([d.name_zh,d.blurb,kids.map(c=>[c.name_zh,c.modality,c.task,(c.datasets||[]).map(x=>[x.name,x.note,x.kind,x.url].join(' ')].join(' ')].join(' ')].join(' '))].join(' '))}">
+    <details class="dept" id="dept-${escA(d.id)}" open data-blob="${deptBlob}">
       <summary>
         <div>
           <div class="dept-badge">科室目录</div>
@@ -214,8 +218,9 @@ a{color:var(--deep);text-underline-offset:3px}
       <div class="dept-body">
         ${kids.map(c=>{
           const ds=c.datasets||[];
+          const subBlob=blobOf([c.name_zh,c.modality,c.task,...ds.map(x=>`${x.name||''} ${x.note||''} ${x.kind||''}`)]);
           return `
-          <details class="sub" open data-blob="${escA([c.name_zh,c.modality,c.task,ds.map(x=>[x.name,x.url,x.note,x.kind].join(' ')].join(' ')].join(' '))}">
+          <details class="sub" open data-blob="${subBlob}">
             <summary>
               <div>
                 <span class="sub-eyebrow">二级 · ${esc(c.modality||'影像')}</span>
@@ -232,7 +237,8 @@ a{color:var(--deep);text-underline-offset:3px}
               <div class="ds-list">
                 ${ds.length?ds.map(x=>{
                   const url=(x.url||'').trim();
-                  const host=(()=>{try{return new URL(url).hostname.replace(/^www\./,'')}catch(_){return ''}})();
+                  let host='';
+                  try{host=new URL(url).hostname.replace(/^www\./,'')}catch(_){}
                   return `
                   <article class="ds">
                     <div class="ds-top">
@@ -251,6 +257,9 @@ a{color:var(--deep);text-underline-offset:3px}
     </details>`;
   }).join('')||'<p class="empty">暂无数据</p>';
 
+  // 渲染后强制全部展开（避免浏览器/属性异常导致收起）
+  list.querySelectorAll('details').forEach(d=>{d.open=true;});
+
   function applyQ(){
     const s=document.getElementById('q').value.trim().toLowerCase();
     list.querySelectorAll('.dept').forEach(dep=>{
@@ -267,8 +276,8 @@ a{color:var(--deep);text-underline-offset:3px}
     });
   }
   document.getElementById('q').addEventListener('input',applyQ);
-  document.getElementById('btnExpand').onclick=()=>list.querySelectorAll('details').forEach(d=>d.open=true);
-  document.getElementById('btnCollapse').onclick=()=>list.querySelectorAll('details.dept').forEach(d=>d.open=false);
+  document.getElementById('btnExpand').onclick=()=>list.querySelectorAll('details').forEach(d=>{d.open=true;});
+  document.getElementById('btnCollapse').onclick=()=>list.querySelectorAll('details.dept').forEach(d=>{d.open=false;});
 })();
 </script>
 </body>
