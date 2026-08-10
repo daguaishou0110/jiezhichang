@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>医学影像数据集目录 · 解知常</title>
+<title>医学影像数据集目录 · 科室展开 · 解知常</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--max:980px}
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--max:1000px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:15px;line-height:1.55}
 h1,h2,.brand{font-family:Fraunces,serif;letter-spacing:-.02em}
@@ -22,49 +22,58 @@ a{color:var(--deep);text-underline-offset:3px}
 .nav-links a.on,.nav-links a:hover{color:var(--teal)}
 .hero{padding:1.5rem 0 1rem}
 .kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.35rem}
-.brand{font-size:clamp(1.6rem,3.8vw,2.2rem);font-weight:750;color:var(--deep);margin-bottom:.35rem}
-.lead{color:var(--muted);max-width:56ch;font-size:.9rem}
+.brand{font-size:clamp(1.55rem,3.6vw,2.15rem);font-weight:750;color:var(--deep);margin-bottom:.35rem}
+.lead{color:var(--muted);max-width:58ch;font-size:.9rem}
 .warn{margin-top:.65rem;padding:.7rem .85rem;border-radius:12px;background:#fff7ed;border:1px solid #fdba74;color:#7c2d12;font-size:.82rem}
 .okbar{margin-top:.5rem;padding:.55rem .8rem;border-radius:10px;background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;font-size:.82rem;display:none}
 .chips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.75rem 0 .85rem}
 .chip{font-size:.76rem;font-weight:700;padding:.22rem .6rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
 .chip b{color:var(--deep)}
 .toolbar{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem}
-.btn{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:.4rem .75rem;font:inherit;font-size:.8rem;font-weight:700;cursor:pointer}
+.btn{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:.38rem .72rem;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
 .btn:hover{color:var(--teal);border-color:#a7f3d0}
 .btn.primary{background:var(--teal);border-color:var(--teal);color:#fff}
 .btn.danger{color:#b91c1c;border-color:#fecaca}
-.tools{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-bottom:1rem}
-.tools input,.tools select,input.field,textarea.field,select.field{
-  border:1px solid var(--line);border-radius:10px;padding:.5rem .7rem;font:inherit;background:#fff
-}
-.tools input{flex:1;min-width:180px}
-.cat{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:.55rem;overflow:hidden}
-.cat summary{cursor:pointer;list-style:none;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem .7rem;align-items:center;justify-content:space-between}
-.cat summary::-webkit-details-marker{display:none}
-.cat summary::before{content:"+";color:var(--teal);font-weight:700;margin-right:.3rem}
-.cat[open] summary::before{content:"–"}
-.cat-title{font-weight:700;font-size:.94rem}
-.meta{display:flex;flex-wrap:wrap;gap:.28rem}
-.tag{font-size:.66rem;font-weight:700;padding:.1rem .42rem;border-radius:999px;border:1px solid var(--line);background:#f8faf9;color:var(--muted)}
+.tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.tools input{flex:1;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:.5rem .7rem;font:inherit;background:#fff}
+.dept{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:.75rem;overflow:hidden}
+.dept>summary{cursor:pointer;list-style:none;padding:1rem 1.05rem;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:space-between;align-items:flex-start;background:linear-gradient(180deg,#f7fbf9,#fff)}
+.dept>summary::-webkit-details-marker{display:none}
+.dept>summary::before{content:"科室";font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-right:.35rem;padding-top:.2rem}
+.dept-title{font-family:Fraunces,serif;font-size:1.12rem;font-weight:750;color:var(--deep)}
+.dept-blurb{color:var(--muted);font-size:.82rem;margin-top:.2rem;max-width:56ch}
+.dept-body{padding:.2rem .9rem 1rem;border-top:1px solid var(--line)}
+.sub{border:1px solid var(--line);border-radius:12px;margin:.55rem 0;background:#fbfcfc}
+.sub>summary{cursor:pointer;list-style:none;padding:.7rem .85rem;display:flex;flex-wrap:wrap;gap:.35rem .6rem;justify-content:space-between;align-items:center}
+.sub>summary::-webkit-details-marker{display:none}
+.sub>summary::before{content:"+";color:var(--teal);font-weight:700;margin-right:.25rem}
+.sub[open]>summary::before{content:"–"}
+.sub-title{font-weight:700;font-size:.9rem}
+.meta{display:flex;flex-wrap:wrap;gap:.25rem}
+.tag{font-size:.65rem;font-weight:700;padding:.1rem .4rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
 .tag.empty{background:#fff7ed;color:#c2410c;border-color:#fdba74}
 .tag.partial{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
 .tag.ready{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
-.body{padding:.85rem 1rem 1rem;border-top:1px dashed var(--line)}
-.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin:.4rem 0 .7rem}
+.sub-body{padding:.15rem .85rem .85rem;border-top:1px dashed var(--line)}
+table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:.35rem}
+th,td{text-align:left;padding:.4rem .3rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-size:.66rem;text-transform:uppercase;letter-spacing:.04em}
+td a{font-weight:600;text-decoration:none}
+td a:hover{text-decoration:underline}
+td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.32rem .4rem;font:inherit;font-size:.8rem}
+.empty-row{color:var(--muted);font-style:italic}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin-bottom:1rem}
+.panel h2{font-size:1rem;color:var(--deep);margin-bottom:.55rem}
+.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:.45rem}
 @media(max-width:720px){.edit-grid{grid-template-columns:1fr}}
 .edit-grid label{display:flex;flex-direction:column;gap:.2rem;font-size:.72rem;font-weight:700;color:var(--muted)}
 .edit-grid .full{grid-column:1/-1}
-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:.35rem}
-th,td{text-align:left;padding:.4rem .3rem;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em}
-td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.35rem .45rem;font:inherit;font-size:.8rem}
-.empty-row{color:var(--muted);font-style:italic}
-.row-actions{display:flex;gap:.25rem;flex-wrap:wrap}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin-bottom:1rem}
-.panel h2{font-size:1rem;color:var(--deep);margin-bottom:.55rem}
+.field{border:1px solid var(--line);border-radius:10px;padding:.48rem .65rem;font:inherit;background:#fff}
 .foot{padding:1.2rem 0 2rem;color:var(--muted);font-size:.78rem;border-top:1px solid var(--line);margin-top:1rem}
 .hidden{display:none!important}
+.jump{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0 1rem}
+.jump a{font-size:.75rem;font-weight:700;text-decoration:none;padding:.28rem .55rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.jump a:hover{color:var(--teal)}
 </style>
 </head>
 <body>
@@ -80,350 +89,260 @@ td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.35re
 </div></nav>
 
 <header class="hero wrap">
-  <div class="kicker">Public medical imaging datasets · editable</div>
-  <div class="brand">医学影像数据集目录</div>
-  <p class="lead">可手动新增类目，再在类目里新增数据集链接。浏览器自动草稿；可下载 / 保存本地 / 经本地小服务写回仓库文件。</p>
-  <div class="warn" id="hint">已按部位/病症预填公开检测（或可转框）数据集。可继续手动增补。本机写盘：<code>python tools/serve_imaging_datasets.py</code> 后点「同步到本地文件」；或「下载 JS」覆盖 <code>data/imaging-datasets.js</code>。</div>
+  <div class="kicker">Hospital department → disease/modality → datasets</div>
+  <div class="brand">医学影像数据集 · 科室目录</div>
+  <p class="lead">一级按医院科室展开，二级为病症/模态目录，最里层是公开目标检测数据集与链接（含可转外接框的分割集）。</p>
+  <div class="warn">本机落盘：<code>python tools/serve_imaging_datasets.py</code> 后点「同步到本地」；或「下载 JS」覆盖 <code>data/imaging-datasets.js</code>。</div>
   <div class="okbar" id="toast"></div>
   <div class="chips" id="stats"></div>
+  <div class="jump" id="jump"></div>
   <div class="toolbar">
-    <button class="btn primary" type="button" id="btnAddCat">＋ 新增类目</button>
+    <button class="btn primary" type="button" id="btnAddDept">＋ 新增科室</button>
     <button class="btn" type="button" id="btnDownload">下载 JS</button>
-    <button class="btn" type="button" id="btnSaveFile">另存到本地…</button>
-    <button class="btn" type="button" id="btnSync">同步到本地文件</button>
-    <button class="btn" type="button" id="btnLoadDraft">恢复草稿</button>
-    <button class="btn danger" type="button" id="btnClearDraft">清空草稿</button>
+    <button class="btn" type="button" id="btnSync">同步到本地</button>
+    <button class="btn" type="button" id="btnExpand">全部展开</button>
+    <button class="btn" type="button" id="btnCollapse">全部收起</button>
   </div>
   <div class="tools">
-    <input id="q" type="search" placeholder="搜索类目 / 数据集…" />
-    <select id="filter">
-      <option value="all">全部状态</option>
-      <option value="empty">仅待补充</option>
-      <option value="partial">仅部分</option>
-      <option value="ready">仅较全</option>
-    </select>
+    <input id="q" type="search" placeholder="搜索科室 / 二级目录 / 数据集…" />
   </div>
 </header>
 
-<section class="wrap panel hidden" id="addCatPanel">
-  <h2>新增类目</h2>
-  <div class="edit-grid">
-    <label>中文名<input class="field" id="newCatName" placeholder="如：乳腺 · 超声" /></label>
-    <label>ID（英文短码）<input class="field" id="newCatId" placeholder="自动生成可改，如 breast-us" /></label>
-    <label>模态<input class="field" id="newCatMod" placeholder="超声 / CT / 内镜" /></label>
-    <label>任务<input class="field" id="newCatTask" placeholder="检测 / 分割转框" /></label>
-    <label>本地工程<input class="field" id="newCatLocal" placeholder="可选" /></label>
-    <label>状态
-      <select class="field" id="newCatStatus">
-        <option value="empty">待补充</option>
-        <option value="partial">部分</option>
-        <option value="ready">较全</option>
-      </select>
-    </label>
-    <label class="full">待办备注<textarea class="field" id="newCatTodo" rows="2" placeholder="还要补什么"></textarea></label>
-  </div>
-  <div class="toolbar">
-    <button class="btn primary" type="button" id="btnSaveCat">保存类目</button>
-    <button class="btn" type="button" id="btnCancelCat">取消</button>
+<section class="wrap panel hidden" id="addPanel">
+  <h2 id="addTitle">新增</h2>
+  <div class="edit-grid" id="addFields"></div>
+  <div class="toolbar" style="margin-top:.7rem">
+    <button class="btn primary" type="button" id="btnSaveAdd">保存</button>
+    <button class="btn" type="button" id="btnCancelAdd">取消</button>
   </div>
 </section>
 
 <main class="wrap" id="list"></main>
-<footer class="foot"><div class="wrap">草稿存浏览器 localStorage · 真写盘请用本地服务或下载覆盖 <code>data/imaging-datasets.js</code></div></footer>
+<footer class="foot"><div class="wrap">结构：科室 → 二级目录 → 数据集链接 · 数据源 <code>data/imaging-datasets.js</code></div></footer>
 
 <script src="data/imaging-datasets.js"></script>
 <script>
 (function(){
-  const LS_KEY='jiezhichang_imaging_datasets_draft_v1';
-  const SYNC_URL='http://127.0.0.1:18765/api/imaging-datasets';
+  const LS='jiezhichang_imaging_dept_draft_v1';
+  const SYNC='http://127.0.0.1:18765/api/imaging-datasets';
   const stLabel={empty:'待补充',partial:'部分',ready:'较全'};
+  let state=structuredClone(window.IMAGING_DATASETS||{meta:{},departments:[]});
+  if(!Array.isArray(state.departments)) state.departments=[];
+  try{const d=localStorage.getItem(LS); if(d){const p=JSON.parse(d); if(p&&Array.isArray(p.departments)) state=p;}}catch(_){}
 
-  let state=structuredClone(window.IMAGING_DATASETS||{meta:{},categories:[]});
-  if(!state.meta) state.meta={};
-  if(!Array.isArray(state.categories)) state.categories=[];
-
-  // Prefer newer draft if exists
-  try{
-    const draft=localStorage.getItem(LS_KEY);
-    if(draft){
-      const parsed=JSON.parse(draft);
-      if(parsed&&Array.isArray(parsed.categories)){
-        // keep draft unless user clears
-        state=parsed;
-      }
-    }
-  }catch(_){}
-
-  const listEl=document.getElementById('list');
+  const list=document.getElementById('list');
   const toast=document.getElementById('toast');
-  const addPanel=document.getElementById('addCatPanel');
+  const addPanel=document.getElementById('addPanel');
+  let addMode=null; // {type:'dept'} | {type:'sub', di} | {type:'ds', di, si}
 
-  function showToast(msg, ok=true){
+  function syncFlat(){
+    state.categories=[];
+    state.departments.forEach(d=>{
+      (d.children||[]).forEach(c=>{
+        state.categories.push({...c, department_id:d.id, department_zh:d.name_zh});
+      });
+    });
+  }
+  function persist(){
+    state.meta=state.meta||{};
+    state.meta.updated=new Date().toISOString().slice(0,10);
+    state.meta.structure='department → subcategory → datasets';
+    syncFlat();
+    localStorage.setItem(LS, JSON.stringify(state));
+  }
+  function toJs(){
+    syncFlat();
+    return '/** 医学影像公开数据集目录 — 科室 → 二级目录 → 数据集。 */\nwindow.IMAGING_DATASETS = '+JSON.stringify(state,null,2)+';\n';
+  }
+  function showToast(m,ok=true){
     toast.style.display='block';
     toast.style.background=ok?'#ecfdf5':'#fef2f2';
     toast.style.borderColor=ok?'#a7f3d0':'#fecaca';
     toast.style.color=ok?'#065f46':'#991b1b';
-    toast.textContent=msg;
-    clearTimeout(showToast._t);
-    showToast._t=setTimeout(()=>{toast.style.display='none'},4200);
+    toast.textContent=m;
+    clearTimeout(showToast._t); showToast._t=setTimeout(()=>toast.style.display='none',4200);
   }
-
-  function slugify(s){
-    return String(s||'')
-      .trim()
-      .toLowerCase()
-      .replace(/[·、，,/]/g,'-')
-      .replace(/[^a-z0-9\u4e00-\u9fff-]+/g,'')
-      .replace(/-+/g,'-')
-      .replace(/^-|-$/g,'')
-      .slice(0,48) || ('cat-'+Date.now().toString(36));
-  }
-
-  function refreshStatus(cat){
-    const n=(cat.datasets||[]).length;
-    if(n===0) cat.status='empty';
-    else if(cat.status==='empty') cat.status='partial';
-  }
-
-  function persistDraft(){
-    state.meta.updated=new Date().toISOString().slice(0,10);
-    localStorage.setItem(LS_KEY, JSON.stringify(state));
-  }
-
-  function toJsFile(){
-    const body=JSON.stringify(state,null,2);
-    return '/** 医学影像公开数据集目录 — 按部位/模态类目补充。编辑本文件即可，刷新 imaging-datasets.html。 */\n'
-      +'window.IMAGING_DATASETS = '+body+';\n';
-  }
-
-  function renderStats(){
-    const cats=state.categories;
-    const nEmpty=cats.filter(c=>c.status==='empty').length;
-    const nPart=cats.filter(c=>c.status==='partial').length;
-    const nReady=cats.filter(c=>c.status==='ready').length;
-    const nDs=cats.reduce((s,c)=>s+(c.datasets||[]).length,0);
-    document.getElementById('stats').innerHTML=`
-      <span class="chip">类目 <b>${cats.length}</b></span>
-      <span class="chip">数据集 <b>${nDs}</b></span>
-      <span class="chip">待补充 <b>${nEmpty}</b></span>
-      <span class="chip">部分 <b>${nPart}</b></span>
-      <span class="chip">较全 <b>${nReady}</b></span>
-      <span class="chip">更新 <b>${state.meta.updated||''}</b></span>`;
-  }
-
   function esc(t){return String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-  function escAttr(t){return esc(t).replace(/"/g,'&quot;')}
+  function escA(t){return esc(t).replace(/"/g,'&quot;')}
+  function slug(s){return String(s||'').trim().toLowerCase().replace(/[·、，,/\\s]+/g,'-').replace(/[^a-z0-9\u4e00-\u9fff-]+/g,'').replace(/-+/g,'-').replace(/^-|-$/g,'').slice(0,40)||('id-'+Date.now().toString(36))}
+
+  function stats(){
+    const deps=state.departments;
+    const subs=deps.reduce((n,d)=>n+(d.children||[]).length,0);
+    const dss=deps.reduce((n,d)=>n+(d.children||[]).reduce((m,c)=>m+(c.datasets||[]).length,0),0);
+    document.getElementById('stats').innerHTML=`
+      <span class="chip">科室 <b>${deps.length}</b></span>
+      <span class="chip">二级目录 <b>${subs}</b></span>
+      <span class="chip">数据集 <b>${dss}</b></span>
+      <span class="chip">更新 <b>${state.meta.updated||''}</b></span>`;
+    document.getElementById('jump').innerHTML=deps.map(d=>`<a href="#dept-${escA(d.id)}">${esc(d.name_zh)}</a>`).join('');
+  }
 
   function render(){
-    persistDraft();
-    renderStats();
-    listEl.innerHTML=state.categories.map((c,ci)=>{
-      const ds=c.datasets||[];
+    persist(); stats();
+    list.innerHTML=state.departments.map((d,di)=>{
+      const kids=d.children||[];
+      const nDs=kids.reduce((n,c)=>n+(c.datasets||[]).length,0);
       return `
-      <details class="cat" data-status="${c.status||'empty'}" data-blob="${escAttr([c.name_zh,c.modality,c.task,c.local,ds.map(d=>d.name+' '+d.url).join(' ')].join(' '))}" id="${escAttr(c.id)}">
+      <details class="dept" id="dept-${escA(d.id)}" data-blob="${escA([d.name_zh,d.blurb,kids.map(c=>c.name_zh+' '+(c.datasets||[]).map(x=>x.name).join(' ')).join(' ')].join(' '))}" open>
         <summary>
-          <span class="cat-title">${ci+1}. ${esc(c.name_zh||c.id)}</span>
+          <div>
+            <div class="dept-title">${esc(d.name_zh)}</div>
+            <div class="dept-blurb">${esc(d.blurb||'')}</div>
+          </div>
           <span class="meta">
-            <span class="tag ${c.status||'empty'}">${stLabel[c.status]||'待补充'}</span>
-            <span class="tag">${esc(c.modality||'')}</span>
-            <span class="tag">${esc(c.task||'')}</span>
-            <span class="tag">${ds.length} 条</span>
+            <span class="tag">${kids.length} 个二级</span>
+            <span class="tag">${nDs} 数据集</span>
           </span>
         </summary>
-        <div class="body">
-          <div class="edit-grid">
-            <label>类目名<input data-cat="${ci}" data-k="name_zh" value="${escAttr(c.name_zh||'')}" /></label>
-            <label>状态
-              <select data-cat="${ci}" data-k="status">
-                <option value="empty" ${c.status==='empty'?'selected':''}>待补充</option>
-                <option value="partial" ${c.status==='partial'?'selected':''}>部分</option>
-                <option value="ready" ${c.status==='ready'?'selected':''}>较全</option>
-              </select>
-            </label>
-            <label>模态<input data-cat="${ci}" data-k="modality" value="${escAttr(c.modality||'')}" /></label>
-            <label>任务<input data-cat="${ci}" data-k="task" value="${escAttr(c.task||'')}" /></label>
-            <label>本地工程<input data-cat="${ci}" data-k="local" value="${escAttr(c.local||'')}" /></label>
-            <label>ID<input data-cat="${ci}" data-k="id" value="${escAttr(c.id||'')}" /></label>
-            <label class="full">待办<textarea data-cat="${ci}" data-k="todo" rows="2">${esc(c.todo||'')}</textarea></label>
-          </div>
+        <div class="dept-body">
           <div class="toolbar">
-            <button class="btn primary" type="button" data-add-ds="${ci}">＋ 新增数据集</button>
-            <button class="btn danger" type="button" data-del-cat="${ci}">删除类目</button>
+            <button class="btn primary" type="button" data-add-sub="${di}">＋ 新增二级目录</button>
+            <button class="btn danger" type="button" data-del-dept="${di}">删除科室</button>
           </div>
-          <table>
-            <thead><tr><th>名称</th><th>链接</th><th>备注</th><th>许可</th><th></th></tr></thead>
-            <tbody>
-              ${ds.length?ds.map((d,di)=>`
-                <tr>
-                  <td><input data-cat="${ci}" data-ds="${di}" data-k="name" value="${escAttr(d.name||'')}" placeholder="数据集名" /></td>
-                  <td><input data-cat="${ci}" data-ds="${di}" data-k="url" value="${escAttr(d.url||'')}" placeholder="https://..." /></td>
-                  <td><input data-cat="${ci}" data-ds="${di}" data-k="note" value="${escAttr(d.note||'')}" placeholder="备注" /></td>
-                  <td><input data-cat="${ci}" data-ds="${di}" data-k="license" value="${escAttr(d.license||'')}" placeholder="许可" /></td>
-                  <td class="row-actions">
-                    ${d.url?`<a class="btn" href="${escAttr(d.url)}" target="_blank" rel="noopener">开</a>`:''}
-                    <button class="btn danger" type="button" data-del-ds="${ci}:${di}">删</button>
-                  </td>
-                </tr>`).join(''):`<tr><td colspan="5" class="empty-row">尚无数据集 — 点「新增数据集」</td></tr>`}
-            </tbody>
-          </table>
+          ${kids.map((c,si)=>{
+            const ds=c.datasets||[];
+            return `
+            <details class="sub" data-blob="${escA([c.name_zh,c.modality,c.task,ds.map(x=>x.name+' '+x.url).join(' ')].join(' '))}">
+              <summary>
+                <span class="sub-title">${esc(c.name_zh)}</span>
+                <span class="meta">
+                  <span class="tag ${c.status||'empty'}">${stLabel[c.status]||'待补充'}</span>
+                  <span class="tag">${esc(c.modality||'')}</span>
+                  <span class="tag">${esc(c.task||'')}</span>
+                  <span class="tag">${ds.length} 条</span>
+                </span>
+              </summary>
+              <div class="sub-body">
+                ${c.local?`<p class="empty-row">本地工程：<code>${esc(c.local)}</code></p>`:''}
+                ${c.todo?`<p class="empty-row" style="color:#9a3412">待办：${esc(c.todo)}</p>`:''}
+                <div class="toolbar">
+                  <button class="btn primary" type="button" data-add-ds="${di}:${si}">＋ 新增数据集</button>
+                  <button class="btn danger" type="button" data-del-sub="${di}:${si}">删除二级目录</button>
+                </div>
+                <table>
+                  <thead><tr><th>数据集</th><th>链接</th><th>备注</th><th>许可</th><th></th></tr></thead>
+                  <tbody>
+                    ${ds.length?ds.map((x,xi)=>`
+                      <tr>
+                        <td><input data-path="${di}:${si}:${xi}" data-k="name" value="${escA(x.name||'')}" /></td>
+                        <td><input data-path="${di}:${si}:${xi}" data-k="url" value="${escA(x.url||'')}" placeholder="https://" /></td>
+                        <td><input data-path="${di}:${si}:${xi}" data-k="note" value="${escA(x.note||'')}" /></td>
+                        <td><input data-path="${di}:${si}:${xi}" data-k="license" value="${escA(x.license||'')}" /></td>
+                        <td>
+                          ${x.url?`<a class="btn" href="${escA(x.url)}" target="_blank" rel="noopener">打开</a>`:''}
+                          <button class="btn danger" type="button" data-del-ds="${di}:${si}:${xi}">删</button>
+                        </td>
+                      </tr>`).join(''):`<tr><td colspan="5" class="empty-row">暂无数据集</td></tr>`}
+                  </tbody>
+                </table>
+              </div>
+            </details>`;
+          }).join('')||'<p class="empty-row">暂无二级目录</p>'}
         </div>
       </details>`;
-    }).join('') || '<p class="empty-row">还没有类目，点上方「新增类目」。</p>';
-    applyFilter();
+    }).join('')||'<p class="empty-row">暂无科室</p>';
+    applyQ();
   }
 
-  function applyFilter(){
+  function applyQ(){
     const s=document.getElementById('q').value.trim().toLowerCase();
-    const f=document.getElementById('filter').value;
-    listEl.querySelectorAll('.cat').forEach(el=>{
-      const st=el.dataset.status;
-      const blob=(el.dataset.blob||'').toLowerCase();
-      el.classList.toggle('hidden',!((f==='all'||st===f)&&(!s||blob.includes(s)||el.id.toLowerCase().includes(s))));
+    list.querySelectorAll('.dept').forEach(dep=>{
+      let any=false;
+      dep.querySelectorAll('.sub').forEach(sub=>{
+        const ok=!s||(sub.dataset.blob||'').toLowerCase().includes(s)||(dep.dataset.blob||'').toLowerCase().includes(s);
+        sub.classList.toggle('hidden',!ok);
+        if(ok) any=true;
+      });
+      const deptHit=!s||(dep.dataset.blob||'').toLowerCase().includes(s);
+      dep.classList.toggle('hidden',s?!any&&!deptHit:false);
+      if(s&&any) dep.open=true;
     });
   }
 
-  listEl.addEventListener('change',e=>{
+  list.addEventListener('change',e=>{
     const t=e.target;
-    if(t.matches('[data-cat][data-k]')&&t.dataset.ds==null){
-      const ci=+t.dataset.cat; const k=t.dataset.k;
-      state.categories[ci][k]=t.value;
-      if(k==='status') render(); else persistDraft();
-    }
-    if(t.matches('[data-cat][data-ds][data-k]')){
-      const ci=+t.dataset.cat, di=+t.dataset.ds, k=t.dataset.k;
-      state.categories[ci].datasets[di][k]=t.value;
-      persistDraft();
-    }
+    if(!t.matches('input[data-path][data-k]')) return;
+    const [di,si,xi]=t.dataset.path.split(':').map(Number);
+    state.departments[di].children[si].datasets[xi][t.dataset.k]=t.value;
+    persist();
   });
-  listEl.addEventListener('input',e=>{
-    const t=e.target;
-    if(t.matches('textarea[data-cat][data-k]')){
-      state.categories[+t.dataset.cat][t.dataset.k]=t.value;
-      persistDraft();
-    }
-  });
-  listEl.addEventListener('click',e=>{
-    const add=e.target.closest('[data-add-ds]');
-    if(add){
-      const ci=+add.dataset.addDs;
-      state.categories[ci].datasets=state.categories[ci].datasets||[];
-      state.categories[ci].datasets.push({name:'',url:'',note:'',license:''});
-      refreshStatus(state.categories[ci]);
-      render();
-      const el=document.getElementById(state.categories[ci].id);
-      if(el) el.open=true;
-      return;
-    }
-    const delDs=e.target.closest('[data-del-ds]');
-    if(delDs){
-      const [ci,di]=delDs.dataset.delDs.split(':').map(Number);
-      if(!confirm('删除这条数据集？')) return;
-      state.categories[ci].datasets.splice(di,1);
-      refreshStatus(state.categories[ci]);
-      render();
-      return;
-    }
-    const delCat=e.target.closest('[data-del-cat]');
-    if(delCat){
-      const ci=+delCat.dataset.delCat;
-      if(!confirm('删除整个类目及其数据集？')) return;
-      state.categories.splice(ci,1);
-      render();
-    }
+  list.addEventListener('click',e=>{
+    const a=e.target.closest('[data-add-sub]');
+    if(a){ openAdd({type:'sub', di:+a.dataset.addSub}); return; }
+    const b=e.target.closest('[data-add-ds]');
+    if(b){ const [di,si]=b.dataset.addDs.split(':').map(Number); openAdd({type:'ds', di, si}); return; }
+    const c=e.target.closest('[data-del-dept]');
+    if(c){ if(confirm('删除该科室及下属全部目录？')){ state.departments.splice(+c.dataset.delDept,1); render(); } return; }
+    const d=e.target.closest('[data-del-sub]');
+    if(d){ const [di,si]=d.dataset.delSub.split(':').map(Number); if(confirm('删除该二级目录？')){ state.departments[di].children.splice(si,1); render(); } return; }
+    const f=e.target.closest('[data-del-ds]');
+    if(f){ const [di,si,xi]=f.dataset.delDs.split(':').map(Number); if(confirm('删除该数据集？')){ state.departments[di].children[si].datasets.splice(xi,1); render(); } }
   });
 
-  document.getElementById('q').addEventListener('input',applyFilter);
-  document.getElementById('filter').addEventListener('change',applyFilter);
-
-  document.getElementById('btnAddCat').onclick=()=>addPanel.classList.remove('hidden');
-  document.getElementById('btnCancelCat').onclick=()=>addPanel.classList.add('hidden');
-  document.getElementById('newCatName').addEventListener('input',e=>{
-    const idEl=document.getElementById('newCatId');
-    if(!idEl.dataset.touched) idEl.value=slugify(e.target.value);
-  });
-  document.getElementById('newCatId').addEventListener('input',e=>{e.target.dataset.touched='1'});
-
-  document.getElementById('btnSaveCat').onclick=()=>{
-    const name=document.getElementById('newCatName').value.trim();
-    let id=document.getElementById('newCatId').value.trim()||slugify(name);
-    if(!name){showToast('请填写类目中文名',false);return;}
-    if(state.categories.some(c=>c.id===id)) id=id+'-'+Date.now().toString(36).slice(-3);
-    state.categories.push({
-      id, name_zh:name,
-      modality:document.getElementById('newCatMod').value.trim(),
-      task:document.getElementById('newCatTask').value.trim(),
-      status:document.getElementById('newCatStatus').value,
-      local:document.getElementById('newCatLocal').value.trim(),
-      datasets:[],
-      todo:document.getElementById('newCatTodo').value.trim()
-    });
-    ['newCatName','newCatId','newCatMod','newCatTask','newCatLocal','newCatTodo'].forEach(id=>{
-      const el=document.getElementById(id); el.value=''; delete el.dataset.touched;
-    });
-    document.getElementById('newCatStatus').value='empty';
-    addPanel.classList.add('hidden');
-    render();
-    showToast('已新增类目（已写入浏览器草稿）');
+  function openAdd(mode){
+    addMode=mode; addPanel.classList.remove('hidden');
+    const box=document.getElementById('addFields');
+    if(mode.type==='dept'){
+      document.getElementById('addTitle').textContent='新增科室';
+      box.innerHTML=`
+        <label>科室名<input class="field" id="f1" placeholder="如：泌尿外科" /></label>
+        <label>ID<input class="field" id="f2" placeholder="自动生成" /></label>
+        <label class="full">简介<textarea class="field" id="f3" rows="2" placeholder="本科室覆盖哪些影像方向"></textarea></label>`;
+    } else if(mode.type==='sub'){
+      document.getElementById('addTitle').textContent='新增二级目录 · '+state.departments[mode.di].name_zh;
+      box.innerHTML=`
+        <label>二级目录名<input class="field" id="f1" placeholder="如：肾结石 · 检测" /></label>
+        <label>ID<input class="field" id="f2" /></label>
+        <label>模态<input class="field" id="f3" placeholder="CT / 超声" /></label>
+        <label>任务<input class="field" id="f4" placeholder="目标检测" /></label>`;
+    } else {
+      const sub=state.departments[mode.di].children[mode.si];
+      document.getElementById('addTitle').textContent='新增数据集 · '+sub.name_zh;
+      box.innerHTML=`
+        <label>数据集名<input class="field" id="f1" placeholder="数据集名称" /></label>
+        <label>链接<input class="field" id="f2" placeholder="https://" /></label>
+        <label class="full">备注<input class="field" id="f3" placeholder="规模/是否原生框等" /></label>
+        <label>许可<input class="field" id="f4" placeholder="可选" /></label>`;
+    }
+  }
+  document.getElementById('btnCancelAdd').onclick=()=>{addPanel.classList.add('hidden'); addMode=null;};
+  document.getElementById('btnSaveAdd').onclick=()=>{
+    if(!addMode) return;
+    if(addMode.type==='dept'){
+      const name=document.getElementById('f1').value.trim(); if(!name) return showToast('填写科室名',false);
+      let id=document.getElementById('f2').value.trim()||slug(name);
+      state.departments.push({id, name_zh:name, blurb:document.getElementById('f3').value.trim(), children:[]});
+    } else if(addMode.type==='sub'){
+      const name=document.getElementById('f1').value.trim(); if(!name) return showToast('填写二级目录名',false);
+      let id=document.getElementById('f2').value.trim()||slug(name);
+      const ch=state.departments[addMode.di].children||(state.departments[addMode.di].children=[]);
+      ch.push({id, name_zh:name, modality:document.getElementById('f3').value.trim(), task:document.getElementById('f4').value.trim(), status:'empty', local:'', datasets:[], todo:''});
+    } else {
+      const name=document.getElementById('f1').value.trim(); if(!name) return showToast('填写数据集名',false);
+      const sub=state.departments[addMode.di].children[addMode.si];
+      sub.datasets=sub.datasets||[];
+      sub.datasets.push({name, url:document.getElementById('f2').value.trim(), note:document.getElementById('f3').value.trim(), license:document.getElementById('f4').value.trim()});
+      if(sub.status==='empty') sub.status='partial';
+    }
+    addPanel.classList.add('hidden'); addMode=null; render(); showToast('已保存到草稿');
   };
 
+  document.getElementById('btnAddDept').onclick=()=>openAdd({type:'dept'});
+  document.getElementById('q').addEventListener('input',applyQ);
+  document.getElementById('btnExpand').onclick=()=>list.querySelectorAll('details').forEach(d=>d.open=true);
+  document.getElementById('btnCollapse').onclick=()=>list.querySelectorAll('details.dept').forEach(d=>d.open=false);
   document.getElementById('btnDownload').onclick=()=>{
-    const blob=new Blob([toJsFile()],{type:'text/javascript;charset=utf-8'});
-    const a=document.createElement('a');
-    a.href=URL.createObjectURL(blob);
-    a.download='imaging-datasets.js';
-    a.click();
-    URL.revokeObjectURL(a.href);
-    showToast('已下载 imaging-datasets.js，请覆盖到 jiezhichang/data/');
+    const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([toJs()],{type:'text/javascript'}));
+    a.download='imaging-datasets.js'; a.click(); showToast('已下载，请覆盖到 data/');
   };
-
-  document.getElementById('btnSaveFile').onclick=async()=>{
-    if(!window.showSaveFilePicker){
-      showToast('当前浏览器不支持另存为，请用「下载 JS」',false);
-      return;
-    }
-    try{
-      const handle=await showSaveFilePicker({
-        suggestedName:'imaging-datasets.js',
-        types:[{description:'JavaScript',accept:{'text/javascript':['.js']}}]
-      });
-      const writable=await handle.createWritable();
-      await writable.write(toJsFile());
-      await writable.close();
-      showToast('已保存到你选择的本地路径');
-    }catch(err){
-      if(err&&err.name==='AbortError') return;
-      showToast('保存失败：'+(err.message||err),false);
-    }
-  };
-
   document.getElementById('btnSync').onclick=async()=>{
     try{
-      const res=await fetch(SYNC_URL,{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify(state)
-      });
+      const res=await fetch(SYNC,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(state)});
       const data=await res.json().catch(()=>({}));
-      if(!res.ok||!data.ok) throw new Error(data.error||('HTTP '+res.status));
-      showToast('已同步写入本地 data/imaging-datasets.js');
-    }catch(err){
-      showToast('同步失败：请先本机运行 python tools/serve_imaging_datasets.py（'+ (err.message||err)+'）',false);
-    }
-  };
-
-  document.getElementById('btnLoadDraft').onclick=()=>{
-    try{
-      const draft=localStorage.getItem(LS_KEY);
-      if(!draft){showToast('没有草稿',false);return;}
-      state=JSON.parse(draft);
-      render();
-      showToast('已恢复浏览器草稿');
-    }catch(err){showToast('草稿损坏',false)}
-  };
-  document.getElementById('btnClearDraft').onclick=()=>{
-    if(!confirm('清空浏览器草稿并重新加载仓库文件？')) return;
-    localStorage.removeItem(LS_KEY);
-    location.reload();
+      if(!res.ok||!data.ok) throw new Error(data.error||res.status);
+      showToast('已写入本地 data/imaging-datasets.js');
+    }catch(err){ showToast('同步失败：先运行 python tools/serve_imaging_datasets.py（'+(err.message||err)+'）',false); }
   };
 
   render();
