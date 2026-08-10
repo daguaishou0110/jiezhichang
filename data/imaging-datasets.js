@@ -253,6 +253,20 @@ window.IMAGING_DATASETS = {
               "note": "多中心息肉论文",
               "license": "",
               "kind": "detection"
+            },
+            {
+              "name": "Kvasir-SEG zip",
+              "url": "https://datasets.simula.no/downloads/kvasir-seg.zip",
+              "note": "息肉分割直下包",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kvasir-VQA",
+              "url": "https://datasets.simula.no/kvasir-vqa/",
+              "note": "内镜视觉问答；图文对",
+              "license": "",
+              "kind": "mixed"
             }
           ],
           "todo": ""
@@ -355,6 +369,34 @@ window.IMAGING_DATASETS = {
               "note": "腹腔镜胆囊切除；器械/解剖分割；需 DUA",
               "license": "",
               "kind": "detection"
+            },
+            {
+              "name": "GastroHUN 胃系统筛查",
+              "url": "https://doi.org/10.1038/s41597-025-04401-5",
+              "note": "8834 图+4729 序列；23 类胃站位",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "GastroHUN Figshare",
+              "url": "https://doi.org/10.6084/m9.figshare.27308133",
+              "note": "数据下载 ~97GB",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "HyperKvasir labeled-images zip",
+              "url": "https://datasets.simula.no/downloads/hyper-kvasir/hyper-kvasir-labeled-images.zip",
+              "note": "10662 标注图直下 3.9GB",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "HyperKvasir segmentation zip",
+              "url": "https://datasets.simula.no/downloads/hyper-kvasir/hyper-kvasir-segmented-images.zip",
+              "note": "分割子集直下",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -447,6 +489,13 @@ window.IMAGING_DATASETS = {
               "note": "千级 · Kaggle · 胶囊结肠",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "Kvasir-Capsule labeled zip",
+              "url": "https://datasets.simula.no/downloads/kvasir-capsule/kvasir-capsule-labeled-images.zip",
+              "note": "胶囊标注帧直下",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -996,6 +1045,13 @@ window.IMAGING_DATASETS = {
               "note": "胸腔器官分割",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "CT-ORG",
+              "url": "https://github.com/bbrister/ctOrganSegmentation",
+              "note": "多器官 CT 分割",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1105,6 +1161,13 @@ window.IMAGING_DATASETS = {
               "note": "公开超声 bundle",
               "license": "",
               "kind": "mixed"
+            },
+            {
+              "name": "COVID-BLUES",
+              "url": "https://github.com/namiyousef/covid-19-lung-ultrasound",
+              "note": "COVID 肺超声补充",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -1179,6 +1242,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "LNDb",
+              "url": "https://lndb.grand-challenge.org/Data/",
+              "note": "肺结节数据页",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -1590,6 +1660,20 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "AortaSeg24",
+              "url": "https://aortaseg24.grand-challenge.org/",
+              "note": "主动脉及分支 CTA 23 类；需 DUA",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "AortaSeg24 GitHub",
+              "url": "https://github.com/mirthAI/AortaSeg24",
+              "note": "挑战说明与基线",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1636,6 +1720,20 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "STACOM 心脏系列",
+              "url": "https://www.cardiacatlas.org/",
+              "note": "心脏建模/分割挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "EchoNet-Pediatric",
+              "url": "https://echonet.github.io/pediatric/",
+              "note": "儿科心超；需申请",
+              "license": "",
+              "kind": "video"
             }
           ],
           "todo": ""
@@ -1784,6 +1882,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "CSAW-S",
+              "url": "https://doi.org/10.5281/zenodo.3881526",
+              "note": "乳腺钼靶分割（瑞典）",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1835,6 +1940,13 @@ window.IMAGING_DATASETS = {
               "name": "BUSIS",
               "url": "https://doi.org/10.1016/j.dib.2019.104863",
               "note": "乳腺超声分割补充",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "UDIAT Dataset B",
+              "url": "http://www2.cs.uoi.gr/~marina/datasets.html",
+              "note": "乳腺超声小集经典",
               "license": "",
               "kind": "seg→box"
             }
@@ -2160,6 +2272,27 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "ODIR-5K",
+              "url": "https://odir2019.grand-challenge.org/dataset/",
+              "note": "5000 患者双眼底多病",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "ORIGA",
+              "url": "https://www.kaggle.com/datasets/arnavjain1/glaucoma-datasets",
+              "note": "青光眼 ORIGA 等合集镜像",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "G1020",
+              "url": "https://doi.org/10.5281/zenodo.3833513",
+              "note": "青光眼眼底 1020",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -2315,6 +2448,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "OCTID",
+              "url": "https://www.openicpsr.org/openicpsr/project/108503/version/V1/view",
+              "note": "OCT 多病分类",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -2478,6 +2618,20 @@ window.IMAGING_DATASETS = {
               "name": "Dermofit",
               "url": "https://licensing.edinburgh-innovations.ed.ac.uk/product/dermofit-image-library",
               "note": "皮肤镜库；需许可",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "PAD-UFES-20 GitHub",
+              "url": "https://github.com/labcin-ufes/PAD-UFES-20",
+              "note": "说明与校验脚本",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "ISIC 2024",
+              "url": "https://challenge.isic-archive.com/landing/2024/",
+              "note": "最新 ISIC 挑战入口",
               "license": "",
               "kind": "classification"
             }
@@ -2827,6 +2981,20 @@ window.IMAGING_DATASETS = {
               "note": "弥漫胶质瘤 MRI",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "OpenMind MRI HF",
+              "url": "https://huggingface.co/datasets/MIC-DKFZ/OpenMind",
+              "note": "11.4 万头颈 3D MRI；SSL 预训练",
+              "license": "",
+              "kind": "mixed"
+            },
+            {
+              "name": "ABIDE",
+              "url": "http://fcon_1000.projects.nitrc.org/indi/abide/",
+              "note": "自闭症脑 MRI",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -2887,6 +3055,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "RSNA Intracranial Hemorrhage",
+              "url": "https://www.rsna.org/rsnai/ai-image-challenge/rsna-intracranial-hemorrhage-detection",
+              "note": "RSNA ICH 官方页",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -2952,6 +3127,13 @@ window.IMAGING_DATASETS = {
               "name": "Kaggle",
               "url": "https://www.kaggle.com/competitions/fractured-bone-detection-challenge/overview",
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "FracAtlas HF",
+              "url": "https://huggingface.co/datasets/yh0701/FracAtlas_dataset",
+              "note": "骨折 YOLO/COCO 镜像",
               "license": "",
               "kind": "detection"
             }
@@ -3039,6 +3221,27 @@ window.IMAGING_DATASETS = {
               "note": "脊柱椎体标注",
               "license": "",
               "kind": "detection"
+            },
+            {
+              "name": "腰椎 US+CT 成对集",
+              "url": "https://doi.org/10.1038/s41597-025-06047-9",
+              "note": "机器人/手持腰椎超声+CT",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "腰椎 US+CT 数据仓",
+              "url": "https://doi.org/10.48804/3XPCAE",
+              "note": "下载入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "ToothFairy2 CBCT",
+              "url": "https://toothfairy2.grand-challenge.org/",
+              "note": "颌面多结构 CBCT（骨科邻近）",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -3555,6 +3758,13 @@ window.IMAGING_DATASETS = {
               "note": "宫颈细胞学补充",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "Liquid-based cytology Zenodo",
+              "url": "https://zenodo.org/records/6676799",
+              "note": "液基细胞学补充",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": "多数为分类；带框公开集需逐条核"
@@ -3613,6 +3823,13 @@ window.IMAGING_DATASETS = {
               "name": "VinDr-PCXR 儿童胸片",
               "url": "https://physionet.org/content/vindr-pcxr/",
               "note": "9125 · PhysioNet · 儿童胸片",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "HC18 Data",
+              "url": "https://hc18.grand-challenge.org/Data/",
+              "note": "胎头围数据页",
               "license": "",
               "kind": "detection"
             }
@@ -3743,6 +3960,13 @@ window.IMAGING_DATASETS = {
               "name": "Kaggle",
               "url": "https://www.kaggle.com/datasets/henriquerezermosqur/dental-x-ray-computacional-vision-segmentation/data",
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "ToothFairy2",
+              "url": "https://toothfairy2.grand-challenge.org/dataset/",
+              "note": "CBCT 多结构；需注册",
               "license": "",
               "kind": "seg→box"
             }
@@ -3910,6 +4134,20 @@ window.IMAGING_DATASETS = {
               "note": "冰冻切片核分割",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "NuClick",
+              "url": "https://github.com/navidstuv/NuClick",
+              "note": "交互式核标注/检测",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "Lizard",
+              "url": "https://warwick.ac.uk/fac/cross_fac/tia/data/lizard",
+              "note": "结肠核实例大集",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -4051,6 +4289,13 @@ window.IMAGING_DATASETS = {
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "Blood Cell Count Dataset",
+              "url": "https://www.kaggle.com/datasets/paultimothymooney/blood-cells",
+              "note": "血细胞分类常用",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -4095,6 +4340,13 @@ window.IMAGING_DATASETS = {
               "name": "Kaggle",
               "url": "https://www.kaggle.com/datasets/andrewmvd/malignant-lymphoma-classification",
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "ALN-Ultra Zenodo",
+              "url": "https://doi.org/10.5281/zenodo.18483501",
+              "note": "腋窝淋巴结超声",
               "license": "",
               "kind": "classification"
             }
@@ -4382,6 +4634,20 @@ window.IMAGING_DATASETS = {
           "note": "多中心息肉论文",
           "license": "",
           "kind": "detection"
+        },
+        {
+          "name": "Kvasir-SEG zip",
+          "url": "https://datasets.simula.no/downloads/kvasir-seg.zip",
+          "note": "息肉分割直下包",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kvasir-VQA",
+          "url": "https://datasets.simula.no/kvasir-vqa/",
+          "note": "内镜视觉问答；图文对",
+          "license": "",
+          "kind": "mixed"
         }
       ],
       "todo": "",
@@ -4486,6 +4752,34 @@ window.IMAGING_DATASETS = {
           "note": "腹腔镜胆囊切除；器械/解剖分割；需 DUA",
           "license": "",
           "kind": "detection"
+        },
+        {
+          "name": "GastroHUN 胃系统筛查",
+          "url": "https://doi.org/10.1038/s41597-025-04401-5",
+          "note": "8834 图+4729 序列；23 类胃站位",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "GastroHUN Figshare",
+          "url": "https://doi.org/10.6084/m9.figshare.27308133",
+          "note": "数据下载 ~97GB",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "HyperKvasir labeled-images zip",
+          "url": "https://datasets.simula.no/downloads/hyper-kvasir/hyper-kvasir-labeled-images.zip",
+          "note": "10662 标注图直下 3.9GB",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "HyperKvasir segmentation zip",
+          "url": "https://datasets.simula.no/downloads/hyper-kvasir/hyper-kvasir-segmented-images.zip",
+          "note": "分割子集直下",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -4582,6 +4876,13 @@ window.IMAGING_DATASETS = {
           "note": "千级 · Kaggle · 胶囊结肠",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "Kvasir-Capsule labeled zip",
+          "url": "https://datasets.simula.no/downloads/kvasir-capsule/kvasir-capsule-labeled-images.zip",
+          "note": "胶囊标注帧直下",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -5136,6 +5437,13 @@ window.IMAGING_DATASETS = {
           "note": "胸腔器官分割",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "CT-ORG",
+          "url": "https://github.com/bbrister/ctOrganSegmentation",
+          "note": "多器官 CT 分割",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5240,6 +5548,13 @@ window.IMAGING_DATASETS = {
           "note": "公开超声 bundle",
           "license": "",
           "kind": "mixed"
+        },
+        {
+          "name": "COVID-BLUES",
+          "url": "https://github.com/namiyousef/covid-19-lung-ultrasound",
+          "note": "COVID 肺超声补充",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -5316,6 +5631,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "LNDb",
+          "url": "https://lndb.grand-challenge.org/Data/",
+          "note": "肺结节数据页",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -5726,6 +6048,20 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "AortaSeg24",
+          "url": "https://aortaseg24.grand-challenge.org/",
+          "note": "主动脉及分支 CTA 23 类；需 DUA",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "AortaSeg24 GitHub",
+          "url": "https://github.com/mirthAI/AortaSeg24",
+          "note": "挑战说明与基线",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5774,6 +6110,20 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "STACOM 心脏系列",
+          "url": "https://www.cardiacatlas.org/",
+          "note": "心脏建模/分割挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "EchoNet-Pediatric",
+          "url": "https://echonet.github.io/pediatric/",
+          "note": "儿科心超；需申请",
+          "license": "",
+          "kind": "video"
         }
       ],
       "todo": "",
@@ -5919,6 +6269,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "CSAW-S",
+          "url": "https://doi.org/10.5281/zenodo.3881526",
+          "note": "乳腺钼靶分割（瑞典）",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5972,6 +6329,13 @@ window.IMAGING_DATASETS = {
           "name": "BUSIS",
           "url": "https://doi.org/10.1016/j.dib.2019.104863",
           "note": "乳腺超声分割补充",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "UDIAT Dataset B",
+          "url": "http://www2.cs.uoi.gr/~marina/datasets.html",
+          "note": "乳腺超声小集经典",
           "license": "",
           "kind": "seg→box"
         }
@@ -6287,6 +6651,27 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "ODIR-5K",
+          "url": "https://odir2019.grand-challenge.org/dataset/",
+          "note": "5000 患者双眼底多病",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "ORIGA",
+          "url": "https://www.kaggle.com/datasets/arnavjain1/glaucoma-datasets",
+          "note": "青光眼 ORIGA 等合集镜像",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "G1020",
+          "url": "https://doi.org/10.5281/zenodo.3833513",
+          "note": "青光眼眼底 1020",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -6446,6 +6831,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "OCTID",
+          "url": "https://www.openicpsr.org/openicpsr/project/108503/version/V1/view",
+          "note": "OCT 多病分类",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -6604,6 +6996,20 @@ window.IMAGING_DATASETS = {
           "name": "Dermofit",
           "url": "https://licensing.edinburgh-innovations.ed.ac.uk/product/dermofit-image-library",
           "note": "皮肤镜库；需许可",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "PAD-UFES-20 GitHub",
+          "url": "https://github.com/labcin-ufes/PAD-UFES-20",
+          "note": "说明与校验脚本",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "ISIC 2024",
+          "url": "https://challenge.isic-archive.com/landing/2024/",
+          "note": "最新 ISIC 挑战入口",
           "license": "",
           "kind": "classification"
         }
@@ -6948,6 +7354,20 @@ window.IMAGING_DATASETS = {
           "note": "弥漫胶质瘤 MRI",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "OpenMind MRI HF",
+          "url": "https://huggingface.co/datasets/MIC-DKFZ/OpenMind",
+          "note": "11.4 万头颈 3D MRI；SSL 预训练",
+          "license": "",
+          "kind": "mixed"
+        },
+        {
+          "name": "ABIDE",
+          "url": "http://fcon_1000.projects.nitrc.org/indi/abide/",
+          "note": "自闭症脑 MRI",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -7010,6 +7430,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "RSNA Intracranial Hemorrhage",
+          "url": "https://www.rsna.org/rsnai/ai-image-challenge/rsna-intracranial-hemorrhage-detection",
+          "note": "RSNA ICH 官方页",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -7070,6 +7497,13 @@ window.IMAGING_DATASETS = {
           "name": "Kaggle",
           "url": "https://www.kaggle.com/competitions/fractured-bone-detection-challenge/overview",
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "FracAtlas HF",
+          "url": "https://huggingface.co/datasets/yh0701/FracAtlas_dataset",
+          "note": "骨折 YOLO/COCO 镜像",
           "license": "",
           "kind": "detection"
         }
@@ -7161,6 +7595,27 @@ window.IMAGING_DATASETS = {
           "note": "脊柱椎体标注",
           "license": "",
           "kind": "detection"
+        },
+        {
+          "name": "腰椎 US+CT 成对集",
+          "url": "https://doi.org/10.1038/s41597-025-06047-9",
+          "note": "机器人/手持腰椎超声+CT",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "腰椎 US+CT 数据仓",
+          "url": "https://doi.org/10.48804/3XPCAE",
+          "note": "下载入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "ToothFairy2 CBCT",
+          "url": "https://toothfairy2.grand-challenge.org/",
+          "note": "颌面多结构 CBCT（骨科邻近）",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -7683,6 +8138,13 @@ window.IMAGING_DATASETS = {
           "note": "宫颈细胞学补充",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "Liquid-based cytology Zenodo",
+          "url": "https://zenodo.org/records/6676799",
+          "note": "液基细胞学补充",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "多数为分类；带框公开集需逐条核",
@@ -7743,6 +8205,13 @@ window.IMAGING_DATASETS = {
           "name": "VinDr-PCXR 儿童胸片",
           "url": "https://physionet.org/content/vindr-pcxr/",
           "note": "9125 · PhysioNet · 儿童胸片",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "HC18 Data",
+          "url": "https://hc18.grand-challenge.org/Data/",
+          "note": "胎头围数据页",
           "license": "",
           "kind": "detection"
         }
@@ -7868,6 +8337,13 @@ window.IMAGING_DATASETS = {
           "name": "Kaggle",
           "url": "https://www.kaggle.com/datasets/henriquerezermosqur/dental-x-ray-computacional-vision-segmentation/data",
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "ToothFairy2",
+          "url": "https://toothfairy2.grand-challenge.org/dataset/",
+          "note": "CBCT 多结构；需注册",
           "license": "",
           "kind": "seg→box"
         }
@@ -8030,6 +8506,20 @@ window.IMAGING_DATASETS = {
           "note": "冰冻切片核分割",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "NuClick",
+          "url": "https://github.com/navidstuv/NuClick",
+          "note": "交互式核标注/检测",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "Lizard",
+          "url": "https://warwick.ac.uk/fac/cross_fac/tia/data/lizard",
+          "note": "结肠核实例大集",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -8175,6 +8665,13 @@ window.IMAGING_DATASETS = {
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "Blood Cell Count Dataset",
+          "url": "https://www.kaggle.com/datasets/paultimothymooney/blood-cells",
+          "note": "血细胞分类常用",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -8221,6 +8718,13 @@ window.IMAGING_DATASETS = {
           "name": "Kaggle",
           "url": "https://www.kaggle.com/datasets/andrewmvd/malignant-lymphoma-classification",
           "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "ALN-Ultra Zenodo",
+          "url": "https://doi.org/10.5281/zenodo.18483501",
+          "note": "腋窝淋巴结超声",
           "license": "",
           "kind": "classification"
         }
