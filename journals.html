@@ -56,10 +56,11 @@ details.j>summary{
 }
 details.j>summary::-webkit-details-marker{display:none}
 details.j>summary:hover{background:#f6faf8}
-.sum-l b{display:block;font-size:1.05rem;margin-bottom:.2rem}
+.sum-l b{display:block;font-size:1.02rem;margin-bottom:.25rem;line-height:1.35;overflow-wrap:anywhere}
+.sum-l .name-zh{display:block;color:var(--deep);font-size:.88rem;font-weight:600;margin-bottom:.25rem}
 .sum-l span{color:var(--muted);font-size:.84rem}
 .fit{
-  font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;white-space:nowrap;
+  font-size:.72rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;white-space:normal;text-align:right;max-width:9.5rem;
 }
 .fit.high{background:#ecfdf5;color:#065f46}
 .fit.mid{background:#eff6ff;color:#1e40af}
@@ -144,10 +145,12 @@ footer{padding:1.3rem 0 2.2rem;color:var(--muted);font-size:.84rem;border-top:1p
     const track = j.track ? `<span class="chip track">${j.track}</span>` : '';
     const cycle = j.cycle ? `<span class="chip cycle">${j.cycle}</span>` : '';
     const ease = j.ease && j.ease !== '—' ? `<span class="chip ease">好投 ${j.ease}</span>` : '';
+    const zh = j.name_zh ? `<span class="name-zh">${j.name_zh}</span>` : '';
     return `<details class="j">
       <summary>
         <div class="sum-l">
           <b>${j.name}</b>
+          ${zh}
           <div class="meta-row">${zoneChip}${track}${ease}</div>
           <span>${types}${pub}</span>
         </div>

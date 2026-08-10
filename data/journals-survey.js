@@ -16,7 +16,7 @@ window.JOURNAL_SURVEY = {
         {
           "id": "frontiers_public_health",
           "name": "Frontiers in Public Health",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -39,12 +39,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "要速度时的第一保底；先确认单位认不认 Frontiers。"
+          "note": "要速度时的第一保底；先确认单位认不认 Frontiers。",
+          "name_zh": "公共卫生前沿"
         },
         {
           "id": "frontiers_medicine",
           "name": "Frontiers in Medicine",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -66,12 +67,13 @@ window.JOURNAL_SURVEY = {
             "02",
             "01"
           ],
-          "note": "题目稍杂也能装；适合尽快落稿。"
+          "note": "题目稍杂也能装；适合尽快落稿。",
+          "name_zh": "医学前沿"
         },
         {
           "id": "frontiers_oncology",
           "name": "Frontiers in Oncology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -93,7 +95,8 @@ window.JOURNAL_SURVEY = {
             "05",
             "03"
           ],
-          "note": "影像/CRC 线高频快出口。"
+          "note": "影像/CRC 线高频快出口。",
+          "name_zh": "肿瘤学前沿"
         },
         {
           "id": "diagnostics",
@@ -122,7 +125,8 @@ window.JOURNAL_SURVEY = {
             "05",
             "02"
           ],
-          "note": "Mega 气质；速度优先时常用。"
+          "note": "Mega 气质；速度优先时常用。",
+          "name_zh": "诊断（MDPI）"
         },
         {
           "id": "sensors",
@@ -147,7 +151,8 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "本仓库 MDPI 影像稿常见快出口。"
+          "note": "本仓库 MDPI 影像稿常见快出口。",
+          "name_zh": "传感器（MDPI）"
         },
         {
           "id": "sci_reports",
@@ -174,12 +179,13 @@ window.JOURNAL_SURVEY = {
             "05",
             "03"
           ],
-          "note": "比 Frontiers/MDPI 略稳一点，但仍是综合三区。"
+          "note": "比 Frontiers/MDPI 略稳一点，但仍是综合三区。",
+          "name_zh": "科学报告"
         },
         {
           "id": "plos_one",
           "name": "PLOS ONE",
-          "publisher": "PLOS",
+          "publisher": "Public Library of Science (PLOS)",
           "xr": {
             "edition": "2026-03",
             "major": "综合性期刊",
@@ -200,7 +206,8 @@ window.JOURNAL_SURVEY = {
             "02",
             "05"
           ],
-          "note": "审扎实与透明，不审「故事有多顶」。"
+          "note": "审扎实与透明，不审「故事有多顶」。",
+          "name_zh": "公共科学图书馆·综合"
         },
         {
           "id": "ieee_access",
@@ -226,12 +233,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "大类计算机；客户要医学分区时慎用。"
+          "note": "大类计算机；客户要医学分区时慎用。",
+          "name_zh": "IEEE Access（开放获取）"
         },
         {
           "id": "peerj",
           "name": "PeerJ",
-          "publisher": "PeerJ",
+          "publisher": "PeerJ, Inc.",
           "xr": {
             "edition": "2026-03",
             "major": "生物学",
@@ -253,7 +261,8 @@ window.JOURNAL_SURVEY = {
             "03",
             "02"
           ],
-          "note": "菌群/生信弱包保底。"
+          "note": "菌群/生信弱包保底。",
+          "name_zh": "PeerJ"
         }
       ]
     },
@@ -265,7 +274,7 @@ window.JOURNAL_SURVEY = {
         {
           "id": "frontiers_dh",
           "name": "Frontiers in Digital Health",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -288,12 +297,13 @@ window.JOURNAL_SURVEY = {
             "02",
             "01"
           ],
-          "note": "骨质疏松/公开预测 Frontiers 线首选。"
+          "note": "骨质疏松/公开预测 Frontiers 线首选。",
+          "name_zh": "数字健康前沿"
         },
         {
           "id": "frontiers_micro",
           "name": "Frontiers in Microbiology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "生物学",
@@ -314,12 +324,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "03"
           ],
-          "note": "结直肠公开方案的 Frontiers 主备选。"
+          "note": "结直肠公开方案的 Frontiers 主备选。",
+          "name_zh": "微生物学前沿"
         },
         {
           "id": "frontiers_bbe",
           "name": "Frontiers in Bioengineering and Biotechnology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "生物学",
@@ -341,12 +352,13 @@ window.JOURNAL_SURVEY = {
             "05",
             "04"
           ],
-          "note": "YOLO/分割类 Frontiers 线常投。"
+          "note": "YOLO/分割类 Frontiers 线常投。",
+          "name_zh": "生物工程与生物技术前沿"
         },
         {
           "id": "frontiers_nutrition",
           "name": "Frontiers in Nutrition",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "农林科学",
@@ -367,12 +379,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "大类农林科学，对外说清。"
+          "note": "大类农林科学，对外说清。",
+          "name_zh": "营养学前沿"
         },
         {
           "id": "frontiers_endo",
           "name": "Frontiers in Endocrinology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -392,12 +405,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "比专科骨科学刊更好走通公开数据包。"
+          "note": "比专科骨科学刊更好走通公开数据包。",
+          "name_zh": "内分泌学前沿"
         },
         {
           "id": "frontiers_ai",
           "name": "Frontiers in Artificial Intelligence",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "计算机科学",
@@ -419,12 +433,13 @@ window.JOURNAL_SURVEY = {
             "05",
             "01"
           ],
-          "note": "大类计算机三区。"
+          "note": "大类计算机三区。",
+          "name_zh": "人工智能前沿"
         },
         {
           "id": "frontiers_medtech",
           "name": "Frontiers in Medical Technology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -445,12 +460,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "写法 05 要速度时可用。"
+          "note": "写法 05 要速度时可用。",
+          "name_zh": "医疗技术前沿"
         },
         {
           "id": "frontiers_bioinfo",
           "name": "Frontiers in Bioinformatics",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "生物学",
@@ -472,12 +488,13 @@ window.JOURNAL_SURVEY = {
             "03",
             "04"
           ],
-          "note": "方法包完整即可冲速度。"
+          "note": "方法包完整即可冲速度。",
+          "name_zh": "生物信息学前沿"
         },
         {
           "id": "frontiers_aging",
           "name": "Frontiers in Aging",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -497,12 +514,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "骨质疏松老年叙事 + 要速度。"
+          "note": "骨质疏松老年叙事 + 要速度。",
+          "name_zh": "衰老前沿"
         },
         {
           "id": "jmir_med_inform",
           "name": "JMIR Medical Informatics",
-          "publisher": "JMIR Publications",
+          "publisher": "JMIR Publications Inc.",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -525,12 +543,13 @@ window.JOURNAL_SURVEY = {
             "02",
             "01"
           ],
-          "note": "比 Frontiers 稍难一点，但单位认可度往往更好问。"
+          "note": "比 Frontiers 稍难一点，但单位认可度往往更好问。",
+          "name_zh": "医学互联网研究·医学信息学"
         },
         {
           "id": "bmc_midm",
           "name": "BMC Medical Informatics and Decision Making",
-          "publisher": "BMC",
+          "publisher": "BioMed Central (BMC)",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -553,7 +572,8 @@ window.JOURNAL_SURVEY = {
             "02",
             "01"
           ],
-          "note": "国人友好；周期不如 Frontiers/MDPI，但认定常更稳。"
+          "note": "国人友好；周期不如 Frontiers/MDPI，但认定常更稳。",
+          "name_zh": "BMC 医学信息学与决策制定"
         }
       ]
     },
@@ -565,7 +585,7 @@ window.JOURNAL_SURVEY = {
         {
           "id": "fz3_public_health",
           "name": "Frontiers in Public Health",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -588,12 +608,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "三区里最常用的速度保底。"
+          "note": "三区里最常用的速度保底。",
+          "name_zh": "公共卫生前沿"
         },
         {
           "id": "fz3_medicine",
           "name": "Frontiers in Medicine",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -615,12 +636,13 @@ window.JOURNAL_SURVEY = {
             "02",
             "01"
           ],
-          "note": "范围宽，适合尽快落稿。"
+          "note": "范围宽，适合尽快落稿。",
+          "name_zh": "医学前沿"
         },
         {
           "id": "fz3_oncology",
           "name": "Frontiers in Oncology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -642,12 +664,13 @@ window.JOURNAL_SURVEY = {
             "05",
             "03"
           ],
-          "note": "影像/CRC 高频三区出口。"
+          "note": "影像/CRC 高频三区出口。",
+          "name_zh": "肿瘤学前沿"
         },
         {
           "id": "fz3_aging",
           "name": "Frontiers in Aging",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -667,12 +690,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "骨质疏松老年叙事。"
+          "note": "骨质疏松老年叙事。",
+          "name_zh": "衰老前沿"
         },
         {
           "id": "fz3_medtech",
           "name": "Frontiers in Medical Technology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -693,12 +717,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "写法 05 三区快选项。"
+          "note": "写法 05 三区快选项。",
+          "name_zh": "医疗技术前沿"
         },
         {
           "id": "fz3_health_services",
           "name": "Frontiers in Health Services",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -720,12 +745,13 @@ window.JOURNAL_SURVEY = {
             "02",
             "04"
           ],
-          "note": "偏服务与落地，不是纯刷榜。"
+          "note": "偏服务与落地，不是纯刷榜。",
+          "name_zh": "卫生服务前沿"
         },
         {
           "id": "fz3_physio",
           "name": "Frontiers in Physiology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -746,12 +772,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "有生理叙事时可用。"
+          "note": "有生理叙事时可用。",
+          "name_zh": "生理学前沿"
         },
         {
           "id": "fz3_cardio",
           "name": "Frontiers in Cardiovascular Medicine",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -773,12 +800,13 @@ window.JOURNAL_SURVEY = {
             "01",
             "02"
           ],
-          "note": "仅心血管题使用。"
+          "note": "仅心血管题使用。",
+          "name_zh": "心血管医学前沿"
         },
         {
           "id": "fz3_bioinfo",
           "name": "Frontiers in Bioinformatics",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "生物学",
@@ -800,12 +828,13 @@ window.JOURNAL_SURVEY = {
             "03",
             "04"
           ],
-          "note": "菌群方法三区快刊。"
+          "note": "菌群方法三区快刊。",
+          "name_zh": "生物信息学前沿"
         },
         {
           "id": "fz3_genetics",
           "name": "Frontiers in Genetics",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "生物学",
@@ -827,12 +856,13 @@ window.JOURNAL_SURVEY = {
             "03",
             "04"
           ],
-          "note": "发文量大、周转快。"
+          "note": "发文量大、周转快。",
+          "name_zh": "遗传学前沿"
         },
         {
           "id": "fz3_sysbio",
           "name": "Frontiers in Systems Biology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "生物学",
@@ -854,12 +884,13 @@ window.JOURNAL_SURVEY = {
             "03",
             "04"
           ],
-          "note": "方法向三区备选。"
+          "note": "方法向三区备选。",
+          "name_zh": "系统生物学前沿"
         },
         {
           "id": "fz3_ai",
           "name": "Frontiers in Artificial Intelligence",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "计算机科学",
@@ -881,12 +912,13 @@ window.JOURNAL_SURVEY = {
             "05",
             "01"
           ],
-          "note": "大类计算机科学三区。"
+          "note": "大类计算机科学三区。",
+          "name_zh": "人工智能前沿"
         },
         {
           "id": "fz3_bigdata",
           "name": "Frontiers in Big Data",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "计算机科学",
@@ -907,12 +939,13 @@ window.JOURNAL_SURVEY = {
             "01",
             "02"
           ],
-          "note": "大类计算机，不是医学。"
+          "note": "大类计算机，不是医学。",
+          "name_zh": "大数据前沿"
         },
         {
           "id": "fz3_cs",
           "name": "Frontiers in Computer Science",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "计算机科学",
@@ -933,12 +966,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "CS 向出口。"
+          "note": "CS 向出口。",
+          "name_zh": "计算机科学前沿"
         },
         {
           "id": "fz3_signal",
           "name": "Frontiers in Signal Processing",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "工程技术",
@@ -959,12 +993,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "大类工程技术三区（以 XR 表为准，投前复核）。"
+          "note": "大类工程技术三区（以 XR 表为准，投前复核）。",
+          "name_zh": "信号处理前沿"
         },
         {
           "id": "fz3_neuroinfo",
           "name": "Frontiers in Neuroinformatics",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -985,12 +1020,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "仅神经影像题。"
+          "note": "仅神经影像题。",
+          "name_zh": "神经信息学前沿"
         },
         {
           "id": "fz4_radiology",
           "name": "Frontiers in Radiology",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -1010,12 +1046,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "影像要速度且接受四区时可用。"
+          "note": "影像要速度且接受四区时可用。",
+          "name_zh": "放射学前沿"
         },
         {
           "id": "fz4_nucmed",
           "name": "Frontiers in Nuclear Medicine",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -1035,12 +1072,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "窄域四区备胎。"
+          "note": "窄域四区备胎。",
+          "name_zh": "核医学前沿"
         },
         {
           "id": "fz4_comp_neuro",
           "name": "Frontiers in Computational Neuroscience",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -1058,12 +1096,13 @@ window.JOURNAL_SURVEY = {
             "通用医学检测文硬投"
           ],
           "our_types": [],
-          "note": "与主路径弱对齐，仅备选。"
+          "note": "与主路径弱对齐，仅备选。",
+          "name_zh": "计算神经科学前沿"
         },
         {
           "id": "fz4_diabetes",
           "name": "Frontiers in Clinical Diabetes and Healthcare",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -1083,12 +1122,13 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "代谢/慢病公开数据四区出口。"
+          "note": "代谢/慢病公开数据四区出口。",
+          "name_zh": "临床糖尿病与健康护理前沿"
         },
         {
           "id": "fz4_emergency",
           "name": "Frontiers in Emergency Medicine",
-          "publisher": "Frontiers",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "医学",
@@ -1109,12 +1149,13 @@ window.JOURNAL_SURVEY = {
             "01",
             "02"
           ],
-          "note": "ICU/急诊题且接受四区时考虑。"
+          "note": "ICU/急诊题且接受四区时考虑。",
+          "name_zh": "急诊医学前沿"
         },
         {
           "id": "fz4_policy",
-          "name": "Frontiers 三四区使用原则",
-          "publisher": "Frontiers",
+          "name": "Frontiers Media 三区与四区使用原则",
+          "publisher": "Frontiers Media SA",
           "xr": {
             "edition": "2026-03",
             "major": "视学科",
@@ -1134,7 +1175,8 @@ window.JOURNAL_SURVEY = {
             "神经窄刊堆砌（已不列）"
           ],
           "our_types": [],
-          "note": "二区 Frontiers（Digital Health / Microbiology 等）见「稍好一点还能较快」。本页补全三·四区快出口。"
+          "note": "二区 Frontiers（Digital Health / Microbiology 等）见「稍好一点还能较快」。本页补全三·四区快出口。",
+          "name_zh": "Frontiers 系列选刊说明（非期刊本体）"
         }
       ]
     },
@@ -1145,7 +1187,7 @@ window.JOURNAL_SURVEY = {
       "journals": [
         {
           "id": "pick_osteo",
-          "name": "骨质疏松 / NHANES",
+          "name": "路径组合：骨质疏松 / NHANES",
           "publisher": "—",
           "xr": {
             "edition": "2026-03",
@@ -1158,8 +1200,8 @@ window.JOURNAL_SURVEY = {
           "cycle": "要速度：公卫/营养线",
           "fit_label": "主投→保底",
           "accepts": [
-            "主投：Frontiers in Digital Health 或 Nutrition / Endocrinology",
-            "保底：Frontiers in Public Health 或 Aging"
+            "主投：Frontiers in Digital Health，或 Frontiers in Nutrition / Frontiers in Endocrinology",
+            "保底：Frontiers in Public Health，或 Frontiers in Aging"
           ],
           "avoid": [
             "一上来承诺 npj DigMed / Bone 顶刊周期"
@@ -1167,11 +1209,12 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "02"
           ],
-          "note": "单位若排斥 Frontiers，改 JMIR Med Inform / BMC MIDM。"
+          "note": "单位若排斥 Frontiers，改 JMIR Med Inform / BMC MIDM。",
+          "name_zh": "选刊组合（非单一期刊）"
         },
         {
           "id": "pick_crc",
-          "name": "结直肠菌群",
+          "name": "路径组合：结直肠菌群跨队列",
           "publisher": "—",
           "xr": {
             "edition": "2026-03",
@@ -1185,7 +1228,7 @@ window.JOURNAL_SURVEY = {
           "fit_label": "主投→保底",
           "accepts": [
             "主投：Frontiers in Microbiology",
-            "保底：Frontiers in Bioinformatics 或 PeerJ"
+            "保底：Frontiers in Bioinformatics，或 PeerJ"
           ],
           "avoid": [
             "把 Gut / Microbiome 一区说成「好投快」"
@@ -1193,11 +1236,12 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "03"
           ],
-          "note": "真要冲 Microbiome/npj Biofilms，别放进「好投快」叙事。"
+          "note": "真要冲 Microbiome/npj Biofilms，别放进「好投快」叙事。",
+          "name_zh": "选刊组合（非单一期刊）"
         },
         {
           "id": "pick_img",
-          "name": "公开影像 / YOLO",
+          "name": "路径组合：公开影像检测 / 分割",
           "publisher": "—",
           "xr": {
             "edition": "2026-03",
@@ -1210,8 +1254,8 @@ window.JOURNAL_SURVEY = {
           "cycle": "要速度：Frontiers/MDPI",
           "fit_label": "主投→保底",
           "accepts": [
-            "主投：Frontiers in Bioengineering 或 Oncology（肿瘤题）",
-            "保底：Diagnostics / Sensors / Medical Technology"
+            "主投：Frontiers in Bioengineering and Biotechnology，或 Frontiers in Oncology（肿瘤题）",
+            "保底：Diagnostics，Sensors，或 Frontiers in Medical Technology"
           ],
           "avoid": [
             "MedIA / IEEE TMI 当快刊推销"
@@ -1219,11 +1263,12 @@ window.JOURNAL_SURVEY = {
           "our_types": [
             "05"
           ],
-          "note": "客户要医学分区：优先 Oncology / Diagnostics / MedTech，慎用 IEEE Access。"
+          "note": "客户要医学分区：优先 Oncology / Diagnostics / MedTech，慎用 IEEE Access。",
+          "name_zh": "选刊组合（非单一期刊）"
         },
         {
           "id": "pick_digmed",
-          "name": "数字医学多库预测",
+          "name": "路径组合：数字医学多库预测",
           "publisher": "—",
           "xr": {
             "edition": "2026-03",
@@ -1236,8 +1281,8 @@ window.JOURNAL_SURVEY = {
           "cycle": "要速度：Frontiers；要认定：JMIR/BMC",
           "fit_label": "主投→保底",
           "accepts": [
-            "主投：Frontiers in Digital Health 或 Medicine",
-            "保底：Public Health；认定优先则 JMIR Med Inform"
+            "主投：Frontiers in Digital Health，或 Frontiers in Medicine",
+            "保底：Frontiers in Public Health；认定优先则 JMIR Medical Informatics"
           ],
           "avoid": [
             "把 npj DigMed 说成周期短好中"
@@ -1247,7 +1292,8 @@ window.JOURNAL_SURVEY = {
             "02",
             "04"
           ],
-          "note": "一区数字医学可以冲，但不属于本页「好投快」清单。"
+          "note": "一区数字医学可以冲，但不属于本页「好投快」清单。",
+          "name_zh": "选刊组合（非单一期刊）"
         }
       ]
     }
