@@ -3,82 +3,135 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>医学影像数据集目录 · 解知常</title>
+<title>医学影像数据集库 · 解知常</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --ink:#101820;--muted:#5a6770;--paper:#e8f0ec;--card:#fff;--line:rgba(16,24,32,.1);
-  --teal:#0c7a5f;--deep:#074d3d;--max:1040px;
-  --glow:radial-gradient(ellipse 80% 50% at 10% -10%,rgba(12,122,95,.14),transparent 55%),
-         radial-gradient(ellipse 60% 40% at 90% 0%,rgba(7,77,61,.08),transparent 50%);
+  --ink:#0f1c18;--muted:#5d6f68;--paper:#dfece6;--card:#f7fbf8;--line:rgba(15,28,24,.1);
+  --teal:#0a6b52;--deep:#043529;--accent:#c4f0a8;--max:1100px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);background-image:var(--glow);background-attachment:fixed;font-size:15px;line-height:1.55}
-h1,h2,.brand{font-family:Fraunces,serif;letter-spacing:-.02em}
+html{scroll-behavior:smooth}
+body{
+  font-family:Manrope,sans-serif;color:var(--ink);font-size:15px;line-height:1.55;
+  background:
+    radial-gradient(900px 420px at 8% -8%,rgba(196,240,168,.45),transparent 55%),
+    radial-gradient(700px 380px at 92% 0%,rgba(10,107,82,.12),transparent 50%),
+    linear-gradient(180deg,#e8f3ed 0%,var(--paper) 28%,#d7e8df 100%);
+  min-height:100vh;
+}
+.brand-font,.dept-title,.sub-title,.hero-title{font-family:"Instrument Serif",Georgia,serif;letter-spacing:-.02em;font-weight:400}
 a{color:var(--deep);text-underline-offset:3px}
 .wrap{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
-.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(232,240,236,.92);border-bottom:1px solid var(--line)}
-.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.84rem}
-.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
-.nav-links{display:flex;flex-wrap:wrap;gap:.45rem .75rem}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:rgba(223,236,230,.88);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.55rem 1rem;justify-content:space-between;align-items:center;padding:.75rem 0;font-size:.84rem}
+.nav-brand{font-family:"Instrument Serif",serif;font-size:1.25rem;color:var(--deep);text-decoration:none}
+.nav-links{display:flex;flex-wrap:wrap;gap:.45rem .8rem}
 .nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
 .nav-links a.on,.nav-links a:hover{color:var(--teal)}
-.hero{padding:1.85rem 0 1.1rem}
-.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.4rem}
-.brand{font-size:clamp(1.65rem,3.8vw,2.35rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
-.lead{color:var(--muted);max-width:52ch;font-size:.92rem}
-.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 .85rem}
-.chip{font-size:.78rem;font-weight:700;padding:.28rem .7rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.85);color:var(--muted);backdrop-filter:blur(6px)}
-.chip b{color:var(--deep);font-family:Fraunces,serif;font-size:1.05em}
-.jump{display:flex;flex-wrap:wrap;gap:.35rem;margin:0 0 1rem}
-.jump a{font-size:.74rem;font-weight:700;text-decoration:none;padding:.3rem .6rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted);transition:color .15s,border-color .15s}
-.jump a:hover{color:var(--teal);border-color:#a7f3d0}
-.tools{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem;align-items:center}
-.tools input{flex:1;min-width:200px;border:1px solid var(--line);border-radius:12px;padding:.58rem .85rem;font:inherit;background:#fff;box-shadow:0 1px 0 rgba(255,255,255,.8)}
-.btn{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:.42rem .78rem;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
-.btn:hover{color:var(--teal);border-color:#a7f3d0}
-.dept{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:.85rem;overflow:hidden;box-shadow:0 8px 28px rgba(7,77,61,.04)}
-.dept>summary{cursor:pointer;list-style:none;padding:1.05rem 1.15rem;display:flex;flex-wrap:wrap;gap:.55rem;justify-content:space-between;align-items:flex-start;background:linear-gradient(165deg,#f4faf7 0%,#fff 55%)}
-.dept>summary::-webkit-details-marker{display:none}
-.dept>summary::before{content:"科室";font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-right:.4rem;padding-top:.25rem}
-.dept-title{font-family:Fraunces,serif;font-size:1.18rem;font-weight:750;color:var(--deep)}
-.dept-blurb{color:var(--muted);font-size:.84rem;margin-top:.25rem;max-width:58ch}
-.dept-body{padding:.15rem 1rem 1.05rem;border-top:1px solid var(--line)}
-.sub{border:1px solid var(--line);border-radius:14px;margin:.65rem 0;background:#fbfcfc;overflow:hidden}
-.sub>summary{cursor:pointer;list-style:none;padding:.75rem .95rem;display:flex;flex-wrap:wrap;gap:.4rem .65rem;justify-content:space-between;align-items:center}
-.sub>summary::-webkit-details-marker{display:none}
-.sub>summary::before{content:"+";color:var(--teal);font-weight:700;margin-right:.3rem;font-size:1.05rem}
-.sub[open]>summary::before{content:"–"}
-.sub-title{font-family:Fraunces,serif;font-weight:750;font-size:1.02rem;color:var(--deep)}
-.sub-eyebrow{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.12rem}
-.meta{display:flex;flex-wrap:wrap;gap:.28rem}
-.tag{font-size:.65rem;font-weight:700;padding:.12rem .45rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
-.tag.empty{background:#fff7ed;color:#c2410c;border-color:#fdba74}
-.tag.partial{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
-.tag.ready{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
-.sub-body{padding:.2rem .95rem .95rem;border-top:1px dashed var(--line)}
-.local{font-size:.78rem;color:var(--muted);margin:.15rem 0 .45rem}
-.local code{font-size:.76rem;background:#eef6f3;padding:.05rem .3rem;border-radius:4px}
-.ds-list{display:grid;gap:.45rem;margin-top:.35rem}
-.ds{display:grid;grid-template-columns:minmax(0,1.15fr) auto minmax(0,1.35fr);gap:.35rem .75rem;align-items:start;padding:.55rem .65rem;border-radius:12px;background:#fff;border:1px solid var(--line)}
-.ds:hover{border-color:#a7f3d0;box-shadow:0 4px 14px rgba(12,122,95,.06)}
-.ds-name{font-weight:700;font-size:.88rem;color:var(--ink);line-height:1.35}
-.ds-name a{text-decoration:none;color:inherit}
-.ds-name a:hover{color:var(--teal);text-decoration:underline}
-.ds-kind{font-size:.64rem;font-weight:700;padding:.12rem .4rem;border-radius:6px;background:#eef6f3;color:#065f46;white-space:nowrap;align-self:center}
-.ds-note{font-size:.78rem;color:var(--muted);grid-column:1/-1;line-height:1.45}
-.ds-link{font-size:.76rem;font-weight:600;word-break:break-all;align-self:center}
-.ds-link a{text-decoration:none}
-.ds-link a:hover{text-decoration:underline}
-.empty{color:var(--muted);font-style:italic;font-size:.85rem;padding:.4rem 0}
-.foot{padding:1.4rem 0 2.2rem;color:var(--muted);font-size:.78rem;border-top:1px solid var(--line);margin-top:1.2rem}
-.hidden{display:none!important}
-@media(max-width:720px){
-  .ds{grid-template-columns:1fr auto;gap:.3rem .5rem}
-  .ds-link{grid-column:1/-1}
+
+.hero{padding:2.4rem 0 1.2rem;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:1.4rem;align-items:end}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.kicker{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--teal);margin-bottom:.45rem}
+.hero-title{font-size:clamp(2.2rem,5.2vw,3.4rem);line-height:1.05;color:var(--deep);margin-bottom:.55rem}
+.hero-title em{font-style:italic;color:var(--teal)}
+.lead{color:var(--muted);max-width:42ch;font-size:.95rem;font-weight:500}
+.hero-panel{
+  background:linear-gradient(145deg,#043529,#0a6b52 55%,#1a8f6e);
+  color:#e8f8ef;border-radius:22px;padding:1.15rem 1.2rem;box-shadow:0 18px 40px rgba(4,53,41,.22);
 }
+.hero-panel .big{font-family:"Instrument Serif",serif;font-size:2.4rem;line-height:1;margin:.1rem 0 .15rem}
+.hero-panel .lbl{font-size:.72rem;opacity:.78;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.85rem}
+.hero-stats div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:.55rem .5rem;text-align:center}
+.hero-stats b{display:block;font-family:"Instrument Serif",serif;font-size:1.45rem;font-weight:400}
+
+.jump{display:flex;flex-wrap:wrap;gap:.35rem;margin:1.1rem 0 .9rem}
+.jump a{
+  font-size:.73rem;font-weight:700;text-decoration:none;padding:.34rem .65rem;border-radius:999px;
+  border:1px solid var(--line);background:rgba(247,251,248,.9);color:var(--muted);
+  transition:transform .15s,border-color .15s,color .15s;
+}
+.jump a:hover{color:var(--teal);border-color:#9fd9bf;transform:translateY(-1px)}
+
+.tools{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.25rem;align-items:center}
+.tools input{
+  flex:1;min-width:220px;border:1px solid var(--line);border-radius:14px;padding:.68rem .95rem;font:inherit;
+  background:rgba(255,255,255,.92);outline:none;box-shadow:0 10px 28px rgba(4,53,41,.05);
+}
+.tools input:focus{border-color:#7bc9a5;box-shadow:0 0 0 3px rgba(10,107,82,.12)}
+.btn{
+  border:1px solid var(--line);background:rgba(255,255,255,.92);color:var(--muted);border-radius:999px;
+  padding:.5rem .85rem;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer;
+}
+.btn:hover{color:var(--teal);border-color:#9fd9bf}
+
+.dept{
+  background:var(--card);border:1px solid var(--line);border-radius:22px;margin-bottom:1rem;overflow:hidden;
+  box-shadow:0 12px 36px rgba(4,53,41,.05);
+}
+.dept>summary{
+  cursor:pointer;list-style:none;padding:1.15rem 1.25rem;display:flex;flex-wrap:wrap;gap:.6rem;
+  justify-content:space-between;align-items:flex-start;
+  background:
+    linear-gradient(120deg,rgba(196,240,168,.22),transparent 42%),
+    linear-gradient(180deg,#f3faf6,#f7fbf8);
+}
+.dept>summary::-webkit-details-marker{display:none}
+.dept-badge{
+  display:inline-flex;align-items:center;gap:.35rem;font-size:.62rem;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:.28rem;
+}
+.dept-badge::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(10,107,82,.15)}
+.dept-title{font-size:clamp(1.35rem,2.4vw,1.7rem);color:var(--deep);line-height:1.15}
+.dept-blurb{color:var(--muted);font-size:.86rem;margin-top:.3rem;max-width:58ch;font-weight:500}
+.dept-body{padding:.25rem 1.1rem 1.15rem;border-top:1px solid var(--line);background:linear-gradient(180deg,#fbfefc,#f4f9f6)}
+.meta{display:flex;flex-wrap:wrap;gap:.3rem}
+.tag{font-size:.65rem;font-weight:700;padding:.14rem .48rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.tag.ready{background:#e8f8ef;color:#065f46;border-color:#b7ebc9}
+.tag.partial{background:#eef4ff;color:#1d4ed8;border-color:#c7d7fe}
+.tag.empty{background:#fff7ed;color:#c2410c;border-color:#fdba74}
+
+.sub{border:1px solid var(--line);border-radius:16px;margin:.7rem 0;background:rgba(255,255,255,.78);overflow:hidden}
+.sub>summary{
+  cursor:pointer;list-style:none;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.45rem .7rem;
+  justify-content:space-between;align-items:center;
+}
+.sub>summary::-webkit-details-marker{display:none}
+.sub>summary::before{content:"+";color:var(--teal);font-weight:800;margin-right:.35rem;font-size:1.05rem}
+.sub[open]>summary::before{content:"–"}
+.sub-eyebrow{font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.1rem}
+.sub-title{font-size:1.18rem;color:var(--deep)}
+.sub-body{padding:.15rem 1rem 1rem;border-top:1px dashed rgba(15,28,24,.12)}
+.local{font-size:.78rem;color:var(--muted);margin:.1rem 0 .55rem}
+.local code{font-size:.74rem;background:#e7f4ec;padding:.08rem .35rem;border-radius:5px}
+
+.ds-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+@media(max-width:760px){.ds-list{grid-template-columns:1fr}}
+.ds{
+  display:flex;flex-direction:column;gap:.35rem;padding:.8rem .85rem;border-radius:14px;
+  background:#fff;border:1px solid var(--line);min-height:96px;
+  transition:transform .15s,border-color .15s,box-shadow .15s;
+}
+.ds:hover{transform:translateY(-2px);border-color:#9fd9bf;box-shadow:0 12px 28px rgba(10,107,82,.08)}
+.ds-top{display:flex;gap:.45rem;justify-content:space-between;align-items:flex-start}
+.ds-name{font-weight:750;font-size:.9rem;line-height:1.35;color:var(--ink);flex:1}
+.ds-name a{text-decoration:none;color:inherit}
+.ds-name a:hover{color:var(--teal)}
+.ds-kind{
+  flex:0 0 auto;font-size:.62rem;font-weight:800;padding:.16rem .42rem;border-radius:7px;
+  background:linear-gradient(180deg,#eef9e4,var(--accent));color:#1d4d2e;white-space:nowrap
+}
+.ds-note{font-size:.76rem;color:var(--muted);line-height:1.45}
+.ds-link{margin-top:auto;font-size:.74rem;font-weight:650}
+.ds-link a{text-decoration:none;color:var(--teal)}
+.ds-link a:hover{text-decoration:underline}
+.empty{color:var(--muted);font-style:italic;font-size:.85rem;padding:.45rem 0}
+.foot{padding:1.6rem 0 2.4rem;color:var(--muted);font-size:.78rem;border-top:1px solid var(--line);margin-top:1.3rem}
+.hidden{display:none!important}
 </style>
 </head>
 <body>
@@ -94,20 +147,33 @@ a{color:var(--deep);text-underline-offset:3px}
 </div></nav>
 
 <header class="hero wrap">
-  <div class="kicker">Public medical imaging datasets</div>
-  <div class="brand">医学影像数据集库</div>
-  <p class="lead">按医院科室浏览公开数据集：二级为病症 / 模态，条目含名称、类型与下载链接。</p>
-  <div class="chips" id="stats"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="kicker">Public medical imaging library</div>
+      <h1 class="hero-title">医学影像<br><em>数据集库</em></h1>
+      <p class="lead">按医院科室浏览公开数据：二级目录对应病症 / 模态，卡片直达下载与挑战页。</p>
+    </div>
+    <aside class="hero-panel" id="heroPanel">
+      <div class="lbl">库规模</div>
+      <div class="big" id="heroBig">—</div>
+      <div class="lbl" style="opacity:.9">公开数据集条目</div>
+      <div class="hero-stats">
+        <div><b id="stDept">—</b><span class="lbl">科室</span></div>
+        <div><b id="stSub">—</b><span class="lbl">二级</span></div>
+        <div><b id="stUp">—</b><span class="lbl">更新</span></div>
+      </div>
+    </aside>
+  </div>
   <div class="jump" id="jump"></div>
   <div class="tools">
-    <input id="q" type="search" placeholder="搜索科室、二级目录或数据集…" autocomplete="off" />
+    <input id="q" type="search" placeholder="搜索科室、病症、数据集或链接…" autocomplete="off" />
     <button class="btn" type="button" id="btnExpand">全部展开</button>
-    <button class="btn" type="button" id="btnCollapse">全部收起</button>
+    <button class="btn" type="button" id="btnCollapse">收起科室</button>
   </div>
 </header>
 
 <main class="wrap" id="list"></main>
-<footer class="foot"><div class="wrap">科室 → 二级目录 → 数据集 · 数据源 <code>data/imaging-datasets.js</code></div></footer>
+<footer class="foot"><div class="wrap">科室 → 二级目录 → 数据集 · 源文件 <code>data/imaging-datasets.js</code></div></footer>
 
 <script src="data/imaging-datasets.js"></script>
 <script>
@@ -116,51 +182,49 @@ a{color:var(--deep);text-underline-offset:3px}
   const state=window.IMAGING_DATASETS||{meta:{},departments:[]};
   const deps=Array.isArray(state.departments)?state.departments:[];
   const list=document.getElementById('list');
+  const esc=t=>String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const escA=t=>esc(t).replace(/"/g,'&quot;');
+  const cleanTitle=s=>(s||'').replace(/^二级[：:]\s*/,'');
 
-  function esc(t){return String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-  function escA(t){return esc(t).replace(/"/g,'&quot;')}
-
-  const subs=deps.reduce((n,d)=>n+(d.children||[]).length,0);
-  const dss=deps.reduce((n,d)=>n+(d.children||[]).reduce((m,c)=>m+(c.datasets||[]).length,0),0);
-  document.getElementById('stats').innerHTML=`
-    <span class="chip">科室 <b>${deps.length}</b></span>
-    <span class="chip">二级目录 <b>${subs}</b></span>
-    <span class="chip">数据集 <b>${dss}</b></span>
-    ${state.meta&&state.meta.updated?`<span class="chip">更新 <b>${esc(state.meta.updated)}</b></span>`:''}`;
+  const nSub=deps.reduce((n,d)=>n+(d.children||[]).length,0);
+  const nDs=deps.reduce((n,d)=>n+(d.children||[]).reduce((m,c)=>m+(c.datasets||[]).length,0),0);
+  document.getElementById('heroBig').textContent=nDs;
+  document.getElementById('stDept').textContent=deps.length;
+  document.getElementById('stSub').textContent=nSub;
+  document.getElementById('stUp').textContent=(state.meta&&state.meta.updated)?String(state.meta.updated).slice(5):'—';
   document.getElementById('jump').innerHTML=deps.map(d=>`<a href="#dept-${escA(d.id)}">${esc(d.name_zh)}</a>`).join('');
 
   list.innerHTML=deps.map(d=>{
     const kids=d.children||[];
-    const nDs=kids.reduce((n,c)=>n+(c.datasets||[]).length,0);
+    const n=kids.reduce((x,c)=>x+(c.datasets||[]).length,0);
     return `
     <details class="dept" id="dept-${escA(d.id)}" open
-      data-blob="${escA([d.name_zh,d.blurb,kids.map(c=>[c.name_zh,c.modality,c.task,(c.datasets||[]).map(x=>[x.name,x.note,x.kind].join(' ')].join(' ')].join(' ')].join(' '))].join(' '))}">
+      data-blob="${escA([d.name_zh,d.blurb,kids.map(c=>[c.name_zh,c.modality,c.task,(c.datasets||[]).map(x=>[x.name,x.note,x.kind,x.url].join(' ')].join(' ')].join(' ')].join(' '))].join(' '))}">
       <summary>
         <div>
+          <div class="dept-badge">科室目录</div>
           <div class="dept-title">${esc(d.name_zh)}</div>
           ${d.blurb?`<div class="dept-blurb">${esc(d.blurb)}</div>`:''}
         </div>
         <span class="meta">
-          <span class="tag">${kids.length} 个二级</span>
-          <span class="tag">${nDs} 数据集</span>
+          <span class="tag">${kids.length} 二级</span>
+          <span class="tag ready">${n} 数据集</span>
         </span>
       </summary>
       <div class="dept-body">
         ${kids.map(c=>{
           const ds=c.datasets||[];
           return `
-          <details class="sub" open
-            data-blob="${escA([c.name_zh,c.modality,c.task,ds.map(x=>[x.name,x.url,x.note,x.kind].join(' ')].join(' ')].join(' '))}">
+          <details class="sub" open data-blob="${escA([c.name_zh,c.modality,c.task,ds.map(x=>[x.name,x.url,x.note,x.kind].join(' ')].join(' ')].join(' '))}">
             <summary>
               <div>
-                <span class="sub-eyebrow">二级目录</span>
-                <span class="sub-title">${esc((c.name_zh||'').replace(/^二级[：:]\s*/,''))}</span>
+                <span class="sub-eyebrow">二级 · ${esc(c.modality||'影像')}</span>
+                <span class="sub-title">${esc(cleanTitle(c.name_zh))}</span>
               </div>
               <span class="meta">
                 <span class="tag ${c.status||'empty'}">${stLabel[c.status]||'待补充'}</span>
-                ${c.modality?`<span class="tag">${esc(c.modality)}</span>`:''}
                 ${c.task?`<span class="tag">${esc(c.task)}</span>`:''}
-                <span class="tag">${ds.length} 条</span>
+                <span class="tag">${ds.length}</span>
               </span>
             </summary>
             <div class="sub-body">
@@ -168,13 +232,15 @@ a{color:var(--deep);text-underline-offset:3px}
               <div class="ds-list">
                 ${ds.length?ds.map(x=>{
                   const url=(x.url||'').trim();
-                  const name=esc(x.name||'未命名');
+                  const host=(()=>{try{return new URL(url).hostname.replace(/^www\./,'')}catch(_){return ''}})();
                   return `
                   <article class="ds">
-                    <div class="ds-name">${url?`<a href="${escA(url)}" target="_blank" rel="noopener">${name}</a>`:name}</div>
-                    <span class="ds-kind">${esc(x.kind||'dataset')}</span>
-                    <div class="ds-link">${url?`<a href="${escA(url)}" target="_blank" rel="noopener">${esc(url.length>64?url.slice(0,62)+'…':url)}</a>`:'—'}</div>
-                    ${x.note||x.license?`<div class="ds-note">${esc([x.note,x.license].filter(Boolean).join(' · '))}</div>`:''}
+                    <div class="ds-top">
+                      <div class="ds-name">${url?`<a href="${escA(url)}" target="_blank" rel="noopener">${esc(x.name||'未命名')}</a>`:esc(x.name||'未命名')}</div>
+                      <span class="ds-kind">${esc(x.kind||'dataset')}</span>
+                    </div>
+                    ${x.note?`<div class="ds-note">${esc(x.note)}</div>`:''}
+                    <div class="ds-link">${url?`<a href="${escA(url)}" target="_blank" rel="noopener">${esc(host||'打开链接')} ↗</a>`:'暂无链接'}</div>
                   </article>`;
                 }).join(''):'<p class="empty">暂无数据集</p>'}
               </div>
@@ -195,12 +261,11 @@ a{color:var(--deep);text-underline-offset:3px}
         sub.classList.toggle('hidden',!ok);
         if(ok) any=true;
       });
-      const deptHit=!s||(dep.dataset.blob||'').toLowerCase().includes(s);
-      dep.classList.toggle('hidden',s?!any&&!deptHit:false);
+      const hit=!s||(dep.dataset.blob||'').toLowerCase().includes(s);
+      dep.classList.toggle('hidden',s?!any&&!hit:false);
       if(s&&any) dep.open=true;
     });
   }
-
   document.getElementById('q').addEventListener('input',applyQ);
   document.getElementById('btnExpand').onclick=()=>list.querySelectorAll('details').forEach(d=>d.open=true);
   document.getElementById('btnCollapse').onclick=()=>list.querySelectorAll('details.dept').forEach(d=>d.open=false);

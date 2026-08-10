@@ -1,10 +1,10 @@
-/** 医学影像公开数据集目录 — 科室 → 二级标题 → 数据集（含农业YOLO医学目录导入）。 */
+/** 医学影像公开数据集目录 — 科室 → 二级标题 → 数据集。 */
 window.IMAGING_DATASETS = {
   "meta": {
     "title": "医学影像数据集目录",
     "subtitle": "科室 → 二级标题（病症/模态）→ 各类型公开数据集与链接",
     "updated": "2026-08-10",
-    "note": "条目经联网核实到具体下载页/DOI；检索页与空链接已替换",
+    "note": "含联网补充公开检测/分割/分类数据集",
     "structure": "department → secondary title → datasets",
     "scope": "优先目标检测；含可转外接框的分割集与少数分类入口",
     "source": "jiezhichang + D:/hyf/.../农业yolo数据集/docs/_gen_med_catalog_links.py + 中文部位目录"
@@ -148,6 +148,90 @@ window.IMAGING_DATASETS = {
               "note": "视频帧 · Simula相关 · 准备质量",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "Kvasir-Instrument OSF",
+              "url": "https://osf.io/kp6my",
+              "note": "镜像下载",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kvasir-Sessile",
+              "url": "https://datasets.simula.no/downloads/kvasir-sessile.zip",
+              "note": "扁平息肉子集",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "CVC-EndoSceneStill",
+              "url": "http://pages.cvc.uab.es/CVC-Colon/index.php/databases/cvc-endoscenestill/",
+              "note": "912 帧；场景分割",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "ASU-Mayo Clinic Colonoscopy",
+              "url": "https://polyp.grand-challenge.org/AsuMayo/",
+              "note": "经典视频集；常需申请",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/CAMMA-public/TF-Cholec80",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/DebeshJha/2020-MediaEval-Medico-polyp-segmentation/tree/master",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/SURA23/Sinus-Surgery-Endoscopic-Image-Datasets?tab=readme-ov-file",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/CapsuleEndoscope/EndoSLAM",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/newslab/cholecseg8k",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/CAMMA-public/cholect45",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/tampapath/lung_colon_image_set",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/ai4colonoscopy/IntelliScope",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -466,6 +550,20 @@ window.IMAGING_DATASETS = {
               "note": "挑战 · Grand Challenge · 肝MRI病变",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://chaos.grand-challenge.org/Combined_Healthy_Abdominal_Organ_Segmentation/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "TCIA",
+              "url": "https://www.cancerimagingarchive.net/collection/colorectal-liver-metastases/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -779,6 +877,55 @@ window.IMAGING_DATASETS = {
               "note": "多 · MONAI · 预训练+数据指引",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "TotalSegmentator dataset",
+              "url": "https://zenodo.org/records/10047292",
+              "note": "Zenodo 发布",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "FLARE23",
+              "url": "https://flare23.grand-challenge.org/",
+              "note": "腹器官+泛癌分割",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "FLARE24",
+              "url": "https://flare24.grand-challenge.org/",
+              "note": "年更腹部分割挑战",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "AbdomenAtlas",
+              "url": "https://github.com/MrGiovanni/AbdomenAtlas",
+              "note": "大规模腹 CT 多结构",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "WORD",
+              "url": "https://github.com/HiLab-git/WORD",
+              "note": "腹部分割域泛化",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://uls23.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://flare22.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -874,6 +1021,20 @@ window.IMAGING_DATASETS = {
               "note": "申请 · 官网检索 · 奥地利ICU",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "UUSIC25 超声挑战",
+              "url": "https://uusic2025.github.io/",
+              "note": "多器官超声分类/分割汇总",
+              "license": "",
+              "kind": "mixed"
+            },
+            {
+              "name": "UUSIC25 Zenodo",
+              "url": "https://zenodo.org/records/15094669",
+              "note": "公开超声 bundle",
+              "license": "",
+              "kind": "mixed"
             }
           ],
           "todo": ""
@@ -927,6 +1088,27 @@ window.IMAGING_DATASETS = {
               "note": "247 · JSRT · 经典结节胸片",
               "license": "",
               "kind": "detection"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://luna16.grand-challenge.org/Home/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "TCIA",
+              "url": "https://www.cancerimagingarchive.net/analysis-result/qin-lungct-seg/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "TCIA",
+              "url": "https://www.cancerimagingarchive.net/analysis-result/rider-lungct-seg/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1085,6 +1267,34 @@ window.IMAGING_DATASETS = {
               "note": "千例 · 图库 · 俄COVID",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/raddar/tuberculosis-chest-xrays-shenzhen",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks/data",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/praveengovi/coronahack-chest-xraydataset/data",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/Holipori/Medical-CXR-VQA",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1143,6 +1353,13 @@ window.IMAGING_DATASETS = {
               "name": "Thyroid Ultrasound CINE / DDTI",
               "url": "https://www.kaggle.com/datasets/sabermalek/ddti-thyroid-ultrasound-images",
               "note": "百~千 · 论文/Kaggle · 甲状腺结节",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Project Homepage",
+              "url": "https://figshare.com/articles/dataset/BM-BronchoLC/24243670",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
             }
@@ -1289,6 +1506,13 @@ window.IMAGING_DATASETS = {
               "note": "6877 · 挑战镜像 · 中国心电挑战",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/XiaoweiXu/ImageCAS-A-Large-Scale-Dataset-and-Benchmark-for-Coronary-Artery-Segmentation-based-on-CT",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1328,6 +1552,13 @@ window.IMAGING_DATASETS = {
               "note": "左室肥厚相关；需申请",
               "license": "",
               "kind": "video"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/xmed-lab/GraphEcho",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1469,6 +1700,13 @@ window.IMAGING_DATASETS = {
               "note": "1775 · TCIA · 中国队列",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/kmader/mias-mammography",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1513,6 +1751,13 @@ window.IMAGING_DATASETS = {
               "name": "OASBUD",
               "url": "https://doi.org/10.5281/zenodo.545928",
               "note": "乳腺超声；含 ROI",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "BUSIS",
+              "url": "https://doi.org/10.1016/j.dib.2019.104863",
+              "note": "乳腺超声分割补充",
               "license": "",
               "kind": "seg→box"
             }
@@ -1596,6 +1841,13 @@ window.IMAGING_DATASETS = {
               "note": "25万 · UCI/Kaggle · 问卷风险",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://tn-scui2020.grand-challenge.org/Home/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1754,6 +2006,62 @@ window.IMAGING_DATASETS = {
               "note": "挑战 · 官网 · OCT血管",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "RFMiD Download",
+              "url": "https://riadd.grand-challenge.org/Download/",
+              "note": "下载页",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://idrid.grand-challenge.org/Home/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/linchundan/fundusimage1000",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/obulisainaren/retinal-oct-c8",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Project Homepage",
+              "url": "https://figshare.com/articles/figure/FIVES_A_Fundus_Image_Dataset_for_AI-based_Vessel_Segmentation/19688169/1",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://riadd.grand-challenge.org/Home/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/nafin59/ocular-toxoplasmosis-fundus-images-dataset",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/pkdarabi/diagnosis-of-diabetic-retinopathy?resource=download-directory",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1800,6 +2108,34 @@ window.IMAGING_DATASETS = {
               "note": "45 · FAU · 高分辨率",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://vessel-wall-segmentation-2022.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://vessel12.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/AbdullahSarhan/ICPRVessels",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/mirtanvirislam/Deep-Learning-Based-Glaucoma-Detection-with-Cropped-Optic-Cup-and-Disc-and-Blood-Vessel-Segmentation",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -1846,6 +2182,41 @@ window.IMAGING_DATASETS = {
               "note": "正常/干性AMD/DME 体积",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "OCT2017 (Kermany)",
+              "url": "https://www.kaggle.com/datasets/paultimothymooney/kermany2018",
+              "note": "OCT 四分类大规模",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "ADAM Challenge",
+              "url": "https://adam.grand-challenge.org/",
+              "note": "AMD 检测/分割",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://retouch.grand-challenge.org/Home/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/aishangcengloua/OCT_Classification?tab=readme-ov-file",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "Project Homepage",
+              "url": "https://ieee-dataport.org/open-access/octa-500",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -1962,6 +2333,48 @@ window.IMAGING_DATASETS = {
               "note": "6k+ · 论文 · 检索 SD-198 skin",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "ISIC Challenge Data",
+              "url": "https://challenge.isic-archive.com/data/",
+              "note": "2016–2024 挑战数据总入口",
+              "license": "",
+              "kind": "mixed"
+            },
+            {
+              "name": "ISIC 2019",
+              "url": "https://challenge.isic-archive.com/landing/2019/",
+              "note": "分类挑战",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "ISIC 2020",
+              "url": "https://challenge.isic-archive.com/landing/2020/",
+              "note": "黑色素瘤分类",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/arafathussain/monkeypox-skin-image-dataset-2022",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/syedalinaqvi/augmented-skin-conditions-image-dataset",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/competitions/isic-2024-challenge",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -2169,6 +2582,139 @@ window.IMAGING_DATASETS = {
               "note": "挑战 · Grand Challenge · 头颈",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "Br35H HuggingFace",
+              "url": "https://huggingface.co/datasets/dddraxxx/brain-tumour-br35h-dataset",
+              "note": "YOLO 友好镜像",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://autopet-ii.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://autopet-iii.grand-challenge.org/task/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://kaggle.com/competitions/ultrasound-nerve-segmentation",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "TCIA",
+              "url": "https://www.cancerimagingarchive.net/analysis-result/brats-tcga-lgg/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "TCIA",
+              "url": "https://www.cancerimagingarchive.net/analysis-result/brats-tcga-gbm/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://atlas.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://brainptm-2021.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://isles22.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "CodaLab",
+              "url": "https://codalab.lisn.upsaclay.fr/competitions/9804",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Codabench",
+              "url": "https://www.codabench.org/competitions/2139/#/pages-tab",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "CodaLab",
+              "url": "https://competitions.codalab.org/competitions/21145",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/competitions/siim-covid19-detection/data",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "CodaLab",
+              "url": "https://codalab.lisn.upsaclay.fr/competitions/13238",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/overview",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "CodaLab",
+              "url": "https://codalab.lisn.upsaclay.fr/competitions/12239",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Codabench",
+              "url": "https://www.codabench.org/competitions/2319",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Codabench",
+              "url": "https://www.codabench.org/competitions/2296",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Codabench",
+              "url": "https://www.codabench.org/competitions/2333/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -2208,6 +2754,27 @@ window.IMAGING_DATASETS = {
               "note": "ICH 边界框扩展标注",
               "license": "",
               "kind": "detection"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/felipekitamura/head-ct-hemorrhage",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://instance.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "awesome-multimodal-in-medical-imaging",
+              "url": "https://github.com/richard-peng-xia/awesome-multimodal-in-medical-imaging",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -2268,6 +2835,13 @@ window.IMAGING_DATASETS = {
               "note": "12k · Kaggle镜像 · 骨龄常用镜像",
               "license": "",
               "kind": "mixed"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/competitions/fractured-bone-detection-challenge/overview",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -2339,6 +2913,13 @@ window.IMAGING_DATASETS = {
               "note": "万级 · PhysioNet · 脊柱异常",
               "license": "",
               "kind": "detection"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/MIRACLE-Center/CTSpine1K",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -2548,6 +3129,13 @@ window.IMAGING_DATASETS = {
               "note": "300 · 官网 · KiTS系列",
               "license": "",
               "kind": "seg→box"
+            },
+            {
+              "name": "TCIA",
+              "url": "https://www.cancerimagingarchive.net/collection/adrenal-acc-ki67-seg/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -2638,6 +3226,13 @@ window.IMAGING_DATASETS = {
               "name": "Prostate158",
               "url": "https://zenodo.org/records/6481141",
               "note": "158 · Zenodo · 前列腺MRI",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "TCIA",
+              "url": "https://www.cancerimagingarchive.net/collection/qin-prostate-repeatability/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
             }
@@ -2771,6 +3366,13 @@ window.IMAGING_DATASETS = {
               "note": "917 · 论文经典 · 宫颈细胞经典",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://kaggle.com/competitions/intel-mobileodt-cervical-cancer-screening",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": "多数为分类；带框公开集需逐条核"
@@ -2940,6 +3542,27 @@ window.IMAGING_DATASETS = {
               "note": "多 · Roboflow · 质量筛选 · 本地:oral-yolo",
               "license": "",
               "kind": "detection"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/DCBIA-OrthoLab/3DTeethSeg22_challenge",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://toothfairy.grand-challenge.org/toothfairy/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/henriquerezermosqur/dental-x-ray-computacional-vision-segmentation/data",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -3084,6 +3707,20 @@ window.IMAGING_DATASETS = {
               "note": "挑战 · PhysioNet · 心电扩展导联",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "MoNuSAC",
+              "url": "https://monusac-2020.grand-challenge.org/",
+              "note": "核实例多类",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://monuseg.grand-challenge.org/Home/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -3109,6 +3746,13 @@ window.IMAGING_DATASETS = {
               "note": "前代挑战",
               "license": "",
               "kind": "detection"
+            },
+            {
+              "name": "Project Homepage",
+              "url": "https://patchcamelyon.grand-challenge.org/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -3204,6 +3848,13 @@ window.IMAGING_DATASETS = {
               "note": "1.8万 · The Cancer Imaging Archive相关/官网 · AML形态",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "Github",
+              "url": "https://github.com/MahmudulAlam/Complete-Blood-Cell-Count-Dataset",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
             }
           ],
           "todo": ""
@@ -3243,6 +3894,13 @@ window.IMAGING_DATASETS = {
               "note": "CT 病灶框可筛淋巴结区",
               "license": "",
               "kind": "detection"
+            },
+            {
+              "name": "Kaggle",
+              "url": "https://www.kaggle.com/datasets/andrewmvd/malignant-lymphoma-classification",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -3273,6 +3931,13 @@ window.IMAGING_DATASETS = {
               "name": "DigestPath 2019",
               "url": "https://digestpath2019.grand-challenge.org/",
               "note": "挑战 · Grand Challenge · 消化道病理",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "Grand Challenge",
+              "url": "https://digestpath2019.grand-challenge.org/Home/",
+              "note": "Awesome-Medical-Dataset / 公开挑战入口",
               "license": "",
               "kind": "seg→box"
             }
@@ -3416,6 +4081,90 @@ window.IMAGING_DATASETS = {
           "note": "视频帧 · Simula相关 · 准备质量",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "Kvasir-Instrument OSF",
+          "url": "https://osf.io/kp6my",
+          "note": "镜像下载",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kvasir-Sessile",
+          "url": "https://datasets.simula.no/downloads/kvasir-sessile.zip",
+          "note": "扁平息肉子集",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "CVC-EndoSceneStill",
+          "url": "http://pages.cvc.uab.es/CVC-Colon/index.php/databases/cvc-endoscenestill/",
+          "note": "912 帧；场景分割",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "ASU-Mayo Clinic Colonoscopy",
+          "url": "https://polyp.grand-challenge.org/AsuMayo/",
+          "note": "经典视频集；常需申请",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/CAMMA-public/TF-Cholec80",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/DebeshJha/2020-MediaEval-Medico-polyp-segmentation/tree/master",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/SURA23/Sinus-Surgery-Endoscopic-Image-Datasets?tab=readme-ov-file",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/CapsuleEndoscope/EndoSLAM",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/newslab/cholecseg8k",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/CAMMA-public/cholect45",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/tampapath/lung_colon_image_set",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/ai4colonoscopy/IntelliScope",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -3739,6 +4488,20 @@ window.IMAGING_DATASETS = {
           "note": "挑战 · Grand Challenge · 肝MRI病变",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://chaos.grand-challenge.org/Combined_Healthy_Abdominal_Organ_Segmentation/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "TCIA",
+          "url": "https://www.cancerimagingarchive.net/collection/colorectal-liver-metastases/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -4058,6 +4821,55 @@ window.IMAGING_DATASETS = {
           "note": "多 · MONAI · 预训练+数据指引",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "TotalSegmentator dataset",
+          "url": "https://zenodo.org/records/10047292",
+          "note": "Zenodo 发布",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "FLARE23",
+          "url": "https://flare23.grand-challenge.org/",
+          "note": "腹器官+泛癌分割",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "FLARE24",
+          "url": "https://flare24.grand-challenge.org/",
+          "note": "年更腹部分割挑战",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "AbdomenAtlas",
+          "url": "https://github.com/MrGiovanni/AbdomenAtlas",
+          "note": "大规模腹 CT 多结构",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "WORD",
+          "url": "https://github.com/HiLab-git/WORD",
+          "note": "腹部分割域泛化",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://uls23.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://flare22.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -4148,6 +4960,20 @@ window.IMAGING_DATASETS = {
           "note": "申请 · 官网检索 · 奥地利ICU",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "UUSIC25 超声挑战",
+          "url": "https://uusic2025.github.io/",
+          "note": "多器官超声分类/分割汇总",
+          "license": "",
+          "kind": "mixed"
+        },
+        {
+          "name": "UUSIC25 Zenodo",
+          "url": "https://zenodo.org/records/15094669",
+          "note": "公开超声 bundle",
+          "license": "",
+          "kind": "mixed"
         }
       ],
       "todo": "",
@@ -4203,6 +5029,27 @@ window.IMAGING_DATASETS = {
           "note": "247 · JSRT · 经典结节胸片",
           "license": "",
           "kind": "detection"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://luna16.grand-challenge.org/Home/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "TCIA",
+          "url": "https://www.cancerimagingarchive.net/analysis-result/qin-lungct-seg/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "TCIA",
+          "url": "https://www.cancerimagingarchive.net/analysis-result/rider-lungct-seg/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -4363,6 +5210,34 @@ window.IMAGING_DATASETS = {
           "note": "千例 · 图库 · 俄COVID",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/raddar/tuberculosis-chest-xrays-shenzhen",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks/data",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/praveengovi/coronahack-chest-xraydataset/data",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/Holipori/Medical-CXR-VQA",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -4423,6 +5298,13 @@ window.IMAGING_DATASETS = {
           "name": "Thyroid Ultrasound CINE / DDTI",
           "url": "https://www.kaggle.com/datasets/sabermalek/ddti-thyroid-ultrasound-images",
           "note": "百~千 · 论文/Kaggle · 甲状腺结节",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Project Homepage",
+          "url": "https://figshare.com/articles/dataset/BM-BronchoLC/24243670",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
         }
@@ -4564,6 +5446,13 @@ window.IMAGING_DATASETS = {
           "note": "6877 · 挑战镜像 · 中国心电挑战",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/XiaoweiXu/ImageCAS-A-Large-Scale-Dataset-and-Benchmark-for-Coronary-Artery-Segmentation-based-on-CT",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -4605,6 +5494,13 @@ window.IMAGING_DATASETS = {
           "note": "左室肥厚相关；需申请",
           "license": "",
           "kind": "video"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/xmed-lab/GraphEcho",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -4743,6 +5639,13 @@ window.IMAGING_DATASETS = {
           "note": "1775 · TCIA · 中国队列",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/kmader/mias-mammography",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -4789,6 +5692,13 @@ window.IMAGING_DATASETS = {
           "name": "OASBUD",
           "url": "https://doi.org/10.5281/zenodo.545928",
           "note": "乳腺超声；含 ROI",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "BUSIS",
+          "url": "https://doi.org/10.1016/j.dib.2019.104863",
+          "note": "乳腺超声分割补充",
           "license": "",
           "kind": "seg→box"
         }
@@ -4867,6 +5777,13 @@ window.IMAGING_DATASETS = {
           "note": "25万 · UCI/Kaggle · 问卷风险",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://tn-scui2020.grand-challenge.org/Home/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5020,6 +5937,62 @@ window.IMAGING_DATASETS = {
           "note": "挑战 · 官网 · OCT血管",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "RFMiD Download",
+          "url": "https://riadd.grand-challenge.org/Download/",
+          "note": "下载页",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://idrid.grand-challenge.org/Home/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/linchundan/fundusimage1000",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/obulisainaren/retinal-oct-c8",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Project Homepage",
+          "url": "https://figshare.com/articles/figure/FIVES_A_Fundus_Image_Dataset_for_AI-based_Vessel_Segmentation/19688169/1",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://riadd.grand-challenge.org/Home/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/nafin59/ocular-toxoplasmosis-fundus-images-dataset",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/pkdarabi/diagnosis-of-diabetic-retinopathy?resource=download-directory",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5068,6 +6041,34 @@ window.IMAGING_DATASETS = {
           "note": "45 · FAU · 高分辨率",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://vessel-wall-segmentation-2022.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://vessel12.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/AbdullahSarhan/ICPRVessels",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/mirtanvirislam/Deep-Learning-Based-Glaucoma-Detection-with-Cropped-Optic-Cup-and-Disc-and-Blood-Vessel-Segmentation",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -5116,6 +6117,41 @@ window.IMAGING_DATASETS = {
           "note": "正常/干性AMD/DME 体积",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "OCT2017 (Kermany)",
+          "url": "https://www.kaggle.com/datasets/paultimothymooney/kermany2018",
+          "note": "OCT 四分类大规模",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "ADAM Challenge",
+          "url": "https://adam.grand-challenge.org/",
+          "note": "AMD 检测/分割",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://retouch.grand-challenge.org/Home/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/aishangcengloua/OCT_Classification?tab=readme-ov-file",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "Project Homepage",
+          "url": "https://ieee-dataport.org/open-access/octa-500",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5227,6 +6263,48 @@ window.IMAGING_DATASETS = {
           "note": "6k+ · 论文 · 检索 SD-198 skin",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "ISIC Challenge Data",
+          "url": "https://challenge.isic-archive.com/data/",
+          "note": "2016–2024 挑战数据总入口",
+          "license": "",
+          "kind": "mixed"
+        },
+        {
+          "name": "ISIC 2019",
+          "url": "https://challenge.isic-archive.com/landing/2019/",
+          "note": "分类挑战",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "ISIC 2020",
+          "url": "https://challenge.isic-archive.com/landing/2020/",
+          "note": "黑色素瘤分类",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/arafathussain/monkeypox-skin-image-dataset-2022",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/syedalinaqvi/augmented-skin-conditions-image-dataset",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/competitions/isic-2024-challenge",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5429,6 +6507,139 @@ window.IMAGING_DATASETS = {
           "note": "挑战 · Grand Challenge · 头颈",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "Br35H HuggingFace",
+          "url": "https://huggingface.co/datasets/dddraxxx/brain-tumour-br35h-dataset",
+          "note": "YOLO 友好镜像",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://autopet-ii.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://autopet-iii.grand-challenge.org/task/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://kaggle.com/competitions/ultrasound-nerve-segmentation",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "TCIA",
+          "url": "https://www.cancerimagingarchive.net/analysis-result/brats-tcga-lgg/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "TCIA",
+          "url": "https://www.cancerimagingarchive.net/analysis-result/brats-tcga-gbm/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://atlas.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://brainptm-2021.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://isles22.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "CodaLab",
+          "url": "https://codalab.lisn.upsaclay.fr/competitions/9804",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Codabench",
+          "url": "https://www.codabench.org/competitions/2139/#/pages-tab",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "CodaLab",
+          "url": "https://competitions.codalab.org/competitions/21145",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/competitions/siim-covid19-detection/data",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "CodaLab",
+          "url": "https://codalab.lisn.upsaclay.fr/competitions/13238",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation/overview",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "CodaLab",
+          "url": "https://codalab.lisn.upsaclay.fr/competitions/12239",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Codabench",
+          "url": "https://www.codabench.org/competitions/2319",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Codabench",
+          "url": "https://www.codabench.org/competitions/2296",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Codabench",
+          "url": "https://www.codabench.org/competitions/2333/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5470,6 +6681,27 @@ window.IMAGING_DATASETS = {
           "note": "ICH 边界框扩展标注",
           "license": "",
           "kind": "detection"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/felipekitamura/head-ct-hemorrhage",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://instance.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "awesome-multimodal-in-medical-imaging",
+          "url": "https://github.com/richard-peng-xia/awesome-multimodal-in-medical-imaging",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5525,6 +6757,13 @@ window.IMAGING_DATASETS = {
           "note": "12k · Kaggle镜像 · 骨龄常用镜像",
           "license": "",
           "kind": "mixed"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/competitions/fractured-bone-detection-challenge/overview",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -5600,6 +6839,13 @@ window.IMAGING_DATASETS = {
           "note": "万级 · PhysioNet · 脊柱异常",
           "license": "",
           "kind": "detection"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/MIRACLE-Center/CTSpine1K",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5812,6 +7058,13 @@ window.IMAGING_DATASETS = {
           "note": "300 · 官网 · KiTS系列",
           "license": "",
           "kind": "seg→box"
+        },
+        {
+          "name": "TCIA",
+          "url": "https://www.cancerimagingarchive.net/collection/adrenal-acc-ki67-seg/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -5906,6 +7159,13 @@ window.IMAGING_DATASETS = {
           "name": "Prostate158",
           "url": "https://zenodo.org/records/6481141",
           "note": "158 · Zenodo · 前列腺MRI",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "TCIA",
+          "url": "https://www.cancerimagingarchive.net/collection/qin-prostate-repeatability/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
         }
@@ -6038,6 +7298,13 @@ window.IMAGING_DATASETS = {
           "note": "917 · 论文经典 · 宫颈细胞经典",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://kaggle.com/competitions/intel-mobileodt-cervical-cancer-screening",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "多数为分类；带框公开集需逐条核",
@@ -6204,6 +7471,27 @@ window.IMAGING_DATASETS = {
           "note": "多 · Roboflow · 质量筛选 · 本地:oral-yolo",
           "license": "",
           "kind": "detection"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/DCBIA-OrthoLab/3DTeethSeg22_challenge",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://toothfairy.grand-challenge.org/toothfairy/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/henriquerezermosqur/dental-x-ray-computacional-vision-segmentation/data",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -6343,6 +7631,20 @@ window.IMAGING_DATASETS = {
           "note": "挑战 · PhysioNet · 心电扩展导联",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "MoNuSAC",
+          "url": "https://monusac-2020.grand-challenge.org/",
+          "note": "核实例多类",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://monuseg.grand-challenge.org/Home/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -6370,6 +7672,13 @@ window.IMAGING_DATASETS = {
           "note": "前代挑战",
           "license": "",
           "kind": "detection"
+        },
+        {
+          "name": "Project Homepage",
+          "url": "https://patchcamelyon.grand-challenge.org/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -6467,6 +7776,13 @@ window.IMAGING_DATASETS = {
           "note": "1.8万 · The Cancer Imaging Archive相关/官网 · AML形态",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "Github",
+          "url": "https://github.com/MahmudulAlam/Complete-Blood-Cell-Count-Dataset",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "seg→box"
         }
       ],
       "todo": "",
@@ -6508,6 +7824,13 @@ window.IMAGING_DATASETS = {
           "note": "CT 病灶框可筛淋巴结区",
           "license": "",
           "kind": "detection"
+        },
+        {
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/datasets/andrewmvd/malignant-lymphoma-classification",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -6540,6 +7863,13 @@ window.IMAGING_DATASETS = {
           "name": "DigestPath 2019",
           "url": "https://digestpath2019.grand-challenge.org/",
           "note": "挑战 · Grand Challenge · 消化道病理",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "Grand Challenge",
+          "url": "https://digestpath2019.grand-challenge.org/Home/",
+          "note": "Awesome-Medical-Dataset / 公开挑战入口",
           "license": "",
           "kind": "seg→box"
         }
