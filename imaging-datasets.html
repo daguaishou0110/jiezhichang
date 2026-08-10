@@ -93,7 +93,7 @@ td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.32re
 <header class="hero wrap">
   <div class="kicker">Hospital department → disease/modality → datasets</div>
   <div class="brand">医学影像数据集 · 科室目录</div>
-  <p class="lead">一级按医院科室展开，二级为病症/模态目录，最里层是公开目标检测数据集与链接（含可转外接框的分割集）。</p>
+  <p class="lead">一级：医院科室。二级：病症/模态标题（已标「二级目录」）。三级：各类型公开数据集（检测 / 分割转框 / 分类）与链接，已尽量补全。</p>
   <div class="warn">本机落盘：<code>python tools/serve_imaging_datasets.py</code> 后点「同步到本地」；或「下载 JS」覆盖 <code>data/imaging-datasets.js</code>。</div>
   <div class="okbar" id="toast"></div>
   <div class="chips" id="stats"></div>
@@ -205,9 +205,12 @@ td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.32re
           ${kids.map((c,si)=>{
             const ds=c.datasets||[];
             return `
-            <details class="sub" data-blob="${escA([c.name_zh,c.modality,c.task,ds.map(x=>x.name+' '+x.url).join(' ')].join(' '))}">
+            <details class="sub" open data-blob="${escA([c.name_zh,c.modality,c.task,ds.map(x=>x.name+' '+x.url+' '+(x.kind||'')).join(' ')].join(' '))}">
               <summary>
-                <span class="sub-title">${esc(c.name_zh)}</span>
+                <div>
+                  <span class="sub-eyebrow">二级目录</span>
+                  <span class="sub-title">${esc(c.name_zh)}</span>
+                </div>
                 <span class="meta">
                   <span class="tag ${c.status||'empty'}">${stLabel[c.status]||'待补充'}</span>
                   <span class="tag">${esc(c.modality||'')}</span>
@@ -223,11 +226,12 @@ td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.32re
                   <button class="btn danger" type="button" data-del-sub="${di}:${si}">删除二级目录</button>
                 </div>
                 <table>
-                  <thead><tr><th>数据集</th><th>链接</th><th>备注</th><th>许可</th><th></th></tr></thead>
+                  <thead><tr><th>数据集</th><th>类型</th><th>链接</th><th>备注</th><th>许可</th><th></th></tr></thead>
                   <tbody>
                     ${ds.length?ds.map((x,xi)=>`
                       <tr>
                         <td><input data-path="${di}:${si}:${xi}" data-k="name" value="${escA(x.name||'')}" /></td>
+                        <td><span class="kind">${esc(x.kind||'detection')}</span></td>
                         <td><input data-path="${di}:${si}:${xi}" data-k="url" value="${escA(x.url||'')}" placeholder="https://" /></td>
                         <td><input data-path="${di}:${si}:${xi}" data-k="note" value="${escA(x.note||'')}" /></td>
                         <td><input data-path="${di}:${si}:${xi}" data-k="license" value="${escA(x.license||'')}" /></td>
@@ -235,7 +239,7 @@ td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.32re
                           ${x.url?`<a class="btn" href="${escA(x.url)}" target="_blank" rel="noopener">打开</a>`:''}
                           <button class="btn danger" type="button" data-del-ds="${di}:${si}:${xi}">删</button>
                         </td>
-                      </tr>`).join(''):`<tr><td colspan="5" class="empty-row">暂无数据集</td></tr>`}
+                      </tr>`).join(''):`<tr><td colspan="6" class="empty-row">暂无数据集</td></tr>`}
                   </tbody>
                 </table>
               </div>
