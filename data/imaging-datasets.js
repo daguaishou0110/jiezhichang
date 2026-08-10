@@ -4,7 +4,7 @@ window.IMAGING_DATASETS = {
     "title": "医学影像数据集目录",
     "subtitle": "科室 → 二级标题（病症/模态）→ 各类型公开数据集与链接",
     "updated": "2026-08-10",
-    "note": "含联网补充公开检测/分割/分类数据集",
+    "note": "含新科室耳鼻喉及儿科胸片/COVID-CT/PET-CT 等二级目录",
     "structure": "department → secondary title → datasets",
     "scope": "优先目标检测；含可转外接框的分割集与少数分类入口",
     "source": "jiezhichang + D:/hyf/.../农业yolo数据集/docs/_gen_med_catalog_links.py + 中文部位目录"
@@ -591,6 +591,31 @@ window.IMAGING_DATASETS = {
             }
           ],
           "todo": ""
+        },
+        {
+          "id": "ercp",
+          "name_zh": "二级：ERCP · 胆管胰管透视",
+          "modality": "ERCP 透视",
+          "task": "分类",
+          "status": "ready",
+          "local": "",
+          "datasets": [
+            {
+              "name": "MIQR-CC ERCP",
+              "url": "https://doi.org/10.6084/m9.figshare.31079236.v1",
+              "note": "1.9 万透视图 / 1602 例",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "ERCP Scientific Data",
+              "url": "https://doi.org/10.1038/s41597-026-07679-1",
+              "note": "论文说明",
+              "license": "",
+              "kind": "classification"
+            }
+          ],
+          "todo": ""
         }
       ]
     },
@@ -1055,6 +1080,45 @@ window.IMAGING_DATASETS = {
             }
           ],
           "todo": ""
+        },
+        {
+          "id": "pet-ct",
+          "name_zh": "二级：全身 PET/CT · 肿瘤病灶",
+          "modality": "PET/CT",
+          "task": "病灶分割",
+          "status": "ready",
+          "local": "",
+          "datasets": [
+            {
+              "name": "autoPET",
+              "url": "https://autopet.grand-challenge.org/",
+              "note": "全身 FDG-PET/CT 病灶；TCIA",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "autoPET Dataset 页",
+              "url": "https://autopet.grand-challenge.org/Dataset/",
+              "note": "下载说明",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "autoPET-V",
+              "url": "https://autopet-v.grand-challenge.org/datasets/",
+              "note": "FDG+PSMA；年更",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "autoPET III",
+              "url": "https://autopet-iii.grand-challenge.org/task/",
+              "note": "多中心多示踪剂",
+              "license": "",
+              "kind": "seg→box"
+            }
+          ],
+          "todo": ""
         }
       ]
     },
@@ -1509,6 +1573,77 @@ window.IMAGING_DATASETS = {
               "note": "气道提取经典",
               "license": "",
               "kind": "seg→box"
+            }
+          ],
+          "todo": ""
+        },
+        {
+          "id": "pediatric-cxr",
+          "name_zh": "二级：儿科胸片 · 小儿胸部病灶",
+          "modality": "X 线胸片（儿科）",
+          "task": "检测 / 分类",
+          "status": "ready",
+          "local": "",
+          "datasets": [
+            {
+              "name": "VinDr-PCXR / PediCXR",
+              "url": "https://physionet.org/content/vindr-pcxr/1.0.0/",
+              "note": "9125 例小儿胸片；含 bbox；需 CITI",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "PediCXR Scientific Data",
+              "url": "https://doi.org/10.1038/s41597-023-02102-5",
+              "note": "论文说明",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "Chest X-Ray Pneumonia (儿科)",
+              "url": "https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia",
+              "note": "5863 张小儿肺炎/正常",
+              "license": "",
+              "kind": "classification"
+            }
+          ],
+          "todo": ""
+        },
+        {
+          "id": "covid-ct",
+          "name_zh": "二级：COVID 肺 CT · 病灶分割",
+          "modality": "CT",
+          "task": "分割转框 / 分类",
+          "status": "ready",
+          "local": "",
+          "datasets": [
+            {
+              "name": "COVID-19-20 CT Lesion Seg",
+              "url": "https://covid-segmentation.grand-challenge.org/Data/",
+              "note": "COVID 肺 CT 病灶分割挑战",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "CT Images in COVID-19 (TCIA)",
+              "url": "https://doi.org/10.7937/tcia.2020.gqry-nc81",
+              "note": "TCIA COVID CT",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "COVID-CT",
+              "url": "https://github.com/UCSD-AI4H/COVID-CT",
+              "note": "COVID CT 分类补充",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "MosMedData COVID",
+              "url": "https://mosmed.ai/datasets/covid19/",
+              "note": "莫斯科 COVID CT",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -2634,6 +2769,13 @@ window.IMAGING_DATASETS = {
               "note": "最新 ISIC 挑战入口",
               "license": "",
               "kind": "classification"
+            },
+            {
+              "name": "PAD-UFES-20 Mendeley",
+              "url": "https://doi.org/10.17632/zr7vgbcyr2.1",
+              "note": "手机皮损照",
+              "license": "",
+              "kind": "classification"
             }
           ],
           "todo": ""
@@ -3065,6 +3207,38 @@ window.IMAGING_DATASETS = {
             }
           ],
           "todo": ""
+        },
+        {
+          "id": "head-ct-abnormal",
+          "name_zh": "二级：头颅 CT · 正常/异常筛查",
+          "modality": "CT",
+          "task": "分类 / 重建",
+          "status": "partial",
+          "local": "",
+          "datasets": [
+            {
+              "name": "SinoCT (Stanford AIMI)",
+              "url": "https://aimi.stanford.edu/datasets/sinoct",
+              "note": "9000+ 头颅 CT 正常/异常；含 sinogram",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "SinoCT DOI",
+              "url": "https://doi.org/10.71718/6tfs-tm78",
+              "note": "引用 DOI",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "CQ500",
+              "url": "http://headctstudy.qure.ai/dataset",
+              "note": "头颅急症",
+              "license": "",
+              "kind": "classification"
+            }
+          ],
+          "todo": ""
         }
       ]
     },
@@ -3380,6 +3554,31 @@ window.IMAGING_DATASETS = {
               "note": "腰椎骨质疏松数据集文",
               "license": "",
               "kind": "mixed"
+            }
+          ],
+          "todo": ""
+        },
+        {
+          "id": "shoulder",
+          "name_zh": "二级：肩关节 · X 线 / MRI",
+          "modality": "X 线 / MRI",
+          "task": "分类 / 分割转框",
+          "status": "partial",
+          "local": "",
+          "datasets": [
+            {
+              "name": "MURA Shoulder",
+              "url": "https://stanfordmlgroup.github.io/competitions/mura/",
+              "note": "肩部骨骼异常分类",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "FracAtlas（肩子集）",
+              "url": "https://doi.org/10.6084/m9.figshare.22363012",
+              "note": "全身骨折含肩",
+              "license": "",
+              "kind": "detection"
             }
           ],
           "todo": ""
@@ -3830,6 +4029,38 @@ window.IMAGING_DATASETS = {
               "name": "HC18 Data",
               "url": "https://hc18.grand-challenge.org/Data/",
               "note": "胎头围数据页",
+              "license": "",
+              "kind": "detection"
+            }
+          ],
+          "todo": ""
+        },
+        {
+          "id": "placenta-us",
+          "name_zh": "二级：胎盘 / 产科结构 · 超声",
+          "modality": "产科超声",
+          "task": "分割 / 分类",
+          "status": "partial",
+          "local": "",
+          "datasets": [
+            {
+              "name": "FETAL_PLANES_DB",
+              "url": "https://zenodo.org/records/3904280",
+              "note": "含胎盘相关标准切面",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "HC18",
+              "url": "https://hc18.grand-challenge.org/",
+              "note": "胎头围；产科结构对照",
+              "license": "",
+              "kind": "detection"
+            },
+            {
+              "name": "FPUS23",
+              "url": "https://github.com/bharathprabakaran/FPUS23",
+              "note": "胎儿体模平面/框",
               "license": "",
               "kind": "detection"
             }
@@ -4386,6 +4617,123 @@ window.IMAGING_DATASETS = {
               "name": "Grand Challenge",
               "url": "https://digestpath2019.grand-challenge.org/Home/",
               "note": "Awesome-Medical-Dataset / 公开挑战入口",
+              "license": "",
+              "kind": "seg→box"
+            }
+          ],
+          "todo": ""
+        }
+      ]
+    },
+    {
+      "id": "ent",
+      "name_zh": "耳鼻喉科 / 头颈",
+      "blurb": "耳镜、耳鼻喉内镜与头颈影像",
+      "children": [
+        {
+          "id": "otoscopy",
+          "name_zh": "二级：耳镜 · 中耳 / 鼓膜病灶",
+          "modality": "耳镜 / 耳内镜",
+          "task": "分类",
+          "status": "ready",
+          "local": "",
+          "datasets": [
+            {
+              "name": "Ear imagery database (Viscaíno)",
+              "url": "https://doi.org/10.6084/m9.figshare.11886630",
+              "note": "880 张；COM/硬化/耵聍/正常",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "Otitis media GitHub",
+              "url": "https://github.com/zcomert/otitis-media",
+              "note": "中耳炎耳镜研究与数据说明",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "Sumotosima / OCASD 论文",
+              "url": "https://arxiv.org/abs/2408.06755",
+              "note": "500 张五类耳镜+摘要",
+              "license": "",
+              "kind": "classification"
+            }
+          ],
+          "todo": ""
+        },
+        {
+          "id": "ent-endoscopy",
+          "name_zh": "二级：耳鼻喉内镜 · 解剖 / 病灶",
+          "modality": "ENT 内镜",
+          "task": "分类 / 检索",
+          "status": "partial",
+          "local": "",
+          "datasets": [
+            {
+              "name": "ENTRep Challenge",
+              "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+              "note": "ACM MM 2025 ENT 内镜分类+检索",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "ENTRep 论文",
+              "url": "https://arxiv.org/html/2508.04801v1",
+              "note": "挑战说明与数据描述",
+              "license": "",
+              "kind": "classification"
+            },
+            {
+              "name": "ENTRep DOI",
+              "url": "https://doi.org/10.1145/3746027.3762080",
+              "note": "ACM 正式页",
+              "license": "",
+              "kind": "classification"
+            }
+          ],
+          "todo": ""
+        },
+        {
+          "id": "head-neck-ct",
+          "name_zh": "二级：头颈 · CT / 结构分割",
+          "modality": "CT / MRI",
+          "task": "分割转框",
+          "status": "ready",
+          "local": "",
+          "datasets": [
+            {
+              "name": "StructSeg2019",
+              "url": "https://structseg2019.grand-challenge.org/",
+              "note": "头颈危及器官分割",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "HaN-Seg",
+              "url": "https://han-seg2023.grand-challenge.org/",
+              "note": "头颈 OAR 分割",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "SegRap 2023",
+              "url": "https://segrap2023.grand-challenge.org/",
+              "note": "头颈 47 类 OAR",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "HECKTOR",
+              "url": "https://hecktor.grand-challenge.org/",
+              "note": "头颈肿瘤 PET/CT",
+              "license": "",
+              "kind": "seg→box"
+            },
+            {
+              "name": "PDDCA",
+              "url": "https://www.imagenglab.com/newsite/pddca/",
+              "note": "头颈器官 CT 经典",
               "license": "",
               "kind": "seg→box"
             }
@@ -4986,6 +5334,33 @@ window.IMAGING_DATASETS = {
       "department_zh": "消化内科 / 消化内镜科"
     },
     {
+      "id": "ercp",
+      "name_zh": "二级：ERCP · 胆管胰管透视",
+      "modality": "ERCP 透视",
+      "task": "分类",
+      "status": "ready",
+      "local": "",
+      "datasets": [
+        {
+          "name": "MIQR-CC ERCP",
+          "url": "https://doi.org/10.6084/m9.figshare.31079236.v1",
+          "note": "1.9 万透视图 / 1602 例",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "ERCP Scientific Data",
+          "url": "https://doi.org/10.1038/s41597-026-07679-1",
+          "note": "论文说明",
+          "license": "",
+          "kind": "classification"
+        }
+      ],
+      "todo": "",
+      "department_id": "gi",
+      "department_zh": "消化内科 / 消化内镜科"
+    },
+    {
       "id": "liver-ct-tumor",
       "name_zh": "二级：肝 CT · 小肿瘤 / 肝病灶检测",
       "modality": "CT",
@@ -5451,6 +5826,47 @@ window.IMAGING_DATASETS = {
       "department_zh": "肝胆胰外科 / 腹部影像"
     },
     {
+      "id": "pet-ct",
+      "name_zh": "二级：全身 PET/CT · 肿瘤病灶",
+      "modality": "PET/CT",
+      "task": "病灶分割",
+      "status": "ready",
+      "local": "",
+      "datasets": [
+        {
+          "name": "autoPET",
+          "url": "https://autopet.grand-challenge.org/",
+          "note": "全身 FDG-PET/CT 病灶；TCIA",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "autoPET Dataset 页",
+          "url": "https://autopet.grand-challenge.org/Dataset/",
+          "note": "下载说明",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "autoPET-V",
+          "url": "https://autopet-v.grand-challenge.org/datasets/",
+          "note": "FDG+PSMA；年更",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "autoPET III",
+          "url": "https://autopet-iii.grand-challenge.org/task/",
+          "note": "多中心多示踪剂",
+          "license": "",
+          "kind": "seg→box"
+        }
+      ],
+      "todo": "",
+      "department_id": "hepatobiliary",
+      "department_zh": "肝胆胰外科 / 腹部影像"
+    },
+    {
       "id": "lung-us-bline",
       "name_zh": "二级：肺超声 · B-line 检测",
       "modality": "肺超声",
@@ -5902,6 +6318,81 @@ window.IMAGING_DATASETS = {
           "note": "气道提取经典",
           "license": "",
           "kind": "seg→box"
+        }
+      ],
+      "todo": "",
+      "department_id": "respiratory",
+      "department_zh": "呼吸科 / 胸外科"
+    },
+    {
+      "id": "pediatric-cxr",
+      "name_zh": "二级：儿科胸片 · 小儿胸部病灶",
+      "modality": "X 线胸片（儿科）",
+      "task": "检测 / 分类",
+      "status": "ready",
+      "local": "",
+      "datasets": [
+        {
+          "name": "VinDr-PCXR / PediCXR",
+          "url": "https://physionet.org/content/vindr-pcxr/1.0.0/",
+          "note": "9125 例小儿胸片；含 bbox；需 CITI",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "PediCXR Scientific Data",
+          "url": "https://doi.org/10.1038/s41597-023-02102-5",
+          "note": "论文说明",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "Chest X-Ray Pneumonia (儿科)",
+          "url": "https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia",
+          "note": "5863 张小儿肺炎/正常",
+          "license": "",
+          "kind": "classification"
+        }
+      ],
+      "todo": "",
+      "department_id": "respiratory",
+      "department_zh": "呼吸科 / 胸外科"
+    },
+    {
+      "id": "covid-ct",
+      "name_zh": "二级：COVID 肺 CT · 病灶分割",
+      "modality": "CT",
+      "task": "分割转框 / 分类",
+      "status": "ready",
+      "local": "",
+      "datasets": [
+        {
+          "name": "COVID-19-20 CT Lesion Seg",
+          "url": "https://covid-segmentation.grand-challenge.org/Data/",
+          "note": "COVID 肺 CT 病灶分割挑战",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "CT Images in COVID-19 (TCIA)",
+          "url": "https://doi.org/10.7937/tcia.2020.gqry-nc81",
+          "note": "TCIA COVID CT",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "COVID-CT",
+          "url": "https://github.com/UCSD-AI4H/COVID-CT",
+          "note": "COVID CT 分类补充",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "MosMedData COVID",
+          "url": "https://mosmed.ai/datasets/covid19/",
+          "note": "莫斯科 COVID CT",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -7012,6 +7503,13 @@ window.IMAGING_DATASETS = {
           "note": "最新 ISIC 挑战入口",
           "license": "",
           "kind": "classification"
+        },
+        {
+          "name": "PAD-UFES-20 Mendeley",
+          "url": "https://doi.org/10.17632/zr7vgbcyr2.1",
+          "note": "手机皮损照",
+          "license": "",
+          "kind": "classification"
         }
       ],
       "todo": "",
@@ -7444,6 +7942,40 @@ window.IMAGING_DATASETS = {
       "department_zh": "神经内科 / 神经外科"
     },
     {
+      "id": "head-ct-abnormal",
+      "name_zh": "二级：头颅 CT · 正常/异常筛查",
+      "modality": "CT",
+      "task": "分类 / 重建",
+      "status": "partial",
+      "local": "",
+      "datasets": [
+        {
+          "name": "SinoCT (Stanford AIMI)",
+          "url": "https://aimi.stanford.edu/datasets/sinoct",
+          "note": "9000+ 头颅 CT 正常/异常；含 sinogram",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "SinoCT DOI",
+          "url": "https://doi.org/10.71718/6tfs-tm78",
+          "note": "引用 DOI",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "CQ500",
+          "url": "http://headctstudy.qure.ai/dataset",
+          "note": "头颅急症",
+          "license": "",
+          "kind": "classification"
+        }
+      ],
+      "todo": "",
+      "department_id": "neurology",
+      "department_zh": "神经内科 / 神经外科"
+    },
+    {
       "id": "fracture-general",
       "name_zh": "二级：全身骨折 · X 光检测",
       "modality": "X 线",
@@ -7760,6 +8292,33 @@ window.IMAGING_DATASETS = {
           "note": "腰椎骨质疏松数据集文",
           "license": "",
           "kind": "mixed"
+        }
+      ],
+      "todo": "",
+      "department_id": "orthopedics",
+      "department_zh": "骨科 / 放射骨科"
+    },
+    {
+      "id": "shoulder",
+      "name_zh": "二级：肩关节 · X 线 / MRI",
+      "modality": "X 线 / MRI",
+      "task": "分类 / 分割转框",
+      "status": "partial",
+      "local": "",
+      "datasets": [
+        {
+          "name": "MURA Shoulder",
+          "url": "https://stanfordmlgroup.github.io/competitions/mura/",
+          "note": "肩部骨骼异常分类",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "FracAtlas（肩子集）",
+          "url": "https://doi.org/10.6084/m9.figshare.22363012",
+          "note": "全身骨折含肩",
+          "license": "",
+          "kind": "detection"
         }
       ],
       "todo": "",
@@ -8212,6 +8771,40 @@ window.IMAGING_DATASETS = {
           "name": "HC18 Data",
           "url": "https://hc18.grand-challenge.org/Data/",
           "note": "胎头围数据页",
+          "license": "",
+          "kind": "detection"
+        }
+      ],
+      "todo": "",
+      "department_id": "obgyn",
+      "department_zh": "妇产科"
+    },
+    {
+      "id": "placenta-us",
+      "name_zh": "二级：胎盘 / 产科结构 · 超声",
+      "modality": "产科超声",
+      "task": "分割 / 分类",
+      "status": "partial",
+      "local": "",
+      "datasets": [
+        {
+          "name": "FETAL_PLANES_DB",
+          "url": "https://zenodo.org/records/3904280",
+          "note": "含胎盘相关标准切面",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "HC18",
+          "url": "https://hc18.grand-challenge.org/",
+          "note": "胎头围；产科结构对照",
+          "license": "",
+          "kind": "detection"
+        },
+        {
+          "name": "FPUS23",
+          "url": "https://github.com/bharathprabakaran/FPUS23",
+          "note": "胎儿体模平面/框",
           "license": "",
           "kind": "detection"
         }
@@ -8773,6 +9366,122 @@ window.IMAGING_DATASETS = {
       "todo": "",
       "department_id": "pathology-lab",
       "department_zh": "病理科 / 检验显微"
+    },
+    {
+      "id": "otoscopy",
+      "name_zh": "二级：耳镜 · 中耳 / 鼓膜病灶",
+      "modality": "耳镜 / 耳内镜",
+      "task": "分类",
+      "status": "ready",
+      "local": "",
+      "datasets": [
+        {
+          "name": "Ear imagery database (Viscaíno)",
+          "url": "https://doi.org/10.6084/m9.figshare.11886630",
+          "note": "880 张；COM/硬化/耵聍/正常",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "Otitis media GitHub",
+          "url": "https://github.com/zcomert/otitis-media",
+          "note": "中耳炎耳镜研究与数据说明",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "Sumotosima / OCASD 论文",
+          "url": "https://arxiv.org/abs/2408.06755",
+          "note": "500 张五类耳镜+摘要",
+          "license": "",
+          "kind": "classification"
+        }
+      ],
+      "todo": "",
+      "department_id": "ent",
+      "department_zh": "耳鼻喉科 / 头颈"
+    },
+    {
+      "id": "ent-endoscopy",
+      "name_zh": "二级：耳鼻喉内镜 · 解剖 / 病灶",
+      "modality": "ENT 内镜",
+      "task": "分类 / 检索",
+      "status": "partial",
+      "local": "",
+      "datasets": [
+        {
+          "name": "ENTRep Challenge",
+          "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+          "note": "ACM MM 2025 ENT 内镜分类+检索",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "ENTRep 论文",
+          "url": "https://arxiv.org/html/2508.04801v1",
+          "note": "挑战说明与数据描述",
+          "license": "",
+          "kind": "classification"
+        },
+        {
+          "name": "ENTRep DOI",
+          "url": "https://doi.org/10.1145/3746027.3762080",
+          "note": "ACM 正式页",
+          "license": "",
+          "kind": "classification"
+        }
+      ],
+      "todo": "",
+      "department_id": "ent",
+      "department_zh": "耳鼻喉科 / 头颈"
+    },
+    {
+      "id": "head-neck-ct",
+      "name_zh": "二级：头颈 · CT / 结构分割",
+      "modality": "CT / MRI",
+      "task": "分割转框",
+      "status": "ready",
+      "local": "",
+      "datasets": [
+        {
+          "name": "StructSeg2019",
+          "url": "https://structseg2019.grand-challenge.org/",
+          "note": "头颈危及器官分割",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "HaN-Seg",
+          "url": "https://han-seg2023.grand-challenge.org/",
+          "note": "头颈 OAR 分割",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "SegRap 2023",
+          "url": "https://segrap2023.grand-challenge.org/",
+          "note": "头颈 47 类 OAR",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "HECKTOR",
+          "url": "https://hecktor.grand-challenge.org/",
+          "note": "头颈肿瘤 PET/CT",
+          "license": "",
+          "kind": "seg→box"
+        },
+        {
+          "name": "PDDCA",
+          "url": "https://www.imagenglab.com/newsite/pddca/",
+          "note": "头颈器官 CT 经典",
+          "license": "",
+          "kind": "seg→box"
+        }
+      ],
+      "todo": "",
+      "department_id": "ent",
+      "department_zh": "耳鼻喉科 / 头颈"
     }
   ]
 };
