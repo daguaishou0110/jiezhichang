@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>医学影像数据集目录 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--max:960px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:15.5px;line-height:1.55}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.15}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.84rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.45rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--teal)}
+.hero{padding:1.8rem 0 1rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.35rem}
+.brand{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:52ch;font-size:.92rem}
+.warn{margin-top:.7rem;padding:.7rem .85rem;border-radius:12px;background:#fff7ed;border:1px solid #fdba74;color:#7c2d12;font-size:.84rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.85rem 0 1rem}
+.chip{font-size:.78rem;font-weight:700;padding:.25rem .65rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.chip b{color:var(--deep)}
+.tools{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin-bottom:1rem}
+.tools input{flex:1;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:.55rem .8rem;font:inherit;background:#fff}
+.tools select{border:1px solid var(--line);border-radius:10px;padding:.5rem .7rem;font:inherit;background:#fff;color:var(--muted);font-weight:600}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:.55rem;overflow:hidden}
+.cat summary{cursor:pointer;list-style:none;padding:.85rem 1rem;display:flex;flex-wrap:wrap;gap:.45rem .75rem;align-items:center;justify-content:space-between}
+.cat summary::-webkit-details-marker{display:none}
+.cat summary::before{content:"+";color:var(--teal);font-weight:700;margin-right:.35rem}
+.cat[open] summary::before{content:"–"}
+.cat-title{font-weight:700;font-size:.95rem}
+.meta{display:flex;flex-wrap:wrap;gap:.3rem}
+.tag{font-size:.68rem;font-weight:700;padding:.12rem .45rem;border-radius:999px;border:1px solid var(--line);background:#f8faf9;color:var(--muted)}
+.tag.empty{background:#fff7ed;color:#c2410c;border-color:#fdba74}
+.tag.partial{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
+.tag.ready{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
+.body{padding:0 1rem 1rem;border-top:1px dashed var(--line)}
+.todo{margin:.65rem 0 .4rem;font-size:.82rem;color:#9a3412}
+table{width:100%;border-collapse:collapse;font-size:.84rem;margin-top:.35rem}
+th,td{text-align:left;padding:.4rem .35rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+td a{font-weight:600;text-decoration:none}
+td a:hover{text-decoration:underline}
+.empty-row{color:var(--muted);font-style:italic}
+.foot{padding:1.3rem 0 2rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line);margin-top:1rem}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="journals.html">期刊调研</a>
+    <a href="imaging-papers.html">医工成稿</a>
+    <a class="on" href="imaging-datasets.html">影像数据集</a>
+    <a href="https://paper-doctor.onrender.com/" target="_blank" rel="noopener">组学成稿库</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <div class="kicker">Public medical imaging datasets</div>
+  <div class="brand" id="title">医学影像数据集目录</div>
+  <p class="lead" id="sub"></p>
+  <div class="warn">先按类目列好；每条在 <code>data/imaging-datasets.js</code> 的 <code>datasets[]</code> 里补名称 / 链接 / 备注。状态：待补充 → 部分 → 较全。</div>
+  <div class="chips" id="stats"></div>
+  <div class="tools">
+    <input id="q" type="search" placeholder="搜索类目 / 数据集…" />
+    <select id="filter">
+      <option value="all">全部状态</option>
+      <option value="empty">仅待补充</option>
+      <option value="partial">仅部分</option>
+      <option value="ready">仅较全</option>
+    </select>
+  </div>
+</header>
+
+<main class="wrap" id="list"></main>
+<footer class="foot"><div class="wrap">数据源：<code>data/imaging-datasets.js</code> · 与农业 YOLO 库部位目录对齐，仅医学影像</div></footer>
+
+<script src="data/imaging-datasets.js"></script>
+<script>
+(function(){
+  const D=window.IMAGING_DATASETS; if(!D) return;
+  document.getElementById('title').textContent=D.meta.title;
+  document.getElementById('sub').textContent=D.meta.subtitle||'';
+  const cats=D.categories||[];
+  const nEmpty=cats.filter(c=>c.status==='empty').length;
+  const nPart=cats.filter(c=>c.status==='partial').length;
+  const nReady=cats.filter(c=>c.status==='ready').length;
+  const nDs=cats.reduce((s,c)=>s+(c.datasets||[]).length,0);
+  document.getElementById('stats').innerHTML=`
+    <span class="chip">类目 <b>${cats.length}</b></span>
+    <span class="chip">已列数据集 <b>${nDs}</b></span>
+    <span class="chip">待补充 <b>${nEmpty}</b></span>
+    <span class="chip">部分 <b>${nPart}</b></span>
+    <span class="chip">较全 <b>${nReady}</b></span>
+    <span class="chip">更新 <b>${D.meta.updated||''}</b></span>`;
+
+  const stLabel={empty:'待补充',partial:'部分',ready:'较全'};
+  const list=document.getElementById('list');
+  list.innerHTML=cats.map((c,i)=>`
+    <details class="cat" data-status="${c.status||'empty'}" data-blob="${escAttr([c.name_zh,c.modality,c.task,c.local,(c.datasets||[]).map(d=>d.name).join(' ')].join(' '))}" id="${c.id}">
+      <summary>
+        <span class="cat-title">${i+1}. ${esc(c.name_zh)}</span>
+        <span class="meta">
+          <span class="tag ${c.status||'empty'}">${stLabel[c.status]||c.status||'待补充'}</span>
+          <span class="tag">${esc(c.modality||'')}</span>
+          <span class="tag">${esc(c.task||'')}</span>
+          <span class="tag">${(c.datasets||[]).length} 条</span>
+        </span>
+      </summary>
+      <div class="body">
+        ${c.local?`<p class="todo" style="color:var(--muted)">本地工程：<code>${esc(c.local)}</code></p>`:''}
+        ${c.todo?`<p class="todo">待办：${esc(c.todo)}</p>`:''}
+        <table>
+          <thead><tr><th>数据集</th><th>链接</th><th>备注</th><th>许可</th></tr></thead>
+          <tbody>
+            ${(c.datasets&&c.datasets.length)?c.datasets.map(d=>`
+              <tr>
+                <td><b>${esc(d.name||'')}</b></td>
+                <td>${d.url?`<a href="${escAttr(d.url)}" target="_blank" rel="noopener">打开</a>`:'<span class="empty-row">待补链接</span>'}</td>
+                <td>${esc(d.note||'')}</td>
+                <td>${esc(d.license||'—')}</td>
+              </tr>`).join(''):`<tr><td colspan="4" class="empty-row">尚无条目 — 在 imaging-datasets.js 本类 datasets 数组里追加</td></tr>`}
+          </tbody>
+        </table>
+      </div>
+    </details>`).join('');
+
+  const q=document.getElementById('q');
+  const filter=document.getElementById('filter');
+  function apply(){
+    const s=q.value.trim().toLowerCase();
+    const f=filter.value;
+    document.querySelectorAll('.cat').forEach(el=>{
+      const st=el.dataset.status;
+      const blob=(el.dataset.blob||'').toLowerCase();
+      const okF=f==='all'||st===f;
+      const okQ=!s||blob.includes(s)||el.id.toLowerCase().includes(s);
+      el.classList.toggle('hidden',!(okF&&okQ));
+    });
+  }
+  q.addEventListener('input',apply);
+  filter.addEventListener('change',apply);
+
+  function esc(t){return String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function escAttr(t){return esc(t).replace(/"/g,'&quot;')}
+})();
+</script>
+</body>
+</html>
