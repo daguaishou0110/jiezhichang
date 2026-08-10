@@ -3,79 +3,82 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>医学影像数据集目录 · 科室展开 · 解知常</title>
+<title>医学影像数据集目录 · 解知常</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--max:1000px}
+:root{
+  --ink:#101820;--muted:#5a6770;--paper:#e8f0ec;--card:#fff;--line:rgba(16,24,32,.1);
+  --teal:#0c7a5f;--deep:#074d3d;--max:1040px;
+  --glow:radial-gradient(ellipse 80% 50% at 10% -10%,rgba(12,122,95,.14),transparent 55%),
+         radial-gradient(ellipse 60% 40% at 90% 0%,rgba(7,77,61,.08),transparent 50%);
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:15px;line-height:1.55}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);background-image:var(--glow);background-attachment:fixed;font-size:15px;line-height:1.55}
 h1,h2,.brand{font-family:Fraunces,serif;letter-spacing:-.02em}
 a{color:var(--deep);text-underline-offset:3px}
 .wrap{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
-.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(232,240,236,.92);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.84rem}
 .nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
 .nav-links{display:flex;flex-wrap:wrap;gap:.45rem .75rem}
 .nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
 .nav-links a.on,.nav-links a:hover{color:var(--teal)}
-.hero{padding:1.5rem 0 1rem}
-.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.35rem}
-.brand{font-size:clamp(1.55rem,3.6vw,2.15rem);font-weight:750;color:var(--deep);margin-bottom:.35rem}
-.lead{color:var(--muted);max-width:58ch;font-size:.9rem}
-.warn{margin-top:.65rem;padding:.7rem .85rem;border-radius:12px;background:#fff7ed;border:1px solid #fdba74;color:#7c2d12;font-size:.82rem}
-.okbar{margin-top:.5rem;padding:.55rem .8rem;border-radius:10px;background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;font-size:.82rem;display:none}
-.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.75rem 0 .85rem}
-.chip{font-size:.76rem;font-weight:700;padding:.22rem .6rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
-.chip b{color:var(--deep)}
-.toolbar{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem}
-.btn{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:.38rem .72rem;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
+.hero{padding:1.85rem 0 1.1rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.4rem}
+.brand{font-size:clamp(1.65rem,3.8vw,2.35rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:52ch;font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 .85rem}
+.chip{font-size:.78rem;font-weight:700;padding:.28rem .7rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.85);color:var(--muted);backdrop-filter:blur(6px)}
+.chip b{color:var(--deep);font-family:Fraunces,serif;font-size:1.05em}
+.jump{display:flex;flex-wrap:wrap;gap:.35rem;margin:0 0 1rem}
+.jump a{font-size:.74rem;font-weight:700;text-decoration:none;padding:.3rem .6rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted);transition:color .15s,border-color .15s}
+.jump a:hover{color:var(--teal);border-color:#a7f3d0}
+.tools{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem;align-items:center}
+.tools input{flex:1;min-width:200px;border:1px solid var(--line);border-radius:12px;padding:.58rem .85rem;font:inherit;background:#fff;box-shadow:0 1px 0 rgba(255,255,255,.8)}
+.btn{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:.42rem .78rem;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
 .btn:hover{color:var(--teal);border-color:#a7f3d0}
-.btn.primary{background:var(--teal);border-color:var(--teal);color:#fff}
-.btn.danger{color:#b91c1c;border-color:#fecaca}
-.tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
-.tools input{flex:1;min-width:200px;border:1px solid var(--line);border-radius:10px;padding:.5rem .7rem;font:inherit;background:#fff}
-.dept{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:.75rem;overflow:hidden}
-.dept>summary{cursor:pointer;list-style:none;padding:1rem 1.05rem;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:space-between;align-items:flex-start;background:linear-gradient(180deg,#f7fbf9,#fff)}
+.dept{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:.85rem;overflow:hidden;box-shadow:0 8px 28px rgba(7,77,61,.04)}
+.dept>summary{cursor:pointer;list-style:none;padding:1.05rem 1.15rem;display:flex;flex-wrap:wrap;gap:.55rem;justify-content:space-between;align-items:flex-start;background:linear-gradient(165deg,#f4faf7 0%,#fff 55%)}
 .dept>summary::-webkit-details-marker{display:none}
-.dept>summary::before{content:"科室";font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-right:.35rem;padding-top:.2rem}
-.dept-title{font-family:Fraunces,serif;font-size:1.12rem;font-weight:750;color:var(--deep)}
-.dept-blurb{color:var(--muted);font-size:.82rem;margin-top:.2rem;max-width:56ch}
-.dept-body{padding:.2rem .9rem 1rem;border-top:1px solid var(--line)}
-.sub{border:1px solid var(--line);border-radius:12px;margin:.55rem 0;background:#fbfcfc}
-.sub>summary{cursor:pointer;list-style:none;padding:.7rem .85rem;display:flex;flex-wrap:wrap;gap:.35rem .6rem;justify-content:space-between;align-items:center}
+.dept>summary::before{content:"科室";font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-right:.4rem;padding-top:.25rem}
+.dept-title{font-family:Fraunces,serif;font-size:1.18rem;font-weight:750;color:var(--deep)}
+.dept-blurb{color:var(--muted);font-size:.84rem;margin-top:.25rem;max-width:58ch}
+.dept-body{padding:.15rem 1rem 1.05rem;border-top:1px solid var(--line)}
+.sub{border:1px solid var(--line);border-radius:14px;margin:.65rem 0;background:#fbfcfc;overflow:hidden}
+.sub>summary{cursor:pointer;list-style:none;padding:.75rem .95rem;display:flex;flex-wrap:wrap;gap:.4rem .65rem;justify-content:space-between;align-items:center}
 .sub>summary::-webkit-details-marker{display:none}
-.sub>summary::before{content:"+";color:var(--teal);font-weight:700;margin-right:.25rem}
+.sub>summary::before{content:"+";color:var(--teal);font-weight:700;margin-right:.3rem;font-size:1.05rem}
 .sub[open]>summary::before{content:"–"}
 .sub-title{font-family:Fraunces,serif;font-weight:750;font-size:1.02rem;color:var(--deep)}
-.sub-eyebrow{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.15rem}
-.kind{font-size:.65rem;font-weight:700;padding:.08rem .35rem;border-radius:6px;background:#eef6f3;color:#065f46;white-space:nowrap}
-.meta{display:flex;flex-wrap:wrap;gap:.25rem}
-.tag{font-size:.65rem;font-weight:700;padding:.1rem .4rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.sub-eyebrow{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.12rem}
+.meta{display:flex;flex-wrap:wrap;gap:.28rem}
+.tag{font-size:.65rem;font-weight:700;padding:.12rem .45rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
 .tag.empty{background:#fff7ed;color:#c2410c;border-color:#fdba74}
 .tag.partial{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
 .tag.ready{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
-.sub-body{padding:.15rem .85rem .85rem;border-top:1px dashed var(--line)}
-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:.35rem}
-th,td{text-align:left;padding:.4rem .3rem;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-size:.66rem;text-transform:uppercase;letter-spacing:.04em}
-td a{font-weight:600;text-decoration:none}
-td a:hover{text-decoration:underline}
-td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.32rem .4rem;font:inherit;font-size:.8rem}
-.empty-row{color:var(--muted);font-style:italic}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin-bottom:1rem}
-.panel h2{font-size:1rem;color:var(--deep);margin-bottom:.55rem}
-.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:.45rem}
-@media(max-width:720px){.edit-grid{grid-template-columns:1fr}}
-.edit-grid label{display:flex;flex-direction:column;gap:.2rem;font-size:.72rem;font-weight:700;color:var(--muted)}
-.edit-grid .full{grid-column:1/-1}
-.field{border:1px solid var(--line);border-radius:10px;padding:.48rem .65rem;font:inherit;background:#fff}
-.foot{padding:1.2rem 0 2rem;color:var(--muted);font-size:.78rem;border-top:1px solid var(--line);margin-top:1rem}
+.sub-body{padding:.2rem .95rem .95rem;border-top:1px dashed var(--line)}
+.local{font-size:.78rem;color:var(--muted);margin:.15rem 0 .45rem}
+.local code{font-size:.76rem;background:#eef6f3;padding:.05rem .3rem;border-radius:4px}
+.ds-list{display:grid;gap:.45rem;margin-top:.35rem}
+.ds{display:grid;grid-template-columns:minmax(0,1.15fr) auto minmax(0,1.35fr);gap:.35rem .75rem;align-items:start;padding:.55rem .65rem;border-radius:12px;background:#fff;border:1px solid var(--line)}
+.ds:hover{border-color:#a7f3d0;box-shadow:0 4px 14px rgba(12,122,95,.06)}
+.ds-name{font-weight:700;font-size:.88rem;color:var(--ink);line-height:1.35}
+.ds-name a{text-decoration:none;color:inherit}
+.ds-name a:hover{color:var(--teal);text-decoration:underline}
+.ds-kind{font-size:.64rem;font-weight:700;padding:.12rem .4rem;border-radius:6px;background:#eef6f3;color:#065f46;white-space:nowrap;align-self:center}
+.ds-note{font-size:.78rem;color:var(--muted);grid-column:1/-1;line-height:1.45}
+.ds-link{font-size:.76rem;font-weight:600;word-break:break-all;align-self:center}
+.ds-link a{text-decoration:none}
+.ds-link a:hover{text-decoration:underline}
+.empty{color:var(--muted);font-style:italic;font-size:.85rem;padding:.4rem 0}
+.foot{padding:1.4rem 0 2.2rem;color:var(--muted);font-size:.78rem;border-top:1px solid var(--line);margin-top:1.2rem}
 .hidden{display:none!important}
-.jump{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0 1rem}
-.jump a{font-size:.75rem;font-weight:700;text-decoration:none;padding:.28rem .55rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
-.jump a:hover{color:var(--teal)}
+@media(max-width:720px){
+  .ds{grid-template-columns:1fr auto;gap:.3rem .5rem}
+  .ds-link{grid-column:1/-1}
+}
 </style>
 </head>
 <body>
@@ -91,172 +94,104 @@ td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.32re
 </div></nav>
 
 <header class="hero wrap">
-  <div class="kicker">Hospital department → disease/modality → datasets</div>
-  <div class="brand">医学影像数据集 · 科室目录</div>
-  <p class="lead">一级：医院科室。二级：病症/模态标题（已标「二级目录」）。三级：各类型公开数据集（检测 / 分割转框 / 分类）与链接，已尽量补全。</p>
-  <div class="warn">本机落盘：<code>python tools/serve_imaging_datasets.py</code> 后点「同步到本地」；或「下载 JS」覆盖 <code>data/imaging-datasets.js</code>。</div>
-  <div class="okbar" id="toast"></div>
+  <div class="kicker">Public medical imaging datasets</div>
+  <div class="brand">医学影像数据集库</div>
+  <p class="lead">按医院科室浏览公开数据集：二级为病症 / 模态，条目含名称、类型与下载链接。</p>
   <div class="chips" id="stats"></div>
   <div class="jump" id="jump"></div>
-  <div class="toolbar">
-    <button class="btn primary" type="button" id="btnAddDept">＋ 新增科室</button>
-    <button class="btn" type="button" id="btnDownload">下载 JS</button>
-    <button class="btn" type="button" id="btnSync">同步到本地</button>
+  <div class="tools">
+    <input id="q" type="search" placeholder="搜索科室、二级目录或数据集…" autocomplete="off" />
     <button class="btn" type="button" id="btnExpand">全部展开</button>
     <button class="btn" type="button" id="btnCollapse">全部收起</button>
   </div>
-  <div class="tools">
-    <input id="q" type="search" placeholder="搜索科室 / 二级目录 / 数据集…" />
-  </div>
 </header>
 
-<section class="wrap panel hidden" id="addPanel">
-  <h2 id="addTitle">新增</h2>
-  <div class="edit-grid" id="addFields"></div>
-  <div class="toolbar" style="margin-top:.7rem">
-    <button class="btn primary" type="button" id="btnSaveAdd">保存</button>
-    <button class="btn" type="button" id="btnCancelAdd">取消</button>
-  </div>
-</section>
-
 <main class="wrap" id="list"></main>
-<footer class="foot"><div class="wrap">结构：科室 → 二级目录 → 数据集链接 · 数据源 <code>data/imaging-datasets.js</code></div></footer>
+<footer class="foot"><div class="wrap">科室 → 二级目录 → 数据集 · 数据源 <code>data/imaging-datasets.js</code></div></footer>
 
 <script src="data/imaging-datasets.js"></script>
 <script>
 (function(){
-  const LS='jiezhichang_imaging_dept_draft_v4';
-  const SYNC='http://127.0.0.1:18765/api/imaging-datasets';
   const stLabel={empty:'待补充',partial:'部分',ready:'较全'};
-  let state=structuredClone(window.IMAGING_DATASETS||{meta:{},departments:[]});
-  if(!Array.isArray(state.departments)) state.departments=[];
-  try{const d=localStorage.getItem(LS); if(d){const p=JSON.parse(d); if(p&&Array.isArray(p.departments)) state=p;}}catch(_){}
-
+  const state=window.IMAGING_DATASETS||{meta:{},departments:[]};
+  const deps=Array.isArray(state.departments)?state.departments:[];
   const list=document.getElementById('list');
-  const toast=document.getElementById('toast');
-  const addPanel=document.getElementById('addPanel');
-  let addMode=null; // {type:'dept'} | {type:'sub', di} | {type:'ds', di, si}
 
-  function syncFlat(){
-    state.categories=[];
-    state.departments.forEach(d=>{
-      (d.children||[]).forEach(c=>{
-        state.categories.push({...c, department_id:d.id, department_zh:d.name_zh});
-      });
-    });
-  }
-  function persist(){
-    state.meta=state.meta||{};
-    state.meta.updated=new Date().toISOString().slice(0,10);
-    state.meta.structure='department → subcategory → datasets';
-    syncFlat();
-    localStorage.setItem(LS, JSON.stringify(state));
-  }
-  function toJs(){
-    syncFlat();
-    return '/** 医学影像公开数据集目录 — 科室 → 二级目录 → 数据集。 */\nwindow.IMAGING_DATASETS = '+JSON.stringify(state,null,2)+';\n';
-  }
-  function showToast(m,ok=true){
-    toast.style.display='block';
-    toast.style.background=ok?'#ecfdf5':'#fef2f2';
-    toast.style.borderColor=ok?'#a7f3d0':'#fecaca';
-    toast.style.color=ok?'#065f46':'#991b1b';
-    toast.textContent=m;
-    clearTimeout(showToast._t); showToast._t=setTimeout(()=>toast.style.display='none',4200);
-  }
   function esc(t){return String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
   function escA(t){return esc(t).replace(/"/g,'&quot;')}
-  function slug(s){return String(s||'').trim().toLowerCase().replace(/[·、，,/\\s]+/g,'-').replace(/[^a-z0-9\u4e00-\u9fff-]+/g,'').replace(/-+/g,'-').replace(/^-|-$/g,'').slice(0,40)||('id-'+Date.now().toString(36))}
 
-  function stats(){
-    const deps=state.departments;
-    const subs=deps.reduce((n,d)=>n+(d.children||[]).length,0);
-    const dss=deps.reduce((n,d)=>n+(d.children||[]).reduce((m,c)=>m+(c.datasets||[]).length,0),0);
-    document.getElementById('stats').innerHTML=`
-      <span class="chip">科室 <b>${deps.length}</b></span>
-      <span class="chip">二级目录 <b>${subs}</b></span>
-      <span class="chip">数据集 <b>${dss}</b></span>
-      <span class="chip">更新 <b>${state.meta.updated||''}</b></span>`;
-    document.getElementById('jump').innerHTML=deps.map(d=>`<a href="#dept-${escA(d.id)}">${esc(d.name_zh)}</a>`).join('');
-  }
+  const subs=deps.reduce((n,d)=>n+(d.children||[]).length,0);
+  const dss=deps.reduce((n,d)=>n+(d.children||[]).reduce((m,c)=>m+(c.datasets||[]).length,0),0);
+  document.getElementById('stats').innerHTML=`
+    <span class="chip">科室 <b>${deps.length}</b></span>
+    <span class="chip">二级目录 <b>${subs}</b></span>
+    <span class="chip">数据集 <b>${dss}</b></span>
+    ${state.meta&&state.meta.updated?`<span class="chip">更新 <b>${esc(state.meta.updated)}</b></span>`:''}`;
+  document.getElementById('jump').innerHTML=deps.map(d=>`<a href="#dept-${escA(d.id)}">${esc(d.name_zh)}</a>`).join('');
 
-  function render(){
-    persist(); stats();
-    list.innerHTML=state.departments.map((d,di)=>{
-      const kids=d.children||[];
-      const nDs=kids.reduce((n,c)=>n+(c.datasets||[]).length,0);
-      return `
-      <details class="dept" id="dept-${escA(d.id)}" data-blob="${escA([d.name_zh,d.blurb,kids.map(c=>c.name_zh+' '+(c.datasets||[]).map(x=>x.name).join(' ')).join(' ')].join(' '))}" open>
-        <summary>
-          <div>
-            <div class="dept-title">${esc(d.name_zh)}</div>
-            <div class="dept-blurb">${esc(d.blurb||'')}</div>
-          </div>
-          <span class="meta">
-            <span class="tag">${kids.length} 个二级</span>
-            <span class="tag">${nDs} 数据集</span>
-          </span>
-        </summary>
-        <div class="dept-body">
-          <div class="toolbar">
-            <button class="btn primary" type="button" data-add-sub="${di}">＋ 新增二级目录</button>
-            <button class="btn danger" type="button" data-del-dept="${di}">删除科室</button>
-          </div>
-          ${kids.map((c,si)=>{
-            const ds=c.datasets||[];
-            return `
-            <details class="sub" open data-blob="${escA([c.name_zh,c.modality,c.task,ds.map(x=>x.name+' '+x.url+' '+(x.kind||'')).join(' ')].join(' '))}">
-              <summary>
-                <div>
-                  <span class="sub-eyebrow">二级目录</span>
-                  <span class="sub-title">${esc(c.name_zh)}</span>
-                </div>
-                <span class="meta">
-                  <span class="tag ${c.status||'empty'}">${stLabel[c.status]||'待补充'}</span>
-                  <span class="tag">${esc(c.modality||'')}</span>
-                  <span class="tag">${esc(c.task||'')}</span>
-                  <span class="tag">${ds.length} 条</span>
-                </span>
-              </summary>
-              <div class="sub-body">
-                ${c.local?`<p class="empty-row">本地工程：<code>${esc(c.local)}</code></p>`:''}
-                ${c.todo?`<p class="empty-row" style="color:#9a3412">待办：${esc(c.todo)}</p>`:''}
-                <div class="toolbar">
-                  <button class="btn primary" type="button" data-add-ds="${di}:${si}">＋ 新增数据集</button>
-                  <button class="btn danger" type="button" data-del-sub="${di}:${si}">删除二级目录</button>
-                </div>
-                <table>
-                  <thead><tr><th>数据集</th><th>类型</th><th>链接</th><th>备注</th><th>许可</th><th></th></tr></thead>
-                  <tbody>
-                    ${ds.length?ds.map((x,xi)=>`
-                      <tr>
-                        <td><input data-path="${di}:${si}:${xi}" data-k="name" value="${escA(x.name||'')}" /></td>
-                        <td><span class="kind">${esc(x.kind||'detection')}</span></td>
-                        <td><input data-path="${di}:${si}:${xi}" data-k="url" value="${escA(x.url||'')}" placeholder="https://" /></td>
-                        <td><input data-path="${di}:${si}:${xi}" data-k="note" value="${escA(x.note||'')}" /></td>
-                        <td><input data-path="${di}:${si}:${xi}" data-k="license" value="${escA(x.license||'')}" /></td>
-                        <td>
-                          ${x.url?`<a class="btn" href="${escA(x.url)}" target="_blank" rel="noopener">打开</a>`:''}
-                          <button class="btn danger" type="button" data-del-ds="${di}:${si}:${xi}">删</button>
-                        </td>
-                      </tr>`).join(''):`<tr><td colspan="6" class="empty-row">暂无数据集</td></tr>`}
-                  </tbody>
-                </table>
-              </div>
-            </details>`;
-          }).join('')||'<p class="empty-row">暂无二级目录</p>'}
+  list.innerHTML=deps.map(d=>{
+    const kids=d.children||[];
+    const nDs=kids.reduce((n,c)=>n+(c.datasets||[]).length,0);
+    return `
+    <details class="dept" id="dept-${escA(d.id)}" open
+      data-blob="${escA([d.name_zh,d.blurb,kids.map(c=>[c.name_zh,c.modality,c.task,(c.datasets||[]).map(x=>[x.name,x.note,x.kind].join(' ')].join(' ')].join(' ')].join(' '))].join(' '))}">
+      <summary>
+        <div>
+          <div class="dept-title">${esc(d.name_zh)}</div>
+          ${d.blurb?`<div class="dept-blurb">${esc(d.blurb)}</div>`:''}
         </div>
-      </details>`;
-    }).join('')||'<p class="empty-row">暂无科室</p>';
-    applyQ();
-  }
+        <span class="meta">
+          <span class="tag">${kids.length} 个二级</span>
+          <span class="tag">${nDs} 数据集</span>
+        </span>
+      </summary>
+      <div class="dept-body">
+        ${kids.map(c=>{
+          const ds=c.datasets||[];
+          return `
+          <details class="sub" open
+            data-blob="${escA([c.name_zh,c.modality,c.task,ds.map(x=>[x.name,x.url,x.note,x.kind].join(' ')].join(' ')].join(' '))}">
+            <summary>
+              <div>
+                <span class="sub-eyebrow">二级目录</span>
+                <span class="sub-title">${esc((c.name_zh||'').replace(/^二级[：:]\s*/,''))}</span>
+              </div>
+              <span class="meta">
+                <span class="tag ${c.status||'empty'}">${stLabel[c.status]||'待补充'}</span>
+                ${c.modality?`<span class="tag">${esc(c.modality)}</span>`:''}
+                ${c.task?`<span class="tag">${esc(c.task)}</span>`:''}
+                <span class="tag">${ds.length} 条</span>
+              </span>
+            </summary>
+            <div class="sub-body">
+              ${c.local?`<p class="local">本地：<code>${esc(c.local)}</code></p>`:''}
+              <div class="ds-list">
+                ${ds.length?ds.map(x=>{
+                  const url=(x.url||'').trim();
+                  const name=esc(x.name||'未命名');
+                  return `
+                  <article class="ds">
+                    <div class="ds-name">${url?`<a href="${escA(url)}" target="_blank" rel="noopener">${name}</a>`:name}</div>
+                    <span class="ds-kind">${esc(x.kind||'dataset')}</span>
+                    <div class="ds-link">${url?`<a href="${escA(url)}" target="_blank" rel="noopener">${esc(url.length>64?url.slice(0,62)+'…':url)}</a>`:'—'}</div>
+                    ${x.note||x.license?`<div class="ds-note">${esc([x.note,x.license].filter(Boolean).join(' · '))}</div>`:''}
+                  </article>`;
+                }).join(''):'<p class="empty">暂无数据集</p>'}
+              </div>
+            </div>
+          </details>`;
+        }).join('')||'<p class="empty">暂无二级目录</p>'}
+      </div>
+    </details>`;
+  }).join('')||'<p class="empty">暂无数据</p>';
 
   function applyQ(){
     const s=document.getElementById('q').value.trim().toLowerCase();
     list.querySelectorAll('.dept').forEach(dep=>{
       let any=false;
       dep.querySelectorAll('.sub').forEach(sub=>{
-        const ok=!s||(sub.dataset.blob||'').toLowerCase().includes(s)||(dep.dataset.blob||'').toLowerCase().includes(s);
+        const blob=((sub.dataset.blob||'')+' '+(dep.dataset.blob||'')).toLowerCase();
+        const ok=!s||blob.includes(s);
         sub.classList.toggle('hidden',!ok);
         if(ok) any=true;
       });
@@ -266,92 +201,9 @@ td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.32re
     });
   }
 
-  list.addEventListener('change',e=>{
-    const t=e.target;
-    if(!t.matches('input[data-path][data-k]')) return;
-    const [di,si,xi]=t.dataset.path.split(':').map(Number);
-    state.departments[di].children[si].datasets[xi][t.dataset.k]=t.value;
-    persist();
-  });
-  list.addEventListener('click',e=>{
-    const a=e.target.closest('[data-add-sub]');
-    if(a){ openAdd({type:'sub', di:+a.dataset.addSub}); return; }
-    const b=e.target.closest('[data-add-ds]');
-    if(b){ const [di,si]=b.dataset.addDs.split(':').map(Number); openAdd({type:'ds', di, si}); return; }
-    const c=e.target.closest('[data-del-dept]');
-    if(c){ if(confirm('删除该科室及下属全部目录？')){ state.departments.splice(+c.dataset.delDept,1); render(); } return; }
-    const d=e.target.closest('[data-del-sub]');
-    if(d){ const [di,si]=d.dataset.delSub.split(':').map(Number); if(confirm('删除该二级目录？')){ state.departments[di].children.splice(si,1); render(); } return; }
-    const f=e.target.closest('[data-del-ds]');
-    if(f){ const [di,si,xi]=f.dataset.delDs.split(':').map(Number); if(confirm('删除该数据集？')){ state.departments[di].children[si].datasets.splice(xi,1); render(); } }
-  });
-
-  function openAdd(mode){
-    addMode=mode; addPanel.classList.remove('hidden');
-    const box=document.getElementById('addFields');
-    if(mode.type==='dept'){
-      document.getElementById('addTitle').textContent='新增科室';
-      box.innerHTML=`
-        <label>科室名<input class="field" id="f1" placeholder="如：泌尿外科" /></label>
-        <label>ID<input class="field" id="f2" placeholder="自动生成" /></label>
-        <label class="full">简介<textarea class="field" id="f3" rows="2" placeholder="本科室覆盖哪些影像方向"></textarea></label>`;
-    } else if(mode.type==='sub'){
-      document.getElementById('addTitle').textContent='新增二级目录 · '+state.departments[mode.di].name_zh;
-      box.innerHTML=`
-        <label>二级目录名<input class="field" id="f1" placeholder="如：肾结石 · 检测" /></label>
-        <label>ID<input class="field" id="f2" /></label>
-        <label>模态<input class="field" id="f3" placeholder="CT / 超声" /></label>
-        <label>任务<input class="field" id="f4" placeholder="目标检测" /></label>`;
-    } else {
-      const sub=state.departments[mode.di].children[mode.si];
-      document.getElementById('addTitle').textContent='新增数据集 · '+sub.name_zh;
-      box.innerHTML=`
-        <label>数据集名<input class="field" id="f1" placeholder="数据集名称" /></label>
-        <label>链接<input class="field" id="f2" placeholder="https://" /></label>
-        <label class="full">备注<input class="field" id="f3" placeholder="规模/是否原生框等" /></label>
-        <label>许可<input class="field" id="f4" placeholder="可选" /></label>`;
-    }
-  }
-  document.getElementById('btnCancelAdd').onclick=()=>{addPanel.classList.add('hidden'); addMode=null;};
-  document.getElementById('btnSaveAdd').onclick=()=>{
-    if(!addMode) return;
-    if(addMode.type==='dept'){
-      const name=document.getElementById('f1').value.trim(); if(!name) return showToast('填写科室名',false);
-      let id=document.getElementById('f2').value.trim()||slug(name);
-      state.departments.push({id, name_zh:name, blurb:document.getElementById('f3').value.trim(), children:[]});
-    } else if(addMode.type==='sub'){
-      const name=document.getElementById('f1').value.trim(); if(!name) return showToast('填写二级目录名',false);
-      let id=document.getElementById('f2').value.trim()||slug(name);
-      const ch=state.departments[addMode.di].children||(state.departments[addMode.di].children=[]);
-      ch.push({id, name_zh:name, modality:document.getElementById('f3').value.trim(), task:document.getElementById('f4').value.trim(), status:'empty', local:'', datasets:[], todo:''});
-    } else {
-      const name=document.getElementById('f1').value.trim(); if(!name) return showToast('填写数据集名',false);
-      const sub=state.departments[addMode.di].children[addMode.si];
-      sub.datasets=sub.datasets||[];
-      sub.datasets.push({name, url:document.getElementById('f2').value.trim(), note:document.getElementById('f3').value.trim(), license:document.getElementById('f4').value.trim()});
-      if(sub.status==='empty') sub.status='partial';
-    }
-    addPanel.classList.add('hidden'); addMode=null; render(); showToast('已保存到草稿');
-  };
-
-  document.getElementById('btnAddDept').onclick=()=>openAdd({type:'dept'});
   document.getElementById('q').addEventListener('input',applyQ);
   document.getElementById('btnExpand').onclick=()=>list.querySelectorAll('details').forEach(d=>d.open=true);
   document.getElementById('btnCollapse').onclick=()=>list.querySelectorAll('details.dept').forEach(d=>d.open=false);
-  document.getElementById('btnDownload').onclick=()=>{
-    const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([toJs()],{type:'text/javascript'}));
-    a.download='imaging-datasets.js'; a.click(); showToast('已下载，请覆盖到 data/');
-  };
-  document.getElementById('btnSync').onclick=async()=>{
-    try{
-      const res=await fetch(SYNC,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(state)});
-      const data=await res.json().catch(()=>({}));
-      if(!res.ok||!data.ok) throw new Error(data.error||res.status);
-      showToast('已写入本地 data/imaging-datasets.js');
-    }catch(err){ showToast('同步失败：先运行 python tools/serve_imaging_datasets.py（'+(err.message||err)+'）',false); }
-  };
-
-  render();
 })();
 </script>
 </body>
