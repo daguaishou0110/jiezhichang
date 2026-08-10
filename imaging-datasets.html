@@ -48,7 +48,9 @@ a{color:var(--deep);text-underline-offset:3px}
 .sub>summary::-webkit-details-marker{display:none}
 .sub>summary::before{content:"+";color:var(--teal);font-weight:700;margin-right:.25rem}
 .sub[open]>summary::before{content:"–"}
-.sub-title{font-weight:700;font-size:.9rem}
+.sub-title{font-family:Fraunces,serif;font-weight:750;font-size:1.02rem;color:var(--deep)}
+.sub-eyebrow{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.15rem}
+.kind{font-size:.65rem;font-weight:700;padding:.08rem .35rem;border-radius:6px;background:#eef6f3;color:#065f46;white-space:nowrap}
 .meta{display:flex;flex-wrap:wrap;gap:.25rem}
 .tag{font-size:.65rem;font-weight:700;padding:.1rem .4rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
 .tag.empty{background:#fff7ed;color:#c2410c;border-color:#fdba74}
@@ -123,7 +125,7 @@ td input{width:100%;border:1px solid var(--line);border-radius:8px;padding:.32re
 <script src="data/imaging-datasets.js"></script>
 <script>
 (function(){
-  const LS='jiezhichang_imaging_dept_draft_v1';
+  const LS='jiezhichang_imaging_dept_draft_v2';
   const SYNC='http://127.0.0.1:18765/api/imaging-datasets';
   const stLabel={empty:'待补充',partial:'部分',ready:'较全'};
   let state=structuredClone(window.IMAGING_DATASETS||{meta:{},departments:[]});
