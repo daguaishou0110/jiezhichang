@@ -20,11 +20,12 @@ DST_HTML = DST_ROOT / "imaging-papers.html"
 
 GROUP_LABELS = {
     "A": "结直肠息肉 YOLO",
-    "B": "口腔",
+    "B": "口腔全景 OPG",
     "C": "冠脉分割",
     "D": "肺超声 B-line",
     "E": "肝脏小肿瘤",
     "F": "宏基因组 CRC",
+    "H": "甲状腺超声",
 }
 
 AGRI_GROUPS = {"T", "R"}
