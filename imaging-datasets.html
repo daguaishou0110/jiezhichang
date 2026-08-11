@@ -398,7 +398,7 @@ a{color:inherit}
               ${ds.length?ds.map(x=>{
                 const url=(x.url||'').trim();
                 let host='打开';
-                try{host=new URL(url).hostname.replace(/^www\\./,'')}catch(_){}
+                try{host=new URL(url).hostname.replace(/^www\./,'')}catch(_){}
                 const inner=`
                   <div>
                     <div class="row-name">${esc(x.name||'未命名')}</div>
