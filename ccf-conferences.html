@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CCF 会议全量目录 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--sky:#0b6e8a;--deep:#0b4f63;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:15px;line-height:1.55}
+h1,h2,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.82rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--sky)}
+.hero{padding:1.8rem 0 1rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--sky);margin-bottom:.3rem}
+h1{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:68ch;font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.85rem 0}
+.chip{font-size:.78rem;font-weight:700;padding:.25rem .65rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.chip b{color:var(--ink)}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:0 0 1rem}
+.filters select,.filters input{border:1px solid var(--line);border-radius:10px;padding:.5rem .7rem;font:inherit;background:#fff}
+.filters input{flex:1;min-width:180px}
+.filters button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.4rem .75rem;font-weight:700;font-size:.78rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.filters button.on{background:var(--sky);color:#fff;border-color:transparent}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--card);margin-bottom:1.5rem;max-height:72vh}
+table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:980px}
+th,td{text-align:left;padding:.55rem .65rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:#f7faf8;position:sticky;top:0;z-index:1}
+tr:hover td{background:#f5fafb}
+.rank{display:inline-block;font-weight:800;font-size:.72rem;padding:.12rem .4rem;border-radius:6px}
+.rank.A{background:#ecfdf5;color:#065f46}
+.rank.B{background:#eff6ff;color:#1d4ed8}
+.rank.C{background:#fff7ed;color:#9a3412}
+.badge{display:inline-block;font-size:.68rem;font-weight:700;padding:.1rem .35rem;border-radius:5px;margin-left:.25rem}
+.badge.ready{background:#d1fae5;color:#065f46}
+.badge.profiling{background:#fef3c7;color:#92400e}
+.short{font-weight:750;color:var(--deep)}
+.full{color:var(--muted);font-size:.8rem;margin-top:.15rem}
+.focus{color:#334155;font-size:.8rem}
+.dirs{margin-top:.25rem;font-size:.75rem;color:#475569}
+.dirs span{display:inline-block;margin:.1rem .25rem .1rem 0;padding:.05rem .35rem;background:#f1f5f9;border-radius:4px}
+.muted{color:var(--muted);font-size:.78rem}
+.todo{color:#9a3412;font-size:.75rem;font-weight:600}
+.statline{font-size:.8rem;line-height:1.45}
+.foot{padding:1rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+#empty{display:none;padding:1.2rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="track-cs.html">计算机</a>
+    <a href="package-cs-venue.html">会议/期刊辅导</a>
+    <a class="on" href="ccf-conferences.html">CCF 会议目录</a>
+    <a href="package-cs-venue.html#cv">CV 方向</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <div class="kicker">会议/期刊辅导 · 选会底板</div>
+  <h1>CCF A / B / C 会议全量目录</h1>
+  <p class="lead" id="lead">全量名录 + 辅导相关会 2025–26 录用/方向/检索入口（持续补全）。</p>
+  <div class="chips" id="chips"></div>
+</header>
+
+<section class="wrap">
+  <div class="filters">
+    <button type="button" data-rank="all" class="on">全部</button>
+    <button type="button" data-rank="A">A</button>
+    <button type="button" data-rank="B">B</button>
+    <button type="button" data-rank="C">C</button>
+    <button type="button" data-filled="1" id="btnFilled">仅已补会况</button>
+    <select id="field"><option value="">全部专业领域</option></select>
+    <input id="q" type="search" placeholder="搜简称 / 全称 / 方向…" />
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>档</th>
+          <th>会议</th>
+          <th>CCF 专业领域</th>
+          <th>对齐会刊辅导</th>
+          <th>收录特点</th>
+          <th>2025–26 会况</th>
+          <th>论文列表</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <p id="empty">无匹配会议。</p>
+</section>
+
+<footer class="foot"><div class="wrap" id="foot">数据源：CCF 2026 第七版目录 · 会况持续补全</div></footer>
+
+<script src="data/ccf-conferences.js"></script>
+<script>
+(function(){
+  const data = window.CCF_CONFERENCES || {meta:{}, conferences:[]};
+  const confs = data.conferences || [];
+  const meta = data.meta || {};
+  const tbody = document.getElementById("tbody");
+  const empty = document.getElementById("empty");
+  const fieldSel = document.getElementById("field");
+  const qInput = document.getElementById("q");
+  const btnFilled = document.getElementById("btnFilled");
+  let rank = "all";
+  let onlyFilled = false;
+
+  document.getElementById("chips").innerHTML = [
+    `<span class="chip">合计 <b>${meta.counts?.total ?? confs.length}</b></span>`,
+    `<span class="chip">A <b>${meta.counts?.A ?? "-"}</b></span>`,
+    `<span class="chip">B <b>${meta.counts?.B ?? "-"}</b></span>`,
+    `<span class="chip">C <b>${meta.counts?.C ?? "-"}</b></span>`,
+    `<span class="chip">已补会况 <b>${meta.counts?.with_stats ?? "-"}</b></span>`,
+    `<span class="chip">含24–26 <b>${meta.counts?.with_recent ?? "-"}</b></span>`,
+    `<span class="chip">有收录说明 <b>${meta.counts?.with_focus ?? "-"}</b></span>`
+  ].join("");
+  document.getElementById("lead").textContent = meta.note || document.getElementById("lead").textContent;
+  document.getElementById("foot").textContent = `${meta.source || "CCF"} · mirror ${meta.mirror || ""} · 更新 ${meta.updated || ""}`;
+
+  const fields = [...new Set(confs.map(c => c.field))].sort((a,b)=>a.localeCompare(b,"zh"));
+  fields.forEach(f=>{
+    const o = document.createElement("option");
+    o.value = f; o.textContent = f;
+    fieldSel.appendChild(o);
+  });
+
+  document.querySelectorAll(".filters button[data-rank]").forEach(btn=>{
+    btn.onclick = ()=>{
+      rank = btn.dataset.rank;
+      document.querySelectorAll(".filters button[data-rank]").forEach(b=>b.classList.toggle("on", b===btn));
+      render();
+    };
+  });
+  btnFilled.onclick = ()=>{
+    onlyFilled = !onlyFilled;
+    btnFilled.classList.toggle("on", onlyFilled);
+    render();
+  };
+  fieldSel.onchange = render;
+  qInput.oninput = render;
+
+  function hasStats(c){
+    return Object.values(c.stats || {}).some(s => s && s.accepted != null);
+  }
+
+  function fmtYear(label, s){
+    if (!s) return "";
+    if (s.accepted == null && !s.notes) return "";
+    if (s.accepted == null) return `<div class="muted">${label}: ${s.notes || "—"}</div>`;
+    const rate = (s.submitted && s.accepted != null)
+      ? `（${(100*s.accepted/s.submitted).toFixed(1)}%）` : "";
+    const sub = s.submitted != null ? ` / ${s.submitted}` : "";
+    return `<div><b>${label}</b> 录用 ${s.accepted}${sub}${rate}</div>`;
+  }
+
+  function yearCell(c){
+    const years = Object.keys(c.stats || {}).sort().reverse();
+    const withNum = years.filter(y => c.stats[y]?.accepted != null);
+    const show = withNum.length ? withNum.slice(0, 4) : ["2026","2025","2024"].filter(y => c.stats?.[y]);
+    const parts = show.map(y => fmtYear(y, c.stats?.[y])).filter(Boolean);
+    if (!parts.length) return '<span class="todo">待补录用/方向</span>';
+    const dirSrc = withNum.map(y => c.stats[y]).find(s => s.directions?.length) || c.stats?.["2025"] || {};
+    const dirs = dirSrc.directions || [];
+    const dirHtml = dirs.length
+      ? `<div class="dirs">${dirs.slice(0,6).map(d=>`<span>${d.name}${d.share?` · ${d.share}`:""}</span>`).join("")}</div>`
+      : "";
+    const note = (withNum[0] && c.stats[withNum[0]]?.notes) || c.stats?.["2025"]?.notes || "";
+    return `<div class="statline">${parts.join("")}${dirHtml}${note?`<div class="muted">${note}</div>`:""}</div>`;
+  }
+
+  function statusBadge(s){
+    if (s === "ready") return '<span class="badge ready">ready</span>';
+    if (s === "profiling") return '<span class="badge profiling">profiling</span>';
+    return "";
+  }
+
+  function paperLinks(c){
+    const links = [];
+    const idx = c.papers_index || c.stats?.["2025"]?.papers_index || c.stats?.["2026"]?.papers_index;
+    if (idx) links.push(`<a href="${idx}" target="_blank" rel="noopener">论文列表</a>`);
+    if (c.dblp) links.push(`<a href="${c.dblp}" target="_blank" rel="noopener">DBLP</a>`);
+    return links.join(" · ") || "—";
+  }
+
+  function render(){
+    const field = fieldSel.value;
+    const q = (qInput.value || "").trim().toLowerCase();
+    const rows = confs.filter(c=>{
+      if (rank !== "all" && c.rank !== rank) return false;
+      if (onlyFilled && !hasStats(c)) return false;
+      if (field && c.field !== field) return false;
+      if (!q) return true;
+      const blob = `${c.short} ${c.full} ${c.field} ${(c.venue_l1||[]).join(" ")} ${c.focus||""}`.toLowerCase();
+      return blob.includes(q);
+    });
+    empty.style.display = rows.length ? "none" : "block";
+    tbody.innerHTML = rows.map(c=>`
+      <tr>
+        <td><span class="rank ${c.rank}">${c.rank}</span>${statusBadge(c.status)}</td>
+        <td><div class="short">${c.short}</div><div class="full">${c.full}</div></td>
+        <td class="muted">${c.field}</td>
+        <td class="muted">${(c.venue_l1||[]).join(" · ") || "—"}</td>
+        <td class="focus">${c.focus || '<span class="todo">待写收录特点</span>'}</td>
+        <td>${yearCell(c)}</td>
+        <td>${paperLinks(c)}</td>
+      </tr>`).join("");
+  }
+  render();
+})();
+</script>
+</body>
+</html>

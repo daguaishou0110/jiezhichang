@@ -1,0 +1,1969 @@
+{
+  "_meta": {
+    "note": "人工补录 batch-10：SPAA/PERCOM/SRDS/IUI/CC 等。",
+    "updated": "2026-08-12"
+  },
+  "venues": {
+    "ACM SIGOPS ATC": {
+      "focus": "系统顶会（USENIX ATC）；操作系统、存储、分布式与部署系统。",
+      "papers_index": "https://www.usenix.org/conference/atc25/technical-sessions",
+      "dblp": "https://dblp.org/db/conf/usenix/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 100,
+          "submitted": 634,
+          "notes": "官方 PC 寄语：100/634≈16%（含 full/short/deployed）。",
+          "directions": [
+            {
+              "name": "系统 / 存储 / 分布式",
+              "share": "高"
+            },
+            {
+              "name": "Deployed Systems",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://www.usenix.org/conference/atc25/technical-sessions"
+        }
+      }
+    },
+    "VLDB": {
+      "focus": "数据库/大数据顶会；以 PVLDB 期刊式录用为主。",
+      "papers_index": "https://www.vldb.org/pvldb/",
+      "dblp": "https://dblp.org/db/journals/pvldb/index.html",
+      "status": "ready",
+      "stats": {
+        "2024": {
+          "accepted": 299,
+          "submitted": 1010,
+          "notes": "社区汇总约 29.6%。",
+          "directions": [
+            {
+              "name": "数据系统",
+              "share": "高"
+            },
+            {
+              "name": "大数据 / 分析",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.vldb.org/pvldb/"
+        },
+        "2025": {
+          "accepted": 446,
+          "submitted": null,
+          "notes": "社区汇总录用约 446（期刊式滚动，分母口径不一）。",
+          "directions": [
+            {
+              "name": "数据系统",
+              "share": "高"
+            },
+            {
+              "name": "AI4DB / DB4AI",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://www.vldb.org/pvldb/"
+        }
+      }
+    },
+    "INTERSPEECH": {
+      "focus": "语音与口语处理旗舰；ASR、TTS、说话人、语音 LLM。",
+      "papers_index": "https://www.isca-archive.org/interspeech_2025",
+      "dblp": "https://dblp.org/db/conf/interspeech/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 1163,
+          "submitted": 2332,
+          "notes": "官方通知：1163/2332≈49.87%。",
+          "directions": [
+            {
+              "name": "ASR / TTS",
+              "share": "高"
+            },
+            {
+              "name": "语音大模型",
+              "share": "高"
+            },
+            {
+              "name": "说话人 / 副语言",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://www.isca-archive.org/interspeech_2025"
+        }
+      }
+    },
+    "AAMAS": {
+      "focus": "多智能体与自主智能体；协商、协作、学习型 agent。",
+      "papers_index": "https://aamas2025.org/index.php/conference/program/accepted-papers/",
+      "dblp": "https://dblp.org/db/conf/ifaamas/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 260,
+          "submitted": null,
+          "notes": "主技术轨 Full Papers 录用列表计 260 篇；另有 EA/特殊轨。",
+          "directions": [
+            {
+              "name": "学习型 agent",
+              "share": "高"
+            },
+            {
+              "name": "博弈 / 协商",
+              "share": "中高"
+            },
+            {
+              "name": "多智能体系统",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://aamas2025.org/index.php/conference/program/accepted-papers/"
+        }
+      }
+    },
+    "DSN": {
+      "focus": "可信赖系统与网络；可靠性、容错与安全交叉。",
+      "papers_index": "https://dsn2025.github.io/cpaccepted.html",
+      "dblp": "https://dblp.org/db/conf/dsn/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 111,
+          "submitted": null,
+          "notes": "官网 Accepted Papers 列表计约 111（研究轨口径，以官网为准）。",
+          "directions": [
+            {
+              "name": "可靠性 / 容错",
+              "share": "高"
+            },
+            {
+              "name": "安全",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dsn2025.github.io/cpaccepted.html"
+        }
+      }
+    },
+    "MobiHoc": {
+      "focus": "移动自组网与无线网络；移动计算与无线系统。",
+      "papers_index": "https://www.sigmobile.org/mobihoc/2025/program.html",
+      "dblp": "https://dblp.org/db/conf/mobihoc/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 89,
+          "submitted": null,
+          "notes": "按 2025 程序页研究论文条目标题计约 89。",
+          "directions": [
+            {
+              "name": "无线 / 移动网络",
+              "share": "高"
+            },
+            {
+              "name": "边缘 / 感知",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://www.sigmobile.org/mobihoc/2025/program.html"
+        }
+      }
+    },
+    "ICDCS": {
+      "focus": "分布式计算系统。",
+      "papers_index": "https://icdcs2025.icdcs.org/",
+      "dblp": "https://dblp.org/db/conf/icdcs/index.html",
+      "status": "profiling",
+      "stats": {
+        "2025": {
+          "accepted": 240,
+          "submitted": null,
+          "notes": "官网宣传 240+ papers（含分轨口径，精确分母待补）。",
+          "directions": [
+            {
+              "name": "分布式系统",
+              "share": "高"
+            },
+            {
+              "name": "云边 / 容错",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://icdcs2025.icdcs.org/"
+        }
+      }
+    },
+    "ICAPS": {
+      "focus": "自动规划与调度。",
+      "papers_index": "https://ojs.aaai.org/index.php/ICAPS",
+      "dblp": "https://dblp.org/db/conf/aips/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 51,
+          "submitted": 228,
+          "notes": "官方：51/228≈22%（38 long + 13 short）。",
+          "directions": [
+            {
+              "name": "规划模型",
+              "share": "高"
+            },
+            {
+              "name": "学习规划",
+              "share": "中高"
+            },
+            {
+              "name": "应用调度",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://ojs.aaai.org/index.php/ICAPS"
+        }
+      }
+    },
+    "ISMAR": {
+      "focus": "混合/增强现实；TVCG 期刊轨 + 会议轨统一审稿。",
+      "papers_index": "https://www.ieeeismar.net/2025/",
+      "dblp": "https://dblp.org/db/conf/ismar/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 217,
+          "submitted": 763,
+          "notes": "官网统计：journal 60 + conference 157 / 763；表内 accepted=两者合计。",
+          "directions": [
+            {
+              "name": "AR/MR/VR",
+              "share": "高"
+            },
+            {
+              "name": "感知 / 交互 / 显示",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.ismar.net/posts/ismar2025/"
+        }
+      }
+    },
+    "BMVC": {
+      "focus": "英国视觉会；CV 全谱。",
+      "papers_index": "https://bmvc2025.bmva.org/programme/accepted_papers/",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 276,
+          "submitted": 865,
+          "notes": "官方：276/865。",
+          "directions": [
+            {
+              "name": "识别·检测·分割",
+              "share": "高"
+            },
+            {
+              "name": "生成与视频",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://bmvc2025.bmva.org/programme/accepted_papers/"
+        }
+      }
+    },
+    "MICCAI": {
+      "focus": "医学影像计算旗舰；分割/检测/配准/临床影像 AI。",
+      "papers_index": "https://papers.miccai.org/miccai-2025/",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 1027,
+          "submitted": 3677,
+          "notes": "程序册约 30%。",
+          "directions": [
+            {
+              "name": "分割 / 检测",
+              "share": "很高"
+            },
+            {
+              "name": "重建 / 配准",
+              "share": "高"
+            },
+            {
+              "name": "临床转化",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://papers.miccai.org/miccai-2025/"
+        }
+      }
+    },
+    "CHI": {
+      "focus": "人机交互旗舰；交互设计、可用性、社会与可及性。",
+      "papers_index": "https://dl.acm.org/conference/chi",
+      "dblp": "https://dblp.org/db/conf/chi/index.html",
+      "status": "ready",
+      "stats": {}
+    },
+    "CSCW": {
+      "focus": "计算机支持的协同工作；社会计算、协作系统。录用论文发 PACM HCI，按周期评审。",
+      "papers_index": "https://cscw.acm.org/",
+      "dblp": "https://dblp.org/db/conf/cscw/index.html",
+      "status": "ready",
+      "stats": {
+        "2024": {
+          "accepted": 458,
+          "submitted": null,
+          "notes": "社区论文浏览器统计 CSCW 2024 约 458 篇（期刊式分周期）。",
+          "directions": [
+            {
+              "name": "协作 / 社会计算",
+              "share": "高"
+            },
+            {
+              "name": "HCI 方法",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://johnguerra.co/viz/cscw2024Papers/"
+        },
+        "2025": {
+          "accepted": null,
+          "submitted": null,
+          "notes": "期刊式两周期评审；录用后邀报告。近年参考 2024≈458。",
+          "directions": [
+            {
+              "name": "协作 / 社会计算",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://cscw.acm.org/2025/"
+        }
+      }
+    },
+    "UbiComp": {
+      "focus": "普适计算；主会报告 IMWUT 期刊论文（卷期滚动）。",
+      "papers_index": "https://www.ubicomp.org/",
+      "dblp": "https://dblp.org/db/journals/imwut/index.html",
+      "status": "profiling",
+      "stats": {
+        "2025": {
+          "accepted": null,
+          "submitted": null,
+          "notes": "主轨为 IMWUT 2024 Issue4 + 2025 Issues1–3；无单一“年会录用率”。Companion 另计。",
+          "directions": [
+            {
+              "name": "普适 / 可穿戴",
+              "share": "高"
+            },
+            {
+              "name": "感知与人因",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.ubicomp.org/ubicomp-iswc-2025/imwut_papers/"
+        }
+      }
+    },
+    "IUI": {
+      "focus": "智能用户界面；HCI × AI。",
+      "papers_index": "https://iui.acm.org/2025/",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 98,
+          "submitted": null,
+          "notes": "DBLP iui2025 条目计 98（可能含 companion/短文；非仅 long paper）。",
+          "directions": [
+            {
+              "name": "智能交互",
+              "share": "高"
+            },
+            {
+              "name": "XAI / LLM UI",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/iui/iui2025.html"
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/iui/index.html"
+    },
+    "MobileHCI": {
+      "focus": "移动人机交互。",
+      "papers_index": "https://mobilehci.acm.org/2025/acceptedpapers.php",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "移动交互 / 可穿戴",
+              "share": "高"
+            },
+            {
+              "name": "隐私 / XR 移动",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://mobilehci.acm.org/2025/acceptedpapers.php",
+          "notes": "官网 Accepted Papers 列表计 40（不含 demo/LBW）。",
+          "accepted": 40
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/mhci/index.html"
+    },
+    "PERCOM": {
+      "focus": "普适计算与通信。",
+      "papers_index": "https://percom.org/2025/",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "传感 / 可穿戴",
+              "share": "高"
+            },
+            {
+              "name": "边缘智能",
+              "share": "高"
+            }
+          ],
+          "notes": "DBLP percom2025 条目计 25（与 Research Track 规模一致）。",
+          "papers_index": "https://dblp.org/db/conf/percom/percom2025.html",
+          "accepted": 25
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/percom/index.html"
+    },
+    "CoNEXT": {
+      "focus": "新兴网络实验与技术；经 PACMNET 滚动录用。",
+      "papers_index": "https://dl.acm.org/doi/10.1145/3768969",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "网络系统实验",
+              "share": "高"
+            },
+            {
+              "name": "协议 / 测量",
+              "share": "高"
+            }
+          ],
+          "notes": "PACMNET Vol.3 全年 50 篇；其中 Dec/CoNEXT4 期 32/181（审 172），June 期 5/75。",
+          "papers_index": "https://dl.acm.org/doi/10.1145/3768969",
+          "accepted": 50
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/conext/index.html"
+    },
+    "ESORICS": {
+      "focus": "欧洲安全研究旗舰；系统安全、隐私、密码应用与 AI 安全。",
+      "papers_index": "https://esorics2025.sciencesconf.org/resource/page/id/11",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "系统 / 硬件安全",
+              "share": "高"
+            },
+            {
+              "name": "隐私 / 密码协议",
+              "share": "高"
+            },
+            {
+              "name": "AI 安全",
+              "share": "中高"
+            }
+          ],
+          "notes": "官方程序册：100/605 unique submissions（约 16.5%）。",
+          "papers_index": "https://esorics2025.sciencesconf.org/resource/page/id/11",
+          "accepted": 100,
+          "submitted": 605
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/esorics/index.html"
+    },
+    "RAID": {
+      "focus": "入侵检测与防御、攻防实证。",
+      "papers_index": "https://raid2025.github.io/accepted_open.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "入侵检测 / 攻防",
+              "share": "高"
+            },
+            {
+              "name": "系统安全实证",
+              "share": "高"
+            }
+          ],
+          "notes": "官网 Accepted papers 列表计约 62。",
+          "papers_index": "https://raid2025.github.io/accepted_open.html",
+          "accepted": 62
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/raid/index.html"
+    },
+    "ACSAC": {
+      "focus": "应用计算机安全。",
+      "papers_index": "https://www.acsac.org/2025/program/papers/",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "应用安全",
+              "share": "高"
+            }
+          ],
+          "notes": "官网 Accepted Papers 列表计约 84；社区称录用率约 20.7%。",
+          "papers_index": "https://www.acsac.org/2025/program/papers/",
+          "accepted": 84
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/acsac/index.html"
+    },
+    "ECML-PKDD": {
+      "focus": "欧洲机器学习与知识发现；ML + 数据挖掘。",
+      "papers_index": "https://ecmlpkdd.org/2025/accepted-papers-rt/",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "机器学习",
+              "share": "高"
+            },
+            {
+              "name": "数据挖掘",
+              "share": "高"
+            }
+          ],
+          "notes": "Research Track 录用列表 Title 条目约 226（另有 Applied 等分轨）。",
+          "papers_index": "https://ecmlpkdd.org/2025/accepted-papers-rt/",
+          "accepted": 226
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/pkdd/index.html"
+    },
+    "EDBT": {
+      "focus": "数据库扩展技术；多周期录用（每年 3 期 proceedings）。",
+      "papers_index": "https://openproceedings.org/html/pages/2025_edbt.html",
+      "status": "profiling",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "数据管理 / 系统",
+              "share": "高"
+            },
+            {
+              "name": "查询 / 分析",
+              "share": "高"
+            }
+          ],
+          "notes": "Vol.28 Nos.1–3 Research Track 已在 OpenProceedings 发布；精确篇数待 TOC 汇总。",
+          "papers_index": "https://openproceedings.org/html/pages/2025_edbt.html"
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/edbt/index.html"
+    },
+    "ICSME": {
+      "focus": "软件维护与演化。",
+      "papers_index": "https://conf.researchr.org/track/icsme-2025/icsme-2025-papers",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "软件维护 / 演化",
+              "share": "高"
+            }
+          ],
+          "notes": "Research Papers Track 录用条目约 109（researchr 列表口径）。",
+          "papers_index": "https://conf.researchr.org/track/icsme-2025/icsme-2025-papers",
+          "accepted": 109
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/icsm/index.html"
+    },
+    "SANER": {
+      "focus": "软件分析、演化与再工程。",
+      "papers_index": "https://conf.researchr.org/track/saner-2025/saner-2025-papers",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "软件分析 / 再工程",
+              "share": "高"
+            },
+            {
+              "name": "维护 / LLM",
+              "share": "高"
+            }
+          ],
+          "notes": "Research Track 52；另 Industry 10（社区报道口径）。",
+          "papers_index": "https://conf.researchr.org/track/saner-2025/saner-2025-papers",
+          "accepted": 52
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/wcre/index.html"
+    },
+    "KR": {
+      "focus": "知识表示与推理；论证、逻辑、规划交叉。",
+      "papers_index": "https://kr.org/KR2025/accepted.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "知识表示 / 推理",
+              "share": "高"
+            },
+            {
+              "name": "论证 / 逻辑编程",
+              "share": "高"
+            }
+          ],
+          "notes": "Main Track 录用列表 55；另 Wild/P&S/Constraints/RPR 分轨。",
+          "papers_index": "https://kr.org/KR2025/accepted.html",
+          "accepted": 55
+        }
+      },
+      "dblp": "https://dblp.org/db/conf/kr/index.html"
+    },
+    "BIBM": {
+      "focus": "生物信息学与生物医学。",
+      "papers_index": "https://dblp.org/db/conf/bibm/index.html",
+      "status": "listed",
+      "stats": {
+        "2025": {
+          "directions": [
+            {
+              "name": "生物信息 / 生物医学计算",
+              "share": "高"
+            }
+          ],
+          "notes": "待补官方录用数。",
+          "papers_index": "https://dblp.org/db/conf/bibm/index.html"
+        }
+      }
+    },
+    "FPGA": {
+      "focus": "现场可编程门阵列；架构、工具与应用。",
+      "papers_index": "https://dl.acm.org/doi/proceedings/10.1145/3706628",
+      "dblp": "https://dblp.org/db/conf/fpga/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 22,
+          "submitted": 82,
+          "notes": "研究文 17 full + 5 short；另有 poster 扩展摘要 21。约 27%。",
+          "directions": [
+            {
+              "name": "FPGA 架构 / CAD",
+              "share": "高"
+            },
+            {
+              "name": "加速应用",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://dl.acm.org/doi/proceedings/10.1145/3706628"
+        },
+        "2026": {
+          "accepted": 24,
+          "submitted": 94,
+          "notes": "ACM DL Acceptance Rates：24/94≈26%。",
+          "directions": [
+            {
+              "name": "FPGA",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://dl.acm.org/doi/proceedings/10.1145/3706628"
+        }
+      }
+    },
+    "PODC": {
+      "focus": "分布式计算理论；算法、容错、一致性与网络计算。",
+      "papers_index": "https://www.podc.org/podc2025/list-of-accepted-papers/",
+      "dblp": "https://dblp.org/db/conf/podc/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 41,
+          "notes": "Full papers 41；另 Brief announcements 约 26（未计入主录用）。",
+          "directions": [
+            {
+              "name": "分布式算法 / 理论",
+              "share": "高"
+            },
+            {
+              "name": "拜占庭 / 容错",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://www.podc.org/podc2025/list-of-accepted-papers/"
+        }
+      }
+    },
+    "CGO": {
+      "focus": "代码生成与优化；编译器、运行时与异构优化。",
+      "papers_index": "https://www.conference-publishing.com/toc/CGO25/abs",
+      "dblp": "https://dblp.org/db/conf/cgo/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "notes": "CGO’25 PC 前言：双轮共录用 48（含 Tools 8、Practical Experience 3）；一轮 58 + 二轮 106（含一轮修订 8）。",
+          "directions": [
+            {
+              "name": "编译 / 代码生成",
+              "share": "高"
+            },
+            {
+              "name": "GPU / 异构优化",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://www.conference-publishing.com/toc/CGO25/abs",
+          "accepted": 48
+        }
+      }
+    },
+    "IPSN": {
+      "focus": "信息处理与传感器网络；2025 起与 SenSys/IoTDI 合并发表。",
+      "papers_index": "https://sensys.acm.org/2025/",
+      "dblp": "https://dblp.org/db/conf/ipsn/index.html",
+      "status": "profiling",
+      "stats": {
+        "2025": {
+          "notes": "2025 录用论文并入 ACM SenSys proceedings。",
+          "directions": [
+            {
+              "name": "传感 / 嵌入式 AI",
+              "share": "高"
+            },
+            {
+              "name": "物联网系统",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://sensys.acm.org/2025/"
+        }
+      }
+    },
+    "PKC": {
+      "focus": "公钥密码学；协议、后量子与安全计算。",
+      "papers_index": "https://link.springer.com/book/10.1007/978-3-031-91820-9",
+      "dblp": "https://dblp.org/db/conf/pkc/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 60,
+          "submitted": 199,
+          "notes": "官方前言：60/199。",
+          "directions": [
+            {
+              "name": "公钥 / 后量子",
+              "share": "高"
+            },
+            {
+              "name": "安全多方计算",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-031-91820-9"
+        }
+      }
+    },
+    "TCC": {
+      "focus": "密码学理论。",
+      "papers_index": "https://link.springer.com/book/10.1007/978-3-032-12287-2",
+      "dblp": "https://dblp.org/db/conf/tcc/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 70,
+          "submitted": 242,
+          "notes": "官方：70/242≈28.9%。",
+          "directions": [
+            {
+              "name": "密码学理论",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-032-12287-2"
+        }
+      }
+    },
+    "DATE": {
+      "focus": "欧洲设计自动化与测试；EDA、嵌入式与电路系统。",
+      "papers_index": "https://www.date-conference.com/",
+      "dblp": "https://dblp.org/db/conf/date/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 302,
+          "submitted": 1213,
+          "notes": "官方前言：302/1213≈24.8% regular；另 extended abstract 56。",
+          "directions": [
+            {
+              "name": "EDA / 测试",
+              "share": "高"
+            },
+            {
+              "name": "嵌入式系统",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.date-conference.com/"
+        }
+      }
+    },
+    "CHES": {
+      "focus": "密码硬件与嵌入式系统；以 TCHES 期刊卷期发表。",
+      "papers_index": "https://ches.iacr.org/2025/acceptedpapers.php",
+      "dblp": "https://dblp.org/db/conf/ches/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 111,
+          "notes": "TCHES 2025 Accepted Papers 页计 111 篇（Issue1–4）。",
+          "directions": [
+            {
+              "name": "密码硬件 / 侧信道",
+              "share": "高"
+            },
+            {
+              "name": "嵌入式安全",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://ches.iacr.org/2025/acceptedpapers.php"
+        }
+      }
+    },
+    "Euro-Par": {
+      "focus": "欧洲并行与分布式处理；编译、调度、云边、架构与算法。",
+      "papers_index": "https://link.springer.com/book/10.1007/978-3-031-99854-6",
+      "dblp": "https://dblp.org/db/conf/europar/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 78,
+          "submitted": 264,
+          "notes": "Springer 前言：78/264。",
+          "directions": [
+            {
+              "name": "并行 / 分布式",
+              "share": "高"
+            },
+            {
+              "name": "云边 / 调度",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-031-99854-6"
+        }
+      }
+    },
+    "HotOS": {
+      "focus": "操作系统热点；短文讨论型，系统新想法友好。",
+      "papers_index": "https://sigops.org/s/conferences/hotos/2025/program.html",
+      "dblp": "https://dblp.org/db/conf/hotos/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 28,
+          "notes": "按 HotOS XX 程序页带 slides 的论文条目计约 28（不含 panel/keynote）。",
+          "directions": [
+            {
+              "name": "OS / 系统结构",
+              "share": "高"
+            },
+            {
+              "name": "AI 系统 / 存储",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://sigops.org/s/conferences/hotos/2025/program.html"
+        }
+      }
+    },
+    "PACT": {
+      "focus": "并行架构与编译技术。",
+      "papers_index": "https://pact2025.github.io/program/",
+      "dblp": "https://dblp.org/db/conf/IEEEpact/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 34,
+          "notes": "按 PACT 2025 技术程序主会论文条目计约 34。",
+          "directions": [
+            {
+              "name": "并行架构",
+              "share": "高"
+            },
+            {
+              "name": "编译 / 加速器",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://pact2025.github.io/program/"
+        }
+      }
+    },
+    "ISSRE": {
+      "focus": "软件可靠性工程。",
+      "papers_index": "https://issre.github.io/2025/program_research.html",
+      "dblp": "https://dblp.org/db/conf/issre/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "notes": "Research Track 程序 RS1–RS13 计 47（含个别未到场仍录用）。",
+          "directions": [
+            {
+              "name": "可靠性 / 测试 / 模糊",
+              "share": "高"
+            },
+            {
+              "name": "AIOps / LLM",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://issre.github.io/2025/program_research.html",
+          "accepted": 47
+        }
+      }
+    },
+    "Middleware": {
+      "focus": "分布式中间件；云边、FaaS、区块链与系统安全交叉。",
+      "papers_index": "https://middleware-conf.github.io/2025/program/accepted-paper-list/",
+      "dblp": "https://dblp.org/db/conf/middleware/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 36,
+          "notes": "官网 Main Conference Accepted Paper List 计 36。",
+          "directions": [
+            {
+              "name": "云边 / Serverless",
+              "share": "高"
+            },
+            {
+              "name": "分布式系统 / 区块链",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://middleware-conf.github.io/2025/program/accepted-paper-list/"
+        }
+      }
+    },
+    "ISWC": {
+      "focus": "语义网与知识图谱。",
+      "papers_index": "https://link.springer.com/book/10.1007/978-3-032-09527-5",
+      "dblp": "https://dblp.org/db/conf/semweb/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 60,
+          "submitted": 277,
+          "notes": "Springer 前言：研究全文 60/277。",
+          "directions": [
+            {
+              "name": "知识图谱 / 语义网",
+              "share": "高"
+            },
+            {
+              "name": "本体 / 推理应用",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-032-09527-5"
+        }
+      }
+    },
+    "ICNP": {
+      "focus": "网络协议设计、分析、实现与性能。",
+      "papers_index": "https://icnp25.cs.ucr.edu/acceptedpapers.html",
+      "dblp": "https://dblp.org/db/conf/icnp/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 60,
+          "notes": "ICNP 2025 Accepted Papers 列表计 60。",
+          "directions": [
+            {
+              "name": "协议 / 路由",
+              "share": "高"
+            },
+            {
+              "name": "测量 / QoS",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://icnp25.cs.ucr.edu/acceptedpapers.html"
+        }
+      }
+    },
+    "ICPC": {
+      "focus": "程序理解；代码理解、维护与 LLM 辅助分析。",
+      "papers_index": "https://conf.researchr.org/track/icpc-2025/icpc-2025-research",
+      "dblp": "https://dblp.org/db/conf/iwpc/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 38,
+          "notes": "Research Track 程序条目计 38（另有 ERA/RENE 分轨）。",
+          "directions": [
+            {
+              "name": "程序理解 / 维护",
+              "share": "高"
+            },
+            {
+              "name": "LLM for code",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://conf.researchr.org/track/icpc-2025/icpc-2025-research"
+        }
+      }
+    },
+    "DASFAA": {
+      "focus": "数据库系统与高级应用。",
+      "papers_index": "https://dasfaa2025.github.io/",
+      "dblp": "https://dblp.org/db/conf/dasfaa/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 136,
+          "submitted": 731,
+          "notes": "Springer 前言：full 136 + short 89 / 731。表内 accepted 记 full。",
+          "directions": [
+            {
+              "name": "数据管理 / ML",
+              "share": "高"
+            },
+            {
+              "name": "图 / 推荐 / 隐私",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/9789819541485"
+        }
+      }
+    },
+    "CAiSE": {
+      "focus": "信息系统工程；建模、需求与企业信息系统。",
+      "papers_index": "https://conferences.big.tuwien.ac.at/caise2025/accepted_papers.php?type=Main+Conference",
+      "dblp": "https://dblp.org/db/conf/caise/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 35,
+          "submitted": 229,
+          "notes": "Springer 前言：35/229。",
+          "directions": [
+            {
+              "name": "信息系统工程",
+              "share": "高"
+            },
+            {
+              "name": "建模 / LLM",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-031-94569-4"
+        }
+      }
+    },
+    "CIDR": {
+      "focus": "创新数据系统；系统论文与愿景并重。",
+      "papers_index": "https://www.cidrdb.org/cidr2025/papers.html",
+      "dblp": "https://dblp.org/db/conf/cidr/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 34,
+          "notes": "CIDR 2025 papers 页计约 34。",
+          "directions": [
+            {
+              "name": "数据系统 / 存储",
+              "share": "高"
+            },
+            {
+              "name": "LLM × DB",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.cidrdb.org/cidr2025/papers.html"
+        }
+      }
+    },
+    "SAT": {
+      "focus": "可满足性求解；SAT/MaxSAT/QBF 理论与系统。",
+      "papers_index": "https://satisfiability.org/SAT25/papers/",
+      "dblp": "https://dblp.org/db/conf/sat/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 30,
+          "notes": "SAT 2025 Accepted Papers 列表计 30（LIPIcs）。",
+          "directions": [
+            {
+              "name": "SAT / MaxSAT",
+              "share": "高"
+            },
+            {
+              "name": "证明 / 工具",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://satisfiability.org/SAT25/papers/"
+        }
+      }
+    },
+    "CONCUR": {
+      "focus": "并发理论；进程代数、自动机与博弈验证。",
+      "papers_index": "https://conferences.au.dk/confest2025/concur/proceedings",
+      "dblp": "https://dblp.org/db/conf/concur/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 36,
+          "notes": "CONCUR 2025 Accepted Papers（LIPIcs.CONCUR.2025.4–.39）计 36。",
+          "directions": [
+            {
+              "name": "并发理论",
+              "share": "高"
+            },
+            {
+              "name": "验证 / 博弈",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://conferences.au.dk/confest2025/concur/proceedings"
+        }
+      }
+    },
+    "HiPEAC": {
+      "focus": "高性能嵌入式架构与编译；journal-first（ACM TACO）无独立会议录用池。",
+      "papers_index": "https://www.hipeac.net/2025/barcelona/",
+      "dblp": "https://dblp.org/db/conf/hipeac/index.html",
+      "status": "profiling",
+      "stats": {
+        "2025": {
+          "notes": "录用走 ACM TACO 滚动；受邀在 HiPEAC 宣讲，无独立 proceedings 录用数。",
+          "directions": [
+            {
+              "name": "架构 / 编译",
+              "share": "高"
+            },
+            {
+              "name": "边缘 / 异构",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.hipeac.net/2025/barcelona/"
+        }
+      }
+    },
+    "SoCG": {
+      "focus": "计算几何。",
+      "papers_index": "https://socg25.github.io/socg.html",
+      "dblp": "https://dblp.org/db/conf/compgeom/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 78,
+          "submitted": 225,
+          "notes": "SoCG 2025 前言：78/225。",
+          "directions": [
+            {
+              "name": "计算几何 / 拓扑",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://drops.dagstuhl.de/entities/volume/LIPIcs-volume-332"
+        }
+      }
+    },
+    "ESA": {
+      "focus": "欧洲算法研讨；理论分析、算法工程与简洁证明分轨。",
+      "papers_index": "https://algo-conference.org/2025/esa/",
+      "dblp": "https://dblp.org/db/conf/esa/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 115,
+          "submitted": 372,
+          "notes": "前言：115/372（A 83 / B 16 / S 16）。",
+          "directions": [
+            {
+              "name": "算法设计与分析",
+              "share": "高"
+            },
+            {
+              "name": "算法工程",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://drops.dagstuhl.de/entities/volume/LIPIcs-volume-351"
+        }
+      }
+    },
+    "VMCAI": {
+      "focus": "验证、模型检测与抽象解释。",
+      "papers_index": "https://link.springer.com/book/10.1007/978-3-031-82700-6",
+      "dblp": "https://dblp.org/db/conf/vmcai/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 20,
+          "submitted": 48,
+          "notes": "Springer 前言：20/48（含 tool 2）。",
+          "directions": [
+            {
+              "name": "模型检测 / 抽象解释",
+              "share": "高"
+            },
+            {
+              "name": "形式验证",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-031-82700-6"
+        }
+      }
+    },
+    "FMCAD": {
+      "focus": "形式方法在 CAD；硬件/软件验证与求解器。",
+      "papers_index": "https://fmcad.org/FMCAD25/",
+      "dblp": "https://dblp.org/db/conf/fmcad/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 27,
+          "submitted": 64,
+          "notes": "前言：27/64 full（另 abstract 82）；含 regular 17 + tool/case 10。",
+          "directions": [
+            {
+              "name": "硬件 / 软件验证",
+              "share": "高"
+            },
+            {
+              "name": "SAT/SMT",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://fmcad.org/FMCAD25/"
+        }
+      }
+    },
+    "CADE": {
+      "focus": "自动演绎与定理证明。",
+      "papers_index": "https://www.dhbw-stuttgart.de/cade-30/accepted-papers/",
+      "dblp": "https://dblp.org/db/conf/cade/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 37,
+          "submitted": 87,
+          "notes": "CADE-30：full 33 + short 4 / 87。",
+          "directions": [
+            {
+              "name": "自动演绎 / SMT",
+              "share": "高"
+            },
+            {
+              "name": "重写 / 证明",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-031-99984-0"
+        }
+      }
+    },
+    "RE": {
+      "focus": "需求工程。",
+      "papers_index": "https://conf.researchr.org/track/RE-2025/re-2025-research-papers",
+      "dblp": "https://dblp.org/db/conf/re/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 23,
+          "notes": "Research Papers 录用列表计 23。",
+          "directions": [
+            {
+              "name": "需求工程",
+              "share": "高"
+            },
+            {
+              "name": "LLM / 需求质量",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://conf.researchr.org/track/RE-2025/re-2025-research-papers"
+        }
+      }
+    },
+    "ESEM": {
+      "focus": "经验软件工程与度量。",
+      "papers_index": "https://conf.researchr.org/track/esem-2025/esem-2025-technical-track",
+      "dblp": "https://dblp.org/db/conf/esem/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 28,
+          "notes": "Technical Track 录用列表计 28。",
+          "directions": [
+            {
+              "name": "经验研究 / 度量",
+              "share": "高"
+            },
+            {
+              "name": "开源 / LLM 实证",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://conf.researchr.org/track/esem-2025/esem-2025-technical-track"
+        }
+      }
+    },
+    "MoDELS": {
+      "focus": "模型驱动工程。",
+      "papers_index": "https://conf.researchr.org/track/models-2025/models-2025-research-papers",
+      "dblp": "https://dblp.org/db/conf/models/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 40,
+          "notes": "Research Papers：FT 约 28 + PT 约 12（另有 NIER）。",
+          "directions": [
+            {
+              "name": "MDE / 模型变换",
+              "share": "高"
+            },
+            {
+              "name": "LLM × 建模",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://conf.researchr.org/track/models-2025/models-2025-research-papers"
+        }
+      }
+    },
+    "CP": {
+      "focus": "约束规划。",
+      "papers_index": "https://cp2025.a4cp.org/accepted_papers.html",
+      "dblp": "https://dblp.org/db/conf/cp/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 41,
+          "notes": "CP 2025 前言：41（regular 38 + short 3）。",
+          "directions": [
+            {
+              "name": "约束规划 / 优化",
+              "share": "高"
+            },
+            {
+              "name": "应用约束",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://cp2025.a4cp.org/accepted_papers.html"
+        }
+      }
+    },
+    "ICCBR": {
+      "focus": "基于案例推理。",
+      "papers_index": "https://link.springer.com/book/10.1007/978-3-031-96559-3",
+      "dblp": "https://dblp.org/db/conf/iccbr/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 30,
+          "submitted": 81,
+          "notes": "Springer 前言：full 30/81。",
+          "directions": [
+            {
+              "name": "CBR 理论 / 方法",
+              "share": "高"
+            },
+            {
+              "name": "CBR × 生成式 AI",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-031-96559-3"
+        }
+      }
+    },
+    "CLUSTER": {
+      "focus": "集群计算与 HPC 系统。",
+      "papers_index": "https://clustercomp.org/2025/",
+      "dblp": "https://dblp.org/db/conf/cluster/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 40,
+          "notes": "主办方 EPCC：技术程序约 40 篇。",
+          "directions": [
+            {
+              "name": "HPC / 集群系统",
+              "share": "高"
+            },
+            {
+              "name": "AI × HPC",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://clustercomp.org/2025/"
+        }
+      }
+    },
+    "ICSOC": {
+      "focus": "面向服务计算；微服务、云边与业务流程。",
+      "papers_index": "https://icsoc2025.hit.edu.cn/",
+      "dblp": "https://dblp.org/db/conf/icsoc/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 42,
+          "submitted": 219,
+          "notes": "Springer 前言：full 42 + short 21 / 219；表内 accepted 记 full。",
+          "directions": [
+            {
+              "name": "服务计算 / 微服务",
+              "share": "高"
+            },
+            {
+              "name": "云边 / Serverless",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/9789819550111"
+        }
+      }
+    },
+    "CSFW": {
+      "focus": "计算机安全基础（现名 CSF）。",
+      "papers_index": "https://www.ieee-security.org/TC/CSF2025/accepted.html",
+      "dblp": "https://dblp.org/db/conf/csfw/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 38,
+          "notes": "CSF 2025 Accepted Papers 列表计 38（多周期录用）。",
+          "directions": [
+            {
+              "name": "形式安全 / 协议",
+              "share": "高"
+            },
+            {
+              "name": "信息流 / 隐私",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.ieee-security.org/TC/CSF2025/accepted.html"
+        }
+      }
+    },
+    "SAS": {
+      "focus": "静态分析。",
+      "papers_index": "https://link.springer.com/book/10.1007/978-3-032-07106-4",
+      "dblp": "https://dblp.org/db/conf/sas/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 15,
+          "submitted": 32,
+          "notes": "Springer 前言：15/32。",
+          "directions": [
+            {
+              "name": "抽象解释 / 静态分析",
+              "share": "高"
+            },
+            {
+              "name": "验证 / LLM×分析",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-032-07106-4"
+        }
+      }
+    },
+    "LCTES": {
+      "focus": "嵌入式系统语言、编译器与工具。",
+      "papers_index": "https://pldi25.sigplan.org/home/LCTES-2025",
+      "dblp": "https://dblp.org/db/conf/lctrts/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 18,
+          "notes": "LCTES 2025 Accepted Papers 列表计 18。",
+          "directions": [
+            {
+              "name": "嵌入式编译 / 运行时",
+              "share": "高"
+            },
+            {
+              "name": "加速器 / 实时",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://pldi25.sigplan.org/home/LCTES-2025"
+        }
+      }
+    },
+    "EGSR": {
+      "focus": "渲染；CGF 期刊轨与 symposium-only 轨。",
+      "papers_index": "https://kesen.realtimerendering.com/egsr2025Papers.htm",
+      "dblp": "https://dblp.org/db/conf/rt/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 47,
+          "notes": "EGSR 2025 程序页计约 47（含 J/S/I/CGF 各轨）。",
+          "directions": [
+            {
+              "name": "实时 / 路径追踪",
+              "share": "高"
+            },
+            {
+              "name": "外观 / 可微渲染",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://kesen.realtimerendering.com/egsr2025Papers.htm"
+        }
+      }
+    },
+    "WISE": {
+      "focus": "Web 信息系统工程。",
+      "papers_index": "https://www.ficloud.org/wise2025/",
+      "dblp": "https://dblp.org/db/conf/wise/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 54,
+          "submitted": 140,
+          "notes": "Springer 前言：full 54 + short 22 / 140；表内 accepted 记 full。",
+          "directions": [
+            {
+              "name": "推荐 / 知识图谱",
+              "share": "高"
+            },
+            {
+              "name": "Web 安全 / LLM",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/9783031967771"
+        }
+      }
+    },
+    "PG": {
+      "focus": "太平洋图形学；CGF 期刊轨 + 会议轨。",
+      "papers_index": "https://pg2025.org/",
+      "dblp": "https://dblp.org/db/conf/pg/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 97,
+          "submitted": 257,
+          "notes": "前言：发表 97（CGF 48 + conference 49）/ 257；条件录用曾 99。",
+          "directions": [
+            {
+              "name": "计算机图形学",
+              "share": "高"
+            },
+            {
+              "name": "几何 / 渲染 / 动画",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://diglib.eg.org/"
+        }
+      }
+    },
+    "COCOON": {
+      "focus": "计算与组合学。",
+      "papers_index": "https://link.springer.com/book/10.1007/978-981-95-0215-8",
+      "dblp": "https://dblp.org/db/conf/cocoon/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 54,
+          "submitted": 191,
+          "notes": "Springer 前言：54/191。",
+          "directions": [
+            {
+              "name": "算法 / 组合优化",
+              "share": "高"
+            },
+            {
+              "name": "图论 / 参数算法",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-981-95-0215-8"
+        }
+      }
+    },
+    "SCA": {
+      "focus": "计算机动画；经 PACMCGIT 发表。",
+      "papers_index": "https://kesen.realtimerendering.com/sca2025Papers.htm",
+      "dblp": "https://dblp.org/db/conf/sca/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 18,
+          "notes": "SCA 2025 程序页（PACMCGIT V8 N4）计 18。",
+          "directions": [
+            {
+              "name": "物理动画 / 碰撞",
+              "share": "高"
+            },
+            {
+              "name": "角色 / 学习控制",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://kesen.realtimerendering.com/sca2025Papers.htm"
+        }
+      }
+    },
+    "SGP": {
+      "focus": "几何处理；CGF 特刊。",
+      "papers_index": "https://sgp2025.my.canva.site/",
+      "dblp": "https://dblp.org/db/conf/sgp/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 26,
+          "submitted": 71,
+          "notes": "社区统计表：26/（19+52）≈36%（双轮投稿）。",
+          "directions": [
+            {
+              "name": "几何处理",
+              "share": "高"
+            },
+            {
+              "name": "网格 / 形状分析",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://diglib.eg.org/collections/c1ce3ed3-8b65-4375-8254-eb653f4202cb"
+        }
+      }
+    },
+    "FSE|网络与信息安全": {
+      "focus": "快速软件加密（对称密码）；ToSC 期刊轨宣讲。",
+      "papers_index": "https://fse.iacr.org/2025/",
+      "dblp": "https://dblp.org/db/conf/fse/index.html",
+      "status": "profiling",
+      "stats": {
+        "2025": {
+          "notes": "FSE 宣讲 ToSC 多期录用文（journal-first）；无单一会议录用总数。",
+          "directions": [
+            {
+              "name": "对称密码 / 分析",
+              "share": "高"
+            },
+            {
+              "name": "实现 / 侧信道",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://tosc.iacr.org/"
+        }
+      }
+    },
+    "WINE": {
+      "focus": "网络与互联网经济学；机制设计、匹配与公平。",
+      "papers_index": "https://wine2025.cs.rutgers.edu/",
+      "dblp": "https://dblp.org/db/conf/wine/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 39,
+          "submitted": 225,
+          "notes": "Springer 前言：full 39 + abstracts 28 / 225；表内 accepted 记 full。",
+          "directions": [
+            {
+              "name": "机制设计 / 定价",
+              "share": "高"
+            },
+            {
+              "name": "匹配 / 公平 / 博弈",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://link.springer.com/book/10.1007/978-3-032-18660-7"
+        }
+      }
+    },
+    "ICDT": {
+      "focus": "数据库理论。",
+      "papers_index": "https://drops.dagstuhl.de/entities/volume/LIPIcs-volume-328",
+      "dblp": "https://dblp.org/db/conf/icdt/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 29,
+          "submitted": 80,
+          "notes": "LIPIcs 前言：研究文 29/80；另 Database Theory in Action 4（3+1 邀请）。",
+          "directions": [
+            {
+              "name": "查询 / 复杂性",
+              "share": "高"
+            },
+            {
+              "name": "数据库理论",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://drops.dagstuhl.de/entities/volume/LIPIcs-volume-328"
+        }
+      }
+    },
+    "ICCD": {
+      "focus": "计算机设计；体系结构、EDA、电路与 AI 硬件。",
+      "papers_index": "https://www.iccd-conf.com/agenda.html",
+      "dblp": "https://dblp.org/db/conf/iccd/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 102,
+          "notes": "ICCD 2025 程序：long 76 + short 26（按 L#/S# 条目计）。",
+          "directions": [
+            {
+              "name": "硬件架构 / 存储",
+              "share": "高"
+            },
+            {
+              "name": "EDA / AI 硬件",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.iccd-conf.com/agenda.html"
+        }
+      }
+    },
+    "DCC": {
+      "focus": "数据压缩。",
+      "papers_index": "https://www.cs.brandeis.edu/~dcc/",
+      "dblp": "https://dblp.org/db/conf/dcc/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 100,
+          "notes": "DBLP dcc2025 条目计约 100（含 short/poster 口径以 DBLP 为准）。",
+          "directions": [
+            {
+              "name": "无损 / 有损压缩",
+              "share": "高"
+            },
+            {
+              "name": "多媒体 / 科学数据",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/dcc/dcc2025.html"
+        }
+      }
+    },
+    "SPAA": {
+      "focus": "并行算法与体系结构。",
+      "papers_index": "https://spaa.acm.org/2025-program/",
+      "dblp": "https://dblp.org/db/conf/spaa/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 42,
+          "notes": "官方 program.pdf：full 42 + Brief Announcements 13。",
+          "directions": [
+            {
+              "name": "并行算法",
+              "share": "高"
+            },
+            {
+              "name": "调度 / 并发结构",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://dl.acm.org/doi/proceedings/10.1145/3694906"
+        }
+      }
+    },
+    "SRDS": {
+      "focus": "可靠分布式系统。",
+      "papers_index": "https://srds-conference.org/",
+      "dblp": "https://dblp.org/db/conf/srds/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 48,
+          "notes": "DBLP srds2025 条目计 48。",
+          "directions": [
+            {
+              "name": "可靠分布式",
+              "share": "高"
+            },
+            {
+              "name": "容错 / 安全",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/srds/srds2025.html"
+        }
+      }
+    },
+    "CC": {
+      "focus": "编译器构造。",
+      "papers_index": "https://www.conference-publishing.com/toc/CC25/abs",
+      "dblp": "https://dblp.org/db/conf/cc/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 18,
+          "notes": "DBLP/CC’25 proceedings 研究文约 18。",
+          "directions": [
+            {
+              "name": "编译 / 优化",
+              "share": "高"
+            },
+            {
+              "name": "程序分析",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.conference-publishing.com/toc/CC25/abs"
+        }
+      }
+    },
+    "NOSSDAV": {
+      "focus": "网络与操作系统对数字音视频的支持。",
+      "papers_index": "https://dblp.org/db/conf/nossdav/nossdav2025.html",
+      "dblp": "https://dblp.org/db/conf/nossdav/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 15,
+          "notes": "DBLP nossdav2025 条目计 15。",
+          "directions": [
+            {
+              "name": "多媒体系统",
+              "share": "高"
+            },
+            {
+              "name": "流媒体 / QoE",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/nossdav/nossdav2025.html"
+        }
+      }
+    },
+    "CogSci": {
+      "focus": "认知科学年会；论文体量大。",
+      "papers_index": "https://cognitivesciencesociety.org/",
+      "dblp": "https://dblp.org/db/conf/cogsci/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 1369,
+          "notes": "DBLP cogsci2025 条目计约 1369（含短文/摘要口径）。",
+          "directions": [
+            {
+              "name": "认知科学",
+              "share": "高"
+            },
+            {
+              "name": "学习 / 语言 / 决策",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/cogsci/cogsci2025.html"
+        }
+      }
+    },
+    "ICWS": {
+      "focus": "Web 服务；微服务与服务计算。",
+      "papers_index": "https://services.conferences.computer.org/2025/",
+      "dblp": "https://dblp.org/db/conf/icws/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 44,
+          "notes": "ICWS 2025 TOC 主会条目约 44（Symposium 分册另计）。",
+          "directions": [
+            {
+              "name": "Web 服务 / 微服务",
+              "share": "高"
+            },
+            {
+              "name": "服务推荐 / 云边",
+              "share": "中高"
+            }
+          ],
+          "papers_index": "https://www.proceedings.com/content/082/082427webtoc.pdf"
+        }
+      }
+    },
+    "ISCAS": {
+      "focus": "电路与系统。",
+      "papers_index": "https://2025.ieee-iscas.org/",
+      "dblp": "https://dblp.org/db/conf/iscas/index.html",
+      "status": "ready",
+      "stats": {
+        "2025": {
+          "accepted": 1158,
+          "notes": "ISCAS 2025 TOC 点线条目约 1158（大会含大量 oral/poster）。",
+          "directions": [
+            {
+              "name": "模拟 / 数字电路",
+              "share": "高"
+            },
+            {
+              "name": "信号处理 / AI 电路",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.proceedings.com/content/080/080805webtoc.pdf"
+        }
+      }
+    },
+    "HOT CHIPS": {
+      "focus": "高性能芯片研讨；偏工业演讲/产品介绍，非典型研究录用池。",
+      "papers_index": "https://www.hotchips.org/",
+      "dblp": "https://dblp.org/db/conf/hotchips/index.html",
+      "status": "profiling",
+      "stats": {
+        "2025": {
+          "notes": "Hot Chips 以受邀/工业演讲为主，无统一研究轨录用总数。",
+          "directions": [
+            {
+              "name": "芯片 / 加速器",
+              "share": "高"
+            },
+            {
+              "name": "系统产品",
+              "share": "高"
+            }
+          ],
+          "papers_index": "https://www.hotchips.org/"
+        }
+      }
+    }
+  }
+}

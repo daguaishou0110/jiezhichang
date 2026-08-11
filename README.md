@@ -51,6 +51,7 @@
 | package-cs-revision.html | 返修骨架卡 |
 | package-cs-thesis.html | 硕论辅导骨架卡 |
 | package-cs-venue.html | 会议/期刊辅导（方向一级×二级） |
+| ccf-conferences.html | CCF A/B/C 会议全量目录（2026 第七版） |
 | cs-papers.html | 会刊辅导 · CV · 动作识别 · 本类成稿（摔跤） |
 | package-imaging-yolo.html | 写法 05 路径卡 |
 | crc-microbiome.html / osteoporosis.html | 写法 03 / 02 路径卡 |
