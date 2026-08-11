@@ -6,136 +6,283 @@
 <title>医学影像数据集库 · 解知常</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --ink:#0f1c18;--muted:#5d6f68;--paper:#dfece6;--card:#f7fbf8;--line:rgba(15,28,24,.1);
-  --teal:#0a6b52;--deep:#043529;--accent:#c4f0a8;--max:1100px;
+  --ink:#14181f;
+  --mute:#5c6573;
+  --line:rgba(20,24,31,.12);
+  --paper:#eef2f6;
+  --panel:#f8fafc;
+  --accent:#0f766e;
+  --accent-2:#c2410c;
+  --film:#1a2332;
+  --max:1240px;
+  --rail:240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:Manrope,sans-serif;color:var(--ink);font-size:15px;line-height:1.55;
-  background:
-    radial-gradient(900px 420px at 8% -8%,rgba(196,240,168,.45),transparent 55%),
-    radial-gradient(700px 380px at 92% 0%,rgba(10,107,82,.12),transparent 50%),
-    linear-gradient(180deg,#e8f3ed 0%,var(--paper) 28%,#d7e8df 100%);
+  font-family:"Bricolage Grotesque",sans-serif;
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.5;
   min-height:100vh;
-}
-.brand-font,.dept-title,.sub-title,.hero-title{font-family:"Instrument Serif",Georgia,serif;letter-spacing:-.02em;font-weight:400}
-a{color:var(--deep);text-underline-offset:3px}
-.wrap{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
-.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:rgba(223,236,230,.88);border-bottom:1px solid var(--line)}
-.nav-inner{display:flex;flex-wrap:wrap;gap:.55rem 1rem;justify-content:space-between;align-items:center;padding:.75rem 0;font-size:.84rem}
-.nav-brand{font-family:"Instrument Serif",serif;font-size:1.25rem;color:var(--deep);text-decoration:none}
-.nav-links{display:flex;flex-wrap:wrap;gap:.45rem .8rem}
-.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
-.nav-links a.on,.nav-links a:hover{color:var(--teal)}
-
-.hero{padding:2.4rem 0 1.2rem;position:relative}
-.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:1.4rem;align-items:end}
-@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
-.kicker{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--teal);margin-bottom:.45rem}
-.hero-title{font-size:clamp(2.2rem,5.2vw,3.4rem);line-height:1.05;color:var(--deep);margin-bottom:.55rem}
-.hero-title em{font-style:italic;color:var(--teal)}
-.lead{color:var(--muted);max-width:42ch;font-size:.95rem;font-weight:500}
-.hero-panel{
-  background:linear-gradient(145deg,#043529,#0a6b52 55%,#1a8f6e);
-  color:#e8f8ef;border-radius:22px;padding:1.15rem 1.2rem;box-shadow:0 18px 40px rgba(4,53,41,.22);
-}
-.hero-panel .big{font-family:"Instrument Serif",serif;font-size:2.4rem;line-height:1;margin:.1rem 0 .15rem}
-.hero-panel .lbl{font-size:.72rem;opacity:.78;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.85rem}
-.hero-stats div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:.55rem .5rem;text-align:center}
-.hero-stats b{display:block;font-family:"Instrument Serif",serif;font-size:1.45rem;font-weight:400}
-
-.jump{display:flex;flex-wrap:wrap;gap:.35rem;margin:1.1rem 0 .9rem}
-.jump a{
-  font-size:.73rem;font-weight:700;text-decoration:none;padding:.34rem .65rem;border-radius:999px;
-  border:1px solid var(--line);background:rgba(247,251,248,.9);color:var(--muted);
-  transition:transform .15s,border-color .15s,color .15s;
-}
-.jump a:hover{color:var(--teal);border-color:#9fd9bf;transform:translateY(-1px)}
-
-.tools{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.25rem;align-items:center}
-.tools input{
-  flex:1;min-width:220px;border:1px solid var(--line);border-radius:14px;padding:.68rem .95rem;font:inherit;
-  background:rgba(255,255,255,.92);outline:none;box-shadow:0 10px 28px rgba(4,53,41,.05);
-}
-.tools input:focus{border-color:#7bc9a5;box-shadow:0 0 0 3px rgba(10,107,82,.12)}
-.btn{
-  border:1px solid var(--line);background:rgba(255,255,255,.92);color:var(--muted);border-radius:999px;
-  padding:.5rem .85rem;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer;
-}
-.btn:hover{color:var(--teal);border-color:#9fd9bf}
-
-.dept{
-  background:var(--card);border:1px solid var(--line);border-radius:22px;margin-bottom:1rem;overflow:hidden;
-  box-shadow:0 12px 36px rgba(4,53,41,.05);
-}
-.dept>summary{
-  cursor:pointer;list-style:none;padding:1.15rem 1.25rem;display:flex;flex-wrap:wrap;gap:.6rem;
-  justify-content:space-between;align-items:flex-start;
   background:
-    linear-gradient(120deg,rgba(196,240,168,.22),transparent 42%),
-    linear-gradient(180deg,#f3faf6,#f7fbf8);
+    linear-gradient(90deg,rgba(20,24,31,.03) 1px,transparent 1px) 0 0/28px 28px,
+    linear-gradient(rgba(20,24,31,.03) 1px,transparent 1px) 0 0/28px 28px,
+    radial-gradient(1000px 480px at 100% -10%,rgba(15,118,110,.14),transparent 55%),
+    radial-gradient(800px 420px at -5% 30%,rgba(194,65,12,.08),transparent 50%),
+    linear-gradient(165deg,#e8eef5 0%,var(--paper) 40%,#e4ebe7 100%);
 }
-.dept>summary::-webkit-details-marker{display:none}
-.dept-badge{
-  display:inline-flex;align-items:center;gap:.35rem;font-size:.62rem;font-weight:800;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--teal);margin-bottom:.28rem;
-}
-.dept-badge::before{content:"";width:.45rem;height:.45rem;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(10,107,82,.15)}
-.dept-title{font-size:clamp(1.35rem,2.4vw,1.7rem);color:var(--deep);line-height:1.15}
-.dept-blurb{color:var(--muted);font-size:.86rem;margin-top:.3rem;max-width:58ch;font-weight:500}
-.dept-body{padding:.25rem 1.1rem 1.15rem;border-top:1px solid var(--line);background:linear-gradient(180deg,#fbfefc,#f4f9f6)}
-.meta{display:flex;flex-wrap:wrap;gap:.3rem}
-.tag{font-size:.65rem;font-weight:700;padding:.14rem .48rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
-.tag.ready{background:#e8f8ef;color:#065f46;border-color:#b7ebc9}
-.tag.partial{background:#eef4ff;color:#1d4ed8;border-color:#c7d7fe}
-.tag.empty{background:#fff7ed;color:#c2410c;border-color:#fdba74}
+a{color:inherit}
+.serif{font-family:"Source Serif 4",Georgia,serif}
 
-.sub{border:1px solid var(--line);border-radius:16px;margin:.7rem 0;background:rgba(255,255,255,.78);overflow:hidden}
-.sub>summary{
-  cursor:pointer;list-style:none;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.45rem .7rem;
+.nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(14px);
+  background:rgba(238,242,246,.86);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  width:min(var(--max),calc(100% - 2rem));
+  margin:0 auto;
+  display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;
   justify-content:space-between;align-items:center;
+  padding:.7rem 0;
 }
-.sub>summary::-webkit-details-marker{display:none}
-.sub>summary::before{content:"+";color:var(--teal);font-weight:800;margin-right:.35rem;font-size:1.05rem}
-.sub[open]>summary::before{content:"–"}
-.sub-eyebrow{font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.1rem}
-.sub-title{font-size:1.18rem;color:var(--deep)}
-.sub-body{padding:.15rem 1rem 1rem;border-top:1px dashed rgba(15,28,24,.12)}
-.local{font-size:.78rem;color:var(--muted);margin:.1rem 0 .55rem}
-.local code{font-size:.74rem;background:#e7f4ec;padding:.08rem .35rem;border-radius:5px}
+.nav-brand{
+  font-family:"Source Serif 4",serif;
+  font-size:1.35rem;font-weight:600;
+  text-decoration:none;color:var(--ink);
+  letter-spacing:-.02em;
+}
+.nav-links{display:flex;flex-wrap:wrap;gap:.55rem 1rem;font-size:.84rem;font-weight:700}
+.nav-links a{text-decoration:none;color:var(--mute)}
+.nav-links a.on,.nav-links a:hover{color:var(--accent)}
 
-.ds-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
-@media(max-width:760px){.ds-list{grid-template-columns:1fr}}
-.ds{
-  display:flex;flex-direction:column;gap:.35rem;padding:.8rem .85rem;border-radius:14px;
-  background:#fff;border:1px solid var(--line);min-height:96px;
-  transition:transform .15s,border-color .15s,box-shadow .15s;
+/* —— Hero: one composition —— */
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    linear-gradient(105deg,rgba(26,35,50,.92) 0%,rgba(26,35,50,.55) 42%,rgba(15,118,110,.35) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath d='M0 80h160M80 0v160' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1'/%3E%3Ccircle cx='80' cy='80' r='36' fill='none' stroke='%23ffffff' stroke-opacity='.08'/%3E%3C/svg%3E");
+  color:#f4f7fb;
 }
-.ds:hover{transform:translateY(-2px);border-color:#9fd9bf;box-shadow:0 12px 28px rgba(10,107,82,.08)}
-.ds-top{display:flex;gap:.45rem;justify-content:space-between;align-items:flex-start}
-.ds-name{font-weight:750;font-size:.9rem;line-height:1.35;color:var(--ink);flex:1}
-.ds-name a{text-decoration:none;color:inherit}
-.ds-name a:hover{color:var(--teal)}
-.ds-kind{
-  flex:0 0 auto;font-size:.62rem;font-weight:800;padding:.16rem .42rem;border-radius:7px;
-  background:linear-gradient(180deg,#eef9e4,var(--accent));color:#1d4d2e;white-space:nowrap
+.hero-inner{
+  width:min(var(--max),calc(100% - 2rem));
+  margin:0 auto;
+  padding:2.6rem 0 2.2rem;
+  display:grid;
+  gap:1.2rem;
+  align-items:end;
 }
-.ds-note{font-size:.76rem;color:var(--muted);line-height:1.45}
-.ds-link{margin-top:auto;font-size:.74rem;font-weight:650}
-.ds-link a{text-decoration:none;color:var(--teal)}
-.ds-link a:hover{text-decoration:underline}
-.empty{color:var(--muted);font-style:italic;font-size:.85rem;padding:.45rem 0}
-.foot{padding:1.6rem 0 2.4rem;color:var(--muted);font-size:.78rem;border-top:1px solid var(--line);margin-top:1.3rem}
+.hero-brand{
+  font-family:"Source Serif 4",serif;
+  font-size:clamp(2.6rem,6vw,4rem);
+  font-weight:600;
+  letter-spacing:-.03em;
+  line-height:.95;
+  animation:rise .7s ease both;
+}
+.hero-brand span{display:block;font-style:italic;font-weight:400;opacity:.88;font-size:.42em;margin-top:.35rem;letter-spacing:.02em}
+.hero-line{
+  max-width:36ch;
+  font-size:.95rem;
+  font-weight:500;
+  color:rgba(244,247,251,.78);
+  animation:rise .7s .08s ease both;
+}
+.hero-cta{
+  display:flex;flex-wrap:wrap;gap:.55rem;
+  align-items:center;
+  animation:rise .7s .14s ease both;
+}
+.hero-cta input{
+  flex:1;min-width:220px;max-width:420px;
+  border:0;border-radius:4px;
+  padding:.78rem 1rem;
+  font:inherit;font-weight:600;
+  background:#f8fafc;color:var(--ink);
+  outline:none;
+}
+.hero-cta input:focus{box-shadow:0 0 0 3px rgba(15,118,110,.35)}
+.hero-cta button{
+  border:1px solid rgba(255,255,255,.35);
+  background:transparent;color:#fff;
+  border-radius:4px;
+  padding:.72rem .95rem;
+  font:inherit;font-size:.8rem;font-weight:700;
+  cursor:pointer;
+}
+.hero-cta button:hover{background:rgba(255,255,255,.1)}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:1.1rem 1.6rem;
+  font-size:.78rem;font-weight:700;
+  letter-spacing:.04em;
+  color:rgba(244,247,251,.7);
+  animation:rise .7s .2s ease both;
+}
+.hero-meta b{
+  display:block;
+  font-family:"Source Serif 4",serif;
+  font-size:1.55rem;font-weight:600;
+  color:#fff;letter-spacing:0;line-height:1.1;
+}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.shell{
+  width:min(var(--max),calc(100% - 2rem));
+  margin:0 auto;
+  padding:1.4rem 0 2.8rem;
+  display:grid;
+  grid-template-columns:var(--rail) minmax(0,1fr);
+  gap:1.4rem;
+  align-items:start;
+}
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:static!important;display:flex;gap:.35rem;overflow:auto;padding-bottom:.2rem}
+  .rail-btn{white-space:nowrap;min-width:max-content}
+}
+
+.rail{
+  position:sticky;top:3.4rem;
+  display:flex;flex-direction:column;gap:.2rem;
+}
+.rail-label{
+  font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mute);margin:0 0 .35rem .15rem;
+}
+.rail-btn{
+  display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;
+  width:100%;text-align:left;
+  border:0;border-left:3px solid transparent;
+  background:transparent;
+  padding:.55rem .65rem;
+  font:inherit;font-size:.84rem;font-weight:700;
+  color:var(--mute);cursor:pointer;
+  transition:color .15s,background .15s,border-color .15s;
+}
+.rail-btn:hover{color:var(--ink);background:rgba(255,255,255,.45)}
+.rail-btn.on{
+  color:var(--ink);
+  border-left-color:var(--accent);
+  background:rgba(255,255,255,.7);
+}
+.rail-btn small{font-size:.7rem;font-weight:700;color:var(--mute)}
+
+.stage{
+  min-width:0;
+  animation:fade .35s ease;
+}
+@keyframes fade{from{opacity:.35;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.stage-head{
+  display:flex;flex-wrap:wrap;gap:.7rem 1rem;
+  justify-content:space-between;align-items:flex-end;
+  margin-bottom:1.1rem;
+  padding-bottom:.85rem;
+  border-bottom:1px solid var(--line);
+}
+.stage-kicker{
+  font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+}
+.stage-title{
+  font-family:"Source Serif 4",serif;
+  font-size:clamp(1.7rem,3vw,2.25rem);
+  font-weight:600;letter-spacing:-.02em;line-height:1.15;
+  margin-top:.2rem;
+}
+.stage-blurb{color:var(--mute);font-size:.9rem;font-weight:500;max-width:48ch;margin-top:.35rem}
+.stage-count{
+  font-family:"Source Serif 4",serif;
+  font-size:2rem;font-weight:600;line-height:1;color:var(--accent-2);
+}
+.stage-count span{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:.25rem}
+
+.topic{
+  margin-bottom:1.15rem;
+  border-top:1px solid var(--line);
+}
+.topic>summary{
+  list-style:none;cursor:pointer;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:.75rem 1rem;
+  align-items:center;
+  padding:.85rem 0;
+}
+.topic>summary::-webkit-details-marker{display:none}
+.topic-idx{
+  font-family:"Source Serif 4",serif;
+  font-size:1.15rem;font-weight:600;
+  color:var(--accent);
+  min-width:1.8rem;
+}
+.topic-title{font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+.topic-mod{display:block;font-size:.72rem;font-weight:700;color:var(--mute);margin-top:.15rem}
+.topic-meta{display:flex;flex-wrap:wrap;gap:.3rem;justify-content:flex-end}
+.chip{
+  font-size:.65rem;font-weight:800;
+  padding:.18rem .42rem;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.65);
+  color:var(--mute);
+}
+.chip.ready{color:#0f766e;border-color:rgba(15,118,110,.35);background:rgba(15,118,110,.08)}
+.chip.partial{color:#9a3412;border-color:rgba(194,65,12,.3);background:rgba(194,65,12,.07)}
+.chip.empty{color:#64748b}
+
+.topic-body{padding:0 0 1rem}
+.local{font-size:.76rem;color:var(--mute);margin:0 0 .55rem}
+.local code{font-size:.72rem;background:rgba(15,118,110,.1);padding:.05rem .3rem}
+
+.rows{display:flex;flex-direction:column;border:1px solid var(--line);background:rgba(248,250,252,.88)}
+.row{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,1.4fr) auto;
+  gap:.6rem 1rem;
+  align-items:start;
+  padding:.72rem .9rem;
+  border-top:1px solid var(--line);
+  text-decoration:none;
+  transition:background .15s,padding-left .15s;
+}
+.row:first-child{border-top:0}
+.row:hover{background:#fff;padding-left:1.05rem}
+.row-name{font-weight:800;font-size:.9rem;line-height:1.3}
+.row-kind{
+  display:inline-block;margin-top:.25rem;
+  font-size:.62rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--accent);
+}
+.row-note{font-size:.78rem;color:var(--mute);line-height:1.45;font-weight:500}
+.row-go{
+  font-size:.72rem;font-weight:800;color:var(--accent-2);
+  white-space:nowrap;align-self:center;
+}
+@media(max-width:700px){
+  .row{grid-template-columns:1fr;gap:.25rem}
+  .row-go{align-self:start}
+}
+.row.dead{cursor:default;opacity:.75}
+.row.dead:hover{padding-left:.9rem;background:transparent}
+.empty{color:var(--mute);font-style:italic;padding:.5rem 0;font-size:.88rem}
+
+.foot{
+  border-top:1px solid var(--line);
+  padding:1.2rem 0 2rem;
+  color:var(--mute);font-size:.76rem;font-weight:500;
+}
+.foot .wrap{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
 .hidden{display:none!important}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="wrap nav-inner">
+<nav class="nav"><div class="nav-inner">
   <a class="nav-brand" href="index.html">解知常</a>
   <div class="nav-links">
     <a href="index.html">首页</a>
@@ -146,34 +293,32 @@ a{color:var(--deep);text-underline-offset:3px}
   </div>
 </div></nav>
 
-<header class="hero wrap">
-  <div class="hero-grid">
+<header class="hero">
+  <div class="hero-inner">
     <div>
-      <div class="kicker">Public medical imaging library</div>
-      <h1 class="hero-title">医学影像<br><em>数据集库</em></h1>
-      <p class="lead">按医院科室浏览：二级按病症 / 模态细分（如糖网、青光眼、BraTS、息肉视频），卡片直达下载与挑战页。</p>
+      <div class="hero-brand">解知常<span>医学影像数据集库</span></div>
+      <p class="hero-line">按科室切入，再按病症与模态细分；条目直达公开下载与挑战页。</p>
     </div>
-    <aside class="hero-panel" id="heroPanel">
-      <div class="lbl">库规模</div>
-      <div class="big" id="heroBig">—</div>
-      <div class="lbl" style="opacity:.9">公开数据集条目</div>
-      <div class="hero-stats">
-        <div><b id="stDept">—</b><span class="lbl">科室</span></div>
-        <div><b id="stSub">—</b><span class="lbl">二级</span></div>
-        <div><b id="stUp">—</b><span class="lbl">更新</span></div>
-      </div>
-    </aside>
-  </div>
-  <div class="jump" id="jump"></div>
-  <div class="tools">
-    <input id="q" type="search" placeholder="搜索科室、病症、数据集或链接…" autocomplete="off" />
-    <button class="btn" type="button" id="btnExpand">全部展开</button>
-    <button class="btn" type="button" id="btnCollapse">收起科室</button>
+    <div class="hero-cta">
+      <input id="q" type="search" placeholder="搜索病症、数据集、链接…" autocomplete="off" />
+      <button type="button" id="btnExpand">展开二级</button>
+      <button type="button" id="btnCollapse">收起二级</button>
+    </div>
+    <div class="hero-meta">
+      <div><b id="heroBig">—</b>数据集</div>
+      <div><b id="stDept">—</b>科室</div>
+      <div><b id="stSub">—</b>二级目录</div>
+      <div><b id="stUp">—</b>最近更新</div>
+    </div>
   </div>
 </header>
 
-<main class="wrap" id="list"></main>
-<footer class="foot"><div class="wrap">科室 → 二级目录 → 数据集 · 源文件 <code>data/imaging-datasets.js</code></div></footer>
+<div class="shell">
+  <aside class="rail" id="rail" aria-label="科室导航"></aside>
+  <main class="stage" id="stage"></main>
+</div>
+
+<footer class="foot"><div class="wrap">科室侧栏 → 病症二级 → 索引行 · 数据源 <code>data/imaging-datasets.js</code></div></footer>
 
 <script src="data/imaging-datasets.js"></script>
 <script>
@@ -181,11 +326,12 @@ a{color:var(--deep);text-underline-offset:3px}
   const stLabel={empty:'待补充',partial:'部分',ready:'较全'};
   const state=window.IMAGING_DATASETS||{meta:{},departments:[]};
   const deps=Array.isArray(state.departments)?state.departments:[];
-  const list=document.getElementById('list');
+  const rail=document.getElementById('rail');
+  const stage=document.getElementById('stage');
   const esc=t=>String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const escA=t=>esc(t).replace(/"/g,'&quot;');
   const cleanTitle=s=>(s||'').replace(/^二级[：:]\s*/,'');
-  function blobOf(parts){return escA(parts.filter(Boolean).join(' '));}
+  let active=deps[0]?deps[0].id:'';
 
   const nSub=deps.reduce((n,d)=>n+(d.children||[]).length,0);
   const nDs=deps.reduce((n,d)=>n+(d.children||[]).reduce((m,c)=>m+(c.datasets||[]).length,0),0);
@@ -193,91 +339,107 @@ a{color:var(--deep);text-underline-offset:3px}
   document.getElementById('stDept').textContent=deps.length;
   document.getElementById('stSub').textContent=nSub;
   document.getElementById('stUp').textContent=(state.meta&&state.meta.updated)?String(state.meta.updated).slice(5):'—';
-  document.getElementById('jump').innerHTML=deps.map(d=>`<a href="#dept-${escA(d.id)}">${esc(d.name_zh)}</a>`).join('');
 
-  list.innerHTML=deps.map(d=>{
-    const kids=d.children||[];
-    const n=kids.reduce((x,c)=>x+(c.datasets||[]).length,0);
-    const deptBlob=blobOf([
-      d.name_zh,d.blurb,
-      ...kids.flatMap(c=>[c.name_zh,c.modality,c.task,...(c.datasets||[]).map(x=>x.name||'')])
-    ]);
-    return `
-    <details class="dept" id="dept-${escA(d.id)}" open data-blob="${deptBlob}">
-      <summary>
-        <div>
-          <div class="dept-badge">科室目录</div>
-          <div class="dept-title">${esc(d.name_zh)}</div>
-          ${d.blurb?`<div class="dept-blurb">${esc(d.blurb)}</div>`:''}
-        </div>
-        <span class="meta">
-          <span class="tag">${kids.length} 二级</span>
-          <span class="tag ready">${n} 数据集</span>
-        </span>
-      </summary>
-      <div class="dept-body">
-        ${kids.map(c=>{
-          const ds=c.datasets||[];
-          const subBlob=blobOf([c.name_zh,c.modality,c.task,...ds.map(x=>`${x.name||''} ${x.note||''} ${x.kind||''}`)]);
-          return `
-          <details class="sub" open data-blob="${subBlob}">
-            <summary>
-              <div>
-                <span class="sub-eyebrow">二级 · ${esc(c.modality||'影像')}</span>
-                <span class="sub-title">${esc(cleanTitle(c.name_zh))}</span>
-              </div>
-              <span class="meta">
-                <span class="tag ${c.status||'empty'}">${stLabel[c.status]||'待补充'}</span>
-                ${c.task?`<span class="tag">${esc(c.task)}</span>`:''}
-                <span class="tag">${ds.length}</span>
-              </span>
-            </summary>
-            <div class="sub-body">
-              ${c.local?`<p class="local">本地：<code>${esc(c.local)}</code></p>`:''}
-              <div class="ds-list">
-                ${ds.length?ds.map(x=>{
-                  const url=(x.url||'').trim();
-                  let host='';
-                  try{host=new URL(url).hostname.replace(/^www\./,'')}catch(_){}
-                  return `
-                  <article class="ds">
-                    <div class="ds-top">
-                      <div class="ds-name">${url?`<a href="${escA(url)}" target="_blank" rel="noopener">${esc(x.name||'未命名')}</a>`:esc(x.name||'未命名')}</div>
-                      <span class="ds-kind">${esc(x.kind||'dataset')}</span>
-                    </div>
-                    ${x.note?`<div class="ds-note">${esc(x.note)}</div>`:''}
-                    <div class="ds-link">${url?`<a href="${escA(url)}" target="_blank" rel="noopener">${esc(host||'打开链接')} ↗</a>`:'暂无链接'}</div>
-                  </article>`;
-                }).join(''):'<p class="empty">暂无数据集</p>'}
-              </div>
-            </div>
-          </details>`;
-        }).join('')||'<p class="empty">暂无二级目录</p>'}
-      </div>
-    </details>`;
-  }).join('')||'<p class="empty">暂无数据</p>';
+  function countDept(d){
+    return (d.children||[]).reduce((m,c)=>m+(c.datasets||[]).length,0);
+  }
 
-  // 渲染后强制全部展开（避免浏览器/属性异常导致收起）
-  list.querySelectorAll('details').forEach(d=>{d.open=true;});
-
-  function applyQ(){
-    const s=document.getElementById('q').value.trim().toLowerCase();
-    list.querySelectorAll('.dept').forEach(dep=>{
-      let any=false;
-      dep.querySelectorAll('.sub').forEach(sub=>{
-        const blob=((sub.dataset.blob||'')+' '+(dep.dataset.blob||'')).toLowerCase();
-        const ok=!s||blob.includes(s);
-        sub.classList.toggle('hidden',!ok);
-        if(ok) any=true;
-      });
-      const hit=!s||(dep.dataset.blob||'').toLowerCase().includes(s);
-      dep.classList.toggle('hidden',s?!any&&!hit:false);
-      if(s&&any) dep.open=true;
+  function renderRail(){
+    rail.innerHTML=`<div class="rail-label">科室</div>`+deps.map(d=>{
+      const n=countDept(d);
+      return `<button type="button" class="rail-btn ${d.id===active?'on':''}" data-id="${escA(d.id)}">
+        <span>${esc(d.name_zh)}</span><small>${n}</small>
+      </button>`;
+    }).join('');
+    rail.querySelectorAll('.rail-btn').forEach(btn=>{
+      btn.onclick=()=>{active=btn.dataset.id;renderRail();renderStage();};
     });
   }
-  document.getElementById('q').addEventListener('input',applyQ);
-  document.getElementById('btnExpand').onclick=()=>list.querySelectorAll('details').forEach(d=>{d.open=true;});
-  document.getElementById('btnCollapse').onclick=()=>list.querySelectorAll('details.dept').forEach(d=>{d.open=false;});
+
+  function renderStage(){
+    const d=deps.find(x=>x.id===active)||deps[0];
+    if(!d){stage.innerHTML='<p class="empty">暂无数据</p>';return;}
+    const kids=d.children||[];
+    const n=countDept(d);
+    const q=document.getElementById('q').value.trim().toLowerCase();
+    stage.style.animation='none';
+    void stage.offsetWidth;
+    stage.style.animation='';
+    stage.innerHTML=`
+      <div class="stage-head">
+        <div>
+          <div class="stage-kicker">Department</div>
+          <h1 class="stage-title">${esc(d.name_zh)}</h1>
+          ${d.blurb?`<p class="stage-blurb">${esc(d.blurb)}</p>`:''}
+        </div>
+        <div class="stage-count">${n}<span>${kids.length} 个二级目录</span></div>
+      </div>
+      ${kids.map((c,i)=>{
+        const ds=c.datasets||[];
+        const blob=[c.name_zh,c.modality,c.task,...ds.map(x=>`${x.name||''} ${x.note||''} ${x.kind||''}`)].join(' ').toLowerCase();
+        const hide=q&&!blob.includes(q)&&!(d.name_zh||'').toLowerCase().includes(q);
+        const open=!!q && !hide; /* 搜索时自动展开命中项；默认收起更清爽 */
+        return `
+        <details class="topic ${hide?'hidden':''}" ${open?'open':''} data-blob="${escA(blob)}">
+          <summary>
+            <span class="topic-idx">${String(i+1).padStart(2,'0')}</span>
+            <div>
+              <div class="topic-title">${esc(cleanTitle(c.name_zh))}</div>
+              <span class="topic-mod">${esc(c.modality||'影像')}${c.task?' · '+esc(c.task):''}</span>
+            </div>
+            <div class="topic-meta">
+              <span class="chip ${c.status||'empty'}">${stLabel[c.status]||'待补充'}</span>
+              <span class="chip">${ds.length} 条</span>
+            </div>
+          </summary>
+          <div class="topic-body">
+            ${c.local?`<p class="local">本地：<code>${esc(c.local)}</code></p>`:''}
+            <div class="rows">
+              ${ds.length?ds.map(x=>{
+                const url=(x.url||'').trim();
+                let host='打开';
+                try{host=new URL(url).hostname.replace(/^www\\./,'')}catch(_){}
+                const inner=`
+                  <div>
+                    <div class="row-name">${esc(x.name||'未命名')}</div>
+                    <span class="row-kind">${esc(x.kind||'dataset')}</span>
+                  </div>
+                  <div class="row-note">${esc(x.note||'')}</div>
+                  <div class="row-go">${url?esc(host)+' ↗':'暂无链接'}</div>`;
+                return url
+                  ?`<a class="row" href="${escA(url)}" target="_blank" rel="noopener">${inner}</a>`
+                  :`<div class="row dead">${inner}</div>`;
+              }).join(''):'<p class="empty">暂无数据集</p>'}
+            </div>
+          </div>
+        </details>`;
+      }).join('')||'<p class="empty">暂无二级目录</p>'}
+    `;
+  }
+
+  document.getElementById('q').addEventListener('input',()=>{
+    // if query matches another dept better, stay; filter within active + reveal matching topics across? keep simple: filter active stage; also auto-jump if zero matches
+    const q=document.getElementById('q').value.trim().toLowerCase();
+    if(q){
+      let best=null,bestN=-1;
+      deps.forEach(d=>{
+        let n=0;
+        (d.children||[]).forEach(c=>{
+          const blob=[d.name_zh,c.name_zh,c.modality,...(c.datasets||[]).map(x=>x.name||'')].join(' ').toLowerCase();
+          if(blob.includes(q)) n+=(c.datasets||[]).length||1;
+        });
+        if(n>bestN){bestN=n;best=d.id;}
+      });
+      if(best&&bestN>0) active=best;
+    }
+    renderRail();
+    renderStage();
+  });
+  document.getElementById('btnExpand').onclick=()=>stage.querySelectorAll('details.topic').forEach(d=>{d.open=true;});
+  document.getElementById('btnCollapse').onclick=()=>stage.querySelectorAll('details.topic').forEach(d=>{d.open=false;});
+
+  renderRail();
+  renderStage();
 })();
 </script>
 </body>
