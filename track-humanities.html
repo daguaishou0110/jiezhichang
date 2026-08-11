@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>文科交叉 · 分支枢纽 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#f0eee9;--card:#fff;--line:rgba(16,24,32,.12);--wine:#7a3e4a;--deep:#4a2430;--teal:#0c7a5f;--max:1080px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.65}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(240,238,233,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.82rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--wine)}
+.hero{padding:2.4rem 0 1.2rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--wine);margin-bottom:.35rem}
+.brand{font-size:clamp(1.9rem,4.5vw,2.9rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:54ch}
+.logic{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 1.4rem}
+.logic span{font-size:.72rem;font-weight:700;padding:.28rem .65rem;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted)}
+.logic b{color:var(--wine)}
+.branch{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.2rem 1.15rem;margin-bottom:1rem}
+.branch header{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:baseline;justify-content:space-between;margin-bottom:.55rem}
+.branch h2{font-size:1.25rem;color:var(--deep)}
+.branch .tag{font-size:.7rem;font-weight:700;padding:.16rem .5rem;border-radius:999px;background:rgba(122,62,74,.1);color:var(--wine)}
+.branch > p{color:var(--muted);font-size:.9rem;max-width:60ch;margin-bottom:.85rem}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem}
+@media(max-width:900px){.pillars{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pillars{grid-template-columns:1fr}}
+.pillar{display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;padding:.75rem .8rem;background:#faf9f7;transition:border-color .15s,transform .15s}
+.pillar:hover{border-color:rgba(122,62,74,.4);transform:translateY(-1px)}
+.pillar .n{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--wine);margin-bottom:.25rem}
+.pillar b{font-size:.88rem;margin-bottom:.2rem}
+.pillar span{color:var(--muted);font-size:.78rem;line-height:1.35}
+.tools{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.2rem 0 2rem}
+.btn{display:inline-flex;padding:.55rem .9rem;border-radius:999px;font-weight:700;font-size:.84rem;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.primary{background:var(--wine);color:#fff;border-color:transparent}
+.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+.note{font-size:.84rem;color:var(--muted);margin-top:.5rem}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="index.html">业务</a>
+    <a href="track-medical.html">医学交叉</a>
+    <a href="track-agri.html">农业交叉</a>
+    <a class="on" href="track-humanities.html">文科交叉</a>
+    <a href="track-cs.html">计算机</a>
+    <a href="hum-types.html">文科写法</a>
+    <a href="hum-datasets.html">文科数据</a>
+    <a href="hum-papers.html">文科成稿</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <div class="kicker">赛道 · 文科交叉</div>
+  <div class="brand">多分支，同一套成稿逻辑</div>
+  <p class="lead">经管 / 金融 / 传播 / 语言 / 教育心理各自成支。每支都按：写法 → 范文 → 数据集 → 成稿。不接纯理论空转；验证包可核对。</p>
+  <div class="logic">
+    <span><b>1</b> 写法</span>
+    <span><b>2</b> 范文</span>
+    <span><b>3</b> 数据集</span>
+    <span><b>4</b> 成稿</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <article class="branch" id="mgmt">
+    <header>
+      <h2>经管 / MBA</h2>
+      <span class="tag">主支 · 库存最厚</span>
+    </header>
+    <p>CGSS/CLDS 微观实证、管理科学博弈算例、水资源经济。对齐「公开调查 / 公开政策参数」。 · <a href="package-hum-mgmt.html">打开路径卡</a></p>
+    <div class="pillars">
+      <a class="pillar" href="hum-types.html#h1"><span class="n">写法</span><b>H1 / H2 / H4</b><span>调查关联 · 区域算例 · 博弈建模</span></a>
+      <a class="pillar" href="package-hum-mgmt.html#ex"><span class="n">范文</span><b>同类逻辑</b><span>社会调查实证 · 储能博弈公开算例</span></a>
+      <a class="pillar" href="hum-datasets.html#branch=mgmt"><span class="n">数据集</span><b>CGSS · CLDS · 碳/电</b><span>申请库 + 公开宏观</span></a>
+      <a class="pillar" href="hum-papers.html#branch=mgmt"><span class="n">成稿</span><b>MBA / 管理科学 / WRE</b><span>打开分支成稿卡</span></a>
+    </div>
+  </article>
+
+  <article class="branch" id="finance">
+    <header>
+      <h2>金融 / AI+经济</h2>
+      <span class="tag">预测验证包</span>
+    </header>
+    <p>信用违约、可解释评分、波动与压力预警；Sustainability / Mathematics 多稿题库。 · <a href="package-hum-finance.html">打开路径卡</a></p>
+    <div class="pillars">
+      <a class="pillar" href="hum-types.html#h5"><span class="n">写法</span><b>H5</b><span>金融预测：锁切分 · 硬基线 · 校准</span></a>
+      <a class="pillar" href="package-hum-finance.html#ex"><span class="n">范文</span><b>公开金融 ML</b><span>信用 / 波动同类录用逻辑</span></a>
+      <a class="pillar" href="hum-datasets.html#branch=finance"><span class="n">数据集</span><b>UCI · FRED · 行情</b><span>仅公开入口</span></a>
+      <a class="pillar" href="hum-papers.html#branch=finance"><span class="n">成稿</span><b>ai+经济学系列</b><span>子题 paper4–7</span></a>
+    </div>
+  </article>
+
+  <article class="branch" id="comm">
+    <header>
+      <h2>计算传播</h2>
+      <span class="tag">非问卷主路径</span>
+    </header>
+    <p>AIGC 新闻对照、谣言网络、短视频互动等五套实验；词典 NLP / 网络指标 / 传统 ML。 · <a href="package-hum-comm.html">打开路径卡</a></p>
+    <div class="pillars">
+      <a class="pillar" href="hum-types.html#h5"><span class="n">写法</span><b>H5</b><span>计算社科：公开文本/网络 + 可复现指标</span></a>
+      <a class="pillar" href="package-hum-comm.html#ex"><span class="n">范文</span><b>计算传播</b><span>MDPI / 传播学刊气质</span></a>
+      <a class="pillar" href="hum-datasets.html#branch=comm"><span class="n">数据集</span><b>公开社交语料</b><span>子题锁定 DOI/仓库</span></a>
+      <a class="pillar" href="hum-papers.html#branch=comm"><span class="n">成稿</span><b>五套实验题库</b><span>传播传媒新</span></a>
+    </div>
+  </article>
+
+  <article class="branch" id="lang">
+    <header>
+      <h2>语言 / 出海政策</h2>
+      <span class="tag">语料编码</span>
+    </header>
+    <p>出海民企官网多语政策；跨平台文化传播语料。只用不需私有访谈的公开文本。 · <a href="package-hum-lang.html">打开路径卡</a></p>
+    <div class="pillars">
+      <a class="pillar" href="hum-types.html#h1"><span class="n">写法</span><b>H1 / H5</b><span>编码实证 · 计算语言学交叉</span></a>
+      <a class="pillar" href="package-hum-lang.html#ex"><span class="n">范文</span><b>SAGE / Frontiers</b><span>语言政策 · 文化传播</span></a>
+      <a class="pillar" href="hum-datasets.html#branch=lang"><span class="n">数据集</span><b>官网多语 · Crawl</b><span>清单 + codebook</span></a>
+      <a class="pillar" href="hum-papers.html#branch=lang"><span class="n">成稿</span><b>出海政策 · 语言学</b><span>两条成稿线</span></a>
+    </div>
+  </article>
+
+  <article class="branch" id="edupsy">
+    <header>
+      <h2>教育心理</h2>
+      <span class="tag">测评 / 筛查</span>
+    </header>
+    <p>PISA 等公开测评；教育情境心理健康 ML 榜单。对齐硬基线与可复现切分。 · <a href="package-hum-edupsy.html">打开路径卡</a></p>
+    <div class="pillars">
+      <a class="pillar" href="hum-types.html#h5"><span class="n">写法</span><b>H5</b><span>预测筛查 + leaderboard</span></a>
+      <a class="pillar" href="package-hum-edupsy.html#ex"><span class="n">范文</span><b>Frontiers Psych</b><span>教育心理 + ML</span></a>
+      <a class="pillar" href="hum-datasets.html#branch=edupsy"><span class="n">数据集</span><b>PISA · 公开心理表</b><span>国际测评 + 开放表</span></a>
+      <a class="pillar" href="hum-papers.html#branch=edupsy"><span class="n">成稿</span><b>教育+心理学</b><span>Frontiers 路径包</span></a>
+    </div>
+  </article>
+
+  <div class="tools">
+    <a class="btn primary" href="hum-types.html">文科写法总表</a>
+    <a class="btn" href="hum-datasets.html">全部文科数据</a>
+    <a class="btn" href="hum-papers.html">全部文科成稿</a>
+    <a class="btn" href="track-medical.html">回医学交叉</a>
+  </div>
+  <p class="note">工程源目录：niumayuan/2026 下 MBA人力资源 · 管理科学sci · ai+经济学 · 传播传媒新 · 语言学 · 教育+心理学 等。本站只挂公开入口与成稿元数据。</p>
+</main>
+<footer class="foot"><div class="wrap">文科交叉 · 分支 = 写法 + 范文 + 数据集 + 成稿</div></footer>
+</body>
+</html>

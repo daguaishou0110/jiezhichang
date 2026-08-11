@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>文科写法 · H1–H5 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#f0eee9;--card:#fff;--line:rgba(16,24,32,.12);--wine:#7a3e4a;--deep:#4a2430;--max:920px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.65}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep)}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(240,238,233,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.82rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--wine)}
+.hero{padding:2.2rem 0 1rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--wine);margin-bottom:.35rem}
+.brand{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:52ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem;margin:1rem 0;scroll-margin-top:4rem}
+.card h2{font-size:1.15rem;margin-bottom:.4rem;color:var(--deep)}
+.card p,.card li{color:var(--muted);font-size:.9rem}
+.card ul{padding-left:1.1rem;display:grid;gap:.28rem;margin-top:.4rem}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;padding:.16rem .5rem;border-radius:999px;background:rgba(122,62,74,.1);color:var(--wine);margin-bottom:.4rem}
+.map{font-size:.84rem;color:var(--muted);margin-top:.55rem}
+.map b{color:var(--ink)}
+.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;margin-top:1rem}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="track-humanities.html">文科交叉</a>
+    <a class="on" href="hum-types.html">文科写法</a>
+    <a href="hum-datasets.html">文科数据</a>
+    <a href="hum-papers.html">文科成稿</a>
+    <a href="types.html">医学写法</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <div class="kicker">文科交叉 · 写法层</div>
+  <div class="brand">H1–H5：验证协议，不是学科口号</div>
+  <p class="lead">与医学 01–05 同构：写法 = 外测怎么锁。分支只决定数据与叙事，不另起一套空标准。</p>
+</header>
+
+<main class="wrap">
+  <article class="card" id="h1">
+    <span class="tag">H1</span>
+    <h2>调查 / 语料微观关联</h2>
+    <p>公开社会调查或可复现语料编码 → 关联 / 分层；预注册式变量表；稳健性与混杂对照写进验收。</p>
+    <ul>
+      <li>典型：CGSS 幸福感；官网多语政策编码</li>
+      <li>不声称：因果识别已做完（除非设计明确）</li>
+    </ul>
+    <p class="map"><b>分支</b> 经管 MBA · 语言政策</p>
+  </article>
+
+  <article class="card" id="h2">
+    <span class="tag">H2</span>
+    <h2>时间 / 区域外推</h2>
+    <p>开发期冻结后，用未来波次或留一区域只评估一次；掉点必须解释。</p>
+    <ul>
+      <li>典型：多波 CLDS；多省碳电算例区域比较</li>
+      <li>对齐医学写法 02 的「锁死外测」语气</li>
+    </ul>
+    <p class="map"><b>分支</b> 经管 · 管理科学实证套</p>
+  </article>
+
+  <article class="card" id="h3">
+    <span class="tag">H3</span>
+    <h2>多源 / 多队列留一</h2>
+    <p>多公开源或多队列；leave-one-source-out；禁止用外测调参。</p>
+    <ul>
+      <li>典型：多国测评；多平台语料；经济多稿共享验证纪律</li>
+    </ul>
+    <p class="map"><b>分支</b> 金融题库 · 教育测评</p>
+  </article>
+
+  <article class="card" id="h4">
+    <span class="tag">H4</span>
+    <h2>机制建模 + 公开算例</h2>
+    <p>博弈 / 优化模型必须挂可核对的公开参数表；算例可复现，不靠私有企业台账。</p>
+    <ul>
+      <li>典型：零碳园区 Stackelberg + 省域公开电碳数据</li>
+    </ul>
+    <p class="map"><b>分支</b> 管理科学</p>
+  </article>
+
+  <article class="card" id="h5">
+    <span class="tag">H5</span>
+    <h2>预测 / 计算社科系统</h2>
+    <p>锁切分、硬基线、校准（分类）或误差分解（回归）；弱外测诚实。文本/网络题同样要固定语料快照。</p>
+    <ul>
+      <li>典型：信用违约；学生抑郁筛查榜单；计算传播五套实验</li>
+    </ul>
+    <p class="map"><b>分支</b> 金融 · 传播 · 教育心理 · 语言学 ML 线</p>
+  </article>
+</main>
+<footer class="foot"><div class="wrap">文科写法 · 对标医学 types · 成交仍落分支路径卡</div></footer>
+</body>
+</html>

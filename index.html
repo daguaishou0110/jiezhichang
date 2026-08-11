@@ -105,8 +105,9 @@ a{color:var(--deep);text-underline-offset:3px}
 }
 .tracks h2{font-size:1.4rem;margin-bottom:.35rem}
 .tracks .sub{color:var(--muted);font-size:.9rem;margin-bottom:1.1rem;max-width:52ch}
-.track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
-@media(max-width:860px){.track-grid{grid-template-columns:1fr}}
+.track-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem}
+@media(max-width:980px){.track-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.track-grid{grid-template-columns:1fr}}
 .track{
   display:flex;flex-direction:column;text-decoration:none;color:inherit;
   border:1px solid var(--line);border-radius:18px;padding:1.2rem 1.15rem;
@@ -117,10 +118,13 @@ a{color:var(--deep);text-underline-offset:3px}
 .track .tag{align-self:flex-start;font-size:.7rem;font-weight:700;padding:.16rem .5rem;border-radius:999px;margin-bottom:.45rem}
 .track.med .tag{background:rgba(12,122,95,.12);color:var(--deep)}
 .track.agri .tag{background:rgba(196,92,22,.12);color:#8a3d0c}
+.track.hum .tag{background:rgba(122,62,74,.12);color:#7a3e4a}
 .track.cs .tag{background:rgba(11,110,138,.12);color:#0b4f63}
+.track.hum:hover{border-color:rgba(122,62,74,.45)}
 .track h3{font-size:1.15rem;margin-bottom:.3rem}
 .track p{color:var(--muted);font-size:.88rem;flex:1}
 .track .go{margin-top:.7rem;font-weight:700;color:var(--teal);font-size:.88rem}
+.track.hum .go{color:#7a3e4a}
 
 .steps-bar{position:relative;z-index:1;background:rgba(247,250,248,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .steps{display:flex;align-items:stretch;justify-content:space-between;gap:0;padding:0}
@@ -212,8 +216,7 @@ footer{position:relative;z-index:1;padding:1.4rem 0 2.4rem;color:var(--muted);fo
         <a href="#tracks">赛道</a>
         <a href="track-medical.html">医学交叉</a>
         <a href="track-agri.html">农业交叉</a>
-        <a href="agri-datasets.html">农业数据</a>
-        <a href="agri-papers.html">农业成稿</a>
+        <a href="track-humanities.html">文科交叉</a>
         <a href="track-cs.html">计算机</a>
         <a href="types.html">写法</a>
         <a href="journals.html">选刊</a>
@@ -230,17 +233,17 @@ footer{position:relative;z-index:1;padding:1.4rem 0 2.4rem;color:var(--muted);fo
     <div class="wrap hero-inner">
       <div class="brand-mark">解知常<span>先定业务，再进赛道</span></div>
       <h1>公开数据成稿的操作系统：赛道 → 写法 → 分区档</h1>
-      <p class="hero-lead">不卖口号。医学交叉是主战场；农业与计算机挂进同一棵树。每条路径卡都能核对验证包。</p>
+      <p class="hero-lead">不卖口号。医学交叉是主战场；农业、文科与计算机挂进同一棵树。每条路径卡都能核对验证包。</p>
       <div class="cta">
         <a class="btn btn-light" href="track-medical.html">进入医学交叉</a>
-        <a class="btn btn-ghost" href="#tracks">看三赛道</a>
+        <a class="btn btn-ghost" href="#tracks">看四赛道</a>
       </div>
     </div>
   </header>
 
   <section class="tracks" id="tracks">
     <div class="wrap">
-      <h2>三赛道</h2>
+      <h2>四赛道</h2>
       <p class="sub">业务层只回答「接哪类单」。写法与分区在赛道里面展开。</p>
       <div class="track-grid">
         <a class="track med" href="track-medical.html">
@@ -254,6 +257,12 @@ footer{position:relative;z-index:1;padding:1.4rem 0 2.4rem;color:var(--muted);fo
           <h3>农业交叉</h3>
           <p>作物检测公开数据集库 + 农业 YOLO 成稿库；口径对齐写法 05。</p>
           <span class="go">打开农业入口 →</span>
+        </a>
+        <a class="track hum" href="track-humanities.html">
+          <span class="tag">多分支</span>
+          <h3>文科交叉</h3>
+          <p>经管 / 金融 / 传播 / 语言 / 教育心理；每支：写法 · 范文 · 数据 · 成稿。</p>
+          <span class="go">打开文科枢纽 →</span>
         </a>
         <a class="track cs" href="track-cs.html">
           <span class="tag">能力底座</span>
@@ -414,7 +423,7 @@ footer{position:relative;z-index:1;padding:1.4rem 0 2.4rem;color:var(--muted);fo
           <ol>
             <li><b>认担心：</b>没医院发不了一区——很常见。</li>
             <li><b>定业务：</b>机制文还是公开数据路径？我们做后者。</li>
-            <li><b>选赛道：</b>医学交叉（主）/ 农业 / 计算机底座。</li>
+            <li><b>选赛道：</b>医学交叉（主）/ 农业 / 文科 / 计算机底座。</li>
             <li><b>落一卡：</b>只展开一张路径卡。</li>
             <li><b>摊标准 + 点 DOI：</b>然后停，让对方问。</li>
           </ol>
@@ -430,6 +439,7 @@ footer{position:relative;z-index:1;padding:1.4rem 0 2.4rem;color:var(--muted);fo
           <p>枢纽里有写法 × 分区矩阵；工具层（选刊 / 数据 / 成稿）都挂在格子上。</p>
           <div class="cta" style="animation:none">
             <a class="btn btn-light" href="track-medical.html">医学交叉</a>
+            <a class="btn btn-ghost" href="track-humanities.html">文科交叉</a>
             <a class="btn btn-ghost" href="package-imaging-yolo.html">影像 YOLO 卡</a>
             <a class="btn btn-ghost" href="types.html">五种写法</a>
           </div>
@@ -439,6 +449,8 @@ footer{position:relative;z-index:1;padding:1.4rem 0 2.4rem;color:var(--muted);fo
           <a href="journals.html">选刊调研</a>
           <a href="imaging-datasets.html">影像数据集</a>
           <a href="imaging-papers.html">医工成稿</a>
+          <a href="hum-datasets.html">文科数据</a>
+          <a href="hum-papers.html">文科成稿</a>
           <a href="https://paper-doctor.onrender.com/" target="_blank" rel="noopener">组学成稿</a>
           <a href="portal.html">写法百科</a>
           <a href="confidence.html">底气页</a>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>计算传播成稿路径 · 文科路径卡 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#f0eee9;--card:#fff;--line:rgba(16,24,32,.12);--wine:#7a3e4a;--deep:#4a2430;--max:1000px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.65}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(240,238,233,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.82rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--wine)}
+.hero{padding:2.2rem 0 1rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--wine);margin-bottom:.35rem}
+.brand{font-size:clamp(1.8rem,4.2vw,2.6rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:54ch}
+.badges{display:flex;flex-wrap:wrap;gap:.35rem;margin:.8rem 0 0}
+.badge{font-size:.7rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted)}
+.badge.ok{background:#fce8ec;color:var(--wine);border-color:#e8b4be}
+section{padding:1.4rem 0;scroll-margin-top:4rem}
+h2{font-size:1.3rem;margin-bottom:.55rem;color:var(--deep)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.1rem;margin-bottom:.75rem}
+.card h3{font-size:1.02rem;margin-bottom:.4rem}
+.card p,.card li{color:var(--muted);font-size:.9rem}
+.card ul{padding-left:1.1rem;display:grid;gap:.28rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+@media(max-width:800px){.grid2{grid-template-columns:1fr}}
+.links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}
+.btn{display:inline-flex;padding:.55rem .9rem;border-radius:999px;font-weight:700;font-size:.84rem;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.primary{background:var(--wine);color:#fff;border-color:transparent}
+.tone{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.7rem}
+@media(max-width:800px){.tone{grid-template-columns:1fr}}
+.tone div{border-radius:12px;padding:.85rem .95rem;font-size:.88rem}
+.yes{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}
+.no{background:#fff7ed;border:1px solid #fdba74;color:#7c2d12}
+.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="index.html">业务</a>
+    <a href="track-humanities.html">文科交叉</a>
+    <a class="on" href="package-hum-comm.html">计算传播</a>
+    <a href="hum-types.html">写法</a>
+    <a href="hum-datasets.html#branch=comm">数据</a>
+    <a href="hum-papers.html#branch=comm">成稿</a>
+  </div>
+</div></nav>
+<header class="hero wrap">
+  <div class="kicker">路径卡 · 文科交叉 · 计算传播</div>
+  <div class="brand">计算传播成稿路径</div>
+  <p class="lead">非问卷主路径：公开文本/网络 + 可复现指标。五套实验可按客户背景选型。</p>
+  <div class="badges"><span class="badge ok">写法 H5</span><span class="badge">计算社科</span></div>
+</header>
+<main class="wrap">
+  <section id="write">
+    <h2>1 · 写法</h2>
+    <div class="card"><h3>主写法 H5</h3><ul>
+  <li>语料快照固定；指标脚本可复现</li>
+  <li>能不用深度学习就不用；传统 ML / 网络指标优先</li>
+  <li>对照条件写清（AIGC vs 人工等）</li>
+  </ul>
+  <div class="links"><a class="btn" href="hum-types.html#h5">打开 H5</a></div></div>
+  </section>
+  <section id="ex">
+    <h2>2 · 范文</h2>
+    <div class="card"><h3>范文</h3><ul>
+  <li>计算传播 / 人机传播对照文：公开语料 + 透明测量</li>
+  <li>谣言/级联网络文：网络指标与统计检验写死</li>
+  <li>MDPI 传播向：方法可复制优先于故事煽情</li>
+  </ul></div>
+  </section>
+  <section id="data">
+    <h2>3 · 数据集</h2>
+    <div class="card"><h3>数据集</h3><ul>
+  <li>子题锁定的公开微博/社交语料</li>
+  <li>Zenodo 等 DOI 固化包</li>
+  </ul>
+  <div class="links"><a class="btn primary" href="hum-datasets.html#branch=comm">打开数据卡</a></div></div>
+  </section>
+  <section id="papers">
+    <h2>4 · 成稿</h2>
+    <div class="card"><h3>成稿</h3><ul>
+  <li>H-COM01 五套实验题库（传播传媒新）</li>
+  </ul>
+  <div class="links"><a class="btn primary" href="hum-papers.html#branch=comm">打开成稿库</a></div></div>
+  </section>
+  <section>
+    <h2>承诺边界</h2>
+    <div class="tone">
+      <div class="yes"><b>承诺：</b>语料清单、指标表、对照设计写进验收。</div>
+      <div class="no"><b>不承诺：</b>保证申博或保证发 CSSCI。</div>
+    </div>
+    <div class="links">
+      <a class="btn primary" href="track-humanities.html#comm">回文科枢纽</a>
+      <a class="btn" href="hum-types.html">写法总表</a>
+      <a class="btn" href="hum-datasets.html#branch=comm">本支数据</a>
+      <a class="btn" href="hum-papers.html#branch=comm">本支成稿</a>
+    </div>
+  </section>
+</main>
+<footer class="foot"><div class="wrap">文科路径卡 · 写法 / 范文 / 数据 / 成稿</div></footer>
+</body>
+</html>
