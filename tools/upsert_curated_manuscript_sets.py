@@ -7,8 +7,8 @@ from pathlib import Path
 OUT = Path(__file__).resolve().parents[1] / "data" / "imaging-datasets.js"
 
 
-def ds(name, url, note="", kind="detection"):
-    return {"name": name, "url": url, "note": note, "license": "", "kind": kind}
+def ds(name, url, note="", kind="detection", tier="featured"):
+    return {"name": name, "url": url, "note": note, "license": "", "kind": kind, "tier": tier}
 
 
 def norm_url(u: str) -> str:
