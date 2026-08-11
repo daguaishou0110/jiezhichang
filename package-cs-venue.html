@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>会议 / 期刊辅导 · 计算机交付 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--sky:#0b6e8a;--deep:#074d3d;--max:920px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.65}
+h1,h2,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep)}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.82rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--sky)}
+.hero{padding:2.2rem 0 1rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--sky);margin-bottom:.35rem}
+.brand{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:52ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem;margin:1rem 0}
+.card h2{font-size:1.1rem;margin-bottom:.45rem}
+.card p,.card li{color:var(--muted);font-size:.9rem}
+.card ul{padding-left:1.1rem;display:grid;gap:.28rem;margin-top:.35rem}
+.tone{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.7rem}
+@media(max-width:720px){.tone{grid-template-columns:1fr}}
+.tone div{border-radius:12px;padding:.85rem .95rem;font-size:.88rem}
+.yes{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}
+.no{background:#fff7ed;border:1px solid #fdba74;color:#7c2d12}
+.btn{display:inline-flex;margin:.35rem .35rem 0 0;padding:.55rem .9rem;border-radius:999px;font-weight:700;font-size:.84rem;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.primary{background:var(--sky);color:#fff;border-color:transparent}
+.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;margin-top:1rem}
+.todo{font-size:.84rem;color:var(--muted);margin-top:.5rem}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="track-cs.html">计算机</a>
+    <a href="package-cs-revision.html">返修</a>
+    <a href="package-cs-thesis.html">硕论辅导</a>
+    <a class="on" href="package-cs-venue.html">会议/期刊辅导</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <div class="kicker">计算机交付 · 03</div>
+  <div class="brand">会议 / 期刊辅导</div>
+  <p class="lead">面向会议与期刊成稿：选题包装、实验与写作跟进。投前修改、转投、看稿意见暂挂本支，后续可再拆。</p>
+</header>
+
+<main class="wrap">
+  <div class="card">
+    <h2>交付骨架（待细化）</h2>
+    <ul>
+      <li>目标会/刊与档位对齐</li>
+      <li>实验协议 / 基线 / 图表清单</li>
+      <li>初稿 → 投前改一轮</li>
+      <li>暂挂：转投换刊、只出意见的看稿</li>
+    </ul>
+    <p class="todo">下一步可补：A/B 会与 SCI 分档、YOLO 检测样例链到写法 05、投前 checklist。</p>
+  </div>
+  <div class="card">
+    <h2>与能力底座</h2>
+    <ul>
+      <li>方法向 → <a href="types.html#t04">写法 04</a></li>
+      <li>检测/YOLO → <a href="package-imaging-yolo.html">影像 05 路径卡</a></li>
+      <li>题目若在交叉域 → 挂回医学 / 农业 / 文科路径卡</li>
+    </ul>
+    <div class="tone">
+      <div class="yes"><b>承诺：</b>验证与写作范围写进验收。</div>
+      <div class="no"><b>不承诺：</b>保证中稿某一本会/刊。</div>
+    </div>
+    <a class="btn primary" href="track-cs.html">回计算机枢纽</a>
+    <a class="btn" href="package-imaging-yolo.html">影像 05</a>
+    <a class="btn" href="types.html#t04">写法 04</a>
+  </div>
+</main>
+<footer class="foot"><div class="wrap">会议/期刊辅导 · 骨架页 · 待逐项细化</div></footer>
+</body>
+</html>

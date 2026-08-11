@@ -17,7 +17,11 @@
 │  ├─ 经管/MBA · 金融 · 传播 · 语言 · 教育心理
 │  ├─ 每支：写法 / 范文 / 数据集 / 成稿
 │  └─ hum-types · hum-datasets · hum-papers · package-hum-*
-└─ 计算机（track-cs）能力底座
+└─ 计算机（track-cs）三种交付
+   ├─ 返修（package-cs-revision）
+   ├─ 硕论辅导（package-cs-thesis）
+   └─ 会议/期刊辅导（package-cs-venue）
+      · 能力底座仍挂写法 04/05 → 交叉路径卡
 工具层：选刊 · 数据 · 成稿 · 组学成稿（paper-doctor）
 ```
 
@@ -43,7 +47,10 @@
 | package-hum-*.html | 文科分支路径卡 |
 | agri-datasets.html | 农业公开数据集 |
 | agri-papers.html | 农业 YOLO 成稿库 |
-| track-cs.html | 计算机薄入口 |
+| track-cs.html | 计算机：返修 / 硕论 / 会刊辅导 |
+| package-cs-revision.html | 返修骨架卡 |
+| package-cs-thesis.html | 硕论辅导骨架卡 |
+| package-cs-venue.html | 会议/期刊辅导骨架卡 |
 | package-imaging-yolo.html | 写法 05 路径卡 |
 | crc-microbiome.html / osteoporosis.html | 写法 03 / 02 路径卡 |
 | types.html + type-01…05 | 医学写法层 |
