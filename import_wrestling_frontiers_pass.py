@@ -153,13 +153,12 @@ def main() -> None:
     DST_JSON.write_text(json.dumps(clean, ensure_ascii=False, indent=2), encoding="utf-8")
 
     html = _med.build_html(merged)
-    # Retarget medical HTML template → CS gallery
-    html = html.replace("医工交叉成稿库 · 解知常", "计算机成稿库 · 解知常")
-    html = html.replace("Medical imaging × CS manuscripts", "Computer vision manuscripts")
-    html = html.replace("<h1>医工交叉成稿库</h1>", "<h1>计算机成稿库</h1>")
+    html = html.replace("医工交叉成稿库 · 解知常", "CV · 动作识别成稿 · 解知常")
+    html = html.replace("Medical imaging × CS manuscripts", "会议/期刊辅导 · 一级 CV · 二级 动作识别")
+    html = html.replace("<h1>医工交叉成稿库</h1>", "<h1>本类成稿 · 动作识别</h1>")
     html = html.replace("--acc:#0c7a5f", "--acc:#0b6e8a")
     html = html.replace("--deep:#074d3d", "--deep:#0b4f63")
-    html = html.replace("医学成稿", "计算机成稿")
+    html = html.replace("医学成稿", "本类成稿")
 
     old_nav = """  <div class="nav-links">
     <a href="index.html">首页</a>
@@ -172,25 +171,23 @@ def main() -> None:
     <a href="index.html">业务</a>
     <a href="track-cs.html">计算机</a>
     <a href="package-cs-venue.html">会议/期刊辅导</a>
-    <a class="on" href="cs-papers.html">计算机成稿</a>
-    <a href="imaging-papers.html">医工成稿</a>
-    <a href="agri-papers.html">农业成稿</a>
+    <a href="package-cs-venue.html#cv">CV</a>
+    <a class="on" href="cs-papers.html">动作识别成稿</a>
   </div>"""
     html = html.replace(old_nav, new_nav)
 
     html = html.replace(
         "列表点进看英文摘要与模型图。仅收录<strong>医学 / 医工交叉</strong>成稿；农业（番茄、茶叶、水稻等）与工业检测已排除。多癌种组学预后成稿见右侧组学库。",
-        "列表点进看英文摘要与模型图。当前含<strong>摔跤动作识别</strong> Frontiers PASS（11 套）。医工检测/分割见<a href=\"imaging-papers.html\">医工成稿</a>；农业见<a href=\"agri-papers.html\">农业成稿</a>。",
+        "不是计算机总库，只挂<strong>这一类</strong>样例：摔跤动作 / 相位识别 Frontiers PASS。回<a href=\"package-cs-venue.html#cv-action\">CV · 动作识别</a>。",
     )
     html = html.replace(
         "本页从本地 YOLO 医学项目成稿表筛选导入；不含番茄/茶叶/水稻/梨/钢丝绳等非医学条目。",
-        "摔跤组 WR01–WR11 来自 wrestling-yolo/papers_pass_frontiers；主指标为验证集准确率（非 mAP）。",
+        "来源 wrestling-yolo/papers_pass_frontiers；主指标验证集准确率（非 mAP）。医工检测见<a href=\"imaging-papers.html\">医工成稿</a>。",
     )
-    # fallbacks if oral/thyroid already altered medical template strings
-    if "摔跤组 WR01" not in html:
+    if "wrestling-yolo" not in html:
         html = html.replace(
             "不含番茄/茶叶/水稻/梨/钢丝绳等非医学条目。",
-            "摔跤组 WR01–WR11 来自 wrestling-yolo/papers_pass_frontiers；主指标为验证集准确率（非 mAP）。",
+            "来源 wrestling-yolo/papers_pass_frontiers；主指标验证集准确率（非 mAP）。",
         )
     DST_HTML.write_text(html, encoding="utf-8")
     print(f"kept={len(kept)} wr={len(wr)} total={len(merged)} -> {DST_HTML.name}")

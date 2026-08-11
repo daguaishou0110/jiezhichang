@@ -35,9 +35,11 @@ a{color:var(--deep);text-underline-offset:3px}
 .secs{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
 @media(max-width:720px){.secs{grid-template-columns:1fr}}
 .sec{border:1px solid var(--line);border-radius:12px;padding:.75rem .85rem;background:#f7fafb}
+.sec.ready{border-color:rgba(11,110,138,.35);background:#f0f7fa}
 .sec h3{font-size:.95rem;margin-bottom:.3rem;font-family:Sora,sans-serif;font-weight:700;letter-spacing:0}
 .sec ul{padding-left:1.05rem;display:grid;gap:.18rem}
 .sec li{color:var(--muted);font-size:.84rem}
+.sec .go{display:inline-flex;margin-top:.55rem;padding:.4rem .75rem;border-radius:999px;font-weight:700;font-size:.8rem;text-decoration:none;background:var(--sky);color:#fff}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem;margin:1rem 0}
 .card h2{font-size:1.1rem;margin-bottom:.45rem}
 .card p,.card li{color:var(--muted);font-size:.9rem}
@@ -85,16 +87,24 @@ a{color:var(--deep);text-underline-offset:3px}
       <h2>计算机视觉</h2>
       <span class="lv">一级 · CV</span>
     </header>
-    <p>库存最厚：检测、分割、遥感、缺陷。会议常见 CVPR 车间 / ICME；期刊常见 Sensors、Remote Sensing、专刊。</p>
+    <p>库存最厚：检测、分割、遥感、动作。成稿挂在<strong>二级子题</strong>下，不是另开总库。</p>
     <div class="secs">
       <div class="sec">
-        <h3>目标检测 / 动作识别</h3>
+        <h3>目标检测</h3>
         <ul>
           <li>YOLO 系改进 / 轻量化</li>
           <li>小目标 · 密集目标</li>
           <li>缺陷 / 工业检测</li>
-          <li>体育动作识别（样例：<a href="cs-papers.html">摔跤成稿 11 套</a>）</li>
         </ul>
+      </div>
+      <div class="sec ready" id="cv-action">
+        <h3>动作识别</h3>
+        <ul>
+          <li>体育动作 / 相位识别</li>
+          <li>视频片段分类</li>
+          <li>已挂：摔跤 Frontiers PASS</li>
+        </ul>
+        <a class="go" href="cs-papers.html">本类成稿 · 摔跤 11 套 →</a>
       </div>
       <div class="sec">
         <h3>图像分割</h3>
