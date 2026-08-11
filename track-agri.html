@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>农业交叉 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--warm:#c45c16;--max:920px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.65}
+h1,h2,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep)}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.82rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--teal)}
+.hero{padding:2.4rem 0 1.5rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--warm);margin-bottom:.35rem}
+.brand{font-size:clamp(1.9rem,4.5vw,2.7rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:48ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem;margin:1rem 0}
+.card h2{font-size:1.15rem;margin-bottom:.45rem}
+.card p,.card li{color:var(--muted);font-size:.9rem}
+.card ul{padding-left:1.1rem;display:grid;gap:.28rem;margin-top:.4rem}
+.btn{display:inline-flex;margin:.35rem .35rem 0 0;padding:.55rem .9rem;border-radius:999px;font-weight:700;font-size:.84rem;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.primary{background:var(--teal);color:#fff;border-color:transparent}
+.note{font-size:.84rem;color:var(--muted);margin-top:1rem}
+.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;margin-top:1.5rem}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="index.html">业务</a>
+    <a href="track-medical.html">医学交叉</a>
+    <a class="on" href="track-agri.html">农业交叉</a>
+    <a href="track-cs.html">计算机</a>
+    <a href="types.html">写法</a>
+    <a href="journals.html">选刊</a>
+    <a href="imaging-datasets.html">数据</a>
+    <a href="imaging-papers.html">成稿</a>
+    <a href="https://paper-doctor.onrender.com/" target="_blank" rel="noopener">组学成稿</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <div class="kicker">赛道 · 农业交叉</div>
+  <div class="brand">田间 / 作物检测成稿路径</div>
+  <p class="lead">能力在农业 YOLO 数据与成稿资产里；本站先做赛道入口。验证逻辑对齐「多公开集 + 跨集/跨场景外测」，分区多为 A/B。</p>
+</header>
+
+<main class="wrap">
+  <div class="card">
+    <h2>当前状态</h2>
+    <ul>
+      <li>源资产：农业 YOLO 数据集目录与成稿包装（站外工程库）</li>
+      <li>站内：医学影像成稿库已剥离番茄/茶叶等农业篇，避免混赛道</li>
+      <li>下一张路径卡：作物检测样例包（P1）</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>和医学写法怎么借</h2>
+    <ul>
+      <li>检测叙事可借 <b>写法 05</b> 的跨集外测口径</li>
+      <li>选刊走农业工程 / Remote Sensing / Sensors 等，不硬套 npj</li>
+      <li>需要医学交叉请回主战场</li>
+    </ul>
+    <a class="btn primary" href="package-imaging-yolo.html">参考影像 05 路径卡结构</a>
+    <a class="btn" href="types.html#t05">写法 05</a>
+    <a class="btn" href="track-medical.html">医学交叉</a>
+  </div>
+  <p class="note">诚实占位：农业赛道已挂进业务树，细包按单补，不假装已有医学同级专页。</p>
+</main>
+<footer class="foot"><div class="wrap">农业交叉 · 薄入口 · P1 补样例路径卡</div></footer>
+</body>
+</html>

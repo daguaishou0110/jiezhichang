@@ -1,34 +1,43 @@
-# jiezhichang · 客户说服站
+# jiezhichang · 公开数据成稿业务操作系统
 
 线上：https://jiezhichang.onrender.com  
 仓库：https://github.com/daguaishou0110/jiezhichang
 
-## 说服顺序（首页已按此排）
+## 信息架构
 
-1. **选题** — 能接什么题（CRC / 骨质疏松）
-2. **方案** — 问题、数据切分、明确不做
-3. **一区标准** — 锁死外测 · 硬对照 · 校准 · 弱外测诚实
-4. **范文** — 同类 DOI，对齐哪条标准
+```text
+业务（index）
+├─ 医学交叉（track-medical）★
+│  ├─ 写法 01–05（types / type-*）
+│  ├─ 分区档 S/A/B（journals + MDPI QA）
+│  └─ 路径卡：CRC / 骨质疏松 / 影像 YOLO
+├─ 农业交叉（track-agri）薄入口
+└─ 计算机（track-cs）能力底座
+工具层：选刊 · 数据 · 成稿 · 组学成稿（paper-doctor）
+```
 
-## 会上五分钟
+## 主路径
 
-认担心 → 给选择题（机制 vs 风险分层）→ 只落一题 → 摊四条标准 → 点 1～2 个 DOI → 停
+1. **业务** — 接公开数据成稿，不接机制文主叙事  
+2. **赛道** — 医学（主）/ 农业 / 计算机  
+3. **写法** — 验证协议 01–05  
+4. **分区档** — S 冲刺 / A 稳妥 / B 含 MDPI  
+5. **路径卡** — 方案 + 数据 + 选刊 + 范文/成稿  
 
 ## 页面
 
 | 文件 | 角色 |
 |------|------|
-| index.html | **入口**：选题→方案→标准→范文 |
-| types.html | **五种写法层级展开**（点开一类） |
-| journals.html | **期刊调研**：收公开医学影像×计算方法的刊 + 范文 DOI + **2026 此类发文量** |
-| data/journals-imaging-public.json | 期刊调研数据源 |
-| data/journals-imaging-counts-2026.json | 各刊 2026 发文量（OpenAlex 估算） |
-| data/journals-library.json / journals-survey.json | **已弃用** |
-| crc-microbiome.html | 结直肠方案专页 |
-| osteoporosis.html | 骨质疏松方案专页 |
-| type-05.html#exemplars | 影像 npj 精选 11 篇 |
-| confidence.html | 底气/证据（追问用） |
-| portal.html | 写法百科大表（附录） |
+| index.html | 业务中枢 + 三赛道 + 说服四步 |
+| track-medical.html | 医学枢纽：路径卡 + 写法×分区 |
+| track-agri.html / track-cs.html | 农业 / 计算机薄入口 |
+| package-imaging-yolo.html | 写法 05 路径卡 |
+| crc-microbiome.html / osteoporosis.html | 写法 03 / 02 路径卡 |
+| types.html + type-01…05 | 写法层 |
+| journals.html | 选刊 / 分区 + MDPI QA |
+| imaging-datasets.html | 影像数据（成稿推荐分层） |
+| imaging-papers.html | 医工成稿 |
+| confidence.html / portal.html / two-paths.html | 底气 / 百科 / 分流 |
 
 ## 本地预览
 

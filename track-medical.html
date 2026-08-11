@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>医学交叉 · 写法 × 分区 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--warm:#c45c16;--sky:#0b6e8a;--max:1080px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.6}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.82rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--teal)}
+.hero{padding:2.4rem 0 1.4rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:.4rem}
+.brand{font-size:clamp(2rem,5vw,3rem);font-weight:750;color:var(--deep);margin-bottom:.45rem}
+.lead{color:var(--muted);max-width:52ch;margin-bottom:1rem}
+.tiers{display:flex;flex-wrap:wrap;gap:.4rem;margin:.8rem 0 1.2rem}
+.tier{font-size:.72rem;font-weight:700;padding:.28rem .65rem;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+.tier b{color:var(--deep)}
+.sec{padding:0 0 2.2rem}
+h2{font-size:clamp(1.35rem,2.5vw,1.75rem);margin-bottom:.45rem;max-width:18ch}
+.sub{color:var(--muted);font-size:.9rem;margin-bottom:1rem;max-width:56ch}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem 1.1rem;transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-2px);border-color:rgba(12,122,95,.4)}
+.card.ready{border-color:rgba(12,122,95,.35)}
+.card.soft{opacity:.92}
+.tag{align-self:flex-start;font-size:.7rem;font-weight:700;padding:.16rem .5rem;border-radius:999px;background:rgba(12,122,95,.1);color:var(--deep);margin-bottom:.45rem}
+.tag.wait{background:rgba(16,24,32,.06);color:var(--muted)}
+.tag.yolo{background:rgba(11,110,138,.12);color:#0b4f63}
+.card h3{font-size:1.15rem;margin-bottom:.3rem}
+.card p{color:var(--muted);font-size:.88rem;flex:1}
+.meta{display:grid;gap:.25rem;margin:.7rem 0;font-size:.8rem;color:var(--muted)}
+.meta b{color:var(--ink)}
+.go{font-weight:700;font-size:.88rem;color:var(--teal);margin-top:.35rem}
+.matrix{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#fff;margin-top:.6rem}
+table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:640px}
+th,td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:#f7faf8}
+td a{font-weight:700;text-decoration:none}
+.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+.tools{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.btn{display:inline-flex;padding:.55rem .9rem;border-radius:999px;font-weight:700;font-size:.84rem;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.primary{background:var(--teal);color:#fff;border-color:transparent}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="index.html">业务</a>
+    <a class="on" href="track-medical.html">医学交叉</a>
+    <a href="track-agri.html">农业交叉</a>
+    <a href="track-cs.html">计算机</a>
+    <a href="types.html">写法</a>
+    <a href="journals.html">选刊</a>
+    <a href="imaging-datasets.html">数据</a>
+    <a href="imaging-papers.html">成稿</a>
+    <a href="https://paper-doctor.onrender.com/" target="_blank" rel="noopener">组学成稿</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <div class="kicker">赛道 · 医学交叉</div>
+  <div class="brand">先定写法，再定分区档</div>
+  <p class="lead">医学交叉是主战场。写法决定验证协议；分区决定包装厚度。下面四张路径卡可直接对客户讲，其余写法可接单设计。</p>
+  <div class="tiers">
+    <span class="tier"><b>S</b> 一区冲刺</span>
+    <span class="tier"><b>A</b> 一区稳妥 / 专科 Q1</span>
+    <span class="tier"><b>B</b> 二区 · 含 MDPI（看 desk-reject QA）</span>
+  </div>
+</header>
+
+<section class="sec wrap">
+  <h2>可售路径卡</h2>
+  <p class="sub">每张卡 = 题目方案 + 数据 + 选刊 + 范文/成稿。会上只展开一张。</p>
+  <div class="grid">
+    <a class="card ready" href="crc-microbiome.html">
+      <span class="tag">写法 03 · LODO · 档 S/A</span>
+      <h3>结直肠菌群风险分层</h3>
+      <p>公开宏基因组多队列；leave-one-cohort-out；不依赖本院测序。</p>
+      <div class="meta">
+        <div><b>数据</b> Wirbel Zenodo / curatedMetagenomicData</div>
+        <div><b>成稿</b> paper-doctor 组学库</div>
+      </div>
+      <span class="go">打开路径卡 →</span>
+    </a>
+    <a class="card ready" href="osteoporosis.html">
+      <span class="tag">写法 02 · 时间外推 · 档 A</span>
+      <h3>骨质疏松风险预测</h3>
+      <p>NHANES 开发 → 未来周期锁死外测；打过 OST 硬对照。</p>
+      <div class="meta">
+        <div><b>数据</b> CDC NHANES 公开</div>
+        <div><b>定位</b> L3 数字健康 / 专科 Q1</div>
+      </div>
+      <span class="go">打开路径卡 →</span>
+    </a>
+    <a class="card ready" href="package-imaging-yolo.html">
+      <span class="tag yolo">写法 05 · 影像检测 · 档 A/B</span>
+      <h3>公开影像 YOLO 检测/分割</h3>
+      <p>多公开集跨集外测；挂数据集库、医工成稿与选刊调研。</p>
+      <div class="meta">
+        <div><b>数据</b> 成稿推荐分层 · imaging-datasets</div>
+        <div><b>成稿</b> imaging-papers 医工库</div>
+      </div>
+      <span class="go">打开路径卡 →</span>
+    </a>
+    <a class="card soft" href="types.html#t01">
+      <span class="tag wait">写法 01 · 可接单设计</span>
+      <h3>双公开库外推（ICU 等）</h3>
+      <p>eICU→MIMIC 气质路径；工程量大于影像，方案按单设计。</p>
+      <div class="meta">
+        <div><b>入口</b> types 01 + 范文 RealMIP</div>
+      </div>
+      <span class="go">看写法说明 →</span>
+    </a>
+  </div>
+</section>
+
+<section class="sec wrap">
+  <h2>写法 × 分区速查</h2>
+  <p class="sub">同一写法可卖不同档。S 要验证包做满；B 必看 MDPI 桌拒 QA。</p>
+  <div class="matrix">
+    <table>
+      <thead>
+        <tr><th>写法</th><th>一句话</th><th>建议档</th><th>现成入口</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>01</b> 双库外推</td>
+          <td>库 A 训完锁死 → 库 B 只考一次</td>
+          <td>S / A</td>
+          <td><a href="types.html#t01">types 01</a> · <a href="type-01.html">详解</a></td>
+        </tr>
+        <tr>
+          <td><b>02</b> 时间/中心</td>
+          <td>同资源按年或中心 hold-out</td>
+          <td>A（顶刊少）</td>
+          <td><a href="osteoporosis.html">骨质疏松包</a> · <a href="type-02.html">详解</a></td>
+        </tr>
+        <tr>
+          <td><b>03</b> LODO</td>
+          <td>多队列留一外测</td>
+          <td>S / A</td>
+          <td><a href="crc-microbiome.html">CRC 包</a> · <a href="https://paper-doctor.onrender.com/" target="_blank" rel="noopener">组学成稿</a></td>
+        </tr>
+        <tr>
+          <td><b>04</b> 方法基准</td>
+          <td>比协议/部署，不新造队列</td>
+          <td>A / B</td>
+          <td><a href="types.html#t04">types 04</a> · <a href="type-04.html">详解</a></td>
+        </tr>
+        <tr>
+          <td><b>05</b> 影像检测</td>
+          <td>多公开影像集跨集泛化</td>
+          <td>A / B（冲 S 看 npj 精选）</td>
+          <td><a href="package-imaging-yolo.html">影像路径卡</a> · <a href="type-05.html#exemplars">范文</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tools">
+    <a class="btn primary" href="types.html">打开五种写法</a>
+    <a class="btn" href="journals.html">选刊 / 分区调研</a>
+    <a class="btn" href="journals.html#mdpi-qa">MDPI 桌拒 QA</a>
+    <a class="btn" href="imaging-datasets.html">影像数据集</a>
+    <a class="btn" href="confidence.html">底气页</a>
+  </div>
+</section>
+
+<footer class="foot"><div class="wrap">医学交叉 = 写法层 + 分区档 + 路径卡 · 机制文见 <a href="two-paths.html">两条路径</a> 分流</div></footer>
+</body>
+</html>

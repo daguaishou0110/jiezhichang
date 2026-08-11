@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>公开影像 YOLO 路径卡 · 写法 05 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--warm:#c45c16;--sky:#0b6e8a;--max:1040px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.65}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.82rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--teal)}
+.hero{padding:2.3rem 0 1.2rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--sky);margin-bottom:.35rem}
+.brand{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:54ch}
+.badges{display:flex;flex-wrap:wrap;gap:.35rem;margin:.8rem 0 0}
+.badge{font-size:.7rem;font-weight:700;padding:.2rem .55rem;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted)}
+.badge.ok{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
+section{padding:1.6rem 0}
+h2{font-size:1.35rem;margin-bottom:.55rem;color:var(--deep)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem 1.15rem;margin-bottom:.85rem}
+.card h3{font-size:1.05rem;margin-bottom:.45rem}
+.card p,.card li{color:var(--muted);font-size:.9rem}
+.card ul{padding-left:1.1rem;display:grid;gap:.28rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+@media(max-width:800px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+th,td{text-align:left;padding:.45rem .35rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}
+.btn{display:inline-flex;padding:.55rem .9rem;border-radius:999px;font-weight:700;font-size:.84rem;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.primary{background:var(--teal);color:#fff;border-color:transparent}
+.btn.sky{background:var(--sky);color:#fff;border-color:transparent}
+.warn{background:#fff7ed;border:1px solid #fdba74;border-radius:14px;padding:.9rem 1rem;color:#7c2d12;font-size:.88rem}
+.tone{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.7rem}
+@media(max-width:800px){.tone{grid-template-columns:1fr}}
+.tone div{border-radius:12px;padding:.85rem .95rem;font-size:.88rem}
+.yes{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46}
+.no{background:#fff7ed;border:1px solid #fdba74;color:#7c2d12}
+.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="index.html">业务</a>
+    <a href="track-medical.html">医学交叉</a>
+    <a href="track-agri.html">农业交叉</a>
+    <a href="track-cs.html">计算机</a>
+    <a href="types.html">写法</a>
+    <a href="journals.html">选刊</a>
+    <a href="imaging-datasets.html">数据</a>
+    <a href="imaging-papers.html">成稿</a>
+    <a href="https://paper-doctor.onrender.com/" target="_blank" rel="noopener">组学成稿</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <div class="kicker">路径卡 · 医学交叉 · 写法 05</div>
+  <div class="brand">公开影像 YOLO 检测 / 分割</div>
+  <p class="lead">卖的不是「又一个模块」，而是：多公开集、锁死跨集外测、可核对的检测/分割成稿路径。计算机 + YOLO 背景最贴。</p>
+  <div class="badges">
+    <span class="badge ok">建议档 A / B</span>
+    <span class="badge">冲 S → 对齐 npj 精选写法</span>
+    <span class="badge">数据 · 成稿 · 选刊已挂好</span>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="card">
+    <h3>研究问题（对外一句话）</h3>
+    <p>在公开医学影像上，检测/分割模型换数据集后是否仍稳？相对强基线（原版 YOLO / 经典分割）增量是否站得住？</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>验收门槛（对齐一区四条）</h3>
+      <ul>
+        <li><b>锁死外测</b>：开发集调完再动测试集；跨集只评估一次叙事写清。</li>
+        <li><b>硬对照</b>：同设定打过官方/强基线，不自说自话。</li>
+        <li><b>校准可用</b>：不只刷 mAP；必要时报置信/阈值或临床可用性讨论。</li>
+        <li><b>弱外测诚实</b>：掉点的集必须解剖，不藏拙。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>明确不做</h3>
+      <ul>
+        <li>把单集刷分包装成「换医院泛化」</li>
+        <li>无外测的模块堆砌当一区主叙事</li>
+        <li>与机制生物学故事硬凑配对</li>
+        <li>保证必中某一本一区刊</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>数据三联（成稿推荐）</h2>
+    <p style="color:var(--muted);font-size:.9rem;margin-bottom:.6rem">优先用数据集库的「成稿推荐」分层；下面是会上常讲的起步组合。</p>
+    <table>
+      <thead><tr><th>角色</th><th>示例集</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td>主集</td><td>Kvasir-SEG / BUSI / LUNA16 / DENTEX 等</td><td>按病种选题，见推荐分层</td></tr>
+        <tr><td>跨源外测</td><td>CVC-ClinicDB / CVC-ColonDB / ETIS 等</td><td>同任务异源，锁死评估</td></tr>
+        <tr><td>补充 / 冲档</td><td>PolypGen、VinDr 系列、BraTS…</td><td>需账号的提前写进方案</td></tr>
+      </tbody>
+    </table>
+    <div class="links">
+      <a class="btn primary" href="imaging-datasets.html#tier=featured">打开数据集 · 成稿推荐</a>
+      <a class="btn" href="imaging-datasets.html#dept=gi&tier=featured">消化 / 息肉推荐</a>
+      <a class="btn" href="imaging-datasets.html#dept=respiratory&tier=featured">呼吸 / 肺推荐</a>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>分区与选刊</h3>
+      <ul>
+        <li><b>A</b>：强计算机医学影像刊 / 专科 Q1（见期刊调研）</li>
+        <li><b>B</b>：Sensors 等开放获取；必读 MDPI 桌拒 QA</li>
+        <li><b>S</b>：对齐 npj Digital Medicine 精选范文气质（跨集+临床叙事）</li>
+      </ul>
+      <div class="links">
+        <a class="btn sky" href="journals.html">期刊调研</a>
+        <a class="btn" href="journals.html#mdpi-qa">MDPI QA</a>
+        <a class="btn" href="type-05.html#exemplars">npj 精选 11 篇</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>成稿与写法详解</h3>
+      <ul>
+        <li>医工 YOLO 成稿库：可对照包装结构</li>
+        <li>写法 05 详解：标准、能不能做、列表</li>
+        <li>医学枢纽：和其他写法并排选</li>
+      </ul>
+      <div class="links">
+        <a class="btn primary" href="imaging-papers.html">医工成稿库</a>
+        <a class="btn" href="type-05.html">写法 05 详解</a>
+        <a class="btn" href="track-medical.html">回医学交叉</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <b>对外口径：</b>我们承诺把跨集外测与硬对照写进验收；档位取决于验证强度与当期审稿。不把「公开数据」说成「本院多中心」。
+  </div>
+  <div class="tone">
+    <div class="yes"><b>承诺：</b>验证包可核对；数据与成稿入口可点开。</div>
+    <div class="no"><b>不承诺：</b>必中某本一区；无外测也能冲 S。</div>
+  </div>
+</section>
+
+<footer class="foot"><div class="wrap">路径卡 05 · 拼装自 datasets / papers / journals / type-05 · <a href="track-medical.html">医学交叉</a></div></footer>
+</body>
+</html>
