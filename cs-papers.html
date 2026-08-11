@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>计算机成稿库 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg:#eef3f0; --ink:#101820; --muted:#5a6770; --line:rgba(16,24,32,.12); --card:#fff;
+  --acc:#0b6e8a; --deep:#0b4f63; --ok:#065f46; --warn:#9a3412;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  color:var(--ink); font-family:Sora,sans-serif; background:var(--bg); line-height:1.55; font-size:15px;
+}
+h1,h2,h3,.brand { font-family:Fraunces,serif; letter-spacing:-.02em; }
+a { color:var(--deep); text-underline-offset:3px; }
+.wrap { width:min(1100px, calc(100% - 2rem)); margin:0 auto; }
+.nav { position:sticky; top:0; z-index:40; backdrop-filter:blur(12px); background:rgba(238,243,240,.95); border-bottom:1px solid var(--line); }
+.nav-inner { display:flex; flex-wrap:wrap; gap:.5rem 1rem; justify-content:space-between; align-items:center; padding:.7rem 0; font-size:.84rem; }
+.nav-brand { font-family:Fraunces,serif; font-weight:750; color:var(--deep); text-decoration:none; font-size:1.05rem; }
+.nav-links { display:flex; flex-wrap:wrap; gap:.45rem .75rem; }
+.nav-links a { text-decoration:none; color:var(--muted); font-weight:600; }
+.nav-links a.on, .nav-links a:hover { color:var(--acc); }
+header.page { padding:1.6rem 0 1rem; }
+.kicker { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--acc); margin-bottom:.35rem; }
+h1 { font-size:clamp(1.55rem,3.5vw,2.15rem); color:var(--deep); margin-bottom:.4rem; }
+.lead { color:var(--muted); max-width:62ch; font-size:.92rem; }
+.warn { margin-top:.7rem; padding:.7rem .85rem; border-radius:12px; background:#fff7ed; border:1px solid #fdba74; color:#7c2d12; font-size:.84rem; }
+.chips { display:flex; flex-wrap:wrap; gap:.45rem; margin:.8rem 0; }
+.chip { background:var(--card); border:1px solid var(--line); border-radius:999px; padding:.28rem .7rem; font-size:.8rem; color:var(--muted); }
+.chip b { color:var(--deep); }
+.tools { display:flex; flex-wrap:wrap; gap:.55rem; align-items:center; margin-bottom:1rem; }
+.tools input { flex:1; min-width:200px; border:1px solid var(--line); border-radius:10px; padding:.55rem .8rem; font:inherit; background:#fff; }
+.tools a { text-decoration:none; color:var(--muted); border:1px solid var(--line); background:#fff; padding:.45rem .75rem; border-radius:999px; font-size:.8rem; font-weight:700; }
+.tools a:hover { color:var(--acc); }
+section { margin:1.4rem 0 1.8rem; }
+h2 { font-size:1.08rem; color:var(--deep); margin:0 0 .7rem; }
+h2 small { color:var(--muted); font-weight:600; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:.85rem; }
+.card {
+  background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden;
+  cursor:pointer; display:flex; flex-direction:column; transition:transform .15s, border-color .15s;
+}
+.card:hover, .card:focus { transform:translateY(-2px); border-color:#a7f3d0; outline:none; }
+.card-media { background:#0f2430; min-height:140px; display:flex; align-items:center; justify-content:center; }
+.thumb { width:100%; max-height:170px; object-fit:contain; display:block; background:#0f2430; }
+.thumb.empty { color:#9fb2bf; font-size:.82rem; min-height:140px; display:flex; align-items:center; justify-content:center; width:100%; }
+.card-body { padding:.85rem .95rem 1rem; display:flex; flex-direction:column; gap:.3rem; flex:1; }
+.row { display:flex; justify-content:space-between; align-items:center; gap:.5rem; }
+.id { font-weight:800; color:var(--acc); }
+.card-body h3 { font-size:1rem; }
+.dir { color:var(--muted); font-size:.86rem; }
+.meta-line { font-size:.78rem; color:#3d4b57; }
+.abs-preview { font-size:.8rem; color:#475569; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.more { margin-top:auto; padding-top:.35rem; font-size:.8rem; font-weight:700; color:var(--acc); }
+.st { display:inline-block; padding:.1rem .4rem; border-radius:999px; font-size:.7rem; font-weight:700; }
+.st.ok { background:#ecfdf5; color:var(--ok); }
+.st.warn { background:#ffedd5; color:var(--warn); }
+.st.mid { background:#eef2ff; color:#3730a3; }
+.hidden { display:none !important; }
+.foot { padding:1.2rem 0 2rem; color:var(--muted); font-size:.78rem; border-top:1px solid var(--line); }
+.backdrop {
+  position:fixed; inset:0; background:rgba(10,18,28,.55); display:none; align-items:flex-start;
+  justify-content:center; padding:3vh 1rem; z-index:50; overflow:auto;
+}
+.backdrop.open { display:flex; }
+.modal {
+  width:min(960px,100%); background:var(--card); border-radius:16px; border:1px solid var(--line);
+  box-shadow:0 20px 60px rgba(0,0,0,.28); overflow:hidden; margin-bottom:4vh;
+}
+.modal-head {
+  display:flex; justify-content:space-between; gap:1rem; padding:1rem 1.1rem; border-bottom:1px solid var(--line);
+}
+.modal-head h2 { margin:0; font-size:1.15rem; color:var(--deep); }
+.modal-head .sub { color:var(--muted); font-size:.86rem; margin-top:.25rem; }
+.close {
+  border:1px solid var(--line); background:#fff; border-radius:8px; width:36px; height:36px;
+  font-size:1.2rem; cursor:pointer; line-height:1;
+}
+.modal-body { display:grid; grid-template-columns:1.05fr .95fr; gap:0; }
+@media (max-width:860px) { .modal-body { grid-template-columns:1fr; } }
+.modal-fig { background:#0f2430; min-height:260px; display:flex; align-items:center; justify-content:center; padding:1rem; }
+.modal-fig img { max-width:100%; max-height:min(70vh,520px); object-fit:contain; }
+.modal-fig .note { color:#9fb2bf; padding:2rem; text-align:center; }
+.modal-text { padding:1.05rem 1.15rem 1.25rem; }
+.kv { display:grid; grid-template-columns:5.2rem 1fr; gap:.25rem .55rem; font-size:.86rem; margin-bottom:.9rem; }
+.kv dt { color:var(--muted); }
+.kv dd { margin:0; }
+.abstract h3 { margin:0 0 .45rem; font-size:.95rem; color:var(--acc); }
+.abstract { font-size:.9rem; color:#1f2937; }
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="index.html">业务</a>
+    <a href="track-cs.html">计算机</a>
+    <a href="package-cs-venue.html">会议/期刊辅导</a>
+    <a class="on" href="cs-papers.html">计算机成稿</a>
+    <a href="imaging-papers.html">医工成稿</a>
+    <a href="agri-papers.html">农业成稿</a>
+  </div>
+</div></nav>
+
+<header class="page wrap">
+  <div class="kicker">Computer vision manuscripts</div>
+  <h1>计算机成稿库</h1>
+  <p class="lead">列表点进看英文摘要与模型图。当前含<strong>摔跤动作识别</strong> Frontiers PASS（11 套）。医工检测/分割见<a href="imaging-papers.html">医工成稿</a>；农业见<a href="agri-papers.html">农业成稿</a>。</p>
+  <div class="warn">摔跤组 WR01–WR11 来自 wrestling-yolo/papers_pass_frontiers；主指标为验证集准确率（非 mAP）。</div>
+  <div class="chips">
+    <span class="chip">计算机成稿 <b>11</b></span>
+    <span class="chip">更新 <b>2026-08-11</b></span>
+    <span class="chip">已排除农业/工业</span>
+  </div>
+  <div class="tools">
+    <input id="q" type="search" placeholder="搜索题目 / 方法名 / 方向 / 期刊…" />
+    <a href="journals.html">影像选刊</a>
+    <a href="https://paper-doctor.onrender.com/" target="_blank" rel="noopener">组学成稿库</a>
+  </div>
+</header>
+
+<main class="wrap">
+<section id='g-W'><h2>摔跤动作识别 <small>11</small></h2><div class='grid'>
+<article class="card" data-id="WR01" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR01/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR01</span>
+      <span class="st ok">成稿</span></div>
+    <h3>CACPGB-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR02" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR02/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR02</span>
+      <span class="st ok">成稿</span></div>
+    <h3>APGPGB-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR03" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR03/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR03</span>
+      <span class="st ok">成稿</span></div>
+    <h3>CACSFL-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR04" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR04/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR04</span>
+      <span class="st ok">成稿</span></div>
+    <h3>MSDWPGB-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR05" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR05/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR05</span>
+      <span class="st ok">成稿</span></div>
+    <h3>SKGSFL-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR06" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR06/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR06</span>
+      <span class="st ok">成稿</span></div>
+    <h3>SAMMST-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR07" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR07/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR07</span>
+      <span class="st ok">成稿</span></div>
+    <h3>SAMPGB-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR08" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR08/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR08</span>
+      <span class="st ok">成稿</span></div>
+    <h3>CACMST-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR09" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR09/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR09</span>
+      <span class="st ok">成稿</span></div>
+    <h3>MSDWMST-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR10" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR10/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR10</span>
+      <span class="st ok">成稿</span></div>
+    <h3>MSDWSFL-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article>
+<article class="card" data-id="WR11" tabindex="0" role="button">
+  <div class="card-media"><img class="thumb" src="cs-chenggao/chenggao_assets/WR11/framework.png" alt="model" loading="lazy" /></div>
+  <div class="card-body">
+    <div class="row"><span class="id">WR11</span>
+      <span class="st ok">成稿</span></div>
+    <h3>TCASFL-Net</h3>
+    <p class="dir">摔跤动作 / 相位识别</p>
+    <p class="meta-line">Frontiers（PASS 包装） · 按目标刊再定</p>
+    <p class="abs-preview">Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame e…</p>
+    <span class="more">点击查看完整摘要与模型图 →</span>
+  </div>
+</article></div></section>
+<section>
+  <h2>相关：公开组学成稿</h2>
+  <div class="grid">
+    <a class="card" href="https://paper-doctor.onrender.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+      <div class="card-body">
+        <div class="row"><span class="id">G</span><span class="st mid">外链</span></div>
+        <h3>多癌种组学工厂</h3>
+        <p class="dir">TCGA/GEO 预后建模成稿列表 → 简介 + 图</p>
+        <p class="meta-line">paper-doctor.onrender.com</p>
+        <span class="more">打开组学成稿库 →</span>
+      </div>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap">数据源：农业yolo数据集/docs/chenggao_papers.json（医学子集） · 图：imaging-chenggao/chenggao_assets/</div></footer>
+
+<div class="backdrop" id="backdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div>
+        <h2 id="m-title"></h2>
+        <div class="sub" id="m-sub"></div>
+      </div>
+      <button class="close" type="button" id="close" aria-label="关闭">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-fig" id="m-fig"></div>
+      <div class="modal-text">
+        <dl class="kv" id="m-kv"></dl>
+        <div class="abstract">
+          <h3>Abstract</h3>
+          <p id="m-abs"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const PAPERS = [{"id": "WR01", "title": "CACPGB-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper01_CoordAttContact_PhaseGateBiLSTM_t01", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper01_CoordAttContact_PhaseGateBiLSTM_t01", "method": "CACPGB-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes CACPGB-Net, a dual-module clip recognizer built on ResNet18 that inserts CoordAttContact after ResNet18 stage-4 feature maps, before global pooling and PhaseGateBiLSTM on the 16-frame embedding sequence after spatial pooling. CoordAttContact addresses coordinate attention that emphasizes elongated limb-contact structures, whereas PhaseGateBiLSTM targets phase-gated bidirectional LSTM that separates prepare/attack/finish phases. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the CoordAttContact-only and PhaseGateBiLSTM-only variants reach 83.33\\% and 83.33\\%, and the full CACPGB-Net model reaches 88.10\\% (+7.14~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, CoordAttContact, PhaseGateBiLSTM, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR01/framework.png", "figure_note": "", "group": "W", "val_acc": 88.1, "gate": "strongest"}, {"id": "WR02", "title": "APGPGB-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper02_AffinityPairGate_PhaseGateBiLSTM_full", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper02_AffinityPairGate_PhaseGateBiLSTM_full", "method": "APGPGB-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes APGPGB-Net, a dual-module clip recognizer built on ResNet18 that inserts AffinityPairGate after ResNet18 stage-4 feature maps, before global pooling and PhaseGateBiLSTM on the 16-frame embedding sequence after spatial pooling. AffinityPairGate addresses dual-prototype affinity gating that models inter-athlete interactions, whereas PhaseGateBiLSTM targets phase-gated bidirectional LSTM that separates prepare/attack/finish phases. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the AffinityPairGate-only and PhaseGateBiLSTM-only variants reach 80.95\\% and 83.33\\%, and the full APGPGB-Net model reaches 85.71\\% (+4.76~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, AffinityPairGate, PhaseGateBiLSTM, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR02/framework.png", "figure_note": "", "group": "W", "val_acc": 85.71, "gate": "backup"}, {"id": "WR03", "title": "CACSFL-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper03_CoordAttContact_SlowFastLite_full", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper03_CoordAttContact_SlowFastLite_full", "method": "CACSFL-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes CACSFL-Net, a dual-module clip recognizer built on ResNet18 that inserts CoordAttContact after ResNet18 stage-4 feature maps, before global pooling and SlowFastLite on the 16-frame embedding sequence after spatial pooling. CoordAttContact addresses coordinate attention that emphasizes elongated limb-contact structures, whereas SlowFastLite targets lightweight slow/fast dual-path temporal encoding for pose and burst motion. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the CoordAttContact-only and SlowFastLite-only variants reach 83.33\\% and 83.33\\%, and the full CACSFL-Net model reaches 85.71\\% (+4.76~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, CoordAttContact, SlowFastLite, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR03/framework.png", "figure_note": "", "group": "W", "val_acc": 85.71, "gate": "strongest"}, {"id": "WR04", "title": "MSDWPGB-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper04_MultiScaleDWGate_PhaseGateBiLSTM_full", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper04_MultiScaleDWGate_PhaseGateBiLSTM_full", "method": "MSDWPGB-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes MSDWPGB-Net, a dual-module clip recognizer built on ResNet18 that inserts MultiScaleDWGate after ResNet18 stage-4 feature maps, before global pooling and PhaseGateBiLSTM on the 16-frame embedding sequence after spatial pooling. MultiScaleDWGate addresses multi-scale depthwise gating that adapts to changing athlete body scales, whereas PhaseGateBiLSTM targets phase-gated bidirectional LSTM that separates prepare/attack/finish phases. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the MultiScaleDWGate-only and PhaseGateBiLSTM-only variants reach 83.33\\% and 83.33\\%, and the full MSDWPGB-Net model reaches 85.71\\% (+4.76~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, MultiScaleDWGate, PhaseGateBiLSTM, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR04/framework.png", "figure_note": "", "group": "W", "val_acc": 85.71, "gate": "strongest"}, {"id": "WR05", "title": "SKGSFL-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper05_SelectiveKernelGate_SlowFastLite_full", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper05_SelectiveKernelGate_SlowFastLite_full", "method": "SKGSFL-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes SKGSFL-Net, a dual-module clip recognizer built on ResNet18 that inserts SelectiveKernelGate after ResNet18 stage-4 feature maps, before global pooling and SlowFastLite on the 16-frame embedding sequence after spatial pooling. SelectiveKernelGate addresses selective multi-kernel fusion that adapts grasp-scale receptive fields, whereas SlowFastLite targets lightweight slow/fast dual-path temporal encoding for pose and burst motion. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the SelectiveKernelGate-only and SlowFastLite-only variants reach 80.95\\% and 83.33\\%, and the full SKGSFL-Net model reaches 85.71\\% (+4.76~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, SelectiveKernelGate, SlowFastLite, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR05/framework.png", "figure_note": "", "group": "W", "val_acc": 85.71, "gate": "backup"}, {"id": "WR06", "title": "SAMMST-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper06_SimAM3D_MultiScaleTCN_t01", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper06_SimAM3D_MultiScaleTCN_t01", "method": "SAMMST-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes SAMMST-Net, a dual-module clip recognizer built on ResNet18 that inserts SimAM3D after ResNet18 stage-4 feature maps, before global pooling and MultiScaleTCN on the 16-frame embedding sequence after spatial pooling. SimAM3D addresses parameter-free energy attention that suppresses mat background clutter, whereas MultiScaleTCN targets multi-dilation temporal convolution covering variable technique durations. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the SimAM3D-only and MultiScaleTCN-only variants reach 83.33\\% and 83.33\\%, and the full SAMMST-Net model reaches 85.71\\% (+4.76~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, SimAM3D, MultiScaleTCN, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR06/framework.png", "figure_note": "", "group": "W", "val_acc": 85.71, "gate": "strongest"}, {"id": "WR07", "title": "SAMPGB-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper07_SimAM3D_PhaseGateBiLSTM_t01", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper07_SimAM3D_PhaseGateBiLSTM_t01", "method": "SAMPGB-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes SAMPGB-Net, a dual-module clip recognizer built on ResNet18 that inserts SimAM3D after ResNet18 stage-4 feature maps, before global pooling and PhaseGateBiLSTM on the 16-frame embedding sequence after spatial pooling. SimAM3D addresses parameter-free energy attention that suppresses mat background clutter, whereas PhaseGateBiLSTM targets phase-gated bidirectional LSTM that separates prepare/attack/finish phases. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the SimAM3D-only and PhaseGateBiLSTM-only variants reach 83.33\\% and 83.33\\%, and the full SAMPGB-Net model reaches 85.71\\% (+4.76~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, SimAM3D, PhaseGateBiLSTM, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR07/framework.png", "figure_note": "", "group": "W", "val_acc": 85.71, "gate": "strongest"}, {"id": "WR08", "title": "CACMST-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper08_CoordAttContact_MultiScaleTCN_full", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper08_CoordAttContact_MultiScaleTCN_full", "method": "CACMST-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes CACMST-Net, a dual-module clip recognizer built on ResNet18 that inserts CoordAttContact after ResNet18 stage-4 feature maps, before global pooling and MultiScaleTCN on the 16-frame embedding sequence after spatial pooling. CoordAttContact addresses coordinate attention that emphasizes elongated limb-contact structures, whereas MultiScaleTCN targets multi-dilation temporal convolution covering variable technique durations. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the CoordAttContact-only and MultiScaleTCN-only variants reach 83.33\\% and 83.33\\%, and the full CACMST-Net model reaches 83.33\\% (+2.38~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, CoordAttContact, MultiScaleTCN, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR08/framework.png", "figure_note": "", "group": "W", "val_acc": 83.33, "gate": "backup"}, {"id": "WR09", "title": "MSDWMST-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper09_MultiScaleDWGate_MultiScaleTCN_t01", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper09_MultiScaleDWGate_MultiScaleTCN_t01", "method": "MSDWMST-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes MSDWMST-Net, a dual-module clip recognizer built on ResNet18 that inserts MultiScaleDWGate after ResNet18 stage-4 feature maps, before global pooling and MultiScaleTCN on the 16-frame embedding sequence after spatial pooling. MultiScaleDWGate addresses multi-scale depthwise gating that adapts to changing athlete body scales, whereas MultiScaleTCN targets multi-dilation temporal convolution covering variable technique durations. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the MultiScaleDWGate-only and MultiScaleTCN-only variants reach 83.33\\% and 83.33\\%, and the full MSDWMST-Net model reaches 83.33\\% (+2.38~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, MultiScaleDWGate, MultiScaleTCN, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR09/framework.png", "figure_note": "", "group": "W", "val_acc": 83.33, "gate": "backup"}, {"id": "WR10", "title": "MSDWSFL-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper10_MultiScaleDWGate_SlowFastLite_t02", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper10_MultiScaleDWGate_SlowFastLite_t02", "method": "MSDWSFL-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes MSDWSFL-Net, a dual-module clip recognizer built on ResNet18 that inserts MultiScaleDWGate after ResNet18 stage-4 feature maps, before global pooling and SlowFastLite on the 16-frame embedding sequence after spatial pooling. MultiScaleDWGate addresses multi-scale depthwise gating that adapts to changing athlete body scales, whereas SlowFastLite targets lightweight slow/fast dual-path temporal encoding for pose and burst motion. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the MultiScaleDWGate-only and SlowFastLite-only variants reach 83.33\\% and 83.33\\%, and the full MSDWSFL-Net model reaches 83.33\\% (+2.38~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, MultiScaleDWGate, SlowFastLite, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR10/framework.png", "figure_note": "", "group": "W", "val_acc": 83.33, "gate": "backup"}, {"id": "WR11", "title": "TCASFL-Net: Dual-module network for wrestling action recognition", "direction": "摔跤动作 / 相位识别", "dataset": "摔跤动作视频项目集", "journal": "Frontiers（PASS 包装）", "alt_journal": "Sensors；Scientific Reports；体育工程向专刊", "cas": "按目标刊再定", "status": "成稿", "local": "wrestling-yolo/papers_pass_frontiers/paper11_TripletCrossAtt_SlowFastLite_full", "paper_dir": "wrestling-yolo/papers_pass_frontiers/paper11_TripletCrossAtt_SlowFastLite_full", "method": "TCASFL-Net", "abstract": "Freestyle wrestling technique recognition is hindered by close-range occlusion, entangled limbs, and phase structure that a generic frame encoder with temporal mean pooling does not protect. This paper proposes TCASFL-Net, a dual-module clip recognizer built on ResNet18 that inserts TripletCrossAtt after ResNet18 stage-4 feature maps, before global pooling and SlowFastLite on the 16-frame embedding sequence after spatial pooling. TripletCrossAtt addresses cross-dimensional triplet attention that suppresses cluttered backgrounds, whereas SlowFastLite targets lightweight slow/fast dual-path temporal encoding for pose and burst motion. On the OpenFSW stratified split (train/val = 167/42) with 16-frame clips, the shared ResNet18 baseline reaches 80.95\\% validation accuracy. Under the same protocol, the TripletCrossAtt-only and SlowFastLite-only variants reach 80.95\\% and 83.33\\%, and the full TCASFL-Net model reaches 83.33\\% (+2.38~pp). Four-variant ablation and a multi-method comparison suite support complementary module roles. freestyle wrestling, action recognition, OpenFSW, TripletCrossAtt, SlowFastLite, ResNet18, temporal modeling, ablation study", "figure": "cs-chenggao/chenggao_assets/WR11/framework.png", "figure_note": "", "group": "W", "val_acc": 83.33, "gate": "backup"}];
+const byId = Object.fromEntries(PAPERS.map(p => [p.id, p]));
+const q = document.getElementById('q');
+const backdrop = document.getElementById('backdrop');
+
+function openPaper(id) {
+  const p = byId[id]; if (!p) return;
+  document.getElementById('m-title').textContent = p.method || p.id;
+  document.getElementById('m-sub').textContent = p.title || '';
+  const fig = document.getElementById('m-fig');
+  if (p.figure) fig.innerHTML = '<img src="' + p.figure + '" alt="framework" />';
+  else fig.innerHTML = '<div class="note">暂无框架图</div>';
+  document.getElementById('m-kv').innerHTML = `
+    <dt>方向</dt><dd>${p.direction || '—'}</dd>
+    <dt>数据</dt><dd>${p.dataset || '—'}</dd>
+    <dt>主推刊</dt><dd>${p.journal || '—'}</dd>
+    <dt>备选</dt><dd>${p.alt_journal || '—'}</dd>
+    <dt>分区</dt><dd>${p.cas || '—'}</dd>
+    <dt>状态</dt><dd>${p.status || '—'}</dd>`;
+  document.getElementById('m-abs').textContent = p.abstract || '（暂无摘要）';
+  backdrop.classList.add('open');
+  backdrop.setAttribute('aria-hidden', 'false');
+}
+function closeModal() {
+  backdrop.classList.remove('open');
+  backdrop.setAttribute('aria-hidden', 'true');
+}
+document.querySelectorAll('.card[data-id]').forEach(el => {
+  el.addEventListener('click', () => openPaper(el.dataset.id));
+  el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPaper(el.dataset.id); } });
+});
+document.getElementById('close').onclick = closeModal;
+backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+q.addEventListener('input', () => {
+  const s = q.value.trim().toLowerCase();
+  document.querySelectorAll('.card[data-id]').forEach(card => {
+    const p = byId[card.dataset.id];
+    const blob = [p.id, p.method, p.title, p.direction, p.journal, p.dataset, p.abstract].join(' ').toLowerCase();
+    card.classList.toggle('hidden', s && !blob.includes(s));
+  });
+  document.querySelectorAll('main section').forEach(sec => {
+    const visible = [...sec.querySelectorAll('.card[data-id]')].some(c => !c.classList.contains('hidden'));
+    if (sec.querySelector('.card[data-id]')) sec.classList.toggle('hidden', s && !visible);
+  });
+});
+</script>
+</body>
+</html>

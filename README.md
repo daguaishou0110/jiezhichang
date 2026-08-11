@@ -50,7 +50,8 @@
 | track-cs.html | 计算机：返修 / 硕论 / 会刊辅导 |
 | package-cs-revision.html | 返修骨架卡 |
 | package-cs-thesis.html | 硕论辅导骨架卡 |
-| package-cs-venue.html | 会议/期刊辅导骨架卡 |
+| package-cs-venue.html | 会议/期刊辅导（方向一级×二级） |
+| cs-papers.html | 计算机成稿（摔跤等） |
 | package-imaging-yolo.html | 写法 05 路径卡 |
 | crc-microbiome.html / osteoporosis.html | 写法 03 / 02 路径卡 |
 | types.html + type-01…05 | 医学写法层 |
