@@ -1,0 +1,409 @@
+# -*- coding: utf-8 -*-
+"""Build agri-datasets.js + agri-datasets.html from agri catalog generator."""
+from __future__ import annotations
+
+import importlib.util
+import json
+import re
+from datetime import date
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SRC = Path(r"D:\hyf\freelance-work\niumayuan\2026\农业yolo数据集\docs\_gen_agri_catalog_links.py")
+OUT_JS = ROOT / "data" / "agri-datasets.js"
+OUT_HTML = ROOT / "agri-datasets.html"
+
+
+def load_catalog():
+    spec = importlib.util.spec_from_file_location("agri_cat", SRC)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return list(mod.DATASETS)
+
+
+def slug(s: str) -> str:
+    s = re.sub(r"[^\w\u4e00-\u9fff]+", "-", s.strip(), flags=re.U)
+    return s.strip("-").lower()[:48] or "crop"
+
+
+def task_kind(task: str) -> str:
+    t = (task or "").lower()
+    if "det" in t:
+        return "detection"
+    if "seg" in t:
+        return "seg→box"
+    if "cls" in t:
+        return "classification"
+    return task or "dataset"
+
+
+def tier_of(row) -> str:
+    # crop, write, name, modality, task, size, access, url, local, note, repo
+    local = (row[8] or "").lower()
+    note = row[9] or ""
+    name = row[2] or ""
+    if local == "yes" and row[7]:
+        return "featured"
+    if any(k in name for k in ("PlantVillage", "GWHD", "MinneApple", "IP102", "DeepWeeds", "Agriculture-Vision", "Laboro", "WGISD", "PhenoBench")):
+        return "featured"
+    if "金标准" in note or "经典" in note or "本仓" in note or "本仓库" in note:
+        return "featured"
+    url = (row[7] or "").lower()
+    if not url or url.rstrip("/") in {"https://github.com", "https://zenodo.org", "https://data.mendeley.com"}:
+        return "portal"
+    if "search?" in url or "datasets?search" in url:
+        return "portal"
+    return "more"
+
+
+def build_data(rows):
+    by_crop: dict[str, list] = {}
+    for r in rows:
+        url = (r[7] or "").strip()
+        if not url:
+            continue
+        by_crop.setdefault(r[0], []).append(r)
+
+    departments = []
+    for crop, items in by_crop.items():
+        # split by task secondary
+        by_task: dict[str, list] = {}
+        for r in items:
+            task = r[4] or "mixed"
+            key = "det" if "det" in task else ("seg" if "seg" in task else ("cls" if "cls" in task else "other"))
+            by_task.setdefault(key, []).append(r)
+
+        task_label = {
+            "det": ("detection", "二级：目标检测", "田间 / 果实 / 害虫 RGB", "检测"),
+            "seg": ("segmentation", "二级：分割 / 实例", "RGB / 航拍", "分割转框"),
+            "cls": ("classification", "二级：分类 / 病害识别", "叶片 / 果实", "分类"),
+            "other": ("other", "二级：其他任务", "多模态", "混合"),
+        }
+        children = []
+        for key, rs in by_task.items():
+            tid, name_zh, modality, task_zh = task_label[key]
+            ds = []
+            for r in rs:
+                ds.append(
+                    {
+                        "name": r[2],
+                        "url": r[7],
+                        "note": " · ".join(x for x in [r[5], r[6], r[9]] if x),
+                        "license": "",
+                        "kind": task_kind(r[4]),
+                        "tier": tier_of(r),
+                    }
+                )
+            children.append(
+                {
+                    "id": f"{slug(crop)}-{tid}",
+                    "name_zh": name_zh,
+                    "modality": modality,
+                    "task": task_zh,
+                    "status": "ready" if len(ds) >= 3 else "partial",
+                    "local": "",
+                    "datasets": ds,
+                    "todo": "",
+                }
+            )
+        departments.append(
+            {
+                "id": slug(crop),
+                "name_zh": crop,
+                "blurb": f"{len(items)} 条公开入口",
+                "children": children,
+            }
+        )
+
+    n_ds = sum(len(c["datasets"]) for d in departments for c in d["children"])
+    n_feat = sum(1 for d in departments for c in d["children"] for x in c["datasets"] if x["tier"] == "featured")
+    return {
+        "meta": {
+            "updated": date.today().isoformat(),
+            "note": "农业公开数据集；本地路径不收录；成稿推荐=featured",
+            "tiers": {"featured": n_feat},
+        },
+        "departments": departments,
+        "categories": [],
+    }
+
+
+def build_html() -> str:
+    # Reuse imaging-datasets shell with agri branding + agri data file
+    # Read imaging-datasets.html and adapt minimally via template
+    return r'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>农业数据集库 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#1a1712;--mute:#6b6358;--line:rgba(26,23,18,.12);--paper:#f3f0e8;
+  --accent:#9a3412;--accent-2:#0f766e;--max:1240px;--rail:240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Bricolage Grotesque",sans-serif;color:var(--ink);font-size:15px;line-height:1.5;min-height:100vh;
+  background:
+    linear-gradient(90deg,rgba(26,23,18,.03) 1px,transparent 1px) 0 0/28px 28px,
+    linear-gradient(rgba(26,23,18,.03) 1px,transparent 1px) 0 0/28px 28px,
+    radial-gradient(900px 420px at 100% -10%,rgba(154,52,18,.12),transparent 55%),
+    linear-gradient(165deg,#efe8dc 0%,var(--paper) 45%,#e7efe6 100%);
+}
+a{color:inherit}
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(243,240,232,.9);border-bottom:1px solid var(--line)}
+.nav-inner{width:min(var(--max),calc(100% - 2rem));margin:0 auto;display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;justify-content:space-between;align-items:center;padding:.7rem 0}
+.nav-brand{font-family:"Source Serif 4",serif;font-size:1.35rem;font-weight:600;text-decoration:none;color:var(--ink)}
+.nav-links{display:flex;flex-wrap:wrap;gap:.55rem 1rem;font-size:.84rem;font-weight:700}
+.nav-links a{text-decoration:none;color:var(--mute)}
+.nav-links a.on,.nav-links a:hover{color:var(--accent)}
+.hero{border-bottom:1px solid var(--line);background:linear-gradient(110deg,rgba(42,33,24,.94),rgba(154,52,18,.55));color:#fffaf3}
+.hero-inner{width:min(var(--max),calc(100% - 2rem));margin:0 auto;padding:2.1rem 0 1.7rem;display:grid;gap:1rem}
+.hero-brand{font-family:"Source Serif 4",serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;line-height:.95}
+.hero-brand span{display:block;font-style:italic;font-weight:400;opacity:.88;font-size:.42em;margin-top:.35rem}
+.hero-line{max-width:42ch;opacity:.82;font-weight:500}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.5rem}
+.hero-cta input{flex:1;min-width:220px;max-width:420px;border:0;border-radius:4px;padding:.75rem 1rem;font:inherit;font-weight:600}
+.hero-cta button,.toolbtn{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:4px;padding:.68rem .85rem;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
+.hero-meta{display:flex;flex-wrap:wrap;gap:1rem 1.4rem;font-size:.76rem;font-weight:700;opacity:.8}
+.hero-meta b{display:block;font-family:"Source Serif 4",serif;font-size:1.4rem;color:#fff;opacity:1}
+.filters{width:min(var(--max),calc(100% - 2rem));margin:.9rem auto 0;display:flex;flex-wrap:wrap;gap:.55rem 1rem;justify-content:space-between;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);background:rgba(255,253,248,.85);padding:3px;gap:2px}
+.seg button{border:0;background:transparent;color:var(--mute);padding:.45rem .7rem;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
+.seg button.on{background:var(--ink);color:#fff}
+.toolbtn{border-color:var(--line);color:var(--mute);background:rgba(255,253,248,.85)}
+.hint{font-size:.74rem;color:var(--mute);font-weight:600}
+.shell{width:min(var(--max),calc(100% - 2rem));margin:0 auto;padding:1.1rem 0 2.8rem;display:grid;grid-template-columns:var(--rail) minmax(0,1fr);gap:1.4rem;align-items:start}
+@media(max-width:900px){.shell{grid-template-columns:1fr}.rail{position:static!important;display:flex;gap:.35rem;overflow:auto}.rail-btn{white-space:nowrap;min-width:max-content}}
+.rail{position:sticky;top:3.4rem;display:flex;flex-direction:column;gap:.2rem}
+.rail-label{font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:0 0 .35rem .15rem}
+.rail-btn{display:flex;justify-content:space-between;gap:.6rem;width:100%;text-align:left;border:0;border-left:3px solid transparent;background:transparent;padding:.55rem .65rem;font:inherit;font-size:.82rem;font-weight:700;color:var(--mute);cursor:pointer}
+.rail-btn.on{color:var(--ink);border-left-color:var(--accent);background:rgba(255,253,248,.85)}
+.rail-btn small{font-size:.7rem}
+.stage-head{display:flex;flex-wrap:wrap;gap:.7rem 1rem;justify-content:space-between;align-items:flex-end;margin-bottom:1rem;padding-bottom:.85rem;border-bottom:1px solid var(--line)}
+.stage-kicker{font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.stage-title{font-family:"Source Serif 4",serif;font-size:clamp(1.55rem,3vw,2.1rem);font-weight:600}
+.stage-blurb{color:var(--mute);font-size:.9rem;margin-top:.3rem}
+.stage-count{font-family:"Source Serif 4",serif;font-size:1.8rem;font-weight:600;color:var(--accent)}
+.stage-count span{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:.25rem}
+.topic{margin-bottom:1rem;border-top:1px solid var(--line)}
+.topic>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:.75rem 1rem;align-items:center;padding:.85rem 0}
+.topic>summary::-webkit-details-marker{display:none}
+.topic-idx{font-family:"Source Serif 4",serif;font-size:1.1rem;font-weight:600;color:var(--accent)}
+.topic-title{font-size:1.02rem;font-weight:800}
+.topic-mod{display:block;font-size:.72rem;font-weight:700;color:var(--mute);margin-top:.15rem}
+.chip{font-size:.65rem;font-weight:800;padding:.18rem .42rem;border:1px solid var(--line);background:rgba(255,253,248,.75);color:var(--mute)}
+.chip.feat{color:#9a3412;border-color:rgba(154,52,18,.3);background:rgba(154,52,18,.08)}
+.rows{display:flex;flex-direction:column;border:1px solid var(--line);background:rgba(255,253,248,.88)}
+.row{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.35fr) auto;gap:.55rem 1rem;padding:.7rem .9rem;border-top:1px solid var(--line);text-decoration:none}
+.row:first-child{border-top:0}
+.row:hover{background:#fff}
+.row-name{font-weight:800;font-size:.9rem}
+.row-badges{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:.28rem}
+.tier,.row-kind{font-size:.6rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:.12rem .34rem;border:1px solid var(--line)}
+.tier.featured{color:#9a3412;background:rgba(154,52,18,.08)}
+.tier.more{color:var(--mute)}
+.tier.portal{color:#0f766e;background:rgba(15,118,110,.07)}
+.row-note{font-size:.78rem;color:var(--mute);font-weight:500}
+.row-go{font-size:.72rem;font-weight:800;color:var(--accent);align-self:center;white-space:nowrap}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+.search-panel{border:1px solid var(--line);background:rgba(255,253,248,.85);padding:1rem;margin-bottom:1rem}
+.search-panel h2{font-family:"Source Serif 4",serif;font-size:1.3rem;margin-bottom:.35rem}
+.hit{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.4rem 1rem;padding:.65rem 0;border-top:1px solid var(--line);text-decoration:none}
+.hit-name{font-weight:800}
+.hit-path{font-size:.74rem;color:var(--mute);font-weight:600;margin-top:.15rem}
+.hit-go{font-size:.72rem;font-weight:800;color:var(--accent);align-self:center}
+.empty{color:var(--mute);font-style:italic;padding:.5rem 0}
+.foot{border-top:1px solid var(--line);padding:1.2rem 0 2rem;color:var(--mute);font-size:.76rem}
+.foot .wrap{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="index.html">业务</a>
+    <a href="track-agri.html">农业交叉</a>
+    <a class="on" href="agri-datasets.html">农业数据</a>
+    <a href="agri-papers.html">农业成稿</a>
+    <a href="imaging-datasets.html">影像数据</a>
+    <a href="types.html">写法</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-brand">解知常<span>农业公开数据集库</span></div>
+      <p class="hero-line">按作物 / 类型浏览；成稿推荐优先。本地工程路径不收录。</p>
+    </div>
+    <div class="hero-cta">
+      <input id="q" type="search" placeholder="全局搜索：番茄、GWHD、病害…" autocomplete="off" />
+      <button type="button" id="btnCopy">复制链接</button>
+    </div>
+    <div class="hero-meta">
+      <div><b id="stFeat">—</b>成稿推荐</div>
+      <div><b id="heroBig">—</b>全部条目</div>
+      <div><b id="stDept">—</b>作物类型</div>
+      <div><b id="stUp">—</b>更新</div>
+    </div>
+  </div>
+</header>
+
+<div class="filters">
+  <div class="seg" id="tierSeg">
+    <button type="button" data-tier="featured" class="on">成稿推荐</button>
+    <button type="button" data-tier="all">全部</button>
+    <button type="button" data-tier="more">补充</button>
+    <button type="button" data-tier="portal">门户检索</button>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:.35rem;align-items:center">
+    <button type="button" class="toolbtn" id="btnExpand">展开二级</button>
+    <button type="button" class="toolbtn" id="btnCollapse">收起二级</button>
+    <span class="hint" id="filterHint"></span>
+  </div>
+</div>
+
+<div class="shell">
+  <aside class="rail" id="rail"></aside>
+  <main class="stage" id="stage"></main>
+</div>
+<footer class="foot"><div class="wrap">源目录：农业yolo · docs/_gen_agri_catalog_links.py · 成稿见 <a href="agri-papers.html">农业成稿库</a></div></footer>
+
+<script src="data/agri-datasets.js"></script>
+<script>
+(function(){
+  const state=window.AGRI_DATASETS||{meta:{},departments:[]};
+  const deps=Array.isArray(state.departments)?state.departments:[];
+  const rail=document.getElementById('rail');
+  const stage=document.getElementById('stage');
+  const qEl=document.getElementById('q');
+  const esc=t=>String(t??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const escA=t=>esc(t).replace(/"/g,'&quot;');
+  const cleanTitle=s=>(s||'').replace(/^二级[：:]\s*/,'');
+  const tierLabel={featured:'推荐',more:'补充',portal:'门户'};
+  const ui={active:deps[0]?deps[0].id:'',tier:'featured',q:''};
+
+  function parseHash(){
+    const h=(location.hash||'').replace(/^#/,'');
+    if(!h.includes('=')) return;
+    const p=new URLSearchParams(h);
+    const dept=p.get('dept'); const tier=p.get('tier'); const q=p.get('q');
+    if(dept&&deps.some(d=>d.id===dept)) ui.active=dept;
+    if(tier&&['featured','all','more','portal'].includes(tier)) ui.tier=tier;
+    if(q!=null){ui.q=q;qEl.value=q;}
+  }
+  function writeHash(){
+    const p=new URLSearchParams();
+    if(ui.active) p.set('dept',ui.active);
+    if(ui.tier&&ui.tier!=='featured') p.set('tier',ui.tier);
+    if(ui.q) p.set('q',ui.q);
+    const next=p.toString();
+    const cur=(location.hash||'').replace(/^#/,'');
+    if(cur!==next) history.replaceState(null,'',next?('#'+next):location.pathname+location.search);
+  }
+  function tierOf(x){return x.tier||'more'}
+  function passTier(x){return ui.tier==='all'||tierOf(x)===ui.tier}
+  function countDept(d,mode){
+    let n=0;(d.children||[]).forEach(c=>{(c.datasets||[]).forEach(x=>{
+      if(mode==='all'||tierOf(x)===mode) n++;
+    })});return n;
+  }
+  function flatIndex(){
+    const out=[];deps.forEach(d=>{(d.children||[]).forEach(c=>{(c.datasets||[]).forEach(x=>out.push({d,c,x}))})});return out;
+  }
+  const all=flatIndex();
+  document.getElementById('heroBig').textContent=all.length;
+  document.getElementById('stFeat').textContent=all.filter(i=>tierOf(i.x)==='featured').length;
+  document.getElementById('stDept').textContent=deps.length;
+  document.getElementById('stUp').textContent=(state.meta&&state.meta.updated)?String(state.meta.updated).slice(5):'—';
+
+  function renderTierSeg(){
+    document.querySelectorAll('#tierSeg button').forEach(b=>b.classList.toggle('on',b.dataset.tier===ui.tier));
+    document.getElementById('filterHint').textContent=({featured:'优先本仓相关与金标准集',all:'全部公开入口',more:'补充集',portal:'检索页 / 泛入口'}[ui.tier]||'');
+  }
+  function renderRail(){
+    const mode=ui.tier==='all'?'all':ui.tier;
+    rail.innerHTML=`<div class="rail-label">作物 / 类型</div>`+deps.map(d=>{
+      const n=countDept(d,mode);
+      return `<button type="button" class="rail-btn ${d.id===ui.active?'on':''}" data-id="${escA(d.id)}"><span>${esc(d.name_zh)}</span><small>${n}</small></button>`;
+    }).join('');
+    rail.querySelectorAll('.rail-btn').forEach(btn=>btn.onclick=()=>{ui.active=btn.dataset.id;sync();});
+  }
+  function rowHtml(x){
+    const url=(x.url||'').trim(); let host='打开';
+    try{host=new URL(url).hostname.replace(/^www\./,'')}catch(_){}
+    const t=tierOf(x);
+    const inner=`<div><div class="row-name">${esc(x.name||'未命名')}</div><div class="row-badges"><span class="tier ${t}">${tierLabel[t]||t}</span><span class="row-kind">${esc(x.kind||'dataset')}</span></div></div><div class="row-note">${esc(x.note||'')}</div><div class="row-go">${url?esc(host)+' ↗':'暂无链接'}</div>`;
+    return url?`<a class="row" href="${escA(url)}" target="_blank" rel="noopener">${inner}</a>`:`<div class="row">${inner}</div>`;
+  }
+  function searchHits(){
+    const q=ui.q.trim().toLowerCase(); if(!q) return [];
+    return all.filter(({d,c,x})=>{
+      if(!passTier(x)) return false;
+      return [d.name_zh,c.name_zh,c.modality,x.name,x.note,x.kind,x.url].join(' ').toLowerCase().includes(q);
+    });
+  }
+  function renderStage(){
+    const hits=searchHits(); const searching=!!ui.q.trim(); let html='';
+    if(searching){
+      html+=`<section class="search-panel"><h2>搜索结果</h2><div class="hint" style="margin-bottom:.7rem">「${esc(ui.q)}」· ${hits.length} 条</div>${hits.length?hits.slice(0,80).map(({d,c,x})=>{
+        const url=(x.url||'').trim();
+        const body=`<div><div class="hit-name">${esc(x.name||'')}</div><div class="hit-path">${esc(d.name_zh)} → ${esc(cleanTitle(c.name_zh))}</div></div><div class="hit-go">${url?'打开 ↗':'—'}</div>`;
+        return url?`<a class="hit" href="${escA(url)}" target="_blank" rel="noopener">${body}</a>`:`<div class="hit">${body}</div>`;
+      }).join(''):'<p class="empty">无命中</p>'}</section>`;
+    }
+    const d=deps.find(x=>x.id===ui.active)||deps[0];
+    if(!d){stage.innerHTML=html+'<p class="empty">暂无数据</p>';return;}
+    const visible=(d.children||[]).map((c,i)=>{
+      const ds=(c.datasets||[]).filter(passTier).filter(x=>{
+        if(!searching) return true;
+        return [c.name_zh,x.name,x.note].join(' ').toLowerCase().includes(ui.q.trim().toLowerCase());
+      });
+      return {c,i,ds};
+    }).filter(x=>x.ds.length);
+    const nShow=visible.reduce((m,x)=>m+x.ds.length,0);
+    html+=`<div class="stage-head"><div><div class="stage-kicker">Crop / Type</div><h1 class="stage-title">${esc(d.name_zh)}</h1>${d.blurb?`<p class="stage-blurb">${esc(d.blurb)}</p>`:''}</div><div class="stage-count">${nShow}<span>${visible.length} 个二级</span></div></div>`;
+    html+=visible.length?visible.map(({c,i,ds})=>`<details class="topic" ${searching||ui.tier==='featured'?'open':''}><summary><span class="topic-idx">${String(i+1).padStart(2,'0')}</span><div><div class="topic-title">${esc(cleanTitle(c.name_zh))}</div><span class="topic-mod">${esc(c.modality||'')} · ${esc(c.task||'')}</span></div><div><span class="chip feat">${ds.filter(x=>tierOf(x)==='featured').length} 推荐</span> <span class="chip">${ds.length}</span></div></summary><div class="rows">${ds.map(rowHtml).join('')}</div></details>`).join(''):'<p class="empty">当前分层无条目</p>';
+    stage.innerHTML=html;
+  }
+  function sync(){renderTierSeg();renderRail();renderStage();writeHash();}
+  document.querySelectorAll('#tierSeg button').forEach(b=>b.onclick=()=>{ui.tier=b.dataset.tier;sync();});
+  let tmr=null;
+  qEl.addEventListener('input',()=>{clearTimeout(tmr);tmr=setTimeout(()=>{ui.q=qEl.value;const hits=searchHits();if(hits.length){const score={};hits.forEach(h=>score[h.d.id]=(score[h.d.id]||0)+1);ui.active=Object.entries(score).sort((a,b)=>b[1]-a[1])[0][0];}sync();},120);});
+  document.getElementById('btnExpand').onclick=()=>stage.querySelectorAll('details.topic').forEach(d=>d.open=true);
+  document.getElementById('btnCollapse').onclick=()=>stage.querySelectorAll('details.topic').forEach(d=>d.open=false);
+  document.getElementById('btnCopy').onclick=async()=>{writeHash();try{await navigator.clipboard.writeText(location.href);const b=document.getElementById('btnCopy');const o=b.textContent;b.textContent='已复制';setTimeout(()=>b.textContent=o,1200);}catch(_){prompt('复制',location.href);}};
+  window.addEventListener('hashchange',()=>{parseHash();sync();});
+  parseHash();sync();
+})();
+</script>
+</body>
+</html>
+'''
+
+
+def main():
+    rows = load_catalog()
+    data = build_data(rows)
+    OUT_JS.parent.mkdir(parents=True, exist_ok=True)
+    OUT_JS.write_text(
+        "/** 农业公开数据集目录 — 作物/类型 → 二级任务 → 数据集。 */\n"
+        + "window.AGRI_DATASETS = "
+        + json.dumps(data, ensure_ascii=False, indent=2)
+        + ";\n",
+        encoding="utf-8",
+    )
+    OUT_HTML.write_text(build_html(), encoding="utf-8")
+    n = sum(len(c["datasets"]) for d in data["departments"] for c in d["children"])
+    print(f"crops={len(data['departments'])} datasets={n} featured={data['meta']['tiers']['featured']}")
+    print("wrote", OUT_JS.name, OUT_HTML.name)
+
+
+if __name__ == "__main__":
+    main()

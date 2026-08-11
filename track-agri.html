@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--warm:#c45c16;--max:920px}
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--teal:#0c7a5f;--deep:#074d3d;--warm:#c45c16;--max:1000px}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.65}
-h1,h2,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
 a{color:var(--deep)}
 .wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
 .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
@@ -19,19 +19,26 @@ a{color:var(--deep)}
 .nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
 .nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
 .nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
-.nav-links a.on,.nav-links a:hover{color:var(--teal)}
-.hero{padding:2.4rem 0 1.5rem}
+.nav-links a.on,.nav-links a:hover{color:var(--warm)}
+.hero{padding:2.4rem 0 1.4rem}
 .kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--warm);margin-bottom:.35rem}
-.brand{font-size:clamp(1.9rem,4.5vw,2.7rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
-.lead{color:var(--muted);max-width:48ch}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem;margin:1rem 0}
-.card h2{font-size:1.15rem;margin-bottom:.45rem}
-.card p,.card li{color:var(--muted);font-size:.9rem}
-.card ul{padding-left:1.1rem;display:grid;gap:.28rem;margin-top:.4rem}
+.brand{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:750;color:var(--deep);margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:52ch}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin:1.2rem 0}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem;transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-2px);border-color:rgba(196,92,22,.45)}
+.tag{align-self:flex-start;font-size:.7rem;font-weight:700;padding:.16rem .5rem;border-radius:999px;background:rgba(196,92,22,.12);color:#8a3d0c;margin-bottom:.45rem}
+.card h3{font-size:1.15rem;margin-bottom:.3rem}
+.card p{color:var(--muted);font-size:.9rem;flex:1}
+.go{margin-top:.7rem;font-weight:700;color:var(--warm);font-size:.88rem}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.15rem;margin:1rem 0}
+.box h2{font-size:1.15rem;margin-bottom:.45rem}
+.box li{color:var(--muted);font-size:.9rem;margin:.28rem 0}
+.box ul{padding-left:1.1rem}
 .btn{display:inline-flex;margin:.35rem .35rem 0 0;padding:.55rem .9rem;border-radius:999px;font-weight:700;font-size:.84rem;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink)}
-.btn.primary{background:var(--teal);color:#fff;border-color:transparent}
-.note{font-size:.84rem;color:var(--muted);margin-top:1rem}
-.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;margin-top:1.5rem}
+.btn.primary{background:var(--warm);color:#fff;border-color:transparent}
+.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;margin-top:1.2rem}
 </style>
 </head>
 <body>
@@ -42,42 +49,47 @@ a{color:var(--deep)}
     <a href="track-medical.html">医学交叉</a>
     <a class="on" href="track-agri.html">农业交叉</a>
     <a href="track-cs.html">计算机</a>
+    <a href="agri-datasets.html">农业数据</a>
+    <a href="agri-papers.html">农业成稿</a>
     <a href="types.html">写法</a>
-    <a href="journals.html">选刊</a>
-    <a href="imaging-datasets.html">数据</a>
-    <a href="imaging-papers.html">成稿</a>
-    <a href="https://paper-doctor.onrender.com/" target="_blank" rel="noopener">组学成稿</a>
   </div>
 </div></nav>
 
 <header class="hero wrap">
   <div class="kicker">赛道 · 农业交叉</div>
-  <div class="brand">田间 / 作物检测成稿路径</div>
-  <p class="lead">能力在农业 YOLO 数据与成稿资产里；本站先做赛道入口。验证逻辑对齐「多公开集 + 跨集/跨场景外测」，分区多为 A/B。</p>
+  <div class="brand">作物检测成稿路径</div>
+  <p class="lead">对齐医学侧的「数据库 + 成稿库」结构。验证口径借写法 05（多公开集跨集外测）；选刊走农业工程 / Remote Sensing / Sensors 等。</p>
 </header>
 
 <main class="wrap">
-  <div class="card">
-    <h2>当前状态</h2>
-    <ul>
-      <li>源资产：农业 YOLO 数据集目录与成稿包装（站外工程库）</li>
-      <li>站内：医学影像成稿库已剥离番茄/茶叶等农业篇，避免混赛道</li>
-      <li>下一张路径卡：作物检测样例包（P1）</li>
-    </ul>
+  <div class="grid">
+    <a class="card" href="agri-datasets.html">
+      <span class="tag">工具 · 数据</span>
+      <h3>农业公开数据集库</h3>
+      <p>按作物/类型浏览；成稿推荐分层；约 140+ 公开入口（不含本地路径）。</p>
+      <span class="go">打开数据集库 →</span>
+    </a>
+    <a class="card" href="agri-papers.html">
+      <span class="tag">工具 · 成稿</span>
+      <h3>农业交叉成稿库</h3>
+      <p>番茄 / 茶叶 / 水稻等 YOLO 成稿卡片；点开看摘要与框架图。</p>
+      <span class="go">打开成稿库 →</span>
+    </a>
   </div>
-  <div class="card">
-    <h2>和医学写法怎么借</h2>
+
+  <div class="box">
+    <h2>和医学怎么对照</h2>
     <ul>
-      <li>检测叙事可借 <b>写法 05</b> 的跨集外测口径</li>
-      <li>选刊走农业工程 / Remote Sensing / Sensors 等，不硬套 npj</li>
-      <li>需要医学交叉请回主战场</li>
+      <li>医学：<a href="imaging-datasets.html">影像数据集</a> + <a href="imaging-papers.html">医工成稿</a> + <a href="package-imaging-yolo.html">写法 05 路径卡</a></li>
+      <li>农业：本页数据/成稿双库；路径卡结构可直接参考影像 05</li>
+      <li>本仓库对照工程：tomato · tea/teadata · pear · rice-yolo（本地，不进公开库）</li>
     </ul>
-    <a class="btn primary" href="package-imaging-yolo.html">参考影像 05 路径卡结构</a>
+    <a class="btn primary" href="agri-datasets.html#tier=featured">成稿推荐数据</a>
+    <a class="btn" href="package-imaging-yolo.html">参考影像路径卡</a>
     <a class="btn" href="types.html#t05">写法 05</a>
     <a class="btn" href="track-medical.html">医学交叉</a>
   </div>
-  <p class="note">诚实占位：农业赛道已挂进业务树，细包按单补，不假装已有医学同级专页。</p>
 </main>
-<footer class="foot"><div class="wrap">农业交叉 · 薄入口 · P1 补样例路径卡</div></footer>
+<footer class="foot"><div class="wrap">农业交叉 · 数据集 + 成稿已挂树 · 源：农业yolo数据集/docs</div></footer>
 </body>
 </html>

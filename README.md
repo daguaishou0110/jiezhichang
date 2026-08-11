@@ -30,7 +30,10 @@
 |------|------|
 | index.html | 业务中枢 + 三赛道 + 说服四步 |
 | track-medical.html | 医学枢纽：路径卡 + 写法×分区 |
-| track-agri.html / track-cs.html | 农业 / 计算机薄入口 |
+| track-agri.html | 农业枢纽 |
+| agri-datasets.html | 农业公开数据集（作物/类型） |
+| agri-papers.html | 农业 YOLO 成稿库 |
+| track-cs.html | 计算机薄入口 |
 | package-imaging-yolo.html | 写法 05 路径卡 |
 | crc-microbiome.html / osteoporosis.html | 写法 03 / 02 路径卡 |
 | types.html + type-01…05 | 写法层 |
