@@ -59,6 +59,9 @@ ALIASES = {
     "ICWSM": ["ICWSM"],
     "RecSys": ["RecSys"],
     "SIGGRAPH": ["SIGGRAPH"],
+    "UbiComp": ["UbiComp", "UbiComp/ISWC"],
+    "HOT CHIPS": ["HotChips", "HOT CHIPS", "Hot Chips"],
+    "Performance": ["Performance", "SIGMETRICS"],
 }
 
 FIELD_FOCUS = {
@@ -452,8 +455,9 @@ def main() -> None:
             if stats[ys].get("accepted") is None and cs_obj:
                 stats[ys] = merge_year(stats[ys], year_from_cs(cs_obj, year), False)
             # DBLP indexed count as last resort (proxy for accepted papers)
-            if stats[ys].get("accepted") is None and short in dblp_counts:
-                dc = (dblp_counts.get(short) or {}).get(ys)
+            dc_entry = dblp_counts.get(short) or dblp_counts.get(norm_key(short))
+            if stats[ys].get("accepted") is None and dc_entry:
+                dc = (dc_entry or {}).get(ys)
                 if isinstance(dc, dict) and dc.get("accepted"):
                     stats[ys] = merge_year(
                         stats[ys],
@@ -544,22 +548,41 @@ def main() -> None:
             elif short == "SEC":
                 venues[composite]["focus"] = "边缘计算（SEC）；边缘系统、云边协同与边缘智能。"
 
+    # preserve ccfddl / website / deadline fields from prior merge
+    if old_venues:
+        for k, ov in old_venues.items():
+            if k not in venues or not isinstance(ov, dict):
+                continue
+            if ov.get("ccfddl") and not venues[k].get("ccfddl"):
+                venues[k]["ccfddl"] = ov["ccfddl"]
+            if ov.get("website") and not venues[k].get("website"):
+                venues[k]["website"] = ov["website"]
+            for ys, yold in (ov.get("stats") or {}).items():
+                if ys not in venues[k]["stats"]:
+                    continue
+                for fld in ("deadline", "date", "place", "website"):
+                    if yold.get(fld) and not venues[k]["stats"][ys].get(fld):
+                        venues[k]["stats"][ys][fld] = yold[fld]
+
     payload = {
         "_meta": {
             "note": (
-                "全量 enrichment：人工核验优先，其次 OpenAccept / CS Conf Stats；"
-                "无公开录用数的会保留收录特点 + DBLP 检索，方向为领域粗标签。"
+                "全量 enrichment：人工核验优先，其次 OpenAccept / CS Conf Stats / ccfddl；"
+                "无公开录用数时用 DBLP indexed 篇数作规模近似。"
             ),
-            "updated": "2026-08-11",
+            "updated": __import__("datetime").date.today().isoformat(),
             "sources": [
                 "data/ccf-enrichment.json (manual)",
                 "https://github.com/OpenAccept/openaccept-metadata",
                 "https://github.com/Xovee/cs-conf-stats",
+                "https://github.com/ccfddl/ccf-deadlines",
+                "DBLP year indexed counts (proxy)",
             ],
             "coverage": {
                 "venues": len(venues),
                 "with_acceptance_numbers": stats_hit,
             },
+            "ccfddl": (old.get("_meta") or {}).get("ccfddl"),
         },
         "venues": venues,
     }

@@ -8,11 +8,16 @@ from copy import deepcopy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = Path(
-    r"C:\Users\13594\.cursor\projects\c-Users-13594-Desktop\agent-tools\fbbabc3d-4482-4540-a3bc-85f0d1784284.txt"
-)
 DST = ROOT / "data"
 ENRICH = DST / "ccf-enrichment.json"
+EXISTING = DST / "ccf-conferences.json"
+# Optional raw CCF markdown dump; if missing, rebuild from existing JSON skeleton.
+SRC_CANDIDATES = [
+    DST / "ccf-source.md",
+    Path(
+        r"C:\Users\13594\.cursor\projects\c-Users-13594-Desktop\agent-tools\fbbabc3d-4482-4540-a3bc-85f0d1784284.txt"
+    ),
+]
 DST.mkdir(parents=True, exist_ok=True)
 
 FIELD_TO_VENUE = {
@@ -126,7 +131,7 @@ def deep_merge_year(base: dict, overlay: dict) -> dict:
     for k, v in overlay.items():
         if v is None and k in {"accepted", "submitted"}:
             out[k] = None
-        elif v == "" and k in {"notes", "papers_index"}:
+        elif v == "" and k in {"notes", "papers_index", "deadline", "date", "place", "website"}:
             continue
         elif k == "directions" and not v:
             continue
@@ -156,6 +161,10 @@ def apply_enrichment(confs: list[dict], enrich: dict) -> tuple[int, int]:
             c["dblp"] = e["dblp"]
         if e.get("papers_index"):
             c["papers_index"] = e["papers_index"]
+        if e.get("website"):
+            c["website"] = e["website"]
+        if e.get("ccfddl"):
+            c["ccfddl"] = e["ccfddl"]
         if e.get("status"):
             c["status"] = e["status"]
         if e.get("status") == "ready":
@@ -169,9 +178,22 @@ def apply_enrichment(confs: list[dict], enrich: dict) -> tuple[int, int]:
     return hit, ready
 
 
-def main() -> None:
-    text = SRC.read_text(encoding="utf-8")
-    confs = parse_rows(text)
+def load_skeleton() -> list[dict]:
+    for src in SRC_CANDIDATES:
+        if src.exists():
+            confs = parse_rows(src.read_text(encoding="utf-8"))
+            print("parsed CCF source", src)
+            break
+    else:
+        if not EXISTING.exists():
+            raise SystemExit("No CCF source markdown and no existing ccf-conferences.json")
+        confs = json.loads(EXISTING.read_text(encoding="utf-8"))["conferences"]
+        print("reusing existing conference skeleton", EXISTING)
+        # reset year buckets so enrichment can re-apply cleanly
+        for c in confs:
+            c["stats"] = {str(y): empty_year() for y in range(2020, 2027)}
+            c.pop("website", None)
+            c.pop("ccfddl", None)
     seen = set()
     uniq = []
     for c in confs:
@@ -180,6 +202,11 @@ def main() -> None:
             continue
         seen.add(key)
         uniq.append(c)
+    return uniq
+
+
+def main() -> None:
+    uniq = load_skeleton()
 
     enrich = {}
     if ENRICH.exists():
@@ -207,12 +234,12 @@ def main() -> None:
         "source": "中国计算机学会推荐国际学术会议和期刊目录（2026，第七版）",
         "source_url": "https://www.ccf.org.cn/",
         "mirror": "https://ccf.atom.im/",
-        "updated": "2026-08-11",
+        "updated": __import__("datetime").date.today().isoformat(),
         "note": (
             f"全量 {len(uniq)} 会均有收录特点与论文检索入口。"
             f"有录用数 {with_stats} 场（其中 2024–26：{with_recent}）；"
             f"enrichment 命中 {hit}，ready {ready}。"
-            "数据源：人工核验 / OpenAccept / CS Conf Stats / DBLP indexed。"
+            "数据源：人工核验 / OpenAccept / CS Conf Stats / ccfddl / DBLP。"
         ),
         "counts": {
             "total": len(uniq),
@@ -222,6 +249,13 @@ def main() -> None:
             "with_stats": with_stats,
             "with_recent": with_recent,
             "with_focus": with_focus,
+            "with_deadline": sum(
+                1
+                for c in uniq
+                if (c.get("ccfddl") or {}).get("latest", {}).get("deadline")
+                or any((c["stats"].get(y) or {}).get("deadline") for y in ("2025", "2026", "2027"))
+            ),
+            "with_dblp_db": sum(1 for c in uniq if "dblp.org/db/" in (c.get("dblp") or "")),
             "enrichment_hit": hit,
             "ready": ready,
         },

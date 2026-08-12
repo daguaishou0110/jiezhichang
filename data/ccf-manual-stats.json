@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "note": "人工补录 batch-10：SPAA/PERCOM/SRDS/IUI/CC 等。",
+    "note": "人工补录：含 SoCC/ICWSM 等官网或程序册数字。",
     "updated": "2026-08-12"
   },
   "venues": {
@@ -1962,6 +1962,54 @@
             }
           ],
           "papers_index": "https://www.hotchips.org/"
+        }
+      }
+    },
+    "SoCC": {
+      "focus": "云计算系统；云存储、调度、serverless、云原生系统。",
+      "papers_index": "https://acmsocc.org/2024/accepted-papers.html",
+      "dblp": "https://dblp.org/db/conf/cloud/index.html",
+      "status": "ready",
+      "stats": {
+        "2024": {
+          "accepted": 63,
+          "submitted": 209,
+          "notes": "社区汇总：63/209≈30.1%（ACM SoCC）。",
+          "directions": [
+            {
+              "name": "云系统 / 调度",
+              "share": "高"
+            },
+            {
+              "name": "Serverless / 存储",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://acmsocc.org/2024/accepted-papers.html"
+        }
+      }
+    },
+    "ICWSM": {
+      "focus": "网络与社交媒体计算；计算社会科学、社交网络分析。",
+      "papers_index": "https://www.icwsm.org/2025/",
+      "dblp": "https://dblp.org/db/conf/icwsm/index.html",
+      "status": "profiling",
+      "stats": {
+        "2025": {
+          "accepted": 139,
+          "submitted": null,
+          "notes": "ICWSM 2025 程序：full papers 139（滚动修订录用；官网称约 20–30%）。",
+          "directions": [
+            {
+              "name": "社交计算 / CSS",
+              "share": "高"
+            },
+            {
+              "name": "网络挖掘",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://www.icwsm.org/2025/"
         }
       }
     }

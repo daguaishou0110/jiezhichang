@@ -7,6 +7,9 @@ _urls.txt
 downloads/
 data/_*.txt
 data/_*.json
+data/_*.html
+data/_ccfddl_src/
+data/_ccfddl.zip
 tools/__pycache__/
 tools/_*.txt
 tools/_*.py

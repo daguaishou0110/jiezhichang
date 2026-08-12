@@ -126,6 +126,8 @@ tr:hover td{background:#f5fafb}
     `<span class="chip">C <b>${meta.counts?.C ?? "-"}</b></span>`,
     `<span class="chip">已补会况 <b>${meta.counts?.with_stats ?? "-"}</b></span>`,
     `<span class="chip">含24–26 <b>${meta.counts?.with_recent ?? "-"}</b></span>`,
+    `<span class="chip">有截稿 <b>${meta.counts?.with_deadline ?? "-"}</b></span>`,
+    `<span class="chip">正式 DBLP <b>${meta.counts?.with_dblp_db ?? "-"}</b></span>`,
     `<span class="chip">有收录说明 <b>${meta.counts?.with_focus ?? "-"}</b></span>`
   ].join("");
   document.getElementById("lead").textContent = meta.note || document.getElementById("lead").textContent;
@@ -167,19 +169,42 @@ tr:hover td{background:#f5fafb}
     return `<div><b>${label}</b> 录用 ${s.accepted}${sub}${rate}</div>`;
   }
 
+  function ddlLine(c){
+    const latest = c.ccfddl?.latest || {};
+    const years = ["2027","2026","2025","2024"];
+    let s = null;
+    for (const y of years){
+      const st = c.stats?.[y];
+      if (st && (st.deadline || st.date)) { s = st; break; }
+    }
+    const deadline = latest.deadline || s?.deadline || "";
+    const when = latest.date || s?.date || "";
+    const place = latest.place || s?.place || "";
+    if (!deadline && !when) return "";
+    const bits = [];
+    if (deadline) bits.push(`截稿 ${String(deadline).slice(0,10)}`);
+    if (when) bits.push(`会期 ${when}`);
+    if (place) bits.push(place);
+    return `<div class="muted">${bits.join(" · ")}</div>`;
+  }
+
   function yearCell(c){
     const years = Object.keys(c.stats || {}).sort().reverse();
     const withNum = years.filter(y => c.stats[y]?.accepted != null);
     const show = withNum.length ? withNum.slice(0, 4) : ["2026","2025","2024"].filter(y => c.stats?.[y]);
     const parts = show.map(y => fmtYear(y, c.stats?.[y])).filter(Boolean);
-    if (!parts.length) return '<span class="todo">待补录用/方向</span>';
+    const ddl = ddlLine(c);
+    if (!parts.length && !ddl) return '<span class="todo">待补录用/方向</span>';
     const dirSrc = withNum.map(y => c.stats[y]).find(s => s.directions?.length) || c.stats?.["2025"] || {};
     const dirs = dirSrc.directions || [];
     const dirHtml = dirs.length
       ? `<div class="dirs">${dirs.slice(0,6).map(d=>`<span>${d.name}${d.share?` · ${d.share}`:""}</span>`).join("")}</div>`
       : "";
     const note = (withNum[0] && c.stats[withNum[0]]?.notes) || c.stats?.["2025"]?.notes || "";
-    return `<div class="statline">${parts.join("")}${dirHtml}${note?`<div class="muted">${note}</div>`:""}</div>`;
+    // hide notes that only repeat deadline already shown
+    const noteHtml = (note && !String(note).startsWith("截稿") && !String(note).includes("｜截稿"))
+      ? `<div class="muted">${note}</div>` : "";
+    return `<div class="statline">${parts.join("")}${ddl}${dirHtml}${noteHtml}</div>`;
   }
 
   function statusBadge(s){
@@ -191,8 +216,10 @@ tr:hover td{background:#f5fafb}
   function paperLinks(c){
     const links = [];
     const idx = c.papers_index || c.stats?.["2025"]?.papers_index || c.stats?.["2026"]?.papers_index;
+    const site = c.website || c.ccfddl?.latest?.link || c.stats?.["2026"]?.website || c.stats?.["2025"]?.website;
     if (idx) links.push(`<a href="${idx}" target="_blank" rel="noopener">论文列表</a>`);
     if (c.dblp) links.push(`<a href="${c.dblp}" target="_blank" rel="noopener">DBLP</a>`);
+    if (site) links.push(`<a href="${site}" target="_blank" rel="noopener">官网</a>`);
     return links.join(" · ") || "—";
   }
 
