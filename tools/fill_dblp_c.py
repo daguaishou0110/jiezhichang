@@ -17,6 +17,14 @@ CACHE = DATA / "dblp_year_counts.json"
 CCFDDL = DATA / "ccfddl_cache.json"
 
 
+# CCF short → force correct dblp stream (override bad ccfddl aliases)
+STREAM_FIX = {
+    "AsiaCCS": "conf/asiaccs",
+    "ACM SIGOPS ATC": "conf/usenix",
+    "USENIX ATC": "conf/usenix",
+}
+
+
 def main() -> None:
     import argparse
 
@@ -29,13 +37,21 @@ def main() -> None:
 
     ccf = json.loads(CCF.read_text(encoding="utf-8"))
     cache = json.loads(CACHE.read_text(encoding="utf-8")) if CACHE.exists() else {}
+    # drop known bad merges
+    if "AsiaCCS" in cache and any(
+        (cache["AsiaCCS"].get(y) or {}).get("accepted", 0) > 200 for y in ("2023", "2024", "2025")
+    ):
+        print("drop bad AsiaCCS cache (looks like CCS totals)")
+        cache.pop("AsiaCCS", None)
+
     streams = load_streams()
     slim = json.loads(CCFDDL.read_text(encoding="utf-8")) if CCFDDL.exists() else {}
     for title, ent in slim.items():
         dblp = (ent or {}).get("dblp") or ""
-        if dblp:
+        if dblp and dblp.upper() != "NO DBLP" and " " not in dblp:
             streams[title] = f"conf/{dblp}"
             streams[norm(title)] = f"conf/{dblp}"
+    streams.update(STREAM_FIX)
 
     targets = []
     for c in ccf["conferences"]:
@@ -48,8 +64,11 @@ def main() -> None:
         if has:
             continue
         short = c["short"]
-        stream = streams.get(short) or streams.get(norm(short))
+        stream = STREAM_FIX.get(short) or streams.get(short) or streams.get(norm(short))
         if not stream:
+            continue
+        if "NO" in stream.upper() or " " in stream:
+            print("skip bad stream", short, stream)
             continue
         if not stream.startswith("conf/"):
             stream = f"conf/{stream}"

@@ -736,5 +736,753 @@
       "notes": "DBLP TOC `conf/www/www2024` indexed 论文数（近似录用规模）。",
       "papers_index": "https://dblp.org/db/conf/www/www2024.html"
     }
+  },
+  "CF": {
+    "2023": {
+      "accepted": 72,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/cf/cf2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/cf/cf2023.html"
+    },
+    "2024": {
+      "accepted": 48,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/cf/cf2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/cf/cf2024.html"
+    },
+    "2025": {
+      "accepted": 39,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/cf/cf2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/cf/cf2025.html"
+    }
+  },
+  "SYSTOR": {
+    "2023": {
+      "accepted": 34,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/systor/systor2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/systor/systor2023.html"
+    },
+    "2024": {
+      "accepted": 21,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/systor/systor2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/systor/systor2024.html"
+    },
+    "2025": {
+      "accepted": 26,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/systor/systor2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/systor/systor2025.html"
+    }
+  },
+  "ASAP": {
+    "2023": {
+      "accepted": 32,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/asap/asap2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/asap/asap2023.html"
+    },
+    "2024": {
+      "accepted": 49,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/asap/asap2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/asap/asap2024.html"
+    },
+    "2025": {
+      "accepted": 35,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/asap/asap2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/asap/asap2025.html"
+    }
+  },
+  "ASP-DAC": {
+    "2023": {
+      "accepted": 128,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/aspdac/aspdac2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/aspdac/aspdac2023.html"
+    },
+    "2024": {
+      "accepted": 158,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/aspdac/aspdac2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/aspdac/aspdac2024.html"
+    },
+    "2025": {
+      "accepted": 223,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/aspdac/aspdac2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/aspdac/aspdac2025.html"
+    },
+    "2026": {
+      "accepted": 215,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/aspdac/aspdac2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/aspdac/aspdac2026.html"
+    }
+  },
+  "ETS": {
+    "2023": {
+      "accepted": 62,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ets/ets2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ets/ets2023.html"
+    },
+    "2024": {
+      "accepted": 58,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ets/ets2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ets/ets2024.html"
+    },
+    "2025": {
+      "accepted": 53,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ets/ets2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ets/ets2025.html"
+    },
+    "2026": {
+      "accepted": 69,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ets/ets2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ets/ets2026.html"
+    }
+  },
+  "FCCM": {
+    "2023": {
+      "accepted": 55,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/fccm/fccm2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/fccm/fccm2023.html"
+    },
+    "2024": {
+      "accepted": 49,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/fccm/fccm2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/fccm/fccm2024.html"
+    },
+    "2025": {
+      "accepted": 69,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/fccm/fccm2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/fccm/fccm2025.html"
+    },
+    "2026": {
+      "accepted": 70,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/fccm/fccm2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/fccm/fccm2026.html"
+    }
+  },
+  "GLSVLSI": {
+    "2023": {
+      "accepted": 127,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/glvlsi/glvlsi2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/glvlsi/glvlsi2023.html"
+    },
+    "2024": {
+      "accepted": 143,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/glvlsi/glvlsi2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/glvlsi/glvlsi2024.html"
+    },
+    "2025": {
+      "accepted": 155,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/glvlsi/glvlsi2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/glvlsi/glvlsi2025.html"
+    },
+    "2026": {
+      "accepted": 158,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/glvlsi/glvlsi2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/glvlsi/glvlsi2026.html"
+    }
+  },
+  "ATS": {
+    "2023": {
+      "accepted": 45,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ats/ats2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ats/ats2023.html"
+    },
+    "2024": {
+      "accepted": 56,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ats/ats2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ats/ats2024.html"
+    },
+    "2025": {
+      "accepted": 30,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ats/ats2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ats/ats2025.html"
+    }
+  },
+  "HPCC": {
+    "2023": {
+      "accepted": 158,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/hpcc/hpcc2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/hpcc/hpcc2023.html"
+    }
+  },
+  "ISPA": {
+    "2024": {
+      "accepted": 318,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ispa/ispa2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ispa/ispa2024.html"
+    }
+  },
+  "CCGRID": {
+    "2023": {
+      "accepted": 60,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ccgrid/ccgrid2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ccgrid/ccgrid2023.html"
+    },
+    "2024": {
+      "accepted": 76,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ccgrid/ccgrid2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ccgrid/ccgrid2024.html"
+    },
+    "2025": {
+      "accepted": 60,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ccgrid/ccgrid2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ccgrid/ccgrid2025.html"
+    },
+    "2026": {
+      "accepted": 74,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ccgrid/ccgrid2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ccgrid/ccgrid2026.html"
+    }
+  },
+  "FPT": {
+    "2023": {
+      "accepted": 57,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/fpt/icfpt2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/fpt/icfpt2023.html"
+    },
+    "2024": {
+      "accepted": 35,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/fpt/icfpt2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/fpt/icfpt2024.html"
+    }
+  },
+  "ICPADS": {
+    "2023": {
+      "accepted": 406,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icpads/icpads2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icpads/icpads2023.html"
+    },
+    "2024": {
+      "accepted": 95,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icpads/icpads2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icpads/icpads2024.html"
+    },
+    "2025": {
+      "accepted": 348,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icpads/icpads2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icpads/icpads2025.html"
+    }
+  },
+  "ITC-Asia": {
+    "2023": {
+      "accepted": 28,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/itc-asia/itc-asia2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/itc-asia/itc-asia2023.html"
+    },
+    "2024": {
+      "accepted": 49,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/itc-asia/itc-asia2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/itc-asia/itc-asia2024.html"
+    },
+    "2025": {
+      "accepted": 20,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/itc-asia/itc-asia2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/itc-asia/itc-asia2025.html"
+    }
+  },
+  "SEC": {
+    "2023": {
+      "accepted": 27,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/sec/sec2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/sec/sec2023.html"
+    },
+    "2024": {
+      "accepted": 35,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/sec/sec2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/sec/sec2024.html"
+    }
+  },
+  "HotStorage": {
+    "2023": {
+      "accepted": 18,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/hotstorage/hotstorage2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/hotstorage/hotstorage2023.html"
+    },
+    "2024": {
+      "accepted": 19,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/hotstorage/hotstorage2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/hotstorage/hotstorage2024.html"
+    },
+    "2025": {
+      "accepted": 20,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/hotstorage/hotstorage2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/hotstorage/hotstorage2025.html"
+    }
+  },
+  "APPT": {
+    "2023": {
+      "accepted": 25,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/appt/appt2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/appt/appt2023.html"
+    },
+    "2025": {
+      "accepted": 37,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/appt/appt2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/appt/appt2025.html"
+    }
+  },
+  "FORTE": {
+    "2023": {
+      "accepted": 14,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/forte/forte2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/forte/forte2023.html"
+    },
+    "2024": {
+      "accepted": 14,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/forte/forte2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/forte/forte2024.html"
+    },
+    "2025": {
+      "accepted": 15,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/forte/forte2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/forte/forte2025.html"
+    },
+    "2026": {
+      "accepted": 16,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/forte/forte2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/forte/forte2026.html"
+    }
+  },
+  "LCN": {
+    "2023": {
+      "accepted": 82,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/lcn/lcn2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/lcn/lcn2023.html"
+    }
+  },
+  "GLOBECOM": {
+    "2023": {
+      "accepted": 1260,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/globecom/globecom2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/globecom/globecom2023.html"
+    },
+    "2024": {
+      "accepted": 909,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/globecom/globecom2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/globecom/globecom2024.html"
+    },
+    "2025": {
+      "accepted": 1075,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/globecom/globecom2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/globecom/globecom2025.html"
+    }
+  },
+  "ICC": {
+    "2023": {
+      "accepted": 1086,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icc/icc2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icc/icc2023.html"
+    },
+    "2024": {
+      "accepted": 936,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icc/icc2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icc/icc2024.html"
+    },
+    "2025": {
+      "accepted": 1123,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icc/icc2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icc/icc2025.html"
+    },
+    "2026": {
+      "accepted": 1412,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icc/icc2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icc/icc2026.html"
+    }
+  },
+  "ICCCN": {
+    "2023": {
+      "accepted": 94,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icccn/icccn2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icccn/icccn2023.html"
+    },
+    "2024": {
+      "accepted": 115,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icccn/icccn2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icccn/icccn2024.html"
+    },
+    "2025": {
+      "accepted": 182,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/icccn/icccn2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/icccn/icccn2025.html"
+    }
+  },
+  "WoWMoM": {
+    "2023": {
+      "accepted": 73,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wowmom/wowmom2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wowmom/wowmom2023.html"
+    },
+    "2024": {
+      "accepted": 57,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wowmom/wowmom2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wowmom/wowmom2024.html"
+    },
+    "2025": {
+      "accepted": 48,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wowmom/wowmom2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wowmom/wowmom2025.html"
+    },
+    "2026": {
+      "accepted": 57,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wowmom/wowmom2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wowmom/wowmom2026.html"
+    }
+  },
+  "ISCC": {
+    "2023": {
+      "accepted": 253,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/iscc/iscc2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/iscc/iscc2023.html"
+    },
+    "2024": {
+      "accepted": 175,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/iscc/iscc2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/iscc/iscc2024.html"
+    },
+    "2025": {
+      "accepted": 211,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/iscc/iscc2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/iscc/iscc2025.html"
+    }
+  },
+  "WCNC": {
+    "2023": {
+      "accepted": 438,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wcnc/wcnc2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wcnc/wcnc2023.html"
+    },
+    "2024": {
+      "accepted": 839,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wcnc/wcnc2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wcnc/wcnc2024.html"
+    },
+    "2025": {
+      "accepted": 722,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wcnc/wcnc2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wcnc/wcnc2025.html"
+    },
+    "2026": {
+      "accepted": 508,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wcnc/wcnc2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wcnc/wcnc2026.html"
+    }
+  },
+  "Networking": {
+    "2023": {
+      "accepted": 66,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/networking/networking2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/networking/networking2023.html"
+    },
+    "2024": {
+      "accepted": 114,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/networking/networking2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/networking/networking2024.html"
+    },
+    "2025": {
+      "accepted": 81,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/networking/networking2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/networking/networking2025.html"
+    },
+    "2026": {
+      "accepted": 124,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/networking/networking2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/networking/networking2026.html"
+    }
+  },
+  "MSN": {
+    "2023": {
+      "accepted": 114,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/msn/msn2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/msn/msn2023.html"
+    },
+    "2024": {
+      "accepted": 174,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/msn/msn2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/msn/msn2024.html"
+    }
+  },
+  "MSWiM": {
+    "2023": {
+      "accepted": 42,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/mswim/mswim2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/mswim/mswim2023.html"
+    },
+    "2025": {
+      "accepted": 121,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/mswim/mswim2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/mswim/mswim2025.html"
+    }
+  },
+  "HotNets": {
+    "2023": {
+      "accepted": 39,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/hotnets/hotnets2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/hotnets/hotnets2023.html"
+    },
+    "2024": {
+      "accepted": 45,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/hotnets/hotnets2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/hotnets/hotnets2024.html"
+    },
+    "2025": {
+      "accepted": 51,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/hotnets/hotnets2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/hotnets/hotnets2025.html"
+    }
+  },
+  "APNet": {
+    "2023": {
+      "accepted": 52,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/apnet/apnet2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/apnet/apnet2023.html"
+    },
+    "2024": {
+      "accepted": 51,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/apnet/apnet2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/apnet/apnet2024.html"
+    },
+    "2025": {
+      "accepted": 70,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/apnet/apnet2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/apnet/apnet2025.html"
+    },
+    "2026": {
+      "accepted": 59,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/apnet/apnet2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/apnet/apnet2026.html"
+    }
+  },
+  "WiSec": {
+    "2023": {
+      "accepted": 35,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wisec/wisec2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wisec/wisec2023.html"
+    },
+    "2024": {
+      "accepted": 30,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wisec/wisec2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wisec/wisec2024.html"
+    },
+    "2025": {
+      "accepted": 41,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wisec/wisec2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wisec/wisec2025.html"
+    },
+    "2026": {
+      "accepted": 39,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/wisec/wisec2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/wisec/wisec2026.html"
+    }
+  },
+  "SACMAT": {
+    "2023": {
+      "accepted": 27,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/sacmat/sacmat2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/sacmat/sacmat2023.html"
+    },
+    "2024": {
+      "accepted": 23,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/sacmat/sacmat2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/sacmat/sacmat2024.html"
+    },
+    "2025": {
+      "accepted": 24,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/sacmat/sacmat2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/sacmat/sacmat2025.html"
+    },
+    "2026": {
+      "accepted": 29,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/sacmat/sacmat2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/sacmat/sacmat2026.html"
+    }
+  },
+  "IH&MMSec": {
+    "2023": {
+      "accepted": 27,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ih/ihmmsec2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ih/ihmmsec2023.html"
+    },
+    "2024": {
+      "accepted": 37,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ih/ihmmsec2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ih/ihmmsec2024.html"
+    },
+    "2025": {
+      "accepted": 21,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ih/ihmmsec2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ih/ihmmsec2025.html"
+    },
+    "2026": {
+      "accepted": 30,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ih/ihmmsec2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ih/ihmmsec2026.html"
+    }
+  },
+  "ACNS": {
+    "2023": {
+      "accepted": 27,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/acns/acns2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/acns/acns2023.html"
+    }
+  },
+  "ACISP": {
+    "2023": {
+      "accepted": 28,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/acisp/acisp2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/acisp/acisp2023.html"
+    }
+  },
+  "CT-RSA": {
+    "2023": {
+      "accepted": 27,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ctrsa/ctrsa2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ctrsa/ctrsa2023.html"
+    },
+    "2024": {
+      "accepted": 19,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ctrsa/ctrsa2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ctrsa/ctrsa2024.html"
+    },
+    "2025": {
+      "accepted": 18,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/ctrsa/ctrsa2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/ctrsa/ctrsa2025.html"
+    }
+  },
+  "DIMVA": {
+    "2023": {
+      "accepted": 14,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/dimva/dimva2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/dimva/dimva2023.html"
+    },
+    "2024": {
+      "accepted": 29,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/dimva/dimva2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/dimva/dimva2024.html"
+    }
+  },
+  "TrustCom": {
+    "2023": {
+      "accepted": 367,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/trustcom/trustcom2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/trustcom/trustcom2023.html"
+    },
+    "2024": {
+      "accepted": 350,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/trustcom/trustcom2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/trustcom/trustcom2024.html"
+    },
+    "2025": {
+      "accepted": 397,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/trustcom/trustcom2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/trustcom/trustcom2025.html"
+    }
   }
 }

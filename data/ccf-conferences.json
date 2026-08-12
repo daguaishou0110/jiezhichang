@@ -4,19 +4,19 @@
     "source_url": "https://www.ccf.org.cn/",
     "mirror": "https://ccf.atom.im/",
     "updated": "2026-08-12",
-    "note": "全量 386 会均有收录特点与论文检索入口。有录用数 188 场（其中 2024–26：186）；enrichment 命中 386，ready 182。数据源：人工核验 / OpenAccept / CS Conf Stats / ccfddl / DBLP。",
+    "note": "全量 386 会均有收录特点与论文检索入口。有录用数 227 场（其中 2024–26：221）；enrichment 命中 386，ready 217。数据源：人工核验 / OpenAccept / CS Conf Stats / ccfddl / DBLP。",
     "counts": {
       "total": 386,
       "A": 58,
       "B": 132,
       "C": 196,
-      "with_stats": 188,
-      "with_recent": 186,
+      "with_stats": 227,
+      "with_recent": 221,
       "with_focus": 386,
       "with_deadline": 304,
       "with_dblp_db": 319,
       "enrichment_hit": 386,
-      "ready": 182
+      "ready": 217
     },
     "enrichment": {
       "note": "全量 enrichment：人工核验优先，其次 OpenAccept / CS Conf Stats / ccfddl；无公开录用数时用 DBLP indexed 篇数作规模近似。",
@@ -30,7 +30,7 @@
       ],
       "coverage": {
         "venues": 388,
-        "with_acceptance_numbers": 189
+        "with_acceptance_numbers": 227
       },
       "ccfddl": {
         "matched": 314,
@@ -8500,16 +8500,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 72,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-01-08；会期 May 7-9, 2024；Ischia, Italy",
+          "notes": "DBLP TOC `conf/cf/cf2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -8524,16 +8517,36 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=CF",
+          "papers_index": "https://dblp.org/db/conf/cf/cf2023.html"
+        },
+        "2024": {
+          "accepted": 48,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/cf/cf2024` indexed 论文数（近似录用规模）。｜截稿 2024-01-08；会期 May 7-9, 2024；Ischia, Italy",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/cf/cf2024.html",
           "deadline": "2024-01-08 23:59:59",
           "date": "May 7-9, 2024",
           "place": "Ischia, Italy",
           "website": "https://www.computingfrontiers.org/2024/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 39,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/cf/cf2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -8548,12 +8561,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=CF"
+          "papers_index": "https://dblp.org/db/conf/cf/cf2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-01-19；会期 May 19-21, 2026；Catania, Sicily, Italy",
+          "notes": "该年公开录用数未汇总；近年参考 2025:39, 2024:48, 2023:72。｜截稿 2026-01-19；会期 May 19-21, 2026；Catania, Sicily, Italy",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -8576,7 +8589,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/cf/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.computingfrontiers.org/2026/",
       "ccfddl": {
         "title": "CF",
@@ -8653,16 +8666,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 34,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-04-11；会期 June 17-19, 2024；Tel Aviv, Israel",
+          "notes": "DBLP TOC `conf/systor/systor2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -8677,16 +8683,36 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=SYSTOR",
+          "papers_index": "https://dblp.org/db/conf/systor/systor2023.html"
+        },
+        "2024": {
+          "accepted": 21,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/systor/systor2024` indexed 论文数（近似录用规模）。｜截稿 2024-04-11；会期 June 17-19, 2024；Tel Aviv, Israel",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/systor/systor2024.html",
           "deadline": "2024-04-11 22:59:59",
           "date": "June 17-19, 2024",
           "place": "Tel Aviv, Israel",
           "website": "https://www.systor.org/2024/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 26,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-07-03；会期 September 8-9, 2025；IBM Haifa, Israel",
+          "notes": "DBLP TOC `conf/systor/systor2025` indexed 论文数（近似录用规模）。｜截稿 2025-07-03；会期 September 8-9, 2025；IBM Haifa, Israel",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -8701,7 +8727,7 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=SYSTOR",
+          "papers_index": "https://dblp.org/db/conf/systor/systor2025.html",
           "deadline": "2025-07-03 22:59:59",
           "date": "September 8-9, 2025",
           "place": "IBM Haifa, Israel",
@@ -8710,7 +8736,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-05-25；会期 September 8-9, 2026；Virtual",
+          "notes": "该年公开录用数未汇总；近年参考 2025:26, 2024:21, 2023:34。｜截稿 2026-05-25；会期 September 8-9, 2026；Virtual",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -8733,7 +8759,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/systor/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.systor.org/2026/",
       "ccfddl": {
         "title": "SYSTOR",
@@ -8925,16 +8951,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 32,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/asap/asap2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/asap/asap2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 49,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/asap/asap2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -8949,12 +8988,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ASAP"
+          "papers_index": "https://dblp.org/db/conf/asap/asap2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 35,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/asap/asap2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -8969,12 +9008,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ASAP"
+          "papers_index": "https://dblp.org/db/conf/asap/asap2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-04-03；会期 September 3-4, 2026；London, UK",
+          "notes": "该年公开录用数未汇总；近年参考 2025:35, 2024:49, 2023:32。｜截稿 2026-04-03；会期 September 3-4, 2026；London, UK",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -8997,7 +9036,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/asap/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://2026.asap-conf.org/",
       "ccfddl": {
         "title": "ASAP",
@@ -9063,16 +9102,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 128,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2023-08-04；会期 Jan 22-25, 2024；Sondo Convensia, Incheon, Korea",
+          "notes": "DBLP TOC `conf/aspdac/aspdac2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9087,16 +9119,36 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ASP-DAC",
+          "papers_index": "https://dblp.org/db/conf/aspdac/aspdac2023.html"
+        },
+        "2024": {
+          "accepted": 158,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/aspdac/aspdac2024` indexed 论文数（近似录用规模）。｜截稿 2023-08-04；会期 Jan 22-25, 2024；Sondo Convensia, Incheon, Korea",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/aspdac/aspdac2024.html",
           "deadline": "2023-08-04 19:00:00",
           "date": "Jan 22-25, 2024",
           "place": "Sondo Convensia, Incheon, Korea",
           "website": "https://www.aspdac.com/aspdac2024/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 223,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-07-12；会期 Jan 20-23, 2025；Tokyo Odaiba Miraikan, Japan",
+          "notes": "DBLP TOC `conf/aspdac/aspdac2025` indexed 论文数（近似录用规模）。｜截稿 2024-07-12；会期 Jan 20-23, 2025；Tokyo Odaiba Miraikan, Japan",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9111,16 +9163,16 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ASP-DAC",
+          "papers_index": "https://dblp.org/db/conf/aspdac/aspdac2025.html",
           "deadline": "2024-07-12 17:00:00",
           "date": "Jan 20-23, 2025",
           "place": "Tokyo Odaiba Miraikan, Japan",
           "website": "https://www.aspdac.com/aspdac2025/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 215,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-07-11；会期 Jan 19-22, 2026；Hong Kong Disneyland",
+          "notes": "DBLP TOC `conf/aspdac/aspdac2026` indexed 论文数（近似录用规模）。｜截稿 2025-07-11；会期 Jan 19-22, 2026；Hong Kong Disneyland",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9135,7 +9187,7 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ASP-DAC",
+          "papers_index": "https://dblp.org/db/conf/aspdac/aspdac2026.html",
           "deadline": "2025-07-11 17:00:00",
           "date": "Jan 19-22, 2026",
           "place": "Hong Kong Disneyland",
@@ -9154,7 +9206,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/aspdac/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.aspdac.com/aspdac2027/",
       "ccfddl": {
         "title": "ASP-DAC",
@@ -9253,16 +9305,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 62,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2023-12-16；会期 May 20-24, 2024；The Hague, Netherlands",
+          "notes": "DBLP TOC `conf/ets/ets2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9277,16 +9322,36 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ETS",
+          "papers_index": "https://dblp.org/db/conf/ets/ets2023.html"
+        },
+        "2024": {
+          "accepted": 58,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/ets/ets2024` indexed 论文数（近似录用规模）。｜截稿 2023-12-16；会期 May 20-24, 2024；The Hague, Netherlands",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/ets/ets2024.html",
           "deadline": "2023-12-16 23:59:59",
           "date": "May 20-24, 2024",
           "place": "The Hague, Netherlands",
           "website": "https://ets24.ewi.tudelft.nl/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 53,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-12-15；会期 May 26-30, 2025；Tallinn, Estonia",
+          "notes": "DBLP TOC `conf/ets/ets2025` indexed 论文数（近似录用规模）。｜截稿 2024-12-15；会期 May 26-30, 2025；Tallinn, Estonia",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9301,16 +9366,16 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ETS",
+          "papers_index": "https://dblp.org/db/conf/ets/ets2025.html",
           "deadline": "2024-12-15 23:59:59",
           "date": "May 26-30, 2025",
           "place": "Tallinn, Estonia",
           "website": "https://ets2025.taltech.ee/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 69,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-01-12；会期 May 25-29, 2026；Chania, Greec",
+          "notes": "DBLP TOC `conf/ets/ets2026` indexed 论文数（近似录用规模）。｜截稿 2026-01-12；会期 May 25-29, 2026；Chania, Greec",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9325,7 +9390,7 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ETS",
+          "papers_index": "https://dblp.org/db/conf/ets/ets2026.html",
           "deadline": "2026-01-12 23:59:59",
           "date": "May 25-29, 2026",
           "place": "Chania, Greec",
@@ -9333,7 +9398,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/ets/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://ets2026.uniwa.gr/",
       "ccfddl": {
         "title": "ETS",
@@ -9525,16 +9590,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 55,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-01-15；会期 May 5-8, 2024；Orlando, USA",
+          "notes": "DBLP TOC `conf/fccm/fccm2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9549,16 +9607,36 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=FCCM",
+          "papers_index": "https://dblp.org/db/conf/fccm/fccm2023.html"
+        },
+        "2024": {
+          "accepted": 49,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/fccm/fccm2024` indexed 论文数（近似录用规模）。｜截稿 2024-01-15；会期 May 5-8, 2024；Orlando, USA",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/fccm/fccm2024.html",
           "deadline": "2024-01-15 23:59:59",
           "date": "May 5-8, 2024",
           "place": "Orlando, USA",
           "website": "https://www.fccm.org/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 69,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-01-17；会期 May 4-7, 2025；Fayetteville, Arkansas, USA",
+          "notes": "DBLP TOC `conf/fccm/fccm2025` indexed 论文数（近似录用规模）。｜截稿 2025-01-17；会期 May 4-7, 2025；Fayetteville, Arkansas, USA",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9573,16 +9651,16 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=FCCM",
+          "papers_index": "https://dblp.org/db/conf/fccm/fccm2025.html",
           "deadline": "2025-01-17 23:59:59",
           "date": "May 4-7, 2025",
           "place": "Fayetteville, Arkansas, USA",
           "website": "https://www.fccm.org/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 70,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/fccm/fccm2026` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9597,11 +9675,11 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=FCCM"
+          "papers_index": "https://dblp.org/db/conf/fccm/fccm2026.html"
         }
       },
       "papers_index": "https://dblp.org/db/conf/fccm/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.fccm.org/",
       "ccfddl": {
         "title": "FCCM",
@@ -9678,16 +9756,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 127,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/glvlsi/glvlsi2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/glvlsi/glvlsi2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 143,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/glvlsi/glvlsi2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9702,12 +9793,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=GLSVLSI"
+          "papers_index": "https://dblp.org/db/conf/glvlsi/glvlsi2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 155,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-03-17；会期 June 30-July 2, 2025；New Orleans, LA, USA",
+          "notes": "DBLP TOC `conf/glvlsi/glvlsi2025` indexed 论文数（近似录用规模）。｜截稿 2025-03-17；会期 June 30-July 2, 2025；New Orleans, LA, USA",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9722,16 +9813,16 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=GLSVLSI",
+          "papers_index": "https://dblp.org/db/conf/glvlsi/glvlsi2025.html",
           "deadline": "2025-03-17 23:59:00",
           "date": "June 30-July 2, 2025",
           "place": "New Orleans, LA, USA",
           "website": "https://www.glsvlsi.org/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 158,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-03-16；会期 June 22-24, 2026；Finger Lakes, NY, USA",
+          "notes": "DBLP TOC `conf/glvlsi/glvlsi2026` indexed 论文数（近似录用规模）。｜截稿 2026-03-16；会期 June 22-24, 2026；Finger Lakes, NY, USA",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9746,7 +9837,7 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=GLSVLSI",
+          "papers_index": "https://dblp.org/db/conf/glvlsi/glvlsi2026.html",
           "deadline": "2026-03-16 23:59:00",
           "date": "June 22-24, 2026",
           "place": "Finger Lakes, NY, USA",
@@ -9754,7 +9845,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/glvlsi/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.glsvlsi.org/",
       "ccfddl": {
         "title": "GLSVLSI",
@@ -9831,16 +9922,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 45,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/ats/ats2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/ats/ats2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 56,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/ats/ats2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9855,12 +9959,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ATS"
+          "papers_index": "https://dblp.org/db/conf/ats/ats2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 30,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/ats/ats2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9875,12 +9979,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ATS"
+          "papers_index": "https://dblp.org/db/conf/ats/ats2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-06-06；会期 December 1-3, 2026；Taiwan",
+          "notes": "该年公开录用数未汇总；近年参考 2025:30, 2024:56, 2023:45。｜截稿 2026-06-06；会期 December 1-3, 2026；Taiwan",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9903,7 +10007,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/ats/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.ats2026.tw/",
       "ccfddl": {
         "title": "ATS",
@@ -9969,16 +10073,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 158,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/hpcc/hpcc2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/hpcc/hpcc2023.html"
         },
         "2024": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2023:158。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -9998,7 +10115,7 @@
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-05-18；会期 August 13-15, 2025；Exeter, UK",
+          "notes": "该年公开录用数未汇总；近年参考 2023:158。｜截稿 2025-05-18；会期 August 13-15, 2025；Exeter, UK",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -10022,7 +10139,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2023:158。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -10041,7 +10158,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/hpcc/index.html",
-      "status": "listed",
+      "status": "profiling",
       "website": "https://hpcn.exeter.ac.uk/hpcc2025/",
       "ccfddl": {
         "title": "HPCC",
@@ -10322,9 +10439,9 @@
           "papers_index": ""
         },
         "2024": {
-          "accepted": null,
+          "accepted": 318,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/ispa/ispa2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -10339,12 +10456,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ISPA"
+          "papers_index": "https://dblp.org/db/conf/ispa/ispa2024.html"
         },
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2024:318。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -10364,7 +10481,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2024:318。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -10383,7 +10500,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/ispa/index.html",
-      "status": "listed",
+      "status": "ready",
       "ccfddl": {
         "title": "ISPA",
         "sub": "DS",
@@ -10426,16 +10543,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 60,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/ccgrid/ccgrid2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/ccgrid/ccgrid2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 76,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/ccgrid/ccgrid2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -10450,12 +10580,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=CCGRID"
+          "papers_index": "https://dblp.org/db/conf/ccgrid/ccgrid2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 60,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/ccgrid/ccgrid2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -10470,12 +10600,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=CCGRID"
+          "papers_index": "https://dblp.org/db/conf/ccgrid/ccgrid2025.html"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 74,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-12-21；会期 May 18-21, 2026；Sydney, Australia",
+          "notes": "DBLP TOC `conf/ccgrid/ccgrid2026` indexed 论文数（近似录用规模）。｜截稿 2025-12-21；会期 May 18-21, 2026；Sydney, Australia",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -10490,7 +10620,7 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=CCGRID",
+          "papers_index": "https://dblp.org/db/conf/ccgrid/ccgrid2026.html",
           "deadline": "2025-12-21 23:59:59",
           "date": "May 18-21, 2026",
           "place": "Sydney, Australia",
@@ -10498,7 +10628,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/ccgrid/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.ccgrid2026.org/",
       "ccfddl": {
         "title": "CCGRID",
@@ -11036,16 +11166,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 57,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-07-21；会期 December 10 - December 12, 2024；Sydney, Australia",
+          "notes": "DBLP TOC `conf/fpt/icfpt2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -11060,7 +11183,27 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=FPT",
+          "papers_index": "https://dblp.org/db/conf/fpt/icfpt2023.html"
+        },
+        "2024": {
+          "accepted": 35,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/fpt/icfpt2024` indexed 论文数（近似录用规模）。｜截稿 2024-07-21；会期 December 10 - December 12, 2024；Sydney, Australia",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/fpt/icfpt2024.html",
           "deadline": "2024-07-21 23:59:59",
           "date": "December 10 - December 12, 2024",
           "place": "Sydney, Australia",
@@ -11069,7 +11212,7 @@
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-08-01；会期 December 02 - December 05, 2025；Shanghai, China",
+          "notes": "该年公开录用数未汇总；近年参考 2024:35, 2023:57。｜截稿 2025-08-01；会期 December 02 - December 05, 2025；Shanghai, China",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -11093,7 +11236,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-06-12；会期 December 07 - December 10, 2026；Honolulu, Hawaii, USA",
+          "notes": "该年公开录用数未汇总；近年参考 2024:35, 2023:57。｜截稿 2026-06-12；会期 December 07 - December 10, 2026；Honolulu, Hawaii, USA",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -11116,7 +11259,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/fpt/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://fpt2026.uark.edu",
       "ccfddl": {
         "title": "FPT",
@@ -11204,16 +11347,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 406,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/icpads/icpads2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/icpads/icpads2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 95,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/icpads/icpads2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -11228,12 +11384,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ICPADS"
+          "papers_index": "https://dblp.org/db/conf/icpads/icpads2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 348,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-08-31；会期 December 14-18, 2025；Hefei, China",
+          "notes": "DBLP TOC `conf/icpads/icpads2025` indexed 论文数（近似录用规模）。｜截稿 2025-08-31；会期 December 14-18, 2025；Hefei, China",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -11248,7 +11404,7 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ICPADS",
+          "papers_index": "https://dblp.org/db/conf/icpads/icpads2025.html",
           "deadline": "2025-08-31 18:00:00",
           "date": "December 14-18, 2025",
           "place": "Hefei, China",
@@ -11257,7 +11413,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-06-30；会期 November 22-26 2026；Tokyo, Japan",
+          "notes": "该年公开录用数未汇总；近年参考 2025:348, 2024:95, 2023:406。｜截稿 2026-06-30；会期 November 22-26 2026；Tokyo, Japan",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -11280,7 +11436,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/icpads/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.cloud-conf.net/icpads2026",
       "ccfddl": {
         "title": "ICPADS",
@@ -11773,16 +11929,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 28,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/itc-asia/itc-asia2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/itc-asia/itc-asia2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 49,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/itc-asia/itc-asia2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -11797,12 +11966,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ITC-Asia"
+          "papers_index": "https://dblp.org/db/conf/itc-asia/itc-asia2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 20,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/itc-asia/itc-asia2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -11817,12 +11986,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ITC-Asia"
+          "papers_index": "https://dblp.org/db/conf/itc-asia/itc-asia2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-04-25；会期 August 19-21, 2026；Ningbo International Conference Center, Ningbo, China",
+          "notes": "该年公开录用数未汇总；近年参考 2025:20, 2024:49, 2023:28。｜截稿 2026-04-25；会期 August 19-21, 2026；Ningbo International Conference Center, Ningbo, China",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -11845,7 +12014,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/itc-asia/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.castest.com.cn/itcasia_2026",
       "ccfddl": {
         "title": "ITC-Asia",
@@ -11911,16 +12080,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 27,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/sec/sec2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/sec/sec2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 35,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/sec/sec2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -11935,12 +12117,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=SEC"
+          "papers_index": "https://dblp.org/db/conf/sec/sec2024.html"
         },
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2024:35, 2023:27。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -11960,7 +12142,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2024:35, 2023:27。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -11979,7 +12161,7 @@
         }
       },
       "papers_index": "https://dblp.org/search?q=SEC",
-      "status": "listed"
+      "status": "ready"
     },
     {
       "id": "NAS",
@@ -12119,16 +12301,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 18,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/hotstorage/hotstorage2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/hotstorage/hotstorage2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 19,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/hotstorage/hotstorage2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -12143,12 +12338,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=HotStorage"
+          "papers_index": "https://dblp.org/db/conf/hotstorage/hotstorage2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 20,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/hotstorage/hotstorage2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -12163,12 +12358,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=HotStorage"
+          "papers_index": "https://dblp.org/db/conf/hotstorage/hotstorage2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-06-05；会期 September 28-29, 2026；Prague, Czechia",
+          "notes": "该年公开录用数未汇总；近年参考 2025:20, 2024:19, 2023:18。｜截稿 2026-06-05；会期 September 28-29, 2026；Prague, Czechia",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -12191,7 +12386,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/hotstorage/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.hotstorage.org/2026/",
       "ccfddl": {
         "title": "HotStorage",
@@ -12257,16 +12452,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 25,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/appt/appt2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "体系结构 / 微架构",
+              "share": "常见"
+            },
+            {
+              "name": "并行与分布式",
+              "share": "常见"
+            },
+            {
+              "name": "存储 / 文件系统",
+              "share": "常见"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/appt/appt2023.html"
         },
         "2024": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2023:25。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -12284,9 +12492,9 @@
           "papers_index": "https://dblp.org/search?q=APPT"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 37,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/appt/appt2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -12301,12 +12509,12 @@
               "share": "常见"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=APPT"
+          "papers_index": "https://dblp.org/db/conf/appt/appt2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-04-10；会期 July 27-31, 2026；Brussels, Belgium",
+          "notes": "该年公开录用数未汇总；近年参考 2025:37, 2023:25。｜截稿 2026-04-10；会期 July 27-31, 2026；Brussels, Belgium",
           "directions": [
             {
               "name": "体系结构 / 微架构",
@@ -12329,7 +12537,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/appt/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.appt-conference.com/2026",
       "ccfddl": {
         "title": "APPT",
@@ -15888,16 +16096,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 14,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-02-09；会期 June 17-21, 2024；Groningen, The Netherlands",
+          "notes": "DBLP TOC `conf/forte/forte2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -15912,16 +16113,36 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=FORTE",
+          "papers_index": "https://dblp.org/db/conf/forte/forte2023.html"
+        },
+        "2024": {
+          "accepted": 14,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/forte/forte2024` indexed 论文数（近似录用规模）。｜截稿 2024-02-09；会期 June 17-21, 2024；Groningen, The Netherlands",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/forte/forte2024.html",
           "deadline": "2024-02-09 23:59:59",
           "date": "June 17-21, 2024",
           "place": "Groningen, The Netherlands",
           "website": "https://www.discotec.org/2024/forte"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 15,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/forte/forte2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -15936,12 +16157,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=FORTE"
+          "papers_index": "https://dblp.org/db/conf/forte/forte2025.html"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 16,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-02-06；会期 June 8-12, 2026；Urbino, Italy",
+          "notes": "DBLP TOC `conf/forte/forte2026` indexed 论文数（近似录用规模）。｜截稿 2026-02-06；会期 June 8-12, 2026；Urbino, Italy",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -15956,7 +16177,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=FORTE",
+          "papers_index": "https://dblp.org/db/conf/forte/forte2026.html",
           "deadline": "2026-02-06 23:59:59",
           "date": "June 8-12, 2026",
           "place": "Urbino, Italy",
@@ -15964,7 +16185,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/forte/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.discotec.org/2026/forte",
       "ccfddl": {
         "title": "FORTE",
@@ -16041,16 +16262,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 82,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/lcn/lcn2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/lcn/lcn2023.html"
         },
         "2024": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2023:82。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16070,7 +16304,7 @@
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2023:82。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16090,7 +16324,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-04-20；会期 October 7-9, 2026；Coimbra, Portugal",
+          "notes": "该年公开录用数未汇总；近年参考 2023:82。｜截稿 2026-04-20；会期 October 7-9, 2026；Coimbra, Portugal",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16113,7 +16347,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/lcn/index.html",
-      "status": "listed",
+      "status": "profiling",
       "website": "https://www.ieeelcn.org/",
       "ccfddl": {
         "title": "LCN",
@@ -16179,16 +16413,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 1260,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/globecom/globecom2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/globecom/globecom2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 909,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/globecom/globecom2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16203,12 +16450,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=GLOBECOM"
+          "papers_index": "https://dblp.org/db/conf/globecom/globecom2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 1075,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-04-15；会期 December 8-12, 2025；Taipei, Taiwan",
+          "notes": "DBLP TOC `conf/globecom/globecom2025` indexed 论文数（近似录用规模）。｜截稿 2025-04-15；会期 December 8-12, 2025；Taipei, Taiwan",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16223,7 +16470,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=GLOBECOM",
+          "papers_index": "https://dblp.org/db/conf/globecom/globecom2025.html",
           "deadline": "2025-04-15 23:59:59",
           "date": "December 8-12, 2025",
           "place": "Taipei, Taiwan",
@@ -16232,7 +16479,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-05-03；会期 December 7-11, 2026；Macao, China",
+          "notes": "该年公开录用数未汇总；近年参考 2025:1075, 2024:909, 2023:1260。｜截稿 2026-05-03；会期 December 7-11, 2026；Macao, China",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16255,7 +16502,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/globecom/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://globecom2026.ieee-globecom.org/",
       "ccfddl": {
         "title": "GLOBECOM",
@@ -16332,16 +16579,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 1086,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/icc/icc2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/icc/icc2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 936,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/icc/icc2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16356,12 +16616,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ICC"
+          "papers_index": "https://dblp.org/db/conf/icc/icc2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 1123,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-10-11；会期 June 8-12, 2025；Palais des congrès de Montréal in Montreal, Quebec, Canada",
+          "notes": "DBLP TOC `conf/icc/icc2025` indexed 论文数（近似录用规模）。｜截稿 2024-10-11；会期 June 8-12, 2025；Palais des congrès de Montréal in Montreal, Quebec, Canada",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16376,16 +16636,16 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ICC",
+          "papers_index": "https://dblp.org/db/conf/icc/icc2025.html",
           "deadline": "2024-10-11 23:59:59",
           "date": "June 8-12, 2025",
           "place": "Palais des congrès de Montréal in Montreal, Quebec, Canada",
           "website": "https://icc2025.ieee-icc.org"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 1412,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-10-31；会期 May 24-28, 2026；Glasgow, Scotland, UK",
+          "notes": "DBLP TOC `conf/icc/icc2026` indexed 论文数（近似录用规模）。｜截稿 2025-10-31；会期 May 24-28, 2026；Glasgow, Scotland, UK",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16400,7 +16660,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ICC",
+          "papers_index": "https://dblp.org/db/conf/icc/icc2026.html",
           "deadline": "2025-10-31 00:59:59",
           "date": "May 24-28, 2026",
           "place": "Glasgow, Scotland, UK",
@@ -16419,7 +16679,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/icc/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://icc2027.ieee-icc.org",
       "ccfddl": {
         "title": "ICC",
@@ -16507,16 +16767,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 94,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/icccn/icccn2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/icccn/icccn2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 115,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/icccn/icccn2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16531,12 +16804,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ICCCN"
+          "papers_index": "https://dblp.org/db/conf/icccn/icccn2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 182,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/icccn/icccn2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16551,12 +16824,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ICCCN"
+          "papers_index": "https://dblp.org/db/conf/icccn/icccn2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-02-13；会期 July 27-30, 2026；Honolulu, Hawaii, USA",
+          "notes": "该年公开录用数未汇总；近年参考 2025:182, 2024:115, 2023:94。｜截稿 2026-02-13；会期 July 27-30, 2026；Honolulu, Hawaii, USA",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16579,7 +16852,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/icccn/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "http://www.icccn.org/ICCCN26/",
       "ccfddl": {
         "title": "ICCCN",
@@ -16957,16 +17230,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 73,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/wowmom/wowmom2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/wowmom/wowmom2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 57,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/wowmom/wowmom2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -16981,12 +17267,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=WoWMoM"
+          "papers_index": "https://dblp.org/db/conf/wowmom/wowmom2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 48,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-11-22；会期 May 27-30, 2025；Fort Worth, Texas, USA",
+          "notes": "DBLP TOC `conf/wowmom/wowmom2025` indexed 论文数（近似录用规模）。｜截稿 2024-11-22；会期 May 27-30, 2025；Fort Worth, Texas, USA",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17001,16 +17287,16 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=WoWMoM",
+          "papers_index": "https://dblp.org/db/conf/wowmom/wowmom2025.html",
           "deadline": "2024-11-22 23:59:59",
           "date": "May 27-30, 2025",
           "place": "Fort Worth, Texas, USA",
           "website": "https://wowmomconference.uta.edu/index.html"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 57,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-12-05；会期 June 16-19, 2026；Bologna, Italy",
+          "notes": "DBLP TOC `conf/wowmom/wowmom2026` indexed 论文数（近似录用规模）。｜截稿 2025-12-05；会期 June 16-19, 2026；Bologna, Italy",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17025,7 +17311,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=WoWMoM",
+          "papers_index": "https://dblp.org/db/conf/wowmom/wowmom2026.html",
           "deadline": "2025-12-05 23:59:59",
           "date": "June 16-19, 2026",
           "place": "Bologna, Italy",
@@ -17033,7 +17319,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/wowmom/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.cs.unibo.it/wowmom2026/",
       "ccfddl": {
         "title": "WoWMoM",
@@ -17110,16 +17396,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 253,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/iscc/iscc2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/iscc/iscc2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 175,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/iscc/iscc2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17134,12 +17433,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ISCC"
+          "papers_index": "https://dblp.org/db/conf/iscc/iscc2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 211,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/iscc/iscc2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17154,12 +17453,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ISCC"
+          "papers_index": "https://dblp.org/db/conf/iscc/iscc2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-02-15；会期 June 23-26, 2026；Vilamoura, Algarve, Portugal",
+          "notes": "该年公开录用数未汇总；近年参考 2025:211, 2024:175, 2023:253。｜截稿 2026-02-15；会期 June 23-26, 2026；Vilamoura, Algarve, Portugal",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17182,7 +17481,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/iscc/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://ieee-iscc.computer.org/2026/",
       "ccfddl": {
         "title": "ISCC",
@@ -17248,16 +17547,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 438,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/wcnc/wcnc2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/wcnc/wcnc2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 839,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/wcnc/wcnc2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17272,12 +17584,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=WCNC"
+          "papers_index": "https://dblp.org/db/conf/wcnc/wcnc2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 722,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-09-02；会期 March 24-27, 2025；Milan, Italy",
+          "notes": "DBLP TOC `conf/wcnc/wcnc2025` indexed 论文数（近似录用规模）。｜截稿 2024-09-02；会期 March 24-27, 2025；Milan, Italy",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17292,16 +17604,16 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=WCNC",
+          "papers_index": "https://dblp.org/db/conf/wcnc/wcnc2025.html",
           "deadline": "2024-09-02 23:59:59",
           "date": "March 24-27, 2025",
           "place": "Milan, Italy",
           "website": "https://wcnc2025.ieee-wcnc.org/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 508,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-09-14；会期 April 13-16, 2026；Kuala Lumpur, Malaysia",
+          "notes": "DBLP TOC `conf/wcnc/wcnc2026` indexed 论文数（近似录用规模）。｜截稿 2025-09-14；会期 April 13-16, 2026；Kuala Lumpur, Malaysia",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17316,7 +17628,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=WCNC",
+          "papers_index": "https://dblp.org/db/conf/wcnc/wcnc2026.html",
           "deadline": "2025-09-14 23:59:59",
           "date": "April 13-16, 2026",
           "place": "Kuala Lumpur, Malaysia",
@@ -17335,7 +17647,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/wcnc/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://wcnc2027.ieee-wcnc.org/",
       "ccfddl": {
         "title": "WCNC",
@@ -17423,16 +17735,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 66,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/networking/networking2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/networking/networking2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 114,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/networking/networking2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17447,12 +17772,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=Networking"
+          "papers_index": "https://dblp.org/db/conf/networking/networking2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 81,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/networking/networking2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17467,12 +17792,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=Networking"
+          "papers_index": "https://dblp.org/db/conf/networking/networking2025.html"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 124,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-02-08；会期 May 24-27, 2026；Lugano, Switzerland",
+          "notes": "DBLP TOC `conf/networking/networking2026` indexed 论文数（近似录用规模）。｜截稿 2026-02-08；会期 May 24-27, 2026；Lugano, Switzerland",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17487,7 +17812,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=Networking",
+          "papers_index": "https://dblp.org/db/conf/networking/networking2026.html",
           "deadline": "2026-02-08 23:59:59",
           "date": "May 24-27, 2026",
           "place": "Lugano, Switzerland",
@@ -17495,7 +17820,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/networking/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://networking.ifip.org/2026/",
       "ccfddl": {
         "title": "Networking",
@@ -17665,16 +17990,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 114,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-07-20；会期 December 20-22, 2024；Harbin, China",
+          "notes": "DBLP TOC `conf/msn/msn2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17689,7 +18007,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=MSN",
+          "papers_index": "https://dblp.org/db/conf/msn/msn2023.html"
+        },
+        "2024": {
+          "accepted": 174,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/msn/msn2024` indexed 论文数（近似录用规模）。｜截稿 2024-07-20；会期 December 20-22, 2024；Harbin, China",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/msn/msn2024.html",
           "deadline": "2024-07-20 23:59:59",
           "date": "December 20-22, 2024",
           "place": "Harbin, China",
@@ -17698,7 +18036,7 @@
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-09-15；会期 December 3-6, 2025；Bandung, Indonesia",
+          "notes": "该年公开录用数未汇总；近年参考 2024:174, 2023:114。｜截稿 2025-09-15；会期 December 3-6, 2025；Bandung, Indonesia",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17722,7 +18060,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-08-20；会期 December 18-20, 2026；Ningbo, China",
+          "notes": "该年公开录用数未汇总；近年参考 2024:174, 2023:114。｜截稿 2026-08-20；会期 December 18-20, 2026；Ningbo, China",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17745,7 +18083,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/msn/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://ieee-msn.org/2026",
       "ccfddl": {
         "title": "MSN",
@@ -17833,16 +18171,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 42,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/mswim/mswim2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/mswim/mswim2023.html"
         },
         "2024": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2023:42。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17860,9 +18211,9 @@
           "papers_index": "https://dblp.org/search?q=MSWiM"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 121,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/mswim/mswim2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17877,12 +18228,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=MSWiM"
+          "papers_index": "https://dblp.org/db/conf/mswim/mswim2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-06-01；会期 October 26-30, 2026；Paris, France",
+          "notes": "该年公开录用数未汇总；近年参考 2025:121, 2023:42。｜截稿 2026-06-01；会期 October 26-30, 2026；Paris, France",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -17905,7 +18256,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/mswim/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://mswimconf.com/2026/",
       "ccfddl": {
         "title": "MSWiM",
@@ -18124,16 +18475,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 39,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/hotnets/hotnets2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/hotnets/hotnets2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 45,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/hotnets/hotnets2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -18148,12 +18512,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=HotNets"
+          "papers_index": "https://dblp.org/db/conf/hotnets/hotnets2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 51,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/hotnets/hotnets2025` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -18168,12 +18532,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=HotNets"
+          "papers_index": "https://dblp.org/db/conf/hotnets/hotnets2025.html"
         },
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-07-16；会期 November 16-17, 2026；Salt Lake City, Utah, USA",
+          "notes": "该年公开录用数未汇总；近年参考 2025:51, 2024:45, 2023:39。｜截稿 2026-07-16；会期 November 16-17, 2026；Salt Lake City, Utah, USA",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -18196,7 +18560,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/hotnets/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://conferences.sigcomm.org/hotnets/2026/",
       "ccfddl": {
         "title": "HotNets",
@@ -18262,16 +18626,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 52,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-03-15；会期 August 3-4, 2024；Sydney, Australia, co-located with SIGCOMM'24",
+          "notes": "DBLP TOC `conf/apnet/apnet2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -18286,16 +18643,36 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=APNet",
+          "papers_index": "https://dblp.org/db/conf/apnet/apnet2023.html"
+        },
+        "2024": {
+          "accepted": 51,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/apnet/apnet2024` indexed 论文数（近似录用规模）。｜截稿 2024-03-15；会期 August 3-4, 2024；Sydney, Australia, co-located with SIGCOMM'24",
+          "directions": [
+            {
+              "name": "网络系统与协议",
+              "share": "常见"
+            },
+            {
+              "name": "无线 / 移动 / IoT",
+              "share": "常见"
+            },
+            {
+              "name": "测量与性能",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/apnet/apnet2024.html",
           "deadline": "2024-03-15 23:59:59",
           "date": "August 3-4, 2024",
           "place": "Sydney, Australia, co-located with SIGCOMM'24",
           "website": "https://conferences.sigcomm.org/events/apnet2024/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 70,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-03-13；会期 August 7-8, 2025；Shanghai, China",
+          "notes": "DBLP TOC `conf/apnet/apnet2025` indexed 论文数（近似录用规模）。｜截稿 2025-03-13；会期 August 7-8, 2025；Shanghai, China",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -18310,16 +18687,16 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=APNet",
+          "papers_index": "https://dblp.org/db/conf/apnet/apnet2025.html",
           "deadline": "2025-03-13 23:59:59",
           "date": "August 7-8, 2025",
           "place": "Shanghai, China",
           "website": "https://conferences.sigcomm.org/events/apnet2025/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 59,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-03-11；会期 August 6-7, 2026；Singapore",
+          "notes": "DBLP TOC `conf/apnet/apnet2026` indexed 论文数（近似录用规模）。｜截稿 2026-03-11；会期 August 6-7, 2026；Singapore",
           "directions": [
             {
               "name": "网络系统与协议",
@@ -18334,7 +18711,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=APNet",
+          "papers_index": "https://dblp.org/db/conf/apnet/apnet2026.html",
           "deadline": "2026-03-11 23:59:59",
           "date": "August 6-7, 2026",
           "place": "Singapore",
@@ -18342,7 +18719,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/apnet/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://conferences.sigcomm.org/events/apnet2026/",
       "ccfddl": {
         "title": "APNet",
@@ -21079,16 +21456,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 39,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-02-03；会期 July 8-12, 2024；Enschede, The Netherlands",
+          "notes": "DBLP TOC `conf/csfw/csf2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -21103,7 +21473,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=CSFW",
+          "papers_index": "https://dblp.org/db/conf/csfw/csf2023.html"
+        },
+        "2024": {
+          "accepted": 46,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/csfw/csf2024` indexed 论文数（近似录用规模）。｜截稿 2024-02-03；会期 July 8-12, 2024；Enschede, The Netherlands",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/csfw/csf2024.html",
           "deadline": "2024-02-03 23:59:59",
           "date": "July 8-12, 2024",
           "place": "Enschede, The Netherlands",
@@ -21269,16 +21659,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 24,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-05-03；会期 September 30-October 4, 2024；Charlotte, USA",
+          "notes": "DBLP TOC `conf/srds/srds2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -21293,7 +21676,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=SRDS",
+          "papers_index": "https://dblp.org/db/conf/srds/srds2023.html"
+        },
+        "2024": {
+          "accepted": 34,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/srds/srds2024` indexed 论文数（近似录用规模）。｜截稿 2024-05-03；会期 September 30-October 4, 2024；Charlotte, USA",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/srds/srds2024.html",
           "deadline": "2024-05-03 23:59:59",
           "date": "September 30-October 4, 2024",
           "place": "Charlotte, USA",
@@ -21627,16 +22030,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 49,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2023-12-06；会期 June 24-27, 2024；Brisbane, Australia",
+          "notes": "DBLP TOC `conf/dsn/dsn2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -21651,7 +22047,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=DSN",
+          "papers_index": "https://dblp.org/db/conf/dsn/dsn2023.html"
+        },
+        "2024": {
+          "accepted": 44,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/dsn/dsn2024` indexed 论文数（近似录用规模）。｜截稿 2023-12-06；会期 June 24-27, 2024；Brisbane, Australia",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/dsn/dsn2024.html",
           "deadline": "2023-12-06 23:59:59",
           "date": "June 24-27, 2024",
           "place": "Brisbane, Australia",
@@ -21682,9 +22098,9 @@
           "website": "https://dsn2025.github.io/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 66,
           "submitted": null,
-          "notes": "该年公开录用数未汇总；近年参考 2025:111。｜截稿 2025-12-04；会期 June 22-25, 2026；Charlotte, USA",
+          "notes": "DBLP TOC `conf/dsn/dsn2026` indexed 论文数（近似录用规模）。｜截稿 2025-12-04；会期 June 22-25, 2026；Charlotte, USA",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -21699,7 +22115,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=DSN",
+          "papers_index": "https://dblp.org/db/conf/dsn/dsn2026.html",
           "deadline": "2025-12-04 23:59:59",
           "date": "June 22-25, 2026",
           "place": "Charlotte, USA",
@@ -21817,16 +22233,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 51,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-04-15；会期 September 30 - October 2, 2024；Palazzo della Salute, Padua, Italy",
+          "notes": "DBLP TOC `conf/raid/raid2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -21841,7 +22250,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=RAID",
+          "papers_index": "https://dblp.org/db/conf/raid/raid2023.html"
+        },
+        "2024": {
+          "accepted": 44,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/raid/raid2024` indexed 论文数（近似录用规模）。｜截稿 2024-04-15；会期 September 30 - October 2, 2024；Palazzo della Salute, Padua, Italy",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/raid/raid2024.html",
           "deadline": "2024-04-15 23:59:59",
           "date": "September 30 - October 2, 2024",
           "place": "Palazzo della Salute, Padua, Italy",
@@ -22343,16 +22772,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 35,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-02-08；会期 May 27 - 30, 2024；Seoul, Korea",
+          "notes": "DBLP TOC `conf/wisec/wisec2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22367,16 +22789,36 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=WiSec",
+          "papers_index": "https://dblp.org/db/conf/wisec/wisec2023.html"
+        },
+        "2024": {
+          "accepted": 30,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/wisec/wisec2024` indexed 论文数（近似录用规模）。｜截稿 2024-02-08；会期 May 27 - 30, 2024；Seoul, Korea",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/wisec/wisec2024.html",
           "deadline": "2024-02-08 23:59:59",
           "date": "May 27 - 30, 2024",
           "place": "Seoul, Korea",
           "website": "https://wisec2024.kaist.ac.kr/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 41,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-03-12；会期 June 30 - July 3, 2025；Arlington, Virginia, USA",
+          "notes": "DBLP TOC `conf/wisec/wisec2025` indexed 论文数（近似录用规模）。｜截稿 2025-03-12；会期 June 30 - July 3, 2025；Arlington, Virginia, USA",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22391,16 +22833,16 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=WiSec",
+          "papers_index": "https://dblp.org/db/conf/wisec/wisec2025.html",
           "deadline": "2025-03-12 23:59:59",
           "date": "June 30 - July 3, 2025",
           "place": "Arlington, Virginia, USA",
           "website": "https://wisec2025.gmu.edu/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 39,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-03-03；会期 June 30 - July 3, 2026；Saarbrücken, Germany",
+          "notes": "DBLP TOC `conf/wisec/wisec2026` indexed 论文数（近似录用规模）。｜截稿 2026-03-03；会期 June 30 - July 3, 2026；Saarbrücken, Germany",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22415,7 +22857,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=WiSec",
+          "papers_index": "https://dblp.org/db/conf/wisec/wisec2026.html",
           "deadline": "2026-03-03 23:59:59",
           "date": "June 30 - July 3, 2026",
           "place": "Saarbrücken, Germany",
@@ -22423,7 +22865,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/wisec/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://wisec26.events.cispa.de/",
       "ccfddl": {
         "title": "WiSec",
@@ -22511,16 +22953,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 27,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/sacmat/sacmat2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/sacmat/sacmat2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 23,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/sacmat/sacmat2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22535,12 +22990,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=SACMAT"
+          "papers_index": "https://dblp.org/db/conf/sacmat/sacmat2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 24,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-03-24；会期 July 8-10, 2025；Stony Brook, NY, USA",
+          "notes": "DBLP TOC `conf/sacmat/sacmat2025` indexed 论文数（近似录用规模）。｜截稿 2025-03-24；会期 July 8-10, 2025；Stony Brook, NY, USA",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22555,16 +23010,16 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=SACMAT",
+          "papers_index": "https://dblp.org/db/conf/sacmat/sacmat2025.html",
           "deadline": "2025-03-24 23:59:59",
           "date": "July 8-10, 2025",
           "place": "Stony Brook, NY, USA",
           "website": "https://www.sacmat.org/2025/index.php"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 29,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-03-02；会期 July 8-10, 2026；Waterloo, Canada",
+          "notes": "DBLP TOC `conf/sacmat/sacmat2026` indexed 论文数（近似录用规模）。｜截稿 2026-03-02；会期 July 8-10, 2026；Waterloo, Canada",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22579,7 +23034,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=SACMAT",
+          "papers_index": "https://dblp.org/db/conf/sacmat/sacmat2026.html",
           "deadline": "2026-03-02 23:59:59",
           "date": "July 8-10, 2026",
           "place": "Waterloo, Canada",
@@ -22587,7 +23042,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/sacmat/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.sacmat.org/2026/index.php",
       "ccfddl": {
         "title": "SACMAT",
@@ -22768,16 +23223,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 27,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-02-29；会期 June 24-26, 2024；Baiona, Spain",
+          "notes": "DBLP TOC `conf/ih/ihmmsec2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22792,16 +23240,36 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=IH&MMSec",
+          "papers_index": "https://dblp.org/db/conf/ih/ihmmsec2023.html"
+        },
+        "2024": {
+          "accepted": 37,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/ih/ihmmsec2024` indexed 论文数（近似录用规模）。｜截稿 2024-02-29；会期 June 24-26, 2024；Baiona, Spain",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/ih/ihmmsec2024.html",
           "deadline": "2024-02-29 23:59:59",
           "date": "June 24-26, 2024",
           "place": "Baiona, Spain",
           "website": "https://www.ihmmsec.org/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 21,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-02-28；会期 June 18-20, 2025；San Jose, CA, USA",
+          "notes": "DBLP TOC `conf/ih/ihmmsec2025` indexed 论文数（近似录用规模）。｜截稿 2025-02-28；会期 June 18-20, 2025；San Jose, CA, USA",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22816,16 +23284,16 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=IH&MMSec",
+          "papers_index": "https://dblp.org/db/conf/ih/ihmmsec2025.html",
           "deadline": "2025-02-28 23:59:59",
           "date": "June 18-20, 2025",
           "place": "San Jose, CA, USA",
           "website": "https://www.ihmmsec.org/cms/home/index.html"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 30,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-02-16；会期 June 17-19, 2026；Florence, Italy",
+          "notes": "DBLP TOC `conf/ih/ihmmsec2026` indexed 论文数（近似录用规模）。｜截稿 2026-02-16；会期 June 17-19, 2026；Florence, Italy",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22840,7 +23308,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=IH&MMSec",
+          "papers_index": "https://dblp.org/db/conf/ih/ihmmsec2026.html",
           "deadline": "2026-02-16 23:59:59",
           "date": "June 17-19, 2026",
           "place": "Florence, Italy",
@@ -22848,7 +23316,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/ih/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.ihmmsec.org/cms/home/home2026.html",
       "ccfddl": {
         "title": "IH&MMSec",
@@ -22936,16 +23404,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 27,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/acns/acns2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/acns/acns2023.html"
         },
         "2024": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2023-10-20；会期 March 5-8, 2024；Abu Dhabi, UAE",
+          "notes": "该年公开录用数未汇总；近年参考 2023:27。｜截稿 2023-10-20；会期 March 5-8, 2024；Abu Dhabi, UAE",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22969,7 +23450,7 @@
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-01-13；会期 June 23-26, 2025；Munich, Germany",
+          "notes": "该年公开录用数未汇总；近年参考 2023:27。｜截稿 2025-01-13；会期 June 23-26, 2025；Munich, Germany",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -22993,7 +23474,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-01-23；会期 June 22-25, 2026；New York, United States",
+          "notes": "该年公开录用数未汇总；近年参考 2023:27。｜截稿 2026-01-23；会期 June 22-25, 2026；New York, United States",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23016,7 +23497,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/acns/index.html",
-      "status": "listed",
+      "status": "profiling",
       "website": "https://acns2026.github.io/index.html",
       "ccfddl": {
         "title": "ACNS",
@@ -23294,16 +23775,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 28,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/acisp/acisp2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/acisp/acisp2023.html"
         },
         "2024": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-02-19；会期 July 15-17, 2024；Australia",
+          "notes": "该年公开录用数未汇总；近年参考 2023:28。｜截稿 2024-02-19；会期 July 15-17, 2024；Australia",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23327,7 +23821,7 @@
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-02-19；会期 July 14-16, 2025；Wollongong, Australia",
+          "notes": "该年公开录用数未汇总；近年参考 2023:28。｜截稿 2025-02-19；会期 July 14-16, 2025；Wollongong, Australia",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23351,7 +23845,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-02-26；会期 July 6-9, 2026；Perth, Australia",
+          "notes": "该年公开录用数未汇总；近年参考 2023:28。｜截稿 2026-02-26；会期 July 6-9, 2026；Perth, Australia",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23374,7 +23868,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/acisp/index.html",
-      "status": "listed",
+      "status": "profiling",
       "website": "https://acisp-conference.github.io/acisp2026/index.html",
       "ccfddl": {
         "title": "ACISP",
@@ -23462,16 +23956,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 27,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2023-10-02；会期 May 06-09 , 2024；San Francisco, CA, USA",
+          "notes": "DBLP TOC `conf/ctrsa/ctrsa2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23486,16 +23973,36 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=CT-RSA",
+          "papers_index": "https://dblp.org/db/conf/ctrsa/ctrsa2023.html"
+        },
+        "2024": {
+          "accepted": 19,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/ctrsa/ctrsa2024` indexed 论文数（近似录用规模）。｜截稿 2023-10-02；会期 May 06-09 , 2024；San Francisco, CA, USA",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/ctrsa/ctrsa2024.html",
           "deadline": "2023-10-02 23:59:59",
           "date": "May 06-09 , 2024",
           "place": "San Francisco, CA, USA",
           "website": "https://ct-rsa-2024.aau.at/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 18,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-10-15；会期 April 28-May 1, 2025；San Francisco, California, USA",
+          "notes": "DBLP TOC `conf/ctrsa/ctrsa2025` indexed 论文数（近似录用规模）。｜截稿 2024-10-15；会期 April 28-May 1, 2025；San Francisco, California, USA",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23510,7 +24017,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=CT-RSA",
+          "papers_index": "https://dblp.org/db/conf/ctrsa/ctrsa2025.html",
           "deadline": "2024-10-15 23:59:59",
           "date": "April 28-May 1, 2025",
           "place": "San Francisco, California, USA",
@@ -23519,7 +24026,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-10-24；会期 March 23-26, 2026；San Francisco, California, USA",
+          "notes": "该年公开录用数未汇总；近年参考 2025:18, 2024:19, 2023:27。｜截稿 2025-10-24；会期 March 23-26, 2026；San Francisco, California, USA",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23542,7 +24049,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/ctrsa/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://conference.wsu.edu/ct-rsa-2026/",
       "ccfddl": {
         "title": "CT-RSA",
@@ -23630,16 +24137,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 14,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-02-14；会期 July 17-19, 2024；Lausanne, Switzerland",
+          "notes": "DBLP TOC `conf/dimva/dimva2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23654,7 +24154,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=DIMVA",
+          "papers_index": "https://dblp.org/db/conf/dimva/dimva2023.html"
+        },
+        "2024": {
+          "accepted": 29,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/dimva/dimva2024` indexed 论文数（近似录用规模）。｜截稿 2024-02-14；会期 July 17-19, 2024；Lausanne, Switzerland",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/dimva/dimva2024.html",
           "deadline": "2024-02-14 23:59:59",
           "date": "July 17-19, 2024",
           "place": "Lausanne, Switzerland",
@@ -23663,7 +24183,7 @@
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-02-12；会期 July 9-11, 2025；Graz University of Technology, Graz, Austria",
+          "notes": "该年公开录用数未汇总；近年参考 2024:29, 2023:14。｜截稿 2025-02-12；会期 July 9-11, 2025；Graz University of Technology, Graz, Austria",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23687,7 +24207,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2026-02-18；会期 July 1-3, 2026；Chania, Greece",
+          "notes": "该年公开录用数未汇总；近年参考 2024:29, 2023:14。｜截稿 2026-02-18；会期 July 1-3, 2026；Chania, Greece",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23710,7 +24230,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/dimva/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://www.dimva.org/dimva2026/",
       "ccfddl": {
         "title": "DIMVA",
@@ -24141,16 +24661,29 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 367,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/trustcom/trustcom2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/trustcom/trustcom2023.html"
         },
         "2024": {
-          "accepted": null,
+          "accepted": 350,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/trustcom/trustcom2024` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -24165,12 +24698,12 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=TrustCom"
+          "papers_index": "https://dblp.org/db/conf/trustcom/trustcom2024.html"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 397,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-08-01；会期 November 14 - 17, 2025；Guiyang, China",
+          "notes": "DBLP TOC `conf/trustcom/trustcom2025` indexed 论文数（近似录用规模）。｜截稿 2025-08-01；会期 November 14 - 17, 2025；Guiyang, China",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -24185,7 +24718,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=TrustCom",
+          "papers_index": "https://dblp.org/db/conf/trustcom/trustcom2025.html",
           "deadline": "2025-08-01 23:59:59",
           "date": "November 14 - 17, 2025",
           "place": "Guiyang, China",
@@ -24194,7 +24727,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2025:397, 2024:350, 2023:367。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -24213,7 +24746,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/trustcom/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://ieee-aiplus-2025.org/",
       "ccfddl": {
         "title": "TrustCom",
@@ -24279,16 +24812,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 27,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/sec/sec2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -24303,12 +24829,32 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=SEC"
+          "papers_index": "https://dblp.org/db/conf/sec/sec2023.html"
+        },
+        "2024": {
+          "accepted": 35,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/sec/sec2024` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/sec/sec2024.html"
         },
         "2025": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2024:35, 2023:27。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -24328,7 +24874,7 @@
         "2026": {
           "accepted": null,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "该年公开录用数未汇总；近年参考 2024:35, 2023:27。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -24347,7 +24893,7 @@
         }
       },
       "papers_index": "https://dblp.org/search?q=SEC",
-      "status": "listed"
+      "status": "ready"
     },
     {
       "id": "IFIP-WG-11-9",
@@ -37841,11 +38387,36 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 72,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
+          "notes": "DBLP TOC `conf/vldb/w2023` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "Database",
+              "share": "主"
+            },
+            {
+              "name": "Data Management",
+              "share": "主"
+            },
+            {
+              "name": "System",
+              "share": "主"
+            },
+            {
+              "name": "Data Mining",
+              "share": "相关"
+            },
+            {
+              "name": "Data Privacy & Security",
+              "share": "相关"
+            },
+            {
+              "name": "DB Performance",
+              "share": "相关"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/vldb/w2023.html"
         },
         "2024": {
           "accepted": 299,
@@ -49786,16 +50357,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 131,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-05-08；会期 Oct 21-25, 2024；Greater Seattle Area, USA",
+          "notes": "DBLP TOC `conf/ismar/ismar2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "图形 / 渲染 / 几何",
@@ -49810,7 +50374,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ISMAR",
+          "papers_index": "https://dblp.org/db/conf/ismar/ismar2023.html"
+        },
+        "2024": {
+          "accepted": 134,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/ismar/ismar2024` indexed 论文数（近似录用规模）。｜截稿 2024-05-08；会期 Oct 21-25, 2024；Greater Seattle Area, USA",
+          "directions": [
+            {
+              "name": "图形 / 渲染 / 几何",
+              "share": "常见"
+            },
+            {
+              "name": "视觉 / 多媒体",
+              "share": "常见"
+            },
+            {
+              "name": "多模态内容",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/ismar/ismar2024.html",
           "deadline": "2024-05-08 23:59:59",
           "date": "Oct 21-25, 2024",
           "place": "Greater Seattle Area, USA",
@@ -50276,16 +50860,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 1142,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-03-09；会期 September 1-5, 2024；Greece",
+          "notes": "DBLP TOC `conf/interspeech/interspeech2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "图形 / 渲染 / 几何",
@@ -50300,7 +50877,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=INTERSPEECH",
+          "papers_index": "https://dblp.org/db/conf/interspeech/interspeech2023.html"
+        },
+        "2024": {
+          "accepted": 1066,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/interspeech/interspeech2024` indexed 论文数（近似录用规模）。｜截稿 2024-03-09；会期 September 1-5, 2024；Greece",
+          "directions": [
+            {
+              "name": "图形 / 渲染 / 几何",
+              "share": "常见"
+            },
+            {
+              "name": "视觉 / 多媒体",
+              "share": "常见"
+            },
+            {
+              "name": "多模态内容",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/interspeech/interspeech2024.html",
           "deadline": "2024-03-09 23:59:59",
           "date": "September 1-5, 2024",
           "place": "Greece",
@@ -54959,9 +55556,9 @@
           "website": "https://learningtheory.org/colt2025/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 198,
           "submitted": null,
-          "notes": "该年公开录用数未汇总；近年参考 2025:177, 2024:160, 2023:164。｜截稿 2026-02-04；会期 June 29 - July 3, 2026；San Diego, California",
+          "notes": "DBLP TOC `conf/colt/colt2026` indexed 论文数（近似录用规模）。｜截稿 2026-02-04；会期 June 29 - July 3, 2026；San Diego, California",
           "directions": [
             {
               "name": "Theoretical Machine Learning",
@@ -54980,7 +55577,7 @@
               "share": "相关"
             }
           ],
-          "papers_index": "https://dblp.org/db/conf/colt/index.html",
+          "papers_index": "https://dblp.org/db/conf/colt/colt2026.html",
           "deadline": "2026-02-04 16:59:59",
           "date": "June 29 - July 3, 2026",
           "place": "San Diego, California",
@@ -56242,16 +56839,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 27,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-04-02；会期 June 1-4, 2024；Merida, Yucatan, Mexico",
+          "notes": "DBLP TOC `conf/iccbr/iccbr2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "机器学习",
@@ -56266,7 +56856,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ICCBR",
+          "papers_index": "https://dblp.org/db/conf/iccbr/iccbr2023.html"
+        },
+        "2024": {
+          "accepted": 30,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/iccbr/iccbr2024` indexed 论文数（近似录用规模）。｜截稿 2024-04-02；会期 June 1-4, 2024；Merida, Yucatan, Mexico",
+          "directions": [
+            {
+              "name": "机器学习",
+              "share": "常见"
+            },
+            {
+              "name": "视觉 / NLP",
+              "share": "常见"
+            },
+            {
+              "name": "规划 / 推理 / agent",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/iccbr/iccbr2024.html",
           "deadline": "2024-04-02 00:00:00",
           "date": "June 1-4, 2024",
           "place": "Merida, Yucatan, Mexico",
@@ -56293,9 +56903,9 @@
           "papers_index": "https://dblp.org/search?q=ICCBR"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 37,
           "submitted": null,
-          "notes": "该年公开录用数未汇总；近年参考 2025:30。｜截稿 2026-03-20；会期 August 13-16, 2026；Bremen, Germany",
+          "notes": "DBLP TOC `conf/iccbr/iccbr2026` indexed 论文数（近似录用规模）。｜截稿 2026-03-20；会期 August 13-16, 2026；Bremen, Germany",
           "directions": [
             {
               "name": "机器学习",
@@ -56310,7 +56920,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=ICCBR",
+          "papers_index": "https://dblp.org/db/conf/iccbr/iccbr2026.html",
           "deadline": "2026-03-20 23:59:59",
           "date": "August 13-16, 2026",
           "place": "Bremen, Germany",
@@ -56600,16 +57210,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 81,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2024-05-01；会期 November 2-8, 2024；Hanoi, Vietnam",
+          "notes": "DBLP TOC `conf/kr/kr2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "机器学习",
@@ -56624,7 +57227,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=KR",
+          "papers_index": "https://dblp.org/db/conf/kr/kr2023.html"
+        },
+        "2024": {
+          "accepted": 92,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/kr/kr2024` indexed 论文数（近似录用规模）。｜截稿 2024-05-01；会期 November 2-8, 2024；Hanoi, Vietnam",
+          "directions": [
+            {
+              "name": "机器学习",
+              "share": "常见"
+            },
+            {
+              "name": "视觉 / NLP",
+              "share": "常见"
+            },
+            {
+              "name": "规划 / 推理 / agent",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/kr/kr2024.html",
           "deadline": "2024-05-01 23:59:59",
           "date": "November 2-8, 2024",
           "place": "Hanoi, Vietnam",
@@ -56655,9 +57278,9 @@
           "website": "https://kr.org/KR2025/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 112,
           "submitted": null,
-          "notes": "该年公开录用数未汇总；近年参考 2025:55。｜截稿 2026-02-13；会期 July 20-23, 2026；Lisbon, Portugal",
+          "notes": "DBLP TOC `conf/kr/kr2026` indexed 论文数（近似录用规模）。｜截稿 2026-02-13；会期 July 20-23, 2026；Lisbon, Portugal",
           "directions": [
             {
               "name": "机器学习",
@@ -56672,7 +57295,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=KR",
+          "papers_index": "https://dblp.org/db/conf/kr/kr2026.html",
           "deadline": "2026-02-13 23:59:59",
           "date": "July 20-23, 2026",
           "place": "Lisbon, Portugal",
@@ -62904,16 +63527,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 67,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2023-10-09；会期 March 18 - March 21, 2024；Greenville, South Carolina USA",
+          "notes": "DBLP TOC `conf/iui/iui2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "HCI / 交互",
@@ -62928,7 +63544,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=IUI",
+          "papers_index": "https://dblp.org/db/conf/iui/iui2023.html"
+        },
+        "2024": {
+          "accepted": 62,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/iui/iui2024` indexed 论文数（近似录用规模）。｜截稿 2023-10-09；会期 March 18 - March 21, 2024；Greenville, South Carolina USA",
+          "directions": [
+            {
+              "name": "HCI / 交互",
+              "share": "常见"
+            },
+            {
+              "name": "普适 / 可穿戴",
+              "share": "中"
+            },
+            {
+              "name": "协作 / 社会计算",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/iui/iui2024.html",
           "deadline": "2023-10-09 23:59:59",
           "date": "March 18 - March 21, 2024",
           "place": "Greenville, South Carolina USA",
@@ -62959,9 +63595,9 @@
           "website": "https://iui.acm.org/2025/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 114,
           "submitted": null,
-          "notes": "该年公开录用数未汇总；近年参考 2025:98。｜截稿 2025-10-10；会期 March 23 - 26, 2026；Paphos, Cyprus",
+          "notes": "DBLP TOC `conf/iui/iui2026` indexed 论文数（近似录用规模）。｜截稿 2025-10-10；会期 March 23 - 26, 2026；Paphos, Cyprus",
           "directions": [
             {
               "name": "HCI / 交互",
@@ -62976,7 +63612,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=IUI",
+          "papers_index": "https://dblp.org/db/conf/iui/iui2026.html",
           "deadline": "2025-10-10 23:59:59",
           "date": "March 23 - 26, 2026",
           "place": "Paphos, Cyprus",
@@ -63413,16 +64049,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 32,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/percom/percom2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "HCI / 交互",
@@ -63437,7 +64066,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=PERCOM"
+          "papers_index": "https://dblp.org/db/conf/percom/percom2023.html"
+        },
+        "2024": {
+          "accepted": 24,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/percom/percom2024` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "HCI / 交互",
+              "share": "常见"
+            },
+            {
+              "name": "普适 / 可穿戴",
+              "share": "中"
+            },
+            {
+              "name": "协作 / 社会计算",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/percom/percom2024.html"
         },
         "2025": {
           "accepted": 25,
@@ -63464,9 +64113,9 @@
           "website": "https://percom.org/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 38,
           "submitted": null,
-          "notes": "该年公开录用数未汇总；近年参考 2025:25。｜截稿 2025-10-03；会期 March 16 - 20, 2026；Pisa, Italy",
+          "notes": "DBLP TOC `conf/percom/percom2026` indexed 论文数（近似录用规模）。｜截稿 2025-10-03；会期 March 16 - 20, 2026；Pisa, Italy",
           "directions": [
             {
               "name": "HCI / 交互",
@@ -63481,7 +64130,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=PERCOM",
+          "papers_index": "https://dblp.org/db/conf/percom/percom2026.html",
           "deadline": "2025-10-03 23:59:00",
           "date": "March 16 - 20, 2026",
           "place": "Pisa, Italy",
@@ -63566,16 +64215,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 44,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。",
+          "notes": "DBLP TOC `conf/mhci/mhci2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "HCI / 交互",
@@ -63590,7 +64232,27 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=MobileHCI"
+          "papers_index": "https://dblp.org/db/conf/mhci/mhci2023.html"
+        },
+        "2024": {
+          "accepted": 43,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/mhci/mhci2024` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "HCI / 交互",
+              "share": "常见"
+            },
+            {
+              "name": "普适 / 可穿戴",
+              "share": "中"
+            },
+            {
+              "name": "协作 / 社会计算",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/mhci/mhci2024.html"
         },
         "2025": {
           "accepted": 40,
@@ -63695,16 +64357,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 109,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "该年公开录用数未汇总；近年参考 2020:72。",
+          "notes": "DBLP TOC `conf/icwsm/icwsm2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "Computational Social Science",
@@ -63731,7 +64386,39 @@
               "share": "相关"
             }
           ],
-          "papers_index": "https://dblp.org/db/conf/icwsm/index.html"
+          "papers_index": "https://dblp.org/db/conf/icwsm/icwsm2023.html"
+        },
+        "2024": {
+          "accepted": 162,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/icwsm/icwsm2024` indexed 论文数（近似录用规模）。",
+          "directions": [
+            {
+              "name": "Computational Social Science",
+              "share": "主"
+            },
+            {
+              "name": "Social Media",
+              "share": "主"
+            },
+            {
+              "name": "Web Mining",
+              "share": "主"
+            },
+            {
+              "name": "Social Network",
+              "share": "相关"
+            },
+            {
+              "name": "HCI",
+              "share": "相关"
+            },
+            {
+              "name": "NLP",
+              "share": "相关"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/icwsm/icwsm2024.html"
         },
         "2025": {
           "accepted": 139,
