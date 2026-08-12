@@ -70,6 +70,10 @@ def main() -> None:
         if "NO" in stream.upper() or " " in stream:
             print("skip bad stream", short, stream)
             continue
+        leaf = stream.split("/")[-1]
+        if len(leaf) <= 1:
+            print("skip short stream", short, stream)
+            continue
         if not stream.startswith("conf/"):
             stream = f"conf/{stream}"
         targets.append((short, stream))
@@ -123,8 +127,8 @@ def main() -> None:
             print(f"  {year}={n} ({tocid})", flush=True)
         if entry:
             cache[short] = entry
+        CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
         if (i + 1) % 5 == 0:
-            CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
             print("checkpoint", i + 1, "cache", len(cache), flush=True)
 
     CACHE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")

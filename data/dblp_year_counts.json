@@ -1484,5 +1484,31 @@
       "notes": "DBLP TOC `conf/trustcom/trustcom2025` indexed 论文数（近似录用规模）。",
       "papers_index": "https://dblp.org/db/conf/trustcom/trustcom2025.html"
     }
+  },
+  "AsiaCCS": {
+    "2023": {
+      "accepted": 89,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/asiaccs/asiaccs2023` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/asiaccs/asiaccs2023.html"
+    },
+    "2024": {
+      "accepted": 144,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/asiaccs/asiaccs2024` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/asiaccs/asiaccs2024.html"
+    },
+    "2025": {
+      "accepted": 126,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/asiaccs/asiaccs2025` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/asiaccs/asiaccs2025.html"
+    },
+    "2026": {
+      "accepted": 139,
+      "submitted": null,
+      "notes": "DBLP TOC `conf/asiaccs/asiaccs2026` indexed 论文数（近似录用规模）。",
+      "papers_index": "https://dblp.org/db/conf/asiaccs/asiaccs2026.html"
+    }
   }
 }

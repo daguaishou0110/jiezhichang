@@ -4,19 +4,19 @@
     "source_url": "https://www.ccf.org.cn/",
     "mirror": "https://ccf.atom.im/",
     "updated": "2026-08-12",
-    "note": "全量 386 会均有收录特点与论文检索入口。有录用数 227 场（其中 2024–26：221）；enrichment 命中 386，ready 217。数据源：人工核验 / OpenAccept / CS Conf Stats / ccfddl / DBLP。",
+    "note": "全量 386 会均有收录特点与论文检索入口。有录用数 228 场（其中 2024–26：222）；enrichment 命中 386，ready 218。数据源：人工核验 / OpenAccept / CS Conf Stats / ccfddl / DBLP。",
     "counts": {
       "total": 386,
       "A": 58,
       "B": 132,
       "C": 196,
-      "with_stats": 227,
-      "with_recent": 221,
+      "with_stats": 228,
+      "with_recent": 222,
       "with_focus": 386,
       "with_deadline": 304,
       "with_dblp_db": 319,
       "enrichment_hit": 386,
-      "ready": 217
+      "ready": 218
     },
     "enrichment": {
       "note": "全量 enrichment：人工核验优先，其次 OpenAccept / CS Conf Stats / ccfddl；无公开录用数时用 DBLP indexed 篇数作规模近似。",
@@ -30,7 +30,7 @@
       ],
       "coverage": {
         "venues": 388,
-        "with_acceptance_numbers": 227
+        "with_acceptance_numbers": 228
       },
       "ccfddl": {
         "matched": 314,
@@ -23585,16 +23585,9 @@
           "papers_index": ""
         },
         "2023": {
-          "accepted": null,
+          "accepted": 89,
           "submitted": null,
-          "notes": "",
-          "directions": [],
-          "papers_index": ""
-        },
-        "2024": {
-          "accepted": null,
-          "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2023-12-07；会期 July 1-5, 2024；Singapore",
+          "notes": "DBLP TOC `conf/asiaccs/asiaccs2023` indexed 论文数（近似录用规模）。",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23609,16 +23602,36 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=AsiaCCS",
+          "papers_index": "https://dblp.org/db/conf/asiaccs/asiaccs2023.html"
+        },
+        "2024": {
+          "accepted": 144,
+          "submitted": null,
+          "notes": "DBLP TOC `conf/asiaccs/asiaccs2024` indexed 论文数（近似录用规模）。｜截稿 2023-12-07；会期 July 1-5, 2024；Singapore",
+          "directions": [
+            {
+              "name": "系统 / 网络安全",
+              "share": "常见"
+            },
+            {
+              "name": "密码学",
+              "share": "常见"
+            },
+            {
+              "name": "隐私 / 可信",
+              "share": "中"
+            }
+          ],
+          "papers_index": "https://dblp.org/db/conf/asiaccs/asiaccs2024.html",
           "deadline": "2023-12-07 23:59:59",
           "date": "July 1-5, 2024",
           "place": "Singapore",
           "website": "https://asiaccs2024.sutd.edu.sg/"
         },
         "2025": {
-          "accepted": null,
+          "accepted": 126,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-01-20；会期 August 25-29, 2025；Hanoi, Vietnam",
+          "notes": "DBLP TOC `conf/asiaccs/asiaccs2025` indexed 论文数（近似录用规模）。｜截稿 2025-01-20；会期 August 25-29, 2025；Hanoi, Vietnam",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23633,16 +23646,16 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=AsiaCCS",
+          "papers_index": "https://dblp.org/db/conf/asiaccs/asiaccs2025.html",
           "deadline": "2025-01-20 23:59:59",
           "date": "August 25-29, 2025",
           "place": "Hanoi, Vietnam",
           "website": "https://asiaccs2025.hust.edu.vn/"
         },
         "2026": {
-          "accepted": null,
+          "accepted": 139,
           "submitted": null,
-          "notes": "公开录用统计尚未汇总；请用右侧论文列表 / DBLP 检索当年录用论文。｜截稿 2025-12-12；会期 June 1-5, 2026；Bangalore, India",
+          "notes": "DBLP TOC `conf/asiaccs/asiaccs2026` indexed 论文数（近似录用规模）。｜截稿 2025-12-12；会期 June 1-5, 2026；Bangalore, India",
           "directions": [
             {
               "name": "系统 / 网络安全",
@@ -23657,7 +23670,7 @@
               "share": "中"
             }
           ],
-          "papers_index": "https://dblp.org/search?q=AsiaCCS",
+          "papers_index": "https://dblp.org/db/conf/asiaccs/asiaccs2026.html",
           "deadline": "2025-12-12 23:59:59",
           "date": "June 1-5, 2026",
           "place": "Bangalore, India",
@@ -23676,7 +23689,7 @@
         }
       },
       "papers_index": "https://dblp.org/db/conf/ccs/index.html",
-      "status": "listed",
+      "status": "ready",
       "website": "https://asiaccs2027.cityu.edu.mo/index.html",
       "ccfddl": {
         "title": "AsiaCCS",

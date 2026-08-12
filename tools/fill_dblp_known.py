@@ -58,10 +58,11 @@ def curl_json(url: str) -> dict | None:
 
 def count_toc(stream: str, tocid: str, sleep: float = 5.0) -> int | None:
     q = f"toc:db/{stream}/{tocid}.bht:"
-    for host in HOSTS:
+    for i, host in enumerate(HOSTS):
         url = f"{host}/search/publ/api?q={urllib.parse.quote(q)}&format=json&h=0"
         d = curl_json(url)
-        time.sleep(sleep)
+        # short pause; only rotate host on transport failure
+        time.sleep(sleep if i == 0 else min(2.0, sleep))
         if not d:
             continue
         total = d.get("result", {}).get("hits", {}).get("@total")
@@ -69,8 +70,8 @@ def count_toc(stream: str, tocid: str, sleep: float = 5.0) -> int | None:
             n = int(total)
         except Exception:
             continue
-        if n > 0:
-            return n
+        # zero means TOC missing — no need to try other hosts
+        return n if n > 0 else None
     return None
 
 
