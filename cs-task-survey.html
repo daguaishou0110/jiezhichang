@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>任务调研 · 会议/期刊辅导 · 解知常</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,750&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#101820;--muted:#5a6770;--paper:#eef3f0;--card:#fff;--line:rgba(16,24,32,.12);--sky:#0b6e8a;--deep:#074d3d;--max:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Sora,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.65}
+h1,h2,h3,.brand{font-family:Fraunces,serif;letter-spacing:-.02em;line-height:1.12}
+a{color:var(--deep);text-underline-offset:3px}
+.wrap{width:min(var(--max),calc(100% - 2.2rem));margin:0 auto}
+.nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(12px);background:rgba(238,243,240,.95);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;padding:.7rem 0;font-size:.82rem}
+.nav-brand{font-family:Fraunces,serif;font-weight:750;color:var(--deep);text-decoration:none;font-size:1.05rem}
+.nav-links{display:flex;flex-wrap:wrap;gap:.4rem .75rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600}
+.nav-links a.on,.nav-links a:hover{color:var(--sky)}
+.hero{padding:1.8rem 0 1rem}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--sky);margin-bottom:.35rem}
+.brand{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:750;color:var(--deep);margin-bottom:.35rem}
+.lead{color:var(--muted);max-width:60ch;font-size:.95rem}
+.crumbs{display:flex;flex-wrap:wrap;gap:.35rem;margin:.85rem 0 .4rem;font-size:.8rem;color:var(--muted)}
+.crumbs b{color:var(--deep)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.7rem 0}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.28rem .7rem;font-size:.78rem;font-weight:700;color:var(--muted);cursor:pointer;text-decoration:none}
+.chip:hover,.chip.on{color:var(--sky);border-color:rgba(11,110,138,.45);background:#f0f7fa}
+.chip .n{font-weight:600;opacity:.75;margin-left:.2rem}
+.warn{background:#fff7ed;border:1px solid #fdba74;color:#7c2d12;border-radius:12px;padding:.7rem .9rem;font-size:.84rem;margin:.8rem 0 1rem}
+.layout{display:grid;grid-template-columns:220px 1fr;gap:1rem;margin-bottom:1.5rem}
+@media(max-width:860px){.layout{grid-template-columns:1fr}}
+.side,.main{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem}
+.side h2,.main h2{font-size:1rem;margin-bottom:.55rem;color:var(--deep)}
+.side .l2{display:block;width:100%;text-align:left;border:0;background:transparent;padding:.45rem .5rem;border-radius:8px;font:inherit;font-size:.84rem;font-weight:600;color:var(--muted);cursor:pointer}
+.side .l2:hover,.side .l2.on{background:#f0f7fa;color:var(--sky)}
+.leafs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem}
+.leaf{border:1px solid var(--line);background:#f7fafb;border-radius:10px;padding:.4rem .65rem;font-size:.8rem;font-weight:700;color:var(--muted);cursor:pointer}
+.leaf.on{border-color:rgba(11,110,138,.4);background:#e8f4f8;color:var(--sky)}
+.meta{font-size:.8rem;color:var(--muted);margin-bottom:.7rem}
+.paper{border-top:1px solid var(--line);padding:.75rem 0}
+.paper:first-of-type{border-top:0}
+.paper h3{font-family:Sora,sans-serif;font-size:.92rem;font-weight:700;letter-spacing:0;margin-bottom:.25rem;line-height:1.35}
+.paper .v{font-size:.78rem;color:var(--sky);font-weight:700;margin-bottom:.3rem}
+.paper .m{font-size:.82rem;color:var(--muted)}
+.paper a.more{display:inline-block;margin-top:.35rem;font-size:.8rem;font-weight:700}
+.btns{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.btn{display:inline-flex;padding:.5rem .85rem;border-radius:999px;font-weight:700;font-size:.82rem;text-decoration:none;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.btn.primary{background:var(--sky);color:#fff;border-color:transparent}
+.empty{color:var(--muted);font-size:.9rem;padding:.6rem 0}
+.foot{padding:1.2rem 0 2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a class="nav-brand" href="index.html">解知常</a>
+  <div class="nav-links">
+    <a href="track-cs.html">计算机</a>
+    <a href="package-cs-venue.html">会议/期刊辅导</a>
+    <a class="on" href="cs-task-survey.html">任务调研</a>
+    <a href="ccf-conferences.html">CCF目录</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap">
+  <div class="kicker">会议/期刊辅导 · 任务调研</div>
+  <div class="brand">近两年 A 会文献底板</div>
+  <p class="lead">选一级方向 → 二级子题 → 叶子任务，查看 2025–2026 代表作。用于定题与对齐会刊；<strong>不承诺中稿</strong>。</p>
+  <div class="chips" id="l1chips"></div>
+  <div class="crumbs" id="crumbs">加载中…</div>
+</header>
+
+<main class="wrap">
+  <div class="warn" id="disclaimer"></div>
+  <div class="layout">
+    <aside class="side">
+      <h2>二级子题</h2>
+      <div id="l2list"></div>
+    </aside>
+    <section class="main">
+      <h2 id="panelTitle">叶子任务</h2>
+      <div class="leafs" id="leaflist"></div>
+      <div class="meta" id="meta"></div>
+      <div id="papers"></div>
+      <div class="btns">
+        <a class="btn" href="package-cs-venue.html">回方向树</a>
+        <a class="btn primary" href="ccf-conferences.html">去选会 · CCF</a>
+        <a class="btn" id="papersLink" href="cs-papers.html" hidden>本类成稿</a>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="foot"><div class="wrap">任务调研 · 支撑定题 · 数据来自本地 A 会调研表导出</div></footer>
+
+<script src="data/cs-task-surveys.js"></script>
+<script>
+(function () {
+  const DATA = window.CS_TASK_SURVEYS;
+  if (!DATA) {
+    document.getElementById("crumbs").textContent = "未加载到调研数据。";
+    return;
+  }
+  document.getElementById("disclaimer").textContent = DATA.meta.disclaimer;
+
+  const params = new URLSearchParams(location.search);
+  const state = {
+    l1: null,
+    l2: null,
+    leafId: params.get("id") || null,
+  };
+
+  // resolve initial l1 from slug or name
+  const slugOrName = params.get("l1");
+  const l2q = params.get("l2");
+  const leafq = params.get("leaf");
+
+  function l1Entries() {
+    return Object.keys(DATA.tree).map((name) => ({
+      name,
+      slug: DATA.tree[name].slug,
+    }));
+  }
+
+  function findL1(slugOrName) {
+    if (!slugOrName) return l1Entries()[0]?.name || null;
+    const hit = l1Entries().find(
+      (x) => x.slug === slugOrName || x.name === slugOrName
+    );
+    return hit ? hit.name : l1Entries()[0]?.name || null;
+  }
+
+  function tasksFor(l1, l2) {
+    return DATA.tasks.filter((t) => t.l1 === l1 && (!l2 || t.l2 === l2));
+  }
+
+  function setUrl() {
+    const q = new URLSearchParams();
+    const slug = DATA.tree[state.l1]?.slug || state.l1;
+    if (slug) q.set("l1", slug);
+    if (state.l2) q.set("l2", state.l2);
+    if (state.leafId) q.set("id", state.leafId);
+    history.replaceState(null, "", "cs-task-survey.html?" + q.toString());
+  }
+
+  function renderL1() {
+    const box = document.getElementById("l1chips");
+    box.innerHTML = "";
+    l1Entries().forEach((e) => {
+      const a = document.createElement("a");
+      a.href = "#";
+      a.className = "chip" + (e.name === state.l1 ? " on" : "");
+      const n = DATA.tasks.filter((t) => t.l1 === e.name && t.n > 0).length;
+      a.innerHTML = e.name + '<span class="n">' + n + "</span>";
+      a.onclick = (ev) => {
+        ev.preventDefault();
+        state.l1 = e.name;
+        state.l2 = Object.keys(DATA.tree[e.name].l2)[0] || null;
+        state.leafId = null;
+        renderAll();
+      };
+      box.appendChild(a);
+    });
+  }
+
+  function renderL2() {
+    const box = document.getElementById("l2list");
+    box.innerHTML = "";
+    const secs = DATA.tree[state.l1]?.l2 || {};
+    Object.keys(secs).forEach((l2) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "l2" + (l2 === state.l2 ? " on" : "");
+      const n = secs[l2].reduce((s, x) => s + (x.n || 0), 0);
+      btn.textContent = l2 + " · " + secs[l2].length + "任务";
+      btn.title = n + " 篇文献行";
+      btn.onclick = () => {
+        state.l2 = l2;
+        state.leafId = null;
+        renderAll();
+      };
+      box.appendChild(btn);
+    });
+  }
+
+  function renderLeaves() {
+    const box = document.getElementById("leaflist");
+    const title = document.getElementById("panelTitle");
+    title.textContent = (state.l2 || "二级") + " · 叶子任务";
+    box.innerHTML = "";
+    const leaves = (DATA.tree[state.l1]?.l2 || {})[state.l2] || [];
+    if (!state.leafId && leaves.length) {
+      // prefer first with papers
+      const pref = leaves.find((x) => x.n > 0) || leaves[0];
+      state.leafId = pref.id;
+    }
+    leaves.forEach((lf) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "leaf" + (lf.id === state.leafId ? " on" : "");
+      b.textContent = lf.leaf + " (" + lf.n + ")";
+      b.onclick = () => {
+        state.leafId = lf.id;
+        renderAll();
+      };
+      box.appendChild(b);
+    });
+    if (!leaves.length) {
+      box.innerHTML = '<p class="empty">该二级下暂无叶子任务。</p>';
+    }
+  }
+
+  function renderPapers() {
+    const box = document.getElementById("papers");
+    const meta = document.getElementById("meta");
+    const task = DATA.tasks.find((t) => t.id === state.leafId);
+    const papers = (DATA.papers[state.leafId] || []);
+    document.getElementById("crumbs").innerHTML =
+      "当前位置：<b>" +
+      (state.l1 || "—") +
+      "</b> / <b>" +
+      (state.l2 || "—") +
+      "</b> / <b>" +
+      (task ? task.leaf : "—") +
+      "</b>";
+
+    // sample manuscript link for action recognition
+    const pl = document.getElementById("papersLink");
+    if (state.l2 === "动作识别") {
+      pl.hidden = false;
+      pl.href = "cs-papers.html";
+    } else {
+      pl.hidden = true;
+    }
+
+    meta.textContent =
+      DATA.meta.years +
+      " · " +
+      DATA.meta.scope +
+      " · 本任务 " +
+      papers.length +
+      " 篇";
+
+    if (!papers.length) {
+      box.innerHTML =
+        '<p class="empty">暂无录入文献（A 会命中偏少或待补检）。可先回方向树换相邻任务，或直接去 CCF 选会。</p>';
+      return;
+    }
+    box.innerHTML = papers
+      .map((p, i) => {
+        const link = p.url
+          ? '<a class="more" href="' +
+            p.url.replace(/"/g, "") +
+            '" target="_blank" rel="noopener">原文 / 入口 →</a>'
+          : "";
+        const method = (p.method || "").slice(0, 220);
+        return (
+          '<article class="paper">' +
+          "<h3>" +
+          (i + 1) +
+          ". " +
+          escapeHtml(p.title) +
+          "</h3>" +
+          '<div class="v">' +
+          escapeHtml(p.venue || "") +
+          " · " +
+          escapeHtml(String(p.year || "")) +
+          "</div>" +
+          (method
+            ? '<p class="m">' + escapeHtml(method) + "</p>"
+            : "") +
+          link +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function renderAll() {
+    renderL1();
+    renderL2();
+    renderLeaves();
+    renderPapers();
+    setUrl();
+  }
+
+  // init
+  state.l1 = findL1(slugOrName);
+  if (l2q && DATA.tree[state.l1]?.l2?.[l2q]) state.l2 = l2q;
+  else state.l2 = Object.keys(DATA.tree[state.l1]?.l2 || {})[0] || null;
+
+  if (leafq && state.l2) {
+    const hit = ((DATA.tree[state.l1] || {}).l2 || {})[state.l2] || [];
+    const lf = hit.find((x) => x.leaf === leafq);
+    if (lf) state.leafId = lf.id;
+  }
+  if (state.leafId && DATA.papers[state.leafId] !== undefined) {
+    const t = DATA.tasks.find((x) => x.id === state.leafId);
+    if (t) {
+      state.l1 = t.l1;
+      state.l2 = t.l2;
+    }
+  }
+
+  renderAll();
+})();
+</script>
+</body>
+</html>

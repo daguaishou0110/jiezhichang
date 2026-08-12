@@ -63,13 +63,15 @@ a{color:var(--deep);text-underline-offset:3px}
     <a href="package-cs-revision.html">返修</a>
     <a href="package-cs-thesis.html">硕论辅导</a>
     <a class="on" href="package-cs-venue.html">会议/期刊辅导</a>
+    <a href="cs-task-survey.html">任务调研</a>
+    <a href="ccf-conferences.html">CCF目录</a>
   </div>
 </div></nav>
 
 <header class="hero wrap">
   <div class="kicker">计算机交付 · 03</div>
   <div class="brand">会议 / 期刊辅导</div>
-  <p class="lead">先定<strong>一级方向</strong>，再落<strong>二级子题</strong>，最后对齐会/刊与验证包。投前修改、转投、看稿意见暂挂本支。</p>
+  <p class="lead">先定<strong>一级方向</strong> → <strong>二级子题</strong> → <strong>任务调研</strong>（近两年 A 会文献）→ 对齐会/刊与验证包。投前修改、转投、看稿意见暂挂本支。</p>
   <nav class="toc" aria-label="一级方向">
     <a href="#cv">计算机视觉</a>
     <a href="#nlp">自然语言处理</a>
@@ -89,13 +91,14 @@ a{color:var(--deep);text-underline-offset:3px}
     </header>
     <p>库存最厚：检测、分割、遥感、动作。成稿挂在<strong>二级子题</strong>下，不是另开总库。</p>
     <div class="secs">
-      <div class="sec">
+      <div class="sec ready" id="cv-det">
         <h3>目标检测</h3>
         <ul>
           <li>YOLO 系改进 / 轻量化</li>
           <li>小目标 · 密集目标</li>
-          <li>缺陷 / 工业检测</li>
+          <li>缺陷 / 工业检测 · 开放词汇</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=cv&amp;l2=%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B">任务调研 · A会文献 →</a>
       </div>
       <div class="sec ready" id="cv-action">
         <h3>动作识别</h3>
@@ -104,31 +107,35 @@ a{color:var(--deep);text-underline-offset:3px}
           <li>视频片段分类</li>
           <li>已挂：摔跤 Frontiers PASS</li>
         </ul>
-        <a class="go" href="cs-papers.html">本类成稿 · 摔跤 11 套 →</a>
+        <a class="go" href="cs-task-survey.html?l1=cv&amp;l2=%E5%8A%A8%E4%BD%9C%E8%AF%86%E5%88%AB">任务调研 →</a>
+        <a class="go" href="cs-papers.html" style="margin-left:.35rem;background:#074d3d">本类成稿 · 摔跤 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>图像分割</h3>
         <ul>
           <li>语义 / 实例分割</li>
           <li>医学影像分割（挂医学）</li>
           <li>遥感地物分割</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=cv&amp;l2=%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>遥感与航拍</h3>
         <ul>
           <li>光学遥感目标</li>
           <li>变化检测</li>
           <li>多光谱 / SAR（按单）</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=cv&amp;l2=%E9%81%A5%E6%84%9F%E4%B8%8E%E8%88%AA%E6%8B%8D">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>生成与重建</h3>
         <ul>
           <li>扩散 / 生成式视觉</li>
           <li>超分 · 去噪 · 增强</li>
-          <li>三维 / 新视角（薄）</li>
+          <li>三维 / 4D 高斯 · 新视角</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=cv&amp;l2=%E7%94%9F%E6%88%90%E4%B8%8E%E9%87%8D%E5%BB%BA">任务调研 →</a>
       </div>
     </div>
   </article>
@@ -140,37 +147,50 @@ a{color:var(--deep);text-underline-offset:3px}
     </header>
     <p>文本分类到 LLM 应用；社科文本可挂文科传播/语言分支。</p>
     <div class="secs">
-      <div class="sec">
+      <div class="sec ready">
         <h3>经典 NLP</h3>
         <ul>
           <li>分类 · 情感 · 序列标注</li>
           <li>NER / 关系抽取</li>
           <li>文本匹配 · 检索</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=nlp&amp;l2=%E7%BB%8F%E5%85%B8NLP">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>大模型应用</h3>
         <ul>
           <li>指令微调 / 领域适配</li>
           <li>RAG · Agent 流水线</li>
           <li>评测基准与安全（按单）</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=nlp&amp;l2=%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
+        <h3>多智能体</h3>
+        <ul>
+          <li>协作 · 辩论 · 工具规划</li>
+          <li>GUI / Browser Agent</li>
+          <li>具身与环境交互</li>
+        </ul>
+        <a class="go" href="cs-task-survey.html?l1=nlp&amp;l2=%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93">任务调研 →</a>
+      </div>
+      <div class="sec ready">
         <h3>信息抽取与知识</h3>
         <ul>
           <li>事件抽取</li>
           <li>知识图谱构建（文本侧）</li>
           <li>文档理解 / 长文</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=nlp&amp;l2=%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96%E4%B8%8E%E7%9F%A5%E8%AF%86">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>计算社科文本</h3>
         <ul>
           <li>舆情 · 传播话语</li>
           <li>政策 / 多语语料编码</li>
           <li>挂 <a href="track-humanities.html#comm">文科·传播</a> / <a href="track-humanities.html#lang">语言</a></li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=nlp&amp;l2=%E8%AE%A1%E7%AE%97%E7%A4%BE%E7%A7%91%E6%96%87%E6%9C%AC">任务调研 →</a>
       </div>
     </div>
   </article>
@@ -182,37 +202,41 @@ a{color:var(--deep);text-underline-offset:3px}
     </header>
     <p>节点/图任务、知识图谱与图异常；会议常见 CIKM / ICDM / WWW 图向。</p>
     <div class="secs">
-      <div class="sec">
+      <div class="sec ready">
         <h3>图表示与分类</h3>
         <ul>
           <li>节点分类 · 图分类</li>
           <li>链路预测</li>
           <li>异质图 / 动态图</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=gnn&amp;l2=%E5%9B%BE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E5%88%86%E7%B1%BB">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>知识图谱</h3>
         <ul>
           <li>补全 · 对齐</li>
           <li>KG + 推荐 / 问答</li>
           <li>领域图谱（医疗/化工按单）</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=gnn&amp;l2=%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>图异常与安全</h3>
         <ul>
           <li>图异常检测</li>
           <li>欺诈 / 风控网络</li>
           <li>鲁棒性与攻击（薄）</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=gnn&amp;l2=%E5%9B%BE%E5%BC%82%E5%B8%B8%E4%B8%8E%E5%AE%89%E5%85%A8">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>图聚类与社区</h3>
         <ul>
           <li>社区发现</li>
           <li>图聚类新指标/方法</li>
           <li>大规模图采样</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=gnn&amp;l2=%E5%9B%BE%E8%81%9A%E7%B1%BB%E4%B8%8E%E7%A4%BE%E5%8C%BA">任务调研 →</a>
       </div>
     </div>
   </article>
@@ -224,37 +248,59 @@ a{color:var(--deep);text-underline-offset:3px}
     </header>
     <p>视觉–语言为主；医疗多模态挂回医学路径卡。</p>
     <div class="secs">
-      <div class="sec">
+      <div class="sec ready">
         <h3>视觉–语言</h3>
         <ul>
           <li>图文检索 · 对齐</li>
           <li>VQA · 描述生成</li>
           <li>VLM / VLA 应用</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=mm&amp;l2=%E8%A7%86%E8%A7%89%E8%AF%AD%E8%A8%80">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready" id="mm-mllm">
+        <h3>多模态大模型</h3>
+        <ul>
+          <li>MLLM · 视频/语音语言</li>
+          <li>多模态推理 · 多模态 RAG</li>
+          <li>多模态 Agent</li>
+        </ul>
+        <a class="go" href="cs-task-survey.html?l1=mm&amp;l2=%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B">任务调研 · A会文献 →</a>
+      </div>
+      <div class="sec ready">
+        <h3>多模态图</h3>
+        <ul>
+          <li>多模态 GNN · 场景图</li>
+          <li>多模态知识图谱</li>
+          <li>图检索 / 推荐</li>
+        </ul>
+        <a class="go" href="cs-task-survey.html?l1=mm&amp;l2=%E5%A4%9A%E6%A8%A1%E6%80%81%E5%9B%BE">任务调研 →</a>
+      </div>
+      <div class="sec ready">
         <h3>音视频与其他</h3>
         <ul>
           <li>音视融合（按单）</li>
           <li>文档多模态（版面+文本）</li>
           <li>传感器 + 视觉</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=mm&amp;l2=%E9%9F%B3%E8%A7%86%E9%A2%91%E4%B8%8E%E5%85%B6%E4%BB%96">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>医疗多模态</h3>
         <ul>
           <li>影像 + 临床文本</li>
           <li>组学 + 影像（少接、要验证包）</li>
           <li>挂 <a href="track-medical.html">医学交叉</a></li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=mm&amp;l2=%E5%8C%BB%E7%96%97%E5%A4%9A%E6%A8%A1%E6%80%81">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>生成式多模态</h3>
         <ul>
           <li>文生图 / 图生文流水线</li>
           <li>可控生成与评测</li>
           <li>与扩散视觉二级可交叉选题</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=mm&amp;l2=%E7%94%9F%E6%88%90%E5%BC%8F%E5%A4%9A%E6%A8%A1%E6%80%81">任务调研 →</a>
       </div>
     </div>
   </article>
@@ -266,37 +312,41 @@ a{color:var(--deep);text-underline-offset:3px}
     </header>
     <p>表格、时序、异常、推荐等非纯 CV/NLP 题；金融预测可挂文科金融支。</p>
     <div class="secs">
-      <div class="sec">
+      <div class="sec ready">
         <h3>表格与预测</h3>
         <ul>
           <li>分类 / 回归榜单</li>
           <li>特征与可解释</li>
           <li>信用 / 风险（挂文科金融）</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=ml&amp;l2=%E8%A1%A8%E6%A0%BC%E4%B8%8E%E9%A2%84%E6%B5%8B">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>时序</h3>
         <ul>
           <li>预测 · 分类</li>
           <li>异常时序</li>
           <li>多变量传感器</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=ml&amp;l2=%E6%97%B6%E5%BA%8F">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>异常检测</h3>
         <ul>
           <li>非图工业/日志异常</li>
           <li>与缺陷检测视觉交叉</li>
           <li>弱监督 / 少样本</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=ml&amp;l2=%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B">任务调研 →</a>
       </div>
-      <div class="sec">
+      <div class="sec ready">
         <h3>推荐与检索</h3>
         <ul>
           <li>协同过滤 / 序列推荐</li>
           <li>召回 · 排序</li>
           <li>与 GNN 推荐交叉</li>
         </ul>
+        <a class="go" href="cs-task-survey.html?l1=ml&amp;l2=%E6%8E%A8%E8%8D%90%E4%B8%8E%E6%A3%80%E7%B4%A2">任务调研 →</a>
       </div>
     </div>
   </article>
@@ -340,6 +390,18 @@ a{color:var(--deep);text-underline-offset:3px}
   </article>
 
   <div class="card">
+    <h2>任务调研（定题支撑）</h2>
+    <ul>
+      <li>已挂 <a href="cs-task-survey.html"><b>近两年 A 会任务调研库</b></a>：一级 → 二级 → 叶子任务 → 文献列表</li>
+      <li>当前约 <b>140</b> 个叶子任务 / <b>1200+</b> 文献行；用于定题，不承诺中稿</li>
+      <li>样板入口：<a href="cs-task-survey.html?l1=cv&amp;l2=%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B">CV · 目标检测</a> · <a href="cs-task-survey.html?l1=mm&amp;l2=%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B">多模态大模型</a></li>
+    </ul>
+    <a class="btn primary" href="cs-task-survey.html">打开任务调研</a>
+    <a class="btn" href="cs-task-survey.html?l1=cv&amp;l2=%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B">CV · 检测</a>
+    <a class="btn" href="cs-task-survey.html?l1=mm&amp;l2=%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B">多模态大模型</a>
+  </div>
+
+  <div class="card">
     <h2>选会底板</h2>
     <ul>
       <li>已挂 <a href="ccf-conferences.html"><b>CCF A/B/C 会议全量目录</b></a>（386 会均有收录特点 + 论文检索）</li>
@@ -351,20 +413,21 @@ a{color:var(--deep);text-underline-offset:3px}
   <div class="card">
     <h2>交付骨架（各方向共用）</h2>
     <ul>
-      <li>选一级 → 选二级 → 定会/刊档</li>
+      <li>选一级 → 选二级 → <b>看任务调研</b> → 定会/刊档</li>
       <li>实验协议 / 基线 / 图表清单</li>
       <li>初稿 → 投前改；可选转投、看稿意见</li>
     </ul>
-    <p class="note">二级下的「样例成稿 / 数据入口」可按方向再逐个补页。</p>
+    <p class="note">二级下的「样例成稿」可按方向再挂；任务调研先支撑定题。</p>
     <div class="tone">
       <div class="yes"><b>承诺：</b>方向、验证与写作范围写进验收。</div>
       <div class="no"><b>不承诺：</b>保证中稿某一本会/刊。</div>
     </div>
     <a class="btn primary" href="track-cs.html">回计算机枢纽</a>
+    <a class="btn" href="cs-task-survey.html">任务调研</a>
     <a class="btn" href="package-imaging-yolo.html">影像 05</a>
     <a class="btn" href="types.html#t04">写法 04</a>
   </div>
 </main>
-<footer class="foot"><div class="wrap">会议/期刊辅导 · 一级方向 × 二级子题</div></footer>
+<footer class="foot"><div class="wrap">会议/期刊辅导 · 方向选择 → 任务调研 → 选会</div></footer>
 </body>
 </html>
